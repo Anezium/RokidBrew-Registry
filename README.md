@@ -2,20 +2,36 @@
 
 Community app registry consumed by RokidBrew.
 
-## Add or update an app
-
-1. Add or edit one file in `apps/<app-id>.json`.
-2. Optional: add an icon at `assets/icons/<app-id>.png`.
-3. Optional: add screenshots in `assets/screenshots/` and reference their file names in `screenshotAssets`.
-4. Run:
+## Quick start — adding a new app
 
 ```bash
+# 1. Create the app definition
+#    Edit apps/<app-id>.json (see format below).
+
+# 2. Build the manifest locally to validate
 node scripts/build-registry.mjs
+
+# 3. Commit and push
+git add apps/<app-id>.json dist/apps.v1.json
+git commit -m "Add <app-name>"
+git push
+
+# 4. Go to GitHub Actions — run "Extract missing icons" (force: false)
+#    This downloads the APK, extracts the launcher icon, and auto-commits.
+
+# 5. Go to GitHub Actions — run "Update artifact metadata" (force: false)
+#    This downloads the APK, computes sha256 / size / package metadata, and auto-commits.
 ```
 
-The generated manifest is written to `dist/apps.v1.json`.
+After these steps, the app is live. RokidBrew pulls from:
 
-## App file format
+```text
+https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/dist/apps.v1.json
+```
+
+---
+
+## App file format (`apps/<app-id>.json`)
 
 ```json
 {
@@ -28,7 +44,6 @@ The generated manifest is written to `dist/apps.v1.json`.
   "description": "Longer detail shown in RokidBrew.",
   "author": "Example Author",
   "sourceUrl": "https://github.com/owner/repo",
-  "screenshotAssets": ["example-app-1.jpg"],
   "phoneRequired": false,
   "artifacts": [
     {
@@ -39,50 +54,127 @@ The generated manifest is written to `dist/apps.v1.json`.
 }
 ```
 
-`type` must be `combo`, `phone`, or `glasses`.
+### Required fields
 
-For `combo` apps, provide both `phone` and `glasses` artifacts when possible.
+| Field | Notes |
+|---|---|
+| `id` | Unique slug. Use kebab-case (e.g. `my-app`). |
+| `name` | Display name shown in RokidBrew. |
+| `category` | `AI`, `Navigation`, `Media`, `Games`, `Utility`, `Browser`, `Launcher`, `Translation`, `Learning`, `Shopping`, `Camera`, `Fitness`, `Experiment`, `Mobility`, `Music`, `Reader`, `Developer`, `Accessibility` |
+| `type` | `glasses`, `phone`, or `combo` (both phone and glasses APKs). |
+| `version` | Human-readable version string. |
+| `summary` | One-line description. |
+| `description` | Longer description. Defaults to `summary` if omitted. |
+| `phoneRequired` | `true` if the glasses-side APK needs a phone companion. |
+| `artifacts` | Array of APK download objects (see below). |
 
-## Distribution
+### Artifact object
 
-RokidBrew reads:
+| Field | Required | Notes |
+|---|---|---|
+| `target` | Yes | `glasses` or `phone`. |
+| `url` | Yes | Direct APK download URL. |
+| `sha256` | No | Populated by the "Update artifact metadata" Action. |
+| `sizeBytes` | No | Populated by the "Update artifact metadata" Action. |
+| `packageName` | No | Populated by the "Update artifact metadata" Action. |
+| `versionCode` | No | Populated by the "Update artifact metadata" Action. |
+| `versionName` | No | Populated by the "Update artifact metadata" Action. |
 
-```text
-https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/dist/apps.v1.json
+### Optional fields
+
+| Field | Notes |
+|---|---|
+| `author` | Inferred from the GitHub repository owner if omitted. |
+| `sourceUrl` | Inferred from the artifact download URL if omitted. |
+| `iconAsset` | Filename in `assets/icons/`. Auto-populated by the icon extraction Action. |
+| `iconUrl` | Remote URL for the icon. Auto-generated from the registry repo. |
+| `screenshotAssets` | Array of filenames in `assets/screenshots/`. Add manually. |
+| `screenshotUrls` | Remote URLs for screenshots. Auto-generated from the registry repo. |
+
+### Combo apps
+
+For `"type": "combo"`, provide both a `phone` and `glasses` artifact:
+
+```json
+"artifacts": [
+  { "target": "glasses", "url": "..." },
+  { "target": "phone", "url": "..." }
+]
 ```
 
-GitHub Pages is optional. If Pages is enabled and configured to deploy from GitHub Actions, it can also serve the same file:
+---
 
-```text
-https://anezium.github.io/RokidBrew-Registry/apps.v1.json
+## GitHub Actions
+
+Three workflows automate the registry maintenance.
+
+### 1. Build registry (`build-registry.yml`)
+
+| Trigger | Purpose |
+|---|---|
+| Push to `main` | Validates the manifest builds correctly. |
+| Pull request | CI check. |
+| Manual dispatch | Rebuild on demand. |
+
+### 2. Extract missing icons (`extract-icons.yml`)
+
+Manual trigger only. For every app in `apps/*.json` that is missing `assets/icons/<app-id>.png`:
+
+1. Downloads the first APK artifact (preferring glasses).
+2. Reads the launcher icon with `aapt dump badging`.
+3. Extracts a direct raster icon when available.
+4. Falls back to `apktool` + `rsvg-convert` for adaptive / vector launcher icons.
+5. Commits the new icons and rebuilt manifest back to `main`.
+
+| Input | Value |
+|---|---|
+| `force: false` | Skip apps that already have an icon (normal use). |
+| `force: true` | Regenerate all icons even if they already exist. |
+
+### 3. Update artifact metadata (`update-artifact-metadata.yml`)
+
+Manual trigger only. Downloads every APK referenced in the registry and populates:
+
+- `sha256` — SHA-256 checksum of the APK.
+- `sizeBytes` — File size in bytes.
+- `packageName` — Android package name (from AndroidManifest).
+- `versionCode` — Integer version code.
+- `versionName` — Human-readable version name.
+
+Commits the updated `apps/*.json` and rebuilt manifest.
+
+| Input | Value |
+|---|---|
+| `force: false` | Only fill in missing metadata (normal use). |
+| `force: true` | Recompute all metadata even if already present (use after APK URL changes). |
+
+---
+
+## Adding screenshots
+
+Screenshots are not extracted automatically. To add them:
+
+1. Place image files in `assets/screenshots/`.
+2. Reference them in the app JSON:
+   ```json
+   "screenshotAssets": ["my-app-1.jpg", "my-app-2.png"]
+   ```
+3. Rebuild and push:
+   ```bash
+   node scripts/build-registry.mjs
+   git add assets/screenshots/ apps/*.json dist/apps.v1.json
+   git commit -m "Add screenshots for <app-name>"
+   git push
+   ```
+
+---
+
+## Full workflow summary
+
 ```
-
-## Extract missing icons
-
-The repo has a manual GitHub Action named **Extract missing icons**.
-
-It:
-
-1. scans `apps/*.json`;
-2. skips apps that already have `assets/icons/<app-id>.png`;
-3. downloads the first APK artifact, preferring glasses artifacts;
-4. reads the declared launcher icon with `aapt dump badging`;
-5. extracts a direct raster icon when available;
-6. falls back to `apktool` + `rsvg-convert` for adaptive/vector launcher icons;
-7. commits the new icons and rebuilt manifest back to `main`.
-
-Run it from GitHub Actions with `force=false` for normal use. Use `force=true` only when you want to regenerate existing icons.
-
-Adaptive/vector XML icons are rendered to PNG when their foreground/background resources can be resolved.
-
-## Update checksums and package metadata
-
-The manual GitHub Action **Update artifact metadata** downloads APK artifacts, then writes:
-
-- `sha256`
-- `sizeBytes`
-- `packageName`
-- `versionCode`
-- `versionName`
-
-Use `force=false` for normal updates. Use `force=true` when a release URL changed and existing metadata should be recomputed.
+1. Create apps/<app-id>.json with artifact URLs
+2. Rebuild + push
+3. Run "Extract missing icons"  → gets the icon
+4. Run "Update artifact metadata" → gets sha256, package info
+5. (Optional) Add screenshots manually
+```
