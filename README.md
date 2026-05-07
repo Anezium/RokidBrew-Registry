@@ -65,9 +65,10 @@ It:
 2. skips apps that already have `assets/icons/<app-id>.png`;
 3. downloads the first APK artifact, preferring glasses artifacts;
 4. reads the declared launcher icon with `aapt dump badging`;
-5. extracts a raster icon from the APK;
-6. commits the new icons and rebuilt manifest back to `main`.
+5. extracts a direct raster icon when available;
+6. falls back to `apktool` + `rsvg-convert` for adaptive/vector launcher icons;
+7. commits the new icons and rebuilt manifest back to `main`.
 
 Run it from GitHub Actions with `force=false` for normal use. Use `force=true` only when you want to regenerate existing icons.
 
-Adaptive XML icons are skipped unless a raster foreground/fallback can be found.
+Adaptive/vector XML icons are rendered to PNG when their foreground/background resources can be resolved.
