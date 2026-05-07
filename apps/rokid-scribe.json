@@ -10,11 +10,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk"
+      "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk",
+      "sha256": "b48678b37dd68e93230a1b5888667ca744d8bcc10406330dfcbd0065ceec1225",
+      "sizeBytes": 8007082,
+      "packageName": "com.rokidscribe.glasses",
+      "versionCode": 104,
+      "versionName": "1.1.1"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-phone-v1.1.1-debug.apk"
+      "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-phone-v1.1.1-debug.apk",
+      "sha256": "13c6695db321a22660a92ba136c6f954a3a9a86b9d870ebc3b7c8035b40af2e1",
+      "sizeBytes": 20857192,
+      "packageName": "com.rokidscribe",
+      "versionCode": 104,
+      "versionName": "1.1.1"
     }
   ],
   "author": "Anezium",

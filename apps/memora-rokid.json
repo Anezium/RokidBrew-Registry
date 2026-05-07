@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://raw.githubusercontent.com/e7naq3y/Memora_rokid/main/Memora-v1.0-debug.apk"
+      "url": "https://raw.githubusercontent.com/e7naq3y/Memora_rokid/main/Memora-v1.0-debug.apk",
+      "sha256": "5840ad5a547fcfe4249689e0314b8641ab5fcf49df7b5b36dc2375ceec3960c6",
+      "sizeBytes": 37947150,
+      "packageName": "com.memora.english",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ],
   "author": "e7naq3y",

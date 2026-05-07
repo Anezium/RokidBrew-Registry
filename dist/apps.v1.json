@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-07T18:44:17.988Z",
+  "generatedAt": "2026-05-07T18:58:47.638Z",
   "brewVersion": "0.1.4",
   "brewVersionCode": 5,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.4/RokidBrew-phone-v0.1.4-debug.apk",
@@ -541,7 +541,12 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://raw.githubusercontent.com/e7naq3y/Memora_rokid/main/Memora-v1.0-debug.apk"
+          "url": "https://raw.githubusercontent.com/e7naq3y/Memora_rokid/main/Memora-v1.0-debug.apk",
+          "sha256": "5840ad5a547fcfe4249689e0314b8641ab5fcf49df7b5b36dc2375ceec3960c6",
+          "sizeBytes": 37947150,
+          "packageName": "com.memora.english",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "author": "e7naq3y",
@@ -877,11 +882,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk"
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
+          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
+          "sizeBytes": 7725471,
+          "packageName": "com.rokidapks.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk"
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk",
+          "sha256": "e07829103caee86ff07297871eb395aa04e31e4ecc7243895f5f7659f917f35f",
+          "sizeBytes": 12118215,
+          "packageName": "com.rokidapks",
+          "versionCode": 120,
+          "versionName": "1.2.0"
         }
       ],
       "author": "Anezium",
@@ -909,11 +924,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk"
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk",
+          "sha256": "b48678b37dd68e93230a1b5888667ca744d8bcc10406330dfcbd0065ceec1225",
+          "sizeBytes": 8007082,
+          "packageName": "com.rokidscribe.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-phone-v1.1.1-debug.apk"
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-phone-v1.1.1-debug.apk",
+          "sha256": "13c6695db321a22660a92ba136c6f954a3a9a86b9d870ebc3b7c8035b40af2e1",
+          "sizeBytes": 20857192,
+          "packageName": "com.rokidscribe",
+          "versionCode": 104,
+          "versionName": "1.1.1"
         }
       ],
       "author": "Anezium",

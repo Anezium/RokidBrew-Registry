@@ -10,11 +10,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk"
+      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
+      "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
+      "sizeBytes": 7725471,
+      "packageName": "com.rokidapks.glasses",
+      "versionCode": 104,
+      "versionName": "1.1.1"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk"
+      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk",
+      "sha256": "e07829103caee86ff07297871eb395aa04e31e4ecc7243895f5f7659f917f35f",
+      "sizeBytes": 12118215,
+      "packageName": "com.rokidapks",
+      "versionCode": 120,
+      "versionName": "1.2.0"
     }
   ],
   "author": "Anezium",
