@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-07T16:34:57.022Z",
+  "generatedAt": "2026-05-07T17:03:29.899Z",
   "apps": [
     {
       "id": "dcim-server",
@@ -527,6 +527,27 @@
       ]
     },
     {
+      "id": "memora-rokid",
+      "name": "Memora",
+      "category": "Learning",
+      "type": "phone",
+      "version": "1.0.0",
+      "summary": "Immersive language learning with Rokid glasses HUD and Baidu AI.",
+      "description": "Four learning modes: scenario dialogue, visual recognition, AI mnemonics, and spaced repetition. Connects to Rokid glasses for HUD overlay and uses Baidu AI for speech and vision.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://raw.githubusercontent.com/e7naq3y/Memora_rokid/main/Memora-v1.0-debug.apk"
+        }
+      ],
+      "author": "e7naq3y",
+      "sourceUrl": "https://github.com/e7naq3y/Memora_rokid",
+      "iconAsset": "memora-rokid.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/memora-rokid.png",
+      "screenshotAssets": []
+    },
+    {
       "id": "neuroglasses",
       "name": "NeuroGlasses",
       "category": "AI",
@@ -840,6 +861,76 @@
       "iconAsset": "rokid-ssh-terminal.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "rokid-apks",
+      "name": "Rokid-APKs",
+      "category": "Developer",
+      "type": "combo",
+      "version": "1.2.0",
+      "summary": "Upload and install APKs on Rokid glasses from your phone.",
+      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
+      "iconAsset": "rokid-apks.png",
+      "screenshotAssets": [
+        "rokid-apks-phone.jpg",
+        "rokid-apks-glasses.jpg"
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
+      ]
+    },
+    {
+      "id": "rokid-scribe",
+      "name": "Rokid-Scribe",
+      "category": "Utility",
+      "type": "combo",
+      "version": "1.1.1",
+      "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
+      "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-phone-v1.1.1-debug.apk"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Scribe",
+      "iconAsset": "rokid-scribe.png",
+      "screenshotAssets": [
+        "rokid-scribe-menu.jpg",
+        "rokid-scribe-settings.jpg",
+        "rokid-scribe-record.jpg",
+        "rokid-scribe-glasses.jpg",
+        "rokid-scribe-glasses-recording.jpg"
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-scribe.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-settings.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
+      ]
     },
     {
       "id": "texthome",

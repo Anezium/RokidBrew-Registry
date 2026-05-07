@@ -1,0 +1,19 @@
+{
+  "id": "memora-rokid",
+  "name": "Memora",
+  "category": "Learning",
+  "type": "phone",
+  "version": "1.0.0",
+  "summary": "Immersive language learning with Rokid glasses HUD and Baidu AI.",
+  "description": "Four learning modes: scenario dialogue, visual recognition, AI mnemonics, and spaced repetition. Connects to Rokid glasses for HUD overlay and uses Baidu AI for speech and vision.",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "phone",
+      "url": "https://raw.githubusercontent.com/e7naq3y/Memora_rokid/main/Memora-v1.0-debug.apk"
+    }
+  ],
+  "author": "e7naq3y",
+  "sourceUrl": "https://github.com/e7naq3y/Memora_rokid",
+  "iconAsset": "memora-rokid.png"
+}
