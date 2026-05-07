@@ -96,9 +96,19 @@ const duplicate = apps.map((app) => app.id).find((id, index, ids) => ids.indexOf
 if (duplicate) throw new Error(`Duplicate app id: ${duplicate}`);
 
 fs.mkdirSync(distDir, { recursive: true });
+const brewFile = path.join(root, "brew.json");
+let brewVersion, brewVersionCode, brewApkUrl;
+if (fs.existsSync(brewFile)) {
+  const brew = readJson(brewFile);
+  brewVersion = brew.version;
+  brewVersionCode = brew.versionCode;
+  brewApkUrl = brew.apkUrl;
+}
+
 const output = {
   schemaVersion: 1,
   generatedAt: new Date().toISOString(),
+  ...(brewVersion != null && { brewVersion, brewVersionCode, brewApkUrl }),
   apps,
 };
 

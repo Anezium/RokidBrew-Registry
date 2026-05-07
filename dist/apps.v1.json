@@ -1,6 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-07T17:03:29.899Z",
+  "generatedAt": "2026-05-07T18:13:29.681Z",
+  "brewVersion": "0.1.1",
+  "brewVersionCode": 2,
+  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.1/RokidBrew-phone-v0.1.1-debug.apk",
   "apps": [
     {
       "id": "dcim-server",
