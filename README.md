@@ -66,7 +66,7 @@ It:
 3. downloads the first APK artifact, preferring glasses artifacts;
 4. reads the declared launcher icon with `aapt dump badging`;
 5. extracts a raster icon from the APK;
-6. opens a pull request with the new icons and rebuilt manifest.
+6. commits the new icons and rebuilt manifest back to `main`.
 
 Run it from GitHub Actions with `force=false` for normal use. Use `force=true` only when you want to regenerate existing icons.
 

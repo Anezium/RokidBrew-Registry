@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,17 +33,14 @@ jobs:
             node scripts/extract-missing-icons.mjs
           fi
       - run: node scripts/build-registry.mjs
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: bot/extract-icons
-          delete-branch: true
-          title: "Extract missing app icons"
-          commit-message: "Extract missing app icons"
-          body: |
-            Automated icon extraction from APK release artifacts.
-
-            Review the generated icons before merging.
-          add-paths: |
-            assets/icons/*.png
-            dist/apps.v1.json
+      - name: Commit generated icons
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/icons/*.png dist/apps.v1.json
+          if git diff --cached --quiet; then
+            echo "No icon changes to commit."
+          else
+            git commit -m "Extract missing app icons"
+            git push
+          fi
