@@ -1,0 +1,16 @@
+{
+  "id": "neuroglasses",
+  "name": "NeuroGlasses",
+  "category": "AI",
+  "type": "phone",
+  "version": "1.0.0-beta",
+  "summary": "Experimental Rokid AI chat bridge.",
+  "description": "Experimental phone-side AI bridge for Rokid workflows. Only one release APK is currently published, so RokidBrew treats it as phone-side until the project exposes split artifacts.",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "phone",
+      "url": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses/releases/download/v1.0.0-beta/app-release.apk"
+    }
+  ]
+}

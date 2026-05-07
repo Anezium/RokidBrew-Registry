@@ -1,0 +1,16 @@
+{
+  "id": "rokid-ssh-terminal",
+  "name": "Rokid SSH Terminal",
+  "category": "Developer",
+  "type": "glasses",
+  "version": "0.1.0-dev",
+  "summary": "Glasses-native SSH terminal.",
+  "description": "Developer SSH terminal and tmux control surface for Rokid glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/bzerk/rokid-ssh-terminal/releases/download/v0.1.0-dev-build/rokid-ssh-terminal-v0.1.0-dev-build.apk"
+    }
+  ]
+}

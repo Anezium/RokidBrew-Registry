@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-07T09:40:08.219Z",
+  "apps": [
+    {
+      "id": "dcim-server",
+      "name": "Dcim Server",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Local DCIM browser/server for glasses.",
+      "description": "EUNG SOFT utility for browsing or serving camera media from Rokid glasses.",
+      "screenshotAssets": [
+        "dcim-server.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dcim-server.jpg"
+      ]
+    },
+    {
+      "id": "dew-browser",
+      "name": "Dew Browser",
+      "category": "Browser",
+      "type": "combo",
+      "version": "1.0.0",
+      "summary": "Rokid-first browser with phone mouse mode.",
+      "description": "Web browser optimized for Rokid glasses. It supports page viewing on glasses and smartphone mouse/keyboard input.",
+      "screenshotAssets": [
+        "dew-browser.jpg",
+        "dew-browser-2.jpg"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser-2.jpg"
+      ]
+    },
+    {
+      "id": "dragonball-scouter",
+      "name": "DragonBall Scouter",
+      "category": "Experiment",
+      "type": "glasses",
+      "version": "0.1.1",
+      "summary": "Dragon Ball inspired scouter HUD.",
+      "description": "Face lock, pseudo-AR styling and battle-power reveal inspired by Dragon Ball. Built for Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/download/v0.1.1/DragonBallScouter-v0.1.1-debug.apk"
+        }
+      ],
+      "iconAsset": "dragonball-scouter.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dragonball-scouter.png",
+      "screenshotAssets": []
+    },
+    {
+      "id": "ek-arrow",
+      "name": "EK Arrow",
+      "category": "Games",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Mini archery game for Rokid glasses.",
+      "description": "One-button archery game designed for glasses play.",
+      "screenshotAssets": [
+        "ek-arrow.jpg",
+        "ek-arrow-2.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk"
+        }
+      ],
+      "iconAsset": "ek-arrow.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow-2.jpg"
+      ]
+    },
+    {
+      "id": "ek-find",
+      "name": "EK Find Price",
+      "category": "Shopping",
+      "type": "glasses",
+      "version": "1.1.0",
+      "summary": "Camera product price search.",
+      "description": "Takes a picture, recognizes product text and searches Naver Shopping for prices.",
+      "screenshotAssets": [
+        "ek-find.jpg",
+        "ek-find-2.jpg",
+        "ek-find-3.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKFindPrice_v1.1.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find-3.jpg"
+      ]
+    },
+    {
+      "id": "ek-live-cam",
+      "name": "EK Live Cam",
+      "category": "Camera",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Live streaming utility for the glasses camera.",
+      "description": "Camera streaming utility from EUNG SOFT for Rokid glasses.",
+      "screenshotAssets": [
+        "ek-live-cam.jpg",
+        "ek-live-cam-2.jpg",
+        "ek-live-cam-3.jpg",
+        "ek-live-cam-4.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKLiveCam_v1.0.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-4.jpg"
+      ]
+    },
+    {
+      "id": "ek-pilot",
+      "name": "EK Pilot",
+      "category": "Games",
+      "type": "glasses",
+      "version": "0.8.0",
+      "summary": "3D flight mission game with head-tilt controls.",
+      "description": "Arcade flight game built for Rokid glasses. Uses glasses-friendly controls and mission-style gameplay.",
+      "screenshotAssets": [
+        "ek-pilot.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKPilot_v0.8.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-pilot.jpg"
+      ]
+    },
+    {
+      "id": "ek-trans",
+      "name": "EK Trans",
+      "category": "Translation",
+      "type": "glasses",
+      "version": "2.0.0",
+      "summary": "Offline text translation app.",
+      "description": "Offline text translation for Rokid glasses using on-device language models after initial setup.",
+      "screenshotAssets": [
+        "ek-trans.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTrans_v2.0.0.apk"
+        }
+      ],
+      "iconAsset": "ek-trans.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-trans.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-trans.jpg"
+      ]
+    },
+    {
+      "id": "ek-word-up",
+      "name": "EK Word Up",
+      "category": "Learning",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Hands-free vocabulary trainer.",
+      "description": "Vocabulary learning app optimized for Rokid glasses with shared study material support.",
+      "screenshotAssets": [
+        "ek-word-up.jpg",
+        "ek-word-up-2.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWordUp_v1.0.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up-2.jpg"
+      ]
+    },
+    {
+      "id": "ek-home",
+      "name": "EKHome",
+      "category": "Launcher",
+      "type": "glasses",
+      "version": "1.2.0",
+      "summary": "Custom home launcher app for Rokid glasses.",
+      "description": "Alternative launcher/home experience for Rokid glasses.",
+      "screenshotAssets": [
+        "ek-home.jpg",
+        "ek-home-2.jpg",
+        "ek-home-3.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKHome_v1.2.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home-3.jpg"
+      ]
+    },
+    {
+      "id": "ek-reader",
+      "name": "EKReader",
+      "category": "Reader",
+      "type": "glasses",
+      "version": "1.4.0",
+      "summary": "E-book reader for Rokid glasses.",
+      "description": "Clean e-book reader built around hands-free and glasses-friendly reading.",
+      "screenshotAssets": [
+        "ek-reader.jpg",
+        "ek-reader-2.jpg",
+        "ek-reader-3.jpg",
+        "ek-reader-4.jpg",
+        "ek-reader-5.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.4.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-4.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-5.jpg"
+      ]
+    },
+    {
+      "id": "gazemou",
+      "name": "GazeMou",
+      "category": "Launcher",
+      "type": "glasses",
+      "version": "1.6.0",
+      "summary": "Head-gesture cursor and app drawer utility.",
+      "description": "RokidAppMaker / GazeMou provides gaze cursor controls, favorites, wake mode and app drawer tools for Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/KUPdriveouter/RokidAppMaker/releases/download/v1.6.0/GazeMou-v1.6.0.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "hubu",
+      "name": "hubu",
+      "category": "Fitness",
+      "type": "glasses",
+      "version": "0.1.8",
+      "summary": "Fitness HUD for BLE workout metrics.",
+      "description": "Connects to BLE devices such as Garmin watches and displays pace, heart rate and cadence on Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "lc-hot100",
+      "name": "LC Hot100",
+      "category": "Learning",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Offline LeetCode Hot100 study assistant.",
+      "description": "Voice-first learning app for studying LeetCode Hot100 on Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-lc-hot100/LC-Hot100.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "m365-rokid-hud",
+      "name": "M365 Rokid HUD",
+      "category": "Mobility",
+      "type": "combo",
+      "version": "1.1",
+      "summary": "BLE scooter telemetry HUD for Rokid glasses.",
+      "description": "Displays Xiaomi M365 scooter telemetry on Rokid glasses. The phone app handles BLE connectivity and the glasses app renders the HUD.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/glass-hud-release.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/app-release.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "matrix-vision",
+      "name": "Matrix Vision",
+      "category": "Camera",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Matrix-style camera effect app.",
+      "description": "Transforms the live camera feed into a Matrix-inspired visual filter and can record the effect.",
+      "screenshotAssets": [
+        "matrix-vision.jpg",
+        "matrix-vision-2.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/MatrixVision-v1.0.apk"
+        }
+      ],
+      "iconAsset": "matrix-vision.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/matrix-vision.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/matrix-vision.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/matrix-vision-2.jpg"
+      ]
+    },
+    {
+      "id": "neuroglasses",
+      "name": "NeuroGlasses",
+      "category": "AI",
+      "type": "phone",
+      "version": "1.0.0-beta",
+      "summary": "Experimental Rokid AI chat bridge.",
+      "description": "Experimental phone-side AI bridge for Rokid workflows. Only one release APK is currently published, so RokidBrew treats it as phone-side until the project exposes split artifacts.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses/releases/download/v1.0.0-beta/app-release.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "photo-del",
+      "name": "PhotoDel",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.2",
+      "summary": "View and delete photos or videos on Rokid glasses.",
+      "description": "Simple utility to browse and delete photos or videos directly on Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/osagem/photoDel4rokidglasses/releases/download/v1.0.2/PhotoDel.v1.0.2.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-ai-assistant",
+      "name": "Rokid AI Assistant",
+      "category": "AI",
+      "type": "combo",
+      "version": "0.12.0",
+      "summary": "Open-source AI assistant with separate phone and glasses apps.",
+      "description": "Voice-controlled assistant for Rokid glasses. The phone app handles AI queries and connectivity while the glasses app provides the wearable interface.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/glasses-app-release.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/phone-app-release.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-connect-hud",
+      "name": "Rokid Connect HUD",
+      "category": "Navigation",
+      "type": "combo",
+      "version": "1.2.0",
+      "summary": "Phone navigation mirrored as a HUD on Rokid glasses.",
+      "description": "EUNG SOFT navigation HUD. Install the phone companion and the glasses HUD app to mirror supported Korean navigation apps.",
+      "screenshotAssets": [
+        "rokid-connect-hud.jpg",
+        "rokid-connect-hud-2.jpg"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidGlassesHUD_F_v1.1.0.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidConnect_F_v1.2.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud-2.jpg"
+      ]
+    },
+    {
+      "id": "rokid-gmaps",
+      "name": "Rokid GMaps",
+      "category": "Navigation",
+      "type": "combo",
+      "version": "1.0.0",
+      "summary": "Turn-by-turn navigation for Rokid AR glasses.",
+      "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/glasses-debug.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/phone-debug.apk"
+        }
+      ],
+      "iconAsset": "rokid-gmaps.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png",
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-lyrics",
+      "name": "Rokid Lyrics",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.3.0",
+      "summary": "Synced song lyrics from phone to Rokid glasses.",
+      "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk"
+        }
+      ],
+      "iconAsset": "rokid-lyrics.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
+      "screenshotAssets": []
+    },
+    {
+      "id": "music-score",
+      "name": "Rokid Music Score",
+      "category": "Music",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Piano score viewer for Rokid glasses.",
+      "description": "Music score viewer packaged as an APK for Rokid RG-glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-music-score/rokid-music-score.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-shell",
+      "name": "Rokid Shell",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "0.1.0",
+      "summary": "File explorer and APK installer for Rokid glasses.",
+      "description": "Native file explorer with APK install flow and local HTTP transfer server for Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk"
+        }
+      ],
+      "iconAsset": "rokid-shell.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-smart-life",
+      "name": "Rokid SmartLife",
+      "category": "Navigation",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Local life and POI navigation app.",
+      "description": "Local life, POI and navigation assistant designed for D-pad use on Rokid AI glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/RokidSmartLife/releases/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB_v1.0.0_rokid.apk"
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-ssh-terminal",
+      "name": "Rokid SSH Terminal",
+      "category": "Developer",
+      "type": "glasses",
+      "version": "0.1.0-dev",
+      "summary": "Glasses-native SSH terminal.",
+      "description": "Developer SSH terminal and tmux control surface for Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/bzerk/rokid-ssh-terminal/releases/download/v0.1.0-dev-build/rokid-ssh-terminal-v0.1.0-dev-build.apk"
+        }
+      ],
+      "iconAsset": "rokid-ssh-terminal.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
+      "screenshotAssets": []
+    },
+    {
+      "id": "texthome",
+      "name": "TextHome",
+      "category": "Launcher",
+      "type": "glasses",
+      "version": "1.1.1",
+      "summary": "Text-first home launcher for Rokid glasses.",
+      "description": "Minimal launcher with wallpaper, clock, weather, battery and text widgets.",
+      "screenshotAssets": [
+        "texthome.jpg",
+        "texthome-2.jpg",
+        "texthome-3.jpg",
+        "texthome-4.jpg",
+        "texthome-5.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TextHome_v1.1.1.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-4.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-5.jpg"
+      ]
+    },
+    {
+      "id": "your-voice",
+      "name": "Your Voice",
+      "category": "Accessibility",
+      "type": "combo",
+      "version": "1.0.0",
+      "summary": "Real-time speech-to-text subtitles for smart glasses.",
+      "description": "Uses a phone as microphone and sends recognized speech as subtitles to Rokid glasses or another receiver.",
+      "screenshotAssets": [
+        "your-voice.jpg",
+        "your-voice-2.jpg",
+        "your-voice-3.jpg",
+        "your-voice-4.jpg"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-4.jpg"
+      ]
+    }
+  ]
+}

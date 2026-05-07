@@ -1,0 +1,16 @@
+{
+  "id": "gazemou",
+  "name": "GazeMou",
+  "category": "Launcher",
+  "type": "glasses",
+  "version": "1.6.0",
+  "summary": "Head-gesture cursor and app drawer utility.",
+  "description": "RokidAppMaker / GazeMou provides gaze cursor controls, favorites, wake mode and app drawer tools for Rokid glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/KUPdriveouter/RokidAppMaker/releases/download/v1.6.0/GazeMou-v1.6.0.apk"
+    }
+  ]
+}

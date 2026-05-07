@@ -1,0 +1,20 @@
+{
+  "id": "ek-arrow",
+  "name": "EK Arrow",
+  "category": "Games",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Mini archery game for Rokid glasses.",
+  "description": "One-button archery game designed for glasses play.",
+  "screenshotAssets": [
+    "ek-arrow.jpg",
+    "ek-arrow-2.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk"
+    }
+  ]
+}

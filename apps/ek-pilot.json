@@ -1,0 +1,19 @@
+{
+  "id": "ek-pilot",
+  "name": "EK Pilot",
+  "category": "Games",
+  "type": "glasses",
+  "version": "0.8.0",
+  "summary": "3D flight mission game with head-tilt controls.",
+  "description": "Arcade flight game built for Rokid glasses. Uses glasses-friendly controls and mission-style gameplay.",
+  "screenshotAssets": [
+    "ek-pilot.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKPilot_v0.8.0.apk"
+    }
+  ]
+}

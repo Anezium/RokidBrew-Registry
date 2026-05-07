@@ -1,0 +1,24 @@
+{
+  "id": "rokid-connect-hud",
+  "name": "Rokid Connect HUD",
+  "category": "Navigation",
+  "type": "combo",
+  "version": "1.2.0",
+  "summary": "Phone navigation mirrored as a HUD on Rokid glasses.",
+  "description": "EUNG SOFT navigation HUD. Install the phone companion and the glasses HUD app to mirror supported Korean navigation apps.",
+  "screenshotAssets": [
+    "rokid-connect-hud.jpg",
+    "rokid-connect-hud-2.jpg"
+  ],
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidGlassesHUD_F_v1.1.0.apk"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidConnect_F_v1.2.apk"
+    }
+  ]
+}

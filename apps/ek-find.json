@@ -1,0 +1,21 @@
+{
+  "id": "ek-find",
+  "name": "EK Find Price",
+  "category": "Shopping",
+  "type": "glasses",
+  "version": "1.1.0",
+  "summary": "Camera product price search.",
+  "description": "Takes a picture, recognizes product text and searches Naver Shopping for prices.",
+  "screenshotAssets": [
+    "ek-find.jpg",
+    "ek-find-2.jpg",
+    "ek-find-3.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKFindPrice_v1.1.0.apk"
+    }
+  ]
+}

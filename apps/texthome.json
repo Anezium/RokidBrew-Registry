@@ -1,0 +1,23 @@
+{
+  "id": "texthome",
+  "name": "TextHome",
+  "category": "Launcher",
+  "type": "glasses",
+  "version": "1.1.1",
+  "summary": "Text-first home launcher for Rokid glasses.",
+  "description": "Minimal launcher with wallpaper, clock, weather, battery and text widgets.",
+  "screenshotAssets": [
+    "texthome.jpg",
+    "texthome-2.jpg",
+    "texthome-3.jpg",
+    "texthome-4.jpg",
+    "texthome-5.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TextHome_v1.1.1.apk"
+    }
+  ]
+}

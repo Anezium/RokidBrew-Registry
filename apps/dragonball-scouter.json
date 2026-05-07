@@ -1,0 +1,16 @@
+{
+  "id": "dragonball-scouter",
+  "name": "DragonBall Scouter",
+  "category": "Experiment",
+  "type": "glasses",
+  "version": "0.1.1",
+  "summary": "Dragon Ball inspired scouter HUD.",
+  "description": "Face lock, pseudo-AR styling and battle-power reveal inspired by Dragon Ball. Built for Rokid glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/download/v0.1.1/DragonBallScouter-v0.1.1-debug.apk"
+    }
+  ]
+}

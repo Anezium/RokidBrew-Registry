@@ -1,0 +1,20 @@
+{
+  "id": "m365-rokid-hud",
+  "name": "M365 Rokid HUD",
+  "category": "Mobility",
+  "type": "combo",
+  "version": "1.1",
+  "summary": "BLE scooter telemetry HUD for Rokid glasses.",
+  "description": "Displays Xiaomi M365 scooter telemetry on Rokid glasses. The phone app handles BLE connectivity and the glasses app renders the HUD.",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/glass-hud-release.apk"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/app-release.apk"
+    }
+  ]
+}

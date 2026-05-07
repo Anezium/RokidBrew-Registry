@@ -1,0 +1,23 @@
+{
+  "id": "ek-reader",
+  "name": "EKReader",
+  "category": "Reader",
+  "type": "glasses",
+  "version": "1.4.0",
+  "summary": "E-book reader for Rokid glasses.",
+  "description": "Clean e-book reader built around hands-free and glasses-friendly reading.",
+  "screenshotAssets": [
+    "ek-reader.jpg",
+    "ek-reader-2.jpg",
+    "ek-reader-3.jpg",
+    "ek-reader-4.jpg",
+    "ek-reader-5.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.4.0.apk"
+    }
+  ]
+}

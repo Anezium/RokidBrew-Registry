@@ -1,0 +1,16 @@
+{
+  "id": "hubu",
+  "name": "hubu",
+  "category": "Fitness",
+  "type": "glasses",
+  "version": "0.1.8",
+  "summary": "Fitness HUD for BLE workout metrics.",
+  "description": "Connects to BLE devices such as Garmin watches and displays pace, heart rate and cadence on Rokid glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk"
+    }
+  ]
+}

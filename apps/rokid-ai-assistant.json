@@ -1,0 +1,20 @@
+{
+  "id": "rokid-ai-assistant",
+  "name": "Rokid AI Assistant",
+  "category": "AI",
+  "type": "combo",
+  "version": "0.12.0",
+  "summary": "Open-source AI assistant with separate phone and glasses apps.",
+  "description": "Voice-controlled assistant for Rokid glasses. The phone app handles AI queries and connectivity while the glasses app provides the wearable interface.",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/glasses-app-release.apk"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/phone-app-release.apk"
+    }
+  ]
+}

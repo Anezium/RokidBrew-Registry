@@ -1,0 +1,16 @@
+{
+  "id": "music-score",
+  "name": "Rokid Music Score",
+  "category": "Music",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Piano score viewer for Rokid glasses.",
+  "description": "Music score viewer packaged as an APK for Rokid RG-glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-music-score/rokid-music-score.apk"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "dcim-server",
+  "name": "Dcim Server",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Local DCIM browser/server for glasses.",
+  "description": "EUNG SOFT utility for browsing or serving camera media from Rokid glasses.",
+  "screenshotAssets": [
+    "dcim-server.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk"
+    }
+  ]
+}

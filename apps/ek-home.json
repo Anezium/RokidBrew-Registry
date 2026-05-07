@@ -1,0 +1,21 @@
+{
+  "id": "ek-home",
+  "name": "EKHome",
+  "category": "Launcher",
+  "type": "glasses",
+  "version": "1.2.0",
+  "summary": "Custom home launcher app for Rokid glasses.",
+  "description": "Alternative launcher/home experience for Rokid glasses.",
+  "screenshotAssets": [
+    "ek-home.jpg",
+    "ek-home-2.jpg",
+    "ek-home-3.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKHome_v1.2.0.apk"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+name: Extract missing icons
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Overwrite existing icons"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager "build-tools;35.0.0"
+      - run: sudo apt-get update && sudo apt-get install -y unzip imagemagick
+      - name: Extract APK icons
+        run: |
+          if [ "${{ inputs.force }}" = "true" ]; then
+            node scripts/extract-missing-icons.mjs --force
+          else
+            node scripts/extract-missing-icons.mjs
+          fi
+      - run: node scripts/build-registry.mjs
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/extract-icons
+          delete-branch: true
+          title: "Extract missing app icons"
+          commit-message: "Extract missing app icons"
+          body: |
+            Automated icon extraction from APK release artifacts.
+
+            Review the generated icons before merging.
+          add-paths: |
+            assets/icons/*.png
+            dist/apps.v1.json

@@ -1,0 +1,16 @@
+{
+  "id": "rokid-shell",
+  "name": "Rokid Shell",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "0.1.0",
+  "summary": "File explorer and APK installer for Rokid glasses.",
+  "description": "Native file explorer with APK install flow and local HTTP transfer server for Rokid glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk"
+    }
+  ]
+}

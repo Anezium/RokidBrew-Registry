@@ -1,0 +1,16 @@
+{
+  "id": "rokid-smart-life",
+  "name": "Rokid SmartLife",
+  "category": "Navigation",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Local life and POI navigation app.",
+  "description": "Local life, POI and navigation assistant designed for D-pad use on Rokid AI glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/RokidSmartLife/releases/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB_v1.0.0_rokid.apk"
+    }
+  ]
+}

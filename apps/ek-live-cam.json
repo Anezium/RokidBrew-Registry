@@ -1,0 +1,22 @@
+{
+  "id": "ek-live-cam",
+  "name": "EK Live Cam",
+  "category": "Camera",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Live streaming utility for the glasses camera.",
+  "description": "Camera streaming utility from EUNG SOFT for Rokid glasses.",
+  "screenshotAssets": [
+    "ek-live-cam.jpg",
+    "ek-live-cam-2.jpg",
+    "ek-live-cam-3.jpg",
+    "ek-live-cam-4.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKLiveCam_v1.0.0.apk"
+    }
+  ]
+}

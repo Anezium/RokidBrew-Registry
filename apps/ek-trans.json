@@ -1,0 +1,19 @@
+{
+  "id": "ek-trans",
+  "name": "EK Trans",
+  "category": "Translation",
+  "type": "glasses",
+  "version": "2.0.0",
+  "summary": "Offline text translation app.",
+  "description": "Offline text translation for Rokid glasses using on-device language models after initial setup.",
+  "screenshotAssets": [
+    "ek-trans.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTrans_v2.0.0.apk"
+    }
+  ]
+}

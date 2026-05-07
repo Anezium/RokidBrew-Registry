@@ -1,0 +1,20 @@
+{
+  "id": "rokid-lyrics",
+  "name": "Rokid Lyrics",
+  "category": "Media",
+  "type": "combo",
+  "version": "0.3.0",
+  "summary": "Synced song lyrics from phone to Rokid glasses.",
+  "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "photo-del",
+  "name": "PhotoDel",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "1.0.2",
+  "summary": "View and delete photos or videos on Rokid glasses.",
+  "description": "Simple utility to browse and delete photos or videos directly on Rokid glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/osagem/photoDel4rokidglasses/releases/download/v1.0.2/PhotoDel.v1.0.2.apk"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ek-word-up",
+  "name": "EK Word Up",
+  "category": "Learning",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Hands-free vocabulary trainer.",
+  "description": "Vocabulary learning app optimized for Rokid glasses with shared study material support.",
+  "screenshotAssets": [
+    "ek-word-up.jpg",
+    "ek-word-up-2.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWordUp_v1.0.0.apk"
+    }
+  ]
+}

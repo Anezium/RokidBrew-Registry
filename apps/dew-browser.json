@@ -1,0 +1,24 @@
+{
+  "id": "dew-browser",
+  "name": "Dew Browser",
+  "category": "Browser",
+  "type": "combo",
+  "version": "1.0.0",
+  "summary": "Rokid-first browser with phone mouse mode.",
+  "description": "Web browser optimized for Rokid glasses. It supports page viewing on glasses and smartphone mouse/keyboard input.",
+  "screenshotAssets": [
+    "dew-browser.jpg",
+    "dew-browser-2.jpg"
+  ],
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk"
+    }
+  ]
+}

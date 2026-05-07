@@ -1,0 +1,26 @@
+{
+  "id": "your-voice",
+  "name": "Your Voice",
+  "category": "Accessibility",
+  "type": "combo",
+  "version": "1.0.0",
+  "summary": "Real-time speech-to-text subtitles for smart glasses.",
+  "description": "Uses a phone as microphone and sends recognized speech as subtitles to Rokid glasses or another receiver.",
+  "screenshotAssets": [
+    "your-voice.jpg",
+    "your-voice-2.jpg",
+    "your-voice-3.jpg",
+    "your-voice-4.jpg"
+  ],
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+    }
+  ]
+}

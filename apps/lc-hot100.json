@@ -1,0 +1,16 @@
+{
+  "id": "lc-hot100",
+  "name": "LC Hot100",
+  "category": "Learning",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Offline LeetCode Hot100 study assistant.",
+  "description": "Voice-first learning app for studying LeetCode Hot100 on Rokid glasses.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-lc-hot100/LC-Hot100.apk"
+    }
+  ]
+}

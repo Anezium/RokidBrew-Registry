@@ -1,0 +1,20 @@
+{
+  "id": "matrix-vision",
+  "name": "Matrix Vision",
+  "category": "Camera",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Matrix-style camera effect app.",
+  "description": "Transforms the live camera feed into a Matrix-inspired visual filter and can record the effect.",
+  "screenshotAssets": [
+    "matrix-vision.jpg",
+    "matrix-vision-2.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/MatrixVision-v1.0.apk"
+    }
+  ]
+}
