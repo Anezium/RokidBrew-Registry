@@ -17,5 +17,11 @@
       "versionCode": 2,
       "versionName": "0.1.1"
     }
+  ],
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-DragonBallScouter",
+  "screenshotAssets": [
+    "dragonball-scouter-hud.png",
+    "dragonball-scouter-livecam.png"
   ]
 }

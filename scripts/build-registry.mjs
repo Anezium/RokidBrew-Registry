@@ -10,7 +10,7 @@ const screenshotDir = path.join(root, "assets", "screenshots");
 const publicBaseUrl = (process.env.ROKIDBREW_PUBLIC_BASE_URL ||
   "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main").replace(/\/$/, "");
 
-const required = ["id", "name", "category", "type", "version", "summary", "artifacts"];
+const required = ["id", "name", "category", "type", "version", "summary", "author", "sourceUrl", "artifacts"];
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -24,6 +24,9 @@ function assertApp(app, file) {
   }
   if (!["combo", "phone", "glasses"].includes(app.type)) {
     throw new Error(`${app.id}: type must be combo, phone, or glasses`);
+  }
+  if (!/^https?:\/\//.test(app.sourceUrl)) {
+    throw new Error(`${app.id}: sourceUrl must be http(s)`);
   }
   if (!Array.isArray(app.artifacts) || app.artifacts.length === 0) {
     throw new Error(`${app.id}: artifacts must be a non-empty array`);

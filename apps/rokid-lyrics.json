@@ -26,5 +26,11 @@
       "versionCode": 7,
       "versionName": "0.3.0"
     }
+  ],
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
+  "screenshotAssets": [
+    "rokid-lyrics-phone.jpg",
+    "rokid-lyrics-glasses.jpg"
   ]
 }

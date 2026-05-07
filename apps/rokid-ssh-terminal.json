@@ -17,5 +17,7 @@
       "versionCode": 1,
       "versionName": "1.0.0"
     }
-  ]
+  ],
+  "author": "bzerk",
+  "sourceUrl": "https://github.com/bzerk/rokid-ssh-terminal"
 }

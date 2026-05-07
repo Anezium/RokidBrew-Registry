@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-07T10:38:05.577Z",
+  "generatedAt": "2026-05-07T16:34:57.022Z",
   "apps": [
     {
       "id": "dcim-server",
@@ -25,6 +25,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "dcim-server.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dcim-server.png",
       "screenshotUrls": [
@@ -64,6 +66,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "dew-browser.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dew-browser.png",
       "screenshotUrls": [
@@ -91,9 +95,18 @@
           "versionName": "0.1.1"
         }
       ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-DragonBallScouter",
+      "screenshotAssets": [
+        "dragonball-scouter-hud.png",
+        "dragonball-scouter-livecam.png"
+      ],
       "iconAsset": "dragonball-scouter.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dragonball-scouter.png",
-      "screenshotAssets": []
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-hud.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-livecam.png"
+      ]
     },
     {
       "id": "ek-arrow",
@@ -119,6 +132,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-arrow.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
       "screenshotUrls": [
@@ -151,6 +166,8 @@
           "versionName": "1.0.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-find.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-find.png",
       "screenshotUrls": [
@@ -185,6 +202,8 @@
           "versionName": "1.0.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-live-cam.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-live-cam.png",
       "screenshotUrls": [
@@ -217,6 +236,8 @@
           "versionName": "1.0.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-pilot.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-pilot.png",
       "screenshotUrls": [
@@ -246,6 +267,8 @@
           "versionName": "1.0.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-trans.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-trans.png",
       "screenshotUrls": [
@@ -276,6 +299,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-word-up.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-word-up.png",
       "screenshotUrls": [
@@ -308,6 +333,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-home.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-home.png",
       "screenshotUrls": [
@@ -343,6 +370,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-reader.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-reader.png",
       "screenshotUrls": [
@@ -373,6 +402,8 @@
           "versionName": "1.6.0"
         }
       ],
+      "author": "KUPdriveouter",
+      "sourceUrl": "https://github.com/KUPdriveouter/RokidAppMaker",
       "iconAsset": "gazemou.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gazemou.png",
       "screenshotAssets": []
@@ -397,6 +428,8 @@
           "versionName": "0.1.8"
         }
       ],
+      "author": "hanabix",
+      "sourceUrl": "https://github.com/hanabix/hubu",
       "iconAsset": "hubu.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/hubu.png",
       "screenshotAssets": []
@@ -421,6 +454,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "bcefghj",
+      "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/rokid-lc-hot100",
       "screenshotAssets": []
     },
     {
@@ -452,6 +487,8 @@
           "versionName": "1.1"
         }
       ],
+      "author": "zero2005x",
+      "sourceUrl": "https://github.com/zero2005x/M365-Rokid-HUD",
       "iconAsset": "m365-rokid-hud.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/m365-rokid-hud.png",
       "screenshotAssets": []
@@ -480,6 +517,8 @@
           "versionName": "1.0.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "matrix-vision.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/matrix-vision.png",
       "screenshotUrls": [
@@ -507,6 +546,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "ECHO-HELLO-WORLD424",
+      "sourceUrl": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses",
       "screenshotAssets": []
     },
     {
@@ -529,6 +570,8 @@
           "versionName": "1.0.2"
         }
       ],
+      "author": "osagem",
+      "sourceUrl": "https://github.com/osagem/photoDel4rokidglasses",
       "iconAsset": "photo-del.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/photo-del.png",
       "screenshotAssets": []
@@ -562,6 +605,8 @@
           "versionName": "0.12.0"
         }
       ],
+      "author": "zero2005x",
+      "sourceUrl": "https://github.com/zero2005x/RokidAIAssistant",
       "iconAsset": "rokid-ai-assistant.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ai-assistant.png",
       "screenshotAssets": []
@@ -599,6 +644,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "rokid-connect-hud.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-connect-hud.png",
       "screenshotUrls": [
@@ -635,9 +682,11 @@
           "versionName": "1.0"
         }
       ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
+      "screenshotAssets": [],
       "iconAsset": "rokid-gmaps.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png",
-      "screenshotAssets": []
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
     },
     {
       "id": "rokid-lyrics",
@@ -668,9 +717,18 @@
           "versionName": "0.3.0"
         }
       ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
+      "screenshotAssets": [
+        "rokid-lyrics-phone.jpg",
+        "rokid-lyrics-glasses.jpg"
+      ],
       "iconAsset": "rokid-lyrics.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
-      "screenshotAssets": []
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
+      ]
     },
     {
       "id": "music-score",
@@ -692,6 +750,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "bcefghj",
+      "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/rokid-music-score",
       "screenshotAssets": []
     },
     {
@@ -714,9 +774,20 @@
           "versionName": "0.1.0"
         }
       ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Shell",
+      "screenshotAssets": [
+        "rokid-shell-menu.jpg",
+        "rokid-shell-server.jpg",
+        "rokid-shell-web.jpg"
+      ],
       "iconAsset": "rokid-shell.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
-      "screenshotAssets": []
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-server.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-web.jpg"
+      ]
     },
     {
       "id": "rokid-smart-life",
@@ -738,6 +809,8 @@
           "versionName": "1.0.0"
         }
       ],
+      "author": "bcefghj",
+      "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/RokidSmartLife",
       "iconAsset": "rokid-smart-life.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-smart-life.png",
       "screenshotAssets": []
@@ -762,6 +835,8 @@
           "versionName": "1.0.0"
         }
       ],
+      "author": "bzerk",
+      "sourceUrl": "https://github.com/bzerk/rokid-ssh-terminal",
       "iconAsset": "rokid-ssh-terminal.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
       "screenshotAssets": []
@@ -793,6 +868,8 @@
           "versionName": "1.0-new"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "texthome.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/texthome.png",
       "screenshotUrls": [
@@ -838,6 +915,8 @@
           "versionName": "1.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "your-voice.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/your-voice.png",
       "screenshotUrls": [

@@ -26,6 +26,8 @@ The generated manifest is written to `dist/apps.v1.json`.
   "version": "1.0.0",
   "summary": "Short one-line summary.",
   "description": "Longer detail shown in RokidBrew.",
+  "author": "Example Author",
+  "sourceUrl": "https://github.com/owner/repo",
   "screenshotAssets": ["example-app-1.jpg"],
   "phoneRequired": false,
   "artifacts": [

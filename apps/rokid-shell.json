@@ -17,5 +17,12 @@
       "versionCode": 1,
       "versionName": "0.1.0"
     }
+  ],
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Shell",
+  "screenshotAssets": [
+    "rokid-shell-menu.jpg",
+    "rokid-shell-server.jpg",
+    "rokid-shell-web.jpg"
   ]
 }
