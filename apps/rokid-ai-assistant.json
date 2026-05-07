@@ -10,11 +10,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/glasses-app-release.apk"
+      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/glasses-app-release.apk",
+      "sha256": "f0be0b42d410ea0b5a2109551f6a157309c19966e60015e733ee351ae2702d0b",
+      "sizeBytes": 4579061,
+      "packageName": "com.example.rokidglasses",
+      "versionCode": 4,
+      "versionName": "0.12.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/phone-app-release.apk"
+      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/phone-app-release.apk",
+      "sha256": "e116999943613692eece919515fb4139aaf100ed1e972488c0b6d51a13cf6f61",
+      "sizeBytes": 10082310,
+      "packageName": "com.example.rokidphone",
+      "versionCode": 4,
+      "versionName": "0.12.0"
     }
   ]
 }

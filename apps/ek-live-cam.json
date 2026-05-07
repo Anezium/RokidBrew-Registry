@@ -16,7 +16,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKLiveCam_v1.0.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKLiveCam_v1.0.0.apk",
+      "sha256": "eb79de7276098ea0cb9623c65982f2a5729c53de2cee89e7a214a5eb13f9e026",
+      "sizeBytes": 5447230,
+      "packageName": "kr.pe.eung.livecam",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }

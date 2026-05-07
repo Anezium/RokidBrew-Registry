@@ -72,3 +72,15 @@ It:
 Run it from GitHub Actions with `force=false` for normal use. Use `force=true` only when you want to regenerate existing icons.
 
 Adaptive/vector XML icons are rendered to PNG when their foreground/background resources can be resolved.
+
+## Update checksums and package metadata
+
+The manual GitHub Action **Update artifact metadata** downloads APK artifacts, then writes:
+
+- `sha256`
+- `sizeBytes`
+- `packageName`
+- `versionCode`
+- `versionName`
+
+Use `force=false` for normal updates. Use `force=true` when a release URL changed and existing metadata should be recomputed.

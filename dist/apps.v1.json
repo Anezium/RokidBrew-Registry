@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-07T10:22:39.206Z",
+  "generatedAt": "2026-05-07T10:38:05.577Z",
   "apps": [
     {
       "id": "dcim-server",
@@ -17,7 +17,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk",
+          "sha256": "7cc1177585659754970115a53cefa02516073240a0deb8eb4cb99e294097f4ef",
+          "sizeBytes": 8282058,
+          "packageName": "kr.pe.eung.dcimserver",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "dcim-server.png",
@@ -42,11 +47,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk",
+          "sha256": "fc8bcc697748d3df373e130ea2b35151f05fea2858beea652d18eec3bf1b5389",
+          "sizeBytes": 88252706,
+          "packageName": "kr.pe.eung.ekweb",
+          "versionCode": 1,
+          "versionName": "1.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk",
+          "sha256": "fc8bcc697748d3df373e130ea2b35151f05fea2858beea652d18eec3bf1b5389",
+          "sizeBytes": 88252706,
+          "packageName": "kr.pe.eung.ekweb",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "dew-browser.png",
@@ -68,7 +83,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/download/v0.1.1/DragonBallScouter-v0.1.1-debug.apk"
+          "url": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/download/v0.1.1/DragonBallScouter-v0.1.1-debug.apk",
+          "sha256": "a71a72b05e993fedf3709e5f17708f4d728808fe3c742f5a74cd68cd5b5fe926",
+          "sizeBytes": 55110006,
+          "packageName": "io.github.anezium.rokiddragonballscouter",
+          "versionCode": 2,
+          "versionName": "0.1.1"
         }
       ],
       "iconAsset": "dragonball-scouter.png",
@@ -91,7 +111,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk",
+          "sha256": "38ce175014d78f62d2b5ab5391a1d58324cc76645ec439d847c3128453a43b31",
+          "sizeBytes": 9788699,
+          "packageName": "kr.pe.eung.ekarrow",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "ek-arrow.png",
@@ -118,7 +143,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKFindPrice_v1.1.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKFindPrice_v1.1.0.apk",
+          "sha256": "12dd983147eeb3ee43b92ab818cf3201347b529e22ca2516d07c718631ad0f90",
+          "sizeBytes": 47196290,
+          "packageName": "kr.pe.eung.ekfind",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "iconAsset": "ek-find.png",
@@ -147,7 +177,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKLiveCam_v1.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKLiveCam_v1.0.0.apk",
+          "sha256": "eb79de7276098ea0cb9623c65982f2a5729c53de2cee89e7a214a5eb13f9e026",
+          "sizeBytes": 5447230,
+          "packageName": "kr.pe.eung.livecam",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "iconAsset": "ek-live-cam.png",
@@ -174,7 +209,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKPilot_v0.8.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKPilot_v0.8.0.apk",
+          "sha256": "e6f74f3c77937718eddb2f501bf4e305ee125518e6c11c105f79a619d984c27f",
+          "sizeBytes": 2549612,
+          "packageName": "kr.pe.eung.ekpilot",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "iconAsset": "ek-pilot.png",
@@ -198,7 +238,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTrans_v2.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTrans_v2.0.0.apk",
+          "sha256": "d6645e83fc7c6c467287fb0d7a11230ce19f5f15974302c4c0fa252493d38a6a",
+          "sizeBytes": 108665174,
+          "packageName": "kr.pe.eung.ektranslator",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "iconAsset": "ek-trans.png",
@@ -223,7 +268,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWordUp_v1.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWordUp_v1.0.0.apk",
+          "sha256": "590d71cf166bac832c4ff7798c8edac300d6c2d5a2132f25301af5bb8403f08a",
+          "sizeBytes": 4798203,
+          "packageName": "kr.pe.eung.ekwordup",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "ek-word-up.png",
@@ -250,7 +300,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKHome_v1.2.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKHome_v1.2.0.apk",
+          "sha256": "cacdcc6dd0bf9ebeca877724ad661ac39d5ea9254ad1bf7cec455be1a4b7aa55",
+          "sizeBytes": 5252993,
+          "packageName": "kr.pe.eung.homelauncher",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "ek-home.png",
@@ -280,7 +335,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.4.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.4.0.apk",
+          "sha256": "643e1653a1a9a3419561d603337b3c96c7afcb3cfc2f64b4c71cd1b06486ce88",
+          "sizeBytes": 4753960,
+          "packageName": "kr.pe.eung.ekreader",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "ek-reader.png",
@@ -305,7 +365,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/KUPdriveouter/RokidAppMaker/releases/download/v1.6.0/GazeMou-v1.6.0.apk"
+          "url": "https://github.com/KUPdriveouter/RokidAppMaker/releases/download/v1.6.0/GazeMou-v1.6.0.apk",
+          "sha256": "b6cfc6cd2f7bc14d1472d6a394a364a54239695ff90d301f092cdd5a8695b270",
+          "sizeBytes": 7219786,
+          "packageName": "com.kupstudio.touchmouse",
+          "versionCode": 7,
+          "versionName": "1.6.0"
         }
       ],
       "iconAsset": "gazemou.png",
@@ -324,7 +389,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk"
+          "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk",
+          "sha256": "2b307d9aac357040b2d1302666cd9012ce856aec5404f7e6b1271d04bb12f70f",
+          "sizeBytes": 3028606,
+          "packageName": "hanabix.hubu",
+          "versionCode": 9,
+          "versionName": "0.1.8"
         }
       ],
       "iconAsset": "hubu.png",
@@ -343,7 +413,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-lc-hot100/LC-Hot100.apk"
+          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-lc-hot100/LC-Hot100.apk",
+          "sha256": "8dcad2f1b05c04977fbe92332e616f1958dc1da5b5840a8534d1ea52665c73a8",
+          "sizeBytes": 37349,
+          "packageName": "com.rokid.lchot100",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "screenshotAssets": []
@@ -360,11 +435,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/glass-hud-release.apk"
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/glass-hud-release.apk",
+          "sha256": "e55c75d68d53acd7aa3fb1a08663fbcb5622f0d5918cd7383f502c2baa1e04dc",
+          "sizeBytes": 7607683,
+          "packageName": "com.m365hud.glass",
+          "versionCode": 2,
+          "versionName": "1.1"
         },
         {
           "target": "phone",
-          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/app-release.apk"
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/app-release.apk",
+          "sha256": "4b908fb9544fb495f05437077c0e398668ff057b5cd831f00f08d58152f70646",
+          "sizeBytes": 23207889,
+          "packageName": "com.m365bleapp",
+          "versionCode": 2,
+          "versionName": "1.1"
         }
       ],
       "iconAsset": "m365-rokid-hud.png",
@@ -387,7 +472,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/MatrixVision-v1.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/MatrixVision-v1.0.apk",
+          "sha256": "92f77586c4c0c72f3e310c55a088d953c3b7645f1b8d12e95cf5ca1039bc4a21",
+          "sizeBytes": 31222292,
+          "packageName": "com.matrix.vision",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "iconAsset": "matrix-vision.png",
@@ -409,7 +499,12 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses/releases/download/v1.0.0-beta/app-release.apk"
+          "url": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses/releases/download/v1.0.0-beta/app-release.apk",
+          "sha256": "7df801b06ade58c3075d2f03e7f6b209ac78dc9f81f491b8e412245ce4e94407",
+          "sizeBytes": 16577718,
+          "packageName": "com.patrick.neuroglasses",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "screenshotAssets": []
@@ -426,7 +521,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/osagem/photoDel4rokidglasses/releases/download/v1.0.2/PhotoDel.v1.0.2.apk"
+          "url": "https://github.com/osagem/photoDel4rokidglasses/releases/download/v1.0.2/PhotoDel.v1.0.2.apk",
+          "sha256": "8bb905d8c6faa3be2eb213d58588d3b7a3c3d50eb3cedd9c06da1a14a1da8f77",
+          "sizeBytes": 17580071,
+          "packageName": "com.osagem.photodel4rokidglasses",
+          "versionCode": 12,
+          "versionName": "1.0.2"
         }
       ],
       "iconAsset": "photo-del.png",
@@ -445,11 +545,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/glasses-app-release.apk"
+          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/glasses-app-release.apk",
+          "sha256": "f0be0b42d410ea0b5a2109551f6a157309c19966e60015e733ee351ae2702d0b",
+          "sizeBytes": 4579061,
+          "packageName": "com.example.rokidglasses",
+          "versionCode": 4,
+          "versionName": "0.12.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/phone-app-release.apk"
+          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/phone-app-release.apk",
+          "sha256": "e116999943613692eece919515fb4139aaf100ed1e972488c0b6d51a13cf6f61",
+          "sizeBytes": 10082310,
+          "packageName": "com.example.rokidphone",
+          "versionCode": 4,
+          "versionName": "0.12.0"
         }
       ],
       "iconAsset": "rokid-ai-assistant.png",
@@ -472,11 +582,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidGlassesHUD_F_v1.1.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidGlassesHUD_F_v1.1.0.apk",
+          "sha256": "12bab5a80353e1e1d173c887b6220b20dd9a176b3514f73a39f7d457b5403fcd",
+          "sizeBytes": 6961835,
+          "packageName": "kr.pe.eung.cxrs",
+          "versionCode": 1,
+          "versionName": "1.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidConnect_F_v1.2.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidConnect_F_v1.2.apk",
+          "sha256": "79ab00bb90c7b2645274dfaa38d15caca2e435784685ecf508492da48389076e",
+          "sizeBytes": 4766617,
+          "packageName": "kr.pe.eung.cxrm",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "rokid-connect-hud.png",
@@ -498,11 +618,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/glasses-debug.apk"
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/glasses-debug.apk",
+          "sha256": "dc0d130a4930f76e89e5c83fec08e650b45399248b6162c801239dde63eeec1e",
+          "sizeBytes": 7914651,
+          "packageName": "com.rokid.hud.glasses",
+          "versionCode": 1,
+          "versionName": "1.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/phone-debug.apk"
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/phone-debug.apk",
+          "sha256": "920d0d020c73b311cfcc0b8657ee7ee4f9a36ec229dc62b02641a7eca96eaffc",
+          "sizeBytes": 18710686,
+          "packageName": "com.rokid.hud.phone",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "rokid-gmaps.png",
@@ -521,11 +651,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk"
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk",
+          "sha256": "8b8b3757d041185f1cd72911a2e32db7d608329da52e8e24a47e9c858953d873",
+          "sizeBytes": 1085869,
+          "packageName": "com.rokid.lyrics.glasses",
+          "versionCode": 7,
+          "versionName": "0.3.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk"
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk",
+          "sha256": "1c88fb966892d3ec1d6d8eb4cbb7410a48455979d4f4e4f7ea9e00bcbcd7ef7c",
+          "sizeBytes": 1675320,
+          "packageName": "com.rokid.lyrics.phone",
+          "versionCode": 7,
+          "versionName": "0.3.0"
         }
       ],
       "iconAsset": "rokid-lyrics.png",
@@ -544,7 +684,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-music-score/rokid-music-score.apk"
+          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-music-score/rokid-music-score.apk",
+          "sha256": "e9714890979429c92a9e7810572b6f9b8dd893caf029ea15e911c4b3a60924b6",
+          "sizeBytes": 16869,
+          "packageName": "com.rokid.musicscore",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "screenshotAssets": []
@@ -561,7 +706,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk"
+          "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk",
+          "sha256": "771e44ffa107737abccb42c8965377ea7a9e7016fb727e59fc3fbafc781e20ca",
+          "sizeBytes": 7982003,
+          "packageName": "com.rokid.shell",
+          "versionCode": 1,
+          "versionName": "0.1.0"
         }
       ],
       "iconAsset": "rokid-shell.png",
@@ -580,7 +730,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/RokidSmartLife/releases/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB_v1.0.0_rokid.apk"
+          "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/RokidSmartLife/releases/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB_v1.0.0_rokid.apk",
+          "sha256": "25585f39aa295d720721fdf44bb70bda5f65d45eb7fe3432aa156b5f0f691a61",
+          "sizeBytes": 13505541,
+          "packageName": "com.rokidsmartlife",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "iconAsset": "rokid-smart-life.png",
@@ -599,7 +754,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/bzerk/rokid-ssh-terminal/releases/download/v0.1.0-dev-build/rokid-ssh-terminal-v0.1.0-dev-build.apk"
+          "url": "https://github.com/bzerk/rokid-ssh-terminal/releases/download/v0.1.0-dev-build/rokid-ssh-terminal-v0.1.0-dev-build.apk",
+          "sha256": "ed59a6420e1a63f81660c206820c48059a817ccff7fd4abf534f95bf482e410b",
+          "sizeBytes": 82370883,
+          "packageName": "com.bzerk.rokidterminal",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "iconAsset": "rokid-ssh-terminal.png",
@@ -625,7 +785,12 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TextHome_v1.1.1.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TextHome_v1.1.1.apk",
+          "sha256": "8bd7f676eb45bc1b6d4f180c71aa1b4a5b57f8dcd5af9ea23f866333bb355654",
+          "sizeBytes": 5261582,
+          "packageName": "kr.pe.eung.homelauncher.newdesign",
+          "versionCode": 1,
+          "versionName": "1.0-new"
         }
       ],
       "iconAsset": "texthome.png",
@@ -656,11 +821,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk",
+          "sha256": "c167bd45dc83688b683ced8c33e71e1b342d535a8582ff522015b61b0759c8d1",
+          "sizeBytes": 5319441,
+          "packageName": "kr.pe.eung.yourvoice",
+          "versionCode": 1,
+          "versionName": "1.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk",
+          "sha256": "c167bd45dc83688b683ced8c33e71e1b342d535a8582ff522015b61b0759c8d1",
+          "sizeBytes": 5319441,
+          "packageName": "kr.pe.eung.yourvoice",
+          "versionCode": 1,
+          "versionName": "1.0"
         }
       ],
       "iconAsset": "your-voice.png",

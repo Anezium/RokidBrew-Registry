@@ -14,11 +14,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidGlassesHUD_F_v1.1.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidGlassesHUD_F_v1.1.0.apk",
+      "sha256": "12bab5a80353e1e1d173c887b6220b20dd9a176b3514f73a39f7d457b5403fcd",
+      "sizeBytes": 6961835,
+      "packageName": "kr.pe.eung.cxrs",
+      "versionCode": 1,
+      "versionName": "1.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidConnect_F_v1.2.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/RokidConnect_F_v1.2.apk",
+      "sha256": "79ab00bb90c7b2645274dfaa38d15caca2e435784685ecf508492da48389076e",
+      "sizeBytes": 4766617,
+      "packageName": "kr.pe.eung.cxrm",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/download/v0.1.1/DragonBallScouter-v0.1.1-debug.apk"
+      "url": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/download/v0.1.1/DragonBallScouter-v0.1.1-debug.apk",
+      "sha256": "a71a72b05e993fedf3709e5f17708f4d728808fe3c742f5a74cd68cd5b5fe926",
+      "sizeBytes": 55110006,
+      "packageName": "io.github.anezium.rokiddragonballscouter",
+      "versionCode": 2,
+      "versionName": "0.1.1"
     }
   ]
 }

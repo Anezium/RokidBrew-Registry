@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk"
+      "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk",
+      "sha256": "771e44ffa107737abccb42c8965377ea7a9e7016fb727e59fc3fbafc781e20ca",
+      "sizeBytes": 7982003,
+      "packageName": "com.rokid.shell",
+      "versionCode": 1,
+      "versionName": "0.1.0"
     }
   ]
 }

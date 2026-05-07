@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk"
+      "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk",
+      "sha256": "2b307d9aac357040b2d1302666cd9012ce856aec5404f7e6b1271d04bb12f70f",
+      "sizeBytes": 3028606,
+      "packageName": "hanabix.hubu",
+      "versionCode": 9,
+      "versionName": "0.1.8"
     }
   ]
 }

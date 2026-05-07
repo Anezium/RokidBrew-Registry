@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/RokidSmartLife/releases/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB_v1.0.0_rokid.apk"
+      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/RokidSmartLife/releases/%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB_v1.0.0_rokid.apk",
+      "sha256": "25585f39aa295d720721fdf44bb70bda5f65d45eb7fe3432aa156b5f0f691a61",
+      "sizeBytes": 13505541,
+      "packageName": "com.rokidsmartlife",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }

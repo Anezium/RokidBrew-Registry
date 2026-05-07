@@ -14,7 +14,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWordUp_v1.0.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWordUp_v1.0.0.apk",
+      "sha256": "590d71cf166bac832c4ff7798c8edac300d6c2d5a2132f25301af5bb8403f08a",
+      "sizeBytes": 4798203,
+      "packageName": "kr.pe.eung.ekwordup",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

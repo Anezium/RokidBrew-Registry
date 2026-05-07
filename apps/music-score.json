@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-music-score/rokid-music-score.apk"
+      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-music-score/rokid-music-score.apk",
+      "sha256": "e9714890979429c92a9e7810572b6f9b8dd893caf029ea15e911c4b3a60924b6",
+      "sizeBytes": 16869,
+      "packageName": "com.rokid.musicscore",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

@@ -15,7 +15,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKHome_v1.2.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKHome_v1.2.0.apk",
+      "sha256": "cacdcc6dd0bf9ebeca877724ad661ac39d5ea9254ad1bf7cec455be1a4b7aa55",
+      "sizeBytes": 5252993,
+      "packageName": "kr.pe.eung.homelauncher",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

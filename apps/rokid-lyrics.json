@@ -10,11 +10,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk"
+      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk",
+      "sha256": "8b8b3757d041185f1cd72911a2e32db7d608329da52e8e24a47e9c858953d873",
+      "sizeBytes": 1085869,
+      "packageName": "com.rokid.lyrics.glasses",
+      "versionCode": 7,
+      "versionName": "0.3.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk"
+      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk",
+      "sha256": "1c88fb966892d3ec1d6d8eb4cbb7410a48455979d4f4e4f7ea9e00bcbcd7ef7c",
+      "sizeBytes": 1675320,
+      "packageName": "com.rokid.lyrics.phone",
+      "versionCode": 7,
+      "versionName": "0.3.0"
     }
   ]
 }

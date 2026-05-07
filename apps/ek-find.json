@@ -15,7 +15,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKFindPrice_v1.1.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKFindPrice_v1.1.0.apk",
+      "sha256": "12dd983147eeb3ee43b92ab818cf3201347b529e22ca2516d07c718631ad0f90",
+      "sizeBytes": 47196290,
+      "packageName": "kr.pe.eung.ekfind",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }

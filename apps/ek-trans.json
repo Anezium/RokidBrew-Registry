@@ -13,7 +13,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTrans_v2.0.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTrans_v2.0.0.apk",
+      "sha256": "d6645e83fc7c6c467287fb0d7a11230ce19f5f15974302c4c0fa252493d38a6a",
+      "sizeBytes": 108665174,
+      "packageName": "kr.pe.eung.ektranslator",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }

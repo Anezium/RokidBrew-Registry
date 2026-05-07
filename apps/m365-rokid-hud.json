@@ -10,11 +10,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/glass-hud-release.apk"
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/glass-hud-release.apk",
+      "sha256": "e55c75d68d53acd7aa3fb1a08663fbcb5622f0d5918cd7383f502c2baa1e04dc",
+      "sizeBytes": 7607683,
+      "packageName": "com.m365hud.glass",
+      "versionCode": 2,
+      "versionName": "1.1"
     },
     {
       "target": "phone",
-      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/app-release.apk"
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/app-release.apk",
+      "sha256": "4b908fb9544fb495f05437077c0e398668ff057b5cd831f00f08d58152f70646",
+      "sizeBytes": 23207889,
+      "packageName": "com.m365bleapp",
+      "versionCode": 2,
+      "versionName": "1.1"
     }
   ]
 }

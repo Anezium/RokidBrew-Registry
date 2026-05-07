@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/KUPdriveouter/RokidAppMaker/releases/download/v1.6.0/GazeMou-v1.6.0.apk"
+      "url": "https://github.com/KUPdriveouter/RokidAppMaker/releases/download/v1.6.0/GazeMou-v1.6.0.apk",
+      "sha256": "b6cfc6cd2f7bc14d1472d6a394a364a54239695ff90d301f092cdd5a8695b270",
+      "sizeBytes": 7219786,
+      "packageName": "com.kupstudio.touchmouse",
+      "versionCode": 7,
+      "versionName": "1.6.0"
     }
   ]
 }

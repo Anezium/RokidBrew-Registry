@@ -1,0 +1,45 @@
+name: Update artifact metadata
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Overwrite existing sha256/package metadata"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager "build-tools;35.0.0"
+      - name: Update APK metadata
+        run: |
+          if [ "${{ inputs.force }}" = "true" ]; then
+            node scripts/update-artifact-metadata.mjs --force
+          else
+            node scripts/update-artifact-metadata.mjs
+          fi
+      - run: node scripts/build-registry.mjs
+      - name: Commit metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -z "$(git status --porcelain -- apps dist/apps.v1.json)" ]; then
+            echo "No metadata changes to commit."
+          else
+            git add apps/*.json dist/apps.v1.json
+            git commit -m "Update artifact metadata"
+            git push
+          fi

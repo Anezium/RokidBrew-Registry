@@ -17,7 +17,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.4.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.4.0.apk",
+      "sha256": "643e1653a1a9a3419561d603337b3c96c7afcb3cfc2f64b4c71cd1b06486ce88",
+      "sizeBytes": 4753960,
+      "packageName": "kr.pe.eung.ekreader",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses/releases/download/v1.0.0-beta/app-release.apk"
+      "url": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses/releases/download/v1.0.0-beta/app-release.apk",
+      "sha256": "7df801b06ade58c3075d2f03e7f6b209ac78dc9f81f491b8e412245ce4e94407",
+      "sizeBytes": 16577718,
+      "packageName": "com.patrick.neuroglasses",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

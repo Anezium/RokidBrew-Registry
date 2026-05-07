@@ -14,7 +14,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk",
+      "sha256": "38ce175014d78f62d2b5ab5391a1d58324cc76645ec439d847c3128453a43b31",
+      "sizeBytes": 9788699,
+      "packageName": "kr.pe.eung.ekarrow",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

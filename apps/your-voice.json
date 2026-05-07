@@ -16,11 +16,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk",
+      "sha256": "c167bd45dc83688b683ced8c33e71e1b342d535a8582ff522015b61b0759c8d1",
+      "sizeBytes": 5319441,
+      "packageName": "kr.pe.eung.yourvoice",
+      "versionCode": 1,
+      "versionName": "1.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/YourVoice_v1.0.0.apk",
+      "sha256": "c167bd45dc83688b683ced8c33e71e1b342d535a8582ff522015b61b0759c8d1",
+      "sizeBytes": 5319441,
+      "packageName": "kr.pe.eung.yourvoice",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

@@ -10,11 +10,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/glasses-debug.apk"
+      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/glasses-debug.apk",
+      "sha256": "dc0d130a4930f76e89e5c83fec08e650b45399248b6162c801239dde63eeec1e",
+      "sizeBytes": 7914651,
+      "packageName": "com.rokid.hud.glasses",
+      "versionCode": 1,
+      "versionName": "1.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/phone-debug.apk"
+      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/phone-debug.apk",
+      "sha256": "920d0d020c73b311cfcc0b8657ee7ee4f9a36ec229dc62b02641a7eca96eaffc",
+      "sizeBytes": 18710686,
+      "packageName": "com.rokid.hud.phone",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

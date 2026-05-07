@@ -13,7 +13,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKPilot_v0.8.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKPilot_v0.8.0.apk",
+      "sha256": "e6f74f3c77937718eddb2f501bf4e305ee125518e6c11c105f79a619d984c27f",
+      "sizeBytes": 2549612,
+      "packageName": "kr.pe.eung.ekpilot",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }

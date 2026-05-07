@@ -14,7 +14,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/MatrixVision-v1.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/MatrixVision-v1.0.apk",
+      "sha256": "92f77586c4c0c72f3e310c55a088d953c3b7645f1b8d12e95cf5ca1039bc4a21",
+      "sizeBytes": 31222292,
+      "packageName": "com.matrix.vision",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }

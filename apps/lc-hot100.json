@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-lc-hot100/LC-Hot100.apk"
+      "url": "https://raw.githubusercontent.com/bcefghj/rokid-collection/HEAD/rokid-lc-hot100/LC-Hot100.apk",
+      "sha256": "8dcad2f1b05c04977fbe92332e616f1958dc1da5b5840a8534d1ea52665c73a8",
+      "sizeBytes": 37349,
+      "packageName": "com.rokid.lchot100",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }

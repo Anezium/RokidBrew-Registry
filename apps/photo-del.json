@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/osagem/photoDel4rokidglasses/releases/download/v1.0.2/PhotoDel.v1.0.2.apk"
+      "url": "https://github.com/osagem/photoDel4rokidglasses/releases/download/v1.0.2/PhotoDel.v1.0.2.apk",
+      "sha256": "8bb905d8c6faa3be2eb213d58588d3b7a3c3d50eb3cedd9c06da1a14a1da8f77",
+      "sizeBytes": 17580071,
+      "packageName": "com.osagem.photodel4rokidglasses",
+      "versionCode": 12,
+      "versionName": "1.0.2"
     }
   ]
 }

@@ -10,7 +10,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/bzerk/rokid-ssh-terminal/releases/download/v0.1.0-dev-build/rokid-ssh-terminal-v0.1.0-dev-build.apk"
+      "url": "https://github.com/bzerk/rokid-ssh-terminal/releases/download/v0.1.0-dev-build/rokid-ssh-terminal-v0.1.0-dev-build.apk",
+      "sha256": "ed59a6420e1a63f81660c206820c48059a817ccff7fd4abf534f95bf482e410b",
+      "sizeBytes": 82370883,
+      "packageName": "com.bzerk.rokidterminal",
+      "versionCode": 1,
+      "versionName": "1.0.0"
     }
   ]
 }

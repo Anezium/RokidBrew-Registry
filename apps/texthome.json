@@ -17,7 +17,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TextHome_v1.1.1.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TextHome_v1.1.1.apk",
+      "sha256": "8bd7f676eb45bc1b6d4f180c71aa1b4a5b57f8dcd5af9ea23f866333bb355654",
+      "sizeBytes": 5261582,
+      "packageName": "kr.pe.eung.homelauncher.newdesign",
+      "versionCode": 1,
+      "versionName": "1.0-new"
     }
   ]
 }

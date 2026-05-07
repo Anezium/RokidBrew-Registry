@@ -13,7 +13,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk"
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk",
+      "sha256": "7cc1177585659754970115a53cefa02516073240a0deb8eb4cb99e294097f4ef",
+      "sizeBytes": 8282058,
+      "packageName": "kr.pe.eung.dcimserver",
+      "versionCode": 1,
+      "versionName": "1.0"
     }
   ]
 }
