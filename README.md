@@ -49,7 +49,7 @@ RokidBrew reads:
 https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/dist/apps.v1.json
 ```
 
-GitHub Pages can also serve the same file:
+GitHub Pages is optional. If Pages is enabled and configured to deploy from GitHub Actions, it can also serve the same file:
 
 ```text
 https://anezium.github.io/RokidBrew-Registry/apps.v1.json
