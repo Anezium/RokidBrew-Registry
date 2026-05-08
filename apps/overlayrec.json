@@ -1,0 +1,28 @@
+{
+  "id": "overlayrec",
+  "name": "OverlayRec",
+  "category": "Media",
+  "type": "glasses",
+  "version": "0.1.0",
+  "summary": "Trigger Rokid AR screenshots and AR recording from the glasses.",
+  "description": "OverlayRec runs on Rokid glasses as an Accessibility Service and opens a small on-glass menu from a two-finger slide combo, letting you start AR Screenshot or AR Record without opening Hi Rokid first.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/Anezium/OverlayRec/releases/download/v0.1.0/OverlayRec-v0.1.0.apk",
+      "sha256": "4fe10edceb8fcde0e4c3502f1826452f89db9a43b7e08e6c3fcb6a0f2907ad7a",
+      "sizeBytes": 605747,
+      "packageName": "com.rokid.overlayrec",
+      "versionCode": 1,
+      "versionName": "0.1.0"
+    }
+  ],
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/OverlayRec",
+  "iconAsset": "overlayrec.png",
+  "screenshotAssets": [
+    "overlayrec-main.jpg",
+    "overlayrec-overlay.jpg"
+  ]
+}
