@@ -4,6 +4,8 @@
   "category": "Media",
   "type": "combo",
   "version": "0.3.0",
+  "featured": true,
+  "featuredRank": 3,
   "summary": "Synced song lyrics from phone to Rokid glasses.",
   "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
   "phoneRequired": true,

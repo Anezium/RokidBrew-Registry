@@ -4,6 +4,8 @@
   "category": "Utility",
   "type": "glasses",
   "version": "0.1.0",
+  "featured": true,
+  "featuredRank": 3,
   "summary": "File explorer and APK installer for Rokid glasses.",
   "description": "Native file explorer with APK install flow and local HTTP transfer server for Rokid glasses.",
   "phoneRequired": false,

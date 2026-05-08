@@ -1,47 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-08T20:36:19.982Z",
-  "brewVersion": "0.1.5",
-  "brewVersionCode": 6,
-  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.5/RokidBrew-phone-v0.1.5-debug.apk",
+  "generatedAt": "2026-05-08T22:00:29.964Z",
+  "brewVersion": "0.1.6",
+  "brewVersionCode": 7,
+  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.6/RokidBrew-phone-v0.1.6-debug.apk",
   "apps": [
-    {
-      "id": "dcim-server",
-      "name": "Dcim Server",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "summary": "Local DCIM browser/server for glasses.",
-      "description": "EUNG SOFT utility for browsing or serving camera media from Rokid glasses.",
-      "screenshotAssets": [
-        "dcim-server.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk",
-          "sha256": "7cc1177585659754970115a53cefa02516073240a0deb8eb4cb99e294097f4ef",
-          "sizeBytes": 8282058,
-          "packageName": "kr.pe.eung.dcimserver",
-          "versionCode": 1,
-          "versionName": "1.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "iconAsset": "dcim-server.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dcim-server.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dcim-server.jpg"
-      ]
-    },
     {
       "id": "dew-browser",
       "name": "Dew Browser",
       "category": "Browser",
       "type": "combo",
       "version": "1.0.0",
+      "featured": true,
+      "featuredRank": 1,
+      "publishedAt": "2026-05-08T21:30:00.000Z",
       "summary": "Rokid-first browser with phone mouse mode.",
       "description": "Web browser optimized for Rokid glasses. It supports page viewing on glasses and smartphone mouse/keyboard input.",
       "screenshotAssets": [
@@ -71,11 +43,240 @@
       ],
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-05-10T21:30:00.000Z",
       "iconAsset": "dew-browser.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dew-browser.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser-2.jpg"
+      ]
+    },
+    {
+      "id": "overlayrec",
+      "name": "OverlayRec",
+      "category": "Media",
+      "type": "glasses",
+      "version": "0.1.0",
+      "featured": true,
+      "featuredRank": 2,
+      "publishedAt": "2026-05-08",
+      "summary": "Trigger Rokid AR screenshots and AR recording from the glasses.",
+      "description": "OverlayRec runs on Rokid glasses as an Accessibility Service and opens a small on-glass menu from a two-finger slide combo, letting you start AR Screenshot or AR Record without opening Hi Rokid first.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/OverlayRec/releases/download/v0.1.0/OverlayRec-v0.1.0.apk",
+          "sha256": "4fe10edceb8fcde0e4c3502f1826452f89db9a43b7e08e6c3fcb6a0f2907ad7a",
+          "sizeBytes": 605747,
+          "packageName": "com.rokid.overlayrec",
+          "versionCode": 1,
+          "versionName": "0.1.0"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/OverlayRec",
+      "iconAsset": "overlayrec.png",
+      "screenshotAssets": [
+        "overlayrec-main.jpg",
+        "overlayrec-overlay.jpg"
+      ],
+      "newUntil": "2026-05-10T00:00:00.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
+      ]
+    },
+    {
+      "id": "rokid-apks",
+      "name": "Rokid-APKs",
+      "category": "Developer",
+      "type": "combo",
+      "version": "1.2.0",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Upload and install APKs on Rokid glasses from your phone.",
+      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
+          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
+          "sizeBytes": 7725471,
+          "packageName": "com.rokidapks.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk",
+          "sha256": "e07829103caee86ff07297871eb395aa04e31e4ecc7243895f5f7659f917f35f",
+          "sizeBytes": 12118215,
+          "packageName": "com.rokidapks",
+          "versionCode": 120,
+          "versionName": "1.2.0"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
+      "iconAsset": "rokid-apks.png",
+      "screenshotAssets": [
+        "rokid-apks-phone.jpg",
+        "rokid-apks-glasses.jpg"
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
+      ]
+    },
+    {
+      "id": "rokid-lyrics",
+      "name": "Rokid Lyrics",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.3.0",
+      "featured": true,
+      "featuredRank": 3,
+      "summary": "Synced song lyrics from phone to Rokid glasses.",
+      "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk",
+          "sha256": "8b8b3757d041185f1cd72911a2e32db7d608329da52e8e24a47e9c858953d873",
+          "sizeBytes": 1085869,
+          "packageName": "com.rokid.lyrics.glasses",
+          "versionCode": 7,
+          "versionName": "0.3.0"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk",
+          "sha256": "1c88fb966892d3ec1d6d8eb4cbb7410a48455979d4f4e4f7ea9e00bcbcd7ef7c",
+          "sizeBytes": 1675320,
+          "packageName": "com.rokid.lyrics.phone",
+          "versionCode": 7,
+          "versionName": "0.3.0"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
+      "screenshotAssets": [
+        "rokid-lyrics-phone.jpg",
+        "rokid-lyrics-glasses.jpg"
+      ],
+      "iconAsset": "rokid-lyrics.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
+      ]
+    },
+    {
+      "id": "rokid-shell",
+      "name": "Rokid Shell",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "0.1.0",
+      "featured": true,
+      "featuredRank": 3,
+      "summary": "File explorer and APK installer for Rokid glasses.",
+      "description": "Native file explorer with APK install flow and local HTTP transfer server for Rokid glasses.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk",
+          "sha256": "771e44ffa107737abccb42c8965377ea7a9e7016fb727e59fc3fbafc781e20ca",
+          "sizeBytes": 7982003,
+          "packageName": "com.rokid.shell",
+          "versionCode": 1,
+          "versionName": "0.1.0"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Shell",
+      "screenshotAssets": [
+        "rokid-shell-menu.jpg",
+        "rokid-shell-server.jpg",
+        "rokid-shell-web.jpg"
+      ],
+      "iconAsset": "rokid-shell.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-server.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-web.jpg"
+      ]
+    },
+    {
+      "id": "ek-arrow",
+      "name": "EK Arrow",
+      "category": "Games",
+      "type": "glasses",
+      "version": "1.0.0",
+      "featured": true,
+      "featuredRank": 4,
+      "summary": "Mini archery game for Rokid glasses.",
+      "description": "One-button archery game designed for glasses play.",
+      "screenshotAssets": [
+        "ek-arrow.jpg",
+        "ek-arrow-2.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk",
+          "sha256": "38ce175014d78f62d2b5ab5391a1d58324cc76645ec439d847c3128453a43b31",
+          "sizeBytes": 9788699,
+          "packageName": "kr.pe.eung.ekarrow",
+          "versionCode": 1,
+          "versionName": "1.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "iconAsset": "ek-arrow.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow-2.jpg"
+      ]
+    },
+    {
+      "id": "dcim-server",
+      "name": "Dcim Server",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Local DCIM browser/server for glasses.",
+      "description": "EUNG SOFT utility for browsing or serving camera media from Rokid glasses.",
+      "screenshotAssets": [
+        "dcim-server.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DcimServer_v1.0.0.apk",
+          "sha256": "7cc1177585659754970115a53cefa02516073240a0deb8eb4cb99e294097f4ef",
+          "sizeBytes": 8282058,
+          "packageName": "kr.pe.eung.dcimserver",
+          "versionCode": 1,
+          "versionName": "1.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "iconAsset": "dcim-server.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dcim-server.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dcim-server.jpg"
       ]
     },
     {
@@ -109,39 +310,6 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-hud.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-livecam.png"
-      ]
-    },
-    {
-      "id": "ek-arrow",
-      "name": "EK Arrow",
-      "category": "Games",
-      "type": "glasses",
-      "version": "1.0.0",
-      "summary": "Mini archery game for Rokid glasses.",
-      "description": "One-button archery game designed for glasses play.",
-      "screenshotAssets": [
-        "ek-arrow.jpg",
-        "ek-arrow-2.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk",
-          "sha256": "38ce175014d78f62d2b5ab5391a1d58324cc76645ec439d847c3128453a43b31",
-          "sizeBytes": 9788699,
-          "packageName": "kr.pe.eung.ekarrow",
-          "versionCode": 1,
-          "versionName": "1.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "iconAsset": "ek-arrow.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow-2.jpg"
       ]
     },
     {
@@ -580,39 +748,6 @@
       "screenshotAssets": []
     },
     {
-      "id": "overlayrec",
-      "name": "OverlayRec",
-      "category": "Media",
-      "type": "glasses",
-      "version": "0.1.0",
-      "summary": "Trigger Rokid AR screenshots and AR recording from the glasses.",
-      "description": "OverlayRec runs on Rokid glasses as an Accessibility Service and opens a small on-glass menu from a two-finger slide combo, letting you start AR Screenshot or AR Record without opening Hi Rokid first.",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/OverlayRec/releases/download/v0.1.0/OverlayRec-v0.1.0.apk",
-          "sha256": "4fe10edceb8fcde0e4c3502f1826452f89db9a43b7e08e6c3fcb6a0f2907ad7a",
-          "sizeBytes": 605747,
-          "packageName": "com.rokid.overlayrec",
-          "versionCode": 1,
-          "versionName": "0.1.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/OverlayRec",
-      "iconAsset": "overlayrec.png",
-      "screenshotAssets": [
-        "overlayrec-main.jpg",
-        "overlayrec-overlay.jpg"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
-      ]
-    },
-    {
       "id": "photo-del",
       "name": "PhotoDel",
       "category": "Utility",
@@ -751,48 +886,6 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
     },
     {
-      "id": "rokid-lyrics",
-      "name": "Rokid Lyrics",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.3.0",
-      "summary": "Synced song lyrics from phone to Rokid glasses.",
-      "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk",
-          "sha256": "8b8b3757d041185f1cd72911a2e32db7d608329da52e8e24a47e9c858953d873",
-          "sizeBytes": 1085869,
-          "packageName": "com.rokid.lyrics.glasses",
-          "versionCode": 7,
-          "versionName": "0.3.0"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk",
-          "sha256": "1c88fb966892d3ec1d6d8eb4cbb7410a48455979d4f4e4f7ea9e00bcbcd7ef7c",
-          "sizeBytes": 1675320,
-          "packageName": "com.rokid.lyrics.phone",
-          "versionCode": 7,
-          "versionName": "0.3.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
-      "screenshotAssets": [
-        "rokid-lyrics-phone.jpg",
-        "rokid-lyrics-glasses.jpg"
-      ],
-      "iconAsset": "rokid-lyrics.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
-      ]
-    },
-    {
       "id": "music-score",
       "name": "Rokid Music Score",
       "category": "Music",
@@ -815,41 +908,6 @@
       "author": "bcefghj",
       "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/rokid-music-score",
       "screenshotAssets": []
-    },
-    {
-      "id": "rokid-shell",
-      "name": "Rokid Shell",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "0.1.0",
-      "summary": "File explorer and APK installer for Rokid glasses.",
-      "description": "Native file explorer with APK install flow and local HTTP transfer server for Rokid glasses.",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk",
-          "sha256": "771e44ffa107737abccb42c8965377ea7a9e7016fb727e59fc3fbafc781e20ca",
-          "sizeBytes": 7982003,
-          "packageName": "com.rokid.shell",
-          "versionCode": 1,
-          "versionName": "0.1.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Shell",
-      "screenshotAssets": [
-        "rokid-shell-menu.jpg",
-        "rokid-shell-server.jpg",
-        "rokid-shell-web.jpg"
-      ],
-      "iconAsset": "rokid-shell.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-menu.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-server.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-web.jpg"
-      ]
     },
     {
       "id": "rokid-smart-life",
@@ -902,48 +960,6 @@
       "iconAsset": "rokid-ssh-terminal.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
       "screenshotAssets": []
-    },
-    {
-      "id": "rokid-apks",
-      "name": "Rokid-APKs",
-      "category": "Developer",
-      "type": "combo",
-      "version": "1.2.0",
-      "summary": "Upload and install APKs on Rokid glasses from your phone.",
-      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
-          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
-          "sizeBytes": 7725471,
-          "packageName": "com.rokidapks.glasses",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk",
-          "sha256": "e07829103caee86ff07297871eb395aa04e31e4ecc7243895f5f7659f917f35f",
-          "sizeBytes": 12118215,
-          "packageName": "com.rokidapks",
-          "versionCode": 120,
-          "versionName": "1.2.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
-      "iconAsset": "rokid-apks.png",
-      "screenshotAssets": [
-        "rokid-apks-phone.jpg",
-        "rokid-apks-glasses.jpg"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
-      ]
     },
     {
       "id": "rokid-scribe",

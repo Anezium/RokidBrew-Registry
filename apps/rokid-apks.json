@@ -4,6 +4,8 @@
   "category": "Developer",
   "type": "combo",
   "version": "1.2.0",
+  "featured": true,
+  "featuredRank": 2,
   "summary": "Upload and install APKs on Rokid glasses from your phone.",
   "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
   "phoneRequired": true,

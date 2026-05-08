@@ -4,6 +4,9 @@
   "category": "Browser",
   "type": "combo",
   "version": "1.0.0",
+  "featured": true,
+  "featuredRank": 1,
+  "publishedAt": "2026-05-08T21:30:00.000Z",
   "summary": "Rokid-first browser with phone mouse mode.",
   "description": "Web browser optimized for Rokid glasses. It supports page viewing on glasses and smartphone mouse/keyboard input.",
   "screenshotAssets": [

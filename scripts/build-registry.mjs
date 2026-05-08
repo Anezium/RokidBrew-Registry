@@ -9,6 +9,8 @@ const iconDir = path.join(root, "assets", "icons");
 const screenshotDir = path.join(root, "assets", "screenshots");
 const publicBaseUrl = (process.env.ROKIDBREW_PUBLIC_BASE_URL ||
   "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main").replace(/\/$/, "");
+const newWindowDays = Number.parseInt(process.env.ROKIDBREW_NEW_WINDOW_DAYS || "2", 10);
+const generatedAt = new Date();
 
 const required = ["id", "name", "category", "type", "version", "summary", "author", "sourceUrl", "artifacts"];
 
@@ -76,6 +78,65 @@ function attachAssetUrls(app) {
   if (screenshotUrls.length > 0) app.screenshotUrls = screenshotUrls;
 }
 
+function normalizeDate(value) {
+  if (!value || typeof value !== "string") return null;
+  const parsed = Date.parse(value);
+  return Number.isNaN(parsed) ? null : new Date(parsed).toISOString();
+}
+
+function attachCuration(app) {
+  const publishedAt = normalizeDate(app.publishedAt);
+
+  const newUntil = normalizeDate(app.newUntil);
+  if (!newUntil && publishedAt && newWindowDays > 0) {
+    app.newUntil = new Date(Date.parse(publishedAt) + newWindowDays * 24 * 60 * 60 * 1000).toISOString();
+  }
+}
+
+function featuredRank(app) {
+  if (Number.isFinite(app.featuredRank)) return app.featuredRank;
+  if (app.featured === true) return Number.MAX_SAFE_INTEGER - 1;
+  return Number.MAX_SAFE_INTEGER;
+}
+
+function isNewApp(app, now = generatedAt.getTime()) {
+  const newUntil = Date.parse(app.newUntil || "");
+  if (!Number.isNaN(newUntil)) return now <= newUntil;
+
+  const publishedAt = Date.parse(app.publishedAt || "");
+  if (Number.isNaN(publishedAt) || now < publishedAt || newWindowDays <= 0) return false;
+  return now - publishedAt <= newWindowDays * 24 * 60 * 60 * 1000;
+}
+
+function publishedRank(app) {
+  const publishedAt = Date.parse(app.publishedAt || "");
+  return Number.isNaN(publishedAt) ? 0 : publishedAt;
+}
+
+function nameCompare(a, b) {
+  return a.name.localeCompare(b.name, "en", { sensitivity: "base" });
+}
+
+function registryOrder(a, b) {
+  const aNew = isNewApp(a);
+  const bNew = isNewApp(b);
+  if (aNew !== bNew) return aNew ? -1 : 1;
+  if (aNew && bNew) {
+    return publishedRank(b) - publishedRank(a) ||
+      featuredRank(a) - featuredRank(b) ||
+      nameCompare(a, b);
+  }
+
+  const aFeatured = featuredRank(a) < Number.MAX_SAFE_INTEGER;
+  const bFeatured = featuredRank(b) < Number.MAX_SAFE_INTEGER;
+  if (aFeatured !== bFeatured) return aFeatured ? -1 : 1;
+  if (aFeatured && bFeatured) {
+    return featuredRank(a) - featuredRank(b) || nameCompare(a, b);
+  }
+
+  return nameCompare(a, b);
+}
+
 if (!fs.existsSync(appsDir)) {
   throw new Error("Missing apps/ directory");
 }
@@ -87,10 +148,11 @@ const apps = fs.readdirSync(appsDir)
     const file = path.join(appsDir, name);
     const app = readJson(file);
     assertApp(app, file);
+    attachCuration(app);
     attachAssetUrls(app);
     return app;
   })
-  .sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base" }));
+  .sort(registryOrder);
 
 const duplicate = apps.map((app) => app.id).find((id, index, ids) => ids.indexOf(id) !== index);
 if (duplicate) throw new Error(`Duplicate app id: ${duplicate}`);
@@ -107,7 +169,7 @@ if (fs.existsSync(brewFile)) {
 
 const output = {
   schemaVersion: 1,
-  generatedAt: new Date().toISOString(),
+  generatedAt: generatedAt.toISOString(),
   ...(brewVersion != null && { brewVersion, brewVersionCode, brewApkUrl }),
   apps,
 };

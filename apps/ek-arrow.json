@@ -4,6 +4,8 @@
   "category": "Games",
   "type": "glasses",
   "version": "1.0.0",
+  "featured": true,
+  "featuredRank": 4,
   "summary": "Mini archery game for Rokid glasses.",
   "description": "One-button archery game designed for glasses play.",
   "screenshotAssets": [
