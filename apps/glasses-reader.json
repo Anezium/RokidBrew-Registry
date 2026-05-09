@@ -1,0 +1,27 @@
+{
+  "id": "glasses-reader",
+  "name": "GlassesReader",
+  "category": "Reader",
+  "type": "combo",
+  "version": "1.2.2",
+  "publishedAt": "2026-05-09",
+  "summary": "Phone reader bridge that streams text to Rokid glasses.",
+  "description": "Phone-only companion app for streaming visible reading text to Rokid glasses. It is designed around Chinese reading apps such as WeChat Reading, and can also work with EPUB/readers when their text is exposed to Android accessibility. The UI is Chinese only.",
+  "screenshotAssets": [
+    "glasses-reader-info.png"
+  ],
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "phone",
+      "url": "https://github.com/conclean/RokidGlassesReader/releases/download/v1.2.2/GlassesReader_release_v1.2.2_20260329_152430.apk",
+      "sha256": "07ac5227399d535a83631eb0d8697b87aa121b45673917611ac71acfa540fb9c",
+      "sizeBytes": 20164541,
+      "packageName": "com.app.glassesreader",
+      "versionCode": 12,
+      "versionName": "1.2.2"
+    }
+  ],
+  "author": "conclean",
+  "sourceUrl": "https://github.com/conclean/RokidGlassesReader"
+}
