@@ -1,0 +1,30 @@
+{
+  "id": "rokid-live-studio",
+  "name": "Rokid Live Studio",
+  "category": "Media",
+  "type": "combo",
+  "version": "0.1.1",
+  "publishedAt": "2026-05-10T21:57:45.000Z",
+  "summary": "Stream your Rokid glasses camera and microphone from your phone.",
+  "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
+  "screenshotAssets": [
+    "rokid-live-studio-home.jpg",
+    "rokid-live-studio-youtube.jpg",
+    "rokid-live-studio-twitch.jpg",
+    "rokid-live-studio-chat.png"
+  ],
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "phone",
+      "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.1%2B2/rokid-live-studio-phone-0.1.1-vc2.apk",
+      "sha256": "4f8644c272945892bef731c9ff7b10f56bc24e97f876e579c2c5425170cfa9de",
+      "sizeBytes": 38362515,
+      "packageName": "com.anezium.rokidlive.phone",
+      "versionCode": 2,
+      "versionName": "0.1.1"
+    }
+  ],
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio"
+}
