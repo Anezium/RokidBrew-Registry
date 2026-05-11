@@ -18,19 +18,19 @@
     {
       "target": "glasses",
       "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
-      "sha256": "1efeffeb25afebc523abc8e444c01655b8a3b4a0cd8b44d19d9d6f96c048ed62",
+      "sha256": "a26427c4dd0fe3cb2dee682751878ae55dc4cc27bca96e00e10431747c7aebad",
       "sizeBytes": 88252786,
       "packageName": "kr.pe.eung.ekweb",
-      "versionCode": 1,
+      "versionCode": 2,
       "versionName": "1.0"
     },
     {
       "target": "phone",
       "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
-      "sha256": "1efeffeb25afebc523abc8e444c01655b8a3b4a0cd8b44d19d9d6f96c048ed62",
+      "sha256": "a26427c4dd0fe3cb2dee682751878ae55dc4cc27bca96e00e10431747c7aebad",
       "sizeBytes": 88252786,
       "packageName": "kr.pe.eung.ekweb",
-      "versionCode": 1,
+      "versionCode": 2,
       "versionName": "1.0"
     }
   ],
