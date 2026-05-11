@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-10T22:17:47.839Z",
+  "generatedAt": "2026-05-11T05:32:54.057Z",
   "brewVersion": "0.1.6",
   "brewVersionCode": 7,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.6/RokidBrew-phone-v0.1.6-debug.apk",
@@ -45,45 +45,6 @@
       ]
     },
     {
-      "id": "glasses-reader",
-      "name": "GlassesReader",
-      "category": "Reader",
-      "type": "combo",
-      "version": "1.2.2",
-      "publishedAt": "2026-05-09",
-      "summary": "Phone reader bridge that streams text to Rokid glasses.",
-      "description": "Phone-only companion app for streaming visible reading text to Rokid glasses. It is designed around Chinese reading apps such as WeChat Reading, and can also work with EPUB/readers when their text is exposed to Android accessibility. The UI is Chinese only.",
-      "screenshotAssets": [
-        "glasses-reader-phone.png",
-        "glasses-reader-overlay.jpg",
-        "glasses-reader-reading.png",
-        "glasses-reader-settings.jpg"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/conclean/RokidGlassesReader/releases/download/v1.2.2/GlassesReader_release_v1.2.2_20260329_152430.apk",
-          "sha256": "07ac5227399d535a83631eb0d8697b87aa121b45673917611ac71acfa540fb9c",
-          "sizeBytes": 20164541,
-          "packageName": "com.app.glassesreader",
-          "versionCode": 12,
-          "versionName": "1.2.2"
-        }
-      ],
-      "author": "conclean",
-      "sourceUrl": "https://github.com/conclean/RokidGlassesReader",
-      "newUntil": "2026-05-11T00:00:00.000Z",
-      "iconAsset": "glasses-reader.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/glasses-reader.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-phone.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-overlay.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-reading.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-settings.jpg"
-      ]
-    },
-    {
       "id": "dew-browser",
       "name": "Dew Browser",
       "category": "Browser",
@@ -103,19 +64,19 @@
         {
           "target": "glasses",
           "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
-          "sha256": "fc8bcc697748d3df373e130ea2b35151f05fea2858beea652d18eec3bf1b5389",
-          "sizeBytes": 88252706,
+          "sha256": "1efeffeb25afebc523abc8e444c01655b8a3b4a0cd8b44d19d9d6f96c048ed62",
+          "sizeBytes": 88252786,
           "packageName": "kr.pe.eung.ekweb",
-          "versionCode": 2,
+          "versionCode": 1,
           "versionName": "1.0"
         },
         {
           "target": "phone",
           "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
-          "sha256": "fc8bcc697748d3df373e130ea2b35151f05fea2858beea652d18eec3bf1b5389",
-          "sizeBytes": 88252706,
+          "sha256": "1efeffeb25afebc523abc8e444c01655b8a3b4a0cd8b44d19d9d6f96c048ed62",
+          "sizeBytes": 88252786,
           "packageName": "kr.pe.eung.ekweb",
-          "versionCode": 2,
+          "versionCode": 1,
           "versionName": "1.0"
         }
       ],
@@ -656,6 +617,45 @@
       "iconAsset": "gazemou.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gazemou.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "glasses-reader",
+      "name": "GlassesReader",
+      "category": "Reader",
+      "type": "combo",
+      "version": "1.2.2",
+      "publishedAt": "2026-05-09",
+      "summary": "Phone reader bridge that streams text to Rokid glasses.",
+      "description": "Phone-only companion app for streaming visible reading text to Rokid glasses. It is designed around Chinese reading apps such as WeChat Reading, and can also work with EPUB/readers when their text is exposed to Android accessibility. The UI is Chinese only.",
+      "screenshotAssets": [
+        "glasses-reader-phone.png",
+        "glasses-reader-overlay.jpg",
+        "glasses-reader-reading.png",
+        "glasses-reader-settings.jpg"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/conclean/RokidGlassesReader/releases/download/v1.2.2/GlassesReader_release_v1.2.2_20260329_152430.apk",
+          "sha256": "07ac5227399d535a83631eb0d8697b87aa121b45673917611ac71acfa540fb9c",
+          "sizeBytes": 20164541,
+          "packageName": "com.app.glassesreader",
+          "versionCode": 12,
+          "versionName": "1.2.2"
+        }
+      ],
+      "author": "conclean",
+      "sourceUrl": "https://github.com/conclean/RokidGlassesReader",
+      "newUntil": "2026-05-11T00:00:00.000Z",
+      "iconAsset": "glasses-reader.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/glasses-reader.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-phone.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-overlay.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-reading.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-settings.jpg"
+      ]
     },
     {
       "id": "hubu",
