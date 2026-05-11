@@ -93,6 +93,13 @@ function attachCuration(app) {
   }
 }
 
+function stripPrivateFields(app) {
+  delete app.update;
+  for (const artifact of app.artifacts || []) {
+    delete artifact.update;
+  }
+}
+
 function featuredRank(app) {
   if (Number.isFinite(app.featuredRank)) return app.featuredRank;
   if (app.featured === true) return Number.MAX_SAFE_INTEGER - 1;
@@ -150,6 +157,7 @@ const apps = fs.readdirSync(appsDir)
     assertApp(app, file);
     attachCuration(app);
     attachAssetUrls(app);
+    stripPrivateFields(app);
     return app;
   })
   .sort(registryOrder);

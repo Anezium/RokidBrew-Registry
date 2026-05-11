@@ -1,0 +1,76 @@
+name: Check app updates
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Check updates without creating a pull request"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      app:
+        description: "Optional app id to check"
+        required: false
+        default: ""
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager "build-tools;35.0.0"
+      - name: Check upstream app updates
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          args=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          if [ -n "${{ inputs.app }}" ]; then
+            args+=(--app "${{ inputs.app }}")
+          fi
+          node scripts/check-updates.mjs "${args[@]}"
+      - name: Rebuild registry
+        if: ${{ inputs.dry_run != 'true' }}
+        run: node scripts/build-registry.mjs
+      - name: Create update pull request
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain -- apps dist/apps.v1.json)" ]; then
+            echo "No app updates to propose."
+            exit 0
+          fi
+
+          branch="automation/app-updates"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add apps/*.json dist/apps.v1.json
+          git commit -m "Update app artifacts"
+          git push --force-with-lease origin "$branch"
+
+          number="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')"
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --body-file .tmp/update-report.md
+          else
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "Update RokidBrew app artifacts" \
+              --body-file .tmp/update-report.md
+          fi

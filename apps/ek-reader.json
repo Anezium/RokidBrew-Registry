@@ -26,5 +26,16 @@
     }
   ],
   "author": "EUNG SOFT",
-  "sourceUrl": "https://github.com/eung3392/eungsoft"
+  "sourceUrl": "https://github.com/eung3392/eungsoft",
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "eung3392/eungsoft",
+    "release": "RokidGlassesApp",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^EKReader_v(?<version>\\d+(?:\\.\\d+)*)\\.apk$"
+      }
+    ]
+  }
 }

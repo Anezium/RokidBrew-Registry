@@ -106,7 +106,7 @@ For `"type": "combo"`, provide both a `phone` and `glasses` artifact:
 
 ## GitHub Actions
 
-Three workflows automate the registry maintenance.
+Four workflows automate the registry maintenance.
 
 ### 1. Build registry (`build-registry.yml`)
 
@@ -148,6 +148,34 @@ Commits the updated `apps/*.json` and rebuilt manifest.
 | `force: false` | Only fill in missing metadata (normal use). |
 | `force: true` | Recompute all metadata even if already present (use after APK URL changes). |
 
+### 4. Check app updates (`check-updates.yml`)
+
+Runs every day and can also be triggered manually. It checks upstream APK sources and opens a pull request when it finds newer artifacts.
+
+Supported sources:
+
+- Normal GitHub Releases: inferred automatically from existing `github.com/<owner>/<repo>/releases/download/...` URLs.
+- Release buckets: use an app-level `update` block to pin a release tag and match APK assets by regex. This is used for `eung3392/eungsoft`, where many apps live under the single `RokidGlassesApp` release.
+- Raw GitHub APK URLs: exact-file monitoring only. If the file at the current URL changes, the workflow refreshes checksum/package metadata, but it does not guess new filenames.
+
+Example release-bucket rule:
+
+```json
+"update": {
+  "source": "githubReleaseAssets",
+  "repo": "eung3392/eungsoft",
+  "release": "RokidGlassesApp",
+  "assets": [
+    {
+      "target": "glasses",
+      "match": "^EKReader_v(?<version>\\d+(?:\\.\\d+)*)\\.apk$"
+    }
+  ]
+}
+```
+
+`update` rules are registry-maintenance metadata only. They are stripped from `dist/apps.v1.json`.
+
 ---
 
 ## Adding screenshots
@@ -176,5 +204,6 @@ Screenshots are not extracted automatically. To add them:
 2. Rebuild + push
 3. Run "Extract missing icons"  → gets the icon
 4. Run "Update artifact metadata" → gets sha256, package info
-5. (Optional) Add screenshots manually
+5. The scheduled "Check app updates" workflow opens PRs for newer upstream APKs
+6. (Optional) Add screenshots manually
 ```
