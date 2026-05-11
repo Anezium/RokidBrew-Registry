@@ -88,7 +88,7 @@
       "name": "Dew Browser",
       "category": "Browser",
       "type": "combo",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "featured": true,
       "featuredRank": 1,
       "publishedAt": "2026-05-08T21:30:00.000Z",
@@ -102,7 +102,7 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
           "sha256": "fc8bcc697748d3df373e130ea2b35151f05fea2858beea652d18eec3bf1b5389",
           "sizeBytes": 88252706,
           "packageName": "kr.pe.eung.ekweb",
@@ -111,7 +111,7 @@
         },
         {
           "target": "phone",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.0.apk",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
           "sha256": "fc8bcc697748d3df373e130ea2b35151f05fea2858beea652d18eec3bf1b5389",
           "sizeBytes": 88252706,
           "packageName": "kr.pe.eung.ekweb",
