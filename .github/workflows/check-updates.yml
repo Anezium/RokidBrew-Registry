@@ -51,7 +51,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain -- apps dist/apps.v1.json)" ]; then
+          if [ -z "$(git status --porcelain -- apps brew.json)" ]; then
+            git checkout -- dist/apps.v1.json
             echo "No app updates to propose."
             exit 0
           fi
@@ -59,10 +60,11 @@ jobs:
           branch="automation/app-updates"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$branch" || true
           git checkout -B "$branch"
           git add apps/*.json dist/apps.v1.json
           git commit -m "Update app artifacts"
-          git push --force-with-lease origin "$branch"
+          git push --force-with-lease="refs/heads/$branch" origin "$branch"
 
           number="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')"
           if [ -n "$number" ]; then
