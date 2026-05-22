@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-22T07:06:44.231Z",
-  "brewVersion": "0.1.6",
-  "brewVersionCode": 7,
-  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.6/RokidBrew-phone-v0.1.6-debug.apk",
+  "generatedAt": "2026-05-22T07:50:03.040Z",
+  "brewVersion": "0.1.7",
+  "brewVersionCode": 8,
+  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.7/RokidBrew-phone-v0.1.7-debug.apk",
   "apps": [
     {
       "id": "rokid-live-studio",
