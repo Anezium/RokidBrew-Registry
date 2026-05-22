@@ -3,7 +3,7 @@
   "name": "Rokid-APKs",
   "category": "Developer",
   "type": "combo",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "featured": true,
   "featuredRank": 2,
   "summary": "Upload and install APKs on Rokid glasses from your phone.",
@@ -21,12 +21,12 @@
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk",
-      "sha256": "e07829103caee86ff07297871eb395aa04e31e4ecc7243895f5f7659f917f35f",
-      "sizeBytes": 12118215,
+      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.1/Rokid-APKs-phone-v1.2.1-debug.apk",
+      "sha256": "35a972dcd3bb664c1dcbf5035dfa2edb927a0a42bf3a293ad184c7e5035a614c",
+      "sizeBytes": 11829497,
       "packageName": "com.rokidapks",
-      "versionCode": 120,
-      "versionName": "1.2.0"
+      "versionCode": 121,
+      "versionName": "1.2.1"
     }
   ],
   "author": "Anezium",
@@ -35,5 +35,6 @@
   "screenshotAssets": [
     "rokid-apks-phone.jpg",
     "rokid-apks-glasses.jpg"
-  ]
+  ],
+  "publishedAt": "2026-05-21T17:37:06Z"
 }
