@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-11T18:58:23.275Z",
+  "generatedAt": "2026-05-22T07:06:44.231Z",
   "brewVersion": "0.1.6",
   "brewVersionCode": 7,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.6/RokidBrew-phone-v0.1.6-debug.apk",
@@ -10,8 +10,8 @@
       "name": "Rokid Live Studio",
       "category": "Media",
       "type": "combo",
-      "version": "0.1.2",
-      "publishedAt": "2026-05-11T18:18:44Z",
+      "version": "0.1.3",
+      "publishedAt": "2026-05-21T17:37:07Z",
       "summary": "Stream your Rokid glasses camera and microphone from your phone.",
       "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
       "screenshotAssets": [
@@ -24,17 +24,17 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.2%2B3/rokid-live-studio-phone-0.1.2-vc3.apk",
-          "sha256": "0d20c393a60cc3894a43daa76c282c6ab72e5d4ab81fabad102e7034d6019415",
-          "sizeBytes": 38563167,
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.3%2B4/rokid-live-studio-phone-0.1.3-vc4.apk",
+          "sha256": "b1db7aa95a25d30122ebdda32fa54a0b5c568c2495e9c8f5ce88d182e41aa083",
+          "sizeBytes": 38670691,
           "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 3,
-          "versionName": "0.1.2"
+          "versionCode": 4,
+          "versionName": "0.1.3"
         }
       ],
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-05-13T18:18:44.000Z",
+      "newUntil": "2026-05-23T17:37:07.000Z",
       "iconAsset": "rokid-live-studio.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
       "screenshotUrls": [
@@ -42,6 +42,52 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
+      ]
+    },
+    {
+      "id": "rokid-apks",
+      "name": "Rokid-APKs",
+      "category": "Developer",
+      "type": "combo",
+      "version": "1.2.1",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Upload and install APKs on Rokid glasses from your phone.",
+      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
+          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
+          "sizeBytes": 7725471,
+          "packageName": "com.rokidapks.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.1/Rokid-APKs-phone-v1.2.1-debug.apk",
+          "sha256": "35a972dcd3bb664c1dcbf5035dfa2edb927a0a42bf3a293ad184c7e5035a614c",
+          "sizeBytes": 11829497,
+          "packageName": "com.rokidapks",
+          "versionCode": 121,
+          "versionName": "1.2.1"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
+      "iconAsset": "rokid-apks.png",
+      "screenshotAssets": [
+        "rokid-apks-phone.jpg",
+        "rokid-apks-glasses.jpg"
+      ],
+      "publishedAt": "2026-05-21T17:37:06Z",
+      "newUntil": "2026-05-23T17:37:06.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
       ]
     },
     {
@@ -125,50 +171,6 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
-      ]
-    },
-    {
-      "id": "rokid-apks",
-      "name": "Rokid-APKs",
-      "category": "Developer",
-      "type": "combo",
-      "version": "1.2.0",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Upload and install APKs on Rokid glasses from your phone.",
-      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
-          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
-          "sizeBytes": 7725471,
-          "packageName": "com.rokidapks.glasses",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.0/Rokid-APKs-phone-v1.2.0-debug.apk",
-          "sha256": "e07829103caee86ff07297871eb395aa04e31e4ecc7243895f5f7659f917f35f",
-          "sizeBytes": 12118215,
-          "packageName": "com.rokidapks",
-          "versionCode": 120,
-          "versionName": "1.2.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
-      "iconAsset": "rokid-apks.png",
-      "screenshotAssets": [
-        "rokid-apks-phone.jpg",
-        "rokid-apks-glasses.jpg"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
       ]
     },
     {
