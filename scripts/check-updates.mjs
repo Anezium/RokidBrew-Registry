@@ -6,6 +6,7 @@ import { spawnSync } from "node:child_process";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appsDir = path.join(root, "apps");
+const brewFile = path.join(root, "brew.json");
 const tmpDir = path.join(root, ".tmp", "check-updates");
 const reportFile = path.join(root, ".tmp", "update-report.md");
 
@@ -13,6 +14,7 @@ const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
 const strict = args.includes("--strict");
 const appFilters = new Set(valuesFor("--app"));
+const shouldCheckBrew = appFilters.size === 0 || [...appFilters].some((id) => id.toLowerCase() === "rokidbrew");
 
 fs.mkdirSync(tmpDir, { recursive: true });
 fs.mkdirSync(path.dirname(reportFile), { recursive: true });
@@ -219,6 +221,39 @@ function publicReleaseUrl(repo, release) {
   return `https://api.github.com/repos/${repo}/releases/${release === "latest" ? "latest" : `tags/${encodeURIComponent(release)}`}`;
 }
 
+function currentBrewVersionCode(brew) {
+  return Number(brew?.versionCode || 0);
+}
+
+function shouldUpdateBrew(brew, candidate) {
+  const currentCode = currentBrewVersionCode(brew);
+  const candidateCode = Number(candidate.versionCode || 0);
+  if (candidateCode && candidateCode > currentCode) {
+    return `versionCode ${currentCode} -> ${candidateCode}`;
+  }
+
+  const currentVersion = brew?.version || "";
+  const candidateVersion = candidate.versionName || candidate.assetVersion || "";
+  const versionCompare = compareVersions(candidateVersion, currentVersion);
+  if (versionCompare != null && versionCompare > 0) {
+    return `version ${currentVersion || "unknown"} -> ${candidateVersion}`;
+  }
+
+  if (candidate.url === brew?.apkUrl && candidateCode === currentCode) return null;
+
+  return null;
+}
+
+function applyBrewCandidate(brew, candidate) {
+  brew.version = bestVersion([
+    candidate.versionName,
+    candidate.assetVersion,
+    tagVersion(candidate.releaseTag || ""),
+  ]) || brew.version;
+  if (candidate.versionCode) brew.versionCode = candidate.versionCode;
+  brew.apkUrl = candidate.url;
+}
+
 const releaseCache = new Map();
 async function getRelease(repo, release) {
   const key = `${repo}@${release}`;
@@ -413,11 +448,61 @@ async function checkRawArtifact(aapt, app, artifact, log) {
   return candidate;
 }
 
+async function checkBrewUpdate(aapt, log) {
+  const brew = fs.existsSync(brewFile) ? readJson(brewFile) : {};
+  const release = await getRelease("Anezium/RokidBrew", "latest");
+  const assets = (release.assets || [])
+    .filter((asset) => /^RokidBrew-phone-.*\.apk$/i.test(asset.name || ""))
+    .sort((a, b) => Date.parse(a.updated_at || 0) - Date.parse(b.updated_at || 0));
+
+  if (assets.length === 0) {
+    log(`skip   rokidbrew:phone no matching phone APK in Anezium/RokidBrew@${release.tag_name}`);
+    return null;
+  }
+
+  const asset = assets.at(-1);
+  const metadata = await inspectApk(aapt, asset.browser_download_url, `rokidbrew-phone-${asset.name}`, asset.name);
+  if (metadata.packageName && metadata.packageName !== "com.rokidbrew.phone") {
+    throw new Error(`rokidbrew:phone package mismatch: ${metadata.packageName}`);
+  }
+
+  const candidate = {
+    ...metadata,
+    url: asset.browser_download_url,
+    assetName: asset.name,
+    updatedAt: asset.updated_at,
+    releaseTag: release.tag_name,
+    releasePublishedAt: release.published_at,
+  };
+  const reason = shouldUpdateBrew(brew, candidate);
+  if (!reason) {
+    log(`ok     rokidbrew:phone ${asset.name}`);
+    return null;
+  }
+
+  log(`update rokidbrew:phone ${reason} (${asset.name})`);
+  return { brew, candidate, reason };
+}
+
 function summarizeChange(app, artifact, candidate, reason) {
   return {
     id: app.id,
     target: artifact.target,
     name: app.name,
+    reason,
+    url: candidate.url,
+    assetName: candidate.assetName,
+    versionCode: candidate.versionCode,
+    versionName: candidate.versionName,
+    assetVersion: candidate.assetVersion,
+  };
+}
+
+function summarizeBrewChange(candidate, reason) {
+  return {
+    id: "rokidbrew",
+    target: "phone",
+    name: "RokidBrew",
     reason,
     url: candidate.url,
     assetName: candidate.assetName,
@@ -517,6 +602,25 @@ for (const file of appFiles) {
   }
 
   if (changed) writeJson(file, app);
+}
+
+if (shouldCheckBrew) {
+  try {
+    const result = await checkBrewUpdate(aapt, log);
+    if (result) {
+      updates.push(summarizeBrewChange(result.candidate, result.reason));
+      if (!dryRun) {
+        applyBrewCandidate(result.brew, result.candidate);
+        writeJson(brewFile, result.brew);
+      }
+    } else {
+      skipped += 1;
+    }
+  } catch (error) {
+    const message = `rokidbrew:phone ${error.message}`;
+    errors.push(message);
+    log(`error  ${message}`);
+  }
 }
 
 const report = buildReport({ updates, skipped, errors, logs });

@@ -14,7 +14,7 @@ on:
           - "false"
           - "true"
       app:
-        description: "Optional app id to check"
+        description: "Optional app id to check; use rokidbrew for self-update metadata"
         required: false
         default: ""
 
@@ -31,7 +31,7 @@ jobs:
           node-version: "22"
       - uses: android-actions/setup-android@v3
       - run: sdkmanager "build-tools;35.0.0"
-      - name: Check upstream app updates
+      - name: Check upstream updates
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
@@ -53,7 +53,7 @@ jobs:
         run: |
           if [ -z "$(git status --porcelain -- apps brew.json)" ]; then
             git checkout -- dist/apps.v1.json
-            echo "No app updates to propose."
+            echo "No app or RokidBrew updates to propose."
             exit 0
           fi
 
@@ -62,8 +62,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$branch" || true
           git checkout -B "$branch"
-          git add apps/*.json dist/apps.v1.json
-          git commit -m "Update app artifacts"
+          git add apps/*.json brew.json dist/apps.v1.json
+          git commit -m "Update app artifacts and RokidBrew metadata"
           git push --force-with-lease="refs/heads/$branch" origin "$branch"
 
           number="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')"
@@ -73,6 +73,6 @@ jobs:
             gh pr create \
               --base main \
               --head "$branch" \
-              --title "Update RokidBrew app artifacts" \
+              --title "Update RokidBrew app artifacts and metadata" \
               --body-file .tmp/update-report.md
           fi
