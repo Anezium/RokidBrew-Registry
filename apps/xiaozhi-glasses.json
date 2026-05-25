@@ -1,17 +1,17 @@
 {
-  "id": "xiaozhi-glasses",
-  "name": "小智 AI 语音助手",
-  "category": "AI",
+  “id”: “xiaozhi-glasses”,
+  “name”: “小智 AI 语音助手”,
+“类别”： “人工智能”，
   "type": "glasses",
   "version": "1.0",
-  "summary": "小智 AI 语音对话助手，支持语音唤醒、AI 对话",
-  "description": "基于小智 AI 官方服务器开发的 Rokid 眼镜 AI 语音助手，采用赛博朋克绿色矩阵 UI。\n\n功能特点：\n- AI 智能对话（连接小智官方服务器 wss://api.tenclass.net/xiaozhi/v1/）\n- 自动语音识别，开盖即用，无需手动操作\n- OPUS 音频编解码，低带宽高音质\n- 回声消除 + 噪音抑制 + 自动增益\n\n首次使用：打开应用  听到 6 位数验证码  访问 xiaozhi.me 注册设备  重新打开即可使用。",
+  “summary”: “小智AI语音对话助手，支持语音唤醒、AI对话”,
+  : 基于小智AI官方服务器开发的Rokid眼镜AI语音助手，采用赛博朋克绿色矩阵UI。<br>功能特点：<br>- AI智能对话（连接小智官方服务器wss://api.tenclass.net/xiaozhi/v1/）<br>- 自动语音识别，开盖即用，无需手动操作<br>- OPUS音频编解码，低带宽高音质<br>- 回声消除 + 噪音抑制 + 自动增益<br>首次使用：打开应用 → 听到6位数验证码 → 访问xiaozhi.me注册设备 → 重新打开即可使用。
   "author": "mdloverm",
   "sourceUrl": "https://github.com/mdloverm/rokid-xiaozhi",
   "phoneRequired": false,
   "artifacts": [
     {
-      "target": "glasses",
+      “目标”: 眼镜,
       "url": "https://github.com/mdloverm/rokid-xiaozhi/releases/download/rokid-xiaozhi/app-release-signed.apk",
       "sha256": "415d0c446328e50bd64d729796745e669b485352eef337f8853a3381922241f7",
       "sizeBytes": 15256225,
@@ -19,5 +19,16 @@
       "versionCode": 1,
       "versionName": "1.0"
     }
-  ]
+  ],
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "mdloverm/rokid-xiaozhi",
+    "release": "rokid-xiaozhi",
+    "assets": [
+      {
+        "target": "眼镜",
+“匹配”：“^app-release-signed\\.apk$”
+      }
+    ]
+  }
 }
