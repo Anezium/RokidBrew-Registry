@@ -1,0 +1,25 @@
+{
+  "id": "rokid-manager",
+  "name": "Rokid Manager",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "1.5",
+  "summary": "Access advanced settings and tools on Rokid glasses.",
+  "description": "Community-provided glasses-side manager for accessing different Rokid glasses settings, including connectivity, apps, storage, sound, battery, camera, files, and device controls.",
+  "author": "Unknown",
+  "sourceUrl": "https://github.com/Anezium/RokidBrew-Registry/blob/main/assets/apks/rokid-manager-1.5.apk",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/apks/rokid-manager-1.5.apk",
+      "sha256": "8c7629e3fe2d2399fbe9532310444624aa4bda900b796949af821008a71fd35e",
+      "sizeBytes": 17070391,
+      "packageName": "com.example.advancedsettingsmanager",
+      "versionCode": 2,
+      "versionName": "1.5"
+    }
+  ],
+  "iconAsset": "rokid-manager.png",
+  "publishedAt": "2026-05-25T23:45:12Z"
+}
