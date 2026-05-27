@@ -1,0 +1,38 @@
+{
+  "id": "ek-timer",
+  "name": "EK Timer",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "1.0.0",
+  "publishedAt": "2026-05-26",
+  "summary": "Simple timer for Rokid glasses.",
+  "description": "Simple Rokid glasses timer with minute and second setup, start/stop, reset, beep, and vibration alerts.",
+  "screenshotAssets": [
+    "ek-timer.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.0.0.apk",
+      "sha256": "2599f399b49d8784f6328159bfd42dda499a253e20753441b07b7ac1f3d625c2",
+      "sizeBytes": 4692148,
+      "packageName": "kr.pe.eung.ektimer",
+      "versionCode": 1,
+      "versionName": "1.0.0"
+    }
+  ],
+  "author": "EUNG SOFT",
+  "sourceUrl": "https://github.com/eung3392/eungsoft",
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "eung3392/eungsoft",
+    "release": "RokidGlassesApp",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^EKTimer_v(?<version>\\d+(?:\\.\\d+)*)\\.apk$"
+      }
+    ]
+  }
+}

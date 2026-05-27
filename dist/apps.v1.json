@@ -1,10 +1,41 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-27T08:50:37.529Z",
+  "generatedAt": "2026-05-27T17:07:48.279Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
   "apps": [
+    {
+      "id": "ek-remover",
+      "name": "EK Remover",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-05-27",
+      "summary": "Uninstall apps directly on Rokid glasses.",
+      "description": "Simple uninstaller for navigating installed apps and removing selected apps on Rokid glasses.",
+      "screenshotAssets": [
+        "ek-remover.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKRemover_v1.0.0.apk",
+          "sha256": "6ec4b7d832f318dab9cc2c6e55dbc16c49717ee9fd1d6590710f48fd572e912d",
+          "sizeBytes": 4550689,
+          "packageName": "kr.pe.eung.ekremover",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-05-29T00:00:00.000Z",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-remover.jpg"
+      ]
+    },
     {
       "id": "rokid-live-studio",
       "name": "Rokid Live Studio",
@@ -184,6 +215,37 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
+      ]
+    },
+    {
+      "id": "ek-timer",
+      "name": "EK Timer",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-05-26",
+      "summary": "Simple timer for Rokid glasses.",
+      "description": "Simple Rokid glasses timer with minute and second setup, start/stop, reset, beep, and vibration alerts.",
+      "screenshotAssets": [
+        "ek-timer.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.0.0.apk",
+          "sha256": "2599f399b49d8784f6328159bfd42dda499a253e20753441b07b7ac1f3d625c2",
+          "sizeBytes": 4692148,
+          "packageName": "kr.pe.eung.ektimer",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-05-28T00:00:00.000Z",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
       ]
     },
     {
