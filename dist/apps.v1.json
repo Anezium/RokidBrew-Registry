@@ -1,10 +1,191 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-25T23:47:11.890Z",
-  "brewVersion": "0.1.7",
-  "brewVersionCode": 8,
-  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.7/RokidBrew-phone-v0.1.7-debug.apk",
+  "generatedAt": "2026-05-27T08:50:37.529Z",
+  "brewVersion": "0.1.8",
+  "brewVersionCode": 9,
+  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
   "apps": [
+    {
+      "id": "rokid-live-studio",
+      "name": "Rokid Live Studio",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.4",
+      "publishedAt": "2026-05-26T17:18:31Z",
+      "summary": "Stream your Rokid glasses camera and microphone from your phone.",
+      "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
+      "screenshotAssets": [
+        "rokid-live-studio-home.jpg",
+        "rokid-live-studio-youtube.jpg",
+        "rokid-live-studio-twitch.jpg",
+        "rokid-live-studio-chat.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.4%2B5/rokid-live-studio-phone-0.1.4-vc5.apk",
+          "sha256": "5c6343f8f3607c2f4199f4f015404aa3d90ba131d12fde9fbf6399c7cde241e9",
+          "sizeBytes": 38702587,
+          "packageName": "com.anezium.rokidlive.phone",
+          "versionCode": 5,
+          "versionName": "0.1.4"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
+      "newUntil": "2026-05-28T17:18:31.000Z",
+      "iconAsset": "rokid-live-studio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
+      ]
+    },
+    {
+      "id": "rokid-lyrics",
+      "name": "Rokid Lyrics",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.3.1",
+      "featured": true,
+      "featuredRank": 3,
+      "summary": "Synced song lyrics from phone to Rokid glasses.",
+      "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-glasses-release.apk",
+          "sha256": "69675578039d24ee9ea2c6f157ba596abc1a7178d1464dd5fac10b024bbd02ab",
+          "sizeBytes": 1085869,
+          "packageName": "com.rokid.lyrics.glasses",
+          "versionCode": 8,
+          "versionName": "0.3.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-phone-release.apk",
+          "sha256": "6c6fd45f6817d85f4de519cc991687c4205f3590a9743aeb1ce355c91a3e30df",
+          "sizeBytes": 1728109,
+          "packageName": "com.rokid.lyrics.phone",
+          "versionCode": 8,
+          "versionName": "0.3.1"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
+      "screenshotAssets": [
+        "rokid-lyrics-phone.jpg",
+        "rokid-lyrics-glasses.jpg"
+      ],
+      "publishedAt": "2026-05-26T17:18:23Z",
+      "newUntil": "2026-05-28T17:18:23.000Z",
+      "iconAsset": "rokid-lyrics.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
+      ]
+    },
+    {
+      "id": "rokid-scribe",
+      "name": "Rokid-Scribe",
+      "category": "Utility",
+      "type": "combo",
+      "version": "1.1.2",
+      "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
+      "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk",
+          "sha256": "b48678b37dd68e93230a1b5888667ca744d8bcc10406330dfcbd0065ceec1225",
+          "sizeBytes": 8007082,
+          "packageName": "com.rokidscribe.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.2/Rokid-Scribe-phone-v1.1.2-debug.apk",
+          "sha256": "4156eb60dac54c2241754fcb7f76499130f739605a6f40e9bb9ca29c3f632b0f",
+          "sizeBytes": 10427566,
+          "packageName": "com.rokidscribe",
+          "versionCode": 105,
+          "versionName": "1.1.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Scribe",
+      "iconAsset": "rokid-scribe.png",
+      "screenshotAssets": [
+        "rokid-scribe-menu.jpg",
+        "rokid-scribe-settings.jpg",
+        "rokid-scribe-record.jpg",
+        "rokid-scribe-glasses.jpg",
+        "rokid-scribe-glasses-recording.jpg"
+      ],
+      "publishedAt": "2026-05-26T17:10:49Z",
+      "newUntil": "2026-05-28T17:10:49.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-scribe.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-settings.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
+      ]
+    },
+    {
+      "id": "rokid-apks",
+      "name": "Rokid-APKs",
+      "category": "Developer",
+      "type": "combo",
+      "version": "1.2.2",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Upload and install APKs on Rokid glasses from your phone.",
+      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
+          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
+          "sizeBytes": 7725471,
+          "packageName": "com.rokidapks.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.2/Rokid-APKs-phone-v1.2.2-debug.apk",
+          "sha256": "2add6354b62ca53360ed84cf5465e8f8e06aee5f9f61e03d4800568c3b803b8d",
+          "sizeBytes": 11832530,
+          "packageName": "com.rokidapks",
+          "versionCode": 122,
+          "versionName": "1.2.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
+      "iconAsset": "rokid-apks.png",
+      "screenshotAssets": [
+        "rokid-apks-phone.jpg",
+        "rokid-apks-glasses.jpg"
+      ],
+      "publishedAt": "2026-05-26T16:38:33Z",
+      "newUntil": "2026-05-28T16:38:33.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
+      ]
+    },
     {
       "id": "rokid-manager",
       "name": "Rokid Manager",
@@ -114,96 +295,6 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
-      ]
-    },
-    {
-      "id": "rokid-apks",
-      "name": "Rokid-APKs",
-      "category": "Developer",
-      "type": "combo",
-      "version": "1.2.1",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Upload and install APKs on Rokid glasses from your phone.",
-      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
-          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
-          "sizeBytes": 7725471,
-          "packageName": "com.rokidapks.glasses",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.1/Rokid-APKs-phone-v1.2.1-debug.apk",
-          "sha256": "35a972dcd3bb664c1dcbf5035dfa2edb927a0a42bf3a293ad184c7e5035a614c",
-          "sizeBytes": 11829497,
-          "packageName": "com.rokidapks",
-          "versionCode": 121,
-          "versionName": "1.2.1"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
-      "iconAsset": "rokid-apks.png",
-      "screenshotAssets": [
-        "rokid-apks-phone.jpg",
-        "rokid-apks-glasses.jpg"
-      ],
-      "publishedAt": "2026-05-21T17:37:06Z",
-      "newUntil": "2026-05-23T17:37:06.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
-      ]
-    },
-    {
-      "id": "rokid-lyrics",
-      "name": "Rokid Lyrics",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.3.0",
-      "featured": true,
-      "featuredRank": 3,
-      "summary": "Synced song lyrics from phone to Rokid glasses.",
-      "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-glasses-release.apk",
-          "sha256": "8b8b3757d041185f1cd72911a2e32db7d608329da52e8e24a47e9c858953d873",
-          "sizeBytes": 1085869,
-          "packageName": "com.rokid.lyrics.glasses",
-          "versionCode": 7,
-          "versionName": "0.3.0"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.0/lyrics-phone-release.apk",
-          "sha256": "1c88fb966892d3ec1d6d8eb4cbb7410a48455979d4f4e4f7ea9e00bcbcd7ef7c",
-          "sizeBytes": 1675320,
-          "packageName": "com.rokid.lyrics.phone",
-          "versionCode": 7,
-          "versionName": "0.3.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
-      "screenshotAssets": [
-        "rokid-lyrics-phone.jpg",
-        "rokid-lyrics-glasses.jpg"
-      ],
-      "iconAsset": "rokid-lyrics.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
       ]
     },
     {
@@ -955,45 +1046,6 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
     },
     {
-      "id": "rokid-live-studio",
-      "name": "Rokid Live Studio",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.1.3",
-      "publishedAt": "2026-05-21T17:37:07Z",
-      "summary": "Stream your Rokid glasses camera and microphone from your phone.",
-      "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
-      "screenshotAssets": [
-        "rokid-live-studio-home.jpg",
-        "rokid-live-studio-youtube.jpg",
-        "rokid-live-studio-twitch.jpg",
-        "rokid-live-studio-chat.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.3%2B4/rokid-live-studio-phone-0.1.3-vc4.apk",
-          "sha256": "b1db7aa95a25d30122ebdda32fa54a0b5c568c2495e9c8f5ce88d182e41aa083",
-          "sizeBytes": 38670691,
-          "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 4,
-          "versionName": "0.1.3"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-05-23T17:37:07.000Z",
-      "iconAsset": "rokid-live-studio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
-      ]
-    },
-    {
       "id": "music-score",
       "name": "Rokid Music Score",
       "category": "Music",
@@ -1068,54 +1120,6 @@
       "iconAsset": "rokid-ssh-terminal.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
       "screenshotAssets": []
-    },
-    {
-      "id": "rokid-scribe",
-      "name": "Rokid-Scribe",
-      "category": "Utility",
-      "type": "combo",
-      "version": "1.1.1",
-      "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
-      "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk",
-          "sha256": "b48678b37dd68e93230a1b5888667ca744d8bcc10406330dfcbd0065ceec1225",
-          "sizeBytes": 8007082,
-          "packageName": "com.rokidscribe.glasses",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-phone-v1.1.1-debug.apk",
-          "sha256": "13c6695db321a22660a92ba136c6f954a3a9a86b9d870ebc3b7c8035b40af2e1",
-          "sizeBytes": 20857192,
-          "packageName": "com.rokidscribe",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Scribe",
-      "iconAsset": "rokid-scribe.png",
-      "screenshotAssets": [
-        "rokid-scribe-menu.jpg",
-        "rokid-scribe-settings.jpg",
-        "rokid-scribe-record.jpg",
-        "rokid-scribe-glasses.jpg",
-        "rokid-scribe-glasses-recording.jpg"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-scribe.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-menu.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-settings.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
-      ]
     },
     {
       "id": "texthome",
