@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-28T12:03:07.042Z",
+  "generatedAt": "2026-05-28T12:15:17.661Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
@@ -14,6 +14,15 @@
       "publishedAt": "2026-05-28T11:55:21Z",
       "summary": "Spatial operating system interface for OpenClaw and Rokid glasses.",
       "description": "Development-preview phone and glasses pair. JSOS Core connects to a local or private OpenClaw Gateway and handles voice input, TTS settings, sessions, camera handoff, Rokid pairing, and HUD deployment. JSOS HUD renders the glasses interface for streamed chat, gestures, staged voice input, sessions, and photo capture.",
+      "screenshotAssets": [
+        "jsos-core-home.jpeg",
+        "jsos-core-session-chat.jpeg",
+        "jsos-core-hud-link.png",
+        "jsos-core-hud-deployment.jpeg",
+        "jsos-hud-session-chat.png",
+        "jsos-hud-options.png",
+        "jsos-hud-commands.png"
+      ],
       "phoneRequired": true,
       "artifacts": [
         {
@@ -38,7 +47,15 @@
       "author": "IWhatsskill",
       "sourceUrl": "https://github.com/IWhatsskill/JSOS",
       "newUntil": "2026-05-30T11:55:21.000Z",
-      "screenshotAssets": []
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
+      ]
     },
     {
       "id": "rokid-relay",

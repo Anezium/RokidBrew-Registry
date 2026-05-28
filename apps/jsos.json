@@ -7,6 +7,15 @@
   "publishedAt": "2026-05-28T11:55:21Z",
   "summary": "Spatial operating system interface for OpenClaw and Rokid glasses.",
   "description": "Development-preview phone and glasses pair. JSOS Core connects to a local or private OpenClaw Gateway and handles voice input, TTS settings, sessions, camera handoff, Rokid pairing, and HUD deployment. JSOS HUD renders the glasses interface for streamed chat, gestures, staged voice input, sessions, and photo capture.",
+  "screenshotAssets": [
+    "jsos-core-home.jpeg",
+    "jsos-core-session-chat.jpeg",
+    "jsos-core-hud-link.png",
+    "jsos-core-hud-deployment.jpeg",
+    "jsos-hud-session-chat.png",
+    "jsos-hud-options.png",
+    "jsos-hud-commands.png"
+  ],
   "phoneRequired": true,
   "artifacts": [
     {
