@@ -1,10 +1,40 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-27T23:15:01.519Z",
+  "generatedAt": "2026-05-28T09:08:19.568Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
   "apps": [
+    {
+      "id": "xiaozhi-glasses",
+      "name": "XiaoZhi AI",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-05-28",
+      "summary": "XiaoZhi AI voice assistant for Rokid glasses.",
+      "description": "Standalone XiaoZhi AI voice assistant client for Rokid glasses. Requires activation through xiaozhi.me and uses XiaoZhi/Tenclass cloud services. The upstream build also includes a voice-triggered APK store and installer.",
+      "screenshotAssets": [],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/mdloverm/rokid-xiaozhi/main/photo/xiaozhi-glasses-1.jpg",
+        "https://raw.githubusercontent.com/mdloverm/rokid-xiaozhi/main/photo/xiaozhi-glasses-2.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/mdloverm/rokid-xiaozhi/releases/download/rokid-xiaozhi/app-release-signed.apk",
+          "sha256": "dd5c755dafdcdec3c9548ca754de4aafaf57c03dee21bde11ea59ceeea787f59",
+          "sizeBytes": 15277540,
+          "packageName": "com.rokid.xiaozhi",
+          "versionCode": 1,
+          "versionName": "1.0"
+        }
+      ],
+      "author": "mdloverm",
+      "sourceUrl": "https://github.com/mdloverm/rokid-xiaozhi",
+      "newUntil": "2026-05-30T00:00:00.000Z"
+    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -253,65 +283,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
       ]
-    },
-    {
-      "id": "ek-timer",
-      "name": "EK Timer",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "publishedAt": "2026-05-26",
-      "summary": "Simple timer for Rokid glasses.",
-      "description": "Simple Rokid glasses timer with minute and second setup, start/stop, reset, beep, and vibration alerts.",
-      "screenshotAssets": [
-        "ek-timer.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.0.0.apk",
-          "sha256": "2599f399b49d8784f6328159bfd42dda499a253e20753441b07b7ac1f3d625c2",
-          "sizeBytes": 4692148,
-          "packageName": "kr.pe.eung.ektimer",
-          "versionCode": 1,
-          "versionName": "1.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "newUntil": "2026-05-28T00:00:00.000Z",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
-      ]
-    },
-    {
-      "id": "rokid-manager",
-      "name": "Rokid Manager",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.5",
-      "summary": "Access advanced settings and tools on Rokid glasses.",
-      "description": "Community-provided glasses-side manager for accessing different Rokid glasses settings, including connectivity, apps, storage, sound, battery, camera, files, and device controls.",
-      "author": "Unknown",
-      "sourceUrl": "https://github.com/Anezium/RokidBrew-Registry/blob/main/assets/apks/rokid-manager-1.5.apk",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/apks/rokid-manager-1.5.apk",
-          "sha256": "8c7629e3fe2d2399fbe9532310444624aa4bda900b796949af821008a71fd35e",
-          "sizeBytes": 17070391,
-          "packageName": "com.example.advancedsettingsmanager",
-          "versionCode": 2,
-          "versionName": "1.5"
-        }
-      ],
-      "iconAsset": "rokid-manager.png",
-      "publishedAt": "2026-05-25T23:45:12Z",
-      "newUntil": "2026-05-27T23:45:12.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-manager.png",
-      "screenshotAssets": []
     },
     {
       "id": "dew-browser",
@@ -633,6 +604,37 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-pilot.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-pilot.jpg"
+      ]
+    },
+    {
+      "id": "ek-timer",
+      "name": "EK Timer",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-05-26",
+      "summary": "Simple timer for Rokid glasses.",
+      "description": "Simple Rokid glasses timer with minute and second setup, start/stop, reset, beep, and vibration alerts.",
+      "screenshotAssets": [
+        "ek-timer.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.0.0.apk",
+          "sha256": "2599f399b49d8784f6328159bfd42dda499a253e20753441b07b7ac1f3d625c2",
+          "sizeBytes": 4692148,
+          "packageName": "kr.pe.eung.ektimer",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-05-28T00:00:00.000Z",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
       ]
     },
     {
@@ -1143,6 +1145,34 @@
       "screenshotAssets": [],
       "iconAsset": "rokid-gmaps.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
+    },
+    {
+      "id": "rokid-manager",
+      "name": "Rokid Manager",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.5",
+      "summary": "Access advanced settings and tools on Rokid glasses.",
+      "description": "Community-provided glasses-side manager for accessing different Rokid glasses settings, including connectivity, apps, storage, sound, battery, camera, files, and device controls.",
+      "author": "Unknown",
+      "sourceUrl": "https://github.com/Anezium/RokidBrew-Registry/blob/main/assets/apks/rokid-manager-1.5.apk",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/apks/rokid-manager-1.5.apk",
+          "sha256": "8c7629e3fe2d2399fbe9532310444624aa4bda900b796949af821008a71fd35e",
+          "sizeBytes": 17070391,
+          "packageName": "com.example.advancedsettingsmanager",
+          "versionCode": 2,
+          "versionName": "1.5"
+        }
+      ],
+      "iconAsset": "rokid-manager.png",
+      "publishedAt": "2026-05-25T23:45:12Z",
+      "newUntil": "2026-05-27T23:45:12.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-manager.png",
+      "screenshotAssets": []
     },
     {
       "id": "music-score",

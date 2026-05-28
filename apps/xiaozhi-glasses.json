@@ -1,0 +1,41 @@
+{
+  "id": "xiaozhi-glasses",
+  "name": "XiaoZhi AI",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "1.0.0",
+  "publishedAt": "2026-05-28",
+  "summary": "XiaoZhi AI voice assistant for Rokid glasses.",
+  "description": "Standalone XiaoZhi AI voice assistant client for Rokid glasses. Requires activation through xiaozhi.me and uses XiaoZhi/Tenclass cloud services. The upstream build also includes a voice-triggered APK store and installer.",
+  "screenshotAssets": [],
+  "screenshotUrls": [
+    "https://raw.githubusercontent.com/mdloverm/rokid-xiaozhi/main/photo/xiaozhi-glasses-1.jpg",
+    "https://raw.githubusercontent.com/mdloverm/rokid-xiaozhi/main/photo/xiaozhi-glasses-2.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/mdloverm/rokid-xiaozhi/releases/download/rokid-xiaozhi/app-release-signed.apk",
+      "sha256": "dd5c755dafdcdec3c9548ca754de4aafaf57c03dee21bde11ea59ceeea787f59",
+      "sizeBytes": 15277540,
+      "packageName": "com.rokid.xiaozhi",
+      "versionCode": 1,
+      "versionName": "1.0"
+    }
+  ],
+  "author": "mdloverm",
+  "sourceUrl": "https://github.com/mdloverm/rokid-xiaozhi",
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "mdloverm/rokid-xiaozhi",
+    "release": "rokid-xiaozhi",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^app-release-signed\\.apk$",
+        "packageName": "com.rokid.xiaozhi"
+      }
+    ]
+  }
+}
