@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-28T12:15:17.661Z",
+  "generatedAt": "2026-05-28T12:17:04.626Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
@@ -47,6 +47,8 @@
       "author": "IWhatsskill",
       "sourceUrl": "https://github.com/IWhatsskill/JSOS",
       "newUntil": "2026-05-30T11:55:21.000Z",
+      "iconAsset": "jsos.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
@@ -121,6 +123,8 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-05-29T00:00:00.000Z",
+      "iconAsset": "ek-remover.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-remover.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-remover.jpg"
       ]
@@ -655,6 +659,8 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-05-28T00:00:00.000Z",
+      "iconAsset": "ek-timer.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-timer.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
       ]
