@@ -9,6 +9,22 @@
   "publishedAt": "2026-05-08T21:30:00.000Z",
   "summary": "Rokid-first browser with phone mouse mode.",
   "description": "Web browser optimized for Rokid glasses. It supports page viewing on glasses and smartphone mouse/keyboard input.",
+  "listing": {
+    "about": "Dew Browser is a Rokid-first web browser built around the split between glasses display and phone input. Browse pages on the glasses while using the phone as a mouse and keyboard, which makes text entry and pointer control more comfortable than trying to do everything on the wearable.\n\nIt is useful for quick web lookups, dashboards, documentation, and lightweight browsing sessions where the glasses are the screen but the phone remains the control surface.\n\nInstall both targets from RokidBrew for the intended phone-plus-glasses experience."
+  },
+  "releases": [
+    {
+      "version": "1.0.1",
+      "date": "2026-03-15T00:13:08Z",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Published in the EUNG SOFT Rokid glasses app release bucket.",
+      "changes": [
+        "Provides a web browser optimized for Rokid glasses.",
+        "Supports smartphone mouse and keyboard input.",
+        "Packages phone and glasses targets for the RokidBrew install flow."
+      ]
+    }
+  ],
   "screenshotAssets": [
     "dew-browser.jpg",
     "dew-browser-2.jpg"

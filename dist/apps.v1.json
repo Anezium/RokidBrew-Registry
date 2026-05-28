@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-28T12:18:08.386Z",
+  "generatedAt": "2026-05-28T14:41:22.212Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
@@ -138,6 +138,22 @@
       "publishedAt": "2026-05-26T17:18:31Z",
       "summary": "Stream your Rokid glasses camera and microphone from your phone.",
       "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
+      "listing": {
+        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters."
+      },
+      "releases": [
+        {
+          "version": "0.1.4",
+          "date": "2026-05-26T17:18:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
+          "notes": "Phone release focused on launch polish and verification.",
+          "changes": [
+            "Fix Android 12+ phone splash screen with a dedicated padded asset.",
+            "Keep the phone splash background dark and aligned with the app theme.",
+            "Build and launch verified on a connected Samsung phone."
+          ]
+        }
+      ],
       "screenshotAssets": [
         "rokid-live-studio-home.jpg",
         "rokid-live-studio-youtube.jpg",
@@ -222,6 +238,22 @@
       "version": "1.1.2",
       "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
       "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
+      "listing": {
+        "about": "Rokid-Scribe turns the glasses into a lightweight voice-note capture tool. Start recordings on the glasses, then bring them back to the phone over Wi-Fi LAN or Bluetooth SPP for transcription and export.\n\nThe phone app is where the heavier workflow lives: provider setup, transcription, review, and TXT or PDF export. The glasses app stays focused on quick capture, so it can be useful during meetings, field notes, demos, or any moment where pulling out a phone breaks the flow.\n\nInstall both APKs for the full workflow. The glasses side captures notes, while the phone side handles import, transcription providers, and export."
+      },
+      "releases": [
+        {
+          "version": "1.1.2",
+          "date": "2026-05-26T17:10:49Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Scribe/releases/tag/v1.1.2",
+          "notes": "Phone app patch focused on launch polish and version metadata.",
+          "changes": [
+            "Fix Android 12+ splash screen with a dedicated padded Scribe logo asset.",
+            "Keep launcher icons unchanged.",
+            "Bump phone app to version 1.1.2, versionCode 105."
+          ]
+        }
+      ],
       "phoneRequired": true,
       "artifacts": [
         {
@@ -274,6 +306,22 @@
       "featuredRank": 2,
       "summary": "Upload and install APKs on Rokid glasses from your phone.",
       "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+      "listing": {
+        "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew."
+      },
+      "releases": [
+        {
+          "version": "1.2.2",
+          "date": "2026-05-26T16:38:33Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
+          "notes": "Phone app patch focused on splash screen sizing and Android 12+ launch behavior.",
+          "changes": [
+            "Use a dedicated padded vector logo for the splash screen.",
+            "Add Android 12+ splash theme overrides with a dark background.",
+            "Avoid oversized or blurry launcher artwork during startup."
+          ]
+        }
+      ],
       "phoneRequired": true,
       "artifacts": [
         {
@@ -321,6 +369,22 @@
       "publishedAt": "2026-05-08T21:30:00.000Z",
       "summary": "Rokid-first browser with phone mouse mode.",
       "description": "Web browser optimized for Rokid glasses. It supports page viewing on glasses and smartphone mouse/keyboard input.",
+      "listing": {
+        "about": "Dew Browser is a Rokid-first web browser built around the split between glasses display and phone input. Browse pages on the glasses while using the phone as a mouse and keyboard, which makes text entry and pointer control more comfortable than trying to do everything on the wearable.\n\nIt is useful for quick web lookups, dashboards, documentation, and lightweight browsing sessions where the glasses are the screen but the phone remains the control surface.\n\nInstall both targets from RokidBrew for the intended phone-plus-glasses experience."
+      },
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-03-15T00:13:08Z",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Published in the EUNG SOFT Rokid glasses app release bucket.",
+          "changes": [
+            "Provides a web browser optimized for Rokid glasses.",
+            "Supports smartphone mouse and keyboard input.",
+            "Packages phone and glasses targets for the RokidBrew install flow."
+          ]
+        }
+      ],
       "screenshotAssets": [
         "dew-browser.jpg",
         "dew-browser-2.jpg"
@@ -1325,6 +1389,22 @@
       "version": "1.0.0",
       "summary": "Real-time speech-to-text subtitles for smart glasses.",
       "description": "Uses a phone as microphone and sends recognized speech as subtitles to Rokid glasses or another receiver.",
+      "listing": {
+        "about": "Your Voice is a real-time subtitle bridge for smart glasses. The phone listens, performs speech recognition, and sends the recognized text to Rokid glasses or another receiver so spoken words can become readable captions.\n\nIt is designed for accessibility and communication moments where live text helps: noisy spaces, hearing support, language practice, or quick demos of phone-to-glasses captioning.\n\nInstall the app on the phone and glasses when you want the full Rokid workflow. The same APK is currently used for both targets in the registry."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-15T00:13:08Z",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Published in the EUNG SOFT Rokid glasses app release bucket.",
+          "changes": [
+            "Adds real-time speech-to-text subtitle support.",
+            "Sends recognized speech to Rokid glasses or another receiver.",
+            "Uses the phone as the microphone and recognition device."
+          ]
+        }
+      ],
       "screenshotAssets": [
         "your-voice.jpg",
         "your-voice-2.jpg",

@@ -8,6 +8,22 @@
   "featuredRank": 2,
   "summary": "Upload and install APKs on Rokid glasses from your phone.",
   "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+  "listing": {
+    "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew."
+  },
+  "releases": [
+    {
+      "version": "1.2.2",
+      "date": "2026-05-26T16:38:33Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
+      "notes": "Phone app patch focused on splash screen sizing and Android 12+ launch behavior.",
+      "changes": [
+        "Use a dedicated padded vector logo for the splash screen.",
+        "Add Android 12+ splash theme overrides with a dark background.",
+        "Avoid oversized or blurry launcher artwork during startup."
+      ]
+    }
+  ],
   "phoneRequired": true,
   "artifacts": [
     {

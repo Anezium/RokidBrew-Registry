@@ -6,6 +6,22 @@
   "version": "1.1.2",
   "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
   "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
+  "listing": {
+    "about": "Rokid-Scribe turns the glasses into a lightweight voice-note capture tool. Start recordings on the glasses, then bring them back to the phone over Wi-Fi LAN or Bluetooth SPP for transcription and export.\n\nThe phone app is where the heavier workflow lives: provider setup, transcription, review, and TXT or PDF export. The glasses app stays focused on quick capture, so it can be useful during meetings, field notes, demos, or any moment where pulling out a phone breaks the flow.\n\nInstall both APKs for the full workflow. The glasses side captures notes, while the phone side handles import, transcription providers, and export."
+  },
+  "releases": [
+    {
+      "version": "1.1.2",
+      "date": "2026-05-26T17:10:49Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Scribe/releases/tag/v1.1.2",
+      "notes": "Phone app patch focused on launch polish and version metadata.",
+      "changes": [
+        "Fix Android 12+ splash screen with a dedicated padded Scribe logo asset.",
+        "Keep launcher icons unchanged.",
+        "Bump phone app to version 1.1.2, versionCode 105."
+      ]
+    }
+  ],
   "phoneRequired": true,
   "artifacts": [
     {
