@@ -1,0 +1,50 @@
+{
+  "id": "jsos",
+  "name": "JSOS",
+  "category": "AI",
+  "type": "combo",
+  "version": "2.0-preview",
+  "publishedAt": "2026-05-28T11:55:21Z",
+  "summary": "Spatial operating system interface for OpenClaw and Rokid glasses.",
+  "description": "Development-preview phone and glasses pair. JSOS Core connects to a local or private OpenClaw Gateway and handles voice input, TTS settings, sessions, camera handoff, Rokid pairing, and HUD deployment. JSOS HUD renders the glasses interface for streamed chat, gestures, staged voice input, sessions, and photo capture.",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-HUD-v2.0.apk",
+      "sha256": "bc4a46e1b154063600f65e68a100da6cea307fcfde8d361afea6f2aa6ab130b2",
+      "sizeBytes": 21353247,
+      "packageName": "com.jsos.glasses",
+      "versionCode": 200,
+      "versionName": "2.0"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-Core-v2.0.apk",
+      "sha256": "364ca672b157b30e16ce9a9062df82808a1a2ef8f7b67b3a9c14d2c7c271c4ed",
+      "sizeBytes": 51614732,
+      "packageName": "com.jsos.phone",
+      "versionCode": 200,
+      "versionName": "2.0"
+    }
+  ],
+  "author": "IWhatsskill",
+  "sourceUrl": "https://github.com/IWhatsskill/JSOS",
+  "update": {
+    "source": "githubRelease",
+    "repo": "IWhatsskill/JSOS",
+    "release": "v2.0-preview",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^JSOS-HUD-v(?<version>\\d+(?:\\.\\d+)*(?:[-+][0-9A-Za-z.-]+)?)\\.apk$",
+        "packageName": "com.jsos.glasses"
+      },
+      {
+        "target": "phone",
+        "match": "^JSOS-Core-v(?<version>\\d+(?:\\.\\d+)*(?:[-+][0-9A-Za-z.-]+)?)\\.apk$",
+        "packageName": "com.jsos.phone"
+      }
+    ]
+  }
+}
