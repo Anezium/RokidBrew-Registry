@@ -1,10 +1,47 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-29T21:26:56.596Z",
+  "generatedAt": "2026-05-29T22:04:12.895Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
   "apps": [
+    {
+      "id": "rokid-gmaps",
+      "name": "Rokid GMaps",
+      "category": "Navigation",
+      "type": "combo",
+      "version": "1.0.2",
+      "publishedAt": "2026-05-29T22:02:46Z",
+      "summary": "Turn-by-turn navigation for Rokid AR glasses.",
+      "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/glasses-debug.apk",
+          "sha256": "5d673904fa3cc7e15dc8df3550109344d22b72e8fb423d427d2ded69b4413a43",
+          "sizeBytes": 7800727,
+          "packageName": "com.anezium.rokidgmaps.glasses",
+          "versionCode": 2,
+          "versionName": "1.0.2"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/phone-debug.apk",
+          "sha256": "410113e3819754f848dd0b3d39f6af84d68dc0f74c404dd9ff14bffbdf0f0771",
+          "sizeBytes": 18022845,
+          "packageName": "com.anezium.rokidgmaps.phone",
+          "versionCode": 2,
+          "versionName": "1.0.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
+      "screenshotAssets": [],
+      "newUntil": "2026-05-31T22:02:46.000Z",
+      "iconAsset": "rokid-gmaps.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
+    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -1086,41 +1123,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud-2.jpg"
       ]
-    },
-    {
-      "id": "rokid-gmaps",
-      "name": "Rokid GMaps",
-      "category": "Navigation",
-      "type": "combo",
-      "version": "1.0.0",
-      "summary": "Turn-by-turn navigation for Rokid AR glasses.",
-      "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/glasses-debug.apk",
-          "sha256": "dc0d130a4930f76e89e5c83fec08e650b45399248b6162c801239dde63eeec1e",
-          "sizeBytes": 7914651,
-          "packageName": "com.rokid.hud.glasses",
-          "versionCode": 1,
-          "versionName": "1.0"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/phone-debug.apk",
-          "sha256": "920d0d020c73b311cfcc0b8657ee7ee4f9a36ec229dc62b02641a7eca96eaffc",
-          "sizeBytes": 18710686,
-          "packageName": "com.rokid.hud.phone",
-          "versionCode": 1,
-          "versionName": "1.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
-      "screenshotAssets": [],
-      "iconAsset": "rokid-gmaps.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
     },
     {
       "id": "rokid-live-studio",
