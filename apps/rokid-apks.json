@@ -6,22 +6,47 @@
   "version": "1.2.2",
   "featured": true,
   "featuredRank": 2,
-  "summary": "Upload and install APKs on Rokid glasses from your phone.",
-  "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+  "summary": "Upload and install APKs on Rokid glasses via phone using four explicit transfer modes",
+  "description": "Rokid-APKs lets you install Android APKs on Rokid glasses from your phone with four transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN. No desktop or cloud relay is needed. Requires a companion app on glasses for some modes.",
   "listing": {
-    "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew."
+    "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew.",
+    "descriptionMarkdown": "# About\n\nRokid-APKs enables installation of Android APKs on Rokid glasses directly from your phone. It supports four explicit transfer modes to suit different connection setups.\n\n# Key Features\n\n- Four transfer modes: \n  - `CXR-M / OFFICIAL`: Official Rokid BLE + Wi-Fi Direct, no glasses companion app needed\n  - `CXR-L / HI ROKID`: Uses Hi Rokid global authorization and CXR-L install path, requires Hi Rokid app\n  - `SPP / SLOW`: Bluetooth SPP streaming via glasses companion app, fully local and offline\n  - `WIFI LAN / FAST`: Bluetooth control plus APK transfer over Wi-Fi LAN or hotspot with companion app\n- Direct APK install confirmation on glasses via Android PackageInstaller\n- Phone UI provides live status and phase feedback\n\n# How It Works\n\n- Official CXR-M mode scans and connects to glasses over BLE and Wi-Fi Direct to upload APK\n- Hi Rokid CXR-L mode uses Hi Rokid app authorization and upload session\n- Companion modes require installing a glasses companion app and Bluetooth pairing\n- APK is transferred locally and installed with user confirmation on the glasses\n\n# Requirements\n\n- Phone app installed on Android phone\n- For `SPP` and `WIFI LAN` modes: glasses companion app installed and Bluetooth paired\n- For `CXR-L` mode: Hi Rokid app installed and phone Wi-Fi enabled\n\n# Notes\n\n- No desktop helper or cloud relay involved; all transfers are local\n- `WIFI LAN / FAST` mode requires phone and glasses on the same Wi-Fi or hotspot\n- Manual mode switching is needed; no automatic fallback between modes"
   },
   "releases": [
     {
       "version": "1.2.2",
       "date": "2026-05-26T16:38:33Z",
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
-      "notes": "Phone app patch focused on splash screen sizing and Android 12+ launch behavior.",
-      "changes": [
-        "Use a dedicated padded vector logo for the splash screen.",
-        "Add Android 12+ splash theme overrides with a dark background.",
-        "Avoid oversized or blurry launcher artwork during startup."
-      ]
+      "notes": "versionCode: 122\n\nFixed the splash screen by using a dedicated padded vector logo instead of scaling the launcher artwork. Adds Android 12+ splash theme overrides with a dark background to avoid the oversized/blurry icon and white startup flash.",
+      "changes": []
+    },
+    {
+      "version": "1.2.1",
+      "date": "2026-05-21T17:37:06Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.1",
+      "notes": "versionCode: 121\n\nFixed compatibility with the latest Hi Rokid update by sending the required auth package during CXR-L service binding. This restores CXR-L installs through the updated global Hi Rokid service.",
+      "changes": []
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-05-04T22:08:51Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.0",
+      "notes": "## What's new\n- Added `CXR-L / HI ROKID` mode using the global Hi Rokid app authorization flow.\n- Installs APKs through a CXR-L `CUSTOMAPP` session after Hi Rokid authorization.\n- Keeps the transport choices explicit: `CXR-M / OFFICIAL`, `CXR-L / HI ROKID`, `SPP / SLOW`, and `WIFI LAN / FAST`.\n\n## Reliability\n- Adds a clear Wi-Fi check for CXR-L, because Hi Rokid needs phone Wi-Fi enabled to join the glasses hotspot.\n- Recreates a fresh CXR-L session per install, cleans temporary APK cache files, and times out stuck installs after 90 seconds.\n\n## Notes\n- `CXR-M / OFFICIAL` still does not require the glasses companion app.\n- `CXR-L / HI ROKID` uses the global Hi Rokid app as the bridge and does not require the Rokid-APKs glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` require the Rokid-APKs glasses companion app.",
+      "changes": []
+    },
+    {
+      "version": "1.1.2",
+      "date": "2026-04-11T17:08:50Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.2",
+      "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-APKs/compare/v1.1.1...v1.1.2\n\n## Changelog\n\n### New\n- `CXR / OFFICIAL` now uses the Rokid glasses hotspot flow instead of the older Wi-Fi Direct / P2P upload path.\n- The phone joins the hotspot exposed by the glasses and uploads the APK through the official Rokid CXR flow.\n- The README was updated to document the new official flow and setup steps.\n\n### Improved\n- Better compatibility on newer Android phones where the old Wi-Fi Direct path could fail with `WIFI_CONNECT_FAILED`.\n- More reliable official installs on devices where Rokid’s legacy P2P flow was unstable or broken.\n- Added clearer troubleshooting steps for `CXR / OFFICIAL`.\n\n### Notes\n- `CXR / OFFICIAL` still does **not** require the glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` are unchanged and still require the companion app.\n- If `CXR / OFFICIAL` fails before upload starts, disconnect the glasses from normal Android Bluetooth settings and force close `Hi Rokid` or other Rokid apps before retrying.",
+      "changes": []
+    },
+    {
+      "version": "1.1.1",
+      "date": "2026-04-06T14:33:58Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.1",
+      "notes": "## Changes\n\n- Added a Wi-Fi shortcut directly inside the glasses companion HUD.\n- Reworked glasses navigation so Bluetooth device browsing and the Wi-Fi action behave predictably on Rokid input.\n- Improved the glasses HUD rendering for monochrome displays with cleaner black backgrounds, lighter outlines, and more stable focus states.\n- Fixed broken glyph rendering in the companion indicators and restored clean phase/status markers on phone and glasses.\n- Release publishing no longer gets overwritten by CI-built APK uploads.\n\n## APKs in this release\n\nThese assets were uploaded from the local workspace builds for this release.",
+      "changes": []
     }
   ],
   "phoneRequired": true,
@@ -52,5 +77,10 @@
     "rokid-apks-phone.jpg",
     "rokid-apks-glasses.jpg"
   ],
-  "publishedAt": "2026-05-26T16:38:33Z"
+  "publishedAt": "2026-05-26T16:38:33Z",
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-APKs",
+    "path": "README.md"
+  }
 }

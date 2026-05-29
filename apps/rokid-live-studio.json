@@ -5,22 +5,40 @@
   "type": "combo",
   "version": "0.1.4",
   "publishedAt": "2026-05-26T17:18:31Z",
-  "summary": "Stream your Rokid glasses camera and microphone from your phone.",
-  "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
+  "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
+  "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
   "listing": {
-    "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters."
+    "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
+    "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
   },
   "releases": [
     {
-      "version": "0.1.4",
+      "version": "0.1.4+5",
       "date": "2026-05-26T17:18:31Z",
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
-      "notes": "Phone release focused on launch polish and verification.",
-      "changes": [
-        "Fix Android 12+ phone splash screen with a dedicated padded asset.",
-        "Keep the phone splash background dark and aligned with the app theme.",
-        "Build and launch verified on a connected Samsung phone."
-      ]
+      "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
+      "changes": []
+    },
+    {
+      "version": "0.1.3+4",
+      "date": "2026-05-21T17:37:07Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
+      "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
+      "changes": []
+    },
+    {
+      "version": "0.1.2+3",
+      "date": "2026-05-11T18:18:44Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
+      "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
+      "changes": []
+    },
+    {
+      "version": "0.1.1+2",
+      "date": "2026-05-10T21:57:45Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
+      "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
+      "changes": []
     }
   ],
   "screenshotAssets": [
@@ -42,5 +60,10 @@
     }
   ],
   "author": "Anezium",
-  "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio"
+  "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-Live-Studio",
+    "path": "README.md"
+  }
 }

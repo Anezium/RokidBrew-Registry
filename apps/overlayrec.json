@@ -7,8 +7,8 @@
   "featured": true,
   "featuredRank": 2,
   "publishedAt": "2026-05-08",
-  "summary": "Trigger Rokid AR screenshots and AR recording from the glasses.",
-  "description": "OverlayRec runs on Rokid glasses as an Accessibility Service and opens a small on-glass menu from a two-finger slide combo, letting you start AR Screenshot or AR Record without opening Hi Rokid first.",
+  "summary": "Trigger AR screenshots and recordings from Rokid glasses via a two-finger gesture overlay menu",
+  "description": "OverlayRec runs on Rokid glasses as an Accessibility Service, enabling AR Screenshot and AR Record via a two-finger slide gesture without opening Hi Rokid. It displays a small overlay menu for quick media capture.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -27,5 +27,22 @@
   "screenshotAssets": [
     "overlayrec-main.jpg",
     "overlayrec-overlay.jpg"
-  ]
+  ],
+  "listing": {
+    "descriptionMarkdown": "# About\nOverlayRec lets you trigger AR screenshots and video recordings directly from Rokid glasses using a two-finger slide gesture, without needing to open the Hi Rokid app.\n\n# Key features\n- Activate AR Screenshot or AR Record from an on-glass overlay menu\n- Open menu with a two-finger slide left left right right gesture\n- Confirm actions immediately or wait 5 seconds for auto-confirm\n- Stop AR recording using the physical glasses button\n- Keeps the current app visible beneath the overlay\n- Restores volume after gesture activation\n\n# How it works\nOverlayRec runs as an Android Accessibility Service on the glasses, listening for specific two-finger swipe broadcasts. It then sends internal scene commands to start AR media capture. Hi Rokid remains available for media import and processing.\n\n# Controls\n- Open menu: two finger slide left left right right\n- Select AR Screenshot: two finger slide left\n- Select AR Record: two finger slide right\n- Confirm: OK button or auto-confirm after 5 seconds\n- Stop AR Record: physical glasses button\n\n# Notes\nOverlayRec is experimental and designed for Rokid glasses firmware supporting the required two-finger swipe broadcasts. It does not merge camera and HUD videos; this is handled by Rokid's AR Record flow and Hi Rokid app."
+  },
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-05-08T20:30:45Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/OverlayRec/releases/tag/v0.1.0",
+      "notes": "Initial alpha release of OverlayRec.\n\nHighlights:\n- Trigger Rokid AR Screenshot from the glasses.\n- Trigger Rokid AR Record from the glasses.\n- Open the overlay menu with: two finger slide left left right right.\n- Confirm with OK or wait 5 seconds for auto-confirm.\n- Stop AR Record with the physical glasses button.\n\nNotes:\n- This APK is intended for sideloading on Rokid Glasses.\n- Hi Rokid can still be used to import/process recorded media.\n- This is an experimental alpha build tested on real Rokid hardware.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/OverlayRec",
+    "path": "README.md"
+  }
 }

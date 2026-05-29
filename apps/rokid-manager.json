@@ -4,8 +4,8 @@
   "category": "Utility",
   "type": "glasses",
   "version": "1.5",
-  "summary": "Access advanced settings and tools on Rokid glasses.",
-  "description": "Community-provided glasses-side manager for accessing different Rokid glasses settings, including connectivity, apps, storage, sound, battery, camera, files, and device controls.",
+  "summary": "Access advanced settings and tools on Rokid glasses",
+  "description": "Rokid Manager is a community-developed app for managing various settings on Rokid AR glasses. It provides access to connectivity, apps, storage, sound, battery, camera, files, and device controls without requiring a phone companion.",
   "author": "Unknown",
   "sourceUrl": "https://github.com/Anezium/RokidBrew-Registry/blob/main/assets/apks/rokid-manager-1.5.apk",
   "phoneRequired": false,
@@ -21,5 +21,14 @@
     }
   ],
   "iconAsset": "rokid-manager.png",
-  "publishedAt": "2026-05-25T23:45:12Z"
+  "publishedAt": "2026-05-25T23:45:12Z",
+  "listing": {
+    "descriptionMarkdown": "About Rokid Manager\n\nRokid Manager is a glasses-side utility app that allows users to access and manage advanced settings on Rokid AR glasses.\n\nKey features\n\n- Manage connectivity options\n- Access installed apps\n- Monitor and control storage usage\n- Adjust sound and battery settings\n- Control camera and file management\n- Operate various device controls\n\nRequirements\n\n- Designed for Rokid AR glasses\n- No phone companion app required"
+  },
+  "releases": [],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/RokidBrew-Registry",
+    "path": "README.md"
+  }
 }

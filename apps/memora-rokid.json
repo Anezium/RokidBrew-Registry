@@ -4,8 +4,8 @@
   "category": "Learning",
   "type": "phone",
   "version": "1.0.0",
-  "summary": "Immersive language learning with Rokid glasses HUD and Baidu AI.",
-  "description": "Four learning modes: scenario dialogue, visual recognition, AI mnemonics, and spaced repetition. Connects to Rokid glasses for HUD overlay and uses Baidu AI for speech and vision.",
+  "summary": "Immersive language learning with Rokid glasses HUD and Baidu AI",
+  "description": "Memora is an Android app for Rokid AR glasses that offers four language learning modes using AI-driven scenario dialogues, visual recognition, mnemonics, and spaced repetition. It connects via Bluetooth to display content on the glasses HUD and uses Baidu AI for speech and vision processing.",
   "phoneRequired": true,
   "artifacts": [
     {
@@ -20,5 +20,14 @@
   ],
   "author": "e7naq3y",
   "sourceUrl": "https://github.com/e7naq3y/Memora_rokid",
-  "iconAsset": "memora-rokid.png"
+  "iconAsset": "memora-rokid.png",
+  "listing": {
+    "descriptionMarkdown": "About Memora\n\nMemora is an immersive language learning app designed for Rokid AR glasses. It uses a heads-up display (HUD) to present learning content in real time, integrating Baidu AI for intelligent scenario dialogues and image recognition.\n\nKey Features\n\n- Four learning modes: scenario dialogue, visual recognition, AI-generated mnemonics, and spaced repetition (SRS).\n- Scenario dialogue mode enables multi-turn AI conversations with voice input and HUD subtitles.\n- Visual recognition mode captures images via glasses and extracts keywords using AI.\n- Personalized mnemonic hints help memorize difficult vocabulary.\n- Spaced repetition schedules reviews based on the Ebbinghaus curve with adjustable intensity.\n\nApp Interface\n\n- Learning data dashboard with statistics, vocabulary radar, and review calendar.\n- Multi-language vocabulary management and daily goal settings.\n- AI chat coach providing learning analysis and review suggestions.\n- Device management for Bluetooth connection, HUD control, and media recording.\n\nRokid Glasses Integration\n\n- Bluetooth device management including battery, brightness, and volume.\n- Custom HUD views with smooth incremental updates.\n- Audio/video recording and Wi-Fi P2P media synchronization.\n\nRequirements\n\n- Android phone with Bluetooth to connect Rokid AR glasses.\n- Rokid AR glasses for HUD display (app UI can run without glasses)."
+  },
+  "releases": [],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "e7naq3y/Memora_rokid",
+    "path": "README.md"
+  }
 }

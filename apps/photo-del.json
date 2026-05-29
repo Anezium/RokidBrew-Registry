@@ -4,8 +4,8 @@
   "category": "Utility",
   "type": "glasses",
   "version": "1.0.2",
-  "summary": "View and delete photos or videos on Rokid glasses.",
-  "description": "Simple utility to browse and delete photos or videos directly on Rokid glasses.",
+  "summary": "Browse and delete photos or videos directly on Rokid glasses",
+  "description": "PhotoDel lets you view and delete photos or videos on Rokid glasses using intuitive touch controls. Videos play in a loop and deletions require confirmation. No phone needed.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -19,5 +19,50 @@
     }
   ],
   "author": "osagem",
-  "sourceUrl": "https://github.com/osagem/photoDel4rokidglasses"
+  "sourceUrl": "https://github.com/osagem/photoDel4rokidglasses",
+  "listing": {
+    "descriptionMarkdown": "## About\nPhotoDel is a utility app for Rokid glasses that enables viewing and deleting photos and videos directly on the device.\n\n## Key Features\n- Navigate menus and media using the glasses' touchpad\n- View photos and loop-play videos\n- Delete photos or videos with confirmation prompts\n- Exit the app cleanly via on-screen options\n\n## Controls\n- Swipe forward/backward on the touchpad to select options or media\n- Tap to confirm selections or execute actions\n- Swipe down to advance to the next photo\n\n## Notes\n- Videos automatically loop during playback\n- Bluetooth mouse or ring devices can be used via the Rokid AI phone app for alternative control\n- This is an open-source, experimental project; feedback and bug reports are welcome"
+  },
+  "releases": [
+    {
+      "version": "1.0.2",
+      "date": "2025-12-10T18:17:12Z",
+      "sourceReleaseUrl": "https://github.com/osagem/photoDel4rokidglasses/releases/tag/v1.0.2",
+      "notes": "因为rokid glasses目前是单绿的显示，官方的设计规范里，焦点状态只是从40%色度普通态变为100%色度焦点态，在全黑背景下，这种视觉变化是够用的，但本项目场景下，背景的照片或视频内容有极高概率导致按钮的焦点态不够清晰可辨认，导致当前哪个按钮是选中状态并不明显，在此改为按钮获得焦点时边框加粗，未来官方规范覆盖到这种场景时，再看是否修改这个定义了。\n\n总之，新版本的按钮有更好的辨识度，使用起来也更舒服点了",
+      "changes": []
+    },
+    {
+      "version": "1.0.1",
+      "date": "2025-11-30T14:34:57Z",
+      "sourceReleaseUrl": "https://github.com/osagem/photoDel4rokidglasses/releases/tag/v1.0.1",
+      "notes": "一些代码优化，注释补充；\n包名从原来的photoview改为photodel，以匹配程序的显示名字；\n严格意义上，这才算是正经的正式版。\n\nPS：\n因为改了包名，新包名是com.osagem.photodel4rokidglasses，需要卸载老版本的用数据线连上rg和电脑，终端里使用命令卸载老版本就好\n`adb uninstall com.osagem.photoview4rokidglasses `",
+      "changes": []
+    },
+    {
+      "version": "1.0.0",
+      "date": "2025-11-29T06:38:04Z",
+      "sourceReleaseUrl": "https://github.com/osagem/photoDel4rokidglasses/releases/tag/v1.0.0",
+      "notes": "解决了一些问题，调整了一些用户友好性设定。",
+      "changes": []
+    },
+    {
+      "version": "0.1.9",
+      "date": "2025-11-27T18:40:00Z",
+      "sourceReleaseUrl": "https://github.com/osagem/photoDel4rokidglasses/releases/tag/v0.1.9",
+      "notes": "rokid glasses的特殊性在眼镜端拍摄视频时，会同步生成一个视频同名的txt文件。\n之前的版本一直尝试解决删视频时只删了mp4文件，没能同步删除视频同名txt文件问题，但因为Android系统禁止了在原来的权限和方法下删除那个信息txt文件，就一直很头疼很遗憾。\n在v0.1.9版本上，改为使用外部文件权限，终于实现了删除视频同时删除同名txt文件。",
+      "changes": []
+    },
+    {
+      "version": "0.1.8",
+      "date": "2025-11-19T17:25:23Z",
+      "sourceReleaseUrl": "https://github.com/osagem/photoDel4rokidglasses/releases/tag/v0.1.8",
+      "notes": "在0.1.7尝试实现拍照功能，弄了一半搁置了很久，因为没有完成也就没有发布。\n最近看见一些rokid glasses用户自己找出0.1.7来使用，感觉有点对不起人。\n仔细想想，还是应该只做查看和删除，做一个小小的效率工具就好，功能多未必是好事。\n0.1.8主要剔除了不成熟的拍照功能，以及一些健壮性规范化的代码优化。",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "osagem/photoDel4rokidglasses",
+    "path": "README.md"
+  }
 }

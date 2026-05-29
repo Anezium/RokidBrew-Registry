@@ -4,8 +4,8 @@
   "category": "Navigation",
   "type": "glasses",
   "version": "1.0.0",
-  "summary": "Local life and POI navigation app.",
-  "description": "Local life, POI and navigation assistant designed for D-pad use on Rokid AI glasses.",
+  "summary": "Local life and POI navigation app with D-pad control for Rokid AI glasses",
+  "description": "Rokid SmartLife is a local life and POI navigation assistant designed for easy D-pad use on Rokid AI glasses. It helps users search points of interest and navigate efficiently.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -19,5 +19,14 @@
     }
   ],
   "author": "bcefghj",
-  "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/RokidSmartLife"
+  "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/RokidSmartLife",
+  "listing": {
+    "descriptionMarkdown": "## About\nRokid SmartLife is a local life and POI navigation app tailored for Rokid AI glasses, featuring D-pad control for seamless interaction.\n\n## Key features\n- Search points of interest (POI) across 12 categories\n- Navigation assistance for local life needs\n- Designed specifically for Rokid AI glasses with D-pad control\n\n## How it works\nUsers navigate through local POIs and access navigation features using the glasses' D-pad, enabling hands-free, convenient operation."
+  },
+  "releases": [],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "bcefghj/rokid-collection",
+    "path": "README.md"
+  }
 }

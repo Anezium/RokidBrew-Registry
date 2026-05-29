@@ -4,8 +4,8 @@
   "category": "AI",
   "type": "phone",
   "version": "1.0.0-beta",
-  "summary": "Experimental Rokid AI chat bridge.",
-  "description": "Experimental phone-side AI bridge for Rokid workflows. Only one release APK is currently published, so RokidBrew treats it as phone-side until the project exposes split artifacts.",
+  "summary": "Experimental phone app bridging Rokid AR glasses with AI chat via OpenAI-compatible APIs",
+  "description": "NeuroGlasses is an Android app that connects Rokid AR glasses to AI chat services using OpenAI-compatible APIs. It supports voice commands, camera input, and displays AI responses on the glasses' HUD. This experimental app requires pairing with Rokid glasses and API configuration.",
   "phoneRequired": true,
   "artifacts": [
     {
@@ -19,5 +19,22 @@
     }
   ],
   "author": "ECHO-HELLO-WORLD424",
-  "sourceUrl": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses"
+  "sourceUrl": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses",
+  "listing": {
+    "descriptionMarkdown": "# About NeuroGlasses\nNeuroGlasses is an Android phone application that bridges Rokid AR glasses with AI chat capabilities using OpenAI-compatible APIs. It streams AI responses as text and audio directly to the glasses' HUD for an immersive augmented reality experience.\n\n## Key Features\n- Vision Language Model (VLM) support to analyze camera input from the glasses\n- Automatic Speech Recognition (ASR) for voice command input\n- Text-to-Speech (TTS) with streaming audio playback\n- Extensible architecture allowing middleware integration for API translation and enhancements\n\n## How It Works\n- Pair your Rokid glasses with your Android device using Bluetooth\n- Configure your OpenAI-compatible API credentials and model settings in the app\n- Use voice commands or predefined instructions to interact with AI\n- AI responses appear on the glasses' HUD and optionally play via TTS\n\n## Requirements\n- Android device with API level 30 or higher\n- Rokid AR glasses with green HUD\n- OpenAI-compatible API key and endpoint\n\n## Notes\n- The app is experimental and may require re-pairing glasses after disconnects\n- No chat history support yet\n- TTS voice configuration is important for proper audio playback\n- Use caution as the app may crash or behave unexpectedly due to SDK limitations"
+  },
+  "releases": [
+    {
+      "version": "1.0.0-beta",
+      "date": "2025-10-20T17:23:56Z",
+      "sourceReleaseUrl": "https://github.com/ECHO-HELLO-WORLD424/NeuroGlasses/releases/tag/v1.0.0-beta",
+      "notes": "# NeuroGlasses Beta Preview Release\n## Key Features\n\n- **Vision Language Model (VLM)** support - AI can see what you see through the glasses' camera\n- **Automatic Speech Recognition (ASR)** - Use voice commands as instructions\n- **Text-to-Speech (TTS)** with streaming audio playback\n- **Extensible architecture** - Can be extended with middleware server to translate APIs or enhance functionality (Work in Process...)\n\n## Current Limitations\n\n- No chat history support (yet). But this can be implemented in the middleware with Python, with langchain, NeuroAPI integration and other advanced Agentic features\n- Experimental Rokid CRX_M SDK requires re-pairing glasses on each disconnect\n- I can't touch the glasses' own OS directly with that SDK. To achieve more customization and better UX I need to apply for a 5-pin dev wire from Rokid, don't have that time now.\n---\n\n## License\n\nMIT\n\n## Contributing\n\nThis is an experimental project. Contributions, bug reports, and feature requests are welcome!\n\n## Acknowledgments\n\n- Built with [Rokid AR Glasses SDK](https://ar.rokid.com/). I left some translations of Chinese docs from Rokid's website as Markdown in repo root.\n- App launch icon modified based on Neuro-sama Headquarters' sticker.\n\n**⚠️ Experimental Software Notice:** This application is in active development and uses experimental SDK features. Expect bugs, crashes, and frequent updates.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "ECHO-HELLO-WORLD424/NeuroGlasses",
+    "path": "README.md"
+  }
 }

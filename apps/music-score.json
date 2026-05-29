@@ -4,8 +4,8 @@
   "category": "Music",
   "type": "glasses",
   "version": "1.0.0",
-  "summary": "Piano score viewer for Rokid glasses.",
-  "description": "Music score viewer packaged as an APK for Rokid RG-glasses.",
+  "summary": "Piano score viewer for Rokid AR glasses with built-in classic Jay Chou pieces",
+  "description": "Rokid Music Score is an APK for viewing piano scores on Rokid AR glasses. It includes classic simplified scores by Jay Chou for convenient practice and reference.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -19,5 +19,14 @@
     }
   ],
   "author": "bcefghj",
-  "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/rokid-music-score"
+  "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/rokid-music-score",
+  "listing": {
+    "descriptionMarkdown": "# About\nRokid Music Score is a piano score viewer designed specifically for Rokid AR glasses. It features built-in classic simplified piano scores by Jay Chou.\n\n# Key features\n- View piano scores directly on Rokid AR glasses\n- Includes classic Jay Chou simplified scores for practice\n\n# Requirements\n- Compatible with Rokid AR glasses\n- No phone required"
+  },
+  "releases": [],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "bcefghj/rokid-collection",
+    "path": "README.md"
+  }
 }

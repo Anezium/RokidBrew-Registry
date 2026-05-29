@@ -4,8 +4,8 @@
   "category": "AI",
   "type": "combo",
   "version": "0.12.0",
-  "summary": "Open-source AI assistant with separate phone and glasses apps.",
-  "description": "Voice-controlled assistant for Rokid glasses. The phone app handles AI queries and connectivity while the glasses app provides the wearable interface.",
+  "summary": "Open-source AI assistant with phone and glasses apps for voice, photo, and AI interaction",
+  "description": "Rokid AI Assistant is a voice-controlled assistant for Rokid AR glasses requiring a companion phone app. It supports AI chat, photo capture, and multi-provider AI and speech-to-text services.",
   "phoneRequired": true,
   "artifacts": [
     {
@@ -28,5 +28,43 @@
     }
   ],
   "author": "zero2005x",
-  "sourceUrl": "https://github.com/zero2005x/RokidAIAssistant"
+  "sourceUrl": "https://github.com/zero2005x/RokidAIAssistant",
+  "listing": {
+    "descriptionMarkdown": "## About\nRokid AI Assistant is an AI-powered voice and vision assistant designed for Rokid AR glasses. It uses a companion phone app to handle AI queries and connectivity, providing a wearable interface on the glasses.\n\n## Key Features\n- Voice-to-text transcription and AI chat via glasses\n- Photo capture with AI image analysis from glasses camera\n- Communication between phone and glasses using Rokid CXR SDK\n- Support for multiple AI providers (e.g., Gemini, OpenAI, Anthropic)\n- Support for multiple speech-to-text providers\n- Conversation history persistence with Room database\n- Multi-language support (13 languages)\n\n## Requirements\n- Rokid AR glasses paired with a phone\n- GEMINI_API_KEY (or other AI provider keys) for AI processing\n- Phone app required for AI processing; glasses app provides interface\n\n## Notes\n- Standalone glasses operation without phone is not supported\n- Offline AI inference is not available\n- No video streaming or real-time AR overlays included"
+  },
+  "releases": [
+    {
+      "version": "0.12.0",
+      "date": "2026-03-07T04:29:02Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.12.0",
+      "notes": "### New Features\n\n- **TTS Settings Screen** — New dedicated Text-to-Speech settings UI (`TtsSettingsScreen`) with support for configuring TTS provider, voice, speed, and pitch. Includes full navigation integration and settings persistence.\n- **Edge TTS Client** — Added `EdgeTtsClient` for Microsoft Edge TTS integration, providing high-quality cloud-based text-to-speech synthesis.\n- **TTS Provider Model** — New `TtsProvider` data model for managing multiple TTS engine configurations.\n- **AI Model Registry** — Introduced type-safe `AIModel` sealed class hierarchy with provider-specific subclasses (Gemini, Claude, OpenAI, Grok), including model metadata such as context window size, preview/deprecated status, and provider categorization via `ModelRepository`.\n\n### Improvements\n\n- **Bluetooth Auto-Reconnect (Glasses)** — `BluetoothSppClient` now automatically reconnects to the last connected device after an unexpected disconnection, with a 2-second delay to allow the phone server to restart its listening socket.\n- **Bluetooth Reconnection Timing** — Increased connection retry backoff from `1.5s + attempt × 1s` to `2.5s + attempt × 1.5s` for more reliable reconnection across varying Bluetooth conditions.\n- **Bluetooth Server Socket Recovery (Phone)** — Increased server socket re-creation delay from 300ms to 1000ms in `BluetoothSppManager`, ensuring the Bluetooth stack fully releases resources before accepting new connections.\n- **Localization** — Added TTS-related strings across all 13 supported languages (Arabic, Spanish, French, Italian, Japanese, Korean, Russian, Thai, Ukrainian, Vietnamese, Simplified Chinese, Traditional Chinese, English).\n- **Locale Config** — Added missing `vi` (Vietnamese) and `th` (Thai) entries to `locales_config.xml`.\n\n### Documentation\n\n- **ARCHITECTURE.md** — Fixed 10 discrepancies to match current codebase (MessageType enum, ConnectionState/DeviceInfo, AiServiceProvider interface, service/ai file listing, ai/provider directory, AiServiceFactory signature, provider example code, etc.).\n- **API_SETTINGS.md** — Updated provider tables, model names, and base URLs to reflect current code.\n- **Project Documentation Site** — Added index.html for GitHub Pages hosting.\n\n### Testing\n\n- **4 new test files** with 100+ test cases covering previously untested code:\n  - `BluetoothSppClientTest` (glasses-app) — 23 tests covering client state, connect guards, heartbeat, sendMessage, auto-reconnect, and retry backoff.\n  - `BluetoothSppManagerTest` (phone-app) — 23 tests covering server state, permission checks, sendMessage, handleDisconnection, binary buffer reset, disconnect, getPacketLength, and getPairedDevices.\n  - `ProviderSettingTest` (phone-app) — 30 tests covering `isValid()` for all 12 AI providers (including Baidu dual-key and Custom baseUrl-only validation), `fromId()`, and `getDefaultProviders()`.\n  - `ProviderTest` (phone-app) — 33 tests covering `ChatMessage` custom equals/hashCode with ByteArray content equality, `MessageRole`, `GenerationOptions`, `GenerationResult`, `FinishReason`, `Model`, `MessageChunk`, `TranscriptionResult`, and `ValidationResult`.\n- **Updated existing tests** — `AIModelTest`, `TtsProviderTest`, `ApiSettingsTest`, `TtsSettingsHelpersTest`, `AnthropicServiceTest`, `OpenAiCompatibleServiceTest` updated for new features and model IDs.\n- **Total test count: 550+** across all modules.\n\n### Build\n\n- Version bumped to `0.12.0` (versionCode 4).\n- Signed release APKs: **phone-app** (9.62 MB), **glasses-app** (4.37 MB).\n\n---\n\n**Full Changelog:** v0.11.0...v0.12.0",
+      "changes": []
+    },
+    {
+      "version": "0.11.0",
+      "date": "2026-02-22T00:06:12Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.11.0",
+      "notes": "## Release v0.11.0 (versionCode 3)\n\n### Changes\n- Version bump to 0.11.0\n- Fixed Gradle dependency verification for guava-parent, aapt2-linux, lint, groovy, intellij-core, and other CI artifacts\n\n### APKs\n- **glasses-app-release.apk** - Rokid glasses companion app\n- **phone-app-release.apk** - Phone companion app",
+      "changes": []
+    },
+    {
+      "version": "0.10.0",
+      "date": "2026-02-19T12:18:28Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.10.0",
+      "notes": "## What's Changed\n\n### Bug Fixes\n- Fix Bluetooth initialization race conditions and crashes\n- Fix missing permission check for device name retrieval\n- Fix Gradle CI build (remove hardcoded Windows Java home path)\n\n### Improvements\n- Complete ProGuard/R8 rules for Room, Kotlin Serialization, Retrofit, Coroutines, DataStore, Coil\n- Update dependencies (KSP, OkHttp, Compose BOM, etc.)\n- Refactor RecordingsScreen to use string resources\n- Single-source SN authentication strategy\n- Enhanced security: sensitive properties loaded from local.properties\n\n### APK Downloads\n| File | Description |\n|------|-------------|\n| `phone-app-release-signed.apk` | Phone App (AI, Bluetooth control) |\n| `glasses-app-release-signed.apk` | Glasses App (Display, Voice input) |\n\n**Full Changelog**: https://github.com/zero2005x/RokidAIAssistant/compare/v0.9.0...v0.10.0",
+      "changes": []
+    },
+    {
+      "version": "0.9.0",
+      "date": "2026-02-12T09:40:37Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.9.0",
+      "notes": "Rokid AI Assistant v0.9.0 (Pre-release)\nDownloads:\n\nphone-app-release.apk — Install on your Android phone\nglasses-app-release.apk — Install on Rokid AR glasses\nRequirements:\n\nAndroid 8.0+ (phone), Android 12+ (glasses)\nRokid AR glasses (CXR-S compatible)\nAPI key for at least one AI provider\nSetup:\n\nInstall the phone app on your phone\nInstall the glasses app on your Rokid glasses (via ADB)\nPair via Bluetooth and configure API keys in Settings",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "zero2005x/RokidAIAssistant",
+    "path": "README.md"
+  }
 }

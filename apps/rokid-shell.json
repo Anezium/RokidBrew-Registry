@@ -6,8 +6,8 @@
   "version": "0.1.0",
   "featured": true,
   "featuredRank": 3,
-  "summary": "File explorer and APK installer for Rokid glasses.",
-  "description": "Native file explorer with APK install flow and local HTTP transfer server for Rokid glasses.",
+  "summary": "File explorer and APK installer with local HTTP server for Rokid glasses",
+  "description": "Rokid Shell is a native file explorer for Rokid glasses featuring an AR-friendly monochrome UI. It includes a direct APK install flow and a local HTTP transfer server for easy file management.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -26,5 +26,22 @@
     "rokid-shell-menu.jpg",
     "rokid-shell-server.jpg",
     "rokid-shell-web.jpg"
-  ]
+  ],
+  "listing": {
+    "descriptionMarkdown": "About Rokid Shell\n\nRokid Shell is a native Android file explorer designed specifically for Rokid glasses. It offers an AR-friendly monochrome user interface, a built-in HTTP transfer server, and a seamless APK installation process.\n\nKey features\n\n- AR-optimized monochrome UI for clear visibility on Rokid glasses\n- Access shared Android folders like Download, DCIM, Pictures, Movies, Music, and Documents\n- Built-in local HTTP server to transfer files from another device on the same network\n- Direct APK install flow within the file explorer for easy app management"
+  },
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-04-06T14:51:57Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Shell/releases/tag/v0.1.0",
+      "notes": "First public release of Rokid Shell.\n\nChanges\n- Native Android file explorer for Rokid glasses\n- Files and Transfer views optimized for monochrome AR displays\n- Built-in HTTP server for local file transfer from another device on the same network\n- APK install flow directly from the file explorer\n- Trackpad navigation tuned for Rokid glasses",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-Shell",
+    "path": "README.md"
+  }
 }

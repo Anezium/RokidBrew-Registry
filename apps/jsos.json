@@ -5,8 +5,8 @@
   "type": "combo",
   "version": "2.0-preview",
   "publishedAt": "2026-05-28T11:55:21Z",
-  "summary": "Spatial operating system interface for OpenClaw and Rokid glasses.",
-  "description": "Development-preview phone and glasses pair. JSOS Core connects to a local or private OpenClaw Gateway and handles voice input, TTS settings, sessions, camera handoff, Rokid pairing, and HUD deployment. JSOS HUD renders the glasses interface for streamed chat, gestures, staged voice input, sessions, and photo capture.",
+  "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
+  "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
   "screenshotAssets": [
     "jsos-core-home.jpeg",
     "jsos-core-session-chat.jpeg",
@@ -55,5 +55,22 @@
         "packageName": "com.jsos.phone"
       }
     ]
+  },
+  "listing": {
+    "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
+  },
+  "releases": [
+    {
+      "version": "2.0-preview",
+      "date": "2026-05-28T11:55:21Z",
+      "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
+      "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "IWhatsskill/JSOS",
+    "path": "README.md"
   }
 }

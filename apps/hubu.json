@@ -4,8 +4,8 @@
   "category": "Fitness",
   "type": "glasses",
   "version": "0.1.8",
-  "summary": "Fitness HUD for BLE workout metrics.",
-  "description": "Connects to BLE devices such as Garmin watches and displays pace, heart rate and cadence on Rokid glasses.",
+  "summary": "Fitness HUD displaying BLE workout metrics like pace, heart rate, and cadence on Rokid glasses",
+  "description": "hubu connects to BLE devices such as Garmin watches to show real-time workout data on Rokid glasses. It displays pace, heart rate, and cadence in a clear HUD format. The app automatically scans and connects to compatible devices supporting heart rate and running speed services.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -19,5 +19,50 @@
     }
   ],
   "author": "hanabix",
-  "sourceUrl": "https://github.com/hanabix/hubu"
+  "sourceUrl": "https://github.com/hanabix/hubu",
+  "listing": {
+    "descriptionMarkdown": "About hubu\n\nhubu is a fitness HUD app for Rokid Glasses that connects to low-energy Bluetooth devices like Garmin watches to display real-time workout metrics.\n\nKey features\n\n- Displays pace (mm'ss\"), heart rate (bpm), and cadence on the glasses\n- Shows current time, connected device name, and glasses battery percentage\n- Supports Heart Rate Service and Running Speed and Cadence Service over BLE\n- Automatically scans and connects to compatible devices\n- Provides a \"Tap to Reconnect\" option if no device is found\n\nKnown limitations\n\n- Only supports running speed and cadence necessary measurements (speed and cadence)\n- Does not support cycling speed, cadence, or power services\n- Does not allow manual device selection\n\nFor more details, visit the [GitHub repository](https://github.com/hanabix/hubu)."
+  },
+  "releases": [
+    {
+      "version": "0.1.8",
+      "date": "2026-04-26T11:05:20Z",
+      "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.8",
+      "notes": "## What's Changed\n* Update Kotlin, Compose, MockK and CI action versions by @zhongl in https://github.com/hanabix/hubu/pull/11\n* Refactor BLE model and callback flow by @zhongl in https://github.com/hanabix/hubu/pull/12\n\n**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.7...0.1.8",
+      "changes": []
+    },
+    {
+      "version": "0.1.7",
+      "date": "2026-04-19T02:42:58Z",
+      "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.7",
+      "notes": "**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.6...0.1.7",
+      "changes": []
+    },
+    {
+      "version": "0.1.6",
+      "date": "2026-04-12T09:25:26Z",
+      "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.6",
+      "notes": "## What's Changed\n* Add release coverage badge generation and display by @zhongl in https://github.com/hanabix/hubu/pull/3\n\n**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.5...0.1.6",
+      "changes": []
+    },
+    {
+      "version": "0.1.5",
+      "date": "2026-04-12T04:51:15Z",
+      "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.5",
+      "notes": "## What's Changed\n* Add reusable Android CI workflow and shared setup action by @zhongl in https://github.com/hanabix/hubu/pull/1\n* Update release workflow for latest APK badge and download link by @zhongl in https://github.com/hanabix/hubu/pull/2\n\n## New Contributors\n* @zhongl made their first contribution in https://github.com/hanabix/hubu/pull/1\n\n**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.4...0.1.5",
+      "changes": []
+    },
+    {
+      "version": "0.1.4",
+      "date": "2026-04-11T12:15:19Z",
+      "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.4",
+      "notes": "**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.3...0.1.4",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "hanabix/hubu",
+    "path": "README.md"
+  }
 }
