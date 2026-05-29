@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-29T20:25:33.738Z",
+  "generatedAt": "2026-05-29T20:26:30.726Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
@@ -25,7 +25,10 @@
           "target": "glasses",
           "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
           "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
-          "sizeBytes": 26251553
+          "sizeBytes": 26251553,
+          "packageName": "kr.pe.eung.ekmeta",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
       "author": "EUNG SOFT",
