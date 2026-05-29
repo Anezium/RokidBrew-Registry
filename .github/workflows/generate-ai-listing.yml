@@ -1,0 +1,113 @@
+name: Generate AI listing
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: "App id in apps/<id>.json"
+        required: true
+      repo:
+        description: "Optional GitHub repo override, owner/repo"
+        required: false
+        default: ""
+      readme_path:
+        description: "README path inside the repo"
+        required: false
+        default: ""
+      readme_ref:
+        description: "Optional branch/tag/SHA for the README"
+        required: false
+        default: ""
+      model:
+        description: "OpenRouter model"
+        required: false
+        default: "openai/gpt-4.1-mini"
+      release_limit:
+        description: "Number of GitHub Releases to summarize"
+        required: false
+        default: "5"
+      dry_run:
+        description: "Generate only, without opening a PR"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate listing with OpenRouter
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ inputs.model }}
+        run: |
+          args=("${{ inputs.app }}" --release-limit "${{ inputs.release_limit }}" --report ".tmp/ai-listing-report.md")
+          if [ -n "${{ inputs.repo }}" ]; then
+            args+=(--repo "${{ inputs.repo }}")
+          fi
+          if [ -n "${{ inputs.readme_path }}" ]; then
+            args+=(--readme-path "${{ inputs.readme_path }}")
+          fi
+          if [ -n "${{ inputs.readme_ref }}" ]; then
+            args+=(--ref "${{ inputs.readme_ref }}")
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          node scripts/generate-ai-listing.mjs "${args[@]}"
+
+      - name: Rebuild registry
+        if: ${{ inputs.dry_run != 'true' }}
+        run: node scripts/build-registry.mjs
+
+      - name: Create listing pull request
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain -- apps dist)" ]; then
+            echo "No listing changes to propose."
+            exit 0
+          fi
+
+          app="${{ inputs.app }}"
+          safe_app="$(printf '%s' "$app" | tr -cs '[:alnum:]-' '-' | sed 's/^-//;s/-$//')"
+          base="${{ github.ref_name }}"
+          branch="automation/ai-listing-${safe_app}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$branch" || true
+          git checkout -B "$branch"
+          git add "apps/${app}.json" dist/apps.v1.json
+          git commit -m "Generate AI listing for ${app}"
+          git push --force-with-lease="refs/heads/$branch" origin "$branch"
+
+          body=".tmp/ai-listing-report.md"
+          if [ ! -f "$body" ]; then
+            body="$(mktemp)"
+            printf 'Generated AI listing for `%s`.\n' "$app" > "$body"
+          fi
+
+          number="$(gh pr list --head "$branch" --base "$base" --state open --json number --jq '.[0].number')"
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --body-file "$body"
+          else
+            gh pr create \
+              --base "$base" \
+              --head "$branch" \
+              --title "Generate AI listing for ${app}" \
+              --body-file "$body"
+          fi

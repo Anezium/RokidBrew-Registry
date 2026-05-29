@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -7,8 +8,22 @@ const appsDir = path.join(root, "apps");
 const distDir = path.join(root, "dist");
 const iconDir = path.join(root, "assets", "icons");
 const screenshotDir = path.join(root, "assets", "screenshots");
+function currentGitBranch() {
+  try {
+    const branch = execFileSync("git", ["branch", "--show-current"], {
+      cwd: root,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    return branch || null;
+  } catch {
+    return null;
+  }
+}
+
+const publicBranch = process.env.ROKIDBREW_PUBLIC_BRANCH || currentGitBranch() || "main";
 const publicBaseUrl = (process.env.ROKIDBREW_PUBLIC_BASE_URL ||
-  "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main").replace(/\/$/, "");
+  `https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/${publicBranch}`).replace(/\/$/, "");
 const newWindowDays = Number.parseInt(process.env.ROKIDBREW_NEW_WINDOW_DAYS || "2", 10);
 const generatedAt = new Date();
 
@@ -95,6 +110,7 @@ function attachCuration(app) {
 
 function stripPrivateFields(app) {
   delete app.update;
+  delete app.listingSource;
   for (const artifact of app.artifacts || []) {
     delete artifact.update;
   }

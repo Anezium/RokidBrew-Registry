@@ -90,6 +90,8 @@ https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/dist/apps.v1.j
 | `iconUrl` | Remote URL for the icon. Auto-generated from the registry repo. |
 | `screenshotAssets` | Array of filenames in `assets/screenshots/`. Add manually. |
 | `screenshotUrls` | Remote URLs for screenshots. Auto-generated from the registry repo. |
+| `listing.descriptionMarkdown` | Store-detail body shown in RokidBrew. Supports readable Markdown-style paragraphs, headings, and bullets. |
+| `releases` | Store-detail changelog entries shown in RokidBrew. |
 
 ### Combo apps
 
@@ -115,6 +117,10 @@ Four workflows automate the registry maintenance.
 | Push to `main` | Validates the manifest builds correctly. |
 | Pull request | CI check. |
 | Manual dispatch | Rebuild on demand. |
+
+`scripts/build-registry.mjs` uses the current git branch for generated raw asset URLs
+(`main`, `dev`, etc.). Override with `ROKIDBREW_PUBLIC_BASE_URL` or
+`ROKIDBREW_PUBLIC_BRANCH` when building a manifest for another branch.
 
 ### 2. Extract missing icons (`extract-icons.yml`)
 
@@ -193,7 +199,91 @@ Screenshots are not extracted automatically. To add them:
    git add assets/screenshots/ apps/*.json dist/apps.v1.json
    git commit -m "Add screenshots for <app-name>"
    git push
-   ```
+```
+
+---
+
+## Importing EUNG SOFT info.json
+
+EUNG SOFT apps expose localized metadata in `download/RokidGlasses/<App>/info.json`.
+Use the importer to generate or refresh the app entry from the English fields:
+
+```bash
+node scripts/import-eung-info.mjs \
+  https://github.com/eung3392/eungsoft/blob/main/download/RokidGlasses/EKMeta/info.json \
+  --category Utility
+node scripts/build-registry.mjs
+```
+
+The importer maps:
+
+| EUNG field | Registry field |
+|---|---|
+| `title.en` | `name` |
+| `version` | `version` |
+| `releaseDate` | `publishedAt` and latest release date |
+| `shortDescription.en` | `summary` |
+| `description.en` | `description` and `listing.descriptionMarkdown` |
+| `control.en` | Appended to `listing.descriptionMarkdown` as usage/control notes |
+| `updated[].en` | `releases[].notes` |
+| `download[0]` | Current APK artifact URL |
+| `images[]` | Downloaded to `assets/screenshots/` and referenced as `screenshotAssets` |
+
+For apps that use the same APK on phone and glasses, run with `--type combo`.
+For one-off cleanup, use `--id`, `--category`, `--phone-required`, or `--no-screenshots`.
+
+---
+
+## Generating listings from README with AI
+
+For apps that only have a README, use OpenRouter to generate a reviewable
+store listing from the README plus GitHub Releases:
+
+```bash
+OPENROUTER_API_KEY=... \
+node scripts/generate-ai-listing.mjs rokid-scribe \
+  --repo Anezium/Rokid-Scribe \
+  --release-limit 5 \
+  --report .tmp/ai-listing-report.md
+node scripts/build-registry.mjs
+```
+
+The AI script only updates store-copy fields:
+
+- `summary`
+- `description`
+- `listing.descriptionMarkdown`
+- `releases`
+- private maintenance metadata in `listingSource`
+
+It does not update APK URLs, checksums, package names, icons, screenshots, or
+install targets. Those stay managed by the normal registry scripts and Actions.
+
+To import only GitHub release changelogs without AI:
+
+```bash
+node scripts/import-github-releases.mjs rokid-scribe --limit 5
+node scripts/build-registry.mjs
+```
+
+### GitHub Action
+
+Set the repository secret `OPENROUTER_API_KEY`, then run **Generate AI listing**
+from the Actions tab. Run it from `dev` while testing. The workflow creates or
+updates a PR branch named `automation/ai-listing-<app-id>` against the branch
+where the workflow was started.
+
+Useful inputs:
+
+| Input | Notes |
+|---|---|
+| `app` | Required app id from `apps/<id>.json`. |
+| `repo` | Optional `owner/repo` override if it cannot be inferred. |
+| `readme_path` | Optional README path inside the repo. |
+| `readme_ref` | Optional branch, tag, or SHA. |
+| `model` | OpenRouter model, defaults to `openai/gpt-4.1-mini`. |
+| `release_limit` | Number of GitHub Releases to summarize. |
+| `dry_run` | Runs generation without creating a PR. |
 
 ---
 

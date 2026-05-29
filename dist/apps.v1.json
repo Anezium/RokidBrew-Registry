@@ -1,10 +1,52 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-28T14:41:22.212Z",
+  "generatedAt": "2026-05-29T23:05:28.696Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
   "apps": [
+    {
+      "id": "ek-meta-player",
+      "name": "EK Meta Player",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-05-29",
+      "summary": "Run Meta-display web apps on Rokid glasses.",
+      "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
+      "listing": {
+        "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-29",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-meta-player.jpg",
+        "ek-meta-player-2.jpg",
+        "ek-meta-player-3.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
+      "newUntil": "2026-05-31T00:00:00.000Z",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-meta-player.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-meta-player-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-meta-player-3.jpg"
+      ]
+    },
     {
       "id": "jsos",
       "name": "JSOS",
@@ -48,314 +90,15 @@
       "sourceUrl": "https://github.com/IWhatsskill/JSOS",
       "newUntil": "2026-05-30T11:55:21.000Z",
       "iconAsset": "jsos.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/jsos.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
-      ]
-    },
-    {
-      "id": "rokid-relay",
-      "name": "Rokid Relay",
-      "category": "Accessibility",
-      "type": "combo",
-      "version": "0.1.2",
-      "publishedAt": "2026-05-27T22:55:35Z",
-      "summary": "Reply to Android phone notifications from Rokid glasses.",
-      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
-      "screenshotAssets": [
-        "rokid-relay-phone-home.png",
-        "rokid-relay-phone-notifications.png",
-        "rokid-relay-phone-speech.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.2/rokid-relay-phone-v0.1.2-vc3-debug.apk",
-          "sha256": "d7bff20d6fc042fc6c06fe8c706e2adde1526f5e140dfcaf788ad43b3aad515d",
-          "sizeBytes": 12801029,
-          "packageName": "com.anezium.rokidrelay.phone",
-          "versionCode": 3,
-          "versionName": "0.1.2"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
-      "newUntil": "2026-05-29T22:55:35.000Z",
-      "iconAsset": "rokid-relay.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
-      ]
-    },
-    {
-      "id": "ek-remover",
-      "name": "EK Remover",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "publishedAt": "2026-05-27",
-      "summary": "Uninstall apps directly on Rokid glasses.",
-      "description": "Simple uninstaller for navigating installed apps and removing selected apps on Rokid glasses.",
-      "screenshotAssets": [
-        "ek-remover.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKRemover_v1.0.0.apk",
-          "sha256": "6ec4b7d832f318dab9cc2c6e55dbc16c49717ee9fd1d6590710f48fd572e912d",
-          "sizeBytes": 4550689,
-          "packageName": "kr.pe.eung.ekremover",
-          "versionCode": 1,
-          "versionName": "1.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "newUntil": "2026-05-29T00:00:00.000Z",
-      "iconAsset": "ek-remover.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-remover.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-remover.jpg"
-      ]
-    },
-    {
-      "id": "rokid-live-studio",
-      "name": "Rokid Live Studio",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.1.4",
-      "publishedAt": "2026-05-26T17:18:31Z",
-      "summary": "Stream your Rokid glasses camera and microphone from your phone.",
-      "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
-      "listing": {
-        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters."
-      },
-      "releases": [
-        {
-          "version": "0.1.4",
-          "date": "2026-05-26T17:18:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
-          "notes": "Phone release focused on launch polish and verification.",
-          "changes": [
-            "Fix Android 12+ phone splash screen with a dedicated padded asset.",
-            "Keep the phone splash background dark and aligned with the app theme.",
-            "Build and launch verified on a connected Samsung phone."
-          ]
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-live-studio-home.jpg",
-        "rokid-live-studio-youtube.jpg",
-        "rokid-live-studio-twitch.jpg",
-        "rokid-live-studio-chat.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.4%2B5/rokid-live-studio-phone-0.1.4-vc5.apk",
-          "sha256": "5c6343f8f3607c2f4199f4f015404aa3d90ba131d12fde9fbf6399c7cde241e9",
-          "sizeBytes": 38702587,
-          "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 5,
-          "versionName": "0.1.4"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-05-28T17:18:31.000Z",
-      "iconAsset": "rokid-live-studio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
-      ]
-    },
-    {
-      "id": "rokid-lyrics",
-      "name": "Rokid Lyrics",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.3.1",
-      "featured": true,
-      "featuredRank": 3,
-      "summary": "Synced song lyrics from phone to Rokid glasses.",
-      "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-glasses-release.apk",
-          "sha256": "69675578039d24ee9ea2c6f157ba596abc1a7178d1464dd5fac10b024bbd02ab",
-          "sizeBytes": 1085869,
-          "packageName": "com.rokid.lyrics.glasses",
-          "versionCode": 8,
-          "versionName": "0.3.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-phone-release.apk",
-          "sha256": "6c6fd45f6817d85f4de519cc991687c4205f3590a9743aeb1ce355c91a3e30df",
-          "sizeBytes": 1728109,
-          "packageName": "com.rokid.lyrics.phone",
-          "versionCode": 8,
-          "versionName": "0.3.1"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
-      "screenshotAssets": [
-        "rokid-lyrics-phone.jpg",
-        "rokid-lyrics-glasses.jpg"
-      ],
-      "publishedAt": "2026-05-26T17:18:23Z",
-      "newUntil": "2026-05-28T17:18:23.000Z",
-      "iconAsset": "rokid-lyrics.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
-      ]
-    },
-    {
-      "id": "rokid-scribe",
-      "name": "Rokid-Scribe",
-      "category": "Utility",
-      "type": "combo",
-      "version": "1.1.2",
-      "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
-      "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
-      "listing": {
-        "about": "Rokid-Scribe turns the glasses into a lightweight voice-note capture tool. Start recordings on the glasses, then bring them back to the phone over Wi-Fi LAN or Bluetooth SPP for transcription and export.\n\nThe phone app is where the heavier workflow lives: provider setup, transcription, review, and TXT or PDF export. The glasses app stays focused on quick capture, so it can be useful during meetings, field notes, demos, or any moment where pulling out a phone breaks the flow.\n\nInstall both APKs for the full workflow. The glasses side captures notes, while the phone side handles import, transcription providers, and export."
-      },
-      "releases": [
-        {
-          "version": "1.1.2",
-          "date": "2026-05-26T17:10:49Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Scribe/releases/tag/v1.1.2",
-          "notes": "Phone app patch focused on launch polish and version metadata.",
-          "changes": [
-            "Fix Android 12+ splash screen with a dedicated padded Scribe logo asset.",
-            "Keep launcher icons unchanged.",
-            "Bump phone app to version 1.1.2, versionCode 105."
-          ]
-        }
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk",
-          "sha256": "b48678b37dd68e93230a1b5888667ca744d8bcc10406330dfcbd0065ceec1225",
-          "sizeBytes": 8007082,
-          "packageName": "com.rokidscribe.glasses",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.2/Rokid-Scribe-phone-v1.1.2-debug.apk",
-          "sha256": "4156eb60dac54c2241754fcb7f76499130f739605a6f40e9bb9ca29c3f632b0f",
-          "sizeBytes": 10427566,
-          "packageName": "com.rokidscribe",
-          "versionCode": 105,
-          "versionName": "1.1.2"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Scribe",
-      "iconAsset": "rokid-scribe.png",
-      "screenshotAssets": [
-        "rokid-scribe-menu.jpg",
-        "rokid-scribe-settings.jpg",
-        "rokid-scribe-record.jpg",
-        "rokid-scribe-glasses.jpg",
-        "rokid-scribe-glasses-recording.jpg"
-      ],
-      "publishedAt": "2026-05-26T17:10:49Z",
-      "newUntil": "2026-05-28T17:10:49.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-scribe.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-menu.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-settings.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
-      ]
-    },
-    {
-      "id": "rokid-apks",
-      "name": "Rokid-APKs",
-      "category": "Developer",
-      "type": "combo",
-      "version": "1.2.2",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Upload and install APKs on Rokid glasses from your phone.",
-      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
-      "listing": {
-        "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew."
-      },
-      "releases": [
-        {
-          "version": "1.2.2",
-          "date": "2026-05-26T16:38:33Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
-          "notes": "Phone app patch focused on splash screen sizing and Android 12+ launch behavior.",
-          "changes": [
-            "Use a dedicated padded vector logo for the splash screen.",
-            "Add Android 12+ splash theme overrides with a dark background.",
-            "Avoid oversized or blurry launcher artwork during startup."
-          ]
-        }
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
-          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
-          "sizeBytes": 7725471,
-          "packageName": "com.rokidapks.glasses",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.2/Rokid-APKs-phone-v1.2.2-debug.apk",
-          "sha256": "2add6354b62ca53360ed84cf5465e8f8e06aee5f9f61e03d4800568c3b803b8d",
-          "sizeBytes": 11832530,
-          "packageName": "com.rokidapks",
-          "versionCode": 122,
-          "versionName": "1.2.2"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
-      "iconAsset": "rokid-apks.png",
-      "screenshotAssets": [
-        "rokid-apks-phone.jpg",
-        "rokid-apks-glasses.jpg"
-      ],
-      "publishedAt": "2026-05-26T16:38:33Z",
-      "newUntil": "2026-05-28T16:38:33.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-home.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-session-chat.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-hud-link.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-hud-deployment.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-hud-session-chat.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-hud-options.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-hud-commands.png"
       ]
     },
     {
@@ -414,10 +157,10 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-05-10T21:30:00.000Z",
       "iconAsset": "dew-browser.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dew-browser.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/dew-browser.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dew-browser.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dew-browser-2.jpg"
       ]
     },
     {
@@ -451,10 +194,118 @@
         "overlayrec-overlay.jpg"
       ],
       "newUntil": "2026-05-10T00:00:00.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/overlayrec.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/overlayrec-main.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/overlayrec-overlay.jpg"
+      ]
+    },
+    {
+      "id": "rokid-apks",
+      "name": "Rokid-APKs",
+      "category": "Developer",
+      "type": "combo",
+      "version": "1.2.2",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Upload and install APKs on Rokid glasses from your phone.",
+      "description": "Four explicit transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with glasses companion. No desktop helper, no cloud relay.",
+      "listing": {
+        "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew."
+      },
+      "releases": [
+        {
+          "version": "1.2.2",
+          "date": "2026-05-26T16:38:33Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
+          "notes": "Phone app patch focused on splash screen sizing and Android 12+ launch behavior.",
+          "changes": [
+            "Use a dedicated padded vector logo for the splash screen.",
+            "Add Android 12+ splash theme overrides with a dark background.",
+            "Avoid oversized or blurry launcher artwork during startup."
+          ]
+        }
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
+          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
+          "sizeBytes": 7725471,
+          "packageName": "com.rokidapks.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.2/Rokid-APKs-phone-v1.2.2-debug.apk",
+          "sha256": "2add6354b62ca53360ed84cf5465e8f8e06aee5f9f61e03d4800568c3b803b8d",
+          "sizeBytes": 11832530,
+          "packageName": "com.rokidapks",
+          "versionCode": 122,
+          "versionName": "1.2.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
+      "iconAsset": "rokid-apks.png",
+      "screenshotAssets": [
+        "rokid-apks-phone.jpg",
+        "rokid-apks-glasses.jpg"
+      ],
+      "publishedAt": "2026-05-26T16:38:33Z",
+      "newUntil": "2026-05-28T16:38:33.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-apks.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-apks-glasses.jpg"
+      ]
+    },
+    {
+      "id": "rokid-lyrics",
+      "name": "Rokid Lyrics",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.3.1",
+      "featured": true,
+      "featuredRank": 3,
+      "summary": "Synced song lyrics from phone to Rokid glasses.",
+      "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-glasses-release.apk",
+          "sha256": "69675578039d24ee9ea2c6f157ba596abc1a7178d1464dd5fac10b024bbd02ab",
+          "sizeBytes": 1085869,
+          "packageName": "com.rokid.lyrics.glasses",
+          "versionCode": 8,
+          "versionName": "0.3.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-phone-release.apk",
+          "sha256": "6c6fd45f6817d85f4de519cc991687c4205f3590a9743aeb1ce355c91a3e30df",
+          "sizeBytes": 1728109,
+          "packageName": "com.rokid.lyrics.phone",
+          "versionCode": 8,
+          "versionName": "0.3.1"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
+      "screenshotAssets": [
+        "rokid-lyrics-phone.jpg",
+        "rokid-lyrics-glasses.jpg"
+      ],
+      "publishedAt": "2026-05-26T17:18:23Z",
+      "newUntil": "2026-05-28T17:18:23.000Z",
+      "iconAsset": "rokid-lyrics.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-lyrics.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-lyrics-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-lyrics-glasses.jpg"
       ]
     },
     {
@@ -487,11 +338,11 @@
         "rokid-shell-web.jpg"
       ],
       "iconAsset": "rokid-shell.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-shell.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-menu.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-server.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-web.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-shell-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-shell-server.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-shell-web.jpg"
       ]
     },
     {
@@ -523,10 +374,10 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-arrow.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-arrow.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-arrow.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-arrow-2.jpg"
       ]
     },
     {
@@ -555,9 +406,9 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "dcim-server.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dcim-server.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/dcim-server.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dcim-server.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dcim-server.jpg"
       ]
     },
     {
@@ -587,10 +438,10 @@
         "dragonball-scouter-livecam.png"
       ],
       "iconAsset": "dragonball-scouter.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dragonball-scouter.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/dragonball-scouter.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-hud.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-livecam.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dragonball-scouter-hud.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dragonball-scouter-livecam.png"
       ]
     },
     {
@@ -621,11 +472,11 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-find.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-find.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-find.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find-3.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-find.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-find-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-find-3.jpg"
       ]
     },
     {
@@ -657,12 +508,12 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-live-cam.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-live-cam.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-live-cam.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-4.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam-4.jpg"
       ]
     },
     {
@@ -691,9 +542,42 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-pilot.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-pilot.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-pilot.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-pilot.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-pilot.jpg"
+      ]
+    },
+    {
+      "id": "ek-remover",
+      "name": "EK Remover",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-05-27",
+      "summary": "Uninstall apps directly on Rokid glasses.",
+      "description": "Simple uninstaller for navigating installed apps and removing selected apps on Rokid glasses.",
+      "screenshotAssets": [
+        "ek-remover.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKRemover_v1.0.0.apk",
+          "sha256": "6ec4b7d832f318dab9cc2c6e55dbc16c49717ee9fd1d6590710f48fd572e912d",
+          "sizeBytes": 4550689,
+          "packageName": "kr.pe.eung.ekremover",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-05-29T00:00:00.000Z",
+      "iconAsset": "ek-remover.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-remover.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-remover.jpg"
       ]
     },
     {
@@ -724,9 +608,9 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-05-28T00:00:00.000Z",
       "iconAsset": "ek-timer.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-timer.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-timer.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-timer.jpg"
       ]
     },
     {
@@ -755,9 +639,9 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-trans.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-trans.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-trans.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-trans.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-trans.jpg"
       ]
     },
     {
@@ -787,10 +671,10 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-word-up.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-word-up.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-word-up.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-word-up.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-word-up-2.jpg"
       ]
     },
     {
@@ -821,11 +705,11 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-home.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-home.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-home.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home-3.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-home-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-home-3.jpg"
       ]
     },
     {
@@ -858,13 +742,13 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "ek-reader.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-reader.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-reader.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-4.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-5.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-4.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-5.jpg"
       ]
     },
     {
@@ -890,7 +774,7 @@
       "author": "KUPdriveouter",
       "sourceUrl": "https://github.com/KUPdriveouter/RokidAppMaker",
       "iconAsset": "gazemou.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gazemou.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/gazemou.png",
       "screenshotAssets": []
     },
     {
@@ -924,12 +808,12 @@
       "sourceUrl": "https://github.com/conclean/RokidGlassesReader",
       "newUntil": "2026-05-11T00:00:00.000Z",
       "iconAsset": "glasses-reader.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/glasses-reader.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/glasses-reader.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-phone.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-overlay.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-reading.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-settings.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-phone.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-overlay.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-reading.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-settings.jpg"
       ]
     },
     {
@@ -955,7 +839,7 @@
       "author": "hanabix",
       "sourceUrl": "https://github.com/hanabix/hubu",
       "iconAsset": "hubu.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/hubu.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/hubu.png",
       "screenshotAssets": []
     },
     {
@@ -1014,7 +898,7 @@
       "author": "zero2005x",
       "sourceUrl": "https://github.com/zero2005x/M365-Rokid-HUD",
       "iconAsset": "m365-rokid-hud.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/m365-rokid-hud.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/m365-rokid-hud.png",
       "screenshotAssets": []
     },
     {
@@ -1044,10 +928,10 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "matrix-vision.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/matrix-vision.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/matrix-vision.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/matrix-vision.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/matrix-vision-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/matrix-vision.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/matrix-vision-2.jpg"
       ]
     },
     {
@@ -1073,7 +957,7 @@
       "author": "e7naq3y",
       "sourceUrl": "https://github.com/e7naq3y/Memora_rokid",
       "iconAsset": "memora-rokid.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/memora-rokid.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/memora-rokid.png",
       "screenshotAssets": []
     },
     {
@@ -1123,7 +1007,7 @@
       "author": "osagem",
       "sourceUrl": "https://github.com/osagem/photoDel4rokidglasses",
       "iconAsset": "photo-del.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/photo-del.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/photo-del.png",
       "screenshotAssets": []
     },
     {
@@ -1158,7 +1042,7 @@
       "author": "zero2005x",
       "sourceUrl": "https://github.com/zero2005x/RokidAIAssistant",
       "iconAsset": "rokid-ai-assistant.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ai-assistant.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-ai-assistant.png",
       "screenshotAssets": []
     },
     {
@@ -1197,10 +1081,10 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "rokid-connect-hud.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-connect-hud.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-connect-hud.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-connect-hud.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-connect-hud-2.jpg"
       ]
     },
     {
@@ -1236,7 +1120,62 @@
       "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
       "screenshotAssets": [],
       "iconAsset": "rokid-gmaps.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-gmaps.png"
+    },
+    {
+      "id": "rokid-live-studio",
+      "name": "Rokid Live Studio",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.4",
+      "publishedAt": "2026-05-26T17:18:31Z",
+      "summary": "Stream your Rokid glasses camera and microphone from your phone.",
+      "description": "Phone studio app for receiving the Rokid glasses camera and microphone feed, previewing it, and streaming to YouTube or Twitch. It supports stream-key mode, OAuth modes for YouTube/Twitch, and optional chat messages rendered back into the glasses helper overlay.",
+      "listing": {
+        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters."
+      },
+      "releases": [
+        {
+          "version": "0.1.4",
+          "date": "2026-05-26T17:18:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
+          "notes": "Phone release focused on launch polish and verification.",
+          "changes": [
+            "Fix Android 12+ phone splash screen with a dedicated padded asset.",
+            "Keep the phone splash background dark and aligned with the app theme.",
+            "Build and launch verified on a connected Samsung phone."
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-live-studio-home.jpg",
+        "rokid-live-studio-youtube.jpg",
+        "rokid-live-studio-twitch.jpg",
+        "rokid-live-studio-chat.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.4%2B5/rokid-live-studio-phone-0.1.4-vc5.apk",
+          "sha256": "5c6343f8f3607c2f4199f4f015404aa3d90ba131d12fde9fbf6399c7cde241e9",
+          "sizeBytes": 38702587,
+          "packageName": "com.anezium.rokidlive.phone",
+          "versionCode": 5,
+          "versionName": "0.1.4"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
+      "newUntil": "2026-05-28T17:18:31.000Z",
+      "iconAsset": "rokid-live-studio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-live-studio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-youtube.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-twitch.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-chat.png"
+      ]
     },
     {
       "id": "rokid-manager",
@@ -1263,7 +1202,7 @@
       "iconAsset": "rokid-manager.png",
       "publishedAt": "2026-05-25T23:45:12Z",
       "newUntil": "2026-05-27T23:45:12.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-manager.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-manager.png",
       "screenshotAssets": []
     },
     {
@@ -1291,6 +1230,43 @@
       "screenshotAssets": []
     },
     {
+      "id": "rokid-relay",
+      "name": "Rokid Relay",
+      "category": "Accessibility",
+      "type": "combo",
+      "version": "0.1.2",
+      "publishedAt": "2026-05-27T22:55:35Z",
+      "summary": "Reply to Android phone notifications from Rokid glasses.",
+      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
+      "screenshotAssets": [
+        "rokid-relay-phone-home.png",
+        "rokid-relay-phone-notifications.png",
+        "rokid-relay-phone-speech.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.2/rokid-relay-phone-v0.1.2-vc3-debug.apk",
+          "sha256": "d7bff20d6fc042fc6c06fe8c706e2adde1526f5e140dfcaf788ad43b3aad515d",
+          "sizeBytes": 12801029,
+          "packageName": "com.anezium.rokidrelay.phone",
+          "versionCode": 3,
+          "versionName": "0.1.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
+      "newUntil": "2026-05-29T22:55:35.000Z",
+      "iconAsset": "rokid-relay.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-relay.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-relay-phone-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-relay-phone-notifications.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
+    {
       "id": "rokid-smart-life",
       "name": "Rokid SmartLife",
       "category": "Navigation",
@@ -1313,7 +1289,7 @@
       "author": "bcefghj",
       "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/RokidSmartLife",
       "iconAsset": "rokid-smart-life.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-smart-life.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-smart-life.png",
       "screenshotAssets": []
     },
     {
@@ -1339,8 +1315,74 @@
       "author": "bzerk",
       "sourceUrl": "https://github.com/bzerk/rokid-ssh-terminal",
       "iconAsset": "rokid-ssh-terminal.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-ssh-terminal.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "rokid-scribe",
+      "name": "Rokid-Scribe",
+      "category": "Utility",
+      "type": "combo",
+      "version": "1.1.2",
+      "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
+      "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
+      "listing": {
+        "about": "Rokid-Scribe turns the glasses into a lightweight voice-note capture tool. Start recordings on the glasses, then bring them back to the phone over Wi-Fi LAN or Bluetooth SPP for transcription and export.\n\nThe phone app is where the heavier workflow lives: provider setup, transcription, review, and TXT or PDF export. The glasses app stays focused on quick capture, so it can be useful during meetings, field notes, demos, or any moment where pulling out a phone breaks the flow.\n\nInstall both APKs for the full workflow. The glasses side captures notes, while the phone side handles import, transcription providers, and export."
+      },
+      "releases": [
+        {
+          "version": "1.1.2",
+          "date": "2026-05-26T17:10:49Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Scribe/releases/tag/v1.1.2",
+          "notes": "Phone app patch focused on launch polish and version metadata.",
+          "changes": [
+            "Fix Android 12+ splash screen with a dedicated padded Scribe logo asset.",
+            "Keep launcher icons unchanged.",
+            "Bump phone app to version 1.1.2, versionCode 105."
+          ]
+        }
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.1/Rokid-Scribe-glasses-v1.1.1-debug.apk",
+          "sha256": "b48678b37dd68e93230a1b5888667ca744d8bcc10406330dfcbd0065ceec1225",
+          "sizeBytes": 8007082,
+          "packageName": "com.rokidscribe.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Scribe/releases/download/v1.1.2/Rokid-Scribe-phone-v1.1.2-debug.apk",
+          "sha256": "4156eb60dac54c2241754fcb7f76499130f739605a6f40e9bb9ca29c3f632b0f",
+          "sizeBytes": 10427566,
+          "packageName": "com.rokidscribe",
+          "versionCode": 105,
+          "versionName": "1.1.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Scribe",
+      "iconAsset": "rokid-scribe.png",
+      "screenshotAssets": [
+        "rokid-scribe-menu.jpg",
+        "rokid-scribe-settings.jpg",
+        "rokid-scribe-record.jpg",
+        "rokid-scribe-glasses.jpg",
+        "rokid-scribe-glasses-recording.jpg"
+      ],
+      "publishedAt": "2026-05-26T17:10:49Z",
+      "newUntil": "2026-05-28T17:10:49.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-scribe.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-settings.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-record.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-glasses.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-glasses-recording.jpg"
+      ]
     },
     {
       "id": "texthome",
@@ -1372,13 +1414,13 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "texthome.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/texthome.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/texthome.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-4.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-5.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-4.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-5.jpg"
       ]
     },
     {
@@ -1435,12 +1477,12 @@
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "iconAsset": "your-voice.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/your-voice.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/your-voice.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-4.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice-4.jpg"
       ]
     }
   ]
