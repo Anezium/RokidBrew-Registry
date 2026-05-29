@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       app:
-        description: "App id in apps/<id>.json"
+        description: "App id in apps/<id>.json, or all"
         required: true
+        default: "all"
       repo:
         description: "Optional GitHub repo override, owner/repo"
         required: false
@@ -34,6 +35,14 @@ on:
         options:
           - "false"
           - "true"
+      direct_push:
+        description: "Commit changes directly to the selected branch"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 jobs:
   generate:
@@ -52,28 +61,81 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ inputs.model }}
+          INPUT_APP: ${{ inputs.app }}
+          INPUT_REPO: ${{ inputs.repo }}
+          INPUT_README_PATH: ${{ inputs.readme_path }}
+          INPUT_README_REF: ${{ inputs.readme_ref }}
+          INPUT_RELEASE_LIMIT: ${{ inputs.release_limit }}
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          args=("${{ inputs.app }}" --release-limit "${{ inputs.release_limit }}" --report ".tmp/ai-listing-report.md")
-          if [ -n "${{ inputs.repo }}" ]; then
-            args+=(--repo "${{ inputs.repo }}")
+          mkdir -p .tmp
+
+          generate_one() {
+            local app="$1"
+            local report=".tmp/ai-listing-${app}.md"
+            local args=("$app" --release-limit "$INPUT_RELEASE_LIMIT" --report "$report")
+
+            if [ -n "$INPUT_REPO" ]; then
+              args+=(--repo "$INPUT_REPO")
+            fi
+            if [ -n "$INPUT_README_PATH" ]; then
+              args+=(--readme-path "$INPUT_README_PATH")
+            fi
+            if [ -n "$INPUT_README_REF" ]; then
+              args+=(--ref "$INPUT_README_REF")
+            fi
+            if [ "$INPUT_DRY_RUN" = "true" ]; then
+              args+=(--dry-run)
+            fi
+
+            node scripts/generate-ai-listing.mjs "${args[@]}"
+          }
+
+          if [ "$INPUT_APP" = "all" ]; then
+            : > .tmp/ai-listing-report.md
+            failed=0
+            for file in apps/*.json; do
+              app="$(basename "$file" .json)"
+              echo "Generating listing for ${app}"
+              if generate_one "$app"; then
+                if [ -f ".tmp/ai-listing-${app}.md" ]; then
+                  cat ".tmp/ai-listing-${app}.md" >> .tmp/ai-listing-report.md
+                  printf '\n---\n\n' >> .tmp/ai-listing-report.md
+                fi
+              else
+                failed=$((failed + 1))
+                printf '## %s\n\nGeneration failed; check workflow logs.\n\n---\n\n' "$app" >> .tmp/ai-listing-report.md
+              fi
+            done
+
+            if [ "$failed" -gt 0 ]; then
+              echo "${failed} app(s) failed during batch generation; continuing with successful updates."
+            fi
+            exit 0
           fi
-          if [ -n "${{ inputs.readme_path }}" ]; then
-            args+=(--readme-path "${{ inputs.readme_path }}")
-          fi
-          if [ -n "${{ inputs.readme_ref }}" ]; then
-            args+=(--ref "${{ inputs.readme_ref }}")
-          fi
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            args+=(--dry-run)
-          fi
-          node scripts/generate-ai-listing.mjs "${args[@]}"
+
+          generate_one "$INPUT_APP"
 
       - name: Rebuild registry
         if: ${{ inputs.dry_run != 'true' }}
         run: node scripts/build-registry.mjs
 
+      - name: Commit listing changes
+        if: ${{ inputs.dry_run != 'true' && inputs.direct_push == 'true' }}
+        run: |
+          if [ -z "$(git status --porcelain -- apps dist)" ]; then
+            echo "No listing changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/*.json dist/apps.v1.json
+          git commit -m "Generate AI listings"
+          git push origin "HEAD:${{ github.ref_name }}"
+
       - name: Create listing pull request
-        if: ${{ inputs.dry_run != 'true' }}
+        if: ${{ inputs.dry_run != 'true' && inputs.direct_push != 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
