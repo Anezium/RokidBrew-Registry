@@ -23,7 +23,7 @@ on:
         required: false
         default: "openai/gpt-4.1-mini"
       release_limit:
-        description: "Number of GitHub Releases to summarize"
+        description: "Number of GitHub Releases to copy into releases[]"
         required: false
         default: "5"
       dry_run:
