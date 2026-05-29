@@ -1,10 +1,47 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-29T20:26:30.726Z",
+  "generatedAt": "2026-05-29T21:26:56.596Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
   "apps": [
+    {
+      "id": "rokid-relay",
+      "name": "Rokid Relay",
+      "category": "Accessibility",
+      "type": "combo",
+      "version": "0.1.4",
+      "publishedAt": "2026-05-29T21:23:14Z",
+      "summary": "Reply to Android phone notifications from Rokid glasses.",
+      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
+      "screenshotAssets": [
+        "rokid-relay-phone-home.png",
+        "rokid-relay-phone-notifications.png",
+        "rokid-relay-phone-speech.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.4/rokid-relay-phone-v0.1.4-vc5-debug.apk",
+          "sha256": "f5363afd05182ae07340b6e04f4b3ad29b251e371622acac6f22b149542ec169",
+          "sizeBytes": 12836073,
+          "packageName": "com.anezium.rokidrelay.phone",
+          "versionCode": 5,
+          "versionName": "0.1.4"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
+      "newUntil": "2026-05-31T21:23:14.000Z",
+      "iconAsset": "rokid-relay.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
     {
       "id": "ek-meta-player",
       "name": "EK Meta Player",
@@ -94,43 +131,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
-      ]
-    },
-    {
-      "id": "rokid-relay",
-      "name": "Rokid Relay",
-      "category": "Accessibility",
-      "type": "combo",
-      "version": "0.1.2",
-      "publishedAt": "2026-05-27T22:55:35Z",
-      "summary": "Reply to Android phone notifications from Rokid glasses.",
-      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
-      "screenshotAssets": [
-        "rokid-relay-phone-home.png",
-        "rokid-relay-phone-notifications.png",
-        "rokid-relay-phone-speech.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.2/rokid-relay-phone-v0.1.2-vc3-debug.apk",
-          "sha256": "d7bff20d6fc042fc6c06fe8c706e2adde1526f5e140dfcaf788ad43b3aad515d",
-          "sizeBytes": 12801029,
-          "packageName": "com.anezium.rokidrelay.phone",
-          "versionCode": 3,
-          "versionName": "0.1.2"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
-      "newUntil": "2026-05-29T22:55:35.000Z",
-      "iconAsset": "rokid-relay.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
       ]
     },
     {
