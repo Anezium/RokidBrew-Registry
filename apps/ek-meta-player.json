@@ -1,0 +1,37 @@
+{
+  "id": "ek-meta-player",
+  "name": "EK Meta Player",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "1.0.0",
+  "publishedAt": "2026-05-29",
+  "summary": "Run Meta-display web apps on Rokid glasses.",
+  "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
+  "screenshotAssets": [
+    "ek-meta-player.jpg",
+    "ek-meta-player-2.jpg",
+    "ek-meta-player-3.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
+      "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
+      "sizeBytes": 26251553
+    }
+  ],
+  "author": "EUNG SOFT",
+  "sourceUrl": "https://github.com/eung3392/eungsoft",
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "eung3392/eungsoft",
+    "release": "RokidGlassesApp",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^EK_Meta_v(?<version>\\d+(?:\\.\\d+)*)\\.apk$"
+      }
+    ]
+  }
+}
