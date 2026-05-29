@@ -153,6 +153,7 @@ function prompt(app, repo, readme, releases) {
             "Avoid marketing fluff and developer-only setup.",
           ],
           releases: releaseInstruction,
+          releaseNotes: "Keep notes to one short sentence. Put individual changes in changes[] instead of repeating them in notes.",
         },
         app: {
           id: app.id,

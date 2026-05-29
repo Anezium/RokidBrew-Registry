@@ -173,7 +173,7 @@ export function pickStoreFields(app, generated) {
   }
   if (Array.isArray(generated.releases)) {
     out.releases = generated.releases.slice(0, 8).map((release) => ({
-      version: release.version || null,
+      version: release.version ? String(release.version).trim().replace(/^v/i, "") : null,
       date: release.date || null,
       sourceReleaseUrl: release.sourceReleaseUrl || null,
       notes: release.notes ? String(release.notes).trim().slice(0, 700) : null,
