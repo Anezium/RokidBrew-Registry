@@ -237,7 +237,8 @@ For one-off cleanup, use `--id`, `--category`, `--phone-required`, or `--no-scre
 ## Generating listings from README with AI
 
 For apps that only have a README, use OpenRouter to generate a reviewable
-store listing from the README plus GitHub Releases:
+store description from the README. GitHub Releases are copied mechanically into
+`releases[]`; the AI does not rewrite changelogs.
 
 ```bash
 OPENROUTER_API_KEY=... \
@@ -248,13 +249,15 @@ node scripts/generate-ai-listing.mjs rokid-scribe \
 node scripts/build-registry.mjs
 ```
 
-The AI script only updates store-copy fields:
+The AI part only writes:
 
 - `summary`
 - `description`
 - `listing.descriptionMarkdown`
-- `releases`
-- private maintenance metadata in `listingSource`
+
+The script also copies GitHub release bodies into `releases[]` without asking the
+model to summarize or rewrite them, and stores private maintenance metadata in
+`listingSource`.
 
 It does not update APK URLs, checksums, package names, icons, screenshots, or
 install targets. Those stay managed by the normal registry scripts and Actions.
@@ -282,7 +285,7 @@ Useful inputs:
 | `readme_path` | Optional README path inside the repo. |
 | `readme_ref` | Optional branch, tag, or SHA. |
 | `model` | OpenRouter model, defaults to `openai/gpt-4.1-mini`. |
-| `release_limit` | Number of GitHub Releases to summarize. |
+| `release_limit` | Number of GitHub Releases to copy into `releases[]`. |
 | `dry_run` | Runs generation without creating a PR. |
 
 ---

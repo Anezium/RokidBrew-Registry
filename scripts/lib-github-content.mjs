@@ -146,18 +146,8 @@ export function releaseToRegistry(release) {
     version: String(release.tag_name || "").replace(/^v/i, "") || null,
     date: release.published_at || release.created_at || null,
     sourceReleaseUrl: release.html_url || null,
-    notes: firstParagraph(body, 420) || null,
-    changes: bulletChanges(body),
-  };
-}
-
-export function compactRelease(release) {
-  return {
-    tag: release.tag_name,
-    name: release.name,
-    publishedAt: release.published_at,
-    url: release.html_url,
-    body: cleanMarkdown(release.body || "").slice(0, 4000),
+    notes: body || null,
+    changes: [],
   };
 }
 
@@ -176,7 +166,7 @@ export function pickStoreFields(app, generated) {
       version: release.version ? String(release.version).trim().replace(/^v/i, "") : null,
       date: release.date || null,
       sourceReleaseUrl: release.sourceReleaseUrl || null,
-      notes: release.notes ? String(release.notes).trim().slice(0, 700) : null,
+      notes: release.notes ? String(release.notes).trim() : null,
       changes: Array.isArray(release.changes)
         ? release.changes.map((item) => String(item).trim()).filter(Boolean).slice(0, 8)
         : [],

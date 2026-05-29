@@ -4,13 +4,13 @@ import { fileURLToPath } from "node:url";
 import {
   appFile,
   cleanMarkdown,
-  compactRelease,
   githubReleases,
   inferRepo,
   parseArgs,
   pickStoreFields,
   readJson,
   readmeText,
+  releaseToRegistry,
   writeJson,
 } from "./lib-github-content.mjs";
 
@@ -27,7 +27,7 @@ Options:
   --readme-url <url>          Full README/raw markdown URL.
   --ref <branch-or-sha>       README git ref, default repo default branch.
   --model <model>             OpenRouter model, default OPENROUTER_MODEL or ${defaultModel}.
-  --release-limit <n>         Number of GitHub releases to pass to the model, default 5.
+  --release-limit <n>         Number of GitHub releases to copy into releases[], default 5.
   --no-releases              Do not fetch or update releases[].
   --report <path>             Write a markdown report for PR bodies.
   --dry-run                  Print generated JSON without writing the app.
@@ -39,7 +39,7 @@ Required env:
 const listingSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["summary", "description", "listing", "releases"],
+  required: ["summary", "description", "listing"],
   properties: {
     summary: {
       type: "string",
@@ -57,26 +57,6 @@ const listingSchema = {
         descriptionMarkdown: {
           type: "string",
           description: "Readable Markdown detail body for end users.",
-        },
-      },
-    },
-    releases: {
-      type: "array",
-      maxItems: 8,
-      items: {
-        type: "object",
-        additionalProperties: false,
-        required: ["version", "date", "sourceReleaseUrl", "notes", "changes"],
-        properties: {
-          version: { type: ["string", "null"] },
-          date: { type: ["string", "null"] },
-          sourceReleaseUrl: { type: ["string", "null"] },
-          notes: { type: ["string", "null"] },
-          changes: {
-            type: "array",
-            maxItems: 8,
-            items: { type: "string" },
-          },
         },
       },
     },
@@ -118,23 +98,19 @@ function validateGenerated(value) {
   if (!value.summary || typeof value.summary !== "string") throw new Error("Generated listing is missing summary");
   if (!value.description || typeof value.description !== "string") throw new Error("Generated listing is missing description");
   if (!value.listing?.descriptionMarkdown) throw new Error("Generated listing is missing listing.descriptionMarkdown");
-  if (!Array.isArray(value.releases)) value.releases = [];
   return value;
 }
 
-function prompt(app, repo, readme, releases) {
-  const releaseInstruction = releases.length > 0
-    ? "Summarize GitHub Releases into releases[]. Use concise notes plus bullet changes. Keep sourceReleaseUrl unchanged."
-    : "Return an empty releases array because no release notes were provided.";
-
+function prompt(app, repo, readme) {
   return [
     {
       role: "system",
       content: [
         "You write concise app-store listings for RokidBrew, an app store for Rokid AR glasses and companion phone apps.",
-        "Use only the provided README, app metadata, and release notes.",
+        "Use only the provided README and app metadata.",
         "Do not invent features, versions, pricing, compatibility, APK URLs, package names, or screenshots.",
         "Do not include developer build instructions, contribution notes, license text, badges, raw tables, or API-key setup unless they are necessary for an end user.",
+        "Do not write release notes or changelogs.",
         "Write in English. Keep the tone polished, clear, and practical.",
         "Return strict JSON matching the supplied schema.",
       ].join(" "),
@@ -142,7 +118,7 @@ function prompt(app, repo, readme, releases) {
     {
       role: "user",
       content: JSON.stringify({
-        task: "Generate RokidBrew store fields from README and releases.",
+        task: "Generate RokidBrew store description fields from README.",
         outputRules: {
           summary: "Max 140 characters. No trailing period if it reads like a label.",
           description: "Plain text, 1-3 short sentences.",
@@ -152,8 +128,6 @@ function prompt(app, repo, readme, releases) {
             "Prefer bullets for scannability.",
             "Avoid marketing fluff and developer-only setup.",
           ],
-          releases: releaseInstruction,
-          releaseNotes: "Keep notes to one short sentence. Put individual changes in changes[] instead of repeating them in notes.",
         },
         app: {
           id: app.id,
@@ -168,7 +142,6 @@ function prompt(app, repo, readme, releases) {
         },
         repo,
         readme: truncate(cleanMarkdown(readme), 24000),
-        releases,
       }),
     },
   ];
@@ -252,11 +225,14 @@ async function main() {
   const releases = args.noReleases
     ? []
     : repo
-      ? (await githubReleases(repo, args.releaseLimit || 5)).map(compactRelease)
+      ? (await githubReleases(repo, args.releaseLimit || 5)).map(releaseToRegistry)
       : [];
   const model = args.model || defaultModel;
-  const generated = await callOpenRouter({ model, messages: prompt(app, repo, readme, releases) });
-  const updated = pickStoreFields(app, generated);
+  const generated = await callOpenRouter({ model, messages: prompt(app, repo, readme) });
+  const updated = pickStoreFields(app, {
+    ...generated,
+    ...(args.noReleases ? {} : { releases }),
+  });
   if (repo) {
     updated.listingSource = {
       type: "githubReadme",
