@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { bulletChanges, cleanMarkdown } from "./lib-github-content.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appsDir = path.join(root, "apps");
@@ -239,7 +240,20 @@ function shouldUpdateBrew(brew, candidate) {
     return `version ${currentVersion || "unknown"} -> ${candidateVersion}`;
   }
 
-  if (candidate.url === brew?.apkUrl && candidateCode === currentCode) return null;
+  if (candidate.url === brew?.apkUrl && candidateCode === currentCode) {
+    if (candidate.releaseUrl && candidate.releaseUrl !== brew?.releaseUrl) {
+      return "release metadata";
+    }
+    if ("releaseNotes" in candidate && candidate.releaseNotes !== (brew?.notes || "")) {
+      return "release notes";
+    }
+    const currentChanges = JSON.stringify(Array.isArray(brew?.changes) ? brew.changes : []);
+    const candidateChanges = JSON.stringify(candidate.releaseChanges || []);
+    if (Array.isArray(candidate.releaseChanges) && candidateChanges !== currentChanges) {
+      return "release changes";
+    }
+    return null;
+  }
 
   return null;
 }
@@ -252,6 +266,9 @@ function applyBrewCandidate(brew, candidate) {
   ]) || brew.version;
   if (candidate.versionCode) brew.versionCode = candidate.versionCode;
   brew.apkUrl = candidate.url;
+  if (candidate.releaseUrl) brew.releaseUrl = candidate.releaseUrl;
+  if ("releaseNotes" in candidate) brew.notes = candidate.releaseNotes || null;
+  if (Array.isArray(candidate.releaseChanges)) brew.changes = candidate.releaseChanges;
 }
 
 const releaseCache = new Map();
@@ -361,6 +378,8 @@ function shouldUpdate(app, artifact, candidate) {
     const missing = !artifact.sha256 || !artifact.sizeBytes || !artifact.packageName || !artifact.versionCode;
     if (changed) return "same URL changed checksum";
     if (missing) return "fill missing metadata";
+    const releaseReason = shouldUpdateRelease(app, candidate);
+    if (releaseReason) return releaseReason;
   }
 
   if (candidate.url !== artifact.url && candidate.sha256 && candidate.sha256 !== artifact.sha256) {
@@ -370,6 +389,60 @@ function shouldUpdate(app, artifact, candidate) {
   }
 
   return null;
+}
+
+function candidateReleaseVersion(candidate) {
+  return bestVersion([
+    candidate.versionName,
+    candidate.assetVersion,
+    tagVersion(candidate.releaseTag || ""),
+  ]);
+}
+
+function matchingRelease(app, candidate) {
+  const releases = Array.isArray(app.releases) ? app.releases : [];
+  if (candidate.releaseUrl) {
+    const byUrl = releases.find((release) => release.sourceReleaseUrl === candidate.releaseUrl);
+    if (byUrl) return byUrl;
+  }
+  const version = candidateReleaseVersion(candidate);
+  return version ? releases.find((release) => release.version === version) : null;
+}
+
+function releaseChangesEqual(left, right) {
+  return JSON.stringify(left || []) === JSON.stringify(right || []);
+}
+
+function shouldUpdateRelease(app, candidate) {
+  if (!candidate.releaseUrl && !("releaseNotes" in candidate) && !Array.isArray(candidate.releaseChanges)) return null;
+  const release = matchingRelease(app, candidate);
+  if (!release) return "release metadata";
+  if ("releaseNotes" in candidate && candidate.releaseNotes !== (release.notes || "")) return "release notes";
+  if (Array.isArray(candidate.releaseChanges) && !releaseChangesEqual(candidate.releaseChanges, release.changes)) {
+    return "release changes";
+  }
+  return null;
+}
+
+function upsertAppRelease(app, candidate) {
+  if (!candidate.releaseUrl && !("releaseNotes" in candidate) && !Array.isArray(candidate.releaseChanges)) return;
+
+  const version = candidateReleaseVersion(candidate);
+  const entry = {
+    version: version || null,
+    date: candidate.releasePublishedAt || candidate.updatedAt || null,
+    sourceReleaseUrl: candidate.releaseUrl || null,
+    notes: candidate.releaseNotes || null,
+    changes: Array.isArray(candidate.releaseChanges) ? candidate.releaseChanges : [],
+  };
+
+  const releases = Array.isArray(app.releases) ? app.releases : [];
+  const filtered = releases.filter((release) => {
+    if (entry.sourceReleaseUrl && release.sourceReleaseUrl === entry.sourceReleaseUrl) return false;
+    if (entry.version && release.version === entry.version) return false;
+    return true;
+  });
+  app.releases = [entry, ...filtered].slice(0, 8);
 }
 
 function applyCandidate(app, artifact, candidate) {
@@ -388,6 +461,7 @@ function applyCandidate(app, artifact, candidate) {
   ]);
   if (nextAppVersion) app.version = nextAppVersion;
   if (candidate.releasePublishedAt) app.publishedAt = candidate.releasePublishedAt;
+  upsertAppRelease(app, candidate);
 }
 
 async function checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log) {
@@ -410,6 +484,9 @@ async function checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log)
       updatedAt: asset.updated_at,
       releaseTag: release.tag_name,
       releasePublishedAt: release.published_at,
+      releaseUrl: release.html_url,
+      releaseNotes: cleanMarkdown(release.body || ""),
+      releaseChanges: bulletChanges(release.body || "", 8),
     });
   }
 
@@ -473,6 +550,9 @@ async function checkBrewUpdate(aapt, log) {
     updatedAt: asset.updated_at,
     releaseTag: release.tag_name,
     releasePublishedAt: release.published_at,
+    releaseUrl: release.html_url,
+    releaseNotes: cleanMarkdown(release.body || ""),
+    releaseChanges: bulletChanges(release.body || "", 8),
   };
   const reason = shouldUpdateBrew(brew, candidate);
   if (!reason) {
@@ -574,7 +654,7 @@ for (const file of appFiles) {
     try {
       const updateConfig = mergedUpdateConfig(app, artifact);
       const rule = ruleForTarget(updateConfig, artifact.target);
-      const before = JSON.stringify(artifact);
+      const before = JSON.stringify(app);
       let candidate = null;
       let reason = null;
 
@@ -589,7 +669,7 @@ for (const file of appFiles) {
         updates.push(summarizeChange(app, artifact, candidate, reason));
         if (!dryRun) {
           applyCandidate(app, artifact, candidate);
-          changed = changed || JSON.stringify(artifact) !== before;
+          changed = changed || JSON.stringify(app) !== before;
         }
       } else {
         skipped += 1;

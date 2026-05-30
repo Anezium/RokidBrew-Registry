@@ -1,8 +1,6 @@
 name: Check app updates
 
 on:
-  schedule:
-    - cron: "17 5 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -26,6 +24,8 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -60,13 +60,13 @@ jobs:
           branch="automation/app-updates"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin "$branch" || true
+          git fetch origin "$branch:refs/remotes/origin/$branch" || true
           git checkout -B "$branch"
           git add apps/*.json brew.json dist/apps.v1.json
           git commit -m "Update app artifacts and RokidBrew metadata"
-          git push --force-with-lease="refs/heads/$branch" origin "$branch"
+          git push --force-with-lease origin "$branch"
 
-          number="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')"
+          number="$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number')"
           if [ -n "$number" ]; then
             gh pr edit "$number" --body-file .tmp/update-report.md
           else

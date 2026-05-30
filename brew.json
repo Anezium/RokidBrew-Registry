@@ -1,5 +1,15 @@
 {
-  "version": "0.1.8",
-  "versionCode": 9,
-  "apkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk"
+  "version": "0.2.0",
+  "versionCode": 10,
+  "apkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.0/RokidBrew-phone-v0.2.0-debug.apk",
+  "releaseUrl": "https://github.com/Anezium/RokidBrew/releases/tag/v0.2.0",
+  "notes": "RokidBrew 0.2.0 ships the redesigned store, self-update flow, selectable CXR-L host app, install state tracking, and cleaner glasses app management.",
+  "changes": [
+    "Redesigned store UI with richer app detail pages.",
+    "Self-update screen with update badge, changelog, download, and install actions.",
+    "System log entry when a newer RokidBrew build is available.",
+    "Selectable Rokid CXR-L host app support.",
+    "Phone and glasses install state tracking with update and uninstall controls.",
+    "Refactored CXR-L app upload, query, and uninstall operations."
+  ]
 }

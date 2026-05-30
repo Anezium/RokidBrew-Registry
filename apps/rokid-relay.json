@@ -37,5 +37,36 @@
         "packageName": "com.anezium.rokidrelay.phone"
       }
     ]
+  },
+  "listing": {
+    "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
+  },
+  "releases": [
+    {
+      "version": "0.1.4",
+      "date": "2026-05-29T21:23:14Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
+      "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+      "changes": []
+    },
+    {
+      "version": "0.1.3",
+      "date": "2026-05-28T09:01:38Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
+      "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+      "changes": []
+    },
+    {
+      "version": "0.1.2",
+      "date": "2026-05-27T22:55:35Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
+      "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-Relay",
+    "path": "README.md"
   }
 }

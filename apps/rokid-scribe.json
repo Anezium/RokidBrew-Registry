@@ -4,8 +4,28 @@
   "category": "Utility",
   "type": "combo",
   "version": "1.1.2",
-  "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF.",
-  "description": "Record voice notes directly on Rokid glasses. Import them to the phone over Wi-Fi LAN or Bluetooth SPP. Transcribe locally with ElevenLabs, AssemblyAI, Speechmatics, Deepgram, or Groq. Export as TXT or PDF.",
+  "summary": "Capture voice notes on glasses, transcribe on phone, export as TXT or PDF",
+  "description": "Record voice notes on Rokid glasses and import them to your phone via Wi-Fi or Bluetooth. Transcribe locally using multiple providers and export transcripts as TXT or PDF files.",
+  "listing": {
+    "about": "Rokid-Scribe turns the glasses into a lightweight voice-note capture tool. Start recordings on the glasses, then bring them back to the phone over Wi-Fi LAN or Bluetooth SPP for transcription and export.\n\nThe phone app is where the heavier workflow lives: provider setup, transcription, review, and TXT or PDF export. The glasses app stays focused on quick capture, so it can be useful during meetings, field notes, demos, or any moment where pulling out a phone breaks the flow.\n\nInstall both APKs for the full workflow. The glasses side captures notes, while the phone side handles import, transcription providers, and export.",
+    "descriptionMarkdown": "# About Rokid-Scribe\n\nRokid-Scribe lets you record voice notes directly on Rokid glasses and import them to your phone for local transcription and export.\n\n## Key Features\n\n- Glasses-side voice note capture with crash-tolerant recording\n- Phone-initiated import over Wi-Fi LAN (preferred) or Bluetooth SPP\n- Automatic deletion of notes from glasses after successful import\n- Local storage of audio, metadata, and transcripts on phone\n- Supports multiple transcription providers: ElevenLabs, AssemblyAI, Speechmatics, Deepgram, and Groq\n- Multi-speaker transcript support where available\n- Rename notes in-app without changing audio files\n- Export transcripts as TXT or PDF\n- In-app provider API key management and usage monitoring\n\n## How It Works\n\n1. Record notes on Rokid glasses.\n2. Use the phone app to import pending notes over local network or Bluetooth.\n3. Transcribe audio locally on the phone using your chosen provider.\n4. Review, rename, copy, or export transcripts.\n\n## Requirements\n\n- Rokid glasses with Rokid-Scribe glasses app installed\n- Android phone with Rokid-Scribe phone app installed\n- Bluetooth pairing between phone and glasses\n\n## Notes\n\n- Wi-Fi LAN import via phone hotspot is the preferred and faster method.\n- Transcription providers require API keys entered in the phone app.\n- Exported transcripts are saved to the device's Download/Rokid-Scribe folder when permitted."
+  },
+  "releases": [
+    {
+      "version": "1.1.2",
+      "date": "2026-05-26T17:10:49Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Scribe/releases/tag/v1.1.2",
+      "notes": "Phone app patch:\n- Fix Android 12+ splash screen to use a dedicated padded Scribe logo asset.\n- Keep launcher icons unchanged.\n- Bump phone app to 1.1.2 (105).",
+      "changes": []
+    },
+    {
+      "version": "1.1.1",
+      "date": "2026-04-12T21:42:28Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Scribe/releases/tag/v1.1.1",
+      "notes": "## Rokid-Scribe v1.1.1\n\nCurrent public build of the local-first Rokid voice note workflow.\n\n### Included assets\n- `Rokid-Scribe-phone-v1.1.1-debug.apk`\n- `Rokid-Scribe-glasses-v1.1.1-debug.apk`\n\n### Highlights\n- Glasses-side local note recording with interrupted capture recovery\n- Phone-initiated import over `Wi-Fi LAN / FAST` and `Bluetooth SPP`\n- Successfully imported notes are automatically removed from the glasses after transfer completes\n- Local phone library with rename, transcript, copy, and export flows\n- Transcription providers: ElevenLabs, AssemblyAI, Speechmatics, Deepgram, and Groq\n- Multi-speaker transcript support where provider output allows it\n- Provider usage / quota views where supported\n\n### Notes\n- These release assets are the current debug APK builds from the repository state tagged as `v1.1.1`.\n- `Wi-Fi LAN / FAST` is the recommended day-to-day path, especially with the phone hotspot flow.",
+      "changes": []
+    }
+  ],
   "phoneRequired": true,
   "artifacts": [
     {
@@ -37,5 +57,10 @@
     "rokid-scribe-glasses.jpg",
     "rokid-scribe-glasses-recording.jpg"
   ],
-  "publishedAt": "2026-05-26T17:10:49Z"
+  "publishedAt": "2026-05-26T17:10:49Z",
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-Scribe",
+    "path": "README.md"
+  }
 }

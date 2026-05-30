@@ -4,8 +4,21 @@
   "category": "Learning",
   "type": "glasses",
   "version": "1.0.0",
-  "summary": "Hands-free vocabulary trainer.",
-  "description": "Vocabulary learning app optimized for Rokid glasses with shared study material support.",
+  "publishedAt": "2026-04-02",
+  "summary": "Just nod your head! Hands-Free Rokid Glasses dedicated vocabulary book. Let's share good resources.",
+  "description": "It's a learning vocabulary program. It basically contains 500 English words for Korean, the world capital. 1. Just nod your head! 'Motion Control' Learning (Hands-Free) 🤚🚫 No need to touch your smartphone screen. Put on the AR glasses and tilt your head slightly to the right for the next card, or to the left for the previous card. Control everything from checking answers to moving to the next word using only your motion! 2. Infinite Expandability! 'My Own JSON Vocabulary Book' 📂 Just add a JSON file created with a notepad or VS Code, and your own memorization book is complete. TOEIC, civil service exams, certification studies—anything is possible. Connect your glasses via the 'Web Install' menu and transfer the data JSON file using the 'EK Word Up' button. 3. Smart Learning Continuity (Smart Save) 📍 Don't worry if you turn off the app while studying. The app remembers how far you've memorized. You can resume studying right where you left off next time, without breaking your flow. 4. Maximize Memorization Effect! 'Shuffle Mode' 🔀 Turn on Shuffle Mode to mix up the word order randomly and test your real skills!",
+  "listing": {
+    "descriptionMarkdown": "It's a learning vocabulary program.\nIt basically contains 500 English words for Korean, the world capital.\n\n**1. Just nod your head! 'Motion Control' Learning (Hands-Free) 🤚🚫**\nNo need to touch your smartphone screen. Put on the AR glasses and tilt your head slightly to the right for the next card, or to the left for the previous card. Control everything from checking answers to moving to the next word using only your motion!\n\n**2. Infinite Expandability! 'My Own JSON Vocabulary Book' 📂**\nJust add a JSON file created with a notepad or VS Code, and your own memorization book is complete. TOEIC, civil service exams, certification studies—anything is possible.\nConnect your glasses via the 'Web Install' menu and transfer the data JSON file using the 'EK Word Up' button.\n\n**3. Smart Learning Continuity (Smart Save) 📍**\nDon't worry if you turn off the app while studying. The app remembers how far you've memorized. You can resume studying right where you left off next time, without breaking your flow.\n\n**4. Maximize Memorization Effect! 'Shuffle Mode' 🔀**\nTurn on Shuffle Mode to mix up the word order randomly and test your real skills!\n\n### Usage / Controls\n\n**• Data Selection:** Press the 'Select' button to choose the vocabulary set to study. You can check all internal data and externally uploaded files in the list.\n**Random** : Turn on the 'Random' switch to shuffle the word order (if off, it resumes from the last learning position).\n**Start** : Press the 'Start' button to enter the card screen."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-04-02",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Imported from EUNG SOFT app metadata.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "ek-word-up.jpg",
     "ek-word-up-2.jpg"

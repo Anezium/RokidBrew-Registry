@@ -4,8 +4,49 @@
   "category": "Reader",
   "type": "glasses",
   "version": "1.4.0",
-  "summary": "E-book reader for Rokid glasses.",
-  "description": "Clean e-book reader built around hands-free and glasses-friendly reading.",
+  "publishedAt": "2026-03-24",
+  "summary": "Clean and intuitive E-book reader app for Rokid Glasses.",
+  "description": "EKReader is a clean and intuitive e-book reader application supporting TXT and EPUB files. Key Screen Layout - Main Screen: Shows the list of books on the device in a card format, distinguishing file types (TXT, EPUB) with icons. - Reader Screen: The book title is displayed at the top, and contents can be read in the wide central area. The current reading progress (%) and a progress bar are displayed at the bottom. Core Features - Visual Comfort: Applies an optimized contrast ratio on a black background for eye comfort during long reading sessions. - Simple UI: Minimizes complex buttons and focuses on essential functions (navigation, font size). - Operation Optimization: Rokid Glasses environment optimized for swiping and touch operation.",
+  "listing": {
+    "descriptionMarkdown": "EKReader is a clean and intuitive e-book reader application supporting TXT and EPUB files.\n\n**Key Screen Layout**\n- **Main Screen:** Shows the list of books on the device in a card format, distinguishing file types (TXT, EPUB) with icons.\n- **Reader Screen:** The book title is displayed at the top, and contents can be read in the wide central area. The current reading progress (%) and a progress bar are displayed at the bottom.\n\n**Core Features**\n- **Visual Comfort:** Applies an optimized contrast ratio on a black background for eye comfort during long reading sessions.\n- **Simple UI:** Minimizes complex buttons and focuses on essential functions (navigation, font size).\n- **Operation Optimization:** Rokid Glasses environment optimized for swiping and touch operation.\n\n### Usage / Controls\n\n- **Open Menu:** Call the main menu touchs on the reader screen.\n- **Jump to Page/Location:**\n- Adjust location by 5% increments using swipe in the 'Jump to' dialog, then touchs.\n- **Font Size:** Select desired size from Small, Normal, Large, X-Large in the font size dialog.\n- **Check Progress:** Real-time current location (%) and progress bar are displayed at the bottom.\n- **File Transfer (Web Install):** Materials such as txt and epub can be transferred easily using the file upload button dedicated to EKReader after connecting the smart glasses from the Web Install menu on the site."
+  },
+  "releases": [
+    {
+      "version": "1.4.0",
+      "date": "2026-04-24",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "The list navigation has been changed to tilt left and right. Clock and battery status have been added in book reading mode.",
+      "changes": []
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-04-22",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "List navigation has been improved. Added sort and gesture scroll features.",
+      "changes": []
+    },
+    {
+      "version": "1.2.1",
+      "date": "2026-04-09",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Fixed a bug in the settings menu.",
+      "changes": []
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-04-08",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "This version is a version that removes unnecessary blank spaces from the document.",
+      "changes": []
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-04-07",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Hands Free feature added, you can turn pages by nodding your head left or right.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "ek-reader.jpg",
     "ek-reader-2.jpg",

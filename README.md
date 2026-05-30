@@ -90,6 +90,8 @@ https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/dist/apps.v1.j
 | `iconUrl` | Remote URL for the icon. Auto-generated from the registry repo. |
 | `screenshotAssets` | Array of filenames in `assets/screenshots/`. Add manually. |
 | `screenshotUrls` | Remote URLs for screenshots. Auto-generated from the registry repo. |
+| `listing.descriptionMarkdown` | Store-detail body shown in RokidBrew. Supports readable Markdown-style paragraphs, headings, and bullets. |
+| `releases` | Store-detail changelog entries shown in RokidBrew. |
 
 ### Combo apps
 
@@ -106,7 +108,8 @@ For `"type": "combo"`, provide both a `phone` and `glasses` artifact:
 
 ## GitHub Actions
 
-Four workflows automate the registry maintenance.
+All write workflows create or update pull requests against `main`. They do not
+push registry changes directly to `main`.
 
 ### 1. Build registry (`build-registry.yml`)
 
@@ -116,7 +119,36 @@ Four workflows automate the registry maintenance.
 | Pull request | CI check. |
 | Manual dispatch | Rebuild on demand. |
 
-### 2. Extract missing icons (`extract-icons.yml`)
+`scripts/build-registry.mjs` uses the `main` branch for generated raw asset URLs by default.
+Override with `ROKIDBREW_PUBLIC_BASE_URL` or `ROKIDBREW_PUBLIC_BRANCH` only when
+you intentionally need a non-production manifest.
+
+### 2. Daily registry maintenance (`registry-maintenance.yml`)
+
+Runs once per day and can also be triggered manually. It checks upstream APK
+sources, refreshes APK metadata, extracts missing icons, rebuilds the registry,
+and opens or updates a review PR.
+
+The workflow is resilient by design: individual APK metadata or icon failures are
+reported in logs, but do not block unrelated app updates from being proposed.
+
+### 3. Add app from GitHub URL (`add-app-from-github.yml`)
+
+Manual trigger for adding a new app from a GitHub URL.
+
+Supported inputs:
+
+- Normal GitHub repo, release, or release tag URL.
+- EUNG SOFT `info.json` URL, or a GitHub tree URL like
+  `download/RokidGlasses/<App>`.
+
+The workflow creates `apps/<id>.json`, adds future update rules, copies GitHub
+release bodies into `releases[]`, optionally uses OpenRouter only for the store
+description fields, refreshes APK metadata, extracts the launcher icon, and opens
+a PR. Screenshot import is best-effort only and checks a few likely folders:
+`screenshots`, `docs/screenshots`, `docs/images`, `assets/screenshots`, `images`.
+
+### 4. Extract missing icons (`extract-icons.yml`)
 
 Manual trigger only. For every app in `apps/*.json` that is missing `assets/icons/<app-id>.png`:
 
@@ -124,14 +156,14 @@ Manual trigger only. For every app in `apps/*.json` that is missing `assets/icon
 2. Reads the launcher icon with `aapt dump badging`.
 3. Extracts a direct raster icon when available.
 4. Falls back to `apktool` + `rsvg-convert` for adaptive / vector launcher icons.
-5. Commits the new icons and rebuilt manifest back to `main`.
+5. Opens or updates a PR with the generated icons and rebuilt manifest.
 
 | Input | Value |
 |---|---|
 | `force: false` | Skip apps that already have an icon (normal use). |
 | `force: true` | Regenerate all icons even if they already exist. |
 
-### 3. Update artifact metadata (`update-artifact-metadata.yml`)
+### 5. Update artifact metadata (`update-artifact-metadata.yml`)
 
 Manual trigger only. Downloads every APK referenced in the registry and populates:
 
@@ -141,16 +173,17 @@ Manual trigger only. Downloads every APK referenced in the registry and populate
 - `versionCode` — Integer version code.
 - `versionName` — Human-readable version name.
 
-Commits the updated `apps/*.json` and rebuilt manifest.
+Opens or updates a PR with the updated `apps/*.json` and rebuilt manifest.
 
 | Input | Value |
 |---|---|
 | `force: false` | Only fill in missing metadata (normal use). |
 | `force: true` | Recompute all metadata even if already present (use after APK URL changes). |
 
-### 4. Check app updates (`check-updates.yml`)
+### 6. Check app updates (`check-updates.yml`)
 
-Runs every day and can also be triggered manually. It checks upstream APK sources and opens a pull request when it finds newer artifacts.
+Manual trigger for checking upstream APK sources without running the full daily
+maintenance pipeline. It opens a pull request when it finds newer artifacts.
 
 Supported sources:
 
@@ -180,7 +213,9 @@ Example release-bucket rule:
 
 ## Adding screenshots
 
-Screenshots are not extracted automatically. To add them:
+Screenshots are best-effort during the "Add app from GitHub URL" workflow. The
+workflow intentionally checks only a few likely folders and never blocks a PR if
+screenshots cannot be found. To add or fix screenshots manually:
 
 1. Place image files in `assets/screenshots/`.
 2. Reference them in the app JSON:
@@ -193,17 +228,106 @@ Screenshots are not extracted automatically. To add them:
    git add assets/screenshots/ apps/*.json dist/apps.v1.json
    git commit -m "Add screenshots for <app-name>"
    git push
-   ```
+```
+
+---
+
+## Importing EUNG SOFT info.json
+
+EUNG SOFT apps expose localized metadata in `download/RokidGlasses/<App>/info.json`.
+The all-in-one "Add app from GitHub URL" workflow supports those URLs directly.
+For local or manual refreshes, `import-eung-info.mjs` is a thin wrapper around
+the same EUNG import module:
+
+```bash
+node scripts/import-eung-info.mjs \
+  https://github.com/eung3392/eungsoft/blob/main/download/RokidGlasses/EKMeta/info.json \
+  --category Utility
+node scripts/build-registry.mjs
+```
+
+The importer maps:
+
+| EUNG field | Registry field |
+|---|---|
+| `title.en` | `name` |
+| `version` | `version` |
+| `releaseDate` | `publishedAt` and latest release date |
+| `shortDescription.en` | `summary` |
+| `description.en` | `description` and `listing.descriptionMarkdown` |
+| `control.en` | Appended to `listing.descriptionMarkdown` as usage/control notes |
+| `updated[].en` | `releases[].notes` |
+| `download[0]` | Current APK artifact URL |
+| `images[]` | Downloaded to `assets/screenshots/` and referenced as `screenshotAssets` |
+
+For apps that use the same APK on phone and glasses, run with `--type combo`.
+For one-off cleanup, use `--id`, `--category`, `--phone-required`, or `--no-screenshots`.
+
+---
+
+## Generating listings from README with AI
+
+For apps that only have a README, use OpenRouter to generate a reviewable
+store description from the README. GitHub Releases are copied mechanically into
+`releases[]`; the AI does not rewrite changelogs.
+
+```bash
+OPENROUTER_API_KEY=... \
+node scripts/generate-ai-listing.mjs rokid-scribe \
+  --repo Anezium/Rokid-Scribe \
+  --release-limit 5 \
+  --report .tmp/ai-listing-report.md
+node scripts/build-registry.mjs
+```
+
+The AI part only writes:
+
+- `summary`
+- `description`
+- `listing.descriptionMarkdown`
+
+The script also copies GitHub release bodies into `releases[]` without asking the
+model to summarize or rewrite them, and stores private maintenance metadata in
+`listingSource`.
+
+It does not update APK URLs, checksums, package names, icons, screenshots, or
+install targets. Those stay managed by the normal registry scripts and Actions.
+
+To import only GitHub release changelogs without AI:
+
+```bash
+node scripts/import-github-releases.mjs rokid-scribe --limit 5
+node scripts/build-registry.mjs
+```
+
+### GitHub Action
+
+Set the repository secret `OPENROUTER_API_KEY`, then run **Generate AI listing**
+from the Actions tab. Run it from `dev` while testing. The workflow creates or
+updates a PR branch named `automation/ai-listing-<app-id>` against the branch
+where the workflow was started.
+
+Useful inputs:
+
+| Input | Notes |
+|---|---|
+| `app` | Required app id from `apps/<id>.json`. |
+| `repo` | Optional `owner/repo` override if it cannot be inferred. |
+| `readme_path` | Optional README path inside the repo. |
+| `readme_ref` | Optional branch, tag, or SHA. |
+| `model` | OpenRouter model, defaults to `openai/gpt-4.1-mini`. |
+| `release_limit` | Number of GitHub Releases to copy into `releases[]`. |
+| `dry_run` | Runs generation without creating a PR. |
 
 ---
 
 ## Full workflow summary
 
 ```
-1. Create apps/<app-id>.json with artifact URLs
-2. Rebuild + push
+1. Run "Add app from GitHub URL" for new apps
+2. Review the generated PR
 3. Run "Extract missing icons"  → gets the icon
 4. Run "Update artifact metadata" → gets sha256, package info
-5. The scheduled "Check app updates" workflow opens PRs for newer upstream APKs
-6. (Optional) Add screenshots manually
+5. Daily registry maintenance opens PRs for new releases, metadata, and icons
+6. (Optional) Add or adjust screenshots manually
 ```

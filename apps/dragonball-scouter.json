@@ -4,8 +4,8 @@
   "category": "Experiment",
   "type": "glasses",
   "version": "0.1.1",
-  "summary": "Dragon Ball inspired scouter HUD.",
-  "description": "Face lock, pseudo-AR styling and battle-power reveal inspired by Dragon Ball. Built for Rokid glasses.",
+  "summary": "Dragon Ball inspired scouter HUD with face lock and battle power reveal for Rokid glasses",
+  "description": "DragonBall Scouter is a playful HUD app for Rokid glasses that detects faces and reveals battle power in a Dragon Ball style. It offers two modes: angular pseudo-AR HUD and live camera lock, with a timed scan and audio reveal. No cloud connection is required; all processing runs locally on the device.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -23,5 +23,29 @@
   "screenshotAssets": [
     "dragonball-scouter-hud.png",
     "dragonball-scouter-livecam.png"
-  ]
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About\nDragonBall Scouter transforms Rokid glasses into a Dragon Ball-inspired scouter HUD featuring live face lock and battle power reveal.\n\n## Key Features\n- Two modes: ANGULAR HUD (pseudo-AR display) and LIVE CAM LOCK (camera overlay)\n- On-device face detection with stable battle power values\n- 6-second scan sequence with scramble animation and audio reveal\n- Tap to start scan, swipe to switch modes\n- Designed for Rokid glasses monochrome green display\n\n## How It Works\n- Detects faces locally using ML Kit\n- Maintains consistent power level per tracked face\n- Scan stops if face tracking is lost\n\n## Usage\n- Grant camera permission on first run\n- Tap screen to start scanning\n- Keep face in frame until power reveal\n- Swipe left/right to toggle modes\n\n## Notes\n- Camera alignment may vary by device and fit\n- No cloud or backend dependencies"
+  },
+  "releases": [
+    {
+      "version": "0.1.1",
+      "date": "2026-04-05T13:40:10Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/tag/v0.1.1",
+      "notes": "## Changelog\n\n- Fixed the scan flow so the same face does not automatically restart a new analysis\n- Scans are now re-armed only by a manual tap while the session is active\n- Kept the current lock and revealed power stable across short face-detection dropouts\n- Lowered the detector sound volume for a more comfortable level on glasses\n- Kept the detector audio playing through brief tracking hiccups instead of cutting after 1 or 2 seconds\n- Bumped the app version to `0.1.1`\n\n## APK\n\nThe attached APK is the updated debug build from the latest `v0.1.1` state, tested on real Rokid glasses.",
+      "changes": []
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-04-05T13:27:07Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/tag/v0.1.0",
+      "notes": "## Changelog\n\n- Added the Dragon Ball detector sound and a 6-second battle power reveal sequence\n- Kept the same battle power for the same tracked face during a scan\n- Added `PRESS TO SCAN`, 20-second scan sessions, and immediate stop when tracking is lost\n- Added switchable `ANGULAR HUD` and `LIVE CAM LOCK` modes\n- Polished the HUD for Rokid monochrome displays with a clean black background\n- Added GitHub Actions CI to build the debug APK automatically\n\n## APK\n\nThe attached APK is the debug build generated from this release state and tested on real Rokid glasses.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-DragonBallScouter",
+    "path": "README.md"
+  }
 }

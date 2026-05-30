@@ -30,5 +30,36 @@
   ],
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
-  "screenshotAssets": []
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\nRokid GMaps is a navigation app designed for Rokid AR glasses paired with a phone. It offers turn-by-turn directions displayed on a HUD in the glasses, while the phone handles search and route calculation.\n\n## Key Features\n- Phone app manages UI, place search, and route calculation\n- Glasses app displays navigation HUD\n- Supports Google Places and Routes APIs as well as OSM/Nominatim/OSRM fallback\n- Provider selection configurable in phone app settings\n\n## How It Works\n- The phone app calculates routes and streams navigation data to the glasses via Bluetooth\n- The glasses app renders directions using the original Rokid-Maps architecture\n\n## Requirements\n- Both phone and glasses APKs must be installed\n- Optional Google API key setup for enhanced search and routing\n- Bluetooth connection between phone and glasses\n\n## Notes\n- Google API usage requires enabling billing and APIs in Google Cloud\n- Google provider features are optional and disabled by default"
+  },
+  "releases": [
+    {
+      "version": "1.0.2",
+      "date": "2026-05-29T22:02:46Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.2",
+      "notes": "Migration release for the new com.anezium.rokidgmaps package IDs. Includes both phone and glasses debug APKs so RokidBrew can update the paired app entry.",
+      "changes": []
+    },
+    {
+      "version": "1.0.1",
+      "date": "2026-05-26T17:11:38Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.1",
+      "notes": "Phone app only.\n\n- Fix Android splash screen branding with the real Rokid-GMaps logo asset.\n- Add a dedicated padded splash asset and Android 12+ splash theme wiring.\n- Keep existing launcher icons unchanged.",
+      "changes": []
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-03-27T20:36:45Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.0",
+      "notes": "## Highlights\n\n- First MVP release of `Rokid-GMaps` for phone + Rokid AR glasses navigation.\n- Optional Google Places API v1 and Routes API v2 support, with OSM/OSRM fallback kept as the default base.\n- Drive, Walk, and Transit modes with phone-side route preview and a live AR HUD on the glasses.\n- Nearby search shortcuts, notification forwarding, Wi-Fi credential sharing, and OTA APK push support.\n\n## Included In This Release\n\n- Added project documentation with architecture, setup steps, limitations, and upstream credits.\n- Added a versioned `CHANGELOG.md` for release tracking.\n- Updated Android launcher icons for both apps.\n- Switched both manifests to `@mipmap/ic_launcher` and packaged density-specific launcher assets.\n\n## Verification\n\n- Verified with `./gradlew assembleDebug` on 2026-03-27.\n- Debug APKs attached when available:\n  - `phone/build/outputs/apk/debug/phone-debug.apk`\n  - `glasses/build/outputs/apk/debug/glasses-debug.apk`",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-GMaps",
+    "path": "README.md"
+  }
 }

@@ -4,8 +4,8 @@
   "category": "Mobility",
   "type": "combo",
   "version": "1.1",
-  "summary": "BLE scooter telemetry HUD for Rokid glasses.",
-  "description": "Displays Xiaomi M365 scooter telemetry on Rokid glasses. The phone app handles BLE connectivity and the glasses app renders the HUD.",
+  "summary": "BLE scooter telemetry HUD for Rokid glasses with real-time Xiaomi M365 data display",
+  "description": "M365 Rokid HUD connects to Xiaomi M365 scooters via BLE to show real-time telemetry on Rokid AR glasses. The phone app manages BLE and the glasses app renders the HUD. Requires Android 10+ and Bluetooth permissions.",
   "phoneRequired": true,
   "artifacts": [
     {
@@ -28,5 +28,29 @@
     }
   ],
   "author": "zero2005x",
-  "sourceUrl": "https://github.com/zero2005x/M365-Rokid-HUD"
+  "sourceUrl": "https://github.com/zero2005x/M365-Rokid-HUD",
+  "listing": {
+    "descriptionMarkdown": "# About\nM365 Rokid HUD is an Android app that connects to Xiaomi/Ninebot M365 electric scooters via Bluetooth Low Energy (BLE) and displays real-time telemetry on Rokid AR glasses as a heads-up display (HUD).\n\n# Key Features\n- Automatic BLE scanning and discovery of nearby M365 scooters\n- Secure pairing with ECDH key exchange and token-based login\n- Real-time telemetry including speed, battery, temperature, and mileage\n- Remote motor lock/unlock and tail light control\n- Signal quality and data freshness indicators on the HUD\n- Multi-language support (11 languages)\n- Modern UI built with Jetpack Compose and Material3\n\n# How It Works\n- The phone app connects to the scooter via BLE and handles all communication.\n- Enable the \"Rokid HUD Gateway\" on the phone app to broadcast telemetry data.\n- The Rokid glasses app scans for the phone's gateway and displays telemetry in AR.\n\n# Requirements\n- Android 10 (API 29) or higher on the phone\n- Bluetooth and Location permissions for BLE scanning\n- Rokid AR glasses with the companion HUD app installed\n\n# Notes\n- Registration unpairs the scooter from other apps; register only your own devices.\n- Disable battery optimization on the phone app to maintain stable BLE connection.\n- The HUD shows speed, scooter battery, phone battery, glasses battery, current time, and signal quality.\n\n# Source\n[GitHub Repository](https://github.com/zero2005x/M365-Rokid-HUD)"
+  },
+  "releases": [
+    {
+      "version": "1.1",
+      "date": "2026-01-11T08:03:13Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.1",
+      "notes": "##  New Features | 新功能\n\n###  Connection Quality Indicator | 連線品質指標\n- Real-time signal strength display on glasses HUD\n- Stale data warning when telemetry delayed > 2 seconds\n- Session statistics: packets, RSSI avg/min/max, reconnect count\n\n###  Battery Optimization | 電池優化\n- Phone app now prompts user to disable battery optimization\n- Ensures stable BLE gateway service\n- Translations in 11 languages\n\n###  Bilingual Documentation | 中英並列文件\n- BLE_PROTOCOL_GUIDE.md: Complete bilingual rewrite\n- GLASSES_LOG_COLLECTION.md: Phone + glasses log collection guide\n\n###  Bug Fixes\n- Fixed native library JNI init crash\n\n---\n\n##  APK Downloads\n\n| APK | Description |\n|-----|-------------|\n| **app-release.apk** | Phone app (M365 BLE + Rokid Gateway) |\n| **glass-hud-release.apk** | Glasses app (Rokid AR HUD) |\n\n---\n\n**Full Changelog**: https://github.com/zero2005x/M365-Rokid-HUD/compare/v1.0...v1.1",
+      "changes": []
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-01-03T09:41:54Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.0.0",
+      "notes": "# M365 BLE App v1.0.0\n\n🎉 **Initial Release**\n\n## Features\n\n### Phone App (M365-BLE-App)\n- 🔍 BLE Scanner - Discover nearby M365 scooters automatically\n- 🔐 Secure Registration - ECDH key exchange for first-time pairing\n- 🔑 Token-based Login - Fast reconnection with saved credentials\n- 📊 Real-time Telemetry - Monitor speed, battery, temperature, and more\n- 🔒 Motor Lock/Unlock - Remote scooter control\n- 💡 Tail Light Control - Toggle tail light on/off\n- 🕶️ Rokid HUD Gateway - Broadcast telemetry to AR glasses\n- 🌍 Multi-language Support - 11 languages supported\n\n### Glasses App (M365-Glass-HUD)\n- 📺 AR HUD Display - Speed, scooter battery, phone battery, glasses battery, time\n- 🔗 Auto-connect to phone Gateway via BLE\n\n## Downloads\n\n| File | Description |\n|------|-------------|\n| `M365-BLE-App-v1.0.0.apk` | Phone app (Android 10+) |\n| `M365-Glass-HUD-v1.0.0.apk` | Rokid glasses HUD app |\n\n## Installation\n\n1. Download the APK for your device\n2. Enable \"Install from unknown sources\" in Android settings\n3. Install the APK\n\n## Requirements\n\n- **Phone App**: Android 10 (API 29) or higher\n- **Glasses App**: Rokid AR glasses\n\n---\n\n⚠️ **Note**: Registration will unpair the scooter from other apps (e.g., Mi Home). Only register devices you own.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "zero2005x/M365-Rokid-HUD",
+    "path": "README.md"
+  }
 }

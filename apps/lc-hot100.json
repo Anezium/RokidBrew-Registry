@@ -4,8 +4,8 @@
   "category": "Learning",
   "type": "glasses",
   "version": "1.0.0",
-  "summary": "Offline LeetCode Hot100 study assistant.",
-  "description": "Voice-first learning app for studying LeetCode Hot100 on Rokid glasses.",
+  "summary": "Offline LeetCode Hot100 study assistant for Rokid AR glasses",
+  "description": "LC Hot100 is a voice-first app designed to help you study LeetCode Hot100 problems offline on Rokid AR glasses. It provides an interactive learning experience without requiring a phone.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -19,5 +19,14 @@
     }
   ],
   "author": "bcefghj",
-  "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/rokid-lc-hot100"
+  "sourceUrl": "https://github.com/bcefghj/rokid-collection/tree/main/rokid-lc-hot100",
+  "listing": {
+    "descriptionMarkdown": "## About\nLC Hot100 is a voice-first learning app for studying the LeetCode Hot100 problem set offline on Rokid AR glasses.\n\n## Key features\n- Offline access to LeetCode Hot100 problems\n- Voice-driven interaction optimized for AR glasses\n\n## Requirements\n- Designed specifically for Rokid AR glasses\n- No phone connection required"
+  },
+  "releases": [],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "bcefghj/rokid-collection",
+    "path": "README.md"
+  }
 }

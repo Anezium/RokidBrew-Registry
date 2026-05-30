@@ -5,8 +5,20 @@
   "type": "glasses",
   "version": "1.0.0",
   "publishedAt": "2026-05-26",
-  "summary": "Simple timer for Rokid glasses.",
-  "description": "Simple Rokid glasses timer with minute and second setup, start/stop, reset, beep, and vibration alerts.",
+  "summary": "Simple timer for Rokid Glasses",
+  "description": "EK Timer is a simple and intuitive timer app.",
+  "listing": {
+    "descriptionMarkdown": "EK Timer is a simple and intuitive timer app.\n\n### Key Features and Operation\n\n**1. Time Setting**\n\n- **Add Minutes:** Press the Minute button to increase the time by 1 minute (up to 99 minutes).\n- **Add Seconds:** Press the Second button to increase the time by 10 seconds. (Automatically converted to minutes if it exceeds 60 seconds)\n- **Note:** You cannot change the time while the timer is running.\n\n**2. Timer Control**\n\n- **Start/Stop:** Press the Start button when time is set to begin the countdown. Press it while running to pause the timer.\n- **Reset:** Resets the timer to 00:00 and stops it.\n\n**3. End Alert**\n\n- When the set time reaches 0, the countdown ends automatically, accompanied by a **beep sound** and vibration.\n\n**4. Control Methods**\n\n- **Touch:** Tap each button on the screen directly to control the timer.\n- **Swipe:** Swipe to move the focus between buttons."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-05-26",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Imported from EUNG SOFT app metadata.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "ek-timer.jpg"
   ],

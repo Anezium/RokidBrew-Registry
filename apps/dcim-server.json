@@ -4,8 +4,21 @@
   "category": "Utility",
   "type": "glasses",
   "version": "1.0.0",
-  "summary": "Local DCIM browser/server for glasses.",
-  "description": "EUNG SOFT utility for browsing or serving camera media from Rokid glasses.",
+  "publishedAt": "2026-04-14",
+  "summary": "로키드 글래스에서 갤러리를 웹서버로 서비스합니다.",
+  "description": "Dcim Server is a Rokid Glasses app that serves the gallery as a web server. You can browse and download photos and videos taken with Rokid Glasses through a web browser without connecting a cable.",
+  "listing": {
+    "descriptionMarkdown": "**Dcim Server** is a **Rokid Glasses** app that serves the gallery as a web server. You can browse and download photos and videos taken with Rokid Glasses through a web browser without connecting a cable.\n\n### Usage / Controls\n\nAfter running the app, connect to Wi-Fi. Access it with a web browser on the same Wi-Fi."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-04-14",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Imported from EUNG SOFT app metadata.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "dcim-server.jpg"
   ],

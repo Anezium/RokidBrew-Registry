@@ -5,8 +5,8 @@
   "type": "combo",
   "version": "1.2.2",
   "publishedAt": "2026-05-09",
-  "summary": "Phone reader bridge that streams text to Rokid glasses.",
-  "description": "Phone-only companion app for streaming visible reading text to Rokid glasses. It is designed around Chinese reading apps such as WeChat Reading, and can also work with EPUB/readers when their text is exposed to Android accessibility. The UI is Chinese only.",
+  "summary": "Phone app streams visible reading text to Rokid glasses via Bluetooth in real time",
+  "description": "GlassesReader captures visible text from Android apps using accessibility services and streams it live to Rokid AR glasses. It supports Chinese reading apps like WeChat Reading and works with other readers exposing text to accessibility. The UI is in Chinese and requires Bluetooth connection to Rokid glasses.",
   "screenshotAssets": [
     "glasses-reader-phone.png",
     "glasses-reader-overlay.jpg",
@@ -26,5 +26,50 @@
     }
   ],
   "author": "conclean",
-  "sourceUrl": "https://github.com/conclean/RokidGlassesReader"
+  "sourceUrl": "https://github.com/conclean/RokidGlassesReader",
+  "listing": {
+    "descriptionMarkdown": "About GlassesReader\n\nGlassesReader is an Android companion app that captures visible text from the phone screen using accessibility services and streams it in real time to Rokid smart glasses via Bluetooth. It is designed primarily for Chinese reading apps such as WeChat Reading but also supports other reading scenarios where text is accessible.\n\nKey features\n\n- Intelligent text capture from foreground apps using accessibility service\n- Real-time text streaming to Rokid glasses with custom display pages\n- Automatic reconnection to previously paired Rokid devices\n- Dual control interfaces: main floating action button and draggable floating toggle\n- Adjustable display settings including brightness, font size, and text processing options\n\nHow it works\n\n- Requires enabling accessibility service, overlay permissions, and Bluetooth permissions\n- Connects to Rokid glasses via Bluetooth SDK\n- Captures screen text changes and pushes updates to glasses\n\nControls\n\n- Main floating action button to start/pause text streaming service\n- Floating toggle button to show/hide overlay and control service\n\nRequirements\n\n- Android 10 or higher\n- Bluetooth-enabled Android phone\n- Rokid smart glasses in pairing mode (disconnect official app first)\n\nNotes\n\n- Only one app can connect to Rokid glasses at a time; disconnect official app before connecting\n- Text capture depends on accessibility node availability; some apps using custom rendering may not be fully supported\n- UI is Chinese only\n\nFor more details and APK downloads, visit the [project homepage](https://glassesreader.conclean.top/) or the [GitHub repository](https://github.com/conclean/GlassesReader)."
+  },
+  "releases": [
+    {
+      "version": "1.2.2",
+      "date": "2026-03-29T07:31:33Z",
+      "sourceReleaseUrl": "https://github.com/conclean/RokidGlassesReader/releases/tag/v1.2.2",
+      "notes": "重要更新：\n增加 AR截图 AR录屏 功能",
+      "changes": []
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-03-18T06:38:48Z",
+      "sourceReleaseUrl": "https://github.com/conclean/RokidGlassesReader/releases/tag/v1.2.0",
+      "notes": "- 全面更新现代UI\n- 增加文本处理配置和切换功能",
+      "changes": []
+    },
+    {
+      "version": "1.1.9",
+      "date": "2026-01-05T09:38:10Z",
+      "sourceReleaseUrl": "https://github.com/conclean/RokidGlassesReader/releases/tag/v1.1.9",
+      "notes": "1. 增加自动更新检查\n2. 优化项目代码，符合MVVM",
+      "changes": []
+    },
+    {
+      "version": "1.1.8",
+      "date": "2026-01-05T08:19:09Z",
+      "sourceReleaseUrl": "https://github.com/conclean/RokidGlassesReader/releases/tag/v1.1.8",
+      "notes": "Bug Fix:\n1. 修复部分icon缺失",
+      "changes": []
+    },
+    {
+      "version": "1.1.7",
+      "date": "2025-12-14T09:23:05Z",
+      "sourceReleaseUrl": "https://github.com/conclean/RokidGlassesReader/releases/tag/v1.1.7",
+      "notes": "优化包体，减少到15mb",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "conclean/RokidGlassesReader",
+    "path": "README.md"
+  }
 }

@@ -6,6 +6,9 @@
   "version": "1.6.0",
   "summary": "Head-gesture cursor and app drawer utility.",
   "description": "RokidAppMaker / GazeMou provides gaze cursor controls, favorites, wake mode and app drawer tools for Rokid glasses.",
+  "listing": {
+    "descriptionMarkdown": "GazeMou adds a head-controlled cursor and launcher-style app drawer to Rokid glasses.\n\nUse it to move a pointer with head gestures, open favorite apps faster, switch interaction modes, and wake the interface with supported gestures when the screen is off.\n\n### Key features\n\n- Head-gesture cursor control for glasses-only interaction\n- Favorites and app drawer access for quicker launches\n- Dwell click, scroll, and cursor-off modes\n- Awake mode and auto cursor options\n- Accessibility-service based control layer"
+  },
   "phoneRequired": false,
   "artifacts": [
     {
@@ -19,5 +22,28 @@
     }
   ],
   "author": "KUPdriveouter",
-  "sourceUrl": "https://github.com/KUPdriveouter/RokidAppMaker"
+  "sourceUrl": "https://github.com/KUPdriveouter/RokidAppMaker",
+  "releases": [
+    {
+      "version": "1.6.0",
+      "date": "2026-04-06T13:55:50Z",
+      "sourceReleaseUrl": "https://github.com/KUPdriveouter/RokidAppMaker/releases/tag/v1.6.0",
+      "notes": "## What's New\n\n### Awake Mode\n- **Shake (doridori) to wake** — screen off state에서 도리도리하면 화면 깨움 + 즐겨찾기 앱 목록 자동 표시\n- **Auto Cursor** — 어웨이크 시 커서 + 드웰 모드 자동 활성화 옵션\n\n### App Drawer & Favorites\n- 즐겨찾기 앱 등록/해제 (설정 > Favorites)\n- 분할 화면 UI: 상단 즐겨찾기 (순서 변경 가능) / 하단 전체 앱 목록\n- 앱 아이콘 표시, 런처 내장 앱 [B] 태그로 구분\n- 커서 클릭 + DPAD 탭 모두 지원\n\n### Auto Focus\n- 커서가 멈추면 천천히 화면 중앙으로 이동 (일반 커서 모드에서만)\n\n### Gesture Improvements\n- 도리도리 인식 튜닝: 적당한 범위 + 느린 동작, 걷기/차량 오작동 방지\n- 끄덕끄덕 패턴: 아래-위-아래-위로 변경\n- 화면 꺼진 상태에서 도리도리만 인식 (끄덕끄덕 차단)\n\n### Bug Fixes\n- 화면 OFF 시 nod/pitch 감지 차단, 상태 초기화\n- 접근성 서비스 canRetrieveWindowContent 추가\n- Android 12 패키지 가시성 (QUERY_ALL_PACKAGES) 대응\n- 구버전 즐겨찾기 데이터 자동 마이그레이션\n\n## Install\n1. APK 다운로드 후 Rokid 안경에 사이드로드\n2. 설정 > 접근성 > GazeMou 활성화",
+      "changes": []
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-04-06T08:51:50Z",
+      "sourceReleaseUrl": "https://github.com/KUPdriveouter/RokidAppMaker/releases/tag/v1.5.0",
+      "notes": "## v1.5.0 — Mode Selection UI\n\n### New\n- **Mode selection menu** — nod x2 to open 4-direction selector, tilt & hold to confirm\n  - Left: Scroll mode / Right: Dwell click / Up: Cursor off / Down: Cancel\n- **Shake to activate** — shake head left-right while cursor is OFF to turn it ON\n- **Nod to exit modes** — nod x2 in scroll/dwell mode returns to normal cursor\n\n### Removed\n- Circle gesture detection (replaced by mode selection UI)\n- Circle Toggle setting\n\n### Fixed\n- Entry cooldown (800ms) prevents nod residual motion from triggering accidental selection",
+      "changes": []
+    },
+    {
+      "version": "1.4.0",
+      "date": "2026-04-02T15:27:13Z",
+      "sourceReleaseUrl": "https://github.com/KUPdriveouter/RokidAppMaker/releases/tag/v1.4.0",
+      "notes": "## GazeMou v1.4.0\n\n### Changes\n- **Redesigned settings UI** — organized into sections (SYSTEM / SENSITIVITY / DWELL CLICK / GESTURES) with intuitive labels and row highlighting\n- **Removed autoclick** — dwell click now only activates in dwell mode (no unwanted clicks in basic cursor mode)\n- **Removed wakelock** — reduced battery usage\n- **Full code refactoring** — cleaner architecture, removed dead code\n\n### Settings Labels (Before → After)\n- SERVICE → Accessibility\n- POWER → Cursor\n- H.SENS → Speed X / V.SENS → Speed Y\n- DW.TIME → Hold Time / DW.DLY → Cooldown / DW.RAD → Range\n- SHAKE → Shake Back / CIRCLE → Circle Toggle\n\n### Controls\n- **L L R R** on touchpad: Toggle cursor\n- **Nod down x2**: Scroll mode\n- **Nod up x2**: Dwell click mode\n- **Shake head x2**: Go back (if enabled)\n- **Circle gesture**: Toggle cursor (if enabled)\n\n### Install\n1. Sideload APK via ADB\n2. Enable Settings → Accessibility → GazeMou\n3. L-L-R-R to start",
+      "changes": []
+    }
+  ]
 }

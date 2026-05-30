@@ -6,8 +6,8 @@
   "version": "0.3.1",
   "featured": true,
   "featuredRank": 3,
-  "summary": "Synced song lyrics from phone to Rokid glasses.",
-  "description": "Streams synchronized lyrics from an Android phone to the glasses over Bluetooth. Requires the phone and glasses APKs.",
+  "summary": "Stream synchronized song lyrics from your Android phone to Rokid AR glasses via Bluetooth",
+  "description": "Rokid Lyrics streams time-synced lyrics from an Android phone to Rokid AR glasses over Bluetooth. It supports multiple lyrics providers and syncs lyrics in real time without internet on the glasses. Requires companion apps on both phone and glasses.",
   "phoneRequired": true,
   "artifacts": [
     {
@@ -35,5 +35,50 @@
     "rokid-lyrics-phone.jpg",
     "rokid-lyrics-glasses.jpg"
   ],
-  "publishedAt": "2026-05-26T17:18:23Z"
+  "publishedAt": "2026-05-26T17:18:23Z",
+  "listing": {
+    "descriptionMarkdown": "# About\nRokid Lyrics streams synchronized song lyrics from your Android phone to Rokid AR glasses using Bluetooth Classic SPP. It detects the current track from Android media sessions and displays time-synced lyrics on the glasses HUD.\n\n# Key features\n- Time-synced lyrics displayed live on Rokid AR glasses\n- Multi-provider lyrics lookup pipeline (Musixmatch, Netease, LRCLIB) with graceful fallback\n- Works with any Android media session, not limited to a single music player\n- Bluetooth streaming between phone and glasses with no internet required on glasses\n- Press Enter on the glasses to play or pause music on the phone\n\n# How it works\nThe phone app monitors the active media session, fetches synced lyrics from providers, and streams a full lyrics snapshot plus progress sync events to the glasses. The glasses display lyrics in real time, staying in sync with the music.\n\n# Requirements\n- Android phone with the Rokid Lyrics phone app installed\n- Rokid AR glasses with the Rokid Lyrics glasses app installed\n- Bluetooth pairing between phone and glasses\n- Notification access permission granted on the phone\n\n# Notes\nFor improved lyrics accuracy, signing in to Musixmatch in the phone app is recommended but optional."
+  },
+  "releases": [
+    {
+      "version": "0.3.1",
+      "date": "2026-05-26T17:18:23Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.1",
+      "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.3.0...v0.3.1",
+      "changes": []
+    },
+    {
+      "version": "0.3.0",
+      "date": "2026-04-04T22:57:41Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.0",
+      "notes": "## Highlights\n\n- Introduces a new multi-provider phone lyrics pipeline: `MUSIXMATCH -> NETEASE -> LRCLIB`\n- Adds in-app Musixmatch sign-in and on-device provider settings persistence\n- Expands fallback coverage for tracks that Musixmatch cannot resolve, especially around CJK catalog support\n\n## What's New\n\n- Added provider abstraction plus composite fallback logic for synced lyrics resolution\n- Added official Netease search and lyric fetch integration on the phone\n- Kept LRCLIB as the public fallback when no better synced source is available\n- Updated the phone UI with provider-aware source/status feedback and a dedicated Musixmatch settings dialog\n- Updated the glasses flow to stay compatible with the new provider-aware snapshots\n\n## Reliability Fixes\n\n- Prevent repeated lyrics lookups while playback is progressing\n- Keep already loaded lyrics visible if a same-track refresh fails\n- Remove the hidden Spotify preference from Android media-session selection\n- Prevent intermediate provider errors from polluting the final UI when a fallback succeeds\n- Improve Netease matching with stronger handling for album, artist, and variant scoring\n- Filter credit-only / metadata-only payloads and instrumental or unavailable-lyrics cases more cleanly\n\n## Testing and Release Quality\n\n- Added unit coverage for composite fallback behavior\n- Added tests for runtime lookup preservation and media-session priority\n- Added Musixmatch and Netease parser/scoring regression tests\n- GitHub Actions release workflow now publishes both release APKs:\n  - `lyrics-phone-release.apk`\n  - `lyrics-glasses-release.apk`\n\n## Notes\n\n- Some tracks may still fall back to Netease or LRCLIB when Musixmatch has no synced subtitle available\n- Full compare view: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.4...v0.3.0",
+      "changes": []
+    },
+    {
+      "version": "0.2.4",
+      "date": "2026-03-29T21:07:13Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.4",
+      "notes": "## [0.2.4] - 2026-03-29\n\n### Fixed\n- Kept the glasses lyrics screen awake while the lyrics activity is in the foreground so the display no longer times out\n\n**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.3...v0.2.4",
+      "changes": []
+    },
+    {
+      "version": "0.2.3",
+      "date": "2026-03-27T21:11:41Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.3",
+      "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.2...v0.2.3",
+      "changes": []
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-03-26T22:02:35Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.0",
+      "notes": "## Phone app — Phosphor Glass UI redesign\n\n  Complete visual overhaul of the phone companion app, taking design cues from the Rokid glasses' monochrome green phosphor display.\n\n  **New layout**\n  - Track card with song title, artist, playing badge (▶ PLAYING / ■ IDLE), lyrics source pill (LRCLIB · N♪), and a live progress bar\n  - 4-line lyrics cascade: past line (ghost) → **current line** (full brightness, green left border) → next line → line after next, with\n  cascading opacity\n  - Status bar: notification access status, BT connection state, connected client count\n  - Outline-style action buttons: `[ NOTIF ACCESS ]` and `[ BT SETTINGS ]`",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-Lyrics",
+    "path": "README.md"
+  }
 }

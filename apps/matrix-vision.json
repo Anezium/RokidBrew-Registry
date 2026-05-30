@@ -4,8 +4,21 @@
   "category": "Camera",
   "type": "glasses",
   "version": "1.0.0",
-  "summary": "Matrix-style camera effect app.",
-  "description": "Transforms the live camera feed into a Matrix-inspired visual filter and can record the effect.",
+  "publishedAt": "2026-02-24",
+  "summary": "See the world through Matrix.",
+  "description": "A unique camera app that transforms your world into a scene from The Matrix in real time. By extracting object silhouettes, it visualizes the world as digital code and allows you to record these stylized views.",
+  "listing": {
+    "descriptionMarkdown": "A unique camera app that transforms your world into a scene from **The Matrix** in real time.\nBy extracting object silhouettes, it visualizes the world as digital code and allows you to record these stylized views.\n\n### Usage / Controls\n\n- **Start Recording:** Touch the right side of the glasses (or press Enter) to begin capturing.\n- **End Recording:** Touch again to stop and save the matrix-styled video file.\n- **Check Files:** View your saved videos in the system gallery or via the default app sync."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-24",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Imported from EUNG SOFT app metadata.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "matrix-vision.jpg",
     "matrix-vision-2.jpg"

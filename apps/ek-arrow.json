@@ -4,10 +4,23 @@
   "category": "Games",
   "type": "glasses",
   "version": "1.0.0",
+  "publishedAt": "2026-03-05",
+  "summary": "Mini Archery Game",
+  "description": "EK Arrow is a first-person one-button arcade archery game where you aim for the bullseye. Its vertical layout is perfect for one-handed play and it is fully optimized for Rokid Glass smart glasses.",
+  "listing": {
+    "descriptionMarkdown": "**EK Arrow** is a first-person **one-button arcade archery game** where you aim for the bullseye.\nIts vertical layout is perfect for one-handed play and it is **fully optimized for Rokid Glass** smart glasses.\n\n### Usage / Controls\n\nControls are dead simple!\n- **Touch or Button Click:** Shoot an arrow.\n- No complex inputs needed; everything comes down to **'timing'**."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-05",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Imported from EUNG SOFT app metadata.",
+      "changes": []
+    }
+  ],
   "featured": true,
   "featuredRank": 4,
-  "summary": "Mini archery game for Rokid glasses.",
-  "description": "One-button archery game designed for glasses play.",
   "screenshotAssets": [
     "ek-arrow.jpg",
     "ek-arrow-2.jpg"

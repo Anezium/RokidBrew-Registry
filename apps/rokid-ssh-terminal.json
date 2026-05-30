@@ -4,8 +4,8 @@
   "category": "Developer",
   "type": "glasses",
   "version": "0.1.0-dev",
-  "summary": "Glasses-native SSH terminal.",
-  "description": "Developer SSH terminal and tmux control surface for Rokid glasses.",
+  "summary": "Glasses-native SSH terminal and tmux control surface for Rokid glasses",
+  "description": "Rokid SSH Terminal provides a native SSH client and tmux session manager directly on Rokid glasses. Connect over Wi-Fi to remote machines with password or private-key authentication. Designed for use with a Bluetooth keyboard for full terminal control.",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -19,5 +19,22 @@
     }
   ],
   "author": "bzerk",
-  "sourceUrl": "https://github.com/bzerk/rokid-ssh-terminal"
+  "sourceUrl": "https://github.com/bzerk/rokid-ssh-terminal",
+  "listing": {
+    "descriptionMarkdown": "## About\nRokid SSH Terminal is a glasses-native SSH client and tmux control surface designed specifically for Rokid AR glasses. It connects directly over Wi-Fi to remote machines, enabling terminal access without a phone companion.\n\n## Key Features\n- Direct SSH connection over Wi-Fi from the glasses\n- Supports password and pasted private-key authentication\n- TOFU host fingerprint persistence with mismatch rejection\n- tmux-first workflow for managing sessions: list, create, select, attach\n- Full terminal rendering with green-on-black UI optimized for glasses\n- Explicit boxed focus states for navigation\n- Bluetooth keyboard friendly for efficient terminal input\n\n## How It Works\nThe app provides two main interfaces:\n- **ControlSurfaceActivity**: directional navigation and session management\n- **TerminalActivity**: interactive SSH terminal session\n\n## Requirements\n- Remote host must have tmux installed\n- Bluetooth keyboard strongly recommended for terminal use\n\n## Notes\n- SSH settings are stored locally on the device\n- The app is currently intended for sideload testing and debug builds\n- No phone companion app is required or active in the launcher flow"
+  },
+  "releases": [
+    {
+      "version": "0.1.0-dev-build",
+      "date": "2026-03-10T13:27:28Z",
+      "sourceReleaseUrl": "https://github.com/bzerk/rokid-ssh-terminal/releases/tag/v0.1.0-dev-build",
+      "notes": "Debug-signed dev build of the glasses-native Rokid SSH terminal.\\n\\nHighlights:\\n- direct Wi-Fi SSH from the glasses\\n- tmux-oriented control surface\\n- interactive terminal activity using ConnectBot termlib\\n- current TODOs documented in README\\n\\nThis asset is intended for sideload testing, not production distribution.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "bzerk/rokid-ssh-terminal",
+    "path": "README.md"
+  }
 }
