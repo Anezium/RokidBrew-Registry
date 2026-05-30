@@ -52,6 +52,8 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -139,23 +141,24 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain -- apps dist)" ]; then
+          if [ -z "$(git status --porcelain -- apps)" ]; then
+            git checkout -- dist/apps.v1.json
             echo "No listing changes to propose."
             exit 0
           fi
 
           app="${{ inputs.app }}"
           safe_app="$(printf '%s' "$app" | tr -cs '[:alnum:]-' '-' | sed 's/^-//;s/-$//')"
-          base="${{ github.ref_name }}"
+          base="main"
           branch="automation/ai-listing-${safe_app}"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin "$branch" || true
+          git fetch origin "$branch:refs/remotes/origin/$branch" || true
           git checkout -B "$branch"
           git add "apps/${app}.json" dist/apps.v1.json
           git commit -m "Generate AI listing for ${app}"
-          git push --force-with-lease="refs/heads/$branch" origin "$branch"
+          git push --force-with-lease origin "$branch"
 
           body=".tmp/ai-listing-report.md"
           if [ ! -f "$body" ]; then

@@ -8,6 +8,7 @@ const appsDir = path.join(root, "apps");
 const distDir = path.join(root, "dist");
 const iconDir = path.join(root, "assets", "icons");
 const screenshotDir = path.join(root, "assets", "screenshots");
+
 function currentGitBranch() {
   try {
     const branch = execFileSync("git", ["branch", "--show-current"], {
@@ -183,18 +184,28 @@ if (duplicate) throw new Error(`Duplicate app id: ${duplicate}`);
 
 fs.mkdirSync(distDir, { recursive: true });
 const brewFile = path.join(root, "brew.json");
-let brewVersion, brewVersionCode, brewApkUrl;
+let brewVersion, brewVersionCode, brewApkUrl, brewReleaseUrl, brewNotes, brewChanges;
 if (fs.existsSync(brewFile)) {
   const brew = readJson(brewFile);
   brewVersion = brew.version;
   brewVersionCode = brew.versionCode;
   brewApkUrl = brew.apkUrl;
+  brewReleaseUrl = brew.releaseUrl;
+  brewNotes = brew.notes;
+  brewChanges = Array.isArray(brew.changes) ? brew.changes.filter(Boolean) : undefined;
 }
 
 const output = {
   schemaVersion: 1,
   generatedAt: generatedAt.toISOString(),
-  ...(brewVersion != null && { brewVersion, brewVersionCode, brewApkUrl }),
+  ...(brewVersion != null && {
+    brewVersion,
+    brewVersionCode,
+    brewApkUrl,
+    brewReleaseUrl,
+    brewNotes,
+    brewChanges,
+  }),
   apps,
 };
 

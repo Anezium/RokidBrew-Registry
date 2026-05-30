@@ -28,9 +28,9 @@ Options:
   --ref <branch-or-sha>       README git ref, default repo default branch.
   --model <model>             OpenRouter model, default OPENROUTER_MODEL or ${defaultModel}.
   --release-limit <n>         Number of GitHub releases to copy into releases[], default 5.
-  --no-releases              Do not fetch or update releases[].
+  --no-releases               Do not fetch or update releases[].
   --report <path>             Write a markdown report for PR bodies.
-  --dry-run                  Print generated JSON without writing the app.
+  --dry-run                   Print generated JSON without writing the app.
 
 Required env:
   OPENROUTER_API_KEY
@@ -186,9 +186,9 @@ function writeReport(file, { app, repo, model, generated, releases }) {
     `# AI listing update for ${app.name}`,
     "",
     `- App: \`${app.id}\``,
-    `- Repo: \`${repo}\``,
+    `- Repo: \`${repo || "manual README"}\``,
     `- Model: \`${model}\``,
-    `- Release notes provided: ${releases.length}`,
+    `- Release notes copied: ${releases.length}`,
     "",
     "## Summary",
     "",
@@ -212,10 +212,10 @@ async function main() {
 
   const file = appFile(root, appId);
   const app = readJson(file);
+  const source = app.listingSource || {};
   const repo = args.repo || inferRepo(app);
   if (!repo && !args.readmeUrl) throw new Error(`${appId}: cannot infer GitHub repo; pass --repo or --readme-url`);
 
-  const source = app.listingSource || {};
   const readme = await readmeText({
     repo,
     ref: args.ref || source.branch || source.ref,

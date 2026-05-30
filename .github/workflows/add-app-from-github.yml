@@ -1,0 +1,180 @@
+name: Add app from GitHub URL
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "GitHub repo/release URL, or EUNG info.json/tree URL"
+        required: true
+      id:
+        description: "Optional app id override"
+        required: false
+        default: ""
+      name:
+        description: "Optional display name override"
+        required: false
+        default: ""
+      category:
+        description: "Optional category override"
+        required: false
+        default: ""
+      type:
+        description: "Optional type override"
+        required: false
+        default: ""
+      target:
+        description: "Optional single APK target override"
+        required: false
+        default: ""
+      phone_required:
+        description: "Optional phoneRequired override, true or false"
+        required: false
+        default: ""
+      asset_match:
+        description: "Optional APK asset regex"
+        required: false
+        default: ""
+      readme_path:
+        description: "Optional README path"
+        required: false
+        default: ""
+      readme_ref:
+        description: "Optional README branch/tag/SHA"
+        required: false
+        default: ""
+      model:
+        description: "OpenRouter model for README description"
+        required: false
+        default: "openai/gpt-4.1-mini"
+      dry_run:
+        description: "Generate only, without creating a PR"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager "build-tools;35.0.0"
+      - run: sudo apt-get update && sudo apt-get install -y unzip imagemagick librsvg2-bin
+      - name: Install apktool
+        run: |
+          mkdir -p .tmp
+          curl -L -o .tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v3.0.1/apktool_3.0.1.jar
+
+      - name: Create initial app entry
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          args=("${{ inputs.url }}" --report ".tmp/add-app-report.md" --output ".tmp/add-app-output.json")
+          [ -n "${{ inputs.id }}" ] && args+=(--id "${{ inputs.id }}")
+          [ -n "${{ inputs.name }}" ] && args+=(--name "${{ inputs.name }}")
+          [ -n "${{ inputs.category }}" ] && args+=(--category "${{ inputs.category }}")
+          [ -n "${{ inputs.type }}" ] && args+=(--type "${{ inputs.type }}")
+          [ -n "${{ inputs.target }}" ] && args+=(--target "${{ inputs.target }}")
+          [ -n "${{ inputs.phone_required }}" ] && args+=(--phone-required "${{ inputs.phone_required }}")
+          [ -n "${{ inputs.asset_match }}" ] && args+=(--asset-match "${{ inputs.asset_match }}")
+          [ -n "${{ inputs.readme_path }}" ] && args+=(--readme-path "${{ inputs.readme_path }}")
+          [ -n "${{ inputs.readme_ref }}" ] && args+=(--readme-ref "${{ inputs.readme_ref }}")
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          node scripts/add-app-from-url.mjs "${args[@]}"
+
+      - name: Generate README listing with OpenRouter
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ inputs.model }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "- OpenRouter secret missing; kept generated fallback description." >> .tmp/add-app-report.md
+            exit 0
+          fi
+          app="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).id)")"
+          args=("$app" --release-limit "5" --report ".tmp/ai-listing-report.md")
+          [ -n "${{ inputs.readme_path }}" ] && args+=(--readme-path "${{ inputs.readme_path }}")
+          [ -n "${{ inputs.readme_ref }}" ] && args+=(--ref "${{ inputs.readme_ref }}")
+          if node scripts/generate-ai-listing.mjs "${args[@]}"; then
+            {
+              echo
+              echo "## AI listing"
+              echo
+              cat .tmp/ai-listing-report.md
+            } >> .tmp/add-app-report.md
+          else
+            echo "- AI listing generation failed; kept generated fallback description. Check workflow logs." >> .tmp/add-app-report.md
+          fi
+
+      - name: Refresh APK metadata
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          app="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).id)")"
+          node scripts/update-artifact-metadata.mjs --app "$app" --soft-fail
+
+      - name: Extract missing icons
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          APKTOOL_JAR: .tmp/apktool.jar
+        run: |
+          app="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).id)")"
+          node scripts/extract-missing-icons.mjs --app "$app" --soft-fail
+
+      - name: Rebuild registry
+        if: ${{ inputs.dry_run != 'true' }}
+        run: node scripts/build-registry.mjs
+
+      - name: Create add-app pull request
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain -- apps assets/icons assets/screenshots dist/apps.v1.json)" ]; then
+            echo "No app changes to propose."
+            exit 0
+          fi
+
+          app="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).id)")"
+          safe_app="$(printf '%s' "$app" | tr -cs '[:alnum:]-' '-' | sed 's/^-//;s/-$//')"
+          branch="automation/add-app-${safe_app}"
+          body=".tmp/add-app-report.md"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$branch:refs/remotes/origin/$branch" || true
+          git checkout -B "$branch"
+          git add "apps/${app}.json" dist/apps.v1.json
+          git add assets/icons/*.png 2>/dev/null || true
+          git add "assets/screenshots/${app}"* 2>/dev/null || true
+          git commit -m "Add ${app} to registry"
+          git push --force-with-lease origin "$branch"
+
+          number="$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number')"
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --body-file "$body"
+          else
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "Add ${app} to RokidBrew Registry" \
+              --body-file "$body"
+          fi

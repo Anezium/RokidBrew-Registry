@@ -1,10 +1,12 @@
-name: Extract missing icons
+name: Daily registry maintenance
 
 on:
+  schedule:
+    - cron: "17 5 * * *"
   workflow_dispatch:
     inputs:
-      force:
-        description: "Overwrite existing icons"
+      dry_run:
+        description: "Run checks without creating a pull request"
         required: false
         default: "false"
         type: choice
@@ -13,7 +15,7 @@ on:
           - "true"
 
 jobs:
-  extract:
+  maintain:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -36,36 +38,58 @@ jobs:
         run: |
           mkdir -p .tmp
           curl -L -o .tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v3.0.1/apktool_3.0.1.jar
-      - name: Extract APK icons
+
+      - name: Check upstream releases and APK URLs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/check-updates.mjs --dry-run
+          else
+            node scripts/check-updates.mjs
+          fi
+
+      - name: Refresh APK metadata
+        if: ${{ inputs.dry_run != 'true' }}
+        run: node scripts/update-artifact-metadata.mjs --soft-fail
+
+      - name: Extract missing icons
+        if: ${{ inputs.dry_run != 'true' }}
         env:
           APKTOOL_JAR: .tmp/apktool.jar
-        run: |
-          if [ "${{ inputs.force }}" = "true" ]; then
-            node scripts/extract-missing-icons.mjs --force
-          else
-            node scripts/extract-missing-icons.mjs
-          fi
-      - run: node scripts/build-registry.mjs
-      - name: Create icon pull request
+        run: node scripts/extract-missing-icons.mjs --soft-fail
+
+      - name: Rebuild registry
+        if: ${{ inputs.dry_run != 'true' }}
+        run: node scripts/build-registry.mjs
+
+      - name: Create maintenance pull request
+        if: ${{ inputs.dry_run != 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain -- assets/icons)" ]; then
+          if [ -z "$(git status --porcelain -- apps brew.json assets/icons)" ]; then
             git checkout -- dist/apps.v1.json
-            echo "No icon changes to propose."
+            echo "No registry maintenance changes to propose."
             exit 0
           fi
 
-          branch="automation/extract-icons"
-          body=".tmp/extract-icons-report.md"
+          branch="automation/registry-maintenance"
+          body=".tmp/registry-maintenance-report.md"
           mkdir -p .tmp
           {
-            echo "# Extract missing app icons"
+            if [ -f ".tmp/update-report.md" ]; then
+              cat ".tmp/update-report.md"
+            else
+              echo "# RokidBrew registry maintenance"
+              echo
+              echo "Daily maintenance produced registry changes."
+            fi
             echo
-            echo "Generated icon assets for review."
+            echo "## Changed files"
             echo
             echo '```text'
-            git status --short assets/icons dist/apps.v1.json
+            git status --short apps brew.json assets/icons dist/apps.v1.json
             echo '```'
           } > "$body"
 
@@ -73,8 +97,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$branch:refs/remotes/origin/$branch" || true
           git checkout -B "$branch"
-          git add assets/icons/*.png dist/apps.v1.json
-          git commit -m "Extract missing app icons"
+          git add apps/*.json dist/apps.v1.json
+          [ -f brew.json ] && git add brew.json
+          git add assets/icons/*.png 2>/dev/null || true
+          git commit -m "Run registry maintenance"
           git push --force-with-lease origin "$branch"
 
           number="$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number')"
@@ -84,6 +110,6 @@ jobs:
             gh pr create \
               --base main \
               --head "$branch" \
-              --title "Extract missing app icons" \
+              --title "Run RokidBrew registry maintenance" \
               --body-file "$body"
           fi

@@ -8,6 +8,7 @@ export function readJson(file) {
 }
 
 export function writeJson(file, value) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`);
 }
 
@@ -24,7 +25,7 @@ export function parseArgs(argv, usage) {
       continue;
     }
     const key = value.replace(/^--/, "").replace(/-([a-z])/g, (_, c) => c.toUpperCase());
-    if (["dryRun", "noReleases"].includes(key)) {
+    if (["dryRun", "noReleases", "noScreenshots", "preserveArtifacts"].includes(key)) {
       args[key] = true;
       continue;
     }
@@ -34,6 +35,17 @@ export function parseArgs(argv, usage) {
     i += 1;
   }
   return args;
+}
+
+export function slugify(value, fallback = "app") {
+  return String(value || fallback)
+    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1-$2")
+    .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80) || fallback;
 }
 
 export function normalizeRepo(repo) {
@@ -58,23 +70,30 @@ export function inferRepo(app) {
     repoFromUrl(app.artifacts?.[0]?.url);
 }
 
-export async function fetchJson(url, label = url, token = process.env.GITHUB_TOKEN) {
+export async function fetchJson(url, label = url, token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
   const headers = {
     Accept: "application/vnd.github+json",
     "User-Agent": "RokidBrew-Registry",
+    "X-GitHub-Api-Version": "2022-11-28",
   };
-  if (token) headers.Authorization = `Bearer ${token}`;
+  if (token && url.startsWith(githubApi)) headers.Authorization = `Bearer ${token}`;
   const response = await fetch(url, { headers });
   if (!response.ok) throw new Error(`Failed to fetch ${label}: ${response.status} ${response.statusText}`);
   return response.json();
 }
 
-export async function fetchText(url, label = url, token = process.env.GITHUB_TOKEN) {
+export async function fetchText(url, label = url, token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
   const headers = { Accept: "text/plain,*/*", "User-Agent": "RokidBrew-Registry" };
   if (token && url.startsWith(githubApi)) headers.Authorization = `Bearer ${token}`;
   const response = await fetch(url, { headers });
   if (!response.ok) throw new Error(`Failed to fetch ${label}: ${response.status} ${response.statusText}`);
   return response.text();
+}
+
+export async function fetchBytes(url, label = url) {
+  const response = await fetch(url, { headers: { "User-Agent": "RokidBrew-Registry" } });
+  if (!response.ok) throw new Error(`Failed to fetch ${label}: ${response.status} ${response.statusText}`);
+  return Buffer.from(await response.arrayBuffer());
 }
 
 export async function repoInfo(repo) {
@@ -101,8 +120,8 @@ export function cleanMarkdown(markdown) {
     .replace(/\r\n/g, "\n")
     .replace(/\r/g, "\n")
     .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/!\[[^\]]*]\([^)]+\)/g, "")
     .replace(/\[(?:!\[[^\]]*]\([^)]+\))]\([^)]+\)/g, "")
+    .replace(/!\[[^\]]*]\([^)]+\)/g, "")
     .replace(/^\s*\[[^\]]+]\([^)]+\)\s*$/gm, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
@@ -126,7 +145,7 @@ export function firstParagraph(markdown, maxLength = 360) {
   return paragraph.slice(0, maxLength).trim();
 }
 
-export function bulletChanges(markdown, maxItems = 6) {
+export function bulletChanges(markdown, maxItems = 8) {
   const lines = cleanMarkdown(markdown)
     .split("\n")
     .map((line) => line.trim())
@@ -147,7 +166,7 @@ export function releaseToRegistry(release) {
     date: release.published_at || release.created_at || null,
     sourceReleaseUrl: release.html_url || null,
     notes: body || null,
-    changes: [],
+    changes: bulletChanges(body, 8),
   };
 }
 
@@ -173,4 +192,12 @@ export function pickStoreFields(app, generated) {
     }));
   }
   return out;
+}
+
+export function githubRepoUrl(repo) {
+  return `https://github.com/${repo}`;
+}
+
+export function rawGithubUrl(repo, ref, filePath) {
+  return `https://raw.githubusercontent.com/${repo}/${encodeURIComponent(ref)}/${filePath}`;
 }
