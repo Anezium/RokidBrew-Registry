@@ -235,7 +235,9 @@ screenshots cannot be found. To add or fix screenshots manually:
 ## Importing EUNG SOFT info.json
 
 EUNG SOFT apps expose localized metadata in `download/RokidGlasses/<App>/info.json`.
-Use the importer to generate or refresh the app entry from the English fields:
+The all-in-one "Add app from GitHub URL" workflow supports those URLs directly.
+For local or manual refreshes, `import-eung-info.mjs` is a thin wrapper around
+the same EUNG import module:
 
 ```bash
 node scripts/import-eung-info.mjs \

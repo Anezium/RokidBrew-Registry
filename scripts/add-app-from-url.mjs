@@ -5,18 +5,28 @@ import {
   appFile,
   fetchBytes,
   fetchJson,
-  fetchText,
   githubReleases,
   githubRepoUrl,
   parseArgs,
-  rawGithubUrl,
   releaseToRegistry,
   repoFromUrl,
   repoInfo,
   slugify,
-  stripMarkdown,
   writeJson,
 } from "./lib-github-content.mjs";
+import {
+  appTypeFromTargets,
+  buildEungApp,
+  eungInfoRawUrl,
+  escapeRegex,
+  inferCategory,
+  inferTarget,
+  isRejectedScreenshot,
+  screenshotExt,
+  screenshotName,
+  versionFromAsset,
+  versionMatchRegex,
+} from "./lib-eung-import.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const screenshotDir = path.join(root, "assets", "screenshots");
@@ -53,12 +63,6 @@ const screenshotRoots = [
   "images",
 ];
 
-function normalizeGithubBlob(url) {
-  const blob = /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)$/i.exec(url);
-  if (blob) return rawGithubUrl(`${blob[1]}/${blob[2]}`, blob[3], blob[4]);
-  return url;
-}
-
 function parseGithubInput(input) {
   const url = new URL(input);
   if (url.hostname !== "github.com") return null;
@@ -78,97 +82,11 @@ function parseGithubInput(input) {
   };
 }
 
-function eungInfoRawUrl(input) {
-  const normalized = normalizeGithubBlob(input);
-  if (/^https:\/\/raw\.githubusercontent\.com\/eung3392\/eungsoft\/.+\/download\/RokidGlasses\/.+\/info\.json$/i.test(normalized)) {
-    return normalized;
-  }
-  const parsed = parseGithubInput(input);
-  if (parsed?.repo?.toLowerCase() !== "eung3392/eungsoft") return null;
-  if (parsed.treeRef && /^download\/RokidGlasses\/[^/]+\/?$/i.test(parsed.treePath || "")) {
-    return rawGithubUrl(parsed.repo, parsed.treeRef, `${parsed.treePath.replace(/\/$/, "")}/info.json`);
-  }
-  return null;
-}
-
-function langValue(value, lang = "en") {
-  if (value == null) return "";
-  if (typeof value === "string") return value;
-  if (Array.isArray(value)) return value.map((item) => langValue(item, lang)).filter(Boolean).join("\n");
-  if (typeof value === "object") return value[lang] || value.en || Object.values(value).map((item) => langValue(item, lang)).find(Boolean) || "";
-  return String(value);
-}
-
-function decodeHtml(text) {
-  return String(text || "")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/gi, "'")
-    .replace(/&rarr;/gi, "->")
-    .replace(/&mdash;|&ndash;/gi, "-");
-}
-
-function htmlToMarkdown(html) {
-  return decodeHtml(String(html || "")
-    .replace(/\r\n/g, "\n")
-    .replace(/\r/g, "\n")
-    .replace(/<a\b[^>]*href=['"]([^'"]+)['"][^>]*>([\s\S]*?)<\/a>/gi, (_, href, label) => `[${stripHtml(label).trim() || href}](${href})`)
-    .replace(/<\s*h[1-6][^>]*>([\s\S]*?)<\s*\/\s*h[1-6]\s*>/gi, (_, title) => `\n\n### ${stripHtml(title).trim()}\n\n`)
-    .replace(/<\s*\/\s*p\s*>/gi, "\n\n")
-    .replace(/<\s*p\b[^>]*>/gi, "")
-    .replace(/<\s*br\s*\/?\s*>/gi, "\n")
-    .replace(/<\s*\/\s*li\s*>/gi, "\n")
-    .replace(/<\s*li\b[^>]*>/gi, "- ")
-    .replace(/<\s*\/?\s*(ul|ol)\b[^>]*>/gi, "\n")
-    .replace(/<\s*(b|strong)\b[^>]*>([\s\S]*?)<\s*\/\s*\1\s*>/gi, "**$2**")
-    .replace(/<[^>]+>/g, ""))
-    .replace(/^\s*[\u2022\u25e6]\s*/gm, "- ")
-    .replace(/[ \t]+\n/g, "\n")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
-}
-
-function stripHtml(html) {
-  return decodeHtml(String(html || "").replace(/<[^>]+>/g, ""));
-}
-
-function plainText(value) {
-  return stripMarkdown(htmlToMarkdown(value)).trim();
-}
-
-function firstSentence(text, fallback = "") {
-  const cleaned = String(text || "").trim();
-  if (!cleaned) return fallback;
-  const match = /^(.{20,180}?[.!?])\s/.exec(`${cleaned} `);
-  return (match?.[1] || cleaned).slice(0, 180).trim();
-}
-
 function titleFromRepoName(name) {
   return String(name || "")
     .replace(/[-_]+/g, " ")
     .replace(/\b\w/g, (char) => char.toUpperCase())
     .trim();
-}
-
-function inferCategory(values) {
-  const text = values.join(" ").toLowerCase();
-  const rules = [
-    ["AI", ["ai", "assistant", "llm", "gpt", "chatbot"]],
-    ["Accessibility", ["accessibility", "subtitle", "voice recognition", "stt", "hearing"]],
-    ["Browser", ["browser", "web"]],
-    ["Camera", ["camera", "photo", "live cam", "dcim"]],
-    ["Launcher", ["launcher", "home"]],
-    ["Media", ["player", "video", "media", "music", "stream"]],
-    ["Reader", ["reader", "ebook", "epub", "txt", "book"]],
-    ["Translation", ["translation", "translate", "transcribe"]],
-    ["Games", ["game", "archery", "scouter"]],
-    ["Navigation", ["map", "gmaps", "navigation", "gps"]],
-    ["Developer", ["terminal", "ssh", "shell", "developer"]],
-  ];
-  return rules.find(([, needles]) => needles.some((needle) => text.includes(needle)))?.[0] || "Utility";
 }
 
 function versionFromTag(tag) {
@@ -186,72 +104,6 @@ function isPrereleaseLikeTag(tag) {
 function updateReleaseSelector(tag, requestedSelector) {
   if (requestedSelector === "latest") return "latest";
   return isVersionLikeTag(tag) && !isPrereleaseLikeTag(tag) ? "latest" : tag;
-}
-
-function versionFromAsset(name) {
-  const match = String(name || "").match(/(?:^|[_\-.])v?(\d+(?:\.\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)(?=[_\-.]|$)/i);
-  return match?.[1] || null;
-}
-
-function escapeRegex(value) {
-  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function versionMatchRegex(assetName, version) {
-  const escaped = escapeRegex(assetName);
-  const normalized = String(version || "").replace(/^v/i, "");
-  if (!normalized) return `^${escaped}$`;
-
-  const normalizedVariants = new Set([normalized]);
-  const parts = normalized.split(".");
-  while (parts.length > 1 && parts.at(-1) === "0") {
-    parts.pop();
-    normalizedVariants.add(parts.join("."));
-  }
-
-  const variants = [...normalizedVariants, ...[...normalizedVariants].map((value) => `v${value}`)]
-    .filter(Boolean)
-    .map(escapeRegex)
-    .sort((a, b) => b.length - a.length);
-  const versionPattern = "v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)";
-  for (const variant of variants) {
-    if (escaped.includes(variant)) return `^${escaped.replace(variant, versionPattern)}$`;
-  }
-
-  const versionToken = String(assetName).match(/v\d+(?:[._-]\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?|\d+(?:[._-]\d+){1,4}(?:[-+][0-9A-Za-z.-]+)?/i)?.[0];
-  if (versionToken) {
-    return `^${escaped.replace(escapeRegex(versionToken), versionPattern)}$`;
-  }
-
-  return `^${escaped}$`;
-}
-
-function inferTarget(assetName, fallback) {
-  const name = String(assetName || "").toLowerCase();
-  if (/core|phone|mobile|cxrm|cxr-m|client-m/.test(name)) return "phone";
-  if (/hud|glasses|glass|cxrs|cxr-s|client-s/.test(name)) return "glasses";
-  return fallback || "glasses";
-}
-
-function appTypeFromTargets(targets, override) {
-  if (override) return override;
-  const unique = new Set(targets);
-  if (unique.has("phone") && unique.has("glasses")) return "combo";
-  return unique.has("phone") ? "phone" : "glasses";
-}
-
-function isRejectedScreenshot(name) {
-  return /logo|icon|badge|banner|social|splash|background|avatar|cover|hero/i.test(name);
-}
-
-function screenshotExt(name) {
-  const ext = path.extname(name).toLowerCase();
-  return [".png", ".jpg", ".jpeg", ".webp"].includes(ext) ? ext : null;
-}
-
-function screenshotName(id, index, sourceName) {
-  const ext = screenshotExt(sourceName) || ".png";
-  return index === 0 ? `${id}${ext}` : `${id}-${index + 1}${ext}`;
 }
 
 async function discoverRepoScreenshots({ repo, ref, id, maxScreenshots, report }) {
@@ -285,97 +137,6 @@ async function discoverRepoScreenshots({ repo, ref, id, maxScreenshots, report }
   }
   if (imported.length === 0) report.push("No screenshots imported; discovery is best-effort and non-blocking.");
   return imported;
-}
-
-function rawSiblingUrl(rawInfoUrl, fileName) {
-  return new URL(fileName, rawInfoUrl).toString();
-}
-
-function sourceFolderUrl(rawInfoUrl) {
-  const raw = /^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)\/info\.json$/i.exec(rawInfoUrl);
-  if (!raw) return githubRepoUrl("eung3392/eungsoft");
-  return `https://github.com/${raw[1]}/${raw[2]}/tree/${raw[3]}/${raw[4]}`;
-}
-
-function firstApkUrl(value) {
-  const values = Array.isArray(value) ? value : [value];
-  for (const item of values) {
-    if (typeof item === "string" && /\.apk(?:$|[?#])/i.test(item)) return item;
-    if (item && typeof item === "object") {
-      const found = Object.values(item).find((entry) => typeof entry === "string" && /\.apk(?:$|[?#])/i.test(entry));
-      if (found) return found;
-    }
-  }
-  return null;
-}
-
-async function importEung(rawInfoUrl, args, report) {
-  const raw = await fetchText(rawInfoUrl, rawInfoUrl);
-  const info = JSON.parse(raw);
-  const name = args.name || langValue(info.title || info.name) || "EUNG SOFT App";
-  const id = args.id || slugify(name);
-  const descriptionMarkdown = htmlToMarkdown(langValue(info.description));
-  const control = htmlToMarkdown(langValue(info.control));
-  const summary = args.summary || langValue(info.shortDescription) || firstSentence(plainText(descriptionMarkdown), name);
-  const releaseNote = langValue(Array.isArray(info.updated) ? info.updated[0] : info.updated);
-  const apkUrl = firstApkUrl(info.download || info.downloads || info.apk || info.apks);
-  if (!apkUrl) throw new Error("EUNG info.json does not expose an APK download URL");
-  const artifactUrl = /^https?:\/\//i.test(apkUrl) ? apkUrl : rawSiblingUrl(rawInfoUrl, apkUrl);
-  const assetName = path.basename(new URL(artifactUrl).pathname);
-  const version = String(info.version || versionFromAsset(assetName) || "0.0.0").replace(/^v/i, "");
-  const target = args.target || inferTarget(assetName, "glasses");
-  const type = appTypeFromTargets([target], args.type);
-  const listingBlocks = [
-    descriptionMarkdown,
-    control ? `### Controls\n\n${control}` : "",
-  ].filter(Boolean);
-  const app = {
-    id,
-    name,
-    category: args.category || inferCategory([name, summary, descriptionMarkdown]),
-    type,
-    version,
-    summary: String(summary).trim().slice(0, 180),
-    description: firstSentence(plainText(descriptionMarkdown), summary).slice(0, 700),
-    author: "EUNG SOFT",
-    sourceUrl: sourceFolderUrl(rawInfoUrl),
-    phoneRequired: args.phoneRequired ? args.phoneRequired === "true" : type === "combo",
-    artifacts: [{ target, url: artifactUrl }],
-    listing: listingBlocks.length ? { descriptionMarkdown: listingBlocks.join("\n\n") } : undefined,
-    releases: releaseNote ? [{
-      version,
-      date: info.releaseDate || null,
-      sourceReleaseUrl: sourceFolderUrl(rawInfoUrl),
-      notes: htmlToMarkdown(releaseNote),
-      changes: [],
-    }] : [],
-    update: {
-      source: "githubReleaseAssets",
-      repo: "eung3392/eungsoft",
-      release: "RokidGlassesApp",
-      assets: [{ target, match: versionMatchRegex(assetName, version) }],
-    },
-  };
-
-  if (!args.noScreenshots && !args.dryRun) {
-    const images = Array.isArray(info.images) ? info.images : [];
-    const max = Number.parseInt(args.maxScreenshots || "4", 10);
-    const imported = [];
-    fs.mkdirSync(screenshotDir, { recursive: true });
-    for (const image of images.slice(0, max)) {
-      const imageName = typeof image === "string" ? image : image?.url || image?.src || image?.name;
-      if (!imageName || !screenshotExt(imageName) || isRejectedScreenshot(imageName)) continue;
-      const imageUrl = /^https?:\/\//i.test(imageName) ? imageName : rawSiblingUrl(rawInfoUrl, imageName);
-      const targetName = screenshotName(id, imported.length, imageName);
-      fs.writeFileSync(path.join(screenshotDir, targetName), await fetchBytes(imageUrl, imageName));
-      imported.push(targetName);
-      report.push(`Imported EUNG screenshot \`${targetName}\`.`);
-    }
-    if (imported.length > 0) app.screenshotAssets = imported;
-  }
-
-  report.push(`Detected EUNG info.json flow for \`${name}\`.`);
-  return { app, repo: "eung3392/eungsoft" };
 }
 
 async function selectedRelease(repo, selector) {
@@ -502,7 +263,7 @@ async function main() {
   const report = [];
   const eungUrl = eungInfoRawUrl(input);
   const result = eungUrl
-    ? await importEung(eungUrl, args, report)
+    ? await buildEungApp({ root, source: eungUrl, args, report, defaultMaxScreenshots: 4 })
     : await importGeneric(input, args, report);
 
   const file = appFile(root, result.app.id);
