@@ -5,8 +5,8 @@
   "type": "glasses",
   "version": "1.0.0",
   "publishedAt": "2026-05-29",
-  "summary": "Run Meta-display web apps on Rokid glasses.",
-  "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
+  "summary": "EK Meta Player is a App player for Meta Ray-Ban.",
+  "description": "EK Meta Player is a utility that helps you run games and apps developed for Meta display on Rokid Glasses. [Key Features] - Provides a basic, built-in program list - Allows users to easily add and manage custom apps",
   "listing": {
     "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
   },

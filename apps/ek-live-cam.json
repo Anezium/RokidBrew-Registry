@@ -4,8 +4,21 @@
   "category": "Camera",
   "type": "glasses",
   "version": "1.0.0",
-  "summary": "Live streaming utility for the glasses camera.",
-  "description": "Camera streaming utility from EUNG SOFT for Rokid glasses.",
+  "publishedAt": "2026-03-19",
+  "summary": "Stream the camera of Rokid Glasses in real time.",
+  "description": "EK LiveCam allows you to view the camera screen of Rokid Glasses in real time using only a web browser on a device (PC, smartphone, tablet, etc.) on the same Wi-Fi network, without complex settings. Key Features - Real-time Streaming: Supports video transmission with minimal delay using the MJPEG (Motion JPEG) method. - High-Definition Optimization: Optimized for 1280x720 (720p) resolution to provide clear image quality. - Easy Access: Connect by simply entering the URL in a web browser (Chrome, Safari, etc.) without installing a separate viewer app. - Status Display: Displays the current streaming status, number of connected users, and streaming URL in real time on the screen. - Hardware Integration: Streaming can be started/stopped not only by touching the screen but also by using the 'Enter' key on the remote control or Rokid Glasses.",
+  "listing": {
+    "descriptionMarkdown": "EK LiveCam allows you to view the camera screen of Rokid Glasses in real time using only a web browser on a device (PC, smartphone, tablet, etc.) on the same Wi-Fi network, without complex settings.\n\n**Key Features**\n- **Real-time Streaming:** Supports video transmission with minimal delay using the MJPEG (Motion JPEG) method.\n- **High-Definition Optimization:** Optimized for 1280x720 (720p) resolution to provide clear image quality.\n- **Easy Access:** Connect by simply entering the URL in a web browser (Chrome, Safari, etc.) without installing a separate viewer app.\n- **Status Display:** Displays the current streaming status, number of connected users, and streaming URL in real time on the screen.\n- **Hardware Integration:** Streaming can be started/stopped not only by touching the screen but also by using the 'Enter' key on the remote control or Rokid Glasses.\n\n### Usage / Controls\n\n- **1. App Launch:** When you open the app, a camera preview screen appears and the Standby status is displayed at the bottom.\n- **2. Start Streaming:**\n- Touch anywhere on the screen or press the Enter (Confirm) key on the connected controller.\n- The status will change to Streaming and a red LIVE badge will appear.\n- **3. View Video (Viewer):**\n- Check the URL displayed at the bottom center of the app screen (e.g., http://192.168.x.x:8080).\n- Enter the URL in the address bar of a web browser on another device and connect."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-19",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Imported from EUNG SOFT app metadata.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "ek-live-cam.jpg",
     "ek-live-cam-2.jpg",

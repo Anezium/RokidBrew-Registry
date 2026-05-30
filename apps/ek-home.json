@@ -4,8 +4,28 @@
   "category": "Launcher",
   "type": "glasses",
   "version": "1.2.0",
-  "summary": "Custom home launcher app for Rokid glasses.",
-  "description": "Alternative launcher/home experience for Rokid glasses.",
+  "publishedAt": "2026-03-17",
+  "summary": "Use your own home launcher app.",
+  "description": "A minimalist launcher app designed for Rokid Glasses. Stripping away the complexity of the default system UI, it focuses on providing the fastest access to your 5-6 most-used apps. Built on the principle of \"Use with touch, set with mouse.\"",
+  "listing": {
+    "descriptionMarkdown": "A **minimalist launcher app** designed for Rokid Glasses.\nStripping away the complexity of the default system UI, it focuses on providing the fastest access to your 5-6 most-used apps. Built on the principle of **\"Use with touch, set with mouse.\"**\n\n### Usage / Controls\n\n- **Favorites:** Touch the app drawer icon to add your frequently used apps.\n- **Setup Mode:** Connect a Bluetooth mouse to detailedly edit favorites and widgets.\n- **Widget Management:** Click the gear icon at the top right to activate widgets and drag them to your preferred positions."
+  },
+  "releases": [
+    {
+      "version": "1.2.0",
+      "date": "2026-03-19",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Add wifi settings button to app bar, remove exit button, add function to open and close settings button.",
+      "changes": []
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-03-18",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Shortcuts for system apps have been added. Brightness control, volume control, translation, prompt, navigation. The volume control is implemented directly. If you leave it alone after adjusting the volume, the window will close in 3 seconds. However, the issue of returning to the system home when the system app is closed still exists.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "ek-home.jpg",
     "ek-home-2.jpg",

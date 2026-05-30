@@ -4,8 +4,21 @@
   "category": "Translation",
   "type": "glasses",
   "version": "2.0.0",
-  "summary": "Offline text translation app.",
-  "description": "Offline text translation for Rokid glasses using on-device language models after initial setup.",
+  "publishedAt": "2026-04-01",
+  "summary": "Offline English-Korean text translation application.",
+  "description": "EK Trans is a dedicated offline English-Korean translation app for Rokid Glasses. Powered by Google ML Kit, it allows for fast and stable translation without an active internet connection after the initial model download. ※ Download password: eung.pe.kr",
+  "listing": {
+    "descriptionMarkdown": "**EK Trans** is a dedicated **offline English-Korean translation** app for Rokid Glasses.\nPowered by Google ML Kit, it allows for fast and stable translation **without an active internet connection** after the initial model download.\n\n※ Download password: **eung.pe.kr**\n\n### Usage / Controls\n\n- **Initial Setup:** Connect to **Wi-Fi** on the first run to download the 30MB translation model.\n- **Offline Use:** Once the model is cached, no cellular or Wi-Fi data is needed for translation.\n- **How to Translate:** Align English text within the top frame and touch the right temple of the glasses to scan."
+  },
+  "releases": [
+    {
+      "version": "2.0.0",
+      "date": "2026-04-01",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Chinese, Japanese translation function has been added. Select the language by swiping, and translate by touching.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "ek-trans.jpg"
   ],

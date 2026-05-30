@@ -4,8 +4,21 @@
   "category": "Navigation",
   "type": "combo",
   "version": "1.2.0",
-  "summary": "Phone navigation mirrored as a HUD on Rokid glasses.",
-  "description": "EUNG SOFT navigation HUD. Install the phone companion and the glasses HUD app to mirror supported Korean navigation apps.",
+  "publishedAt": "2026-03-04",
+  "summary": "Navigation HUD App for Phone (korean ver)",
+  "description": "A companion app that mirrors your smartphone's navigation (TMap, Naver Map) as a HUD on your Rokid Glasses. Install this version on your Android phone. It must be paired with the Glasses-side HUD app for full functionality.",
+  "listing": {
+    "descriptionMarkdown": "A companion app that mirrors your smartphone's navigation (TMap, Naver Map) as a **HUD on your Rokid Glasses**.\nInstall this version on your **Android phone**. It must be paired with the **Glasses-side HUD app** for full functionality.\n\n### Usage / Controls\n\n- **Connect:** Select **'Connect'** in the phone app menu.\n- **Start Mirroring:** Press the large **'Mirroring'** button.\n- **Preferences:** Adjust layouts, mirroring areas, and opacity in the settings."
+  },
+  "releases": [
+    {
+      "version": "1.2.0",
+      "date": "2026-04-20",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Full Size option added to screen size settings. Supports full-screen mirroring of the phone.",
+      "changes": []
+    }
+  ],
   "screenshotAssets": [
     "rokid-connect-hud.jpg",
     "rokid-connect-hud-2.jpg"

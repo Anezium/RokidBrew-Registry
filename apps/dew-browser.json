@@ -4,27 +4,24 @@
   "category": "Browser",
   "type": "combo",
   "version": "1.0.1",
-  "featured": true,
-  "featuredRank": 1,
-  "publishedAt": "2026-05-08T21:30:00.000Z",
-  "summary": "Rokid-first browser with phone mouse mode.",
-  "description": "Web browser optimized for Rokid glasses. It supports page viewing on glasses and smartphone mouse/keyboard input.",
+  "publishedAt": "2026-04-27",
+  "summary": "Clean and intuitive web browser for Rokid Glasses.",
+  "description": "Key Features of Dew Browser Dew Browser is not just a simple mobile browser. It is optimized for the Rokid Glasses environment and offers the following features: - AI Page Summary: AI (Gemma) summarizes news or blog posts for you. - Smartphone Mouse Mode: You can use your smartphone as a touchpad for precise mouse and keyboard control. - Dedicated AR Interface: Provides a clean UI that lets you see necessary information at a glance. - Gesture Control: Supports a convenient feature that scrolls web pages using your head movements (tilts). Notes - Network: A Wi-Fi connection is required for smooth web surfing and the AI summary feature. - Supported Devices: Requires a smartphone running the Android OS. With Dew Browser, you can smartly enjoy the web on your Rokid Glasses. Enjoy searching for news and watching YouTube videos.",
   "listing": {
-    "about": "Dew Browser is a Rokid-first web browser built around the split between glasses display and phone input. Browse pages on the glasses while using the phone as a mouse and keyboard, which makes text entry and pointer control more comfortable than trying to do everything on the wearable.\n\nIt is useful for quick web lookups, dashboards, documentation, and lightweight browsing sessions where the glasses are the screen but the phone remains the control surface.\n\nInstall both targets from RokidBrew for the intended phone-plus-glasses experience."
+    "about": "Dew Browser is a Rokid-first web browser built around the split between glasses display and phone input. Browse pages on the glasses while using the phone as a mouse and keyboard, which makes text entry and pointer control more comfortable than trying to do everything on the wearable.\n\nIt is useful for quick web lookups, dashboards, documentation, and lightweight browsing sessions where the glasses are the screen but the phone remains the control surface.\n\nInstall both targets from RokidBrew for the intended phone-plus-glasses experience.",
+    "descriptionMarkdown": "### Key Features of Dew Browser\n\nDew Browser is not just a simple mobile browser. It is optimized for the Rokid Glasses environment and offers the following features:\n\n- **AI Page Summary:** AI (Gemma) summarizes news or blog posts for you.\n- **Smartphone Mouse Mode:** You can use your smartphone as a touchpad for precise mouse and keyboard control.\n- **Dedicated AR Interface:** Provides a clean UI that lets you see necessary information at a glance.\n- **Gesture Control:** Supports a convenient feature that scrolls web pages using your head movements (tilts).\n\n### Notes\n\n- **Network:** A Wi-Fi connection is required for smooth web surfing and the AI summary feature.\n- **Supported Devices:** Requires a smartphone running the Android OS.\n\nWith Dew Browser, you can smartly enjoy the web on your Rokid Glasses. Enjoy searching for news and watching YouTube videos.\n\n### Key Buttons and Functions\n\n**Top Toolbar**\n\n- **Bookmarks List (Icon):** Check your saved bookmark list at a glance and navigate instantly.\n- **Page Summary (Pencil Icon):** AI analyzes the content of the current web page and summarizes it in a popup.\n- **Address Bar:** You can directly enter URLs or search terms. Clicking the address bar provides a list of recently viewed pages.\n- **Add to Bookmarks (Star Icon):** If you like the current page, add it to your bookmarks with a single click.\n- **Go (Go Button):** Quickly loads the page at the entered address.\n- **Menu (More):** Opens a sidebar where you can configure detailed browser settings.\n\n**Side Menu (Additional Features)**\n\n- **Share:** Sends the current web URL to your smartphone's clipboard.\n- **Page Capture:** Saves or sends the current web screen as an image.\n- **Image Downloader:** Easily extracts and saves images from the page.\n- **Zoom (+/-):** Adjusts the screen size to match your vision, starting from 100%.\n- **Gesture Scroll Toggle:** Turns the feature to scroll the page by moving your head up and down on or off.\n\n### Installation and Connection\n\n**Installation**\n\n- Please install the downloaded APK file on both your Android smartphone and Rokid Glasses. (iOS is not supported.)\n\n**Connection**\n\n- **Connecting Smartphone and Glasses:** Launch the app on your Rokid Glasses. Launch the app on your smartphone as well and click the connect button. When you launch the app for the first time on your smartphone, it downloads the AI engine model. Once the download is complete, it will connect to your Rokid Glasses.\n- **Bluetooth Pairing:**\n- The browser screen will be displayed on the glasses, and the smartphone will change to a 'Phone Mouse' screen.\n\n- **Controls:** Once connected, the smartphone screen becomes a touchpad. Slide your finger to move the cursor, and tap to click. Touching with two fingers together scrolls the screen. When focus goes to an input field, the keyboard automatically appears on the phone. You can send text directly to the glasses screen via keyboard input."
   },
   "releases": [
     {
       "version": "1.0.1",
-      "date": "2026-03-15T00:13:08Z",
+      "date": "2026-05-11",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Published in the EUNG SOFT Rokid glasses app release bucket.",
-      "changes": [
-        "Provides a web browser optimized for Rokid glasses.",
-        "Supports smartphone mouse and keyboard input.",
-        "Packages phone and glasses targets for the RokidBrew install flow."
-      ]
+      "notes": "bug fix, webview rendering issue",
+      "changes": []
     }
   ],
+  "featured": true,
+  "featuredRank": 1,
   "screenshotAssets": [
     "dew-browser.jpg",
     "dew-browser-2.jpg"

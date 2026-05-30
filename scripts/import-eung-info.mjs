@@ -11,12 +11,14 @@ const usage = `Usage:
 
 Options:
   --id <id>                 Override app id.
+  --name <text>             Override app display name.
   --category <category>     Override category.
   --summary <text>          Override summary.
   --description <text>      Override plain description.
   --type <glasses|phone|combo>
   --target <glasses|phone>  Target for new single-target entries.
   --phone-required <bool>   Override phoneRequired.
+  --preserve-artifacts      Keep existing artifacts and update rules.
   --max-screenshots <n>     Limit imported screenshots.
   --no-screenshots          Keep existing screenshots and do not import images.
   --dry-run                 Print generated JSON without writing files.
@@ -30,12 +32,9 @@ function parseArgs(argv) {
       args.source = value;
       continue;
     }
-    if (value === "--dry-run") {
-      args.dryRun = true;
-      continue;
-    }
-    if (value === "--no-screenshots") {
-      args.noScreenshots = true;
+    if (["--dry-run", "--no-screenshots", "--preserve-artifacts"].includes(value)) {
+      const key = value.replace(/^--/, "").replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+      args[key] = true;
       continue;
     }
     const key = value.replace(/^--/, "").replace(/-([a-z])/g, (_, c) => c.toUpperCase());
@@ -364,7 +363,7 @@ async function main() {
   const app = orderedApp({
     ...(existing || {}),
     id,
-    name: title,
+    name: args.name || title,
     category: args.category || existing?.category || inferCategory(tags, title, descriptionText),
     type,
     version: info.version || existing?.version || "1.0.0",
@@ -378,11 +377,11 @@ async function main() {
     releases: buildReleases(info, release?.releaseUrl),
     screenshotAssets,
     phoneRequired: boolValue(args.phoneRequired, existing?.phoneRequired ?? type === "combo"),
-    artifacts,
+    artifacts: args.preserveArtifacts && existing?.artifacts ? existing.artifacts : artifacts,
     author: existing?.author || "EUNG SOFT",
     sourceUrl: existing?.sourceUrl || sourceFolderUrl(loaded.source),
     iconAsset: existing?.iconAsset,
-    update: release ? {
+    update: args.preserveArtifacts && existing?.update ? existing.update : release ? {
       source: "githubReleaseAssets",
       repo: release.repo,
       release: release.tag,
