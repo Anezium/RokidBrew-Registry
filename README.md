@@ -119,9 +119,9 @@ push registry changes directly to `main`.
 | Pull request | CI check. |
 | Manual dispatch | Rebuild on demand. |
 
-`scripts/build-registry.mjs` uses the current git branch for generated raw asset URLs
-(`main`, `dev`, etc.). Override with `ROKIDBREW_PUBLIC_BASE_URL` or
-`ROKIDBREW_PUBLIC_BRANCH` when building a manifest for another branch.
+`scripts/build-registry.mjs` uses the `main` branch for generated raw asset URLs by default.
+Override with `ROKIDBREW_PUBLIC_BASE_URL` or `ROKIDBREW_PUBLIC_BRANCH` only when
+you intentionally need a non-production manifest.
 
 ### 2. Daily registry maintenance (`registry-maintenance.yml`)
 

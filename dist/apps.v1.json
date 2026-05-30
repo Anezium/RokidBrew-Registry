@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T09:58:17.527Z",
+  "generatedAt": "2026-05-30T14:10:04.237Z",
   "brewVersion": "0.1.8",
   "brewVersionCode": 9,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.1.8/RokidBrew-phone-v0.1.8-debug.apk",
@@ -47,77 +47,11 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
       "newUntil": "2026-05-31T00:00:00.000Z",
       "iconAsset": "ek-meta-player.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-meta-player.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-meta-player.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-meta-player.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-meta-player-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-meta-player-3.jpg"
-      ]
-    },
-    {
-      "id": "jsos",
-      "name": "JSOS",
-      "category": "AI",
-      "type": "combo",
-      "version": "2.0-preview",
-      "publishedAt": "2026-05-28T11:55:21Z",
-      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
-      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
-      "screenshotAssets": [
-        "jsos-core-home.jpeg",
-        "jsos-core-session-chat.jpeg",
-        "jsos-core-hud-link.png",
-        "jsos-core-hud-deployment.jpeg",
-        "jsos-hud-session-chat.png",
-        "jsos-hud-options.png",
-        "jsos-hud-commands.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-HUD-v2.0.apk",
-          "sha256": "bc4a46e1b154063600f65e68a100da6cea307fcfde8d361afea6f2aa6ab130b2",
-          "sizeBytes": 21353247,
-          "packageName": "com.jsos.glasses",
-          "versionCode": 200,
-          "versionName": "2.0"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-Core-v2.0.apk",
-          "sha256": "364ca672b157b30e16ce9a9062df82808a1a2ef8f7b67b3a9c14d2c7c271c4ed",
-          "sizeBytes": 51614732,
-          "packageName": "com.jsos.phone",
-          "versionCode": 200,
-          "versionName": "2.0"
-        }
-      ],
-      "author": "IWhatsskill",
-      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
-      "listing": {
-        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
-      },
-      "releases": [
-        {
-          "version": "2.0-preview",
-          "date": "2026-05-28T11:55:21Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
-          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-30T11:55:21.000Z",
-      "iconAsset": "jsos.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/jsos.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-home.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-session-chat.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-hud-link.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-core-hud-deployment.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-hud-session-chat.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-hud-options.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/jsos-hud-commands.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
       ]
     },
     {
@@ -173,10 +107,10 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-04-29T00:00:00.000Z",
       "iconAsset": "dew-browser.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/dew-browser.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dew-browser.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dew-browser.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dew-browser-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dew-browser-2.jpg"
       ]
     },
     {
@@ -222,10 +156,10 @@
         }
       ],
       "newUntil": "2026-05-10T00:00:00.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/overlayrec.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/overlayrec-main.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/overlayrec-overlay.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
       ]
     },
     {
@@ -309,10 +243,10 @@
       ],
       "publishedAt": "2026-05-26T16:38:33Z",
       "newUntil": "2026-05-28T16:38:33.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-apks.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-apks-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-apks-glasses.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
       ]
     },
     {
@@ -395,10 +329,10 @@
       ],
       "newUntil": "2026-05-28T17:18:23.000Z",
       "iconAsset": "rokid-lyrics.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-lyrics.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-lyrics-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-lyrics-glasses.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
       ]
     },
     {
@@ -443,11 +377,11 @@
         }
       ],
       "iconAsset": "rokid-shell.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-shell.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-shell-menu.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-shell-server.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-shell-web.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-server.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-web.jpg"
       ]
     },
     {
@@ -493,10 +427,10 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-03-07T00:00:00.000Z",
       "iconAsset": "ek-arrow.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-arrow.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-arrow.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-arrow-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow-2.jpg"
       ]
     },
     {
@@ -539,9 +473,9 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-04-16T00:00:00.000Z",
       "iconAsset": "dcim-server.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/dcim-server.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dcim-server.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dcim-server.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dcim-server.jpg"
       ]
     },
     {
@@ -590,10 +524,10 @@
         }
       ],
       "iconAsset": "dragonball-scouter.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/dragonball-scouter.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dragonball-scouter.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dragonball-scouter-hud.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/dragonball-scouter-livecam.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-hud.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dragonball-scouter-livecam.png"
       ]
     },
     {
@@ -638,11 +572,11 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-03-17T00:00:00.000Z",
       "iconAsset": "ek-find.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-find.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-find.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-find.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-find-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-find-3.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-find-3.jpg"
       ]
     },
     {
@@ -688,12 +622,12 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-03-21T00:00:00.000Z",
       "iconAsset": "ek-live-cam.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-live-cam.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-live-cam.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-live-cam-4.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-4.jpg"
       ]
     },
     {
@@ -736,9 +670,9 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-04-06T00:00:00.000Z",
       "iconAsset": "ek-pilot.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-pilot.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-pilot.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-pilot.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-pilot.jpg"
       ]
     },
     {
@@ -781,9 +715,9 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-05-29T00:00:00.000Z",
       "iconAsset": "ek-remover.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-remover.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-remover.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-remover.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-remover.jpg"
       ]
     },
     {
@@ -826,9 +760,9 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-05-28T00:00:00.000Z",
       "iconAsset": "ek-timer.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-timer.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-timer.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-timer.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
       ]
     },
     {
@@ -871,9 +805,9 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-04-03T00:00:00.000Z",
       "iconAsset": "ek-trans.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-trans.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-trans.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-trans.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-trans.jpg"
       ]
     },
     {
@@ -917,10 +851,10 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-04-04T00:00:00.000Z",
       "iconAsset": "ek-word-up.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-word-up.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-word-up.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-word-up.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-word-up-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up-2.jpg"
       ]
     },
     {
@@ -972,11 +906,11 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-03-19T00:00:00.000Z",
       "iconAsset": "ek-home.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-home.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-home.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-home-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-home-3.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-home-3.jpg"
       ]
     },
     {
@@ -1051,13 +985,13 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-03-26T00:00:00.000Z",
       "iconAsset": "ek-reader.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/ek-reader.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-reader.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-4.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/ek-reader-5.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-4.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-reader-5.jpg"
       ]
     },
     {
@@ -1109,7 +1043,7 @@
         }
       ],
       "iconAsset": "gazemou.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/gazemou.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gazemou.png",
       "screenshotAssets": []
     },
     {
@@ -1183,12 +1117,12 @@
       ],
       "newUntil": "2026-05-11T00:00:00.000Z",
       "iconAsset": "glasses-reader.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/glasses-reader.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/glasses-reader.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-phone.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-overlay.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-reading.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/glasses-reader-settings.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-phone.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-overlay.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-reading.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-settings.jpg"
       ]
     },
     {
@@ -1254,8 +1188,74 @@
         }
       ],
       "iconAsset": "hubu.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/hubu.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/hubu.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "jsos",
+      "name": "JSOS",
+      "category": "AI",
+      "type": "combo",
+      "version": "2.0-preview",
+      "publishedAt": "2026-05-28T11:55:21Z",
+      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
+      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
+      "screenshotAssets": [
+        "jsos-core-home.jpeg",
+        "jsos-core-session-chat.jpeg",
+        "jsos-core-hud-link.png",
+        "jsos-core-hud-deployment.jpeg",
+        "jsos-hud-session-chat.png",
+        "jsos-hud-options.png",
+        "jsos-hud-commands.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-HUD-v2.0.apk",
+          "sha256": "bc4a46e1b154063600f65e68a100da6cea307fcfde8d361afea6f2aa6ab130b2",
+          "sizeBytes": 21353247,
+          "packageName": "com.jsos.glasses",
+          "versionCode": 200,
+          "versionName": "2.0"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-Core-v2.0.apk",
+          "sha256": "364ca672b157b30e16ce9a9062df82808a1a2ef8f7b67b3a9c14d2c7c271c4ed",
+          "sizeBytes": 51614732,
+          "packageName": "com.jsos.phone",
+          "versionCode": 200,
+          "versionName": "2.0"
+        }
+      ],
+      "author": "IWhatsskill",
+      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
+      "listing": {
+        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
+      },
+      "releases": [
+        {
+          "version": "2.0-preview",
+          "date": "2026-05-28T11:55:21Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
+          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-30T11:55:21.000Z",
+      "iconAsset": "jsos.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
+      ]
     },
     {
       "id": "lc-hot100",
@@ -1336,7 +1336,7 @@
         }
       ],
       "iconAsset": "m365-rokid-hud.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/m365-rokid-hud.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/m365-rokid-hud.png",
       "screenshotAssets": []
     },
     {
@@ -1380,10 +1380,10 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-02-26T00:00:00.000Z",
       "iconAsset": "matrix-vision.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/matrix-vision.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/matrix-vision.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/matrix-vision.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/matrix-vision-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/matrix-vision.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/matrix-vision-2.jpg"
       ]
     },
     {
@@ -1413,7 +1413,7 @@
         "descriptionMarkdown": "About Memora\n\nMemora is an immersive language learning app designed for Rokid AR glasses. It uses a heads-up display (HUD) to present learning content in real time, integrating Baidu AI for intelligent scenario dialogues and image recognition.\n\nKey Features\n\n- Four learning modes: scenario dialogue, visual recognition, AI-generated mnemonics, and spaced repetition (SRS).\n- Scenario dialogue mode enables multi-turn AI conversations with voice input and HUD subtitles.\n- Visual recognition mode captures images via glasses and extracts keywords using AI.\n- Personalized mnemonic hints help memorize difficult vocabulary.\n- Spaced repetition schedules reviews based on the Ebbinghaus curve with adjustable intensity.\n\nApp Interface\n\n- Learning data dashboard with statistics, vocabulary radar, and review calendar.\n- Multi-language vocabulary management and daily goal settings.\n- AI chat coach providing learning analysis and review suggestions.\n- Device management for Bluetooth connection, HUD control, and media recording.\n\nRokid Glasses Integration\n\n- Bluetooth device management including battery, brightness, and volume.\n- Custom HUD views with smooth incremental updates.\n- Audio/video recording and Wi-Fi P2P media synchronization.\n\nRequirements\n\n- Android phone with Bluetooth to connect Rokid AR glasses.\n- Rokid AR glasses for HUD display (app UI can run without glasses)."
       },
       "releases": [],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/memora-rokid.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/memora-rokid.png",
       "screenshotAssets": []
     },
     {
@@ -1515,7 +1515,7 @@
         }
       ],
       "iconAsset": "photo-del.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/photo-del.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/photo-del.png",
       "screenshotAssets": []
     },
     {
@@ -1583,7 +1583,7 @@
         }
       ],
       "iconAsset": "rokid-ai-assistant.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-ai-assistant.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ai-assistant.png",
       "screenshotAssets": []
     },
     {
@@ -1636,10 +1636,10 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-03-06T00:00:00.000Z",
       "iconAsset": "rokid-connect-hud.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-connect-hud.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-connect-hud.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-connect-hud.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-connect-hud-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud-2.jpg"
       ]
     },
     {
@@ -1701,7 +1701,7 @@
         }
       ],
       "iconAsset": "rokid-gmaps.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-gmaps.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
     },
     {
       "id": "rokid-live-studio",
@@ -1768,12 +1768,12 @@
       "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
       "newUntil": "2026-05-28T17:18:31.000Z",
       "iconAsset": "rokid-live-studio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-live-studio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-youtube.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-twitch.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-live-studio-chat.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
       ]
     },
     {
@@ -1805,7 +1805,7 @@
       },
       "releases": [],
       "newUntil": "2026-05-27T23:45:12.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-manager.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-manager.png",
       "screenshotAssets": []
     },
     {
@@ -1892,11 +1892,11 @@
       ],
       "newUntil": "2026-05-29T22:55:35.000Z",
       "iconAsset": "rokid-relay.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-relay.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-relay-phone-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-relay-phone-notifications.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-relay-phone-speech.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
       ]
     },
     {
@@ -1926,7 +1926,7 @@
       },
       "releases": [],
       "iconAsset": "rokid-smart-life.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-smart-life.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-smart-life.png",
       "screenshotAssets": []
     },
     {
@@ -1964,7 +1964,7 @@
         }
       ],
       "iconAsset": "rokid-ssh-terminal.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-ssh-terminal.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
       "screenshotAssets": []
     },
     {
@@ -2028,13 +2028,13 @@
       ],
       "publishedAt": "2026-05-26T17:10:49Z",
       "newUntil": "2026-05-28T17:10:49.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/rokid-scribe.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-scribe.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-menu.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-settings.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-record.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-glasses.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/rokid-scribe-glasses-recording.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-settings.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
       ]
     },
     {
@@ -2088,13 +2088,13 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-04-01T00:00:00.000Z",
       "iconAsset": "texthome.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/texthome.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/texthome.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-4.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/texthome-5.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-4.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/texthome-5.jpg"
       ]
     },
     {
@@ -2150,12 +2150,12 @@
       "sourceUrl": "https://github.com/eung3392/eungsoft",
       "newUntil": "2026-04-18T00:00:00.000Z",
       "iconAsset": "your-voice.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/icons/your-voice.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/your-voice.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/dev/assets/screenshots/your-voice-4.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-4.jpg"
       ]
     }
   ]

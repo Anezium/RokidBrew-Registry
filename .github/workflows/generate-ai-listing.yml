@@ -151,13 +151,23 @@ jobs:
           safe_app="$(printf '%s' "$app" | tr -cs '[:alnum:]-' '-' | sed 's/^-//;s/-$//')"
           base="main"
           branch="automation/ai-listing-${safe_app}"
+          title="Generate AI listing for ${app}"
+          commit_message="Generate AI listing for ${app}"
+          if [ "$app" = "all" ]; then
+            title="Generate AI listings"
+            commit_message="Generate AI listings"
+          fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$branch:refs/remotes/origin/$branch" || true
           git checkout -B "$branch"
-          git add "apps/${app}.json" dist/apps.v1.json
-          git commit -m "Generate AI listing for ${app}"
+          if [ "$app" = "all" ]; then
+            git add apps/*.json dist/apps.v1.json
+          else
+            git add "apps/${app}.json" dist/apps.v1.json
+          fi
+          git commit -m "$commit_message"
           git push --force-with-lease origin "$branch"
 
           body=".tmp/ai-listing-report.md"
@@ -173,6 +183,6 @@ jobs:
             gh pr create \
               --base "$base" \
               --head "$branch" \
-              --title "Generate AI listing for ${app}" \
+              --title "$title" \
               --body-file "$body"
           fi
