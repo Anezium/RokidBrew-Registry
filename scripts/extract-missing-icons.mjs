@@ -12,6 +12,16 @@ fs.mkdirSync(iconDir, { recursive: true });
 fs.mkdirSync(tmpDir, { recursive: true });
 
 const force = process.argv.includes("--force");
+const softFail = process.argv.includes("--soft-fail");
+const appFilters = new Set(valuesFor("--app"));
+
+function valuesFor(flag) {
+  const values = [];
+  for (let i = 0; i < process.argv.length; i += 1) {
+    if (process.argv[i] === flag && process.argv[i + 1]) values.push(process.argv[i + 1]);
+  }
+  return values;
+}
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -428,7 +438,8 @@ if (!apktool) {
 const apps = fs.readdirSync(appsDir)
   .filter((name) => name.endsWith(".json"))
   .sort()
-  .map((name) => readJson(path.join(appsDir, name)));
+  .map((name) => readJson(path.join(appsDir, name)))
+  .filter((app) => appFilters.size === 0 || appFilters.has(app.id));
 
 const results = [];
 for (const app of apps) {
@@ -448,6 +459,6 @@ const errors = results.filter((result) => result.status === "error").length;
 
 console.log(`Extracted ${ok} icons, skipped ${skipped}, errors ${errors}`);
 
-if (errors > 0 && process.env.CI) {
+if (errors > 0 && process.env.CI && !softFail) {
   process.exitCode = 1;
 }

@@ -7,8 +7,9 @@ const appsDir = path.join(root, "apps");
 const distDir = path.join(root, "dist");
 const iconDir = path.join(root, "assets", "icons");
 const screenshotDir = path.join(root, "assets", "screenshots");
+const publicBranch = process.env.ROKIDBREW_PUBLIC_BRANCH || "main";
 const publicBaseUrl = (process.env.ROKIDBREW_PUBLIC_BASE_URL ||
-  "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main").replace(/\/$/, "");
+  `https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/${publicBranch}`).replace(/\/$/, "");
 const newWindowDays = Number.parseInt(process.env.ROKIDBREW_NEW_WINDOW_DAYS || "2", 10);
 const generatedAt = new Date();
 
@@ -95,6 +96,7 @@ function attachCuration(app) {
 
 function stripPrivateFields(app) {
   delete app.update;
+  delete app.listingSource;
   for (const artifact of app.artifacts || []) {
     delete artifact.update;
   }
@@ -167,18 +169,28 @@ if (duplicate) throw new Error(`Duplicate app id: ${duplicate}`);
 
 fs.mkdirSync(distDir, { recursive: true });
 const brewFile = path.join(root, "brew.json");
-let brewVersion, brewVersionCode, brewApkUrl;
+let brewVersion, brewVersionCode, brewApkUrl, brewReleaseUrl, brewNotes, brewChanges;
 if (fs.existsSync(brewFile)) {
   const brew = readJson(brewFile);
   brewVersion = brew.version;
   brewVersionCode = brew.versionCode;
   brewApkUrl = brew.apkUrl;
+  brewReleaseUrl = brew.releaseUrl;
+  brewNotes = brew.notes;
+  brewChanges = Array.isArray(brew.changes) ? brew.changes.filter(Boolean) : undefined;
 }
 
 const output = {
   schemaVersion: 1,
   generatedAt: generatedAt.toISOString(),
-  ...(brewVersion != null && { brewVersion, brewVersionCode, brewApkUrl }),
+  ...(brewVersion != null && {
+    brewVersion,
+    brewVersionCode,
+    brewApkUrl,
+    brewReleaseUrl,
+    brewNotes,
+    brewChanges,
+  }),
   apps,
 };
 

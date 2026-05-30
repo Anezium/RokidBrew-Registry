@@ -17,8 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -32,14 +35,44 @@ jobs:
             node scripts/update-artifact-metadata.mjs
           fi
       - run: node scripts/build-registry.mjs
-      - name: Commit metadata
+      - name: Create metadata pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          if [ -z "$(git status --porcelain -- apps)" ]; then
+            git checkout -- dist/apps.v1.json
+            echo "No metadata changes to propose."
+            exit 0
+          fi
+
+          branch="automation/artifact-metadata"
+          body=".tmp/artifact-metadata-report.md"
+          mkdir -p .tmp
+          {
+            echo "# Update artifact metadata"
+            echo
+            echo "Updated APK checksum, size, package, or version metadata for review."
+            echo
+            echo '```text'
+            git status --short apps dist/apps.v1.json
+            echo '```'
+          } > "$body"
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -z "$(git status --porcelain -- apps dist/apps.v1.json)" ]; then
-            echo "No metadata changes to commit."
+          git fetch origin "$branch:refs/remotes/origin/$branch" || true
+          git checkout -B "$branch"
+          git add apps/*.json dist/apps.v1.json
+          git commit -m "Update artifact metadata"
+          git push --force-with-lease origin "$branch"
+
+          number="$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number')"
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --body-file "$body"
           else
-            git add apps/*.json dist/apps.v1.json
-            git commit -m "Update artifact metadata"
-            git push
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "Update artifact metadata" \
+              --body-file "$body"
           fi

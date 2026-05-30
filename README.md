@@ -106,7 +106,8 @@ For `"type": "combo"`, provide both a `phone` and `glasses` artifact:
 
 ## GitHub Actions
 
-Four workflows automate the registry maintenance.
+All write workflows create or update pull requests against `main`. They do not
+push registry changes directly to `main`.
 
 ### 1. Build registry (`build-registry.yml`)
 
@@ -116,7 +117,35 @@ Four workflows automate the registry maintenance.
 | Pull request | CI check. |
 | Manual dispatch | Rebuild on demand. |
 
-### 2. Extract missing icons (`extract-icons.yml`)
+`scripts/build-registry.mjs` uses the `main` branch for generated raw asset URLs by default.
+Override with `ROKIDBREW_PUBLIC_BASE_URL` or `ROKIDBREW_PUBLIC_BRANCH` when testing another branch.
+
+### 2. Daily registry maintenance (`registry-maintenance.yml`)
+
+Runs once per day and can also be triggered manually. It checks upstream APK
+sources, refreshes APK metadata, extracts missing icons, rebuilds the registry,
+and opens or updates a review PR.
+
+The workflow is resilient by design: individual APK metadata or icon failures are
+reported in logs, but do not block unrelated app updates from being proposed.
+
+### 3. Add app from GitHub URL (`add-app-from-github.yml`)
+
+Manual trigger for adding a new app from a GitHub URL.
+
+Supported inputs:
+
+- Normal GitHub repo, release, or release tag URL.
+- EUNG SOFT `info.json` URL, or a GitHub tree URL like
+  `download/RokidGlasses/<App>`.
+
+The workflow creates `apps/<id>.json`, adds future update rules, copies GitHub
+release bodies into `releases[]`, optionally uses OpenRouter only for the store
+description fields, refreshes APK metadata, extracts the launcher icon, and opens
+a PR. Screenshot import is best-effort only and checks a few likely folders:
+`screenshots`, `docs/screenshots`, `docs/images`, `assets/screenshots`, `images`.
+
+### 4. Extract missing icons (`extract-icons.yml`)
 
 Manual trigger only. For every app in `apps/*.json` that is missing `assets/icons/<app-id>.png`:
 
@@ -124,14 +153,14 @@ Manual trigger only. For every app in `apps/*.json` that is missing `assets/icon
 2. Reads the launcher icon with `aapt dump badging`.
 3. Extracts a direct raster icon when available.
 4. Falls back to `apktool` + `rsvg-convert` for adaptive / vector launcher icons.
-5. Commits the new icons and rebuilt manifest back to `main`.
+5. Opens or updates a PR with the generated icons and rebuilt manifest.
 
 | Input | Value |
 |---|---|
 | `force: false` | Skip apps that already have an icon (normal use). |
 | `force: true` | Regenerate all icons even if they already exist. |
 
-### 3. Update artifact metadata (`update-artifact-metadata.yml`)
+### 5. Update artifact metadata (`update-artifact-metadata.yml`)
 
 Manual trigger only. Downloads every APK referenced in the registry and populates:
 
@@ -141,16 +170,17 @@ Manual trigger only. Downloads every APK referenced in the registry and populate
 - `versionCode` — Integer version code.
 - `versionName` — Human-readable version name.
 
-Commits the updated `apps/*.json` and rebuilt manifest.
+Opens or updates a PR with the updated `apps/*.json` and rebuilt manifest.
 
 | Input | Value |
 |---|---|
 | `force: false` | Only fill in missing metadata (normal use). |
 | `force: true` | Recompute all metadata even if already present (use after APK URL changes). |
 
-### 4. Check app updates (`check-updates.yml`)
+### 6. Check app updates (`check-updates.yml`)
 
-Runs every day and can also be triggered manually. It checks upstream APK sources and opens a pull request when it finds newer artifacts.
+Manual trigger for checking upstream APK sources without running the full daily
+maintenance pipeline. It opens a pull request when it finds newer artifacts.
 
 Supported sources:
 
@@ -180,7 +210,9 @@ Example release-bucket rule:
 
 ## Adding screenshots
 
-Screenshots are not extracted automatically. To add them:
+Screenshots are best-effort during the "Add app from GitHub URL" workflow. The
+workflow intentionally checks only a few likely folders and never blocks a PR if
+screenshots cannot be found. To add or fix screenshots manually:
 
 1. Place image files in `assets/screenshots/`.
 2. Reference them in the app JSON:
@@ -200,10 +232,10 @@ Screenshots are not extracted automatically. To add them:
 ## Full workflow summary
 
 ```
-1. Create apps/<app-id>.json with artifact URLs
-2. Rebuild + push
+1. Run "Add app from GitHub URL" for new apps
+2. Review the generated PR
 3. Run "Extract missing icons"  → gets the icon
 4. Run "Update artifact metadata" → gets sha256, package info
-5. The scheduled "Check app updates" workflow opens PRs for newer upstream APKs
-6. (Optional) Add screenshots manually
+5. Daily registry maintenance opens PRs for new releases, metadata, and icons
+6. (Optional) Add or adjust screenshots manually
 ```
