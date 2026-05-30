@@ -3,28 +3,29 @@
   "name": "Rokid GMaps",
   "category": "Navigation",
   "type": "combo",
-  "version": "1.0.0",
-  "summary": "Turn-by-turn navigation for Rokid AR glasses with phone companion app",
-  "description": "Rokid GMaps provides a phone-plus-glasses navigation workflow featuring a HUD for directions. It supports Google and OSM providers for place search and routing. Install both phone and glasses APKs for full functionality.",
+  "version": "1.0.2",
+  "publishedAt": "2026-05-29T22:02:46Z",
+  "summary": "Turn-by-turn navigation for Rokid AR glasses.",
+  "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
   "phoneRequired": true,
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/glasses-debug.apk",
-      "sha256": "dc0d130a4930f76e89e5c83fec08e650b45399248b6162c801239dde63eeec1e",
-      "sizeBytes": 7914651,
-      "packageName": "com.rokid.hud.glasses",
-      "versionCode": 1,
-      "versionName": "1.0"
+      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/glasses-debug.apk",
+      "sha256": "5d673904fa3cc7e15dc8df3550109344d22b72e8fb423d427d2ded69b4413a43",
+      "sizeBytes": 7800727,
+      "packageName": "com.anezium.rokidgmaps.glasses",
+      "versionCode": 2,
+      "versionName": "1.0.2"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.0/phone-debug.apk",
-      "sha256": "920d0d020c73b311cfcc0b8657ee7ee4f9a36ec229dc62b02641a7eca96eaffc",
-      "sizeBytes": 18710686,
-      "packageName": "com.rokid.hud.phone",
-      "versionCode": 1,
-      "versionName": "1.0"
+      "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/phone-debug.apk",
+      "sha256": "410113e3819754f848dd0b3d39f6af84d68dc0f74c404dd9ff14bffbdf0f0771",
+      "sizeBytes": 18022845,
+      "packageName": "com.anezium.rokidgmaps.phone",
+      "versionCode": 2,
+      "versionName": "1.0.2"
     }
   ],
   "author": "Anezium",

@@ -3,10 +3,10 @@
   "name": "Rokid Relay",
   "category": "Accessibility",
   "type": "combo",
-  "version": "0.1.2",
-  "publishedAt": "2026-05-27T22:55:35Z",
-  "summary": "Reply to Android phone notifications from Rokid glasses with voice and overlay controls",
-  "description": "Rokid Relay forwards replyable Android notifications to Rokid glasses, enabling voice replies via a compact overlay. It uses the glasses microphone for speech-to-text and integrates with Android direct reply.",
+  "version": "0.1.4",
+  "publishedAt": "2026-05-29T21:23:14Z",
+  "summary": "Reply to Android phone notifications from Rokid glasses.",
+  "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
   "screenshotAssets": [
     "rokid-relay-phone-home.png",
     "rokid-relay-phone-notifications.png",
@@ -16,12 +16,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.2/rokid-relay-phone-v0.1.2-vc3-debug.apk",
-      "sha256": "d7bff20d6fc042fc6c06fe8c706e2adde1526f5e140dfcaf788ad43b3aad515d",
-      "sizeBytes": 12801029,
+      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.4/rokid-relay-phone-v0.1.4-vc5-debug.apk",
+      "sha256": "f5363afd05182ae07340b6e04f4b3ad29b251e371622acac6f22b149542ec169",
+      "sizeBytes": 12836073,
       "packageName": "com.anezium.rokidrelay.phone",
-      "versionCode": 3,
-      "versionName": "0.1.2"
+      "versionCode": 5,
+      "versionName": "0.1.4"
     }
   ],
   "author": "Anezium",
