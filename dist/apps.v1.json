@@ -1,18 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T18:05:43.618Z",
-  "brewVersion": "0.2.0",
-  "brewVersionCode": 10,
-  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.0/RokidBrew-phone-v0.2.0-debug.apk",
-  "brewReleaseUrl": "https://github.com/Anezium/RokidBrew/releases/tag/v0.2.0",
-  "brewNotes": "RokidBrew 0.2.0 ships the redesigned store, self-update flow, selectable CXR-L host app, install state tracking, and cleaner glasses app management.",
+  "generatedAt": "2026-05-31T13:55:52.478Z",
+  "brewVersion": "0.2.1",
+  "brewVersionCode": 11,
+  "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.1/RokidBrew-phone-v0.2.1-debug.apk",
+  "brewReleaseUrl": "https://github.com/Anezium/RokidBrew/releases/tag/v0.2.1",
+  "brewNotes": "RokidBrew 0.2.1 fixes an immediate launch crash on EMUI 14 / Android 14 devices, reported on Huawei Mate XT.",
   "brewChanges": [
-    "Redesigned store UI with richer app detail pages.",
-    "Self-update screen with update badge, changelog, download, and install actions.",
-    "System log entry when a newer RokidBrew build is available.",
-    "Selectable Rokid CXR-L host app support.",
-    "Phone and glasses install state tracking with update and uninstall controls.",
-    "Refactored CXR-L app upload, query, and uninstall operations."
+    "Fixed startup crash on EMUI 14 / Android 14 devices.",
+    "Guarded Android 15-only frame-rate API calls on older Android versions.",
+    "Keeps high-refresh-rate behavior enabled on compatible Android 15+ devices."
   ],
   "apps": [
     {
@@ -139,55 +136,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
-      ]
-    },
-    {
-      "id": "ek-meta-player",
-      "name": "EK Meta Player",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "publishedAt": "2026-05-29",
-      "summary": "Run Meta-display web apps on Rokid glasses.",
-      "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
-      "screenshotAssets": [
-        "ek-meta-player.jpg",
-        "ek-meta-player-2.jpg",
-        "ek-meta-player-3.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
-          "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
-          "sizeBytes": 26251553,
-          "packageName": "kr.pe.eung.ekmeta",
-          "versionCode": 1,
-          "versionName": "1.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
-      "listing": {
-        "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
-      },
-      "releases": [
-        {
-          "version": "1.0.0",
-          "date": "2026-05-29",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Imported from EUNG SOFT app metadata.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-31T00:00:00.000Z",
-      "iconAsset": "ek-meta-player.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-meta-player.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
       ]
     },
     {
@@ -764,6 +712,55 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-2.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-3.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-live-cam-4.jpg"
+      ]
+    },
+    {
+      "id": "ek-meta-player",
+      "name": "EK Meta Player",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-05-29",
+      "summary": "Run Meta-display web apps on Rokid glasses.",
+      "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
+      "screenshotAssets": [
+        "ek-meta-player.jpg",
+        "ek-meta-player-2.jpg",
+        "ek-meta-player-3.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
+          "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
+          "sizeBytes": 26251553,
+          "packageName": "kr.pe.eung.ekmeta",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
+      "listing": {
+        "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-29",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-31T00:00:00.000Z",
+      "iconAsset": "ek-meta-player.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-meta-player.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
       ]
     },
     {
