@@ -1,0 +1,72 @@
+{
+  "id": "assist-bridge",
+  "name": "AssistBridge",
+  "category": "AI",
+  "type": "combo",
+  "version": "0.3.0",
+  "publishedAt": "2026-05-31T14:27:28Z",
+  "summary": "Relay Gemini and Google Assistant answers from a phone to a Rokid glasses HUD.",
+  "description": "AssistBridge captures visible Gemini or Google Assistant answer text on an Android phone and relays it through Global Hi Rokid CXR-L to a readable popup on Rokid glasses.",
+  "screenshotAssets": [
+    "assist-bridge-phone.png",
+    "assist-bridge-glasses-setup.png",
+    "assist-bridge-glasses-popup.png"
+  ],
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.0/AssistBridge-glasses-v0.3.0.apk",
+      "sha256": "7359ea83209319a8329ab1244f29c56b376b7cd889f73c03300aa3283cbcb8ee",
+      "sizeBytes": 4595278,
+      "packageName": "com.anezium.assistbridge.glasses",
+      "versionCode": 3,
+      "versionName": "0.3.0"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.0/AssistBridge-phone-v0.3.0.apk",
+      "sha256": "e88551fe31a514ab77b9bbdd97ebd12486a35bdf6368a7debab07a70fc0e07f2",
+      "sizeBytes": 9611587,
+      "packageName": "com.anezium.assistbridge.phone",
+      "versionCode": 3,
+      "versionName": "0.3.0"
+    }
+  ],
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/AssistBridge",
+  "update": {
+    "source": "githubRelease",
+    "repo": "Anezium/AssistBridge",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^AssistBridge-glasses-v(?<version>\\d+(?:\\.\\d+)*(?:[-+][0-9A-Za-z.-]+)?)\\.apk$",
+        "packageName": "com.anezium.assistbridge.glasses"
+      },
+      {
+        "target": "phone",
+        "match": "^AssistBridge-phone-v(?<version>\\d+(?:\\.\\d+)*(?:[-+][0-9A-Za-z.-]+)?)\\.apk$",
+        "packageName": "com.anezium.assistbridge.phone"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "## About\nAssistBridge relays visible Gemini and Google Assistant answers from an Android phone to a Rokid glasses HUD. The phone app captures assistant reply text through Android Accessibility, sends it through Global Hi Rokid CXR-L, and the glasses app renders the answer as a readable AR popup.\n\n## Key Features\n- Captures visible Gemini / Google Assistant answer text on the phone\n- Displays replies on Rokid glasses with a black, AR-safe popup and green accents\n- Uses Global Hi Rokid CXR-L for the phone-to-glasses relay\n- Bundles the glasses APK inside the phone APK for authorized CXR-L install / update flows\n- Includes setup buttons for both phone and glasses accessibility services\n- Lets the phone adjust the glasses HUD font size\n\n## Controls\n- Tap / OK / Back on glasses to dismiss the popup\n- Swipe left / right on glasses to scroll long answers\n- Adjust the HUD font size from the phone app\n\n## Requirements\n- Android phone with Gemini or Google Assistant\n- Rokid glasses paired with the Global Hi Rokid app\n- Android Accessibility enabled for AssistBridge on the phone\n- AssistBridge accessibility enabled on the glasses for overlay keys and swipe handling\n- Hi Rokid CXR-L authorization accepted on the phone\n\n## Notes\n- Android may require Allow restricted settings before sideloaded accessibility services can be enabled.\n- Assistant replies over the lock screen depend on Gemini / Google Assistant lock-screen settings.\n- Assistant UI capture is best-effort and may need updates if Google changes app accessibility surfaces."
+  },
+  "releases": [
+    {
+      "version": "0.3.0",
+      "date": "2026-05-31T14:27:28Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.0",
+      "notes": "Phone-side HUD controls and release-quality cleanup for the AssistBridge phone-to-Rokid relay.\n\nWhat's included:\n- Phone app that captures visible Gemini / Google Assistant answers through Android Accessibility.\n- Rokid glasses app that displays answers in an AR-safe popup.\n- CXR-L relay path using Global Hi Rokid through Anezium/CxrGlobal.\n- Bundled glasses APK inside the phone APK for authorized CXR-L install / update.\n- Setup UI for phone and glasses accessibility services.\n- Popup controls: tap / OK / Back to dismiss, left / right swipe to scroll.\n- Phone-controlled glasses HUD font size, persisted on the glasses.\n- Refactored shared protocol constants and relay outbox handling.\n\nBoth APKs are debug-key signed for sideload testing.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/AssistBridge",
+    "path": "README.md"
+  }
+}

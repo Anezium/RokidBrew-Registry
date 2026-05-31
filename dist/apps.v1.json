@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-31T13:55:52.478Z",
+  "generatedAt": "2026-05-31T22:18:50.915Z",
   "brewVersion": "0.2.1",
   "brewVersionCode": 11,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.1/RokidBrew-phone-v0.2.1-debug.apk",
@@ -13,129 +13,61 @@
   ],
   "apps": [
     {
-      "id": "rokid-gmaps",
-      "name": "Rokid GMaps",
-      "category": "Navigation",
+      "id": "assist-bridge",
+      "name": "AssistBridge",
+      "category": "AI",
       "type": "combo",
-      "version": "1.0.2",
-      "publishedAt": "2026-05-29T22:02:46Z",
-      "summary": "Turn-by-turn navigation for Rokid AR glasses.",
-      "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
+      "version": "0.3.0",
+      "publishedAt": "2026-05-31T14:27:28Z",
+      "summary": "Relay Gemini and Google Assistant answers from a phone to a Rokid glasses HUD.",
+      "description": "AssistBridge captures visible Gemini or Google Assistant answer text on an Android phone and relays it through Global Hi Rokid CXR-L to a readable popup on Rokid glasses.",
+      "screenshotAssets": [
+        "assist-bridge-phone.png",
+        "assist-bridge-glasses-setup.png",
+        "assist-bridge-glasses-popup.png"
+      ],
       "phoneRequired": true,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/glasses-debug.apk",
-          "sha256": "5d673904fa3cc7e15dc8df3550109344d22b72e8fb423d427d2ded69b4413a43",
-          "sizeBytes": 7800727,
-          "packageName": "com.anezium.rokidgmaps.glasses",
-          "versionCode": 2,
-          "versionName": "1.0.2"
+          "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.0/AssistBridge-glasses-v0.3.0.apk",
+          "sha256": "7359ea83209319a8329ab1244f29c56b376b7cd889f73c03300aa3283cbcb8ee",
+          "sizeBytes": 4595278,
+          "packageName": "com.anezium.assistbridge.glasses",
+          "versionCode": 3,
+          "versionName": "0.3.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/phone-debug.apk",
-          "sha256": "410113e3819754f848dd0b3d39f6af84d68dc0f74c404dd9ff14bffbdf0f0771",
-          "sizeBytes": 18022845,
-          "packageName": "com.anezium.rokidgmaps.phone",
-          "versionCode": 2,
-          "versionName": "1.0.2"
+          "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.0/AssistBridge-phone-v0.3.0.apk",
+          "sha256": "e88551fe31a514ab77b9bbdd97ebd12486a35bdf6368a7debab07a70fc0e07f2",
+          "sizeBytes": 9611587,
+          "packageName": "com.anezium.assistbridge.phone",
+          "versionCode": 3,
+          "versionName": "0.3.0"
         }
       ],
       "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
-      "screenshotAssets": [],
+      "sourceUrl": "https://github.com/Anezium/AssistBridge",
       "listing": {
-        "descriptionMarkdown": "## About\nRokid GMaps is a navigation app designed for Rokid AR glasses paired with a phone. It offers turn-by-turn directions displayed on a HUD in the glasses, while the phone handles search and route calculation.\n\n## Key Features\n- Phone app manages UI, place search, and route calculation\n- Glasses app displays navigation HUD\n- Supports Google Places and Routes APIs as well as OSM/Nominatim/OSRM fallback\n- Provider selection configurable in phone app settings\n\n## How It Works\n- The phone app calculates routes and streams navigation data to the glasses via Bluetooth\n- The glasses app renders directions using the original Rokid-Maps architecture\n\n## Requirements\n- Both phone and glasses APKs must be installed\n- Optional Google API key setup for enhanced search and routing\n- Bluetooth connection between phone and glasses\n\n## Notes\n- Google API usage requires enabling billing and APIs in Google Cloud\n- Google provider features are optional and disabled by default"
+        "descriptionMarkdown": "## About\nAssistBridge relays visible Gemini and Google Assistant answers from an Android phone to a Rokid glasses HUD. The phone app captures assistant reply text through Android Accessibility, sends it through Global Hi Rokid CXR-L, and the glasses app renders the answer as a readable AR popup.\n\n## Key Features\n- Captures visible Gemini / Google Assistant answer text on the phone\n- Displays replies on Rokid glasses with a black, AR-safe popup and green accents\n- Uses Global Hi Rokid CXR-L for the phone-to-glasses relay\n- Bundles the glasses APK inside the phone APK for authorized CXR-L install / update flows\n- Includes setup buttons for both phone and glasses accessibility services\n- Lets the phone adjust the glasses HUD font size\n\n## Controls\n- Tap / OK / Back on glasses to dismiss the popup\n- Swipe left / right on glasses to scroll long answers\n- Adjust the HUD font size from the phone app\n\n## Requirements\n- Android phone with Gemini or Google Assistant\n- Rokid glasses paired with the Global Hi Rokid app\n- Android Accessibility enabled for AssistBridge on the phone\n- AssistBridge accessibility enabled on the glasses for overlay keys and swipe handling\n- Hi Rokid CXR-L authorization accepted on the phone\n\n## Notes\n- Android may require Allow restricted settings before sideloaded accessibility services can be enabled.\n- Assistant replies over the lock screen depend on Gemini / Google Assistant lock-screen settings.\n- Assistant UI capture is best-effort and may need updates if Google changes app accessibility surfaces."
       },
       "releases": [
         {
-          "version": "1.0.2",
-          "date": "2026-05-29T22:02:46Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.2",
-          "notes": "Migration release for the new com.anezium.rokidgmaps package IDs. Includes both phone and glasses debug APKs so RokidBrew can update the paired app entry.",
-          "changes": []
-        },
-        {
-          "version": "1.0.1",
-          "date": "2026-05-26T17:11:38Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.1",
-          "notes": "Phone app only.\n\n- Fix Android splash screen branding with the real Rokid-GMaps logo asset.\n- Add a dedicated padded splash asset and Android 12+ splash theme wiring.\n- Keep existing launcher icons unchanged.",
-          "changes": []
-        },
-        {
-          "version": "1.0.0",
-          "date": "2026-03-27T20:36:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.0",
-          "notes": "## Highlights\n\n- First MVP release of `Rokid-GMaps` for phone + Rokid AR glasses navigation.\n- Optional Google Places API v1 and Routes API v2 support, with OSM/OSRM fallback kept as the default base.\n- Drive, Walk, and Transit modes with phone-side route preview and a live AR HUD on the glasses.\n- Nearby search shortcuts, notification forwarding, Wi-Fi credential sharing, and OTA APK push support.\n\n## Included In This Release\n\n- Added project documentation with architecture, setup steps, limitations, and upstream credits.\n- Added a versioned `CHANGELOG.md` for release tracking.\n- Updated Android launcher icons for both apps.\n- Switched both manifests to `@mipmap/ic_launcher` and packaged density-specific launcher assets.\n\n## Verification\n\n- Verified with `./gradlew assembleDebug` on 2026-03-27.\n- Debug APKs attached when available:\n  - `phone/build/outputs/apk/debug/phone-debug.apk`\n  - `glasses/build/outputs/apk/debug/glasses-debug.apk`",
+          "version": "0.3.0",
+          "date": "2026-05-31T14:27:28Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.0",
+          "notes": "Phone-side HUD controls and release-quality cleanup for the AssistBridge phone-to-Rokid relay.\n\nWhat's included:\n- Phone app that captures visible Gemini / Google Assistant answers through Android Accessibility.\n- Rokid glasses app that displays answers in an AR-safe popup.\n- CXR-L relay path using Global Hi Rokid through Anezium/CxrGlobal.\n- Bundled glasses APK inside the phone APK for authorized CXR-L install / update.\n- Setup UI for phone and glasses accessibility services.\n- Popup controls: tap / OK / Back to dismiss, left / right swipe to scroll.\n- Phone-controlled glasses HUD font size, persisted on the glasses.\n- Refactored shared protocol constants and relay outbox handling.\n\nBoth APKs are debug-key signed for sideload testing.",
           "changes": []
         }
       ],
-      "newUntil": "2026-05-31T22:02:46.000Z",
-      "iconAsset": "rokid-gmaps.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
-    },
-    {
-      "id": "rokid-relay",
-      "name": "Rokid Relay",
-      "category": "Accessibility",
-      "type": "combo",
-      "version": "0.1.4",
-      "publishedAt": "2026-05-29T21:23:14Z",
-      "summary": "Reply to Android phone notifications from Rokid glasses.",
-      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
-      "screenshotAssets": [
-        "rokid-relay-phone-home.png",
-        "rokid-relay-phone-notifications.png",
-        "rokid-relay-phone-speech.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.4/rokid-relay-phone-v0.1.4-vc5-debug.apk",
-          "sha256": "f5363afd05182ae07340b6e04f4b3ad29b251e371622acac6f22b149542ec169",
-          "sizeBytes": 12836073,
-          "packageName": "com.anezium.rokidrelay.phone",
-          "versionCode": 5,
-          "versionName": "0.1.4"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
-      },
-      "releases": [
-        {
-          "version": "0.1.4",
-          "date": "2026-05-29T21:23:14Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
-          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3",
-          "date": "2026-05-28T09:01:38Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
-          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2",
-          "date": "2026-05-27T22:55:35Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
-          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-31T21:23:14.000Z",
-      "iconAsset": "rokid-relay.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
+      "newUntil": "2026-06-02T14:27:28.000Z",
+      "iconAsset": "assist-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/assist-bridge.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-phone.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-glasses-setup.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-glasses-popup.png"
       ]
     },
     {
@@ -1776,6 +1708,69 @@
       ]
     },
     {
+      "id": "rokid-gmaps",
+      "name": "Rokid GMaps",
+      "category": "Navigation",
+      "type": "combo",
+      "version": "1.0.2",
+      "publishedAt": "2026-05-29T22:02:46Z",
+      "summary": "Turn-by-turn navigation for Rokid AR glasses.",
+      "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/glasses-debug.apk",
+          "sha256": "5d673904fa3cc7e15dc8df3550109344d22b72e8fb423d427d2ded69b4413a43",
+          "sizeBytes": 7800727,
+          "packageName": "com.anezium.rokidgmaps.glasses",
+          "versionCode": 2,
+          "versionName": "1.0.2"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/phone-debug.apk",
+          "sha256": "410113e3819754f848dd0b3d39f6af84d68dc0f74c404dd9ff14bffbdf0f0771",
+          "sizeBytes": 18022845,
+          "packageName": "com.anezium.rokidgmaps.phone",
+          "versionCode": 2,
+          "versionName": "1.0.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid GMaps is a navigation app designed for Rokid AR glasses paired with a phone. It offers turn-by-turn directions displayed on a HUD in the glasses, while the phone handles search and route calculation.\n\n## Key Features\n- Phone app manages UI, place search, and route calculation\n- Glasses app displays navigation HUD\n- Supports Google Places and Routes APIs as well as OSM/Nominatim/OSRM fallback\n- Provider selection configurable in phone app settings\n\n## How It Works\n- The phone app calculates routes and streams navigation data to the glasses via Bluetooth\n- The glasses app renders directions using the original Rokid-Maps architecture\n\n## Requirements\n- Both phone and glasses APKs must be installed\n- Optional Google API key setup for enhanced search and routing\n- Bluetooth connection between phone and glasses\n\n## Notes\n- Google API usage requires enabling billing and APIs in Google Cloud\n- Google provider features are optional and disabled by default"
+      },
+      "releases": [
+        {
+          "version": "1.0.2",
+          "date": "2026-05-29T22:02:46Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.2",
+          "notes": "Migration release for the new com.anezium.rokidgmaps package IDs. Includes both phone and glasses debug APKs so RokidBrew can update the paired app entry.",
+          "changes": []
+        },
+        {
+          "version": "1.0.1",
+          "date": "2026-05-26T17:11:38Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.1",
+          "notes": "Phone app only.\n\n- Fix Android splash screen branding with the real Rokid-GMaps logo asset.\n- Add a dedicated padded splash asset and Android 12+ splash theme wiring.\n- Keep existing launcher icons unchanged.",
+          "changes": []
+        },
+        {
+          "version": "1.0.0",
+          "date": "2026-03-27T20:36:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.0",
+          "notes": "## Highlights\n\n- First MVP release of `Rokid-GMaps` for phone + Rokid AR glasses navigation.\n- Optional Google Places API v1 and Routes API v2 support, with OSM/OSRM fallback kept as the default base.\n- Drive, Walk, and Transit modes with phone-side route preview and a live AR HUD on the glasses.\n- Nearby search shortcuts, notification forwarding, Wi-Fi credential sharing, and OTA APK push support.\n\n## Included In This Release\n\n- Added project documentation with architecture, setup steps, limitations, and upstream credits.\n- Added a versioned `CHANGELOG.md` for release tracking.\n- Updated Android launcher icons for both apps.\n- Switched both manifests to `@mipmap/ic_launcher` and packaged density-specific launcher assets.\n\n## Verification\n\n- Verified with `./gradlew assembleDebug` on 2026-03-27.\n- Debug APKs attached when available:\n  - `phone/build/outputs/apk/debug/phone-debug.apk`\n  - `glasses/build/outputs/apk/debug/glasses-debug.apk`",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-31T22:02:46.000Z",
+      "iconAsset": "rokid-gmaps.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
+    },
+    {
       "id": "rokid-live-studio",
       "name": "Rokid Live Studio",
       "category": "Media",
@@ -1907,6 +1902,69 @@
       },
       "releases": [],
       "screenshotAssets": []
+    },
+    {
+      "id": "rokid-relay",
+      "name": "Rokid Relay",
+      "category": "Accessibility",
+      "type": "combo",
+      "version": "0.1.4",
+      "publishedAt": "2026-05-29T21:23:14Z",
+      "summary": "Reply to Android phone notifications from Rokid glasses.",
+      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
+      "screenshotAssets": [
+        "rokid-relay-phone-home.png",
+        "rokid-relay-phone-notifications.png",
+        "rokid-relay-phone-speech.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.4/rokid-relay-phone-v0.1.4-vc5-debug.apk",
+          "sha256": "f5363afd05182ae07340b6e04f4b3ad29b251e371622acac6f22b149542ec169",
+          "sizeBytes": 12836073,
+          "packageName": "com.anezium.rokidrelay.phone",
+          "versionCode": 5,
+          "versionName": "0.1.4"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
+      },
+      "releases": [
+        {
+          "version": "0.1.4",
+          "date": "2026-05-29T21:23:14Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
+          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3",
+          "date": "2026-05-28T09:01:38Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
+          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2",
+          "date": "2026-05-27T22:55:35Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
+          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-31T21:23:14.000Z",
+      "iconAsset": "rokid-relay.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
     },
     {
       "id": "rokid-smart-life",
