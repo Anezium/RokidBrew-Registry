@@ -38,7 +38,16 @@
       "date": "2026-01-11T08:03:13Z",
       "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.1",
       "notes": "##  New Features | 新功能\n\n###  Connection Quality Indicator | 連線品質指標\n- Real-time signal strength display on glasses HUD\n- Stale data warning when telemetry delayed > 2 seconds\n- Session statistics: packets, RSSI avg/min/max, reconnect count\n\n###  Battery Optimization | 電池優化\n- Phone app now prompts user to disable battery optimization\n- Ensures stable BLE gateway service\n- Translations in 11 languages\n\n###  Bilingual Documentation | 中英並列文件\n- BLE_PROTOCOL_GUIDE.md: Complete bilingual rewrite\n- GLASSES_LOG_COLLECTION.md: Phone + glasses log collection guide\n\n###  Bug Fixes\n- Fixed native library JNI init crash\n\n---\n\n##  APK Downloads\n\n| APK | Description |\n|-----|-------------|\n| **app-release.apk** | Phone app (M365 BLE + Rokid Gateway) |\n| **glass-hud-release.apk** | Glasses app (Rokid AR HUD) |\n\n---\n\n**Full Changelog**: https://github.com/zero2005x/M365-Rokid-HUD/compare/v1.0...v1.1",
-      "changes": []
+      "changes": [
+        "Real-time signal strength display on glasses HUD",
+        "Stale data warning when telemetry delayed 2 seconds",
+        "Session statistics: packets, RSSI avg/min/max, reconnect count",
+        "Phone app now prompts user to disable battery optimization",
+        "Ensures stable BLE gateway service",
+        "Translations in 11 languages",
+        "BLEPROTOCOLGUIDE.md: Complete bilingual rewrite",
+        "GLASSESLOGCOLLECTION.md: Phone + glasses log collection guide"
+      ]
     },
     {
       "version": "1.0.0",
@@ -52,5 +61,6 @@
     "type": "githubReadme",
     "repo": "zero2005x/M365-Rokid-HUD",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-01-11T08:03:13Z"
 }

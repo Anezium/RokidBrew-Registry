@@ -4,7 +4,7 @@
   "category": "Camera",
   "type": "glasses",
   "version": "1.0.0",
-  "publishedAt": "2026-02-24",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "See the world through Matrix.",
   "description": "A unique camera app that transforms your world into a scene from The Matrix in real time. By extracting object silhouettes, it visualizes the world as digital code and allows you to record these stylized views.",
   "listing": {
@@ -13,9 +13,9 @@
   "releases": [
     {
       "version": "1.0.0",
-      "date": "2026-02-24",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Imported from EUNG SOFT app metadata.",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],

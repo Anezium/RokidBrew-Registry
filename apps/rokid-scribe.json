@@ -16,7 +16,11 @@
       "date": "2026-05-26T17:10:49Z",
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Scribe/releases/tag/v1.1.2",
       "notes": "Phone app patch:\n- Fix Android 12+ splash screen to use a dedicated padded Scribe logo asset.\n- Keep launcher icons unchanged.\n- Bump phone app to 1.1.2 (105).",
-      "changes": []
+      "changes": [
+        "Fix Android 12+ splash screen to use a dedicated padded Scribe logo asset.",
+        "Keep launcher icons unchanged.",
+        "Bump phone app to 1.1.2 (105)."
+      ]
     },
     {
       "version": "1.1.1",

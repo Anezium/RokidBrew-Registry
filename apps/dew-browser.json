@@ -3,8 +3,8 @@
   "name": "Dew Browser",
   "category": "Browser",
   "type": "combo",
-  "version": "1.0.1",
-  "publishedAt": "2026-04-27",
+  "version": "1.1.1",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "Clean and intuitive web browser for Rokid Glasses.",
   "description": "Key Features of Dew Browser Dew Browser is not just a simple mobile browser. It is optimized for the Rokid Glasses environment and offers the following features: - AI Page Summary: AI (Gemma) summarizes news or blog posts for you. - Smartphone Mouse Mode: You can use your smartphone as a touchpad for precise mouse and keyboard control. - Dedicated AR Interface: Provides a clean UI that lets you see necessary information at a glance. - Gesture Control: Supports a convenient feature that scrolls web pages using your head movements (tilts). Notes - Network: A Wi-Fi connection is required for smooth web surfing and the AI summary feature. - Supported Devices: Requires a smartphone running the Android OS. With Dew Browser, you can smartly enjoy the web on your Rokid Glasses. Enjoy searching for news and watching YouTube videos.",
   "listing": {
@@ -13,10 +13,10 @@
   },
   "releases": [
     {
-      "version": "1.0.1",
-      "date": "2026-05-11",
+      "version": "1.1.1",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "bug fix, webview rendering issue",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],
@@ -30,21 +30,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
-      "sha256": "a26427c4dd0fe3cb2dee682751878ae55dc4cc27bca96e00e10431747c7aebad",
-      "sizeBytes": 88252786,
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.1.1.apk",
+      "sha256": "f0e3c5ed2b766a81dbf58f4a603cc9cdd0d35e38e73420da0299ac840a421b4f",
+      "sizeBytes": 88253638,
       "packageName": "kr.pe.eung.ekweb",
-      "versionCode": 2,
-      "versionName": "1.0"
+      "versionCode": 3,
+      "versionName": "1.1.1"
     },
     {
       "target": "phone",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.0.1.apk",
-      "sha256": "a26427c4dd0fe3cb2dee682751878ae55dc4cc27bca96e00e10431747c7aebad",
-      "sizeBytes": 88252786,
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/DewBroswer_v1.1.1.apk",
+      "sha256": "f0e3c5ed2b766a81dbf58f4a603cc9cdd0d35e38e73420da0299ac840a421b4f",
+      "sizeBytes": 88253638,
       "packageName": "kr.pe.eung.ekweb",
-      "versionCode": 2,
-      "versionName": "1.0"
+      "versionCode": 3,
+      "versionName": "1.1.1"
     }
   ],
   "author": "EUNG SOFT",

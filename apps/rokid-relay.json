@@ -47,7 +47,12 @@
       "date": "2026-05-29T21:23:14Z",
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
       "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-      "changes": []
+      "changes": [
+        "Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.",
+        "Saves the notification popup vertical offset to the glasses only when pressing Save.",
+        "Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.",
+        "Applies the saved offset immediately to the accessibility overlay and after service restart."
+      ]
     },
     {
       "version": "0.1.3",

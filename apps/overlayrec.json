@@ -6,7 +6,7 @@
   "version": "0.1.0",
   "featured": true,
   "featuredRank": 2,
-  "publishedAt": "2026-05-08",
+  "publishedAt": "2026-05-08T20:30:45Z",
   "summary": "Trigger AR screenshots and recordings from Rokid glasses via a two-finger gesture overlay menu",
   "description": "OverlayRec runs on Rokid glasses as an Accessibility Service, enabling AR Screenshot and AR Record via a two-finger slide gesture without opening Hi Rokid. It displays a small overlay menu for quick media capture.",
   "phoneRequired": false,
@@ -37,7 +37,16 @@
       "date": "2026-05-08T20:30:45Z",
       "sourceReleaseUrl": "https://github.com/Anezium/OverlayRec/releases/tag/v0.1.0",
       "notes": "Initial alpha release of OverlayRec.\n\nHighlights:\n- Trigger Rokid AR Screenshot from the glasses.\n- Trigger Rokid AR Record from the glasses.\n- Open the overlay menu with: two finger slide left left right right.\n- Confirm with OK or wait 5 seconds for auto-confirm.\n- Stop AR Record with the physical glasses button.\n\nNotes:\n- This APK is intended for sideloading on Rokid Glasses.\n- Hi Rokid can still be used to import/process recorded media.\n- This is an experimental alpha build tested on real Rokid hardware.",
-      "changes": []
+      "changes": [
+        "Trigger Rokid AR Screenshot from the glasses.",
+        "Trigger Rokid AR Record from the glasses.",
+        "Open the overlay menu with: two finger slide left left right right.",
+        "Confirm with OK or wait 5 seconds for auto-confirm.",
+        "Stop AR Record with the physical glasses button.",
+        "This APK is intended for sideloading on Rokid Glasses.",
+        "Hi Rokid can still be used to import/process recorded media.",
+        "This is an experimental alpha build tested on real Rokid hardware."
+      ]
     }
   ],
   "listingSource": {

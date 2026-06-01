@@ -4,7 +4,7 @@
   "category": "Reader",
   "type": "glasses",
   "version": "1.4.0",
-  "publishedAt": "2026-03-24",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "Clean and intuitive E-book reader app for Rokid Glasses.",
   "description": "EKReader is a clean and intuitive e-book reader application supporting TXT and EPUB files. Key Screen Layout - Main Screen: Shows the list of books on the device in a card format, distinguishing file types (TXT, EPUB) with icons. - Reader Screen: The book title is displayed at the top, and contents can be read in the wide central area. The current reading progress (%) and a progress bar are displayed at the bottom. Core Features - Visual Comfort: Applies an optimized contrast ratio on a black background for eye comfort during long reading sessions. - Simple UI: Minimizes complex buttons and focuses on essential functions (navigation, font size). - Operation Optimization: Rokid Glasses environment optimized for swiping and touch operation.",
   "listing": {
@@ -13,37 +13,9 @@
   "releases": [
     {
       "version": "1.4.0",
-      "date": "2026-04-24",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "The list navigation has been changed to tilt left and right. Clock and battery status have been added in book reading mode.",
-      "changes": []
-    },
-    {
-      "version": "1.3.0",
-      "date": "2026-04-22",
-      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "List navigation has been improved. Added sort and gesture scroll features.",
-      "changes": []
-    },
-    {
-      "version": "1.2.1",
-      "date": "2026-04-09",
-      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Fixed a bug in the settings menu.",
-      "changes": []
-    },
-    {
-      "version": "1.2.0",
-      "date": "2026-04-08",
-      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "This version is a version that removes unnecessary blank spaces from the document.",
-      "changes": []
-    },
-    {
-      "version": "1.1.0",
-      "date": "2026-04-07",
-      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Hands Free feature added, you can turn pages by nodding your head left or right.",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],

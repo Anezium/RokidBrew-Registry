@@ -4,7 +4,7 @@
   "category": "Camera",
   "type": "glasses",
   "version": "1.0.0",
-  "publishedAt": "2026-03-19",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "Stream the camera of Rokid Glasses in real time.",
   "description": "EK LiveCam allows you to view the camera screen of Rokid Glasses in real time using only a web browser on a device (PC, smartphone, tablet, etc.) on the same Wi-Fi network, without complex settings. Key Features - Real-time Streaming: Supports video transmission with minimal delay using the MJPEG (Motion JPEG) method. - High-Definition Optimization: Optimized for 1280x720 (720p) resolution to provide clear image quality. - Easy Access: Connect by simply entering the URL in a web browser (Chrome, Safari, etc.) without installing a separate viewer app. - Status Display: Displays the current streaming status, number of connected users, and streaming URL in real time on the screen. - Hardware Integration: Streaming can be started/stopped not only by touching the screen but also by using the 'Enter' key on the remote control or Rokid Glasses.",
   "listing": {
@@ -13,9 +13,9 @@
   "releases": [
     {
       "version": "1.0.0",
-      "date": "2026-03-19",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Imported from EUNG SOFT app metadata.",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],

@@ -4,7 +4,7 @@
   "category": "Utility",
   "type": "glasses",
   "version": "1.0.0",
-  "publishedAt": "2026-05-26",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "Simple timer for Rokid Glasses",
   "description": "EK Timer is a simple and intuitive timer app.",
   "listing": {
@@ -13,9 +13,9 @@
   "releases": [
     {
       "version": "1.0.0",
-      "date": "2026-05-26",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Imported from EUNG SOFT app metadata.",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],

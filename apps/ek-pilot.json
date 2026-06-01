@@ -3,8 +3,8 @@
   "name": "EK Pilot",
   "category": "Games",
   "type": "glasses",
-  "version": "0.8.0",
-  "publishedAt": "2026-04-04",
+  "version": "1.0.0",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "EK Pilot is an aerial mission game based on a 3D flight engine. Control by tilting your head.",
   "description": "EK Pilot is an aerial mission game based on a 3D flight engine. Players take on the role of a fighter pilot, soaring through the skies and shooting down floating targets within 5 minutes.",
   "listing": {
@@ -12,10 +12,10 @@
   },
   "releases": [
     {
-      "version": "0.8.0",
-      "date": "2026-04-04",
+      "version": "1.0.0",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "UI modification, game balance adjustment, mission addition",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],

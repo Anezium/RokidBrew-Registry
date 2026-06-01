@@ -4,7 +4,7 @@
   "category": "Translation",
   "type": "glasses",
   "version": "2.0.0",
-  "publishedAt": "2026-04-01",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "Offline English-Korean text translation application.",
   "description": "EK Trans is a dedicated offline English-Korean translation app for Rokid Glasses. Powered by Google ML Kit, it allows for fast and stable translation without an active internet connection after the initial model download. ※ Download password: eung.pe.kr",
   "listing": {
@@ -13,9 +13,9 @@
   "releases": [
     {
       "version": "2.0.0",
-      "date": "2026-04-01",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Chinese, Japanese translation function has been added. Select the language by swiping, and translate by touching.",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],

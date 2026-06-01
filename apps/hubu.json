@@ -29,7 +29,10 @@
       "date": "2026-04-26T11:05:20Z",
       "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.8",
       "notes": "## What's Changed\n* Update Kotlin, Compose, MockK and CI action versions by @zhongl in https://github.com/hanabix/hubu/pull/11\n* Refactor BLE model and callback flow by @zhongl in https://github.com/hanabix/hubu/pull/12\n\n**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.7...0.1.8",
-      "changes": []
+      "changes": [
+        "Update Kotlin, Compose, MockK and CI action versions by @zhongl in https://github.com/hanabix/hubu/pull/11",
+        "Refactor BLE model and callback flow by @zhongl in https://github.com/hanabix/hubu/pull/12"
+      ]
     },
     {
       "version": "0.1.7",
@@ -64,5 +67,6 @@
     "type": "githubReadme",
     "repo": "hanabix/hubu",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-04-26T11:05:20Z"
 }

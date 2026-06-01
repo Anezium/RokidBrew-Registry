@@ -3,10 +3,12 @@
   "versionCode": 11,
   "apkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.1/RokidBrew-phone-v0.2.1-debug.apk",
   "releaseUrl": "https://github.com/Anezium/RokidBrew/releases/tag/v0.2.1",
-  "notes": "RokidBrew 0.2.1 fixes an immediate launch crash on EMUI 14 / Android 14 devices, reported on Huawei Mate XT.",
+  "notes": "## Highlights\n- Fixes an immediate startup crash on EMUI 14 / Android 14 devices\n- Keeps high-refresh-rate preferences behind Android 15+ platform checks, avoiding unsupported API calls on Android 14.\n- Bumps RokidBrew to versionCode 11 / versionName 0.2.1.\n\n## Verification\n- Built debug and release APKs with Gradle.\n- Verified the debug APK manifest reports versionCode 11 and versionName 0.2.1.\n\nSHA-256: 8f174057dc6a3c90cc08ce619eba249f92e94c9f528da25e73b9ad465e935673",
   "changes": [
-    "Fixed startup crash on EMUI 14 / Android 14 devices.",
-    "Guarded Android 15-only frame-rate API calls on older Android versions.",
-    "Keeps high-refresh-rate behavior enabled on compatible Android 15+ devices."
+    "Fixes an immediate startup crash on EMUI 14 / Android 14 devices",
+    "Keeps high-refresh-rate preferences behind Android 15+ platform checks, avoiding unsupported API calls on Android 14.",
+    "Bumps RokidBrew to versionCode 11 / versionName 0.2.1.",
+    "Built debug and release APKs with Gradle.",
+    "Verified the debug APK manifest reports versionCode 11 and versionName 0.2.1."
   ]
 }

@@ -36,12 +36,19 @@
       "date": "2026-04-06T14:51:57Z",
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Shell/releases/tag/v0.1.0",
       "notes": "First public release of Rokid Shell.\n\nChanges\n- Native Android file explorer for Rokid glasses\n- Files and Transfer views optimized for monochrome AR displays\n- Built-in HTTP server for local file transfer from another device on the same network\n- APK install flow directly from the file explorer\n- Trackpad navigation tuned for Rokid glasses",
-      "changes": []
+      "changes": [
+        "Native Android file explorer for Rokid glasses",
+        "Files and Transfer views optimized for monochrome AR displays",
+        "Built-in HTTP server for local file transfer from another device on the same network",
+        "APK install flow directly from the file explorer",
+        "Trackpad navigation tuned for Rokid glasses"
+      ]
     }
   ],
   "listingSource": {
     "type": "githubReadme",
     "repo": "Anezium/Rokid-Shell",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-04-06T14:51:57Z"
 }

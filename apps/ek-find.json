@@ -4,7 +4,7 @@
   "category": "Shopping",
   "type": "glasses",
   "version": "1.1.0",
-  "publishedAt": "2026-03-15",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "Take a picture with the camera and search for the price on Naver.",
   "description": "A price comparison utility that scans product names with the camera and searches for the lowest price on Naver Shopping. By aligning the product name within the camera frame, the app uses AI (OCR) to recognize text and displays search results from Naver Shopping.",
   "listing": {
@@ -13,9 +13,9 @@
   "releases": [
     {
       "version": "1.1.0",
-      "date": "2026-04-06",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "The app works only when Wi-Fi is connected. If Wi-Fi is not connected initially, it will try to connect.",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],

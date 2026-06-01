@@ -33,7 +33,14 @@
       "date": "2026-04-05T13:40:10Z",
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-DragonBallScouter/releases/tag/v0.1.1",
       "notes": "## Changelog\n\n- Fixed the scan flow so the same face does not automatically restart a new analysis\n- Scans are now re-armed only by a manual tap while the session is active\n- Kept the current lock and revealed power stable across short face-detection dropouts\n- Lowered the detector sound volume for a more comfortable level on glasses\n- Kept the detector audio playing through brief tracking hiccups instead of cutting after 1 or 2 seconds\n- Bumped the app version to `0.1.1`\n\n## APK\n\nThe attached APK is the updated debug build from the latest `v0.1.1` state, tested on real Rokid glasses.",
-      "changes": []
+      "changes": [
+        "Fixed the scan flow so the same face does not automatically restart a new analysis",
+        "Scans are now re-armed only by a manual tap while the session is active",
+        "Kept the current lock and revealed power stable across short face-detection dropouts",
+        "Lowered the detector sound volume for a more comfortable level on glasses",
+        "Kept the detector audio playing through brief tracking hiccups instead of cutting after 1 or 2 seconds",
+        "Bumped the app version to 0.1.1"
+      ]
     },
     {
       "version": "0.1.0",
@@ -47,5 +54,6 @@
     "type": "githubReadme",
     "repo": "Anezium/Rokid-DragonBallScouter",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-04-05T13:40:10Z"
 }

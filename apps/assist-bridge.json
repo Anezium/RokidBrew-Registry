@@ -60,8 +60,17 @@
       "version": "0.3.0",
       "date": "2026-05-31T14:27:28Z",
       "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.0",
-      "notes": "Phone-side HUD controls and release-quality cleanup for the AssistBridge phone-to-Rokid relay.\n\nWhat's included:\n- Phone app that captures visible Gemini / Google Assistant answers through Android Accessibility.\n- Rokid glasses app that displays answers in an AR-safe popup.\n- CXR-L relay path using Global Hi Rokid through Anezium/CxrGlobal.\n- Bundled glasses APK inside the phone APK for authorized CXR-L install / update.\n- Setup UI for phone and glasses accessibility services.\n- Popup controls: tap / OK / Back to dismiss, left / right swipe to scroll.\n- Phone-controlled glasses HUD font size, persisted on the glasses.\n- Refactored shared protocol constants and relay outbox handling.\n\nBoth APKs are debug-key signed for sideload testing.",
-      "changes": []
+      "notes": "# AssistBridge v0.3.0\n\nPhone-side HUD controls and release-quality cleanup for the AssistBridge phone-to-Rokid relay.\n\n## What's Included\n\n- Phone app that captures visible Gemini / Google Assistant answers through Android Accessibility.\n- Rokid glasses app that displays answers in an AR-safe popup.\n- CXR-L relay path using Global Hi Rokid through `Anezium/CxrGlobal`.\n- Bundled glasses APK inside the phone APK for authorized CXR-L install / update.\n- Setup UI for phone and glasses accessibility services.\n- Popup controls: tap / OK / Back to dismiss, left / right swipe to scroll.\n- Phone-controlled glasses HUD font size, persisted on the glasses.\n- Refactored shared protocol constants and relay outbox handling.\n\n## APKs\n\n- `AssistBridge-phone-v0.3.0.apk`\n- `AssistBridge-glasses-v0.3.0.apk`\n\nBoth APKs are debug-key signed for sideload testing.\n\n## Known Limits\n\n- Gemini / Google Assistant UI capture is best-effort and can break if Google changes the accessibility tree.\n- Lock-screen operation depends on Gemini / Google Assistant lock-screen settings on the phone.\n- The relay requires Global Hi Rokid CXR-L authorization.",
+      "changes": [
+        "Phone app that captures visible Gemini / Google Assistant answers through Android Accessibility.",
+        "Rokid glasses app that displays answers in an AR-safe popup.",
+        "CXR-L relay path using Global Hi Rokid through Anezium/CxrGlobal.",
+        "Bundled glasses APK inside the phone APK for authorized CXR-L install / update.",
+        "Setup UI for phone and glasses accessibility services.",
+        "Popup controls: tap / OK / Back to dismiss, left / right swipe to scroll.",
+        "Phone-controlled glasses HUD font size, persisted on the glasses.",
+        "Refactored shared protocol constants and relay outbox handling."
+      ]
     }
   ],
   "listingSource": {

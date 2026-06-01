@@ -38,7 +38,16 @@
       "date": "2026-03-07T04:29:02Z",
       "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.12.0",
       "notes": "### New Features\n\n- **TTS Settings Screen** — New dedicated Text-to-Speech settings UI (`TtsSettingsScreen`) with support for configuring TTS provider, voice, speed, and pitch. Includes full navigation integration and settings persistence.\n- **Edge TTS Client** — Added `EdgeTtsClient` for Microsoft Edge TTS integration, providing high-quality cloud-based text-to-speech synthesis.\n- **TTS Provider Model** — New `TtsProvider` data model for managing multiple TTS engine configurations.\n- **AI Model Registry** — Introduced type-safe `AIModel` sealed class hierarchy with provider-specific subclasses (Gemini, Claude, OpenAI, Grok), including model metadata such as context window size, preview/deprecated status, and provider categorization via `ModelRepository`.\n\n### Improvements\n\n- **Bluetooth Auto-Reconnect (Glasses)** — `BluetoothSppClient` now automatically reconnects to the last connected device after an unexpected disconnection, with a 2-second delay to allow the phone server to restart its listening socket.\n- **Bluetooth Reconnection Timing** — Increased connection retry backoff from `1.5s + attempt × 1s` to `2.5s + attempt × 1.5s` for more reliable reconnection across varying Bluetooth conditions.\n- **Bluetooth Server Socket Recovery (Phone)** — Increased server socket re-creation delay from 300ms to 1000ms in `BluetoothSppManager`, ensuring the Bluetooth stack fully releases resources before accepting new connections.\n- **Localization** — Added TTS-related strings across all 13 supported languages (Arabic, Spanish, French, Italian, Japanese, Korean, Russian, Thai, Ukrainian, Vietnamese, Simplified Chinese, Traditional Chinese, English).\n- **Locale Config** — Added missing `vi` (Vietnamese) and `th` (Thai) entries to `locales_config.xml`.\n\n### Documentation\n\n- **ARCHITECTURE.md** — Fixed 10 discrepancies to match current codebase (MessageType enum, ConnectionState/DeviceInfo, AiServiceProvider interface, service/ai file listing, ai/provider directory, AiServiceFactory signature, provider example code, etc.).\n- **API_SETTINGS.md** — Updated provider tables, model names, and base URLs to reflect current code.\n- **Project Documentation Site** — Added index.html for GitHub Pages hosting.\n\n### Testing\n\n- **4 new test files** with 100+ test cases covering previously untested code:\n  - `BluetoothSppClientTest` (glasses-app) — 23 tests covering client state, connect guards, heartbeat, sendMessage, auto-reconnect, and retry backoff.\n  - `BluetoothSppManagerTest` (phone-app) — 23 tests covering server state, permission checks, sendMessage, handleDisconnection, binary buffer reset, disconnect, getPacketLength, and getPairedDevices.\n  - `ProviderSettingTest` (phone-app) — 30 tests covering `isValid()` for all 12 AI providers (including Baidu dual-key and Custom baseUrl-only validation), `fromId()`, and `getDefaultProviders()`.\n  - `ProviderTest` (phone-app) — 33 tests covering `ChatMessage` custom equals/hashCode with ByteArray content equality, `MessageRole`, `GenerationOptions`, `GenerationResult`, `FinishReason`, `Model`, `MessageChunk`, `TranscriptionResult`, and `ValidationResult`.\n- **Updated existing tests** — `AIModelTest`, `TtsProviderTest`, `ApiSettingsTest`, `TtsSettingsHelpersTest`, `AnthropicServiceTest`, `OpenAiCompatibleServiceTest` updated for new features and model IDs.\n- **Total test count: 550+** across all modules.\n\n### Build\n\n- Version bumped to `0.12.0` (versionCode 4).\n- Signed release APKs: **phone-app** (9.62 MB), **glasses-app** (4.37 MB).\n\n---\n\n**Full Changelog:** v0.11.0...v0.12.0",
-      "changes": []
+      "changes": [
+        "Edge TTS Client — Added EdgeTtsClient for Microsoft Edge TTS integration, providing high-quality cloud-based text-to-speech synthesis.",
+        "TTS Provider Model — New TtsProvider data model for managing multiple TTS engine configurations.",
+        "Locale Config — Added missing vi (Vietnamese) and th (Thai) entries to localesconfig.xml.",
+        "APISETTINGS.md — Updated provider tables, model names, and base URLs to reflect current code.",
+        "Project Documentation Site — Added index.html for GitHub Pages hosting.",
+        "4 new test files with 100+ test cases covering previously untested code:",
+        "BluetoothSppClientTest (glasses-app) — 23 tests covering client state, connect guards, heartbeat, sendMessage, auto-reconnect, and retry backoff.",
+        "Total test count: 550+ across all modules."
+      ]
     },
     {
       "version": "0.11.0",
@@ -66,5 +75,6 @@
     "type": "githubReadme",
     "repo": "zero2005x/RokidAIAssistant",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-03-07T04:29:02Z"
 }

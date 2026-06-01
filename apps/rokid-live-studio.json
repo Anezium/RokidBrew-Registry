@@ -13,11 +13,18 @@
   },
   "releases": [
     {
-      "version": "0.1.4+5",
+      "version": "0.1.4",
       "date": "2026-05-26T17:18:31Z",
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
       "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
-      "changes": []
+      "changes": [
+        "Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.",
+        "Keep the phone splash background dark and aligned with the app theme.",
+        "Bump phone app version to 0.1.4 (versionCode 5).",
+        "Built signed release APK.",
+        "Installed on device R5CW12DK1AY.",
+        "Launched com.anezium.rokidlive.phone/.MainActivity successfully."
+      ]
     },
     {
       "version": "0.1.3+4",

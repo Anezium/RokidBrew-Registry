@@ -4,7 +4,7 @@
   "category": "Accessibility",
   "type": "combo",
   "version": "1.0.0",
-  "publishedAt": "2026-04-16",
+  "publishedAt": "2026-03-15T00:13:08Z",
   "summary": "Voice Recognition Text Output",
   "description": "Experience your voice as subtitles. 'Your Voice' is a real-time voice recognition subtitle transmission solution for the hearing impaired or those who need conversation in long-distance or noisy environments. It instantly converts the voice recognized through the smartphone microphone into text and displays it as real-time subtitles on a Bluetooth-connected smart glass (such as Rokid) or other smart device screens. The phone acts as a microphone. For example, by placing the phone on an instructor's table, you can see the instructor's voice as subtitles in your glasses even when listening to a lecture from afar. It operates within the distance where Bluetooth transmission is possible. ✨ Key Features - Real-time Speech Recognition (STT): Generates subtitles in real-time through a high-performance speech recognition engine. - Bluetooth Subtitle Transmission: Transfers recognized subtitles from the smartphone to smart glasses, allowing you to check conversation content through the lenses. - Smart Glass Optimization: Automatically detects major AR glass devices such as Rokid and provides an optimized UI/UX for the glass environment. - Standalone Mode: Allows using the real-time subtitle function with just a smartphone without a separate device connection. - Custom User Settings: Freely adjust subtitle font size (10~100sp) and display position (Top/Middle/Bottom). - Background Maintenance: Optimized to ensure voice recognition continues even when the screen is turned off.",
   "listing": {
@@ -13,10 +13,10 @@
   },
   "releases": [
     {
-      "version": "1.0.0",
-      "date": "2026-04-16",
+      "version": "1.0",
+      "date": "2026-03-15T00:13:08Z",
       "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-      "notes": "Imported from EUNG SOFT app metadata.",
+      "notes": "These are program files created by EUNG SOFT.",
       "changes": []
     }
   ],
