@@ -14,6 +14,7 @@ const reportFile = path.join(root, ".tmp", "update-report.md");
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
 const strict = args.includes("--strict");
+const releaseMetadataOnly = args.includes("--release-metadata-only");
 const appFilters = new Set(valuesFor("--app"));
 const shouldCheckBrew = appFilters.size === 0 || [...appFilters].some((id) => id.toLowerCase() === "rokidbrew");
 
@@ -241,6 +242,8 @@ function shouldUpdateBrew(brew, candidate) {
   }
 
   if (candidate.url === brew?.apkUrl && candidateCode === currentCode) {
+    if (!releaseMetadataOnly) return null;
+
     if (candidate.releaseUrl && candidate.releaseUrl !== brew?.releaseUrl) {
       return "release metadata";
     }
@@ -350,12 +353,17 @@ function expectedPackage(rule, artifact) {
   return rule?.packageName || artifact.packageName || null;
 }
 
-function currentComparableVersions(app, artifact) {
+function currentComparableVersions(app, artifact, candidate) {
   const currentRelease = parseGithubReleaseUrl(artifact.url);
+  const currentAssetVersion = versionFromName(currentRelease?.assetName || artifact.url);
+  if (candidate?.aggregateRelease && candidate.assetVersion) {
+    return [currentAssetVersion || app.version].filter(Boolean);
+  }
+
   return [
     app.version,
     artifact.versionName,
-    versionFromName(currentRelease?.assetName || artifact.url),
+    currentAssetVersion,
   ].filter(Boolean);
 }
 
@@ -366,7 +374,7 @@ function shouldUpdate(app, artifact, candidate) {
     return `versionCode ${currentCode} -> ${candidateCode}`;
   }
 
-  const currentVersion = bestVersion(currentComparableVersions(app, artifact));
+  const currentVersion = bestVersion(currentComparableVersions(app, artifact, candidate));
   const candidateVersion = candidate.versionForCompare;
   const versionCompare = compareVersions(candidateVersion, currentVersion);
   if (versionCompare != null && versionCompare > 0) {
@@ -378,6 +386,8 @@ function shouldUpdate(app, artifact, candidate) {
     const missing = !artifact.sha256 || !artifact.sizeBytes || !artifact.packageName || !artifact.versionCode;
     if (changed) return "same URL changed checksum";
     if (missing) return "fill missing metadata";
+    if (!candidate.allowReleaseMetadataOnly) return null;
+
     const releaseReason = shouldUpdateRelease(app, candidate);
     if (releaseReason) return releaseReason;
   }
@@ -392,6 +402,8 @@ function shouldUpdate(app, artifact, candidate) {
 }
 
 function candidateReleaseVersion(candidate) {
+  if (candidate.aggregateRelease && candidate.assetVersion) return candidate.assetVersion;
+
   return bestVersion([
     candidate.versionName,
     candidate.assetVersion,
@@ -399,14 +411,26 @@ function candidateReleaseVersion(candidate) {
   ]);
 }
 
+function versionsEqual(left, right) {
+  if (!left || !right) return false;
+  const compared = compareVersions(left, right);
+  return compared == null ? left === right : compared === 0;
+}
+
 function matchingRelease(app, candidate) {
   const releases = Array.isArray(app.releases) ? app.releases : [];
-  if (candidate.releaseUrl) {
+  if (candidate.releaseUrl && !candidate.aggregateRelease) {
     const byUrl = releases.find((release) => release.sourceReleaseUrl === candidate.releaseUrl);
     if (byUrl) return byUrl;
   }
+
   const version = candidateReleaseVersion(candidate);
-  return version ? releases.find((release) => release.version === version) : null;
+  if (version) {
+    const byVersion = releases.find((release) => versionsEqual(release.version, version));
+    if (byVersion) return byVersion;
+  }
+
+  return null;
 }
 
 function releaseChangesEqual(left, right) {
@@ -414,7 +438,7 @@ function releaseChangesEqual(left, right) {
 }
 
 function shouldUpdateRelease(app, candidate) {
-  if (!candidate.releaseUrl && !("releaseNotes" in candidate) && !Array.isArray(candidate.releaseChanges)) return null;
+  if (!("releaseNotes" in candidate) && !Array.isArray(candidate.releaseChanges)) return null;
   const release = matchingRelease(app, candidate);
   if (!release) return "release metadata";
   if ("releaseNotes" in candidate && candidate.releaseNotes !== (release.notes || "")) return "release notes";
@@ -425,21 +449,24 @@ function shouldUpdateRelease(app, candidate) {
 }
 
 function upsertAppRelease(app, candidate) {
+  if (candidate.upsertRelease === false) return;
   if (!candidate.releaseUrl && !("releaseNotes" in candidate) && !Array.isArray(candidate.releaseChanges)) return;
 
   const version = candidateReleaseVersion(candidate);
+  const existing = matchingRelease(app, candidate);
+  const hasReleaseNotes = "releaseNotes" in candidate;
   const entry = {
     version: version || null,
-    date: candidate.releasePublishedAt || candidate.updatedAt || null,
+    date: candidate.releasePublishedAt || candidate.updatedAt || existing?.date || null,
     sourceReleaseUrl: candidate.releaseUrl || null,
-    notes: candidate.releaseNotes || null,
-    changes: Array.isArray(candidate.releaseChanges) ? candidate.releaseChanges : [],
+    notes: hasReleaseNotes ? candidate.releaseNotes || null : existing?.notes || null,
+    changes: Array.isArray(candidate.releaseChanges) ? candidate.releaseChanges : existing?.changes || [],
   };
 
   const releases = Array.isArray(app.releases) ? app.releases : [];
   const filtered = releases.filter((release) => {
-    if (entry.sourceReleaseUrl && release.sourceReleaseUrl === entry.sourceReleaseUrl) return false;
-    if (entry.version && release.version === entry.version) return false;
+    if (entry.version && versionsEqual(release.version, entry.version)) return false;
+    if (!candidate.aggregateRelease && entry.sourceReleaseUrl && release.sourceReleaseUrl === entry.sourceReleaseUrl) return false;
     return true;
   });
   app.releases = [entry, ...filtered].slice(0, 8);
@@ -453,12 +480,8 @@ function applyCandidate(app, artifact, candidate) {
   if (candidate.versionCode) artifact.versionCode = candidate.versionCode;
   if (candidate.versionName) artifact.versionName = candidate.versionName;
 
-  const nextAppVersion = bestVersion([
-    app.version,
-    candidate.assetVersion,
-    candidate.versionName,
-    tagVersion(candidate.releaseTag || ""),
-  ]);
+  const candidateVersion = candidateReleaseVersion(candidate);
+  const nextAppVersion = bestVersion([app.version, candidateVersion]);
   if (nextAppVersion) app.version = nextAppVersion;
   if (candidate.releasePublishedAt) app.publishedAt = candidate.releasePublishedAt;
   upsertAppRelease(app, candidate);
@@ -472,21 +495,35 @@ async function checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log)
   const release = await getRelease(repo, releaseSelector);
   const candidates = assetCandidates(release, rule);
   const packageName = expectedPackage(rule, artifact);
+  const aggregateRelease = updateConfig.source === "githubReleaseAssets";
+  // Aggregate releases can host many apps, so their body/date may be generic
+  // README or changelog text that should not replace per-app curation.
+  const useReleaseBody = !aggregateRelease || updateConfig.useReleaseBody === true;
+  const allowReleaseMetadataOnly = releaseMetadataOnly || updateConfig.releaseMetadataOnly === true;
   const inspected = [];
 
   for (const asset of candidates) {
     const metadata = await inspectApk(aapt, asset.browser_download_url, `${app.id}-${artifact.target}-${asset.name}`, asset.name);
     if (packageName && metadata.packageName !== packageName) continue;
+    const artifactChanged = asset.browser_download_url !== artifact.url ||
+      Boolean(metadata.sha256 && artifact.sha256 && metadata.sha256 !== artifact.sha256);
+    const shouldCopyReleaseBody = useReleaseBody && (artifactChanged || allowReleaseMetadataOnly);
     inspected.push({
       ...metadata,
       url: asset.browser_download_url,
       assetName: asset.name,
       updatedAt: asset.updated_at,
+      aggregateRelease,
+      allowReleaseMetadataOnly,
+      upsertRelease: artifactChanged || allowReleaseMetadataOnly,
+      versionForCompare: aggregateRelease && metadata.assetVersion ? metadata.assetVersion : metadata.versionForCompare,
       releaseTag: release.tag_name,
-      releasePublishedAt: release.published_at,
+      releasePublishedAt: aggregateRelease ? asset.created_at || asset.updated_at || release.published_at : release.published_at,
       releaseUrl: release.html_url,
-      releaseNotes: cleanMarkdown(release.body || ""),
-      releaseChanges: bulletChanges(release.body || "", 8),
+      ...(shouldCopyReleaseBody && {
+        releaseNotes: cleanMarkdown(release.body || ""),
+        releaseChanges: bulletChanges(release.body || "", 8),
+      }),
     });
   }
 
