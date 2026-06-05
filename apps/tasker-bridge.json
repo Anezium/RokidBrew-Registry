@@ -1,0 +1,72 @@
+{
+  "id": "tasker-bridge",
+  "name": "Tasker Bridge",
+  "category": "Utility",
+  "type": "phone",
+  "version": "0.2.5-bt",
+  "publishedAt": "2026-06-05T14:23:13Z",
+  "summary": "Launch Android Tasker automations from a Rokid glasses HUD.",
+  "description": "Phone companion that installs a bundled Rokid glasses HUD, keeps a Bluetooth bridge to the phone, lists Tasker tasks on the glasses, and launches the selected automation through Tasker.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Tasker-Bridge",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "phone",
+      "url": "https://github.com/Anezium/Tasker-Bridge/releases/download/v0.2.5-bt/phone-app-release.apk",
+      "sha256": "84b027447070d281802ddae50714c6341e769432ab90fd03eccd6245bab5a5f8",
+      "sizeBytes": 32030424,
+      "packageName": "com.anezium.taskerbridge.phone",
+      "versionCode": 15,
+      "versionName": "0.2.5-bt"
+    }
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About\nTasker Bridge lets you run Android Tasker automations from a compact Rokid glasses HUD. Install the phone APK, use it to install or launch the bundled glasses helper, then choose a Tasker task directly from the glasses.\n\n## Key Features\n- Lists named Tasker tasks on the Rokid glasses HUD\n- Launches selected Tasker tasks from the glasses through the phone\n- Uses Bluetooth RFCOMM for runtime task lists and launch commands\n- Uses Global Hi Rokid CXR-L only for helper install, update, and launch\n- Pairs by the Tasker Bridge service endpoint rather than the public device name\n- Keeps Tasker access and execution on the Android phone\n- Refreshes Tasker on HUD open or resume instead of polling continuously\n\n## Controls\n- Swipe forward or back on the glasses to move through tasks\n- Tap or OK to launch the selected task\n- Back hides the HUD\n- DPAD key events are supported for ADB testing\n\n## Requirements\n- Android 31+ phone with Tasker installed\n- Rokid glasses paired with the phone\n- Global Hi Rokid installed on the phone\n- Tasker external access and run-task permission granted\n- Wi-Fi enabled for CXR-L helper upload/install\n\n## Notes\n- Only the phone APK needs to be installed manually; it embeds the glasses helper APK.\n- Runtime commands use Bluetooth, so CXR-L disconnects after setup.\n- Use Forget Bluetooth pairing if you need to pair a different phone or glasses endpoint."
+  },
+  "releases": [
+    {
+      "version": "0.2.5-bt",
+      "date": "2026-06-05T14:23:13Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.2.5-bt",
+      "notes": "# Changelog\n\n## v0.2.5-bt - 2026-06-05\n\nTasker Bridge now uses Bluetooth as its runtime command channel. CXR-L is kept only for one-shot helper setup: installing, updating, and launching the glasses HUD.\n\n### Added\n\n- Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.\n- Versioned JSON protocol handshake with explicit phone/helper roles.\n- App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.\n- Phone foreground `connectedDevice` bridge so HUD commands can reach Tasker while the phone app is in the background.\n- Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.\n- Cached task-list delivery followed by refresh-on-demand to reduce idle work.\n\n### Changed\n\n- CXR-L no longer stays active for runtime commands after setup completes.\n- The phone app embeds the glasses helper APK and tracks the installed helper version.\n- The HUD selection model is centralized so visual focus, scroll position, and activation use the same selected item.\n- Bluetooth sends now report real write success/failure instead of optimistic delivery.\n\n### Fixed\n\n- R08 navigation could visually move while activating the wrong row.\n- Unknown future protocol messages no longer crash decoding.\n- Triple/quadruple-style launcher interactions are no longer affected by Tasker Bridge keeping a CXR runtime connection alive.\n\n### Upgrade Notes\n\n- Install the new phone APK first.\n- Open Tasker Bridge on the phone and use **Install HUD** to push the bundled helper `0.2.3-bt` to the glasses.\n- Use **Forget Bluetooth pairing** only if you want to pair the HUD with a different phone/glasses endpoint.",
+      "changes": [
+        "Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.",
+        "Versioned JSON protocol handshake with explicit phone/helper roles.",
+        "App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.",
+        "Phone foreground connectedDevice bridge so HUD commands can reach Tasker while the phone app is in the background.",
+        "Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.",
+        "Cached task-list delivery followed by refresh-on-demand to reduce idle work.",
+        "CXR-L no longer stays active for runtime commands after setup completes.",
+        "The phone app embeds the glasses helper APK and tracks the installed helper version."
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04T22:40:11Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.1.0",
+      "notes": "Initial Tasker Bridge release.\n\n- Phone APK for Android 31+ with bundled Rokid glasses helper.\n- Start bridge checks the helper on the glasses, uploads/installs it through CXR-L if needed, then opens the HUD.\n- Glasses HUD lists Tasker tasks and launches the selected automation through the phone.\n- Cache-first Tasker list response with automatic refresh-on-HUD-open/resume and no periodic polling.\n- Foreground service now uses connectedDevice only, with no app-held wakelock.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Tasker-Bridge",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "Anezium/Tasker-Bridge",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "phone",
+        "match": "^phone-app-release\\.apk$"
+      }
+    ]
+  },
+  "screenshotAssets": [
+    "tasker-bridge.png",
+    "tasker-bridge-2.png"
+  ]
+}
