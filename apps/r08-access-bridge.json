@@ -4,6 +4,8 @@
   "category": "Navigation",
   "type": "glasses",
   "version": "1.1.0",
+  "featured": true,
+  "featuredRank": 2,
   "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
   "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
   "author": "Anezium",
