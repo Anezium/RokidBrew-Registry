@@ -4,6 +4,8 @@
   "category": "Utility",
   "type": "glasses",
   "version": "1.0.0",
+  "featured": true,
+  "featuredRank": 5,
   "publishedAt": "2026-05-27",
   "summary": "app uninstall program",
   "description": "EK Remover is a simple and intuitive app uninstall program.",

@@ -4,8 +4,6 @@
   "category": "Media",
   "type": "combo",
   "version": "0.3.1",
-  "featured": true,
-  "featuredRank": 3,
   "summary": "Stream synchronized song lyrics from your Android phone to Rokid AR glasses via Bluetooth",
   "description": "Rokid Lyrics streams time-synced lyrics from an Android phone to Rokid AR glasses over Bluetooth. It supports multiple lyrics providers and syncs lyrics in real time without internet on the glasses. Requires companion apps on both phone and glasses.",
   "phoneRequired": true,

@@ -4,6 +4,8 @@
   "category": "Media",
   "type": "combo",
   "version": "0.1.4",
+  "featured": true,
+  "featuredRank": 3,
   "publishedAt": "2026-05-26T17:18:31Z",
   "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
   "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",

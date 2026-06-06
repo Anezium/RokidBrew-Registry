@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-05T16:11:28.630Z",
+  "generatedAt": "2026-06-06T15:51:22.862Z",
   "brewVersion": "0.2.1",
   "brewVersionCode": 11,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.1/RokidBrew-phone-v0.2.1-debug.apk",
@@ -76,6 +76,197 @@
       ]
     },
     {
+      "id": "rokid-relay",
+      "name": "Rokid Relay",
+      "category": "Accessibility",
+      "type": "combo",
+      "version": "0.1.4",
+      "featured": true,
+      "featuredRank": 1,
+      "publishedAt": "2026-05-29T21:23:14Z",
+      "summary": "Reply to Android phone notifications from Rokid glasses.",
+      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
+      "screenshotAssets": [
+        "rokid-relay-phone-home.png",
+        "rokid-relay-phone-notifications.png",
+        "rokid-relay-phone-speech.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.4/rokid-relay-phone-v0.1.4-vc5-debug.apk",
+          "sha256": "f5363afd05182ae07340b6e04f4b3ad29b251e371622acac6f22b149542ec169",
+          "sizeBytes": 12836073,
+          "packageName": "com.anezium.rokidrelay.phone",
+          "versionCode": 5,
+          "versionName": "0.1.4"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
+      },
+      "releases": [
+        {
+          "version": "0.1.4",
+          "date": "2026-05-29T21:23:14Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
+          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3",
+          "date": "2026-05-28T09:01:38Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
+          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2",
+          "date": "2026-05-27T22:55:35Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
+          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-31T21:23:14.000Z",
+      "iconAsset": "rokid-relay.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
+    {
+      "id": "ek-meta-player",
+      "name": "EK Meta Player",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "featured": true,
+      "featuredRank": 2,
+      "publishedAt": "2026-05-29",
+      "summary": "Run Meta-display web apps on Rokid glasses.",
+      "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
+      "screenshotAssets": [
+        "ek-meta-player.jpg",
+        "ek-meta-player-2.jpg",
+        "ek-meta-player-3.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
+          "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
+          "sizeBytes": 26251553,
+          "packageName": "kr.pe.eung.ekmeta",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
+      "listing": {
+        "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-29",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-31T00:00:00.000Z",
+      "iconAsset": "ek-meta-player.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-meta-player.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
+      ]
+    },
+    {
+      "id": "rokid-live-studio",
+      "name": "Rokid Live Studio",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.4",
+      "featured": true,
+      "featuredRank": 3,
+      "publishedAt": "2026-05-26T17:18:31Z",
+      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
+      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
+      "listing": {
+        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
+        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
+      },
+      "releases": [
+        {
+          "version": "0.1.4+5",
+          "date": "2026-05-26T17:18:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
+          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3+4",
+          "date": "2026-05-21T17:37:07Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
+          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2+3",
+          "date": "2026-05-11T18:18:44Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
+          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
+          "changes": []
+        },
+        {
+          "version": "0.1.1+2",
+          "date": "2026-05-10T21:57:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
+          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-live-studio-home.jpg",
+        "rokid-live-studio-youtube.jpg",
+        "rokid-live-studio-twitch.jpg",
+        "rokid-live-studio-chat.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.4%2B5/rokid-live-studio-phone-0.1.4-vc5.apk",
+          "sha256": "5c6343f8f3607c2f4199f4f015404aa3d90ba131d12fde9fbf6399c7cde241e9",
+          "sizeBytes": 38702587,
+          "packageName": "com.anezium.rokidlive.phone",
+          "versionCode": 5,
+          "versionName": "0.1.4"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
+      "newUntil": "2026-05-28T17:18:31.000Z",
+      "iconAsset": "rokid-live-studio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
+      ]
+    },
+    {
       "id": "dew-browser",
       "name": "Dew Browser",
       "category": "Browser",
@@ -105,7 +296,7 @@
         }
       ],
       "featured": true,
-      "featuredRank": 1,
+      "featuredRank": 4,
       "screenshotAssets": [
         "dew-browser.jpg",
         "dew-browser-2.jpg"
@@ -142,324 +333,116 @@
       ]
     },
     {
-      "id": "overlayrec",
-      "name": "OverlayRec",
-      "category": "Media",
-      "type": "glasses",
-      "version": "0.1.0",
-      "featured": true,
-      "featuredRank": 2,
-      "publishedAt": "2026-05-08",
-      "summary": "Trigger AR screenshots and recordings from Rokid glasses via a two-finger gesture overlay menu",
-      "description": "OverlayRec runs on Rokid glasses as an Accessibility Service, enabling AR Screenshot and AR Record via a two-finger slide gesture without opening Hi Rokid. It displays a small overlay menu for quick media capture.",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/OverlayRec/releases/download/v0.1.0/OverlayRec-v0.1.0.apk",
-          "sha256": "4fe10edceb8fcde0e4c3502f1826452f89db9a43b7e08e6c3fcb6a0f2907ad7a",
-          "sizeBytes": 605747,
-          "packageName": "com.rokid.overlayrec",
-          "versionCode": 1,
-          "versionName": "0.1.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/OverlayRec",
-      "iconAsset": "overlayrec.png",
-      "screenshotAssets": [
-        "overlayrec-main.jpg",
-        "overlayrec-overlay.jpg"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nOverlayRec lets you trigger AR screenshots and video recordings directly from Rokid glasses using a two-finger slide gesture, without needing to open the Hi Rokid app.\n\n# Key features\n- Activate AR Screenshot or AR Record from an on-glass overlay menu\n- Open menu with a two-finger slide left left right right gesture\n- Confirm actions immediately or wait 5 seconds for auto-confirm\n- Stop AR recording using the physical glasses button\n- Keeps the current app visible beneath the overlay\n- Restores volume after gesture activation\n\n# How it works\nOverlayRec runs as an Android Accessibility Service on the glasses, listening for specific two-finger swipe broadcasts. It then sends internal scene commands to start AR media capture. Hi Rokid remains available for media import and processing.\n\n# Controls\n- Open menu: two finger slide left left right right\n- Select AR Screenshot: two finger slide left\n- Select AR Record: two finger slide right\n- Confirm: OK button or auto-confirm after 5 seconds\n- Stop AR Record: physical glasses button\n\n# Notes\nOverlayRec is experimental and designed for Rokid glasses firmware supporting the required two-finger swipe broadcasts. It does not merge camera and HUD videos; this is handled by Rokid's AR Record flow and Hi Rokid app."
-      },
-      "releases": [
-        {
-          "version": "0.1.0",
-          "date": "2026-05-08T20:30:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/OverlayRec/releases/tag/v0.1.0",
-          "notes": "Initial alpha release of OverlayRec.\n\nHighlights:\n- Trigger Rokid AR Screenshot from the glasses.\n- Trigger Rokid AR Record from the glasses.\n- Open the overlay menu with: two finger slide left left right right.\n- Confirm with OK or wait 5 seconds for auto-confirm.\n- Stop AR Record with the physical glasses button.\n\nNotes:\n- This APK is intended for sideloading on Rokid Glasses.\n- Hi Rokid can still be used to import/process recorded media.\n- This is an experimental alpha build tested on real Rokid hardware.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-10T00:00:00.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
-      ]
-    },
-    {
-      "id": "rokid-apks",
-      "name": "Rokid-APKs",
-      "category": "Developer",
-      "type": "combo",
-      "version": "1.2.2",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Upload and install APKs on Rokid glasses via phone using four explicit transfer modes",
-      "description": "Rokid-APKs lets you install Android APKs on Rokid glasses from your phone with four transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN. No desktop or cloud relay is needed. Requires a companion app on glasses for some modes.",
-      "listing": {
-        "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew.",
-        "descriptionMarkdown": "# About\n\nRokid-APKs enables installation of Android APKs on Rokid glasses directly from your phone. It supports four explicit transfer modes to suit different connection setups.\n\n# Key Features\n\n- Four transfer modes: \n  - `CXR-M / OFFICIAL`: Official Rokid BLE + Wi-Fi Direct, no glasses companion app needed\n  - `CXR-L / HI ROKID`: Uses Hi Rokid global authorization and CXR-L install path, requires Hi Rokid app\n  - `SPP / SLOW`: Bluetooth SPP streaming via glasses companion app, fully local and offline\n  - `WIFI LAN / FAST`: Bluetooth control plus APK transfer over Wi-Fi LAN or hotspot with companion app\n- Direct APK install confirmation on glasses via Android PackageInstaller\n- Phone UI provides live status and phase feedback\n\n# How It Works\n\n- Official CXR-M mode scans and connects to glasses over BLE and Wi-Fi Direct to upload APK\n- Hi Rokid CXR-L mode uses Hi Rokid app authorization and upload session\n- Companion modes require installing a glasses companion app and Bluetooth pairing\n- APK is transferred locally and installed with user confirmation on the glasses\n\n# Requirements\n\n- Phone app installed on Android phone\n- For `SPP` and `WIFI LAN` modes: glasses companion app installed and Bluetooth paired\n- For `CXR-L` mode: Hi Rokid app installed and phone Wi-Fi enabled\n\n# Notes\n\n- No desktop helper or cloud relay involved; all transfers are local\n- `WIFI LAN / FAST` mode requires phone and glasses on the same Wi-Fi or hotspot\n- Manual mode switching is needed; no automatic fallback between modes"
-      },
-      "releases": [
-        {
-          "version": "1.2.2",
-          "date": "2026-05-26T16:38:33Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
-          "notes": "versionCode: 122\n\nFixed the splash screen by using a dedicated padded vector logo instead of scaling the launcher artwork. Adds Android 12+ splash theme overrides with a dark background to avoid the oversized/blurry icon and white startup flash.",
-          "changes": []
-        },
-        {
-          "version": "1.2.1",
-          "date": "2026-05-21T17:37:06Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.1",
-          "notes": "versionCode: 121\n\nFixed compatibility with the latest Hi Rokid update by sending the required auth package during CXR-L service binding. This restores CXR-L installs through the updated global Hi Rokid service.",
-          "changes": []
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-05-04T22:08:51Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.0",
-          "notes": "## What's new\n- Added `CXR-L / HI ROKID` mode using the global Hi Rokid app authorization flow.\n- Installs APKs through a CXR-L `CUSTOMAPP` session after Hi Rokid authorization.\n- Keeps the transport choices explicit: `CXR-M / OFFICIAL`, `CXR-L / HI ROKID`, `SPP / SLOW`, and `WIFI LAN / FAST`.\n\n## Reliability\n- Adds a clear Wi-Fi check for CXR-L, because Hi Rokid needs phone Wi-Fi enabled to join the glasses hotspot.\n- Recreates a fresh CXR-L session per install, cleans temporary APK cache files, and times out stuck installs after 90 seconds.\n\n## Notes\n- `CXR-M / OFFICIAL` still does not require the glasses companion app.\n- `CXR-L / HI ROKID` uses the global Hi Rokid app as the bridge and does not require the Rokid-APKs glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` require the Rokid-APKs glasses companion app.",
-          "changes": []
-        },
-        {
-          "version": "1.1.2",
-          "date": "2026-04-11T17:08:50Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.2",
-          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-APKs/compare/v1.1.1...v1.1.2\n\n## Changelog\n\n### New\n- `CXR / OFFICIAL` now uses the Rokid glasses hotspot flow instead of the older Wi-Fi Direct / P2P upload path.\n- The phone joins the hotspot exposed by the glasses and uploads the APK through the official Rokid CXR flow.\n- The README was updated to document the new official flow and setup steps.\n\n### Improved\n- Better compatibility on newer Android phones where the old Wi-Fi Direct path could fail with `WIFI_CONNECT_FAILED`.\n- More reliable official installs on devices where Rokid’s legacy P2P flow was unstable or broken.\n- Added clearer troubleshooting steps for `CXR / OFFICIAL`.\n\n### Notes\n- `CXR / OFFICIAL` still does **not** require the glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` are unchanged and still require the companion app.\n- If `CXR / OFFICIAL` fails before upload starts, disconnect the glasses from normal Android Bluetooth settings and force close `Hi Rokid` or other Rokid apps before retrying.",
-          "changes": []
-        },
-        {
-          "version": "1.1.1",
-          "date": "2026-04-06T14:33:58Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.1",
-          "notes": "## Changes\n\n- Added a Wi-Fi shortcut directly inside the glasses companion HUD.\n- Reworked glasses navigation so Bluetooth device browsing and the Wi-Fi action behave predictably on Rokid input.\n- Improved the glasses HUD rendering for monochrome displays with cleaner black backgrounds, lighter outlines, and more stable focus states.\n- Fixed broken glyph rendering in the companion indicators and restored clean phase/status markers on phone and glasses.\n- Release publishing no longer gets overwritten by CI-built APK uploads.\n\n## APKs in this release\n\nThese assets were uploaded from the local workspace builds for this release.",
-          "changes": []
-        }
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
-          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
-          "sizeBytes": 7725471,
-          "packageName": "com.rokidapks.glasses",
-          "versionCode": 104,
-          "versionName": "1.1.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.2/Rokid-APKs-phone-v1.2.2-debug.apk",
-          "sha256": "2add6354b62ca53360ed84cf5465e8f8e06aee5f9f61e03d4800568c3b803b8d",
-          "sizeBytes": 11832530,
-          "packageName": "com.rokidapks",
-          "versionCode": 122,
-          "versionName": "1.2.2"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
-      "iconAsset": "rokid-apks.png",
-      "screenshotAssets": [
-        "rokid-apks-phone.jpg",
-        "rokid-apks-glasses.jpg"
-      ],
-      "publishedAt": "2026-05-26T16:38:33Z",
-      "newUntil": "2026-05-28T16:38:33.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
-      ]
-    },
-    {
-      "id": "rokid-lyrics",
-      "name": "Rokid Lyrics",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.3.1",
-      "featured": true,
-      "featuredRank": 3,
-      "summary": "Stream synchronized song lyrics from your Android phone to Rokid AR glasses via Bluetooth",
-      "description": "Rokid Lyrics streams time-synced lyrics from an Android phone to Rokid AR glasses over Bluetooth. It supports multiple lyrics providers and syncs lyrics in real time without internet on the glasses. Requires companion apps on both phone and glasses.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-glasses-release.apk",
-          "sha256": "69675578039d24ee9ea2c6f157ba596abc1a7178d1464dd5fac10b024bbd02ab",
-          "sizeBytes": 1085869,
-          "packageName": "com.rokid.lyrics.glasses",
-          "versionCode": 8,
-          "versionName": "0.3.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-phone-release.apk",
-          "sha256": "6c6fd45f6817d85f4de519cc991687c4205f3590a9743aeb1ce355c91a3e30df",
-          "sizeBytes": 1728109,
-          "packageName": "com.rokid.lyrics.phone",
-          "versionCode": 8,
-          "versionName": "0.3.1"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
-      "screenshotAssets": [
-        "rokid-lyrics-phone.jpg",
-        "rokid-lyrics-glasses.jpg"
-      ],
-      "publishedAt": "2026-05-26T17:18:23Z",
-      "listing": {
-        "descriptionMarkdown": "# About\nRokid Lyrics streams synchronized song lyrics from your Android phone to Rokid AR glasses using Bluetooth Classic SPP. It detects the current track from Android media sessions and displays time-synced lyrics on the glasses HUD.\n\n# Key features\n- Time-synced lyrics displayed live on Rokid AR glasses\n- Multi-provider lyrics lookup pipeline (Musixmatch, Netease, LRCLIB) with graceful fallback\n- Works with any Android media session, not limited to a single music player\n- Bluetooth streaming between phone and glasses with no internet required on glasses\n- Press Enter on the glasses to play or pause music on the phone\n\n# How it works\nThe phone app monitors the active media session, fetches synced lyrics from providers, and streams a full lyrics snapshot plus progress sync events to the glasses. The glasses display lyrics in real time, staying in sync with the music.\n\n# Requirements\n- Android phone with the Rokid Lyrics phone app installed\n- Rokid AR glasses with the Rokid Lyrics glasses app installed\n- Bluetooth pairing between phone and glasses\n- Notification access permission granted on the phone\n\n# Notes\nFor improved lyrics accuracy, signing in to Musixmatch in the phone app is recommended but optional."
-      },
-      "releases": [
-        {
-          "version": "0.3.1",
-          "date": "2026-05-26T17:18:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.1",
-          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.3.0...v0.3.1",
-          "changes": []
-        },
-        {
-          "version": "0.3.0",
-          "date": "2026-04-04T22:57:41Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.0",
-          "notes": "## Highlights\n\n- Introduces a new multi-provider phone lyrics pipeline: `MUSIXMATCH -> NETEASE -> LRCLIB`\n- Adds in-app Musixmatch sign-in and on-device provider settings persistence\n- Expands fallback coverage for tracks that Musixmatch cannot resolve, especially around CJK catalog support\n\n## What's New\n\n- Added provider abstraction plus composite fallback logic for synced lyrics resolution\n- Added official Netease search and lyric fetch integration on the phone\n- Kept LRCLIB as the public fallback when no better synced source is available\n- Updated the phone UI with provider-aware source/status feedback and a dedicated Musixmatch settings dialog\n- Updated the glasses flow to stay compatible with the new provider-aware snapshots\n\n## Reliability Fixes\n\n- Prevent repeated lyrics lookups while playback is progressing\n- Keep already loaded lyrics visible if a same-track refresh fails\n- Remove the hidden Spotify preference from Android media-session selection\n- Prevent intermediate provider errors from polluting the final UI when a fallback succeeds\n- Improve Netease matching with stronger handling for album, artist, and variant scoring\n- Filter credit-only / metadata-only payloads and instrumental or unavailable-lyrics cases more cleanly\n\n## Testing and Release Quality\n\n- Added unit coverage for composite fallback behavior\n- Added tests for runtime lookup preservation and media-session priority\n- Added Musixmatch and Netease parser/scoring regression tests\n- GitHub Actions release workflow now publishes both release APKs:\n  - `lyrics-phone-release.apk`\n  - `lyrics-glasses-release.apk`\n\n## Notes\n\n- Some tracks may still fall back to Netease or LRCLIB when Musixmatch has no synced subtitle available\n- Full compare view: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.4...v0.3.0",
-          "changes": []
-        },
-        {
-          "version": "0.2.4",
-          "date": "2026-03-29T21:07:13Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.4",
-          "notes": "## [0.2.4] - 2026-03-29\n\n### Fixed\n- Kept the glasses lyrics screen awake while the lyrics activity is in the foreground so the display no longer times out\n\n**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.3...v0.2.4",
-          "changes": []
-        },
-        {
-          "version": "0.2.3",
-          "date": "2026-03-27T21:11:41Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.3",
-          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.2...v0.2.3",
-          "changes": []
-        },
-        {
-          "version": "0.2.0",
-          "date": "2026-03-26T22:02:35Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.0",
-          "notes": "## Phone app — Phosphor Glass UI redesign\n\n  Complete visual overhaul of the phone companion app, taking design cues from the Rokid glasses' monochrome green phosphor display.\n\n  **New layout**\n  - Track card with song title, artist, playing badge (▶ PLAYING / ■ IDLE), lyrics source pill (LRCLIB · N♪), and a live progress bar\n  - 4-line lyrics cascade: past line (ghost) → **current line** (full brightness, green left border) → next line → line after next, with\n  cascading opacity\n  - Status bar: notification access status, BT connection state, connected client count\n  - Outline-style action buttons: `[ NOTIF ACCESS ]` and `[ BT SETTINGS ]`",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-28T17:18:23.000Z",
-      "iconAsset": "rokid-lyrics.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
-      ]
-    },
-    {
-      "id": "rokid-shell",
-      "name": "Rokid Shell",
+      "id": "ek-remover",
+      "name": "EK Remover",
       "category": "Utility",
       "type": "glasses",
-      "version": "0.1.0",
-      "featured": true,
-      "featuredRank": 3,
-      "summary": "File explorer and APK installer with local HTTP server for Rokid glasses",
-      "description": "Rokid Shell is a native file explorer for Rokid glasses featuring an AR-friendly monochrome UI. It includes a direct APK install flow and a local HTTP transfer server for easy file management.",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk",
-          "sha256": "771e44ffa107737abccb42c8965377ea7a9e7016fb727e59fc3fbafc781e20ca",
-          "sizeBytes": 7982003,
-          "packageName": "com.rokid.shell",
-          "versionCode": 1,
-          "versionName": "0.1.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Shell",
-      "screenshotAssets": [
-        "rokid-shell-menu.jpg",
-        "rokid-shell-server.jpg",
-        "rokid-shell-web.jpg"
-      ],
-      "listing": {
-        "descriptionMarkdown": "About Rokid Shell\n\nRokid Shell is a native Android file explorer designed specifically for Rokid glasses. It offers an AR-friendly monochrome user interface, a built-in HTTP transfer server, and a seamless APK installation process.\n\nKey features\n\n- AR-optimized monochrome UI for clear visibility on Rokid glasses\n- Access shared Android folders like Download, DCIM, Pictures, Movies, Music, and Documents\n- Built-in local HTTP server to transfer files from another device on the same network\n- Direct APK install flow within the file explorer for easy app management"
-      },
-      "releases": [
-        {
-          "version": "0.1.0",
-          "date": "2026-04-06T14:51:57Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Shell/releases/tag/v0.1.0",
-          "notes": "First public release of Rokid Shell.\n\nChanges\n- Native Android file explorer for Rokid glasses\n- Files and Transfer views optimized for monochrome AR displays\n- Built-in HTTP server for local file transfer from another device on the same network\n- APK install flow directly from the file explorer\n- Trackpad navigation tuned for Rokid glasses",
-          "changes": []
-        }
-      ],
-      "iconAsset": "rokid-shell.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-menu.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-server.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-web.jpg"
-      ]
-    },
-    {
-      "id": "ek-arrow",
-      "name": "EK Arrow",
-      "category": "Games",
-      "type": "glasses",
       "version": "1.0.0",
-      "publishedAt": "2026-03-05",
-      "summary": "Mini Archery Game",
-      "description": "EK Arrow is a first-person one-button arcade archery game where you aim for the bullseye. Its vertical layout is perfect for one-handed play and it is fully optimized for Rokid Glass smart glasses.",
+      "featured": true,
+      "featuredRank": 5,
+      "publishedAt": "2026-05-27",
+      "summary": "app uninstall program",
+      "description": "EK Remover is a simple and intuitive app uninstall program.",
       "listing": {
-        "descriptionMarkdown": "**EK Arrow** is a first-person **one-button arcade archery game** where you aim for the bullseye.\nIts vertical layout is perfect for one-handed play and it is **fully optimized for Rokid Glass** smart glasses.\n\n### Usage / Controls\n\nControls are dead simple!\n- **Touch or Button Click:** Shoot an arrow.\n- No complex inputs needed; everything comes down to **'timing'**."
+        "descriptionMarkdown": "EK Remover is a simple and intuitive app uninstall program.\n\n### Key Features and Operation\n\nNavigate the installed apps and uninstall by selecting them."
       },
       "releases": [
         {
           "version": "1.0.0",
-          "date": "2026-03-05",
+          "date": "2026-05-27",
           "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
           "notes": "Imported from EUNG SOFT app metadata.",
           "changes": []
         }
       ],
-      "featured": true,
-      "featuredRank": 4,
       "screenshotAssets": [
-        "ek-arrow.jpg",
-        "ek-arrow-2.jpg"
+        "ek-remover.jpg"
       ],
       "phoneRequired": false,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk",
-          "sha256": "38ce175014d78f62d2b5ab5391a1d58324cc76645ec439d847c3128453a43b31",
-          "sizeBytes": 9788699,
-          "packageName": "kr.pe.eung.ekarrow",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKRemover_v1.0.0.apk",
+          "sha256": "6ec4b7d832f318dab9cc2c6e55dbc16c49717ee9fd1d6590710f48fd572e912d",
+          "sizeBytes": 4550689,
+          "packageName": "kr.pe.eung.ekremover",
           "versionCode": 1,
-          "versionName": "1.0"
+          "versionName": "1.0.0"
         }
       ],
       "author": "EUNG SOFT",
       "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "newUntil": "2026-03-07T00:00:00.000Z",
-      "iconAsset": "ek-arrow.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
+      "newUntil": "2026-05-29T00:00:00.000Z",
+      "iconAsset": "ek-remover.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-remover.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow-2.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-remover.jpg"
       ]
+    },
+    {
+      "id": "rokid-gmaps",
+      "name": "Rokid GMaps",
+      "category": "Navigation",
+      "type": "combo",
+      "version": "1.0.2",
+      "featured": true,
+      "featuredRank": 6,
+      "publishedAt": "2026-05-29T22:02:46Z",
+      "summary": "Turn-by-turn navigation for Rokid AR glasses.",
+      "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/glasses-debug.apk",
+          "sha256": "5d673904fa3cc7e15dc8df3550109344d22b72e8fb423d427d2ded69b4413a43",
+          "sizeBytes": 7800727,
+          "packageName": "com.anezium.rokidgmaps.glasses",
+          "versionCode": 2,
+          "versionName": "1.0.2"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/phone-debug.apk",
+          "sha256": "410113e3819754f848dd0b3d39f6af84d68dc0f74c404dd9ff14bffbdf0f0771",
+          "sizeBytes": 18022845,
+          "packageName": "com.anezium.rokidgmaps.phone",
+          "versionCode": 2,
+          "versionName": "1.0.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid GMaps is a navigation app designed for Rokid AR glasses paired with a phone. It offers turn-by-turn directions displayed on a HUD in the glasses, while the phone handles search and route calculation.\n\n## Key Features\n- Phone app manages UI, place search, and route calculation\n- Glasses app displays navigation HUD\n- Supports Google Places and Routes APIs as well as OSM/Nominatim/OSRM fallback\n- Provider selection configurable in phone app settings\n\n## How It Works\n- The phone app calculates routes and streams navigation data to the glasses via Bluetooth\n- The glasses app renders directions using the original Rokid-Maps architecture\n\n## Requirements\n- Both phone and glasses APKs must be installed\n- Optional Google API key setup for enhanced search and routing\n- Bluetooth connection between phone and glasses\n\n## Notes\n- Google API usage requires enabling billing and APIs in Google Cloud\n- Google provider features are optional and disabled by default"
+      },
+      "releases": [
+        {
+          "version": "1.0.2",
+          "date": "2026-05-29T22:02:46Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.2",
+          "notes": "Migration release for the new com.anezium.rokidgmaps package IDs. Includes both phone and glasses debug APKs so RokidBrew can update the paired app entry.",
+          "changes": []
+        },
+        {
+          "version": "1.0.1",
+          "date": "2026-05-26T17:11:38Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.1",
+          "notes": "Phone app only.\n\n- Fix Android splash screen branding with the real Rokid-GMaps logo asset.\n- Add a dedicated padded splash asset and Android 12+ splash theme wiring.\n- Keep existing launcher icons unchanged.",
+          "changes": []
+        },
+        {
+          "version": "1.0.0",
+          "date": "2026-03-27T20:36:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.0",
+          "notes": "## Highlights\n\n- First MVP release of `Rokid-GMaps` for phone + Rokid AR glasses navigation.\n- Optional Google Places API v1 and Routes API v2 support, with OSM/OSRM fallback kept as the default base.\n- Drive, Walk, and Transit modes with phone-side route preview and a live AR HUD on the glasses.\n- Nearby search shortcuts, notification forwarding, Wi-Fi credential sharing, and OTA APK push support.\n\n## Included In This Release\n\n- Added project documentation with architecture, setup steps, limitations, and upstream credits.\n- Added a versioned `CHANGELOG.md` for release tracking.\n- Updated Android launcher icons for both apps.\n- Switched both manifests to `@mipmap/ic_launcher` and packaged density-specific launcher assets.\n\n## Verification\n\n- Verified with `./gradlew assembleDebug` on 2026-03-27.\n- Debug APKs attached when available:\n  - `phone/build/outputs/apk/debug/phone-debug.apk`\n  - `glasses/build/outputs/apk/debug/glasses-debug.apk`",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-31T22:02:46.000Z",
+      "iconAsset": "rokid-gmaps.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
     },
     {
       "id": "assist-bridge",
@@ -617,6 +600,53 @@
       ]
     },
     {
+      "id": "ek-arrow",
+      "name": "EK Arrow",
+      "category": "Games",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-03-05",
+      "summary": "Mini Archery Game",
+      "description": "EK Arrow is a first-person one-button arcade archery game where you aim for the bullseye. Its vertical layout is perfect for one-handed play and it is fully optimized for Rokid Glass smart glasses.",
+      "listing": {
+        "descriptionMarkdown": "**EK Arrow** is a first-person **one-button arcade archery game** where you aim for the bullseye.\nIts vertical layout is perfect for one-handed play and it is **fully optimized for Rokid Glass** smart glasses.\n\n### Usage / Controls\n\nControls are dead simple!\n- **Touch or Button Click:** Shoot an arrow.\n- No complex inputs needed; everything comes down to **'timing'**."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-05",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-arrow.jpg",
+        "ek-arrow-2.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKArrow.apk",
+          "sha256": "38ce175014d78f62d2b5ab5391a1d58324cc76645ec439d847c3128453a43b31",
+          "sizeBytes": 9788699,
+          "packageName": "kr.pe.eung.ekarrow",
+          "versionCode": 1,
+          "versionName": "1.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-03-07T00:00:00.000Z",
+      "iconAsset": "ek-arrow.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-arrow.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-arrow-2.jpg"
+      ]
+    },
+    {
       "id": "ek-find",
       "name": "EK Find Price",
       "category": "Shopping",
@@ -717,55 +747,6 @@
       ]
     },
     {
-      "id": "ek-meta-player",
-      "name": "EK Meta Player",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "publishedAt": "2026-05-29",
-      "summary": "Run Meta-display web apps on Rokid glasses.",
-      "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
-      "screenshotAssets": [
-        "ek-meta-player.jpg",
-        "ek-meta-player-2.jpg",
-        "ek-meta-player-3.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
-          "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
-          "sizeBytes": 26251553,
-          "packageName": "kr.pe.eung.ekmeta",
-          "versionCode": 1,
-          "versionName": "1.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
-      "listing": {
-        "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
-      },
-      "releases": [
-        {
-          "version": "1.0.0",
-          "date": "2026-05-29",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Imported from EUNG SOFT app metadata.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-31T00:00:00.000Z",
-      "iconAsset": "ek-meta-player.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-meta-player.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
-      ]
-    },
-    {
       "id": "ek-pilot",
       "name": "EK Pilot",
       "category": "Games",
@@ -808,51 +789,6 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-pilot.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-pilot.jpg"
-      ]
-    },
-    {
-      "id": "ek-remover",
-      "name": "EK Remover",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "publishedAt": "2026-05-27",
-      "summary": "app uninstall program",
-      "description": "EK Remover is a simple and intuitive app uninstall program.",
-      "listing": {
-        "descriptionMarkdown": "EK Remover is a simple and intuitive app uninstall program.\n\n### Key Features and Operation\n\nNavigate the installed apps and uninstall by selecting them."
-      },
-      "releases": [
-        {
-          "version": "1.0.0",
-          "date": "2026-05-27",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Imported from EUNG SOFT app metadata.",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "ek-remover.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKRemover_v1.0.0.apk",
-          "sha256": "6ec4b7d832f318dab9cc2c6e55dbc16c49717ee9fd1d6590710f48fd572e912d",
-          "sizeBytes": 4550689,
-          "packageName": "kr.pe.eung.ekremover",
-          "versionCode": 1,
-          "versionName": "1.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "newUntil": "2026-05-29T00:00:00.000Z",
-      "iconAsset": "ek-remover.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-remover.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-remover.jpg"
       ]
     },
     {
@@ -1588,6 +1524,53 @@
       "screenshotAssets": []
     },
     {
+      "id": "overlayrec",
+      "name": "OverlayRec",
+      "category": "Media",
+      "type": "glasses",
+      "version": "0.1.0",
+      "publishedAt": "2026-05-08",
+      "summary": "Trigger AR screenshots and recordings from Rokid glasses via a two-finger gesture overlay menu",
+      "description": "OverlayRec runs on Rokid glasses as an Accessibility Service, enabling AR Screenshot and AR Record via a two-finger slide gesture without opening Hi Rokid. It displays a small overlay menu for quick media capture.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/OverlayRec/releases/download/v0.1.0/OverlayRec-v0.1.0.apk",
+          "sha256": "4fe10edceb8fcde0e4c3502f1826452f89db9a43b7e08e6c3fcb6a0f2907ad7a",
+          "sizeBytes": 605747,
+          "packageName": "com.rokid.overlayrec",
+          "versionCode": 1,
+          "versionName": "0.1.0"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/OverlayRec",
+      "iconAsset": "overlayrec.png",
+      "screenshotAssets": [
+        "overlayrec-main.jpg",
+        "overlayrec-overlay.jpg"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nOverlayRec lets you trigger AR screenshots and video recordings directly from Rokid glasses using a two-finger slide gesture, without needing to open the Hi Rokid app.\n\n# Key features\n- Activate AR Screenshot or AR Record from an on-glass overlay menu\n- Open menu with a two-finger slide left left right right gesture\n- Confirm actions immediately or wait 5 seconds for auto-confirm\n- Stop AR recording using the physical glasses button\n- Keeps the current app visible beneath the overlay\n- Restores volume after gesture activation\n\n# How it works\nOverlayRec runs as an Android Accessibility Service on the glasses, listening for specific two-finger swipe broadcasts. It then sends internal scene commands to start AR media capture. Hi Rokid remains available for media import and processing.\n\n# Controls\n- Open menu: two finger slide left left right right\n- Select AR Screenshot: two finger slide left\n- Select AR Record: two finger slide right\n- Confirm: OK button or auto-confirm after 5 seconds\n- Stop AR Record: physical glasses button\n\n# Notes\nOverlayRec is experimental and designed for Rokid glasses firmware supporting the required two-finger swipe broadcasts. It does not merge camera and HUD videos; this is handled by Rokid's AR Record flow and Hi Rokid app."
+      },
+      "releases": [
+        {
+          "version": "0.1.0",
+          "date": "2026-05-08T20:30:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/OverlayRec/releases/tag/v0.1.0",
+          "notes": "Initial alpha release of OverlayRec.\n\nHighlights:\n- Trigger Rokid AR Screenshot from the glasses.\n- Trigger Rokid AR Record from the glasses.\n- Open the overlay menu with: two finger slide left left right right.\n- Confirm with OK or wait 5 seconds for auto-confirm.\n- Stop AR Record with the physical glasses button.\n\nNotes:\n- This APK is intended for sideloading on Rokid Glasses.\n- Hi Rokid can still be used to import/process recorded media.\n- This is an experimental alpha build tested on real Rokid hardware.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-05-10T00:00:00.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
+      ]
+    },
+    {
       "id": "photo-del",
       "name": "PhotoDel",
       "category": "Utility",
@@ -1778,139 +1761,87 @@
       ]
     },
     {
-      "id": "rokid-gmaps",
-      "name": "Rokid GMaps",
-      "category": "Navigation",
+      "id": "rokid-lyrics",
+      "name": "Rokid Lyrics",
+      "category": "Media",
       "type": "combo",
-      "version": "1.0.2",
-      "publishedAt": "2026-05-29T22:02:46Z",
-      "summary": "Turn-by-turn navigation for Rokid AR glasses.",
-      "description": "Phone plus glasses navigation workflow with a HUD for directions. Install both APKs for the full experience.",
+      "version": "0.3.1",
+      "summary": "Stream synchronized song lyrics from your Android phone to Rokid AR glasses via Bluetooth",
+      "description": "Rokid Lyrics streams time-synced lyrics from an Android phone to Rokid AR glasses over Bluetooth. It supports multiple lyrics providers and syncs lyrics in real time without internet on the glasses. Requires companion apps on both phone and glasses.",
       "phoneRequired": true,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/glasses-debug.apk",
-          "sha256": "5d673904fa3cc7e15dc8df3550109344d22b72e8fb423d427d2ded69b4413a43",
-          "sizeBytes": 7800727,
-          "packageName": "com.anezium.rokidgmaps.glasses",
-          "versionCode": 2,
-          "versionName": "1.0.2"
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-glasses-release.apk",
+          "sha256": "69675578039d24ee9ea2c6f157ba596abc1a7178d1464dd5fac10b024bbd02ab",
+          "sizeBytes": 1085869,
+          "packageName": "com.rokid.lyrics.glasses",
+          "versionCode": 8,
+          "versionName": "0.3.1"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-GMaps/releases/download/v1.0.2/phone-debug.apk",
-          "sha256": "410113e3819754f848dd0b3d39f6af84d68dc0f74c404dd9ff14bffbdf0f0771",
-          "sizeBytes": 18022845,
-          "packageName": "com.anezium.rokidgmaps.phone",
-          "versionCode": 2,
-          "versionName": "1.0.2"
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-phone-release.apk",
+          "sha256": "6c6fd45f6817d85f4de519cc991687c4205f3590a9743aeb1ce355c91a3e30df",
+          "sizeBytes": 1728109,
+          "packageName": "com.rokid.lyrics.phone",
+          "versionCode": 8,
+          "versionName": "0.3.1"
         }
       ],
       "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-GMaps",
-      "screenshotAssets": [],
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid GMaps is a navigation app designed for Rokid AR glasses paired with a phone. It offers turn-by-turn directions displayed on a HUD in the glasses, while the phone handles search and route calculation.\n\n## Key Features\n- Phone app manages UI, place search, and route calculation\n- Glasses app displays navigation HUD\n- Supports Google Places and Routes APIs as well as OSM/Nominatim/OSRM fallback\n- Provider selection configurable in phone app settings\n\n## How It Works\n- The phone app calculates routes and streams navigation data to the glasses via Bluetooth\n- The glasses app renders directions using the original Rokid-Maps architecture\n\n## Requirements\n- Both phone and glasses APKs must be installed\n- Optional Google API key setup for enhanced search and routing\n- Bluetooth connection between phone and glasses\n\n## Notes\n- Google API usage requires enabling billing and APIs in Google Cloud\n- Google provider features are optional and disabled by default"
-      },
-      "releases": [
-        {
-          "version": "1.0.2",
-          "date": "2026-05-29T22:02:46Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.2",
-          "notes": "Migration release for the new com.anezium.rokidgmaps package IDs. Includes both phone and glasses debug APKs so RokidBrew can update the paired app entry.",
-          "changes": []
-        },
-        {
-          "version": "1.0.1",
-          "date": "2026-05-26T17:11:38Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.1",
-          "notes": "Phone app only.\n\n- Fix Android splash screen branding with the real Rokid-GMaps logo asset.\n- Add a dedicated padded splash asset and Android 12+ splash theme wiring.\n- Keep existing launcher icons unchanged.",
-          "changes": []
-        },
-        {
-          "version": "1.0.0",
-          "date": "2026-03-27T20:36:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-GMaps/releases/tag/v1.0.0",
-          "notes": "## Highlights\n\n- First MVP release of `Rokid-GMaps` for phone + Rokid AR glasses navigation.\n- Optional Google Places API v1 and Routes API v2 support, with OSM/OSRM fallback kept as the default base.\n- Drive, Walk, and Transit modes with phone-side route preview and a live AR HUD on the glasses.\n- Nearby search shortcuts, notification forwarding, Wi-Fi credential sharing, and OTA APK push support.\n\n## Included In This Release\n\n- Added project documentation with architecture, setup steps, limitations, and upstream credits.\n- Added a versioned `CHANGELOG.md` for release tracking.\n- Updated Android launcher icons for both apps.\n- Switched both manifests to `@mipmap/ic_launcher` and packaged density-specific launcher assets.\n\n## Verification\n\n- Verified with `./gradlew assembleDebug` on 2026-03-27.\n- Debug APKs attached when available:\n  - `phone/build/outputs/apk/debug/phone-debug.apk`\n  - `glasses/build/outputs/apk/debug/glasses-debug.apk`",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-31T22:02:46.000Z",
-      "iconAsset": "rokid-gmaps.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
-    },
-    {
-      "id": "rokid-live-studio",
-      "name": "Rokid Live Studio",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.1.4",
-      "publishedAt": "2026-05-26T17:18:31Z",
-      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
-      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
-      "listing": {
-        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
-        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
-      },
-      "releases": [
-        {
-          "version": "0.1.4+5",
-          "date": "2026-05-26T17:18:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
-          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3+4",
-          "date": "2026-05-21T17:37:07Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
-          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2+3",
-          "date": "2026-05-11T18:18:44Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
-          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
-          "changes": []
-        },
-        {
-          "version": "0.1.1+2",
-          "date": "2026-05-10T21:57:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
-          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
-          "changes": []
-        }
-      ],
+      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
       "screenshotAssets": [
-        "rokid-live-studio-home.jpg",
-        "rokid-live-studio-youtube.jpg",
-        "rokid-live-studio-twitch.jpg",
-        "rokid-live-studio-chat.png"
+        "rokid-lyrics-phone.jpg",
+        "rokid-lyrics-glasses.jpg"
       ],
-      "phoneRequired": true,
-      "artifacts": [
+      "publishedAt": "2026-05-26T17:18:23Z",
+      "listing": {
+        "descriptionMarkdown": "# About\nRokid Lyrics streams synchronized song lyrics from your Android phone to Rokid AR glasses using Bluetooth Classic SPP. It detects the current track from Android media sessions and displays time-synced lyrics on the glasses HUD.\n\n# Key features\n- Time-synced lyrics displayed live on Rokid AR glasses\n- Multi-provider lyrics lookup pipeline (Musixmatch, Netease, LRCLIB) with graceful fallback\n- Works with any Android media session, not limited to a single music player\n- Bluetooth streaming between phone and glasses with no internet required on glasses\n- Press Enter on the glasses to play or pause music on the phone\n\n# How it works\nThe phone app monitors the active media session, fetches synced lyrics from providers, and streams a full lyrics snapshot plus progress sync events to the glasses. The glasses display lyrics in real time, staying in sync with the music.\n\n# Requirements\n- Android phone with the Rokid Lyrics phone app installed\n- Rokid AR glasses with the Rokid Lyrics glasses app installed\n- Bluetooth pairing between phone and glasses\n- Notification access permission granted on the phone\n\n# Notes\nFor improved lyrics accuracy, signing in to Musixmatch in the phone app is recommended but optional."
+      },
+      "releases": [
         {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.4%2B5/rokid-live-studio-phone-0.1.4-vc5.apk",
-          "sha256": "5c6343f8f3607c2f4199f4f015404aa3d90ba131d12fde9fbf6399c7cde241e9",
-          "sizeBytes": 38702587,
-          "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 5,
-          "versionName": "0.1.4"
+          "version": "0.3.1",
+          "date": "2026-05-26T17:18:23Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.1",
+          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.3.0...v0.3.1",
+          "changes": []
+        },
+        {
+          "version": "0.3.0",
+          "date": "2026-04-04T22:57:41Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.0",
+          "notes": "## Highlights\n\n- Introduces a new multi-provider phone lyrics pipeline: `MUSIXMATCH -> NETEASE -> LRCLIB`\n- Adds in-app Musixmatch sign-in and on-device provider settings persistence\n- Expands fallback coverage for tracks that Musixmatch cannot resolve, especially around CJK catalog support\n\n## What's New\n\n- Added provider abstraction plus composite fallback logic for synced lyrics resolution\n- Added official Netease search and lyric fetch integration on the phone\n- Kept LRCLIB as the public fallback when no better synced source is available\n- Updated the phone UI with provider-aware source/status feedback and a dedicated Musixmatch settings dialog\n- Updated the glasses flow to stay compatible with the new provider-aware snapshots\n\n## Reliability Fixes\n\n- Prevent repeated lyrics lookups while playback is progressing\n- Keep already loaded lyrics visible if a same-track refresh fails\n- Remove the hidden Spotify preference from Android media-session selection\n- Prevent intermediate provider errors from polluting the final UI when a fallback succeeds\n- Improve Netease matching with stronger handling for album, artist, and variant scoring\n- Filter credit-only / metadata-only payloads and instrumental or unavailable-lyrics cases more cleanly\n\n## Testing and Release Quality\n\n- Added unit coverage for composite fallback behavior\n- Added tests for runtime lookup preservation and media-session priority\n- Added Musixmatch and Netease parser/scoring regression tests\n- GitHub Actions release workflow now publishes both release APKs:\n  - `lyrics-phone-release.apk`\n  - `lyrics-glasses-release.apk`\n\n## Notes\n\n- Some tracks may still fall back to Netease or LRCLIB when Musixmatch has no synced subtitle available\n- Full compare view: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.4...v0.3.0",
+          "changes": []
+        },
+        {
+          "version": "0.2.4",
+          "date": "2026-03-29T21:07:13Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.4",
+          "notes": "## [0.2.4] - 2026-03-29\n\n### Fixed\n- Kept the glasses lyrics screen awake while the lyrics activity is in the foreground so the display no longer times out\n\n**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.3...v0.2.4",
+          "changes": []
+        },
+        {
+          "version": "0.2.3",
+          "date": "2026-03-27T21:11:41Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.3",
+          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.2...v0.2.3",
+          "changes": []
+        },
+        {
+          "version": "0.2.0",
+          "date": "2026-03-26T22:02:35Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.0",
+          "notes": "## Phone app — Phosphor Glass UI redesign\n\n  Complete visual overhaul of the phone companion app, taking design cues from the Rokid glasses' monochrome green phosphor display.\n\n  **New layout**\n  - Track card with song title, artist, playing badge (▶ PLAYING / ■ IDLE), lyrics source pill (LRCLIB · N♪), and a live progress bar\n  - 4-line lyrics cascade: past line (ghost) → **current line** (full brightness, green left border) → next line → line after next, with\n  cascading opacity\n  - Status bar: notification access status, BT connection state, connected client count\n  - Outline-style action buttons: `[ NOTIF ACCESS ]` and `[ BT SETTINGS ]`",
+          "changes": []
         }
       ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-05-28T17:18:31.000Z",
-      "iconAsset": "rokid-live-studio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
+      "newUntil": "2026-05-28T17:18:23.000Z",
+      "iconAsset": "rokid-lyrics.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
       ]
     },
     {
@@ -1974,66 +1905,50 @@
       "screenshotAssets": []
     },
     {
-      "id": "rokid-relay",
-      "name": "Rokid Relay",
-      "category": "Accessibility",
-      "type": "combo",
-      "version": "0.1.4",
-      "publishedAt": "2026-05-29T21:23:14Z",
-      "summary": "Reply to Android phone notifications from Rokid glasses.",
-      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
-      "screenshotAssets": [
-        "rokid-relay-phone-home.png",
-        "rokid-relay-phone-notifications.png",
-        "rokid-relay-phone-speech.png"
-      ],
-      "phoneRequired": true,
+      "id": "rokid-shell",
+      "name": "Rokid Shell",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "0.1.0",
+      "summary": "File explorer and APK installer with local HTTP server for Rokid glasses",
+      "description": "Rokid Shell is a native file explorer for Rokid glasses featuring an AR-friendly monochrome UI. It includes a direct APK install flow and a local HTTP transfer server for easy file management.",
+      "phoneRequired": false,
       "artifacts": [
         {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.4/rokid-relay-phone-v0.1.4-vc5-debug.apk",
-          "sha256": "f5363afd05182ae07340b6e04f4b3ad29b251e371622acac6f22b149542ec169",
-          "sizeBytes": 12836073,
-          "packageName": "com.anezium.rokidrelay.phone",
-          "versionCode": 5,
-          "versionName": "0.1.4"
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Shell/releases/download/v0.1.0/rokid-shell-v0.1.0.apk",
+          "sha256": "771e44ffa107737abccb42c8965377ea7a9e7016fb727e59fc3fbafc781e20ca",
+          "sizeBytes": 7982003,
+          "packageName": "com.rokid.shell",
+          "versionCode": 1,
+          "versionName": "0.1.0"
         }
       ],
       "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Shell",
+      "screenshotAssets": [
+        "rokid-shell-menu.jpg",
+        "rokid-shell-server.jpg",
+        "rokid-shell-web.jpg"
+      ],
       "listing": {
-        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
+        "descriptionMarkdown": "About Rokid Shell\n\nRokid Shell is a native Android file explorer designed specifically for Rokid glasses. It offers an AR-friendly monochrome user interface, a built-in HTTP transfer server, and a seamless APK installation process.\n\nKey features\n\n- AR-optimized monochrome UI for clear visibility on Rokid glasses\n- Access shared Android folders like Download, DCIM, Pictures, Movies, Music, and Documents\n- Built-in local HTTP server to transfer files from another device on the same network\n- Direct APK install flow within the file explorer for easy app management"
       },
       "releases": [
         {
-          "version": "0.1.4",
-          "date": "2026-05-29T21:23:14Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
-          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3",
-          "date": "2026-05-28T09:01:38Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
-          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2",
-          "date": "2026-05-27T22:55:35Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
-          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
+          "version": "0.1.0",
+          "date": "2026-04-06T14:51:57Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Shell/releases/tag/v0.1.0",
+          "notes": "First public release of Rokid Shell.\n\nChanges\n- Native Android file explorer for Rokid glasses\n- Files and Transfer views optimized for monochrome AR displays\n- Built-in HTTP server for local file transfer from another device on the same network\n- APK install flow directly from the file explorer\n- Trackpad navigation tuned for Rokid glasses",
           "changes": []
         }
       ],
-      "newUntil": "2026-05-31T21:23:14.000Z",
-      "iconAsset": "rokid-relay.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
+      "iconAsset": "rokid-shell.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-shell.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-menu.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-server.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-shell-web.jpg"
       ]
     },
     {
@@ -2103,6 +2018,91 @@
       "iconAsset": "rokid-ssh-terminal.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ssh-terminal.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "rokid-apks",
+      "name": "Rokid-APKs",
+      "category": "Developer",
+      "type": "combo",
+      "version": "1.2.2",
+      "summary": "Upload and install APKs on Rokid glasses via phone using four explicit transfer modes",
+      "description": "Rokid-APKs lets you install Android APKs on Rokid glasses from your phone with four transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN. No desktop or cloud relay is needed. Requires a companion app on glasses for some modes.",
+      "listing": {
+        "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew.",
+        "descriptionMarkdown": "# About\n\nRokid-APKs enables installation of Android APKs on Rokid glasses directly from your phone. It supports four explicit transfer modes to suit different connection setups.\n\n# Key Features\n\n- Four transfer modes: \n  - `CXR-M / OFFICIAL`: Official Rokid BLE + Wi-Fi Direct, no glasses companion app needed\n  - `CXR-L / HI ROKID`: Uses Hi Rokid global authorization and CXR-L install path, requires Hi Rokid app\n  - `SPP / SLOW`: Bluetooth SPP streaming via glasses companion app, fully local and offline\n  - `WIFI LAN / FAST`: Bluetooth control plus APK transfer over Wi-Fi LAN or hotspot with companion app\n- Direct APK install confirmation on glasses via Android PackageInstaller\n- Phone UI provides live status and phase feedback\n\n# How It Works\n\n- Official CXR-M mode scans and connects to glasses over BLE and Wi-Fi Direct to upload APK\n- Hi Rokid CXR-L mode uses Hi Rokid app authorization and upload session\n- Companion modes require installing a glasses companion app and Bluetooth pairing\n- APK is transferred locally and installed with user confirmation on the glasses\n\n# Requirements\n\n- Phone app installed on Android phone\n- For `SPP` and `WIFI LAN` modes: glasses companion app installed and Bluetooth paired\n- For `CXR-L` mode: Hi Rokid app installed and phone Wi-Fi enabled\n\n# Notes\n\n- No desktop helper or cloud relay involved; all transfers are local\n- `WIFI LAN / FAST` mode requires phone and glasses on the same Wi-Fi or hotspot\n- Manual mode switching is needed; no automatic fallback between modes"
+      },
+      "releases": [
+        {
+          "version": "1.2.2",
+          "date": "2026-05-26T16:38:33Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
+          "notes": "versionCode: 122\n\nFixed the splash screen by using a dedicated padded vector logo instead of scaling the launcher artwork. Adds Android 12+ splash theme overrides with a dark background to avoid the oversized/blurry icon and white startup flash.",
+          "changes": []
+        },
+        {
+          "version": "1.2.1",
+          "date": "2026-05-21T17:37:06Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.1",
+          "notes": "versionCode: 121\n\nFixed compatibility with the latest Hi Rokid update by sending the required auth package during CXR-L service binding. This restores CXR-L installs through the updated global Hi Rokid service.",
+          "changes": []
+        },
+        {
+          "version": "1.2.0",
+          "date": "2026-05-04T22:08:51Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.0",
+          "notes": "## What's new\n- Added `CXR-L / HI ROKID` mode using the global Hi Rokid app authorization flow.\n- Installs APKs through a CXR-L `CUSTOMAPP` session after Hi Rokid authorization.\n- Keeps the transport choices explicit: `CXR-M / OFFICIAL`, `CXR-L / HI ROKID`, `SPP / SLOW`, and `WIFI LAN / FAST`.\n\n## Reliability\n- Adds a clear Wi-Fi check for CXR-L, because Hi Rokid needs phone Wi-Fi enabled to join the glasses hotspot.\n- Recreates a fresh CXR-L session per install, cleans temporary APK cache files, and times out stuck installs after 90 seconds.\n\n## Notes\n- `CXR-M / OFFICIAL` still does not require the glasses companion app.\n- `CXR-L / HI ROKID` uses the global Hi Rokid app as the bridge and does not require the Rokid-APKs glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` require the Rokid-APKs glasses companion app.",
+          "changes": []
+        },
+        {
+          "version": "1.1.2",
+          "date": "2026-04-11T17:08:50Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.2",
+          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-APKs/compare/v1.1.1...v1.1.2\n\n## Changelog\n\n### New\n- `CXR / OFFICIAL` now uses the Rokid glasses hotspot flow instead of the older Wi-Fi Direct / P2P upload path.\n- The phone joins the hotspot exposed by the glasses and uploads the APK through the official Rokid CXR flow.\n- The README was updated to document the new official flow and setup steps.\n\n### Improved\n- Better compatibility on newer Android phones where the old Wi-Fi Direct path could fail with `WIFI_CONNECT_FAILED`.\n- More reliable official installs on devices where Rokid’s legacy P2P flow was unstable or broken.\n- Added clearer troubleshooting steps for `CXR / OFFICIAL`.\n\n### Notes\n- `CXR / OFFICIAL` still does **not** require the glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` are unchanged and still require the companion app.\n- If `CXR / OFFICIAL` fails before upload starts, disconnect the glasses from normal Android Bluetooth settings and force close `Hi Rokid` or other Rokid apps before retrying.",
+          "changes": []
+        },
+        {
+          "version": "1.1.1",
+          "date": "2026-04-06T14:33:58Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.1",
+          "notes": "## Changes\n\n- Added a Wi-Fi shortcut directly inside the glasses companion HUD.\n- Reworked glasses navigation so Bluetooth device browsing and the Wi-Fi action behave predictably on Rokid input.\n- Improved the glasses HUD rendering for monochrome displays with cleaner black backgrounds, lighter outlines, and more stable focus states.\n- Fixed broken glyph rendering in the companion indicators and restored clean phase/status markers on phone and glasses.\n- Release publishing no longer gets overwritten by CI-built APK uploads.\n\n## APKs in this release\n\nThese assets were uploaded from the local workspace builds for this release.",
+          "changes": []
+        }
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
+          "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
+          "sizeBytes": 7725471,
+          "packageName": "com.rokidapks.glasses",
+          "versionCode": 104,
+          "versionName": "1.1.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.2/Rokid-APKs-phone-v1.2.2-debug.apk",
+          "sha256": "2add6354b62ca53360ed84cf5465e8f8e06aee5f9f61e03d4800568c3b803b8d",
+          "sizeBytes": 11832530,
+          "packageName": "com.rokidapks",
+          "versionCode": 122,
+          "versionName": "1.2.2"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
+      "iconAsset": "rokid-apks.png",
+      "screenshotAssets": [
+        "rokid-apks-phone.jpg",
+        "rokid-apks-glasses.jpg"
+      ],
+      "publishedAt": "2026-05-26T16:38:33Z",
+      "newUntil": "2026-05-28T16:38:33.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
+      ]
     },
     {
       "id": "rokid-scribe",

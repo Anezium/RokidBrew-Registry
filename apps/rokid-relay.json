@@ -4,6 +4,8 @@
   "category": "Accessibility",
   "type": "combo",
   "version": "0.1.4",
+  "featured": true,
+  "featuredRank": 1,
   "publishedAt": "2026-05-29T21:23:14Z",
   "summary": "Reply to Android phone notifications from Rokid glasses.",
   "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",

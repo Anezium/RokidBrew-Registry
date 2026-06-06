@@ -4,8 +4,6 @@
   "category": "Media",
   "type": "glasses",
   "version": "0.1.0",
-  "featured": true,
-  "featuredRank": 2,
   "publishedAt": "2026-05-08",
   "summary": "Trigger AR screenshots and recordings from Rokid glasses via a two-finger gesture overlay menu",
   "description": "OverlayRec runs on Rokid glasses as an Accessibility Service, enabling AR Screenshot and AR Record via a two-finger slide gesture without opening Hi Rokid. It displays a small overlay menu for quick media capture.",

@@ -4,8 +4,6 @@
   "category": "Utility",
   "type": "glasses",
   "version": "0.1.0",
-  "featured": true,
-  "featuredRank": 3,
   "summary": "File explorer and APK installer with local HTTP server for Rokid glasses",
   "description": "Rokid Shell is a native file explorer for Rokid glasses featuring an AR-friendly monochrome UI. It includes a direct APK install flow and a local HTTP transfer server for easy file management.",
   "phoneRequired": false,

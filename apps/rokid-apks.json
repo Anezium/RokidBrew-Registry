@@ -4,8 +4,6 @@
   "category": "Developer",
   "type": "combo",
   "version": "1.2.2",
-  "featured": true,
-  "featuredRank": 2,
   "summary": "Upload and install APKs on Rokid glasses via phone using four explicit transfer modes",
   "description": "Rokid-APKs lets you install Android APKs on Rokid glasses from your phone with four transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN. No desktop or cloud relay is needed. Requires a companion app on glasses for some modes.",
   "listing": {
