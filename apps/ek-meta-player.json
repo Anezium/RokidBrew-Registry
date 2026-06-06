@@ -5,7 +5,7 @@
   "type": "glasses",
   "version": "1.0.0",
   "featured": true,
-  "featuredRank": 2,
+  "featuredRank": 3,
   "publishedAt": "2026-05-29",
   "summary": "Run Meta-display web apps on Rokid glasses.",
   "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
