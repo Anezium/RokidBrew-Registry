@@ -3,10 +3,10 @@
   "name": "Rokid Relay",
   "category": "Accessibility",
   "type": "combo",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "featured": true,
   "featuredRank": 1,
-  "publishedAt": "2026-05-29T21:23:14Z",
+  "publishedAt": "2026-06-06T10:32:01Z",
   "summary": "Reply to Android phone notifications from Rokid glasses.",
   "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
   "screenshotAssets": [
@@ -18,12 +18,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.4/rokid-relay-phone-v0.1.4-vc5-debug.apk",
-      "sha256": "f5363afd05182ae07340b6e04f4b3ad29b251e371622acac6f22b149542ec169",
-      "sizeBytes": 12836073,
+      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.6/rokid-relay-phone-v0.1.6-vc7-debug.apk",
+      "sha256": "ef19933683ea2e91db8ecb7011138b0af2b13f8f2f7cfb31c3da2a047492dde4",
+      "sizeBytes": 12855413,
       "packageName": "com.anezium.rokidrelay.phone",
-      "versionCode": 5,
-      "versionName": "0.1.4"
+      "versionCode": 7,
+      "versionName": "0.1.6"
     }
   ],
   "author": "Anezium",
@@ -44,6 +44,20 @@
     "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
   },
   "releases": [
+    {
+      "version": "0.1.6",
+      "date": "2026-06-06T10:32:01Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.6",
+      "notes": "versionCode: 7\n\nBugfix release for the phone UI polish after v0.1.5.\n\n- Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.\n- Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.\n- Fixes the Notifications tab top spacing so the Display panel matches other tabs.\n- Improves Update changelog display with a tappable preview and full changelog expansion.\n- Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.\n- Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK.",
+      "changes": [
+        "Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.",
+        "Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.",
+        "Fixes the Notifications tab top spacing so the Display panel matches other tabs.",
+        "Improves Update changelog display with a tappable preview and full changelog expansion.",
+        "Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.",
+        "Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK."
+      ]
+    },
     {
       "version": "0.1.4",
       "date": "2026-05-29T21:23:14Z",
