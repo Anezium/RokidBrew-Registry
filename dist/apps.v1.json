@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-07T08:31:36.035Z",
+  "generatedAt": "2026-06-08T09:57:13.999Z",
   "brewVersion": "0.2.1",
   "brewVersionCode": 11,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.1/RokidBrew-phone-v0.2.1-debug.apk",
@@ -12,6 +12,180 @@
     "Keeps high-refresh-rate behavior enabled on compatible Android 15+ devices."
   ],
   "apps": [
+    {
+      "id": "r08-access-bridge",
+      "name": "R08 Access Bridge",
+      "category": "Navigation",
+      "type": "glasses",
+      "version": "1.2.0",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
+      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.2.0/R08-Access-Bridge-v1.2.0.apk",
+          "sha256": "344ae07708b4b3c62039c6056cc5a00ced6a1e1d866a6d1aaabc44673789c69f",
+          "sizeBytes": 3137160,
+          "packageName": "com.anezium.r08accessbridge",
+          "versionCode": 13,
+          "versionName": "1.2.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2026-06-07T20:51:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.2.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.1.0",
+          "date": "2026-06-06T19:09:04Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.1.0",
+          "notes": "## Highlights\n\n- One APK now includes both Stable and Fast launcher behavior.\n- Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.\n- Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.\n- Triple and quadruple tap can now be remapped from the glasses UI.\n- Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.\n- Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.\n- Added a top-bar badge showing Stable, Fast, or Touch mode.\n- Added README screenshots captured from the real glasses UI.",
+          "changes": [
+            "One APK now includes both Stable and Fast launcher behavior.",
+            "Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.",
+            "Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.",
+            "Triple and quadruple tap can now be remapped from the glasses UI.",
+            "Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.",
+            "Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.",
+            "Added a top-bar badge showing Stable, Fast, or Touch mode.",
+            "Added README screenshots captured from the real glasses UI."
+          ]
+        },
+        {
+          "version": "1.0.10",
+          "date": "2026-06-05T16:01:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.0.10",
+          "notes": "## Highlights\n\n- One APK now includes both Stable and Fast launcher behavior.\n- Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.\n- Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.\n- Triple and quadruple tap can now be remapped from the glasses UI.\n- Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.\n- Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.\n- Added a top-bar badge showing Stable, Fast, or Touch mode.\n- Added README screenshots captured from the real glasses UI.",
+          "changes": [
+            "One APK now includes both Stable and Fast launcher behavior.",
+            "Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.",
+            "Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.",
+            "Triple and quadruple tap can now be remapped from the glasses UI.",
+            "Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.",
+            "Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.",
+            "Added a top-bar badge showing Stable, Fast, or Touch mode.",
+            "Added README screenshots captured from the real glasses UI."
+          ]
+        },
+        {
+          "version": "1.0.2",
+          "date": "2026-06-04T15:09:26Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.0.2",
+          "notes": "R08 Access Bridge v1.0.2 ships two debug APKs:\n\n- `R08-Access-Bridge-v1.0.2-debug.apk` is the normal fast build from `main`. Install this first. It keeps Fast Mode and repeated-swipe launcher acceleration.\n- `R08-Access-Bridge-v1.0.2-focus-sync-debug.apk` is the compatibility/fix build from `dev/r08-launcher-focus-sync`. Use this only if the normal APK shows launcher focus mismatch, Voice Translation/default translation snapping back, or the ring and glasses selecting different launcher apps.\n\nChanges in both APKs:\n\n- Added triple tap on the R08 ring to emulate the glasses long-press behavior and open the Rokid AI assistant path.\n- Added a fallback accessibility long press if the Rokid AI assistant scene command is unavailable.\n- Documented all ring actions in the README.\n\nFocus-sync APK tradeoff:\n\n- The focus-sync APK intentionally moves one launcher app per swipe and disables the repeated-swipe acceleration in the launcher. This is slower, but avoids the launcher/ring focus mismatch seen on affected glasses.\n\nNote:\n\n- The protected Hi Rokid two-finger shortcut cannot be emitted by a normal APK, so this release does not try to spoof that protected system action.",
+          "changes": [
+            "Added triple tap on the R08 ring to emulate the glasses long-press behavior and open the Rokid AI assistant path.",
+            "Added a fallback accessibility long press if the Rokid AI assistant scene command is unavailable.",
+            "Documented all ring actions in the README.",
+            "The protected Hi Rokid two-finger shortcut cannot be emitted by a normal APK, so this release does not try to spoof that protected system action."
+          ]
+        },
+        {
+          "version": "1.0.1",
+          "date": "2026-06-02T19:33:39Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.0.1",
+          "notes": "Debug-signed APKs for R08 Access Bridge v1.0.1.\n\nThis release now includes two APK variants:\n\n1. `R08-Access-Bridge-v1.0.1-debug.apk`\n   - Normal build.\n   - Keeps the original launcher navigation behavior, including repeated-swipe acceleration.\n   - Try this APK first.\n\n2. `R08-Access-Bridge-v1.0.1-focus-sync-debug.apk`\n   - Compatibility/fix build for Rokid launchers where the visible carousel and the launcher internal focus can get out of sync.\n   - Use this if the normal APK shows the wrong selected app, keeps returning to Voice Translation/default translation, or launches an app different from the one visually centered.\n   - This build avoids relying on the launcher internal Accessibility focus. It moves the visible carousel one step at a time and activates the app visually centered on screen.\n\nWhy the focus-sync APK exists:\n- Some glasses keep the visible launcher carousel and the internal selected app synchronized.\n- On other glasses, the visible carousel can move while the launcher still keeps an older internal focus, often Voice Translation/default translation.\n- The focus-sync build works around that by activating the center of the visible carousel instead of trusting that internal focus state.\n\nTradeoff:\n- The focus-sync APK disables launcher repeated-swipe acceleration for stability.\n- Fast Mode for the R08 ring still works, but launcher movement is intentionally one app per swipe.\n- If the normal APK works for you, it remains the faster option. If launcher selection is wrong or unstable, use the focus-sync APK.\n\nChanges from v1.0.1 normal build:\n- Added an alternate launcher activation path that taps the visible app carousel center.\n- Removed launcher accelerated multi-step swipes in the focus-sync build to prevent overshooting or snapping back to the launcher default focus.\n- No launcher app names or languages are hardcoded; the fix uses launcher package/resource IDs and screen geometry.",
+          "changes": [
+            "Normal build.",
+            "Keeps the original launcher navigation behavior, including repeated-swipe acceleration.",
+            "Try this APK first.",
+            "Compatibility/fix build for Rokid launchers where the visible carousel and the launcher internal focus can get out of sync.",
+            "Use this if the normal APK shows the wrong selected app, keeps returning to Voice Translation/default translation, or launches an app different from the one visually centered.",
+            "This build avoids relying on the launcher internal Accessibility focus. It moves the visible carousel one step at a time and activates the app visually centered on screen.",
+            "Some glasses keep the visible launcher carousel and the internal selected app synchronized.",
+            "On other glasses, the visible carousel can move while the launcher still keeps an older internal focus, often Voice Translation/default translation."
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "r08-access-bridge.png",
+        "r08-access-bridge-2.png",
+        "r08-access-bridge-3.png",
+        "r08-access-bridge-4.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
+      },
+      "publishedAt": "2026-06-07T20:51:31Z",
+      "newUntil": "2026-06-09T20:51:31.000Z",
+      "iconAsset": "r08-access-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
+      ]
+    },
+    {
+      "id": "overlayrec",
+      "name": "OverlayRec",
+      "category": "Media",
+      "type": "glasses",
+      "version": "0.2.0",
+      "publishedAt": "2026-06-07T13:56:15Z",
+      "summary": "Trigger AR screenshots and recordings from Rokid glasses via a two-finger gesture overlay menu",
+      "description": "OverlayRec runs on Rokid glasses as an Accessibility Service, enabling AR Screenshot and AR Record via a two-finger slide gesture without opening Hi Rokid. It displays a small overlay menu for quick media capture.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/OverlayRec/releases/download/v0.2.0/OverlayRec-v0.2.0-debug.apk",
+          "sha256": "3ed88f978e6adc3791b66b0071d13250c72cf4aa1fbc2a363e18eb272cee540c",
+          "sizeBytes": 624311,
+          "packageName": "com.rokid.overlayrec",
+          "versionCode": 2,
+          "versionName": "0.2.0"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/OverlayRec",
+      "iconAsset": "overlayrec.png",
+      "screenshotAssets": [
+        "overlayrec-main.jpg",
+        "overlayrec-overlay.jpg"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nOverlayRec lets you trigger AR screenshots and video recordings directly from Rokid glasses using a two-finger slide gesture, without needing to open the Hi Rokid app.\n\n# Key features\n- Activate AR Screenshot or AR Record from an on-glass overlay menu\n- Open menu with a two-finger slide left left right right gesture\n- Confirm actions immediately or wait 5 seconds for auto-confirm\n- Stop AR recording using the physical glasses button\n- Keeps the current app visible beneath the overlay\n- Restores volume after gesture activation\n\n# How it works\nOverlayRec runs as an Android Accessibility Service on the glasses, listening for specific two-finger swipe broadcasts. It then sends internal scene commands to start AR media capture. Hi Rokid remains available for media import and processing.\n\n# Controls\n- Open menu: two finger slide left left right right\n- Select AR Screenshot: two finger slide left\n- Select AR Record: two finger slide right\n- Confirm: OK button or auto-confirm after 5 seconds\n- Stop AR Record: physical glasses button\n\n# Notes\nOverlayRec is experimental and designed for Rokid glasses firmware supporting the required two-finger swipe broadcasts. It does not merge camera and HUD videos; this is handled by Rokid's AR Record flow and Hi Rokid app."
+      },
+      "releases": [
+        {
+          "version": "0.2.0",
+          "date": "2026-06-07T13:56:15Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/OverlayRec/releases/tag/v0.2.0",
+          "notes": "- HUD-only screen recording flow using the Rokid screen recorder.\n- HUD video library to browse, select, send, and delete recordings.\n- Bluetooth OPP sharing for one or multiple HUD clips.\n- Auto DELETE now queues Android confirmation jobs and retries until clips are gone.\n- Glasses navigation polish with paired-swipe debounce for one physical swipe = one move.\n- Updated README copy and screenshots.",
+          "changes": [
+            "HUD-only screen recording flow using the Rokid screen recorder.",
+            "HUD video library to browse, select, send, and delete recordings.",
+            "Bluetooth OPP sharing for one or multiple HUD clips.",
+            "Auto DELETE now queues Android confirmation jobs and retries until clips are gone.",
+            "Glasses navigation polish with paired-swipe debounce for one physical swipe = one move.",
+            "Updated README copy and screenshots."
+          ]
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-05-08T20:30:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/OverlayRec/releases/tag/v0.1.0",
+          "notes": "Initial alpha release of OverlayRec.\n\nHighlights:\n- Trigger Rokid AR Screenshot from the glasses.\n- Trigger Rokid AR Record from the glasses.\n- Open the overlay menu with: two finger slide left left right right.\n- Confirm with OK or wait 5 seconds for auto-confirm.\n- Stop AR Record with the physical glasses button.\n\nNotes:\n- This APK is intended for sideloading on Rokid Glasses.\n- Hi Rokid can still be used to import/process recorded media.\n- This is an experimental alpha build tested on real Rokid hardware.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-06-09T13:56:15.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
+      ]
+    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -89,173 +263,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
-      ]
-    },
-    {
-      "id": "tasker-bridge",
-      "name": "Tasker Bridge",
-      "category": "Utility",
-      "type": "phone",
-      "version": "0.2.5-bt",
-      "publishedAt": "2026-06-05T14:23:13Z",
-      "summary": "Launch Android Tasker automations from a Rokid glasses HUD.",
-      "description": "Phone companion that installs a bundled Rokid glasses HUD, keeps a Bluetooth bridge to the phone, lists Tasker tasks on the glasses, and launches the selected automation through Tasker.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Tasker-Bridge",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Tasker-Bridge/releases/download/v0.2.5-bt/phone-app-release.apk",
-          "sha256": "84b027447070d281802ddae50714c6341e769432ab90fd03eccd6245bab5a5f8",
-          "sizeBytes": 32030424,
-          "packageName": "com.anezium.taskerbridge.phone",
-          "versionCode": 15,
-          "versionName": "0.2.5-bt"
-        }
-      ],
-      "listing": {
-        "descriptionMarkdown": "## About\nTasker Bridge lets you run Android Tasker automations from a compact Rokid glasses HUD. Install the phone APK, use it to install or launch the bundled glasses helper, then choose a Tasker task directly from the glasses.\n\n## Key Features\n- Lists named Tasker tasks on the Rokid glasses HUD\n- Launches selected Tasker tasks from the glasses through the phone\n- Uses Bluetooth RFCOMM for runtime task lists and launch commands\n- Uses Global Hi Rokid CXR-L only for helper install, update, and launch\n- Pairs by the Tasker Bridge service endpoint rather than the public device name\n- Keeps Tasker access and execution on the Android phone\n- Refreshes Tasker on HUD open or resume instead of polling continuously\n\n## Controls\n- Swipe forward or back on the glasses to move through tasks\n- Tap or OK to launch the selected task\n- Back hides the HUD\n- DPAD key events are supported for ADB testing\n\n## Requirements\n- Android 31+ phone with Tasker installed\n- Rokid glasses paired with the phone\n- Global Hi Rokid installed on the phone\n- Tasker external access and run-task permission granted\n- Wi-Fi enabled for CXR-L helper upload/install\n\n## Notes\n- Only the phone APK needs to be installed manually; it embeds the glasses helper APK.\n- Runtime commands use Bluetooth, so CXR-L disconnects after setup.\n- Use Forget Bluetooth pairing if you need to pair a different phone or glasses endpoint."
-      },
-      "releases": [
-        {
-          "version": "0.2.5-bt",
-          "date": "2026-06-05T14:23:13Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.2.5-bt",
-          "notes": "# Changelog\n\n## v0.2.5-bt - 2026-06-05\n\nTasker Bridge now uses Bluetooth as its runtime command channel. CXR-L is kept only for one-shot helper setup: installing, updating, and launching the glasses HUD.\n\n### Added\n\n- Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.\n- Versioned JSON protocol handshake with explicit phone/helper roles.\n- App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.\n- Phone foreground `connectedDevice` bridge so HUD commands can reach Tasker while the phone app is in the background.\n- Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.\n- Cached task-list delivery followed by refresh-on-demand to reduce idle work.\n\n### Changed\n\n- CXR-L no longer stays active for runtime commands after setup completes.\n- The phone app embeds the glasses helper APK and tracks the installed helper version.\n- The HUD selection model is centralized so visual focus, scroll position, and activation use the same selected item.\n- Bluetooth sends now report real write success/failure instead of optimistic delivery.\n\n### Fixed\n\n- R08 navigation could visually move while activating the wrong row.\n- Unknown future protocol messages no longer crash decoding.\n- Triple/quadruple-style launcher interactions are no longer affected by Tasker Bridge keeping a CXR runtime connection alive.\n\n### Upgrade Notes\n\n- Install the new phone APK first.\n- Open Tasker Bridge on the phone and use **Install HUD** to push the bundled helper `0.2.3-bt` to the glasses.\n- Use **Forget Bluetooth pairing** only if you want to pair the HUD with a different phone/glasses endpoint.",
-          "changes": [
-            "Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.",
-            "Versioned JSON protocol handshake with explicit phone/helper roles.",
-            "App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.",
-            "Phone foreground connectedDevice bridge so HUD commands can reach Tasker while the phone app is in the background.",
-            "Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.",
-            "Cached task-list delivery followed by refresh-on-demand to reduce idle work.",
-            "CXR-L no longer stays active for runtime commands after setup completes.",
-            "The phone app embeds the glasses helper APK and tracks the installed helper version."
-          ]
-        },
-        {
-          "version": "0.1.0",
-          "date": "2026-06-04T22:40:11Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.1.0",
-          "notes": "Initial Tasker Bridge release.\n\n- Phone APK for Android 31+ with bundled Rokid glasses helper.\n- Start bridge checks the helper on the glasses, uploads/installs it through CXR-L if needed, then opens the HUD.\n- Glasses HUD lists Tasker tasks and launches the selected automation through the phone.\n- Cache-first Tasker list response with automatic refresh-on-HUD-open/resume and no periodic polling.\n- Foreground service now uses connectedDevice only, with no app-held wakelock.",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "tasker-bridge.png",
-        "tasker-bridge-2.png"
-      ],
-      "newUntil": "2026-06-07T14:23:13.000Z",
-      "iconAsset": "tasker-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/tasker-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge-2.png"
-      ]
-    },
-    {
-      "id": "r08-access-bridge",
-      "name": "R08 Access Bridge",
-      "category": "Navigation",
-      "type": "glasses",
-      "version": "1.1.0",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
-      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.1.0/R08-Access-Bridge-v1.1.0.apk",
-          "sha256": "371f481a551ad4cd6badd765f81cadba23a405102510619499c19ee70c6b7ea1",
-          "sizeBytes": 537176,
-          "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 12,
-          "versionName": "1.1.0"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.1.0",
-          "date": "2026-06-06T19:09:04Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.1.0",
-          "notes": "## Highlights\n\n- One APK now includes both Stable and Fast launcher behavior.\n- Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.\n- Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.\n- Triple and quadruple tap can now be remapped from the glasses UI.\n- Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.\n- Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.\n- Added a top-bar badge showing Stable, Fast, or Touch mode.\n- Added README screenshots captured from the real glasses UI.",
-          "changes": [
-            "One APK now includes both Stable and Fast launcher behavior.",
-            "Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.",
-            "Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.",
-            "Triple and quadruple tap can now be remapped from the glasses UI.",
-            "Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.",
-            "Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.",
-            "Added a top-bar badge showing Stable, Fast, or Touch mode.",
-            "Added README screenshots captured from the real glasses UI."
-          ]
-        },
-        {
-          "version": "1.0.10",
-          "date": "2026-06-05T16:01:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.0.10",
-          "notes": "## Highlights\n\n- One APK now includes both Stable and Fast launcher behavior.\n- Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.\n- Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.\n- Triple and quadruple tap can now be remapped from the glasses UI.\n- Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.\n- Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.\n- Added a top-bar badge showing Stable, Fast, or Touch mode.\n- Added README screenshots captured from the real glasses UI.",
-          "changes": [
-            "One APK now includes both Stable and Fast launcher behavior.",
-            "Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.",
-            "Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.",
-            "Triple and quadruple tap can now be remapped from the glasses UI.",
-            "Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.",
-            "Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.",
-            "Added a top-bar badge showing Stable, Fast, or Touch mode.",
-            "Added README screenshots captured from the real glasses UI."
-          ]
-        },
-        {
-          "version": "1.0.2",
-          "date": "2026-06-04T15:09:26Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.0.2",
-          "notes": "R08 Access Bridge v1.0.2 ships two debug APKs:\n\n- `R08-Access-Bridge-v1.0.2-debug.apk` is the normal fast build from `main`. Install this first. It keeps Fast Mode and repeated-swipe launcher acceleration.\n- `R08-Access-Bridge-v1.0.2-focus-sync-debug.apk` is the compatibility/fix build from `dev/r08-launcher-focus-sync`. Use this only if the normal APK shows launcher focus mismatch, Voice Translation/default translation snapping back, or the ring and glasses selecting different launcher apps.\n\nChanges in both APKs:\n\n- Added triple tap on the R08 ring to emulate the glasses long-press behavior and open the Rokid AI assistant path.\n- Added a fallback accessibility long press if the Rokid AI assistant scene command is unavailable.\n- Documented all ring actions in the README.\n\nFocus-sync APK tradeoff:\n\n- The focus-sync APK intentionally moves one launcher app per swipe and disables the repeated-swipe acceleration in the launcher. This is slower, but avoids the launcher/ring focus mismatch seen on affected glasses.\n\nNote:\n\n- The protected Hi Rokid two-finger shortcut cannot be emitted by a normal APK, so this release does not try to spoof that protected system action.",
-          "changes": [
-            "Added triple tap on the R08 ring to emulate the glasses long-press behavior and open the Rokid AI assistant path.",
-            "Added a fallback accessibility long press if the Rokid AI assistant scene command is unavailable.",
-            "Documented all ring actions in the README.",
-            "The protected Hi Rokid two-finger shortcut cannot be emitted by a normal APK, so this release does not try to spoof that protected system action."
-          ]
-        },
-        {
-          "version": "1.0.1",
-          "date": "2026-06-02T19:33:39Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.0.1",
-          "notes": "Debug-signed APKs for R08 Access Bridge v1.0.1.\n\nThis release now includes two APK variants:\n\n1. `R08-Access-Bridge-v1.0.1-debug.apk`\n   - Normal build.\n   - Keeps the original launcher navigation behavior, including repeated-swipe acceleration.\n   - Try this APK first.\n\n2. `R08-Access-Bridge-v1.0.1-focus-sync-debug.apk`\n   - Compatibility/fix build for Rokid launchers where the visible carousel and the launcher internal focus can get out of sync.\n   - Use this if the normal APK shows the wrong selected app, keeps returning to Voice Translation/default translation, or launches an app different from the one visually centered.\n   - This build avoids relying on the launcher internal Accessibility focus. It moves the visible carousel one step at a time and activates the app visually centered on screen.\n\nWhy the focus-sync APK exists:\n- Some glasses keep the visible launcher carousel and the internal selected app synchronized.\n- On other glasses, the visible carousel can move while the launcher still keeps an older internal focus, often Voice Translation/default translation.\n- The focus-sync build works around that by activating the center of the visible carousel instead of trusting that internal focus state.\n\nTradeoff:\n- The focus-sync APK disables launcher repeated-swipe acceleration for stability.\n- Fast Mode for the R08 ring still works, but launcher movement is intentionally one app per swipe.\n- If the normal APK works for you, it remains the faster option. If launcher selection is wrong or unstable, use the focus-sync APK.\n\nChanges from v1.0.1 normal build:\n- Added an alternate launcher activation path that taps the visible app carousel center.\n- Removed launcher accelerated multi-step swipes in the focus-sync build to prevent overshooting or snapping back to the launcher default focus.\n- No launcher app names or languages are hardcoded; the fix uses launcher package/resource IDs and screen geometry.",
-          "changes": [
-            "Normal build.",
-            "Keeps the original launcher navigation behavior, including repeated-swipe acceleration.",
-            "Try this APK first.",
-            "Compatibility/fix build for Rokid launchers where the visible carousel and the launcher internal focus can get out of sync.",
-            "Use this if the normal APK shows the wrong selected app, keeps returning to Voice Translation/default translation, or launches an app different from the one visually centered.",
-            "This build avoids relying on the launcher internal Accessibility focus. It moves the visible carousel one step at a time and activates the app visually centered on screen.",
-            "Some glasses keep the visible launcher carousel and the internal selected app synchronized.",
-            "On other glasses, the visible carousel can move while the launcher still keeps an older internal focus, often Voice Translation/default translation."
-          ]
-        }
-      ],
-      "screenshotAssets": [
-        "r08-access-bridge.png",
-        "r08-access-bridge-2.png",
-        "r08-access-bridge-3.png",
-        "r08-access-bridge-4.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
-      },
-      "iconAsset": "r08-access-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
       ]
     },
     {
@@ -1642,53 +1649,6 @@
       "screenshotAssets": []
     },
     {
-      "id": "overlayrec",
-      "name": "OverlayRec",
-      "category": "Media",
-      "type": "glasses",
-      "version": "0.1.0",
-      "publishedAt": "2026-05-08",
-      "summary": "Trigger AR screenshots and recordings from Rokid glasses via a two-finger gesture overlay menu",
-      "description": "OverlayRec runs on Rokid glasses as an Accessibility Service, enabling AR Screenshot and AR Record via a two-finger slide gesture without opening Hi Rokid. It displays a small overlay menu for quick media capture.",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/OverlayRec/releases/download/v0.1.0/OverlayRec-v0.1.0.apk",
-          "sha256": "4fe10edceb8fcde0e4c3502f1826452f89db9a43b7e08e6c3fcb6a0f2907ad7a",
-          "sizeBytes": 605747,
-          "packageName": "com.rokid.overlayrec",
-          "versionCode": 1,
-          "versionName": "0.1.0"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/OverlayRec",
-      "iconAsset": "overlayrec.png",
-      "screenshotAssets": [
-        "overlayrec-main.jpg",
-        "overlayrec-overlay.jpg"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nOverlayRec lets you trigger AR screenshots and video recordings directly from Rokid glasses using a two-finger slide gesture, without needing to open the Hi Rokid app.\n\n# Key features\n- Activate AR Screenshot or AR Record from an on-glass overlay menu\n- Open menu with a two-finger slide left left right right gesture\n- Confirm actions immediately or wait 5 seconds for auto-confirm\n- Stop AR recording using the physical glasses button\n- Keeps the current app visible beneath the overlay\n- Restores volume after gesture activation\n\n# How it works\nOverlayRec runs as an Android Accessibility Service on the glasses, listening for specific two-finger swipe broadcasts. It then sends internal scene commands to start AR media capture. Hi Rokid remains available for media import and processing.\n\n# Controls\n- Open menu: two finger slide left left right right\n- Select AR Screenshot: two finger slide left\n- Select AR Record: two finger slide right\n- Confirm: OK button or auto-confirm after 5 seconds\n- Stop AR Record: physical glasses button\n\n# Notes\nOverlayRec is experimental and designed for Rokid glasses firmware supporting the required two-finger swipe broadcasts. It does not merge camera and HUD videos; this is handled by Rokid's AR Record flow and Hi Rokid app."
-      },
-      "releases": [
-        {
-          "version": "0.1.0",
-          "date": "2026-05-08T20:30:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/OverlayRec/releases/tag/v0.1.0",
-          "notes": "Initial alpha release of OverlayRec.\n\nHighlights:\n- Trigger Rokid AR Screenshot from the glasses.\n- Trigger Rokid AR Record from the glasses.\n- Open the overlay menu with: two finger slide left left right right.\n- Confirm with OK or wait 5 seconds for auto-confirm.\n- Stop AR Record with the physical glasses button.\n\nNotes:\n- This APK is intended for sideloading on Rokid Glasses.\n- Hi Rokid can still be used to import/process recorded media.\n- This is an experimental alpha build tested on real Rokid hardware.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-10T00:00:00.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/overlayrec.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-main.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/overlayrec-overlay.jpg"
-      ]
-    },
-    {
       "id": "photo-del",
       "name": "PhotoDel",
       "category": "Utility",
@@ -2290,6 +2250,69 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
+      ]
+    },
+    {
+      "id": "tasker-bridge",
+      "name": "Tasker Bridge",
+      "category": "Utility",
+      "type": "phone",
+      "version": "0.2.5-bt",
+      "publishedAt": "2026-06-05T14:23:13Z",
+      "summary": "Launch Android Tasker automations from a Rokid glasses HUD.",
+      "description": "Phone companion that installs a bundled Rokid glasses HUD, keeps a Bluetooth bridge to the phone, lists Tasker tasks on the glasses, and launches the selected automation through Tasker.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Tasker-Bridge",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Tasker-Bridge/releases/download/v0.2.5-bt/phone-app-release.apk",
+          "sha256": "84b027447070d281802ddae50714c6341e769432ab90fd03eccd6245bab5a5f8",
+          "sizeBytes": 32030424,
+          "packageName": "com.anezium.taskerbridge.phone",
+          "versionCode": 15,
+          "versionName": "0.2.5-bt"
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nTasker Bridge lets you run Android Tasker automations from a compact Rokid glasses HUD. Install the phone APK, use it to install or launch the bundled glasses helper, then choose a Tasker task directly from the glasses.\n\n## Key Features\n- Lists named Tasker tasks on the Rokid glasses HUD\n- Launches selected Tasker tasks from the glasses through the phone\n- Uses Bluetooth RFCOMM for runtime task lists and launch commands\n- Uses Global Hi Rokid CXR-L only for helper install, update, and launch\n- Pairs by the Tasker Bridge service endpoint rather than the public device name\n- Keeps Tasker access and execution on the Android phone\n- Refreshes Tasker on HUD open or resume instead of polling continuously\n\n## Controls\n- Swipe forward or back on the glasses to move through tasks\n- Tap or OK to launch the selected task\n- Back hides the HUD\n- DPAD key events are supported for ADB testing\n\n## Requirements\n- Android 31+ phone with Tasker installed\n- Rokid glasses paired with the phone\n- Global Hi Rokid installed on the phone\n- Tasker external access and run-task permission granted\n- Wi-Fi enabled for CXR-L helper upload/install\n\n## Notes\n- Only the phone APK needs to be installed manually; it embeds the glasses helper APK.\n- Runtime commands use Bluetooth, so CXR-L disconnects after setup.\n- Use Forget Bluetooth pairing if you need to pair a different phone or glasses endpoint."
+      },
+      "releases": [
+        {
+          "version": "0.2.5-bt",
+          "date": "2026-06-05T14:23:13Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.2.5-bt",
+          "notes": "# Changelog\n\n## v0.2.5-bt - 2026-06-05\n\nTasker Bridge now uses Bluetooth as its runtime command channel. CXR-L is kept only for one-shot helper setup: installing, updating, and launching the glasses HUD.\n\n### Added\n\n- Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.\n- Versioned JSON protocol handshake with explicit phone/helper roles.\n- App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.\n- Phone foreground `connectedDevice` bridge so HUD commands can reach Tasker while the phone app is in the background.\n- Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.\n- Cached task-list delivery followed by refresh-on-demand to reduce idle work.\n\n### Changed\n\n- CXR-L no longer stays active for runtime commands after setup completes.\n- The phone app embeds the glasses helper APK and tracks the installed helper version.\n- The HUD selection model is centralized so visual focus, scroll position, and activation use the same selected item.\n- Bluetooth sends now report real write success/failure instead of optimistic delivery.\n\n### Fixed\n\n- R08 navigation could visually move while activating the wrong row.\n- Unknown future protocol messages no longer crash decoding.\n- Triple/quadruple-style launcher interactions are no longer affected by Tasker Bridge keeping a CXR runtime connection alive.\n\n### Upgrade Notes\n\n- Install the new phone APK first.\n- Open Tasker Bridge on the phone and use **Install HUD** to push the bundled helper `0.2.3-bt` to the glasses.\n- Use **Forget Bluetooth pairing** only if you want to pair the HUD with a different phone/glasses endpoint.",
+          "changes": [
+            "Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.",
+            "Versioned JSON protocol handshake with explicit phone/helper roles.",
+            "App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.",
+            "Phone foreground connectedDevice bridge so HUD commands can reach Tasker while the phone app is in the background.",
+            "Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.",
+            "Cached task-list delivery followed by refresh-on-demand to reduce idle work.",
+            "CXR-L no longer stays active for runtime commands after setup completes.",
+            "The phone app embeds the glasses helper APK and tracks the installed helper version."
+          ]
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-06-04T22:40:11Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.1.0",
+          "notes": "Initial Tasker Bridge release.\n\n- Phone APK for Android 31+ with bundled Rokid glasses helper.\n- Start bridge checks the helper on the glasses, uploads/installs it through CXR-L if needed, then opens the HUD.\n- Glasses HUD lists Tasker tasks and launches the selected automation through the phone.\n- Cache-first Tasker list response with automatic refresh-on-HUD-open/resume and no periodic polling.\n- Foreground service now uses connectedDevice only, with no app-held wakelock.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "tasker-bridge.png",
+        "tasker-bridge-2.png"
+      ],
+      "newUntil": "2026-06-07T14:23:13.000Z",
+      "iconAsset": "tasker-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/tasker-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge-2.png"
       ]
     },
     {
