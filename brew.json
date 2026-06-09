@@ -1,12 +1,13 @@
 {
-  "version": "0.2.1",
-  "versionCode": 11,
-  "apkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.1/RokidBrew-phone-v0.2.1-debug.apk",
-  "releaseUrl": "https://github.com/Anezium/RokidBrew/releases/tag/v0.2.1",
-  "notes": "RokidBrew 0.2.1 fixes an immediate launch crash on EMUI 14 / Android 14 devices, reported on Huawei Mate XT.",
+  "version": "0.2.2",
+  "versionCode": 12,
+  "apkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
+  "releaseUrl": "https://github.com/Anezium/RokidBrew/releases/tag/v0.2.2",
+  "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
   "changes": [
-    "Fixed startup crash on EMUI 14 / Android 14 devices.",
-    "Guarded Android 15-only frame-rate API calls on older Android versions.",
-    "Keeps high-refresh-rate behavior enabled on compatible Android 15+ devices."
+    "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+    "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+    "Adds compatibility callbacks for newer Rokid APIs.",
+    "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ]
 }
