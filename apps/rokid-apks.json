@@ -3,7 +3,7 @@
   "name": "Rokid-APKs",
   "category": "Developer",
   "type": "combo",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "summary": "Upload and install APKs on Rokid glasses via phone using four explicit transfer modes",
   "description": "Rokid-APKs lets you install Android APKs on Rokid glasses from your phone with four transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN. No desktop or cloud relay is needed. Requires a companion app on glasses for some modes.",
   "listing": {
@@ -11,6 +11,18 @@
     "descriptionMarkdown": "# About\n\nRokid-APKs enables installation of Android APKs on Rokid glasses directly from your phone. It supports four explicit transfer modes to suit different connection setups.\n\n# Key Features\n\n- Four transfer modes: \n  - `CXR-M / OFFICIAL`: Official Rokid BLE + Wi-Fi Direct, no glasses companion app needed\n  - `CXR-L / HI ROKID`: Uses Hi Rokid global authorization and CXR-L install path, requires Hi Rokid app\n  - `SPP / SLOW`: Bluetooth SPP streaming via glasses companion app, fully local and offline\n  - `WIFI LAN / FAST`: Bluetooth control plus APK transfer over Wi-Fi LAN or hotspot with companion app\n- Direct APK install confirmation on glasses via Android PackageInstaller\n- Phone UI provides live status and phase feedback\n\n# How It Works\n\n- Official CXR-M mode scans and connects to glasses over BLE and Wi-Fi Direct to upload APK\n- Hi Rokid CXR-L mode uses Hi Rokid app authorization and upload session\n- Companion modes require installing a glasses companion app and Bluetooth pairing\n- APK is transferred locally and installed with user confirmation on the glasses\n\n# Requirements\n\n- Phone app installed on Android phone\n- For `SPP` and `WIFI LAN` modes: glasses companion app installed and Bluetooth paired\n- For `CXR-L` mode: Hi Rokid app installed and phone Wi-Fi enabled\n\n# Notes\n\n- No desktop helper or cloud relay involved; all transfers are local\n- `WIFI LAN / FAST` mode requires phone and glasses on the same Wi-Fi or hotspot\n- Manual mode switching is needed; no automatic fallback between modes"
   },
   "releases": [
+    {
+      "version": "1.2.3",
+      "date": "2026-06-09T10:58:22Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.3",
+      "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+      "changes": [
+        "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+        "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+        "Adds compatibility callbacks for newer Rokid APIs.",
+        "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+      ]
+    },
     {
       "version": "1.2.2",
       "date": "2026-05-26T16:38:33Z",
@@ -51,21 +63,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.1.1/rokid-apks-glasses-v1.1.1.apk",
-      "sha256": "fa1982368a7f094a9479a30a177a7ece7c2a098bb1ad11eff8b4b26dd7666aaf",
-      "sizeBytes": 7725471,
+      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.3/Rokid-APKs-glasses-v1.1.2-debug.apk",
+      "sha256": "49cb1c987762c8d2cfde8ee039c8978bd914e42e7604ef745e198311de8abcb5",
+      "sizeBytes": 7728516,
       "packageName": "com.rokidapks.glasses",
-      "versionCode": 104,
-      "versionName": "1.1.1"
+      "versionCode": 105,
+      "versionName": "1.1.2"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.2/Rokid-APKs-phone-v1.2.2-debug.apk",
-      "sha256": "2add6354b62ca53360ed84cf5465e8f8e06aee5f9f61e03d4800568c3b803b8d",
-      "sizeBytes": 11832530,
+      "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.3/Rokid-APKs-phone-v1.2.3-debug.apk",
+      "sha256": "b8dbc3bfcc07938ccc450a301695e8e367fba04ca7d0a1961ca270f3b1676079",
+      "sizeBytes": 11898066,
       "packageName": "com.rokidapks",
-      "versionCode": 122,
-      "versionName": "1.2.2"
+      "versionCode": 123,
+      "versionName": "1.2.3"
     }
   ],
   "author": "Anezium",
@@ -75,7 +87,7 @@
     "rokid-apks-phone.jpg",
     "rokid-apks-glasses.jpg"
   ],
-  "publishedAt": "2026-05-26T16:38:33Z",
+  "publishedAt": "2026-06-09T10:58:22Z",
   "listingSource": {
     "type": "githubReadme",
     "repo": "Anezium/Rokid-APKs",

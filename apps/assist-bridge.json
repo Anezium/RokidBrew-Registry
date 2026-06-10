@@ -3,8 +3,8 @@
   "name": "AssistBridge",
   "category": "AI",
   "type": "combo",
-  "version": "0.3.0",
-  "publishedAt": "2026-05-31T14:27:28Z",
+  "version": "0.3.1",
+  "publishedAt": "2026-06-09T10:58:10Z",
   "summary": "Relay Gemini and Google Assistant answers from a phone to a Rokid glasses HUD.",
   "description": "AssistBridge captures visible Gemini or Google Assistant answer text on an Android phone and relays it through Global Hi Rokid CXR-L to a readable popup on Rokid glasses.",
   "screenshotAssets": [
@@ -16,21 +16,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.0/AssistBridge-glasses-v0.3.0.apk",
-      "sha256": "7359ea83209319a8329ab1244f29c56b376b7cd889f73c03300aa3283cbcb8ee",
-      "sizeBytes": 4595278,
+      "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.1/AssistBridge-glasses-v0.3.1.apk",
+      "sha256": "0b1705eb1ecadce6924c9d931591fca696323bed82d1bba5590d944099d5f96d",
+      "sizeBytes": 4677198,
       "packageName": "com.anezium.assistbridge.glasses",
-      "versionCode": 3,
-      "versionName": "0.3.0"
+      "versionCode": 4,
+      "versionName": "0.3.1"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.0/AssistBridge-phone-v0.3.0.apk",
-      "sha256": "e88551fe31a514ab77b9bbdd97ebd12486a35bdf6368a7debab07a70fc0e07f2",
-      "sizeBytes": 9611587,
+      "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.1/AssistBridge-phone-v0.3.1.apk",
+      "sha256": "f78990a9832cd03217dd9253667ec9aca53be8e9654dc705b43131ab6709c23a",
+      "sizeBytes": 9809315,
       "packageName": "com.anezium.assistbridge.phone",
-      "versionCode": 3,
-      "versionName": "0.3.0"
+      "versionCode": 4,
+      "versionName": "0.3.1"
     }
   ],
   "author": "Anezium",
@@ -56,6 +56,18 @@
     "descriptionMarkdown": "## About\nAssistBridge relays visible Gemini and Google Assistant answers from an Android phone to a Rokid glasses HUD. The phone app captures assistant reply text through Android Accessibility, sends it through Global Hi Rokid CXR-L, and the glasses app renders the answer as a readable AR popup.\n\n## Key Features\n- Captures visible Gemini / Google Assistant answer text on the phone\n- Displays replies on Rokid glasses with a black, AR-safe popup and green accents\n- Uses Global Hi Rokid CXR-L for the phone-to-glasses relay\n- Bundles the glasses APK inside the phone APK for authorized CXR-L install / update flows\n- Includes setup buttons for both phone and glasses accessibility services\n- Lets the phone adjust the glasses HUD font size\n\n## Controls\n- Tap / OK / Back on glasses to dismiss the popup\n- Swipe left / right on glasses to scroll long answers\n- Adjust the HUD font size from the phone app\n\n## Requirements\n- Android phone with Gemini or Google Assistant\n- Rokid glasses paired with the Global Hi Rokid app\n- Android Accessibility enabled for AssistBridge on the phone\n- AssistBridge accessibility enabled on the glasses for overlay keys and swipe handling\n- Hi Rokid CXR-L authorization accepted on the phone\n\n## Notes\n- Android may require Allow restricted settings before sideloaded accessibility services can be enabled.\n- Assistant replies over the lock screen depend on Gemini / Google Assistant lock-screen settings.\n- Assistant UI capture is best-effort and may need updates if Google changes app accessibility surfaces."
   },
   "releases": [
+    {
+      "version": "0.3.1",
+      "date": "2026-06-09T10:58:10Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.1",
+      "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+      "changes": [
+        "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+        "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+        "Adds compatibility callbacks for newer Rokid APIs.",
+        "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+      ]
+    },
     {
       "version": "0.3.0",
       "date": "2026-05-31T14:27:28Z",
