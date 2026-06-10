@@ -3,10 +3,10 @@
   "name": "Rokid Relay",
   "category": "Accessibility",
   "type": "combo",
-  "version": "0.1.6",
+  "version": "0.1.11",
   "featured": true,
   "featuredRank": 1,
-  "publishedAt": "2026-06-06T10:32:01Z",
+  "publishedAt": "2026-06-09T10:57:49Z",
   "summary": "Reply to Android phone notifications from Rokid glasses.",
   "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
   "screenshotAssets": [
@@ -18,12 +18,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.6/rokid-relay-phone-v0.1.6-vc7-debug.apk",
-      "sha256": "ef19933683ea2e91db8ecb7011138b0af2b13f8f2f7cfb31c3da2a047492dde4",
-      "sizeBytes": 12855413,
+      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.11/rokid-relay-phone-v0.1.11-vc12-debug.apk",
+      "sha256": "8bc781d937c5440883099791248452ff598d8db6651c6b3a6a35c0ec60653d62",
+      "sizeBytes": 13055005,
       "packageName": "com.anezium.rokidrelay.phone",
-      "versionCode": 7,
-      "versionName": "0.1.6"
+      "versionCode": 12,
+      "versionName": "0.1.11"
     }
   ],
   "author": "Anezium",
@@ -44,6 +44,18 @@
     "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
   },
   "releases": [
+    {
+      "version": "0.1.11",
+      "date": "2026-06-09T10:57:49Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.11",
+      "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+      "changes": [
+        "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+        "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+        "Adds compatibility callbacks for newer Rokid APIs.",
+        "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+      ]
+    },
     {
       "version": "0.1.6",
       "date": "2026-06-06T10:32:01Z",

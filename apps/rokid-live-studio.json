@@ -3,10 +3,10 @@
   "name": "Rokid Live Studio",
   "category": "Media",
   "type": "combo",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "featured": true,
   "featuredRank": 4,
-  "publishedAt": "2026-05-26T17:18:31Z",
+  "publishedAt": "2026-06-09T10:58:26Z",
   "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
   "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
   "listing": {
@@ -14,6 +14,18 @@
     "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
   },
   "releases": [
+    {
+      "version": "0.1.5",
+      "date": "2026-06-09T10:58:26Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.5%2B6",
+      "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+      "changes": [
+        "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+        "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+        "Adds compatibility callbacks for newer Rokid APIs.",
+        "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+      ]
+    },
     {
       "version": "0.1.4+5",
       "date": "2026-05-26T17:18:31Z",
@@ -53,12 +65,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.4%2B5/rokid-live-studio-phone-0.1.4-vc5.apk",
-      "sha256": "5c6343f8f3607c2f4199f4f015404aa3d90ba131d12fde9fbf6399c7cde241e9",
-      "sizeBytes": 38702587,
+      "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.5%2B6/rokid-live-studio-phone-0.1.5-vc6.apk",
+      "sha256": "73a8365689723196678826df42a0cc780c243987f14d8d1a9bbb854a7901ed22",
+      "sizeBytes": 38890183,
       "packageName": "com.anezium.rokidlive.phone",
-      "versionCode": 5,
-      "versionName": "0.1.4"
+      "versionCode": 6,
+      "versionName": "0.1.5"
     }
   ],
   "author": "Anezium",
