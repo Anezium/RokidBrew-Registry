@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-10T09:02:22.772Z",
+  "generatedAt": "2026-06-12T09:14:48.675Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,113 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "rokid-relay",
+      "name": "Rokid Relay",
+      "category": "Accessibility",
+      "type": "combo",
+      "version": "0.1.13",
+      "featured": true,
+      "featuredRank": 1,
+      "publishedAt": "2026-06-11T11:14:42Z",
+      "summary": "Reply to Android phone notifications from Rokid glasses.",
+      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
+      "screenshotAssets": [
+        "rokid-relay-phone-home.png",
+        "rokid-relay-phone-notifications.png",
+        "rokid-relay-phone-speech.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.13/rokid-relay-phone-v0.1.13-vc14-debug.apk",
+          "sha256": "0ba8cedef6875a39eb521b0a3f27dd0161aaebf5529dc64dd1ef59e5ba89a177",
+          "sizeBytes": 13121681,
+          "packageName": "com.anezium.rokidrelay.phone",
+          "versionCode": 14,
+          "versionName": "0.1.13"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
+      },
+      "releases": [
+        {
+          "version": "0.1.13",
+          "date": "2026-06-11T11:14:42Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.13",
+          "notes": "Rokid Relay v0.1.13 is a development-preview update focused on glasses input reliability, long notification readability, voice configuration, and repeatable QA.\n\nImportant: v0.1.13 supersedes v0.1.12. The v0.1.12 release notes described the app changes, but the published package still carried the previous bundled glasses helper version. This release republishes the full changelog with the corrected phone and bundled glasses versions.\n\nversionName: 0.1.13\nversionCode: 14\nbundledGlassesVersionName: 0.1.8\nbundledGlassesVersionCode: 9\n\n## What's New\n\n### More Reliable Glasses Controls\n- Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.\n- Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.\n- Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.\n- Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.\n- Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.\n\n### Better Notification and Inbox Reading\n- Reworked long notification paging with measured StaticLayout pages instead of clipping text.\n- Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.\n- Added inbox detail paging guards so boundary swipes do not accidentally move the list.\n\n### Voice and Companion Improvements\n- Added transcription language selection.\n- Added Azure Speech provider support alongside the existing STT choices.\n- Added companion-device linking for background microphone flows.\n- Suppressed the Rokid AI wake path while relay capture is active.\n- Made companion glasses detection more robust across device renames.\n- Fixed cases where the companion link could get stuck on Bluetooth search.\n- Stopped opening the glasses app just because the phone app opens.\n\n### QA and Regression Coverage\n- Added focused unit tests for debounce, key mapping, combo buffering, inbox two-finger gating, notification paging, and the new RelayInputInterpreter.\n- Added a generated QA matrix and starter scenario files under qa/.\n- Added scripts/rokid-regression.ps1, which can build, exercise connected phone/glasses devices, post a real test notification, capture logs/screenshots, and record a report.\n- Validated the release APK with zipalign -P 16 and confirmed the phone APK contains the updated bundled glasses helper APK.\n\n## Known Limits\n\n- The QA runner can now do real device smoke coverage, but exact internal assertions for some scenarios still need debug hooks such as DUMP_STATE, SEND_FAKE_CXR_MESSAGE, and fake voice/audio hooks.\n- Release APK assets are still debug builds while public signing/distribution is being finalized.\n\n## Validation\n\n- Gradle: :glasses:testDebugUnitTest\n- Gradle: :phone:assembleDebug, including bundled glasses helper copy\n- Device QA runner: phone + glasses build/install/launch smoke, ADB input alias replay, real phone test notification, glasses screenshot/log capture\n- Autoreview: Codex CLI clean, no accepted/actionable findings\n- APK check: zipalign -P 16 verification successful\n- APK package check: phone versionCode 14 / versionName 0.1.13\n- Bundled helper check: glasses versionCode 9 / versionName 0.1.8, matching the rebuilt glasses APK hash\n\nSHA256(rokid-relay-phone-v0.1.13-vc14-debug.apk): 0ba8cedef6875a39eb521b0a3f27dd0161aaebf5529dc64dd1ef59e5ba89a177",
+          "changes": [
+            "Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.",
+            "Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.",
+            "Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.",
+            "Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.",
+            "Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.",
+            "Reworked long notification paging with measured StaticLayout pages instead of clipping text.",
+            "Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.",
+            "Added inbox detail paging guards so boundary swipes do not accidentally move the list."
+          ]
+        },
+        {
+          "version": "0.1.11",
+          "date": "2026-06-09T10:57:49Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.11",
+          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+          "changes": [
+            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+            "Adds compatibility callbacks for newer Rokid APIs.",
+            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+          ]
+        },
+        {
+          "version": "0.1.6",
+          "date": "2026-06-06T10:32:01Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.6",
+          "notes": "versionCode: 7\n\nBugfix release for the phone UI polish after v0.1.5.\n\n- Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.\n- Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.\n- Fixes the Notifications tab top spacing so the Display panel matches other tabs.\n- Improves Update changelog display with a tappable preview and full changelog expansion.\n- Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.\n- Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK.",
+          "changes": [
+            "Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.",
+            "Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.",
+            "Fixes the Notifications tab top spacing so the Display panel matches other tabs.",
+            "Improves Update changelog display with a tappable preview and full changelog expansion.",
+            "Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.",
+            "Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK."
+          ]
+        },
+        {
+          "version": "0.1.4",
+          "date": "2026-05-29T21:23:14Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
+          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3",
+          "date": "2026-05-28T09:01:38Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
+          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2",
+          "date": "2026-05-27T22:55:35Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
+          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-06-13T11:14:42.000Z",
+      "iconAsset": "rokid-relay.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
     {
       "id": "r08-access-bridge",
       "name": "R08 Access Bridge",
@@ -134,73 +241,54 @@
       ]
     },
     {
-      "id": "tasker-bridge",
-      "name": "Tasker Bridge",
+      "id": "ek-meta-player",
+      "name": "EK Meta Player",
       "category": "Utility",
-      "type": "phone",
-      "version": "0.2.6-bt",
-      "publishedAt": "2026-06-09T10:58:28Z",
-      "summary": "Launch Android Tasker automations from a Rokid glasses HUD.",
-      "description": "Phone companion that installs a bundled Rokid glasses HUD, keeps a Bluetooth bridge to the phone, lists Tasker tasks on the glasses, and launches the selected automation through Tasker.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Tasker-Bridge",
-      "phoneRequired": true,
+      "type": "glasses",
+      "version": "1.0.0",
+      "featured": true,
+      "featuredRank": 3,
+      "publishedAt": "2026-05-29",
+      "summary": "Run Meta-display web apps on Rokid glasses.",
+      "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
+      "screenshotAssets": [
+        "ek-meta-player.jpg",
+        "ek-meta-player-2.jpg",
+        "ek-meta-player-3.jpg"
+      ],
+      "phoneRequired": false,
       "artifacts": [
         {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Tasker-Bridge/releases/download/v0.2.6-bt/phone-app-release.apk",
-          "sha256": "8b495ddb68d947279907d0efd580a2bb63a4056e4be21ff26ba982921b820ebb",
-          "sizeBytes": 32195384,
-          "packageName": "com.anezium.taskerbridge.phone",
-          "versionCode": 16,
-          "versionName": "0.2.6-bt"
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
+          "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
+          "sizeBytes": 26251553,
+          "packageName": "kr.pe.eung.ekmeta",
+          "versionCode": 1,
+          "versionName": "1.0.0"
         }
       ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
       "listing": {
-        "descriptionMarkdown": "## About\nTasker Bridge lets you run Android Tasker automations from a compact Rokid glasses HUD. Install the phone APK, use it to install or launch the bundled glasses helper, then choose a Tasker task directly from the glasses.\n\n## Key Features\n- Lists named Tasker tasks on the Rokid glasses HUD\n- Launches selected Tasker tasks from the glasses through the phone\n- Uses Bluetooth RFCOMM for runtime task lists and launch commands\n- Uses Global Hi Rokid CXR-L only for helper install, update, and launch\n- Pairs by the Tasker Bridge service endpoint rather than the public device name\n- Keeps Tasker access and execution on the Android phone\n- Refreshes Tasker on HUD open or resume instead of polling continuously\n\n## Controls\n- Swipe forward or back on the glasses to move through tasks\n- Tap or OK to launch the selected task\n- Back hides the HUD\n- DPAD key events are supported for ADB testing\n\n## Requirements\n- Android 31+ phone with Tasker installed\n- Rokid glasses paired with the phone\n- Global Hi Rokid installed on the phone\n- Tasker external access and run-task permission granted\n- Wi-Fi enabled for CXR-L helper upload/install\n\n## Notes\n- Only the phone APK needs to be installed manually; it embeds the glasses helper APK.\n- Runtime commands use Bluetooth, so CXR-L disconnects after setup.\n- Use Forget Bluetooth pairing if you need to pair a different phone or glasses endpoint."
+        "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
       },
       "releases": [
         {
-          "version": "0.2.6-bt",
-          "date": "2026-06-09T10:58:28Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.2.6-bt",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "0.2.5-bt",
-          "date": "2026-06-05T14:23:13Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.2.5-bt",
-          "notes": "# Changelog\n\n## v0.2.5-bt - 2026-06-05\n\nTasker Bridge now uses Bluetooth as its runtime command channel. CXR-L is kept only for one-shot helper setup: installing, updating, and launching the glasses HUD.\n\n### Added\n\n- Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.\n- Versioned JSON protocol handshake with explicit phone/helper roles.\n- App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.\n- Phone foreground `connectedDevice` bridge so HUD commands can reach Tasker while the phone app is in the background.\n- Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.\n- Cached task-list delivery followed by refresh-on-demand to reduce idle work.\n\n### Changed\n\n- CXR-L no longer stays active for runtime commands after setup completes.\n- The phone app embeds the glasses helper APK and tracks the installed helper version.\n- The HUD selection model is centralized so visual focus, scroll position, and activation use the same selected item.\n- Bluetooth sends now report real write success/failure instead of optimistic delivery.\n\n### Fixed\n\n- R08 navigation could visually move while activating the wrong row.\n- Unknown future protocol messages no longer crash decoding.\n- Triple/quadruple-style launcher interactions are no longer affected by Tasker Bridge keeping a CXR runtime connection alive.\n\n### Upgrade Notes\n\n- Install the new phone APK first.\n- Open Tasker Bridge on the phone and use **Install HUD** to push the bundled helper `0.2.3-bt` to the glasses.\n- Use **Forget Bluetooth pairing** only if you want to pair the HUD with a different phone/glasses endpoint.",
-          "changes": [
-            "Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.",
-            "Versioned JSON protocol handshake with explicit phone/helper roles.",
-            "App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.",
-            "Phone foreground connectedDevice bridge so HUD commands can reach Tasker while the phone app is in the background.",
-            "Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.",
-            "Cached task-list delivery followed by refresh-on-demand to reduce idle work.",
-            "CXR-L no longer stays active for runtime commands after setup completes.",
-            "The phone app embeds the glasses helper APK and tracks the installed helper version."
-          ]
-        },
-        {
-          "version": "0.1.0",
-          "date": "2026-06-04T22:40:11Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.1.0",
-          "notes": "Initial Tasker Bridge release.\n\n- Phone APK for Android 31+ with bundled Rokid glasses helper.\n- Start bridge checks the helper on the glasses, uploads/installs it through CXR-L if needed, then opens the HUD.\n- Glasses HUD lists Tasker tasks and launches the selected automation through the phone.\n- Cache-first Tasker list response with automatic refresh-on-HUD-open/resume and no periodic polling.\n- Foreground service now uses connectedDevice only, with no app-held wakelock.",
+          "version": "1.0.0",
+          "date": "2026-05-29",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
           "changes": []
         }
       ],
-      "screenshotAssets": [
-        "tasker-bridge.png",
-        "tasker-bridge-2.png"
-      ],
-      "newUntil": "2026-06-11T10:58:28.000Z",
-      "iconAsset": "tasker-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/tasker-bridge.png",
+      "newUntil": "2026-05-31T00:00:00.000Z",
+      "iconAsset": "ek-meta-player.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-meta-player.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge-2.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
       ]
     },
     {
@@ -288,315 +376,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
-      ]
-    },
-    {
-      "id": "rokid-apks",
-      "name": "Rokid-APKs",
-      "category": "Developer",
-      "type": "combo",
-      "version": "1.2.3",
-      "summary": "Upload and install APKs on Rokid glasses via phone using four explicit transfer modes",
-      "description": "Rokid-APKs lets you install Android APKs on Rokid glasses from your phone with four transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN. No desktop or cloud relay is needed. Requires a companion app on glasses for some modes.",
-      "listing": {
-        "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew.",
-        "descriptionMarkdown": "# About\n\nRokid-APKs enables installation of Android APKs on Rokid glasses directly from your phone. It supports four explicit transfer modes to suit different connection setups.\n\n# Key Features\n\n- Four transfer modes: \n  - `CXR-M / OFFICIAL`: Official Rokid BLE + Wi-Fi Direct, no glasses companion app needed\n  - `CXR-L / HI ROKID`: Uses Hi Rokid global authorization and CXR-L install path, requires Hi Rokid app\n  - `SPP / SLOW`: Bluetooth SPP streaming via glasses companion app, fully local and offline\n  - `WIFI LAN / FAST`: Bluetooth control plus APK transfer over Wi-Fi LAN or hotspot with companion app\n- Direct APK install confirmation on glasses via Android PackageInstaller\n- Phone UI provides live status and phase feedback\n\n# How It Works\n\n- Official CXR-M mode scans and connects to glasses over BLE and Wi-Fi Direct to upload APK\n- Hi Rokid CXR-L mode uses Hi Rokid app authorization and upload session\n- Companion modes require installing a glasses companion app and Bluetooth pairing\n- APK is transferred locally and installed with user confirmation on the glasses\n\n# Requirements\n\n- Phone app installed on Android phone\n- For `SPP` and `WIFI LAN` modes: glasses companion app installed and Bluetooth paired\n- For `CXR-L` mode: Hi Rokid app installed and phone Wi-Fi enabled\n\n# Notes\n\n- No desktop helper or cloud relay involved; all transfers are local\n- `WIFI LAN / FAST` mode requires phone and glasses on the same Wi-Fi or hotspot\n- Manual mode switching is needed; no automatic fallback between modes"
-      },
-      "releases": [
-        {
-          "version": "1.2.3",
-          "date": "2026-06-09T10:58:22Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.3",
-          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
-          "changes": [
-            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
-            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
-            "Adds compatibility callbacks for newer Rokid APIs.",
-            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
-          ]
-        },
-        {
-          "version": "1.2.2",
-          "date": "2026-05-26T16:38:33Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
-          "notes": "versionCode: 122\n\nFixed the splash screen by using a dedicated padded vector logo instead of scaling the launcher artwork. Adds Android 12+ splash theme overrides with a dark background to avoid the oversized/blurry icon and white startup flash.",
-          "changes": []
-        },
-        {
-          "version": "1.2.1",
-          "date": "2026-05-21T17:37:06Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.1",
-          "notes": "versionCode: 121\n\nFixed compatibility with the latest Hi Rokid update by sending the required auth package during CXR-L service binding. This restores CXR-L installs through the updated global Hi Rokid service.",
-          "changes": []
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-05-04T22:08:51Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.0",
-          "notes": "## What's new\n- Added `CXR-L / HI ROKID` mode using the global Hi Rokid app authorization flow.\n- Installs APKs through a CXR-L `CUSTOMAPP` session after Hi Rokid authorization.\n- Keeps the transport choices explicit: `CXR-M / OFFICIAL`, `CXR-L / HI ROKID`, `SPP / SLOW`, and `WIFI LAN / FAST`.\n\n## Reliability\n- Adds a clear Wi-Fi check for CXR-L, because Hi Rokid needs phone Wi-Fi enabled to join the glasses hotspot.\n- Recreates a fresh CXR-L session per install, cleans temporary APK cache files, and times out stuck installs after 90 seconds.\n\n## Notes\n- `CXR-M / OFFICIAL` still does not require the glasses companion app.\n- `CXR-L / HI ROKID` uses the global Hi Rokid app as the bridge and does not require the Rokid-APKs glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` require the Rokid-APKs glasses companion app.",
-          "changes": []
-        },
-        {
-          "version": "1.1.2",
-          "date": "2026-04-11T17:08:50Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.2",
-          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-APKs/compare/v1.1.1...v1.1.2\n\n## Changelog\n\n### New\n- `CXR / OFFICIAL` now uses the Rokid glasses hotspot flow instead of the older Wi-Fi Direct / P2P upload path.\n- The phone joins the hotspot exposed by the glasses and uploads the APK through the official Rokid CXR flow.\n- The README was updated to document the new official flow and setup steps.\n\n### Improved\n- Better compatibility on newer Android phones where the old Wi-Fi Direct path could fail with `WIFI_CONNECT_FAILED`.\n- More reliable official installs on devices where Rokid’s legacy P2P flow was unstable or broken.\n- Added clearer troubleshooting steps for `CXR / OFFICIAL`.\n\n### Notes\n- `CXR / OFFICIAL` still does **not** require the glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` are unchanged and still require the companion app.\n- If `CXR / OFFICIAL` fails before upload starts, disconnect the glasses from normal Android Bluetooth settings and force close `Hi Rokid` or other Rokid apps before retrying.",
-          "changes": []
-        },
-        {
-          "version": "1.1.1",
-          "date": "2026-04-06T14:33:58Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.1",
-          "notes": "## Changes\n\n- Added a Wi-Fi shortcut directly inside the glasses companion HUD.\n- Reworked glasses navigation so Bluetooth device browsing and the Wi-Fi action behave predictably on Rokid input.\n- Improved the glasses HUD rendering for monochrome displays with cleaner black backgrounds, lighter outlines, and more stable focus states.\n- Fixed broken glyph rendering in the companion indicators and restored clean phase/status markers on phone and glasses.\n- Release publishing no longer gets overwritten by CI-built APK uploads.\n\n## APKs in this release\n\nThese assets were uploaded from the local workspace builds for this release.",
-          "changes": []
-        }
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.3/Rokid-APKs-glasses-v1.1.2-debug.apk",
-          "sha256": "49cb1c987762c8d2cfde8ee039c8978bd914e42e7604ef745e198311de8abcb5",
-          "sizeBytes": 7728516,
-          "packageName": "com.rokidapks.glasses",
-          "versionCode": 105,
-          "versionName": "1.1.2"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.3/Rokid-APKs-phone-v1.2.3-debug.apk",
-          "sha256": "b8dbc3bfcc07938ccc450a301695e8e367fba04ca7d0a1961ca270f3b1676079",
-          "sizeBytes": 11898066,
-          "packageName": "com.rokidapks",
-          "versionCode": 123,
-          "versionName": "1.2.3"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
-      "iconAsset": "rokid-apks.png",
-      "screenshotAssets": [
-        "rokid-apks-phone.jpg",
-        "rokid-apks-glasses.jpg"
-      ],
-      "publishedAt": "2026-06-09T10:58:22Z",
-      "newUntil": "2026-06-11T10:58:22.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
-      ]
-    },
-    {
-      "id": "assist-bridge",
-      "name": "AssistBridge",
-      "category": "AI",
-      "type": "combo",
-      "version": "0.3.1",
-      "publishedAt": "2026-06-09T10:58:10Z",
-      "summary": "Relay Gemini and Google Assistant answers from a phone to a Rokid glasses HUD.",
-      "description": "AssistBridge captures visible Gemini or Google Assistant answer text on an Android phone and relays it through Global Hi Rokid CXR-L to a readable popup on Rokid glasses.",
-      "screenshotAssets": [
-        "assist-bridge-phone.png",
-        "assist-bridge-glasses-setup.png",
-        "assist-bridge-glasses-popup.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.1/AssistBridge-glasses-v0.3.1.apk",
-          "sha256": "0b1705eb1ecadce6924c9d931591fca696323bed82d1bba5590d944099d5f96d",
-          "sizeBytes": 4677198,
-          "packageName": "com.anezium.assistbridge.glasses",
-          "versionCode": 4,
-          "versionName": "0.3.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.1/AssistBridge-phone-v0.3.1.apk",
-          "sha256": "f78990a9832cd03217dd9253667ec9aca53be8e9654dc705b43131ab6709c23a",
-          "sizeBytes": 9809315,
-          "packageName": "com.anezium.assistbridge.phone",
-          "versionCode": 4,
-          "versionName": "0.3.1"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/AssistBridge",
-      "listing": {
-        "descriptionMarkdown": "## About\nAssistBridge relays visible Gemini and Google Assistant answers from an Android phone to a Rokid glasses HUD. The phone app captures assistant reply text through Android Accessibility, sends it through Global Hi Rokid CXR-L, and the glasses app renders the answer as a readable AR popup.\n\n## Key Features\n- Captures visible Gemini / Google Assistant answer text on the phone\n- Displays replies on Rokid glasses with a black, AR-safe popup and green accents\n- Uses Global Hi Rokid CXR-L for the phone-to-glasses relay\n- Bundles the glasses APK inside the phone APK for authorized CXR-L install / update flows\n- Includes setup buttons for both phone and glasses accessibility services\n- Lets the phone adjust the glasses HUD font size\n\n## Controls\n- Tap / OK / Back on glasses to dismiss the popup\n- Swipe left / right on glasses to scroll long answers\n- Adjust the HUD font size from the phone app\n\n## Requirements\n- Android phone with Gemini or Google Assistant\n- Rokid glasses paired with the Global Hi Rokid app\n- Android Accessibility enabled for AssistBridge on the phone\n- AssistBridge accessibility enabled on the glasses for overlay keys and swipe handling\n- Hi Rokid CXR-L authorization accepted on the phone\n\n## Notes\n- Android may require Allow restricted settings before sideloaded accessibility services can be enabled.\n- Assistant replies over the lock screen depend on Gemini / Google Assistant lock-screen settings.\n- Assistant UI capture is best-effort and may need updates if Google changes app accessibility surfaces."
-      },
-      "releases": [
-        {
-          "version": "0.3.1",
-          "date": "2026-06-09T10:58:10Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.1",
-          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
-          "changes": [
-            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
-            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
-            "Adds compatibility callbacks for newer Rokid APIs.",
-            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
-          ]
-        },
-        {
-          "version": "0.3.0",
-          "date": "2026-05-31T14:27:28Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.0",
-          "notes": "Phone-side HUD controls and release-quality cleanup for the AssistBridge phone-to-Rokid relay.\n\nWhat's included:\n- Phone app that captures visible Gemini / Google Assistant answers through Android Accessibility.\n- Rokid glasses app that displays answers in an AR-safe popup.\n- CXR-L relay path using Global Hi Rokid through Anezium/CxrGlobal.\n- Bundled glasses APK inside the phone APK for authorized CXR-L install / update.\n- Setup UI for phone and glasses accessibility services.\n- Popup controls: tap / OK / Back to dismiss, left / right swipe to scroll.\n- Phone-controlled glasses HUD font size, persisted on the glasses.\n- Refactored shared protocol constants and relay outbox handling.\n\nBoth APKs are debug-key signed for sideload testing.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-06-11T10:58:10.000Z",
-      "iconAsset": "assist-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/assist-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-phone.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-glasses-setup.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-glasses-popup.png"
-      ]
-    },
-    {
-      "id": "rokid-relay",
-      "name": "Rokid Relay",
-      "category": "Accessibility",
-      "type": "combo",
-      "version": "0.1.11",
-      "featured": true,
-      "featuredRank": 1,
-      "publishedAt": "2026-06-09T10:57:49Z",
-      "summary": "Reply to Android phone notifications from Rokid glasses.",
-      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
-      "screenshotAssets": [
-        "rokid-relay-phone-home.png",
-        "rokid-relay-phone-notifications.png",
-        "rokid-relay-phone-speech.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.11/rokid-relay-phone-v0.1.11-vc12-debug.apk",
-          "sha256": "8bc781d937c5440883099791248452ff598d8db6651c6b3a6a35c0ec60653d62",
-          "sizeBytes": 13055005,
-          "packageName": "com.anezium.rokidrelay.phone",
-          "versionCode": 12,
-          "versionName": "0.1.11"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
-      },
-      "releases": [
-        {
-          "version": "0.1.11",
-          "date": "2026-06-09T10:57:49Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.11",
-          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
-          "changes": [
-            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
-            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
-            "Adds compatibility callbacks for newer Rokid APIs.",
-            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
-          ]
-        },
-        {
-          "version": "0.1.6",
-          "date": "2026-06-06T10:32:01Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.6",
-          "notes": "versionCode: 7\n\nBugfix release for the phone UI polish after v0.1.5.\n\n- Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.\n- Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.\n- Fixes the Notifications tab top spacing so the Display panel matches other tabs.\n- Improves Update changelog display with a tappable preview and full changelog expansion.\n- Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.\n- Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK.",
-          "changes": [
-            "Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.",
-            "Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.",
-            "Fixes the Notifications tab top spacing so the Display panel matches other tabs.",
-            "Improves Update changelog display with a tappable preview and full changelog expansion.",
-            "Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.",
-            "Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK."
-          ]
-        },
-        {
-          "version": "0.1.4",
-          "date": "2026-05-29T21:23:14Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
-          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3",
-          "date": "2026-05-28T09:01:38Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
-          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2",
-          "date": "2026-05-27T22:55:35Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
-          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-06-11T10:57:49.000Z",
-      "iconAsset": "rokid-relay.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
-      ]
-    },
-    {
-      "id": "ek-meta-player",
-      "name": "EK Meta Player",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "featured": true,
-      "featuredRank": 3,
-      "publishedAt": "2026-05-29",
-      "summary": "Run Meta-display web apps on Rokid glasses.",
-      "description": "Utility for running games and apps developed for Meta display on Rokid glasses, with a built-in program list and support for adding and managing custom apps by QR code.",
-      "screenshotAssets": [
-        "ek-meta-player.jpg",
-        "ek-meta-player-2.jpg",
-        "ek-meta-player-3.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EK_Meta_v1.0.0.apk",
-          "sha256": "32a32be5d26510011b8401d2c1da770b14122d8541dc6b713732fdc0f3aafd4f",
-          "sizeBytes": 26251553,
-          "packageName": "kr.pe.eung.ekmeta",
-          "versionCode": 1,
-          "versionName": "1.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKMeta",
-      "listing": {
-        "descriptionMarkdown": "**EK Meta Player** is a utility that helps you run games and apps developed for Meta display on **Rokid Glasses**.\n\n**[Key Features]**\n- Provides a basic, built-in program list\n- Allows users to easily add and manage custom apps\n\n### Recommendations & Operations\n\n**1. Device Connection**\nWe highly recommend connecting external devices such as a **Bluetooth keyboard** for easier navigation.\n\n**2. Add Apps**\nYou can quickly add custom apps by scanning a **QR code**.\n\n**3. QR Code Generator**\nIf you need to generate a QR code, please use our online tool below:\n[Go to QR Code Generator ->](https://eung.pe.kr/webapp/qr-generator.html)"
-      },
-      "releases": [
-        {
-          "version": "1.0.0",
-          "date": "2026-05-29",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Imported from EUNG SOFT app metadata.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-31T00:00:00.000Z",
-      "iconAsset": "ek-meta-player.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-meta-player.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
       ]
     },
     {
@@ -776,6 +555,76 @@
       "newUntil": "2026-05-31T22:02:46.000Z",
       "iconAsset": "rokid-gmaps.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
+    },
+    {
+      "id": "assist-bridge",
+      "name": "AssistBridge",
+      "category": "AI",
+      "type": "combo",
+      "version": "0.3.1",
+      "publishedAt": "2026-06-09T10:58:10Z",
+      "summary": "Relay Gemini and Google Assistant answers from a phone to a Rokid glasses HUD.",
+      "description": "AssistBridge captures visible Gemini or Google Assistant answer text on an Android phone and relays it through Global Hi Rokid CXR-L to a readable popup on Rokid glasses.",
+      "screenshotAssets": [
+        "assist-bridge-phone.png",
+        "assist-bridge-glasses-setup.png",
+        "assist-bridge-glasses-popup.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.1/AssistBridge-glasses-v0.3.1.apk",
+          "sha256": "0b1705eb1ecadce6924c9d931591fca696323bed82d1bba5590d944099d5f96d",
+          "sizeBytes": 4677198,
+          "packageName": "com.anezium.assistbridge.glasses",
+          "versionCode": 4,
+          "versionName": "0.3.1"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/AssistBridge/releases/download/v0.3.1/AssistBridge-phone-v0.3.1.apk",
+          "sha256": "f78990a9832cd03217dd9253667ec9aca53be8e9654dc705b43131ab6709c23a",
+          "sizeBytes": 9809315,
+          "packageName": "com.anezium.assistbridge.phone",
+          "versionCode": 4,
+          "versionName": "0.3.1"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/AssistBridge",
+      "listing": {
+        "descriptionMarkdown": "## About\nAssistBridge relays visible Gemini and Google Assistant answers from an Android phone to a Rokid glasses HUD. The phone app captures assistant reply text through Android Accessibility, sends it through Global Hi Rokid CXR-L, and the glasses app renders the answer as a readable AR popup.\n\n## Key Features\n- Captures visible Gemini / Google Assistant answer text on the phone\n- Displays replies on Rokid glasses with a black, AR-safe popup and green accents\n- Uses Global Hi Rokid CXR-L for the phone-to-glasses relay\n- Bundles the glasses APK inside the phone APK for authorized CXR-L install / update flows\n- Includes setup buttons for both phone and glasses accessibility services\n- Lets the phone adjust the glasses HUD font size\n\n## Controls\n- Tap / OK / Back on glasses to dismiss the popup\n- Swipe left / right on glasses to scroll long answers\n- Adjust the HUD font size from the phone app\n\n## Requirements\n- Android phone with Gemini or Google Assistant\n- Rokid glasses paired with the Global Hi Rokid app\n- Android Accessibility enabled for AssistBridge on the phone\n- AssistBridge accessibility enabled on the glasses for overlay keys and swipe handling\n- Hi Rokid CXR-L authorization accepted on the phone\n\n## Notes\n- Android may require Allow restricted settings before sideloaded accessibility services can be enabled.\n- Assistant replies over the lock screen depend on Gemini / Google Assistant lock-screen settings.\n- Assistant UI capture is best-effort and may need updates if Google changes app accessibility surfaces."
+      },
+      "releases": [
+        {
+          "version": "0.3.1",
+          "date": "2026-06-09T10:58:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.1",
+          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+          "changes": [
+            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+            "Adds compatibility callbacks for newer Rokid APIs.",
+            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+          ]
+        },
+        {
+          "version": "0.3.0",
+          "date": "2026-05-31T14:27:28Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/AssistBridge/releases/tag/v0.3.0",
+          "notes": "Phone-side HUD controls and release-quality cleanup for the AssistBridge phone-to-Rokid relay.\n\nWhat's included:\n- Phone app that captures visible Gemini / Google Assistant answers through Android Accessibility.\n- Rokid glasses app that displays answers in an AR-safe popup.\n- CXR-L relay path using Global Hi Rokid through Anezium/CxrGlobal.\n- Bundled glasses APK inside the phone APK for authorized CXR-L install / update.\n- Setup UI for phone and glasses accessibility services.\n- Popup controls: tap / OK / Back to dismiss, left / right swipe to scroll.\n- Phone-controlled glasses HUD font size, persisted on the glasses.\n- Refactored shared protocol constants and relay outbox handling.\n\nBoth APKs are debug-key signed for sideload testing.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-06-11T10:58:10.000Z",
+      "iconAsset": "assist-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/assist-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-phone.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-glasses-setup.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/assist-bridge-glasses-popup.png"
+      ]
     },
     {
       "id": "dcim-server",
@@ -2309,6 +2158,103 @@
       "screenshotAssets": []
     },
     {
+      "id": "rokid-apks",
+      "name": "Rokid-APKs",
+      "category": "Developer",
+      "type": "combo",
+      "version": "1.2.3",
+      "summary": "Upload and install APKs on Rokid glasses via phone using four explicit transfer modes",
+      "description": "Rokid-APKs lets you install Android APKs on Rokid glasses from your phone with four transfer modes: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN. No desktop or cloud relay is needed. Requires a companion app on glasses for some modes.",
+      "listing": {
+        "about": "Rokid-APKs is a developer-focused installer for getting APKs onto Rokid glasses without a desktop helper. It exposes several transfer paths so you can pick the one that fits the current device state: official CXR-M, Hi Rokid CXR-L, Bluetooth SPP, or Wi-Fi LAN with a glasses companion.\n\nUse it when you are testing local builds, sharing internal tools, or recovering from a flow where the normal install path is not convenient. The app keeps the transfer modes explicit, so it is easier to understand what is happening before an APK is pushed to the glasses.\n\nInstall both the phone and glasses APKs when you want the companion-assisted paths. CXR-L installs can also use the selected Rokid host app from RokidBrew.",
+        "descriptionMarkdown": "# About\n\nRokid-APKs enables installation of Android APKs on Rokid glasses directly from your phone. It supports four explicit transfer modes to suit different connection setups.\n\n# Key Features\n\n- Four transfer modes: \n  - `CXR-M / OFFICIAL`: Official Rokid BLE + Wi-Fi Direct, no glasses companion app needed\n  - `CXR-L / HI ROKID`: Uses Hi Rokid global authorization and CXR-L install path, requires Hi Rokid app\n  - `SPP / SLOW`: Bluetooth SPP streaming via glasses companion app, fully local and offline\n  - `WIFI LAN / FAST`: Bluetooth control plus APK transfer over Wi-Fi LAN or hotspot with companion app\n- Direct APK install confirmation on glasses via Android PackageInstaller\n- Phone UI provides live status and phase feedback\n\n# How It Works\n\n- Official CXR-M mode scans and connects to glasses over BLE and Wi-Fi Direct to upload APK\n- Hi Rokid CXR-L mode uses Hi Rokid app authorization and upload session\n- Companion modes require installing a glasses companion app and Bluetooth pairing\n- APK is transferred locally and installed with user confirmation on the glasses\n\n# Requirements\n\n- Phone app installed on Android phone\n- For `SPP` and `WIFI LAN` modes: glasses companion app installed and Bluetooth paired\n- For `CXR-L` mode: Hi Rokid app installed and phone Wi-Fi enabled\n\n# Notes\n\n- No desktop helper or cloud relay involved; all transfers are local\n- `WIFI LAN / FAST` mode requires phone and glasses on the same Wi-Fi or hotspot\n- Manual mode switching is needed; no automatic fallback between modes"
+      },
+      "releases": [
+        {
+          "version": "1.2.3",
+          "date": "2026-06-09T10:58:22Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.3",
+          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+          "changes": [
+            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+            "Adds compatibility callbacks for newer Rokid APIs.",
+            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+          ]
+        },
+        {
+          "version": "1.2.2",
+          "date": "2026-05-26T16:38:33Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.2",
+          "notes": "versionCode: 122\n\nFixed the splash screen by using a dedicated padded vector logo instead of scaling the launcher artwork. Adds Android 12+ splash theme overrides with a dark background to avoid the oversized/blurry icon and white startup flash.",
+          "changes": []
+        },
+        {
+          "version": "1.2.1",
+          "date": "2026-05-21T17:37:06Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.1",
+          "notes": "versionCode: 121\n\nFixed compatibility with the latest Hi Rokid update by sending the required auth package during CXR-L service binding. This restores CXR-L installs through the updated global Hi Rokid service.",
+          "changes": []
+        },
+        {
+          "version": "1.2.0",
+          "date": "2026-05-04T22:08:51Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.2.0",
+          "notes": "## What's new\n- Added `CXR-L / HI ROKID` mode using the global Hi Rokid app authorization flow.\n- Installs APKs through a CXR-L `CUSTOMAPP` session after Hi Rokid authorization.\n- Keeps the transport choices explicit: `CXR-M / OFFICIAL`, `CXR-L / HI ROKID`, `SPP / SLOW`, and `WIFI LAN / FAST`.\n\n## Reliability\n- Adds a clear Wi-Fi check for CXR-L, because Hi Rokid needs phone Wi-Fi enabled to join the glasses hotspot.\n- Recreates a fresh CXR-L session per install, cleans temporary APK cache files, and times out stuck installs after 90 seconds.\n\n## Notes\n- `CXR-M / OFFICIAL` still does not require the glasses companion app.\n- `CXR-L / HI ROKID` uses the global Hi Rokid app as the bridge and does not require the Rokid-APKs glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` require the Rokid-APKs glasses companion app.",
+          "changes": []
+        },
+        {
+          "version": "1.1.2",
+          "date": "2026-04-11T17:08:50Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.2",
+          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-APKs/compare/v1.1.1...v1.1.2\n\n## Changelog\n\n### New\n- `CXR / OFFICIAL` now uses the Rokid glasses hotspot flow instead of the older Wi-Fi Direct / P2P upload path.\n- The phone joins the hotspot exposed by the glasses and uploads the APK through the official Rokid CXR flow.\n- The README was updated to document the new official flow and setup steps.\n\n### Improved\n- Better compatibility on newer Android phones where the old Wi-Fi Direct path could fail with `WIFI_CONNECT_FAILED`.\n- More reliable official installs on devices where Rokid’s legacy P2P flow was unstable or broken.\n- Added clearer troubleshooting steps for `CXR / OFFICIAL`.\n\n### Notes\n- `CXR / OFFICIAL` still does **not** require the glasses companion app.\n- `SPP / SLOW` and `WIFI LAN / FAST` are unchanged and still require the companion app.\n- If `CXR / OFFICIAL` fails before upload starts, disconnect the glasses from normal Android Bluetooth settings and force close `Hi Rokid` or other Rokid apps before retrying.",
+          "changes": []
+        },
+        {
+          "version": "1.1.1",
+          "date": "2026-04-06T14:33:58Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-APKs/releases/tag/v1.1.1",
+          "notes": "## Changes\n\n- Added a Wi-Fi shortcut directly inside the glasses companion HUD.\n- Reworked glasses navigation so Bluetooth device browsing and the Wi-Fi action behave predictably on Rokid input.\n- Improved the glasses HUD rendering for monochrome displays with cleaner black backgrounds, lighter outlines, and more stable focus states.\n- Fixed broken glyph rendering in the companion indicators and restored clean phase/status markers on phone and glasses.\n- Release publishing no longer gets overwritten by CI-built APK uploads.\n\n## APKs in this release\n\nThese assets were uploaded from the local workspace builds for this release.",
+          "changes": []
+        }
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.3/Rokid-APKs-glasses-v1.1.2-debug.apk",
+          "sha256": "49cb1c987762c8d2cfde8ee039c8978bd914e42e7604ef745e198311de8abcb5",
+          "sizeBytes": 7728516,
+          "packageName": "com.rokidapks.glasses",
+          "versionCode": 105,
+          "versionName": "1.1.2"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-APKs/releases/download/v1.2.3/Rokid-APKs-phone-v1.2.3-debug.apk",
+          "sha256": "b8dbc3bfcc07938ccc450a301695e8e367fba04ca7d0a1961ca270f3b1676079",
+          "sizeBytes": 11898066,
+          "packageName": "com.rokidapks",
+          "versionCode": 123,
+          "versionName": "1.2.3"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-APKs",
+      "iconAsset": "rokid-apks.png",
+      "screenshotAssets": [
+        "rokid-apks-phone.jpg",
+        "rokid-apks-glasses.jpg"
+      ],
+      "publishedAt": "2026-06-09T10:58:22Z",
+      "newUntil": "2026-06-11T10:58:22.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-apks.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-apks-glasses.jpg"
+      ]
+    },
+    {
       "id": "rokid-scribe",
       "name": "Rokid-Scribe",
       "category": "Utility",
@@ -2376,6 +2322,76 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
+      ]
+    },
+    {
+      "id": "tasker-bridge",
+      "name": "Tasker Bridge",
+      "category": "Utility",
+      "type": "phone",
+      "version": "0.2.6-bt",
+      "publishedAt": "2026-06-09T10:58:28Z",
+      "summary": "Launch Android Tasker automations from a Rokid glasses HUD.",
+      "description": "Phone companion that installs a bundled Rokid glasses HUD, keeps a Bluetooth bridge to the phone, lists Tasker tasks on the glasses, and launches the selected automation through Tasker.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Tasker-Bridge",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Tasker-Bridge/releases/download/v0.2.6-bt/phone-app-release.apk",
+          "sha256": "8b495ddb68d947279907d0efd580a2bb63a4056e4be21ff26ba982921b820ebb",
+          "sizeBytes": 32195384,
+          "packageName": "com.anezium.taskerbridge.phone",
+          "versionCode": 16,
+          "versionName": "0.2.6-bt"
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nTasker Bridge lets you run Android Tasker automations from a compact Rokid glasses HUD. Install the phone APK, use it to install or launch the bundled glasses helper, then choose a Tasker task directly from the glasses.\n\n## Key Features\n- Lists named Tasker tasks on the Rokid glasses HUD\n- Launches selected Tasker tasks from the glasses through the phone\n- Uses Bluetooth RFCOMM for runtime task lists and launch commands\n- Uses Global Hi Rokid CXR-L only for helper install, update, and launch\n- Pairs by the Tasker Bridge service endpoint rather than the public device name\n- Keeps Tasker access and execution on the Android phone\n- Refreshes Tasker on HUD open or resume instead of polling continuously\n\n## Controls\n- Swipe forward or back on the glasses to move through tasks\n- Tap or OK to launch the selected task\n- Back hides the HUD\n- DPAD key events are supported for ADB testing\n\n## Requirements\n- Android 31+ phone with Tasker installed\n- Rokid glasses paired with the phone\n- Global Hi Rokid installed on the phone\n- Tasker external access and run-task permission granted\n- Wi-Fi enabled for CXR-L helper upload/install\n\n## Notes\n- Only the phone APK needs to be installed manually; it embeds the glasses helper APK.\n- Runtime commands use Bluetooth, so CXR-L disconnects after setup.\n- Use Forget Bluetooth pairing if you need to pair a different phone or glasses endpoint."
+      },
+      "releases": [
+        {
+          "version": "0.2.6-bt",
+          "date": "2026-06-09T10:58:28Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.2.6-bt",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "0.2.5-bt",
+          "date": "2026-06-05T14:23:13Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.2.5-bt",
+          "notes": "# Changelog\n\n## v0.2.5-bt - 2026-06-05\n\nTasker Bridge now uses Bluetooth as its runtime command channel. CXR-L is kept only for one-shot helper setup: installing, updating, and launching the glasses HUD.\n\n### Added\n\n- Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.\n- Versioned JSON protocol handshake with explicit phone/helper roles.\n- App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.\n- Phone foreground `connectedDevice` bridge so HUD commands can reach Tasker while the phone app is in the background.\n- Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.\n- Cached task-list delivery followed by refresh-on-demand to reduce idle work.\n\n### Changed\n\n- CXR-L no longer stays active for runtime commands after setup completes.\n- The phone app embeds the glasses helper APK and tracks the installed helper version.\n- The HUD selection model is centralized so visual focus, scroll position, and activation use the same selected item.\n- Bluetooth sends now report real write success/failure instead of optimistic delivery.\n\n### Fixed\n\n- R08 navigation could visually move while activating the wrong row.\n- Unknown future protocol messages no longer crash decoding.\n- Triple/quadruple-style launcher interactions are no longer affected by Tasker Bridge keeping a CXR runtime connection alive.\n\n### Upgrade Notes\n\n- Install the new phone APK first.\n- Open Tasker Bridge on the phone and use **Install HUD** to push the bundled helper `0.2.3-bt` to the glasses.\n- Use **Forget Bluetooth pairing** only if you want to pair the HUD with a different phone/glasses endpoint.",
+          "changes": [
+            "Bluetooth RFCOMM runtime between the phone bridge and the glasses HUD.",
+            "Versioned JSON protocol handshake with explicit phone/helper roles.",
+            "App-level Bluetooth pairing lock based on the first successful Tasker Bridge service connection, not the public device name.",
+            "Phone foreground connectedDevice bridge so HUD commands can reach Tasker while the phone app is in the background.",
+            "Glasses HUD project grouping, measured scrolling, and R08-friendly accessibility actions.",
+            "Cached task-list delivery followed by refresh-on-demand to reduce idle work.",
+            "CXR-L no longer stays active for runtime commands after setup completes.",
+            "The phone app embeds the glasses helper APK and tracks the installed helper version."
+          ]
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-06-04T22:40:11Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Tasker-Bridge/releases/tag/v0.1.0",
+          "notes": "Initial Tasker Bridge release.\n\n- Phone APK for Android 31+ with bundled Rokid glasses helper.\n- Start bridge checks the helper on the glasses, uploads/installs it through CXR-L if needed, then opens the HUD.\n- Glasses HUD lists Tasker tasks and launches the selected automation through the phone.\n- Cache-first Tasker list response with automatic refresh-on-HUD-open/resume and no periodic polling.\n- Foreground service now uses connectedDevice only, with no app-held wakelock.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "tasker-bridge.png",
+        "tasker-bridge-2.png"
+      ],
+      "newUntil": "2026-06-11T10:58:28.000Z",
+      "iconAsset": "tasker-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/tasker-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/tasker-bridge-2.png"
       ]
     },
     {

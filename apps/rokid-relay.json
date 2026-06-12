@@ -3,10 +3,10 @@
   "name": "Rokid Relay",
   "category": "Accessibility",
   "type": "combo",
-  "version": "0.1.11",
+  "version": "0.1.13",
   "featured": true,
   "featuredRank": 1,
-  "publishedAt": "2026-06-09T10:57:49Z",
+  "publishedAt": "2026-06-11T11:14:42Z",
   "summary": "Reply to Android phone notifications from Rokid glasses.",
   "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
   "screenshotAssets": [
@@ -18,12 +18,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.11/rokid-relay-phone-v0.1.11-vc12-debug.apk",
-      "sha256": "8bc781d937c5440883099791248452ff598d8db6651c6b3a6a35c0ec60653d62",
-      "sizeBytes": 13055005,
+      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.13/rokid-relay-phone-v0.1.13-vc14-debug.apk",
+      "sha256": "0ba8cedef6875a39eb521b0a3f27dd0161aaebf5529dc64dd1ef59e5ba89a177",
+      "sizeBytes": 13121681,
       "packageName": "com.anezium.rokidrelay.phone",
-      "versionCode": 12,
-      "versionName": "0.1.11"
+      "versionCode": 14,
+      "versionName": "0.1.13"
     }
   ],
   "author": "Anezium",
@@ -44,6 +44,22 @@
     "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
   },
   "releases": [
+    {
+      "version": "0.1.13",
+      "date": "2026-06-11T11:14:42Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.13",
+      "notes": "Rokid Relay v0.1.13 is a development-preview update focused on glasses input reliability, long notification readability, voice configuration, and repeatable QA.\n\nImportant: v0.1.13 supersedes v0.1.12. The v0.1.12 release notes described the app changes, but the published package still carried the previous bundled glasses helper version. This release republishes the full changelog with the corrected phone and bundled glasses versions.\n\nversionName: 0.1.13\nversionCode: 14\nbundledGlassesVersionName: 0.1.8\nbundledGlassesVersionCode: 9\n\n## What's New\n\n### More Reliable Glasses Controls\n- Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.\n- Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.\n- Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.\n- Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.\n- Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.\n\n### Better Notification and Inbox Reading\n- Reworked long notification paging with measured StaticLayout pages instead of clipping text.\n- Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.\n- Added inbox detail paging guards so boundary swipes do not accidentally move the list.\n\n### Voice and Companion Improvements\n- Added transcription language selection.\n- Added Azure Speech provider support alongside the existing STT choices.\n- Added companion-device linking for background microphone flows.\n- Suppressed the Rokid AI wake path while relay capture is active.\n- Made companion glasses detection more robust across device renames.\n- Fixed cases where the companion link could get stuck on Bluetooth search.\n- Stopped opening the glasses app just because the phone app opens.\n\n### QA and Regression Coverage\n- Added focused unit tests for debounce, key mapping, combo buffering, inbox two-finger gating, notification paging, and the new RelayInputInterpreter.\n- Added a generated QA matrix and starter scenario files under qa/.\n- Added scripts/rokid-regression.ps1, which can build, exercise connected phone/glasses devices, post a real test notification, capture logs/screenshots, and record a report.\n- Validated the release APK with zipalign -P 16 and confirmed the phone APK contains the updated bundled glasses helper APK.\n\n## Known Limits\n\n- The QA runner can now do real device smoke coverage, but exact internal assertions for some scenarios still need debug hooks such as DUMP_STATE, SEND_FAKE_CXR_MESSAGE, and fake voice/audio hooks.\n- Release APK assets are still debug builds while public signing/distribution is being finalized.\n\n## Validation\n\n- Gradle: :glasses:testDebugUnitTest\n- Gradle: :phone:assembleDebug, including bundled glasses helper copy\n- Device QA runner: phone + glasses build/install/launch smoke, ADB input alias replay, real phone test notification, glasses screenshot/log capture\n- Autoreview: Codex CLI clean, no accepted/actionable findings\n- APK check: zipalign -P 16 verification successful\n- APK package check: phone versionCode 14 / versionName 0.1.13\n- Bundled helper check: glasses versionCode 9 / versionName 0.1.8, matching the rebuilt glasses APK hash\n\nSHA256(rokid-relay-phone-v0.1.13-vc14-debug.apk): 0ba8cedef6875a39eb521b0a3f27dd0161aaebf5529dc64dd1ef59e5ba89a177",
+      "changes": [
+        "Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.",
+        "Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.",
+        "Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.",
+        "Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.",
+        "Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.",
+        "Reworked long notification paging with measured StaticLayout pages instead of clipping text.",
+        "Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.",
+        "Added inbox detail paging guards so boundary swipes do not accidentally move the list."
+      ]
+    },
     {
       "version": "0.1.11",
       "date": "2026-06-09T10:57:49Z",
