@@ -3,10 +3,10 @@
   "name": "Rokid Relay",
   "category": "Accessibility",
   "type": "combo",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "featured": true,
   "featuredRank": 1,
-  "publishedAt": "2026-06-11T11:14:42Z",
+  "publishedAt": "2026-06-13T23:07:48Z",
   "summary": "Reply to Android phone notifications from Rokid glasses.",
   "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
   "screenshotAssets": [
@@ -18,12 +18,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.13/rokid-relay-phone-v0.1.13-vc14-debug.apk",
-      "sha256": "0ba8cedef6875a39eb521b0a3f27dd0161aaebf5529dc64dd1ef59e5ba89a177",
-      "sizeBytes": 13121681,
+      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.14/rokid-relay-phone-v0.1.14-vc15-debug.apk",
+      "sha256": "eb27aa8ce5d79d88e890d837a2470851c8e250857b3180eed2a768efdf7751c1",
+      "sizeBytes": 13731549,
       "packageName": "com.anezium.rokidrelay.phone",
-      "versionCode": 14,
-      "versionName": "0.1.13"
+      "versionCode": 15,
+      "versionName": "0.1.14"
     }
   ],
   "author": "Anezium",
@@ -44,6 +44,22 @@
     "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
   },
   "releases": [
+    {
+      "version": "0.1.14",
+      "date": "2026-06-13T23:07:48Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.14",
+      "notes": "Rokid Relay v0.1.14 is a development-preview update focused on notification image previews on the glasses, safer update handling, and release traceability.\n\nversionName: 0.1.14\nversionCode: 15\nbundledGlassesVersionName: 0.1.9\nbundledGlassesVersionCode: 10\n\n## What's New\n\n### Notification Image Previews\n- Added an opt-in Image previews on glasses setting in the phone app.\n- Extracted notification images from large icons, MessagingStyle image messages, BigPicture notifications, and diagnostic test notifications.\n- Added a rokid_relay.media transfer channel so the phone can stream compact image payloads separately from text notification events.\n- Added a bounded image cache on the glasses helper and HUD rendering that shows the preview above the notification text while keeping reply actions available.\n\n### Diagnostics and Branding\n- Added a diagnostics image notification test using the updated Rokid preview image.\n- Replaced the project logo with the white Rokid wordmark on black.\n- Added CHANGELOG.md and refreshed README, plan, and QA matrix coverage for the image-preview path.\n\n### Update and QA Hardening\n- Kept the phone updater focused on phone APK assets even when a glasses APK is attached to the same GitHub release.\n- Added update-controller and release-metadata tests from the hardening work merged into this release.\n- Bumped the phone app to 0.1.14 / versionCode 15 and the bundled glasses helper to 0.1.9 / versionCode 10.\n\n## Known Limits\n\n- Image previews only appear when Android exposes an image for the notification and the opt-in setting is enabled.\n- The phone still sends compact JPEG previews rather than full-resolution original images.\n- Release APK assets are still debug builds while public signing/distribution is being finalized.\n\n## Validation\n\n- Gradle: :phone:testDebugUnitTest :glasses:testDebugUnitTest :phone:assembleDebug :glasses:assembleDebug\n- Device smoke: phone APK and glasses APK installed; image notification rendered on glasses; reply flow still displayed the listening state.\n- Git: merged into main with a fast-forward from the advisor branch.\n\n## Assets\n\n- rokid-relay-phone-v0.1.14-vc15-debug.apk\n- rokid-relay-glasses-v0.1.9-vc10-debug.apk\n\nSHA256(rokid-relay-phone-v0.1.14-vc15-debug.apk): eb27aa8ce5d79d88e890d837a2470851c8e250857b3180eed2a768efdf7751c1\nSHA256(rokid-relay-glasses-v0.1.9-vc10-debug.apk): 833fcf18d311f84bbf668336cc7bc92e51d6a54eae2de273c69c38e18b4e3aa9",
+      "changes": [
+        "Added an opt-in Image previews on glasses setting in the phone app.",
+        "Extracted notification images from large icons, MessagingStyle image messages, BigPicture notifications, and diagnostic test notifications.",
+        "Added a rokidrelay.media transfer channel so the phone can stream compact image payloads separately from text notification events.",
+        "Added a bounded image cache on the glasses helper and HUD rendering that shows the preview above the notification text while keeping reply actions available.",
+        "Added a diagnostics image notification test using the updated Rokid preview image.",
+        "Replaced the project logo with the white Rokid wordmark on black.",
+        "Added CHANGELOG.md and refreshed README, plan, and QA matrix coverage for the image-preview path.",
+        "Kept the phone updater focused on phone APK assets even when a glasses APK is attached to the same GitHub release."
+      ]
+    },
     {
       "version": "0.1.13",
       "date": "2026-06-11T11:14:42Z",
