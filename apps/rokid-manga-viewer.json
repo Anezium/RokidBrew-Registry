@@ -1,0 +1,52 @@
+{
+  "id": "rokid-manga-viewer",
+  "name": "Rokid Manga Viewer",
+  "category": "Reader",
+  "type": "glasses",
+  "version": "1.0.5",
+  "publishedAt": "2026-06-28",
+  "summary": "Manga and comic ZIP reader optimized for Rokid AR glasses",
+  "description": "Rokid Manga Viewer opens manga or comic ZIP files directly on Rokid AR glasses. It supports touchpad, side-tap, DPAD, and Rokid R08 Ring navigation, optional inverted colors, left-to-right reading for Western comics, spread view, and per-book reading progress.",
+  "author": "vyw00741",
+  "sourceUrl": "https://github.com/vyw00741/rokid-manga-viewer",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/vyw00741/rokid-manga-viewer/releases/download/v1.0.5/MangaViewer_debug_v1.0.5.apk",
+      "sha256": "197f1ab843727c3c213aead2a1c8ff4433a63f582d3c820c6c07aafd473e6715",
+      "sizeBytes": 12225903,
+      "packageName": "com.example.rokidmangaviewer",
+      "versionCode": 6,
+      "versionName": "1.0.5"
+    }
+  ],
+  "releases": [
+    {
+      "version": "1.0.5",
+      "date": "2026-06-28T06:03:34Z",
+      "sourceReleaseUrl": "https://github.com/vyw00741/rokid-manga-viewer/releases/tag/v1.0.5",
+      "notes": "- [Rokid Manga Viewer](https://github.com/vyw00741/rokid-manga-viewer) - ZIP format manga viewer optimized for Rokid AR glasses. (Note: Users need to manually upload ZIP files to/sdcard/Android/data/com.example.rokidmangaviewer/files/MangaViewer/).",
+      "changes": []
+    }
+  ],
+  "listing": {
+    "descriptionMarkdown": "About Rokid Manga Viewer\n\nRokid Manga Viewer is a glasses-native manga and comic reader for Rokid AR glasses. It reads ZIP archives directly, so books do not need to be unpacked before reading.\n\nKey features\n\n- Direct ZIP loading for manga and comic archives\n- Touchpad, side-tap, DPAD, keyboard, media-key, and Rokid R08 Ring controls\n- Inverted-color mode for high-contrast reading\n- Left-to-right reading mode for Western comics and artbooks\n- Single-page and spread view modes\n- Automatic per-book progress saving and resume\n\nControls\n\n- Book selector: swipe or use DPAD to move through books and options, then tap or press center/enter to open or toggle.\n- Reader: swipe left/right or use DPAD/media keys to turn pages.\n- Reader: tap or press center/enter to switch between single-page and spread view.\n- Reader: double tap or press Back/Escape to return to the book list.\n\nSetup\n\n- Install the glasses APK and grant file/media access when prompted.\n- Put `.zip` books in the app's `MangaViewer` folder. The app also checks `Documents/MangaViewer` on devices that allow legacy document access.\n- ZIP entries can contain JPG, JPEG, PNG, or WebP pages; pages are naturally sorted by filename.\n\nNotes\n\n- This is a glasses app and does not require a phone companion.\n- The APK is currently distributed as a debug build by the upstream project."
+  },
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "vyw00741/rokid-manga-viewer",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "vyw00741/rokid-manga-viewer",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^MangaViewer_debug_v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
+  }
+}
