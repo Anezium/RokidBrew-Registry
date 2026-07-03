@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-02T19:41:58.376Z",
+  "generatedAt": "2026-07-03T08:29:14.078Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,117 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "r08-access-bridge",
+      "name": "R08 Access Bridge",
+      "category": "Navigation",
+      "type": "glasses",
+      "version": "1.4.8-unsigned.apk",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
+      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.4.8/R08-Access-Bridge-v1.4.8-unsigned.apk",
+          "sha256": "abab1f61d7e6bb398d3cb38390e75655db8eda9e0c6955d850f6e31b8c574efe",
+          "sizeBytes": 14490693,
+          "packageName": "com.anezium.r08accessbridge",
+          "versionCode": 26,
+          "versionName": "1.4.8"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.4.8-unsigned.apk",
+          "date": "2026-07-02T20:58:19Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-06-28T11:02:53Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.6",
+          "date": "2026-06-20T18:22:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.5",
+          "date": "2026-06-16T18:07:39Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.2",
+          "date": "2026-06-13T00:00:54Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.0",
+          "date": "2026-06-09T22:40:18Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.0",
+          "date": "2026-06-07T20:51:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.2.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.1.0",
+          "date": "2026-06-06T19:09:04Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.1.0",
+          "notes": "## Highlights\n\n- One APK now includes both Stable and Fast launcher behavior.\n- Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.\n- Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.\n- Triple and quadruple tap can now be remapped from the glasses UI.\n- Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.\n- Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.\n- Added a top-bar badge showing Stable, Fast, or Touch mode.\n- Added README screenshots captured from the real glasses UI.",
+          "changes": [
+            "One APK now includes both Stable and Fast launcher behavior.",
+            "Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.",
+            "Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.",
+            "Triple and quadruple tap can now be remapped from the glasses UI.",
+            "Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.",
+            "Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.",
+            "Added a top-bar badge showing Stable, Fast, or Touch mode.",
+            "Added README screenshots captured from the real glasses UI."
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "r08-access-bridge.png",
+        "r08-access-bridge-2.png",
+        "r08-access-bridge-3.png",
+        "r08-access-bridge-4.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
+      },
+      "publishedAt": "2026-07-02T20:58:19Z",
+      "newUntil": "2026-07-04T20:58:19.000Z",
+      "iconAsset": "r08-access-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
+      ]
+    },
     {
       "id": "rokid-zoom-camera",
       "name": "Rokid Zoom Camera",
@@ -178,126 +289,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
-      ]
-    },
-    {
-      "id": "r08-access-bridge",
-      "name": "R08 Access Bridge",
-      "category": "Navigation",
-      "type": "glasses",
-      "version": "1.4.7",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
-      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.4.7/R08-Access-Bridge-v1.4.7.apk",
-          "sha256": "a3862b364246231248243c80a96b22f58bb81d70e770c383c3ca3865938540d0",
-          "sizeBytes": 3195859,
-          "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 25,
-          "versionName": "1.4.7"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.4.7",
-          "date": "2026-06-28T11:02:53Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.6",
-          "date": "2026-06-20T18:22:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-06-16T18:07:39Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.2",
-          "date": "2026-06-13T00:00:54Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.0",
-          "date": "2026-06-09T22:40:18Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-06-07T20:51:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.2.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.1.0",
-          "date": "2026-06-06T19:09:04Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.1.0",
-          "notes": "## Highlights\n\n- One APK now includes both Stable and Fast launcher behavior.\n- Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.\n- Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.\n- Triple and quadruple tap can now be remapped from the glasses UI.\n- Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.\n- Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.\n- Added a top-bar badge showing Stable, Fast, or Touch mode.\n- Added README screenshots captured from the real glasses UI.",
-          "changes": [
-            "One APK now includes both Stable and Fast launcher behavior.",
-            "Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.",
-            "Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.",
-            "Triple and quadruple tap can now be remapped from the glasses UI.",
-            "Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.",
-            "Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.",
-            "Added a top-bar badge showing Stable, Fast, or Touch mode.",
-            "Added README screenshots captured from the real glasses UI."
-          ]
-        },
-        {
-          "version": "1.0.10",
-          "date": "2026-06-05T16:01:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.0.10",
-          "notes": "## Highlights\n\n- One APK now includes both Stable and Fast launcher behavior.\n- Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.\n- Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.\n- Triple and quadruple tap can now be remapped from the glasses UI.\n- Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.\n- Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.\n- Added a top-bar badge showing Stable, Fast, or Touch mode.\n- Added README screenshots captured from the real glasses UI.",
-          "changes": [
-            "One APK now includes both Stable and Fast launcher behavior.",
-            "Stable mode is the default and matches the previous dev/focus-sync behavior: one launcher step per slide for safer focus alignment.",
-            "Fast mode is now an in-app option with boosted launcher swipes for visible acceleration.",
-            "Triple and quadruple tap can now be remapped from the glasses UI.",
-            "Triple Tap defaults to Rokid AI; Quadruple Tap defaults to No action.",
-            "Added mappable actions for Rokid AI, photo, video toggle, AR screenshot, and AR video toggle.",
-            "Added a top-bar badge showing Stable, Fast, or Touch mode.",
-            "Added README screenshots captured from the real glasses UI."
-          ]
-        }
-      ],
-      "screenshotAssets": [
-        "r08-access-bridge.png",
-        "r08-access-bridge-2.png",
-        "r08-access-bridge-3.png",
-        "r08-access-bridge-4.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
-      },
-      "publishedAt": "2026-06-28T11:02:53Z",
-      "newUntil": "2026-06-30T11:02:53.000Z",
-      "iconAsset": "r08-access-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
       ]
     },
     {
