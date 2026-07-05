@@ -1,0 +1,110 @@
+{
+  "id": "rokid-newpipe",
+  "name": "Rokid NewPipe",
+  "category": "Media",
+  "type": "glasses",
+  "version": "0.28.8",
+  "publishedAt": "2026-07-04T00:16:09Z",
+  "summary": "Watch YouTube and other NewPipe-supported streams from a HUD-first interface for Rokid glasses",
+  "description": "Rokid NewPipe is a glasses-focused fork of NewPipe adapted for a 480x640, no-touch Rokid workflow. It keeps the NewPipe streaming core while reshaping home, search, video detail, and player controls around swipe, tap, and Back input on the glasses.",
+  "listing": {
+    "descriptionMarkdown": "# About\nRokid NewPipe adapts NewPipe for Rokid glasses with a HUD-first interface. It is designed for the 480x640 glasses display and direct swipe, tap, and Back navigation instead of phone-style touch screens.\n\n# Key Features\n- Rokid-first home screen with search and kiosk categories\n- On-screen search keyboard built for one-axis navigation\n- Simplified video detail screen for fast playback\n- Player action rail for play/pause, quality, speed, subtitles, close, and exit\n- High-contrast black surfaces with clear focus outlines for glasses readability\n- Optional R08 Access Bridge compatibility for ring navigation\n\n# Controls\n- Swipe forward/back to move focus\n- Tap/select to activate the focused item\n- Back closes action mode, hides the keyboard, or returns to the previous screen\n\n# Notes\n- This is a focused Rokid fork, not the upstream NewPipe distribution\n- Package name is `com.anezium.rokid.newpipe`\n- R08 Access Bridge v1.4.7 or newer can control Rokid NewPipe from an R08 ring"
+  },
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-NewPipe",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/Anezium/Rokid-NewPipe/releases/download/rokid-v0.28.8-20260704/Rokid-NewPipe-0.28.8-20260704.apk",
+      "sha256": "b87e8b7ff71bb0d36dcf53ac8e02e30958cab5c5a24974e5b1c11940350b3ce0",
+      "sizeBytes": 11884324,
+      "packageName": "com.anezium.rokid.newpipe",
+      "versionCode": 1013,
+      "versionName": "0.28.8"
+    }
+  ],
+  "releases": [
+    {
+      "version": "rokid-v0.28.8-20260704",
+      "date": "2026-07-04T00:16:09Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260704",
+      "notes": "Rokid NewPipe 0.28.8 build for Rokid glasses.\n\nFixes:\n- Removes the permanent gray/green veil over fullscreen playback on the glasses' monochrome display: Android was drawing its own default focus highlight over the fullscreen video container once the Rokid focus frame was hidden.\n- Clears a stale mini-player overlay that could wash out the video when fullscreen was entered before the bottom sheet finished expanding.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.",
+      "changes": [
+        "Removes the permanent gray/green veil over fullscreen playback on the glasses' monochrome display.",
+        "Clears a stale mini-player overlay that could wash out the video when fullscreen was entered before the bottom sheet finished expanding."
+      ]
+    },
+    {
+      "version": "rokid-v0.28.8-20260702",
+      "date": "2026-07-02T21:29:24Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260702",
+      "notes": "Rokid NewPipe 0.28.8 build for Rokid glasses.\n\nFixes:\n- FULL/fullscreen no longer rotates the app into Android landscape mode on Rokid glasses.\n- Removes the green focus frame that could cover the full video viewport in Rokid fullscreen playback.\n- Keeps Rokid focus outlines available for real controls and list items.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.",
+      "changes": [
+        "FULL/fullscreen no longer rotates the app into Android landscape mode on Rokid glasses.",
+        "Removes the green focus frame that could cover the full video viewport in Rokid fullscreen playback.",
+        "Keeps Rokid focus outlines available for real controls and list items."
+      ]
+    },
+    {
+      "version": "rokid-v0.28.8-fullscreen-preview-20260702",
+      "date": "2026-07-02T20:05:08Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-fullscreen-preview-20260702",
+      "notes": "Preview build for testing the Rokid fullscreen rotation fix.\n\nChanges:\n- The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.\n- The automatic video-size orientation correction is disabled while Rokid fullscreen is active.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.\n\nPlease test tapping FULL on the affected video/glasses setup and confirm whether the video no longer rotates sideways.",
+      "changes": [
+        "The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.",
+        "The automatic video-size orientation correction is disabled while Rokid fullscreen is active."
+      ]
+    },
+    {
+      "version": "rokid-v0.28.8-fullscreen-preview-2-20260702",
+      "date": "2026-07-02T20:47:47Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-fullscreen-preview-2-20260702",
+      "notes": "Preview build for testing the Rokid fullscreen fixes.\n\nChanges since preview 1:\n- Removes the green Rokid focus frame from the full-screen video viewport.\n- Keeps the focus outline available for real controls and list items outside fullscreen playback.\n\nAlso includes:\n- The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.\n- Automatic video-size orientation correction is disabled while Rokid fullscreen is active.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.\n\nPlease test a 16:9 landscape video with FULL enabled and confirm that it stays upright without the large green viewport border.",
+      "changes": [
+        "Removes the green Rokid focus frame from the full-screen video viewport.",
+        "Keeps the focus outline available for real controls and list items outside fullscreen playback.",
+        "The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.",
+        "Automatic video-size orientation correction is disabled while Rokid fullscreen is active."
+      ]
+    },
+    {
+      "version": "rokid-v0.28.8-20260628",
+      "date": "2026-06-28T11:31:08Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260628",
+      "notes": "# Rokid NewPipe 0.28.8 - 2026-06-28\n\nRokid NewPipe is a glasses-focused fork of NewPipe for Rokid devices. This build\nkeeps the NewPipe streaming core and reshapes the main experience around a\n`480x640`, no-touch HUD.\n\n## Highlights\n\n- New green launcher icon and adaptive icon background.\n- Fresh screenshots captured from real Rokid glasses.\n- Rokid-first home, search, video detail, and player controls.\n- One-axis navigation: swipe moves focus, tap activates, Back exits.\n- Directional debounce for physical Rokid swipe events that arrive as paired\n  key events.\n- Black, high-contrast HUD surfaces with outline focus for AR readability.\n- README updated with R08 Access Bridge setup notes.\n\n## R08 Access Bridge\n\nR08 Access Bridge `v1.4.7` now includes Rokid NewPipe compatibility. When this\napp is active, the bridge sends R08 ring swipes and taps into NewPipe's own\nsingle-axis navigator.\n\nGet it here:\nhttps://github.com/Anezium/R08-Access-Bridge/releases/latest\n\n## Install\n\n1. Install `Rokid-NewPipe-v0.28.8-rokid-20260628.apk` on the glasses.\n2. Install or update R08 Access Bridge to `v1.4.7` if you want R08 ring control.\n3. Enable the R08 Access Bridge Accessibility Service on the glasses.\n4. Pair the R08 ring in Stable mode.\n5. Launch Rokid NewPipe.\n\n## Notes\n\nThis is not the upstream NewPipe distribution. It is a focused Rokid glasses\nbuild with package name `com.anezium.rokid.newpipe`.\n\nThe APK attached to this release is signed with the standard Android debug\ncertificate for installability. It will not update over the official NewPipe app\nand should be treated as a separate community build.",
+      "changes": [
+        "New green launcher icon and adaptive icon background.",
+        "Fresh screenshots captured from real Rokid glasses.",
+        "Rokid-first home, search, video detail, and player controls.",
+        "One-axis navigation: swipe moves focus, tap activates, Back exits.",
+        "Directional debounce for physical Rokid swipe events that arrive as paired",
+        "Black, high-contrast HUD surfaces with outline focus for AR readability.",
+        "README updated with R08 Access Bridge setup notes.",
+        "Install or update R08 Access Bridge to v1.4.7 if you want R08 ring control."
+      ]
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Anezium/Rokid-NewPipe",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "Anezium/Rokid-NewPipe",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^Rokid-NewPipe-v?(?<version>\\d+(?:[._-]\\d+){0,2})(?:-\\d{8})?\\.apk$"
+      }
+    ]
+  },
+  "screenshotAssets": [
+    "rokid-newpipe.png",
+    "rokid-newpipe-2.png",
+    "rokid-newpipe-3.png",
+    "rokid-newpipe-4.png"
+  ]
+}

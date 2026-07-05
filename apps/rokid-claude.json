@@ -1,0 +1,58 @@
+{
+  "id": "rokid-claude",
+  "name": "Rokid Claude",
+  "category": "AI",
+  "type": "glasses",
+  "version": "0.1.0",
+  "publishedAt": "2026-06-10T16:24:41Z",
+  "summary": "Voice client for controlling Claude Code from Rokid glasses with a live green HUD.",
+  "description": "Rokid Claude lets you speak Claude Code tasks from Rokid glasses and watch progress stream back to a monochrome green HUD. It connects to a relay running on your Mac for local or remote coding sessions.",
+  "screenshotAssets": [
+    "rokid-claude-session.png",
+    "rokid-claude-model-picker.png",
+    "rokid-claude-language-switch.png"
+  ],
+  "author": "williamlzz",
+  "sourceUrl": "https://github.com/williamlzz/Rokid_Claude",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/williamlzz/Rokid_Claude/releases/download/v0.1.0/Rokid-Claude-v0.1.0.apk",
+      "sha256": "e8ebd785348aa070e3e089b25cd996e6a695747377e2c4a0280d4e380f27a30e",
+      "sizeBytes": 24159672,
+      "packageName": "com.rokid.relayhud",
+      "versionCode": 1,
+      "versionName": "0.1"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-10T16:24:41Z",
+      "sourceReleaseUrl": "https://github.com/williamlzz/Rokid_Claude/releases/tag/v0.1.0",
+      "notes": "First public release of Rokid Claude - voice-control Claude Code on your home Mac from Rokid Glasses, with progress streamed to a green HUD.\n\nDownload the APK below and sideload it onto Rokid Glasses or any Android phone (debug-signed). See README.md and docs/SETUP.md for local (USB) and remote (ngrok) setup.",
+      "changes": []
+    }
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About\nRokid Claude turns Rokid glasses into a voice remote for Claude Code running on a Mac. The Android client captures spoken tasks, sends them to a local relay, and displays the agent's progress on a monochrome green heads-up display.\n\n## Key features\n- Voice prompts from Rokid glasses or another Android device\n- Live Claude Code progress stream on the glasses HUD\n- Gesture confirmation for risky tool calls\n- Voice model switching between Opus, Sonnet, and Haiku\n- Runtime language switching between English and Chinese\n- QR provisioning for Wi-Fi and relay configuration\n- USB, local network, or ngrok-based remote setup\n\n## Requirements\n- Rokid glasses, or another Android device for client testing\n- A Mac running the Rokid Claude relay and Claude Code CLI\n- Claude Code installed and authenticated on the Mac\n- Node.js, whisper.cpp, and a local speech model for the relay\n- Initial sideload/provisioning over USB before wireless use\n\n## Notes\n- The APK is debug-signed in the first public release.\n- The relay can run commands on your Mac, so protect remote access tokens and expose it only with care.\n- This is a hobby/developer workflow tool, not a standalone glasses assistant."
+  },
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "williamlzz/Rokid_Claude",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubRelease",
+    "repo": "williamlzz/Rokid_Claude",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^Rokid-Claude-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$",
+        "packageName": "com.rokid.relayhud"
+      }
+    ]
+  }
+}
