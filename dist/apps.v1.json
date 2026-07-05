@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-05T00:10:10.899Z",
+  "generatedAt": "2026-07-05T11:41:38.758Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -2568,6 +2568,53 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-record.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-scribe-glasses-recording.jpg"
+      ]
+    },
+    {
+      "id": "talk-with-pen",
+      "name": "Talk with Pen",
+      "category": "AI",
+      "type": "glasses",
+      "version": "1.0.0",
+      "publishedAt": "2026-06-24",
+      "summary": "Write a question with a pen and get an answer from Gemini.",
+      "description": "[App Intro] Talk with Pen: Gemini AI Assistant Communicating via Handwriting \"Listening to questions written by pen, not spoken by voice\" This app is specially designed for those who face difficulties using voice-based AI assistants due to hearing or speech impairments. Simply write your question down on paper with a pen, look at it through the Rokid Glasses camera, and Gemini AI will recognize your handwriting and provide a smart answer. Even without using your voice, you can freely converse with AI anytime, anywhere, with just a pen and your smart glasses.",
+      "listing": {
+        "descriptionMarkdown": "**[App Intro] Talk with Pen: Gemini AI Assistant Communicating via Handwriting**\n\"Listening to questions written by pen, not spoken by voice\"\n\nThis app is specially designed for those who face difficulties using voice-based AI assistants due to hearing or speech impairments.\nSimply write your question down on paper with a pen, look at it through the Rokid Glasses camera, and Gemini AI will recognize your handwriting and provide a smart answer.\nEven without using your voice, you can freely converse with AI anytime, anywhere, with just a pen and your smart glasses.\n\n### Controls\n\n**[User Guide] Getting Started (QR Code Setup)**\nFollow the steps below when using the app for the first time or setting up a new API key.\n\n**Step 1: Prepare API Key (Setting up the Brain)**\nThe app requires permission from Google's intelligent AI tool, 'Google AI', to answer questions.\n1. Visit Google AI Studio and sign in with your Google account.\n2. Find and click the 'Get API key' button.\n3. Click **'Create API key'** to generate your key, then **[Copy]** the long alphanumeric key.\n\n**Step 2: Generate Your QR Code**\nCreate a unique QR code to share the copied API key with the app.\n1. Visit Web App Menu On top of Page and QR code generator\n2. Paste the copied API key into the URL input field.\n3. Click 'Generate QR Code' to display your custom QR code.\n\n**Step 3: Register in the App**\n1. Launch the 'Talk with Pen' app on your glasses.\n2. Point the camera at your newly created QR code when the QR scanner screen appears.\n3. Once scanned, the setup is complete!\n\n**Step 4: Ask Questions and Get Answers!**\n1. Position the question written on paper with a pen within the glasses' camera frame.\n2. Gently **[Touch]** the temple of the glasses.\n3. Wait a moment, and Gemini AI's smart answer will appear on the glasses display.\n\n**💡 Tip: If answering fails**\n- Make sure the handwriting is legible and the text is not too far or blurry.\n- Check your internet connection."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-24",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "talk-with-pen.jpg",
+        "talk-with-pen-2.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TalkWidhPen_v1.0.0.apk",
+          "sha256": "9ec7711d69de0ffda3de784af05e50e21ea7ceb68269b36b46952b0025dc0d8c",
+          "sizeBytes": 37259703,
+          "packageName": "kr.pe.eung.transt",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/TalkWithPen",
+      "newUntil": "2026-06-26T00:00:00.000Z",
+      "iconAsset": "talk-with-pen.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/talk-with-pen.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/talk-with-pen.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/talk-with-pen-2.jpg"
       ]
     },
     {
