@@ -1,6 +1,6 @@
 # RokidBrew Registry
 
-Community app registry consumed by RokidBrew.
+Community app registry consumed by [RokidBrew](https://github.com/Anezium/RokidBrew) (phone app) and the **[RokidBrew web store](https://rokidbrew.anezium.me/)**. Apps added here show up in both automatically — no redeploy needed.
 
 ## Quick start — adding a new app
 
