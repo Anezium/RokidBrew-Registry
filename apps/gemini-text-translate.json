@@ -1,7 +1,7 @@
 {
   "id": "gemini-text-translate",
   "name": "Gemini Text Translate",
-  "category": "AI",
+  "category": "Translation",
   "type": "glasses",
   "version": "1.0.1",
   "publishedAt": "2026-06-23",
