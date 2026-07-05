@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-05T00:10:10.899Z",
+  "generatedAt": "2026-07-05T11:41:36.183Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -1353,6 +1353,57 @@
       "iconAsset": "gazemou.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gazemou.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "gemini-text-translate",
+      "name": "Gemini Text Translate",
+      "category": "AI",
+      "type": "glasses",
+      "version": "1.0.1",
+      "publishedAt": "2026-06-23",
+      "summary": "Gemini based online text translation application.",
+      "description": "[App Intro] TransG: Real-time Smart Glasses Translation Assistant \"Translate the world through your glasses in real-time\" TransG integrates with smart glasses to recognize text in the camera view in real-time and translate it instantly to your preferred language. Simply wear the glasses, look at the text, and touch the temple—no complex configuration needed. Break language barriers instantly.",
+      "listing": {
+        "descriptionMarkdown": "**[App Intro] TransG: Real-time Smart Glasses Translation Assistant**\n\"Translate the world through your glasses in real-time\"\n\nTransG integrates with smart glasses to recognize text in the camera view in real-time and translate it instantly to your preferred language.\nSimply wear the glasses, look at the text, and touch the temple—no complex configuration needed. Break language barriers instantly.\n\n### Controls\n\n**[User Guide] Getting Started (QR Code Setup)**\nFollow the steps below when using the app for the first time or setting up a new API key.\n\n**Step 1: Prepare API Key (Setting up the Brain)**\nThe app requires permission from Google's intelligent translation tool, 'Google AI', to translate text.\n1. Visit Google AI Studio and sign in with your Google account.\n2. Find and click the 'Get API key' button.\n3. Click **'Create API key'** to generate your key, then **[Copy]** the long alphanumeric key.\n\n**Step 2: Generate Your QR Code**\nCreate a unique QR code to share the copied API key with the app.\n1. Visit Web App Menu On top of Page and QR code generator\n2. Paste the copied API key into the URL input field.\n3. Click 'Generate QR Code' to display your custom QR code.\n\n**Step 3: Register in the App**\n1. Launch the Text Translate app on your glasses.\n2. Point the camera at your newly created QR code when the QR scanner screen appears.\n3. Once scanned, the setup is complete!\n\n**Step 4: Start Translating!**\n1. Position the target text (menus, signs, documents, etc.) within the glasses' camera frame.\n2. Gently **[Touch]** the temple of the glasses.\n3. Wait a moment, and the natural translation will appear on the glasses display.\n\n**💡 Tip: If translation fails**\n- Make sure the text in the image is not too far or blurry.\n- Check your internet connection."
+      },
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-06-24",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Fixed to display all translation results in the system language.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "gemini-text-translate.jpg",
+        "gemini-text-translate-2.jpg",
+        "gemini-text-translate-3.jpg",
+        "gemini-text-translate-4.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TransG_v1.0.1.apk",
+          "sha256": "8fbf2672cb022514d4b78719039e64cd0ffdf1dc961df99bb79bcbbad1eb00e2",
+          "sizeBytes": 37072186,
+          "packageName": "kr.pe.eung.transg",
+          "versionCode": 2,
+          "versionName": "1.0.1"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/TransG",
+      "newUntil": "2026-06-25T00:00:00.000Z",
+      "iconAsset": "gemini-text-translate.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gemini-text-translate.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate-4.jpg"
+      ]
     },
     {
       "id": "glasses-reader",
