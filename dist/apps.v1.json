@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-05T11:41:38.758Z",
+  "generatedAt": "2026-07-05T11:44:49.471Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -216,108 +216,6 @@
       ]
     },
     {
-      "id": "r08-access-bridge",
-      "name": "R08 Access Bridge",
-      "category": "Navigation",
-      "type": "glasses",
-      "version": "1.5.0",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
-      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.5.0/R08-Access-Bridge-v1.5.0.apk",
-          "sha256": "a29a9497f0736d51f5baf8cefc6c35aa8222f430c9596125ac707ec2b523f5ec",
-          "sizeBytes": 16164781,
-          "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 27,
-          "versionName": "1.5.0"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.5.0",
-          "date": "2026-07-03T11:44:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.8-unsigned.apk",
-          "date": "2026-07-02T20:58:19Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-06-28T11:02:53Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.6",
-          "date": "2026-06-20T18:22:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-06-16T18:07:39Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.2",
-          "date": "2026-06-13T00:00:54Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.0",
-          "date": "2026-06-09T22:40:18Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-06-07T20:51:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.2.0",
-          "notes": null,
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "r08-access-bridge.png",
-        "r08-access-bridge-2.png",
-        "r08-access-bridge-3.png",
-        "r08-access-bridge-4.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
-      },
-      "publishedAt": "2026-07-03T11:44:31Z",
-      "newUntil": "2026-07-05T11:44:31.000Z",
-      "iconAsset": "r08-access-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
-      ]
-    },
-    {
       "id": "rokid-relay",
       "name": "Rokid Relay",
       "category": "Accessibility",
@@ -438,6 +336,108 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
+    {
+      "id": "r08-access-bridge",
+      "name": "R08 Access Bridge",
+      "category": "Navigation",
+      "type": "glasses",
+      "version": "1.5.0",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
+      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.5.0/R08-Access-Bridge-v1.5.0.apk",
+          "sha256": "a29a9497f0736d51f5baf8cefc6c35aa8222f430c9596125ac707ec2b523f5ec",
+          "sizeBytes": 16164781,
+          "packageName": "com.anezium.r08accessbridge",
+          "versionCode": 27,
+          "versionName": "1.5.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2026-07-03T11:44:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.8-unsigned.apk",
+          "date": "2026-07-02T20:58:19Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-06-28T11:02:53Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.6",
+          "date": "2026-06-20T18:22:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.5",
+          "date": "2026-06-16T18:07:39Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.2",
+          "date": "2026-06-13T00:00:54Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.0",
+          "date": "2026-06-09T22:40:18Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.0",
+          "date": "2026-06-07T20:51:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.2.0",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "r08-access-bridge.png",
+        "r08-access-bridge-2.png",
+        "r08-access-bridge-3.png",
+        "r08-access-bridge-4.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
+      },
+      "publishedAt": "2026-07-03T11:44:31Z",
+      "newUntil": "2026-07-05T11:44:31.000Z",
+      "iconAsset": "r08-access-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
       ]
     },
     {
@@ -1353,6 +1353,57 @@
       "iconAsset": "gazemou.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gazemou.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "gemini-text-translate",
+      "name": "Gemini Text Translate",
+      "category": "AI",
+      "type": "glasses",
+      "version": "1.0.1",
+      "publishedAt": "2026-06-23",
+      "summary": "Gemini based online text translation application.",
+      "description": "[App Intro] TransG: Real-time Smart Glasses Translation Assistant \"Translate the world through your glasses in real-time\" TransG integrates with smart glasses to recognize text in the camera view in real-time and translate it instantly to your preferred language. Simply wear the glasses, look at the text, and touch the temple—no complex configuration needed. Break language barriers instantly.",
+      "listing": {
+        "descriptionMarkdown": "**[App Intro] TransG: Real-time Smart Glasses Translation Assistant**\n\"Translate the world through your glasses in real-time\"\n\nTransG integrates with smart glasses to recognize text in the camera view in real-time and translate it instantly to your preferred language.\nSimply wear the glasses, look at the text, and touch the temple—no complex configuration needed. Break language barriers instantly.\n\n### Controls\n\n**[User Guide] Getting Started (QR Code Setup)**\nFollow the steps below when using the app for the first time or setting up a new API key.\n\n**Step 1: Prepare API Key (Setting up the Brain)**\nThe app requires permission from Google's intelligent translation tool, 'Google AI', to translate text.\n1. Visit Google AI Studio and sign in with your Google account.\n2. Find and click the 'Get API key' button.\n3. Click **'Create API key'** to generate your key, then **[Copy]** the long alphanumeric key.\n\n**Step 2: Generate Your QR Code**\nCreate a unique QR code to share the copied API key with the app.\n1. Visit Web App Menu On top of Page and QR code generator\n2. Paste the copied API key into the URL input field.\n3. Click 'Generate QR Code' to display your custom QR code.\n\n**Step 3: Register in the App**\n1. Launch the Text Translate app on your glasses.\n2. Point the camera at your newly created QR code when the QR scanner screen appears.\n3. Once scanned, the setup is complete!\n\n**Step 4: Start Translating!**\n1. Position the target text (menus, signs, documents, etc.) within the glasses' camera frame.\n2. Gently **[Touch]** the temple of the glasses.\n3. Wait a moment, and the natural translation will appear on the glasses display.\n\n**💡 Tip: If translation fails**\n- Make sure the text in the image is not too far or blurry.\n- Check your internet connection."
+      },
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-06-24",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Fixed to display all translation results in the system language.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "gemini-text-translate.jpg",
+        "gemini-text-translate-2.jpg",
+        "gemini-text-translate-3.jpg",
+        "gemini-text-translate-4.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/TransG_v1.0.1.apk",
+          "sha256": "8fbf2672cb022514d4b78719039e64cd0ffdf1dc961df99bb79bcbbad1eb00e2",
+          "sizeBytes": 37072186,
+          "packageName": "kr.pe.eung.transg",
+          "versionCode": 2,
+          "versionName": "1.0.1"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/TransG",
+      "newUntil": "2026-06-25T00:00:00.000Z",
+      "iconAsset": "gemini-text-translate.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gemini-text-translate.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate-3.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/gemini-text-translate-4.jpg"
+      ]
     },
     {
       "id": "glasses-reader",
