@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-05T11:46:39.727Z",
+  "generatedAt": "2026-07-10T08:43:12.961Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -14,205 +14,105 @@
   ],
   "apps": [
     {
-      "id": "rokid-newpipe",
-      "name": "Rokid NewPipe",
-      "category": "Media",
+      "id": "r08-access-bridge",
+      "name": "R08 Access Bridge",
+      "category": "Navigation",
       "type": "glasses",
-      "version": "0.28.8",
-      "publishedAt": "2026-07-04T00:16:09Z",
-      "summary": "Watch YouTube and other NewPipe-supported streams from a HUD-first interface for Rokid glasses",
-      "description": "Rokid NewPipe is a glasses-focused fork of NewPipe adapted for a 480x640, no-touch Rokid workflow. It keeps the NewPipe streaming core while reshaping home, search, video detail, and player controls around swipe, tap, and Back input on the glasses.",
-      "listing": {
-        "descriptionMarkdown": "# About\nRokid NewPipe adapts NewPipe for Rokid glasses with a HUD-first interface. It is designed for the 480x640 glasses display and direct swipe, tap, and Back navigation instead of phone-style touch screens.\n\n# Key Features\n- Rokid-first home screen with search and kiosk categories\n- On-screen search keyboard built for one-axis navigation\n- Simplified video detail screen for fast playback\n- Player action rail for play/pause, quality, speed, subtitles, close, and exit\n- High-contrast black surfaces with clear focus outlines for glasses readability\n- Optional R08 Access Bridge compatibility for ring navigation\n\n# Controls\n- Swipe forward/back to move focus\n- Tap/select to activate the focused item\n- Back closes action mode, hides the keyboard, or returns to the previous screen\n\n# Notes\n- This is a focused Rokid fork, not the upstream NewPipe distribution\n- Package name is `com.anezium.rokid.newpipe`\n- R08 Access Bridge v1.4.7 or newer can control Rokid NewPipe from an R08 ring"
-      },
+      "version": "1.6.1",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
+      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
       "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-NewPipe",
+      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
       "phoneRequired": false,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-NewPipe/releases/download/rokid-v0.28.8-20260704/Rokid-NewPipe-0.28.8-20260704.apk",
-          "sha256": "b87e8b7ff71bb0d36dcf53ac8e02e30958cab5c5a24974e5b1c11940350b3ce0",
-          "sizeBytes": 11884324,
-          "packageName": "com.anezium.rokid.newpipe",
-          "versionCode": 1013,
-          "versionName": "0.28.8"
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.6.1/R08-Access-Bridge-v1.6.1.apk",
+          "sha256": "c1c8488becf57d800c4bbacba986d023832783770a567c02a5a9aef58976551f",
+          "sizeBytes": 16267960,
+          "packageName": "com.anezium.r08accessbridge",
+          "versionCode": 29,
+          "versionName": "1.6.1"
         }
       ],
       "releases": [
         {
-          "version": "rokid-v0.28.8-20260704",
-          "date": "2026-07-04T00:16:09Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260704",
-          "notes": "Rokid NewPipe 0.28.8 build for Rokid glasses.\n\nFixes:\n- Removes the permanent gray/green veil over fullscreen playback on the glasses' monochrome display: Android was drawing its own default focus highlight over the fullscreen video container once the Rokid focus frame was hidden.\n- Clears a stale mini-player overlay that could wash out the video when fullscreen was entered before the bottom sheet finished expanding.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.",
-          "changes": [
-            "Removes the permanent gray/green veil over fullscreen playback on the glasses' monochrome display.",
-            "Clears a stale mini-player overlay that could wash out the video when fullscreen was entered before the bottom sheet finished expanding."
-          ]
+          "version": "1.6.1",
+          "date": "2026-07-08T17:32:37Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.1",
+          "notes": null,
+          "changes": []
         },
         {
-          "version": "rokid-v0.28.8-20260702",
-          "date": "2026-07-02T21:29:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260702",
-          "notes": "Rokid NewPipe 0.28.8 build for Rokid glasses.\n\nFixes:\n- FULL/fullscreen no longer rotates the app into Android landscape mode on Rokid glasses.\n- Removes the green focus frame that could cover the full video viewport in Rokid fullscreen playback.\n- Keeps Rokid focus outlines available for real controls and list items.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.",
-          "changes": [
-            "FULL/fullscreen no longer rotates the app into Android landscape mode on Rokid glasses.",
-            "Removes the green focus frame that could cover the full video viewport in Rokid fullscreen playback.",
-            "Keeps Rokid focus outlines available for real controls and list items."
-          ]
+          "version": "1.5.0",
+          "date": "2026-07-03T11:44:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
+          "notes": null,
+          "changes": []
         },
         {
-          "version": "rokid-v0.28.8-fullscreen-preview-20260702",
-          "date": "2026-07-02T20:05:08Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-fullscreen-preview-20260702",
-          "notes": "Preview build for testing the Rokid fullscreen rotation fix.\n\nChanges:\n- The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.\n- The automatic video-size orientation correction is disabled while Rokid fullscreen is active.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.\n\nPlease test tapping FULL on the affected video/glasses setup and confirm whether the video no longer rotates sideways.",
-          "changes": [
-            "The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.",
-            "The automatic video-size orientation correction is disabled while Rokid fullscreen is active."
-          ]
+          "version": "1.4.8-unsigned.apk",
+          "date": "2026-07-02T20:58:19Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
         },
         {
-          "version": "rokid-v0.28.8-fullscreen-preview-2-20260702",
-          "date": "2026-07-02T20:47:47Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-fullscreen-preview-2-20260702",
-          "notes": "Preview build for testing the Rokid fullscreen fixes.\n\nChanges since preview 1:\n- Removes the green Rokid focus frame from the full-screen video viewport.\n- Keeps the focus outline available for real controls and list items outside fullscreen playback.\n\nAlso includes:\n- The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.\n- Automatic video-size orientation correction is disabled while Rokid fullscreen is active.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.\n\nPlease test a 16:9 landscape video with FULL enabled and confirm that it stays upright without the large green viewport border.",
-          "changes": [
-            "Removes the green Rokid focus frame from the full-screen video viewport.",
-            "Keeps the focus outline available for real controls and list items outside fullscreen playback.",
-            "The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.",
-            "Automatic video-size orientation correction is disabled while Rokid fullscreen is active."
-          ]
+          "version": "1.4.7",
+          "date": "2026-06-28T11:02:53Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
         },
         {
-          "version": "rokid-v0.28.8-20260628",
-          "date": "2026-06-28T11:31:08Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260628",
-          "notes": "# Rokid NewPipe 0.28.8 - 2026-06-28\n\nRokid NewPipe is a glasses-focused fork of NewPipe for Rokid devices. This build\nkeeps the NewPipe streaming core and reshapes the main experience around a\n`480x640`, no-touch HUD.\n\n## Highlights\n\n- New green launcher icon and adaptive icon background.\n- Fresh screenshots captured from real Rokid glasses.\n- Rokid-first home, search, video detail, and player controls.\n- One-axis navigation: swipe moves focus, tap activates, Back exits.\n- Directional debounce for physical Rokid swipe events that arrive as paired\n  key events.\n- Black, high-contrast HUD surfaces with outline focus for AR readability.\n- README updated with R08 Access Bridge setup notes.\n\n## R08 Access Bridge\n\nR08 Access Bridge `v1.4.7` now includes Rokid NewPipe compatibility. When this\napp is active, the bridge sends R08 ring swipes and taps into NewPipe's own\nsingle-axis navigator.\n\nGet it here:\nhttps://github.com/Anezium/R08-Access-Bridge/releases/latest\n\n## Install\n\n1. Install `Rokid-NewPipe-v0.28.8-rokid-20260628.apk` on the glasses.\n2. Install or update R08 Access Bridge to `v1.4.7` if you want R08 ring control.\n3. Enable the R08 Access Bridge Accessibility Service on the glasses.\n4. Pair the R08 ring in Stable mode.\n5. Launch Rokid NewPipe.\n\n## Notes\n\nThis is not the upstream NewPipe distribution. It is a focused Rokid glasses\nbuild with package name `com.anezium.rokid.newpipe`.\n\nThe APK attached to this release is signed with the standard Android debug\ncertificate for installability. It will not update over the official NewPipe app\nand should be treated as a separate community build.",
-          "changes": [
-            "New green launcher icon and adaptive icon background.",
-            "Fresh screenshots captured from real Rokid glasses.",
-            "Rokid-first home, search, video detail, and player controls.",
-            "One-axis navigation: swipe moves focus, tap activates, Back exits.",
-            "Directional debounce for physical Rokid swipe events that arrive as paired",
-            "Black, high-contrast HUD surfaces with outline focus for AR readability.",
-            "README updated with R08 Access Bridge setup notes.",
-            "Install or update R08 Access Bridge to v1.4.7 if you want R08 ring control."
-          ]
+          "version": "1.4.6",
+          "date": "2026-06-20T18:22:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.5",
+          "date": "2026-06-16T18:07:39Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.2",
+          "date": "2026-06-13T00:00:54Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.0",
+          "date": "2026-06-09T22:40:18Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
+          "notes": null,
+          "changes": []
         }
       ],
       "screenshotAssets": [
-        "rokid-newpipe.png",
-        "rokid-newpipe-2.png",
-        "rokid-newpipe-3.png",
-        "rokid-newpipe-4.png"
+        "r08-access-bridge.png",
+        "r08-access-bridge-2.png",
+        "r08-access-bridge-3.png",
+        "r08-access-bridge-4.png"
       ],
-      "newUntil": "2026-07-06T00:16:09.000Z",
-      "iconAsset": "rokid-newpipe.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-newpipe.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-4.png"
-      ]
-    },
-    {
-      "id": "rokid-live-studio",
-      "name": "Rokid Live Studio",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.1.6",
-      "featured": true,
-      "featuredRank": 4,
-      "publishedAt": "2026-07-03T14:12:24Z",
-      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
-      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
       "listing": {
-        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
-        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
+        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
       },
-      "releases": [
-        {
-          "version": "0.1.6",
-          "date": "2026-07-03T14:12:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.6%2B7",
-          "notes": "Adjustable chat overlay position (#1).\n\n- Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.\n- Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.\n- Older phone/helper combinations remain compatible; a missing offset falls back to 0.\n- Release APK assets were checked with zipalign -P 16 and signature verification.",
-          "changes": [
-            "Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.",
-            "Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.",
-            "Older phone/helper combinations remain compatible; a missing offset falls back to 0.",
-            "Release APK assets were checked with zipalign -P 16 and signature verification."
-          ]
-        },
-        {
-          "version": "0.1.5",
-          "date": "2026-06-09T10:58:26Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.5%2B6",
-          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
-          "changes": [
-            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
-            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
-            "Adds compatibility callbacks for newer Rokid APIs.",
-            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
-          ]
-        },
-        {
-          "version": "0.1.4+5",
-          "date": "2026-05-26T17:18:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
-          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3+4",
-          "date": "2026-05-21T17:37:07Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
-          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2+3",
-          "date": "2026-05-11T18:18:44Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
-          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
-          "changes": []
-        },
-        {
-          "version": "0.1.1+2",
-          "date": "2026-05-10T21:57:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
-          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-live-studio-home.jpg",
-        "rokid-live-studio-youtube.jpg",
-        "rokid-live-studio-twitch.jpg",
-        "rokid-live-studio-chat.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.6%2B7/rokid-live-studio-phone-0.1.6-vc7.apk",
-          "sha256": "9cca9e84fc7cb040ec2e66b9a7a370c3a17bd0bd78ddbc7c24cf5a9f55855695",
-          "sizeBytes": 38906011,
-          "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 7,
-          "versionName": "0.1.6"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-07-05T14:12:24.000Z",
-      "iconAsset": "rokid-live-studio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
+      "publishedAt": "2026-07-08T17:32:37Z",
+      "newUntil": "2026-07-10T17:32:37.000Z",
+      "iconAsset": "r08-access-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
       ]
     },
     {
@@ -339,108 +239,6 @@
       ]
     },
     {
-      "id": "r08-access-bridge",
-      "name": "R08 Access Bridge",
-      "category": "Navigation",
-      "type": "glasses",
-      "version": "1.5.0",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
-      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.5.0/R08-Access-Bridge-v1.5.0.apk",
-          "sha256": "a29a9497f0736d51f5baf8cefc6c35aa8222f430c9596125ac707ec2b523f5ec",
-          "sizeBytes": 16164781,
-          "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 27,
-          "versionName": "1.5.0"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.5.0",
-          "date": "2026-07-03T11:44:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.8-unsigned.apk",
-          "date": "2026-07-02T20:58:19Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-06-28T11:02:53Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.6",
-          "date": "2026-06-20T18:22:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-06-16T18:07:39Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.2",
-          "date": "2026-06-13T00:00:54Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.0",
-          "date": "2026-06-09T22:40:18Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-06-07T20:51:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.2.0",
-          "notes": null,
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "r08-access-bridge.png",
-        "r08-access-bridge-2.png",
-        "r08-access-bridge-3.png",
-        "r08-access-bridge-4.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
-      },
-      "publishedAt": "2026-07-03T11:44:31Z",
-      "newUntil": "2026-07-05T11:44:31.000Z",
-      "iconAsset": "r08-access-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
-      ]
-    },
-    {
       "id": "ek-meta-player",
       "name": "EK Meta Player",
       "category": "Utility",
@@ -489,6 +287,105 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
+      ]
+    },
+    {
+      "id": "rokid-live-studio",
+      "name": "Rokid Live Studio",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.6",
+      "featured": true,
+      "featuredRank": 4,
+      "publishedAt": "2026-07-03T14:12:24Z",
+      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
+      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
+      "listing": {
+        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
+        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
+      },
+      "releases": [
+        {
+          "version": "0.1.6",
+          "date": "2026-07-03T14:12:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.6%2B7",
+          "notes": "Adjustable chat overlay position (#1).\n\n- Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.\n- Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.\n- Older phone/helper combinations remain compatible; a missing offset falls back to 0.\n- Release APK assets were checked with zipalign -P 16 and signature verification.",
+          "changes": [
+            "Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.",
+            "Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.",
+            "Older phone/helper combinations remain compatible; a missing offset falls back to 0.",
+            "Release APK assets were checked with zipalign -P 16 and signature verification."
+          ]
+        },
+        {
+          "version": "0.1.5",
+          "date": "2026-06-09T10:58:26Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.5%2B6",
+          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+          "changes": [
+            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+            "Adds compatibility callbacks for newer Rokid APIs.",
+            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+          ]
+        },
+        {
+          "version": "0.1.4+5",
+          "date": "2026-05-26T17:18:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
+          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3+4",
+          "date": "2026-05-21T17:37:07Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
+          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2+3",
+          "date": "2026-05-11T18:18:44Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
+          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
+          "changes": []
+        },
+        {
+          "version": "0.1.1+2",
+          "date": "2026-05-10T21:57:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
+          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-live-studio-home.jpg",
+        "rokid-live-studio-youtube.jpg",
+        "rokid-live-studio-twitch.jpg",
+        "rokid-live-studio-chat.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.6%2B7/rokid-live-studio-phone-0.1.6-vc7.apk",
+          "sha256": "9cca9e84fc7cb040ec2e66b9a7a370c3a17bd0bd78ddbc7c24cf5a9f55855695",
+          "sizeBytes": 38906011,
+          "packageName": "com.anezium.rokidlive.phone",
+          "versionCode": 7,
+          "versionName": "0.1.6"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
+      "newUntil": "2026-07-05T14:12:24.000Z",
+      "iconAsset": "rokid-live-studio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
       ]
     },
     {
@@ -2294,6 +2191,109 @@
       },
       "releases": [],
       "screenshotAssets": []
+    },
+    {
+      "id": "rokid-newpipe",
+      "name": "Rokid NewPipe",
+      "category": "Media",
+      "type": "glasses",
+      "version": "0.28.8",
+      "publishedAt": "2026-07-04T00:16:09Z",
+      "summary": "Watch YouTube and other NewPipe-supported streams from a HUD-first interface for Rokid glasses",
+      "description": "Rokid NewPipe is a glasses-focused fork of NewPipe adapted for a 480x640, no-touch Rokid workflow. It keeps the NewPipe streaming core while reshaping home, search, video detail, and player controls around swipe, tap, and Back input on the glasses.",
+      "listing": {
+        "descriptionMarkdown": "# About\nRokid NewPipe adapts NewPipe for Rokid glasses with a HUD-first interface. It is designed for the 480x640 glasses display and direct swipe, tap, and Back navigation instead of phone-style touch screens.\n\n# Key Features\n- Rokid-first home screen with search and kiosk categories\n- On-screen search keyboard built for one-axis navigation\n- Simplified video detail screen for fast playback\n- Player action rail for play/pause, quality, speed, subtitles, close, and exit\n- High-contrast black surfaces with clear focus outlines for glasses readability\n- Optional R08 Access Bridge compatibility for ring navigation\n\n# Controls\n- Swipe forward/back to move focus\n- Tap/select to activate the focused item\n- Back closes action mode, hides the keyboard, or returns to the previous screen\n\n# Notes\n- This is a focused Rokid fork, not the upstream NewPipe distribution\n- Package name is `com.anezium.rokid.newpipe`\n- R08 Access Bridge v1.4.7 or newer can control Rokid NewPipe from an R08 ring"
+      },
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-NewPipe",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-NewPipe/releases/download/rokid-v0.28.8-20260704/Rokid-NewPipe-0.28.8-20260704.apk",
+          "sha256": "b87e8b7ff71bb0d36dcf53ac8e02e30958cab5c5a24974e5b1c11940350b3ce0",
+          "sizeBytes": 11884324,
+          "packageName": "com.anezium.rokid.newpipe",
+          "versionCode": 1013,
+          "versionName": "0.28.8"
+        }
+      ],
+      "releases": [
+        {
+          "version": "rokid-v0.28.8-20260704",
+          "date": "2026-07-04T00:16:09Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260704",
+          "notes": "Rokid NewPipe 0.28.8 build for Rokid glasses.\n\nFixes:\n- Removes the permanent gray/green veil over fullscreen playback on the glasses' monochrome display: Android was drawing its own default focus highlight over the fullscreen video container once the Rokid focus frame was hidden.\n- Clears a stale mini-player overlay that could wash out the video when fullscreen was entered before the bottom sheet finished expanding.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.",
+          "changes": [
+            "Removes the permanent gray/green veil over fullscreen playback on the glasses' monochrome display.",
+            "Clears a stale mini-player overlay that could wash out the video when fullscreen was entered before the bottom sheet finished expanding."
+          ]
+        },
+        {
+          "version": "rokid-v0.28.8-20260702",
+          "date": "2026-07-02T21:29:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260702",
+          "notes": "Rokid NewPipe 0.28.8 build for Rokid glasses.\n\nFixes:\n- FULL/fullscreen no longer rotates the app into Android landscape mode on Rokid glasses.\n- Removes the green focus frame that could cover the full video viewport in Rokid fullscreen playback.\n- Keeps Rokid focus outlines available for real controls and list items.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.",
+          "changes": [
+            "FULL/fullscreen no longer rotates the app into Android landscape mode on Rokid glasses.",
+            "Removes the green focus frame that could cover the full video viewport in Rokid fullscreen playback.",
+            "Keeps Rokid focus outlines available for real controls and list items."
+          ]
+        },
+        {
+          "version": "rokid-v0.28.8-fullscreen-preview-20260702",
+          "date": "2026-07-02T20:05:08Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-fullscreen-preview-20260702",
+          "notes": "Preview build for testing the Rokid fullscreen rotation fix.\n\nChanges:\n- The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.\n- The automatic video-size orientation correction is disabled while Rokid fullscreen is active.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.\n\nPlease test tapping FULL on the affected video/glasses setup and confirm whether the video no longer rotates sideways.",
+          "changes": [
+            "The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.",
+            "The automatic video-size orientation correction is disabled while Rokid fullscreen is active."
+          ]
+        },
+        {
+          "version": "rokid-v0.28.8-fullscreen-preview-2-20260702",
+          "date": "2026-07-02T20:47:47Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-fullscreen-preview-2-20260702",
+          "notes": "Preview build for testing the Rokid fullscreen fixes.\n\nChanges since preview 1:\n- Removes the green Rokid focus frame from the full-screen video viewport.\n- Keeps the focus outline available for real controls and list items outside fullscreen playback.\n\nAlso includes:\n- The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.\n- Automatic video-size orientation correction is disabled while Rokid fullscreen is active.\n\nBuild: continuous APK, version 0.28.8, versionCode 1013.\n\nPlease test a 16:9 landscape video with FULL enabled and confirm that it stays upright without the large green viewport border.",
+          "changes": [
+            "Removes the green Rokid focus frame from the full-screen video viewport.",
+            "Keeps the focus outline available for real controls and list items outside fullscreen playback.",
+            "The FULL/fullscreen action no longer requests Android landscape orientation in Rokid mode.",
+            "Automatic video-size orientation correction is disabled while Rokid fullscreen is active."
+          ]
+        },
+        {
+          "version": "rokid-v0.28.8-20260628",
+          "date": "2026-06-28T11:31:08Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-NewPipe/releases/tag/rokid-v0.28.8-20260628",
+          "notes": "# Rokid NewPipe 0.28.8 - 2026-06-28\n\nRokid NewPipe is a glasses-focused fork of NewPipe for Rokid devices. This build\nkeeps the NewPipe streaming core and reshapes the main experience around a\n`480x640`, no-touch HUD.\n\n## Highlights\n\n- New green launcher icon and adaptive icon background.\n- Fresh screenshots captured from real Rokid glasses.\n- Rokid-first home, search, video detail, and player controls.\n- One-axis navigation: swipe moves focus, tap activates, Back exits.\n- Directional debounce for physical Rokid swipe events that arrive as paired\n  key events.\n- Black, high-contrast HUD surfaces with outline focus for AR readability.\n- README updated with R08 Access Bridge setup notes.\n\n## R08 Access Bridge\n\nR08 Access Bridge `v1.4.7` now includes Rokid NewPipe compatibility. When this\napp is active, the bridge sends R08 ring swipes and taps into NewPipe's own\nsingle-axis navigator.\n\nGet it here:\nhttps://github.com/Anezium/R08-Access-Bridge/releases/latest\n\n## Install\n\n1. Install `Rokid-NewPipe-v0.28.8-rokid-20260628.apk` on the glasses.\n2. Install or update R08 Access Bridge to `v1.4.7` if you want R08 ring control.\n3. Enable the R08 Access Bridge Accessibility Service on the glasses.\n4. Pair the R08 ring in Stable mode.\n5. Launch Rokid NewPipe.\n\n## Notes\n\nThis is not the upstream NewPipe distribution. It is a focused Rokid glasses\nbuild with package name `com.anezium.rokid.newpipe`.\n\nThe APK attached to this release is signed with the standard Android debug\ncertificate for installability. It will not update over the official NewPipe app\nand should be treated as a separate community build.",
+          "changes": [
+            "New green launcher icon and adaptive icon background.",
+            "Fresh screenshots captured from real Rokid glasses.",
+            "Rokid-first home, search, video detail, and player controls.",
+            "One-axis navigation: swipe moves focus, tap activates, Back exits.",
+            "Directional debounce for physical Rokid swipe events that arrive as paired",
+            "Black, high-contrast HUD surfaces with outline focus for AR readability.",
+            "README updated with R08 Access Bridge setup notes.",
+            "Install or update R08 Access Bridge to v1.4.7 if you want R08 ring control."
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-newpipe.png",
+        "rokid-newpipe-2.png",
+        "rokid-newpipe-3.png",
+        "rokid-newpipe-4.png"
+      ],
+      "newUntil": "2026-07-06T00:16:09.000Z",
+      "iconAsset": "rokid-newpipe.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-newpipe.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-4.png"
+      ]
     },
     {
       "id": "rokid-shell",
