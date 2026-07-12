@@ -6,6 +6,14 @@ on:
       url:
         description: "GitHub repo/release URL, or EUNG info.json/tree URL"
         required: true
+      kind:
+        description: "Registry kind"
+        required: true
+        default: "app"
+        type: choice
+        options:
+          - "app"
+          - "nexus-plugin"
       id:
         description: "Optional app id override"
         required: false
@@ -40,6 +48,18 @@ on:
         default: ""
       readme_ref:
         description: "Optional README branch/tag/SHA"
+        required: false
+        default: ""
+      plugin_id:
+        description: "Nexus manifest plugin ID (required for nexus-plugin)"
+        required: false
+        default: ""
+      package_name:
+        description: "Optional Android package name (verified from the APK)"
+        required: false
+        default: ""
+      settings_activity:
+        description: "Nexus settings activity (required for nexus-plugin)"
         required: false
         default: ""
       model:
@@ -84,7 +104,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          args=("${{ inputs.url }}" --report ".tmp/add-app-report.md" --output ".tmp/add-app-output.json")
+          args=("${{ inputs.url }}" --kind "${{ inputs.kind }}" --report ".tmp/add-app-report.md" --output ".tmp/add-app-output.json")
           [ -n "${{ inputs.id }}" ] && args+=(--id "${{ inputs.id }}")
           [ -n "${{ inputs.name }}" ] && args+=(--name "${{ inputs.name }}")
           [ -n "${{ inputs.category }}" ] && args+=(--category "${{ inputs.category }}")
@@ -94,6 +114,9 @@ jobs:
           [ -n "${{ inputs.asset_match }}" ] && args+=(--asset-match "${{ inputs.asset_match }}")
           [ -n "${{ inputs.readme_path }}" ] && args+=(--readme-path "${{ inputs.readme_path }}")
           [ -n "${{ inputs.readme_ref }}" ] && args+=(--readme-ref "${{ inputs.readme_ref }}")
+          [ -n "${{ inputs.plugin_id }}" ] && args+=(--plugin-id "${{ inputs.plugin_id }}")
+          [ -n "${{ inputs.package_name }}" ] && args+=(--package-name "${{ inputs.package_name }}")
+          [ -n "${{ inputs.settings_activity }}" ] && args+=(--settings-activity "${{ inputs.settings_activity }}")
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             args+=(--dry-run)
           fi
@@ -111,7 +134,7 @@ jobs:
             exit 0
           fi
           app="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).id)")"
-          args=("$app" --release-limit "5" --report ".tmp/ai-listing-report.md")
+          args=("$app" --kind "${{ inputs.kind }}" --release-limit "5" --report ".tmp/ai-listing-report.md")
           [ -n "${{ inputs.readme_path }}" ] && args+=(--readme-path "${{ inputs.readme_path }}")
           [ -n "${{ inputs.readme_ref }}" ] && args+=(--ref "${{ inputs.readme_ref }}")
           if node scripts/generate-ai-listing.mjs "${args[@]}"; then
@@ -129,7 +152,7 @@ jobs:
         if: ${{ inputs.dry_run != 'true' }}
         run: |
           app="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).id)")"
-          node scripts/update-artifact-metadata.mjs --app "$app" --soft-fail
+          node scripts/update-artifact-metadata.mjs --kind "${{ inputs.kind }}" --app "$app" --soft-fail
 
       - name: Extract missing icons
         if: ${{ inputs.dry_run != 'true' }}
@@ -137,7 +160,7 @@ jobs:
           APKTOOL_JAR: .tmp/apktool.jar
         run: |
           app="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).id)")"
-          node scripts/extract-missing-icons.mjs --app "$app" --soft-fail
+          node scripts/extract-missing-icons.mjs --kind "${{ inputs.kind }}" --app "$app" --soft-fail
 
       - name: Rebuild registry
         if: ${{ inputs.dry_run != 'true' }}
@@ -148,7 +171,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain -- apps assets/icons assets/screenshots dist/apps.v1.json)" ]; then
+          if [ -z "$(git status --porcelain -- apps plugins-nexus assets/icons assets/screenshots dist/apps.v1.json dist/nexus-plugins.v1.json)" ]; then
             echo "No app changes to propose."
             exit 0
           fi
@@ -157,12 +180,18 @@ jobs:
           safe_app="$(printf '%s' "$app" | tr -cs '[:alnum:]-' '-' | sed 's/^-//;s/-$//')"
           branch="automation/add-app-${safe_app}"
           body=".tmp/add-app-report.md"
+          entry_file="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync('.tmp/add-app-output.json','utf8')).entryFile)")"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$branch:refs/remotes/origin/$branch" || true
           git checkout -B "$branch"
-          git add "apps/${app}.json" dist/apps.v1.json
+          git add "$entry_file"
+          if [ "${{ inputs.kind }}" = "nexus-plugin" ]; then
+            git add dist/nexus-plugins.v1.json
+          else
+            git add dist/apps.v1.json
+          fi
           git add assets/icons/*.png 2>/dev/null || true
           git add "assets/screenshots/${app}"* 2>/dev/null || true
           git commit -m "Add ${app} to registry"

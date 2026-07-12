@@ -2,9 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { artifactsFor, normalizeRegistryKind, registryDirectory } from "./lib-github-content.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const appsDir = path.join(root, "apps");
 const iconDir = path.join(root, "assets", "icons");
 const tmpDir = path.join(root, ".tmp", "icon-extract");
 
@@ -14,6 +14,8 @@ fs.mkdirSync(tmpDir, { recursive: true });
 const force = process.argv.includes("--force");
 const softFail = process.argv.includes("--soft-fail");
 const appFilters = new Set(valuesFor("--app"));
+const kind = normalizeRegistryKind(valuesFor("--kind").at(-1));
+const entriesDir = registryDirectory(root, kind);
 
 function valuesFor(flag) {
   const values = [];
@@ -77,9 +79,10 @@ function runApktool(apktool, args) {
 }
 
 function firstArtifactUrl(app) {
-  const preferred = app.artifacts?.find((artifact) => artifact.target === "glasses") ||
-    app.artifacts?.find((artifact) => artifact.target === "phone") ||
-    app.artifacts?.[0];
+  const artifacts = artifactsFor(app);
+  const preferred = artifacts.find((artifact) => artifact.target === "glasses") ||
+    artifacts.find((artifact) => artifact.target === "phone") ||
+    artifacts[0];
   return preferred?.url;
 }
 
@@ -435,10 +438,11 @@ if (!apktool) {
   console.warn("apktool not found; adaptive/vector icons will be skipped.");
 }
 
-const apps = fs.readdirSync(appsDir)
+const apps = fs.readdirSync(entriesDir)
   .filter((name) => name.endsWith(".json"))
+  .filter((name) => !name.endsWith(".template.json"))
   .sort()
-  .map((name) => readJson(path.join(appsDir, name)))
+  .map((name) => readJson(path.join(entriesDir, name)))
   .filter((app) => appFilters.size === 0 || appFilters.has(app.id));
 
 const results = [];

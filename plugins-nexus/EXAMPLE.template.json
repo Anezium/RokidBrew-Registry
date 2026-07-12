@@ -1,0 +1,44 @@
+{
+  "id": "example-plugin",
+  "kind": "nexus-plugin",
+  "name": "Example Nexus Plugin",
+  "category": "Utility",
+  "summary": "Example descriptor used by the registry builder tests.",
+  "description": "This is test-only catalogue data and is never published.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/example-nexus-plugin",
+  "publishedAt": "2026-01-02T03:04:05.000Z",
+  "iconAsset": "example-plugin-icon.png",
+  "screenshotAssets": [
+    "example-plugin-1.jpg"
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nConcrete test fixture for the Nexus plugin feed builder."
+  },
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-01-02T03:04:05.000Z",
+      "notes": "Initial example release."
+    }
+  ],
+  "nexus": {
+    "pluginId": "example-plugin",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": ".ExampleSettingsActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/example-nexus-plugin/releases/download/v0.1.0/example-plugin-phone-release.apk",
+    "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "sizeBytes": 123456,
+    "packageName": "com.anezium.rokidbus.plugin.example",
+    "versionCode": 1,
+    "versionName": "0.1.0"
+  }
+}

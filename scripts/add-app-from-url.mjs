@@ -2,12 +2,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  appFile,
+  artifactsFor,
   fetchBytes,
   fetchJson,
   githubReleases,
   githubRepoUrl,
+  normalizeRegistryKind,
   parseArgs,
+  registryFile,
+  releasesForRegistryKind,
   releaseToRegistry,
   repoFromUrl,
   repoInfo,
@@ -37,6 +40,7 @@ const usage = `Usage:
   node scripts/add-app-from-url.mjs <github-url-or-eung-info-json> [options]
 
 Options:
+  --kind <app|nexus-plugin>  Registry kind, default app.
   --id <id>                 Override app id.
   --name <name>             Override display name.
   --category <category>     Override category, default inferred or Utility.
@@ -47,6 +51,13 @@ Options:
   --release <tag|latest>    Release selector, default from URL or latest.
   --readme-path <path>      README path used later by the AI listing workflow.
   --readme-ref <ref>        README branch/tag/SHA used later by the AI listing workflow.
+  --plugin-id <id>          Nexus manifest plugin ID (required for nexus-plugin).
+  --package-name <name>     Optional package name; APK metadata extraction verifies/fills it.
+  --settings-activity <cls> Nexus settings activity (required for nexus-plugin).
+  --api-version <n>         Nexus API version, default 3.
+  --capabilities <csv>      Nexus capabilities, default surfaces.
+  --launchable <bool>       Nexus launchable flag, default true.
+  --min-host-version-code <n>  Minimum Nexus host version code, default 6.
   --release-limit <n>       Number of GitHub releases to copy into releases[], default 5.
   --max-screenshots <n>     Best-effort screenshot import limit, default 4.
   --no-screenshots          Do not import screenshots.
@@ -160,12 +171,15 @@ async function importGeneric(input, args, report) {
       : /\.apk$/i;
   const apkAssets = (release.assets || []).filter((asset) => assetRegex.test(asset.name || ""));
   if (apkAssets.length === 0) throw new Error(`No APK assets matched in ${repo}@${release.tag_name}`);
+  if (args.kind === "nexus-plugin" && apkAssets.length !== 1) {
+    throw new Error(`Nexus plugins require exactly one phone APK; ${apkAssets.length} assets matched. Narrow the release with --asset-match.`);
+  }
 
   const repoName = repo.split("/")[1];
   const name = args.name || titleFromRepoName(info.name || repoName);
   const id = args.id || slugify(name || repoName);
   const artifacts = apkAssets.map((asset) => ({
-    target: args.target || inferTarget(asset.name),
+    target: args.kind === "nexus-plugin" ? "phone" : args.target || inferTarget(asset.name),
     url: asset.browser_download_url,
   }));
   const dedupedArtifacts = [];
@@ -178,7 +192,9 @@ async function importGeneric(input, args, report) {
     seenTargets.add(artifact.target);
     dedupedArtifacts.push(artifact);
   }
-  const type = appTypeFromTargets(dedupedArtifacts.map((artifact) => artifact.target), args.type);
+  const type = args.kind === "nexus-plugin"
+    ? "phone"
+    : appTypeFromTargets(dedupedArtifacts.map((artifact) => artifact.target), args.type);
   const version = versionFromTag(release.tag_name) || versionFromAsset(apkAssets[0].name) || "0.0.0";
   const summary = info.description || `${name} for Rokid AR glasses`;
   const readmePath = args.readmePath || "README.md";
@@ -229,19 +245,56 @@ async function importGeneric(input, args, report) {
 
   report.push(`Detected generic GitHub Releases flow for \`${repo}\`.`);
   report.push(`Imported ${dedupedArtifacts.length} APK artifact(s) from release \`${release.tag_name}\`.`);
-  return { app, repo };
+  return { app, repo, release };
 }
 
-function writeReport(file, { app, repo, report }) {
+function nexusPluginFromApp(app, release, args) {
+  const artifact = app.artifacts[0];
+  const capabilities = String(args.capabilities || "surfaces")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  return {
+    id: app.id,
+    kind: "nexus-plugin",
+    name: app.name,
+    category: app.category,
+    summary: app.summary,
+    description: app.description,
+    author: app.author,
+    sourceUrl: app.sourceUrl,
+    publishedAt: release.published_at || release.created_at,
+    iconAsset: `${app.id}.png`,
+    screenshotAssets: app.screenshotAssets || [],
+    listing: {
+      descriptionMarkdown: app.listing?.descriptionMarkdown || app.description,
+    },
+    releases: releasesForRegistryKind(app.releases, "nexus-plugin"),
+    nexus: {
+      pluginId: args.pluginId,
+      apiVersion: Number.parseInt(args.apiVersion || "3", 10),
+      capabilities,
+      launchable: args.launchable == null ? true : args.launchable === "true",
+      settingsActivity: args.settingsActivity,
+      minHostVersionCode: Number.parseInt(args.minHostVersionCode || "6", 10),
+    },
+    artifact: {
+      ...artifact,
+      ...(args.packageName ? { packageName: args.packageName } : {}),
+    },
+  };
+}
+
+function writeReport(file, { entry, kind, repo, report }) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   const lines = [
-    `# Add ${app.name} to RokidBrew Registry`,
+    `# Add ${entry.name} to RokidBrew Registry`,
     "",
-    `- App id: \`${app.id}\``,
+    `- Kind: \`${kind}\``,
+    `- Entry id: \`${entry.id}\``,
     `- Repo: \`${repo}\``,
-    `- Type: \`${app.type}\``,
-    `- Category: \`${app.category}\``,
-    `- Artifacts: ${(app.artifacts || []).map((artifact) => `\`${artifact.target}\``).join(", ")}`,
+    `- Category: \`${entry.category}\``,
+    `- Artifacts: ${artifactsFor(entry).map((artifact) => `\`${artifact.target}\``).join(", ")}`,
     "",
     "## Notes",
     "",
@@ -258,35 +311,48 @@ function writeReport(file, { app, repo, report }) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2), usage);
+  const kind = normalizeRegistryKind(args.kind);
+  args.kind = kind;
   const input = args._[0];
   if (!input) throw new Error(usage);
+  if (kind === "nexus-plugin" && (!args.pluginId || !args.settingsActivity)) {
+    throw new Error("Nexus plugin ingestion requires --plugin-id and --settings-activity values copied from the APK manifest");
+  }
   const report = [];
   const eungUrl = eungInfoRawUrl(input);
+  if (kind === "nexus-plugin" && eungUrl) {
+    throw new Error("Nexus plugin ingestion requires a GitHub repository or release URL, not EUNG info.json");
+  }
   const result = eungUrl
     ? await buildEungApp({ root, source: eungUrl, args, report, defaultMaxScreenshots: 4 })
     : await importGeneric(input, args, report);
+  const entry = kind === "nexus-plugin"
+    ? nexusPluginFromApp(result.app, result.release, args)
+    : result.app;
 
-  const file = appFile(root, result.app.id);
+  const file = registryFile(root, entry.id, kind);
   if (!args.dryRun && fs.existsSync(file)) {
     throw new Error(`${path.relative(root, file)} already exists; use the update workflows or choose a new id.`);
   }
-  if (!args.dryRun) writeJson(file, result.app);
+  if (!args.dryRun) writeJson(file, entry);
 
   const reportFile = args.report || reportDefault;
   const outputFile = args.output || outputDefault;
-  writeReport(reportFile, { app: result.app, repo: result.repo, report });
+  writeReport(reportFile, { entry, kind, repo: result.repo, report });
   writeJson(outputFile, {
-    id: result.app.id,
+    id: entry.id,
+    kind,
     repo: result.repo,
     appFile: path.relative(root, file).replace(/\\/g, "/"),
+    entryFile: path.relative(root, file).replace(/\\/g, "/"),
     reportFile: path.relative(root, reportFile).replace(/\\/g, "/"),
   });
 
   if (args.dryRun) {
-    console.log(JSON.stringify(result.app, null, 2));
+    console.log(JSON.stringify(entry, null, 2));
     return;
   }
-  console.log(`Wrote apps/${result.app.id}.json`);
+  console.log(`Wrote ${path.relative(root, file).replace(/\\/g, "/")}`);
 }
 
 main().catch((error) => {

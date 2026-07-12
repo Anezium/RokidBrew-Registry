@@ -3,13 +3,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { artifactsFor, normalizeRegistryKind, registryDirectory } from "./lib-github-content.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const appsDir = path.join(root, "apps");
 const tmpDir = path.join(root, ".tmp", "artifact-metadata");
 const force = process.argv.includes("--force");
 const softFail = process.argv.includes("--soft-fail");
 const appFilters = new Set(valuesFor("--app"));
+const kind = normalizeRegistryKind(valuesFor("--kind").at(-1));
+const entriesDir = registryDirectory(root, kind);
 
 fs.mkdirSync(tmpDir, { recursive: true });
 
@@ -93,7 +95,8 @@ function needsMetadata(artifact) {
     !artifact.sha256 ||
     !artifact.sizeBytes ||
     !artifact.packageName ||
-    !artifact.versionCode;
+    !artifact.versionCode ||
+    (kind === "nexus-plugin" && !artifact.versionName);
 }
 
 const aapt = findAapt();
@@ -102,10 +105,11 @@ if (!aapt) {
   process.exit(1);
 }
 
-const appFiles = fs.readdirSync(appsDir)
+const appFiles = fs.readdirSync(entriesDir)
   .filter((name) => name.endsWith(".json"))
+  .filter((name) => !name.endsWith(".template.json"))
   .sort()
-  .map((name) => path.join(appsDir, name));
+  .map((name) => path.join(entriesDir, name));
 
 let updated = 0;
 let skipped = 0;
@@ -116,7 +120,7 @@ for (const file of appFiles) {
   if (appFilters.size > 0 && !appFilters.has(app.id)) continue;
   let changed = false;
 
-  for (const artifact of app.artifacts || []) {
+  for (const artifact of artifactsFor(app)) {
     if (!needsMetadata(artifact)) {
       skipped += 1;
       continue;
@@ -131,7 +135,9 @@ for (const file of appFiles) {
       artifact.sizeBytes = bytes.length;
       if (badging.packageName) artifact.packageName = badging.packageName;
       if (badging.versionCode) artifact.versionCode = badging.versionCode;
-      if (badging.apkVersionName && !artifact.versionName) artifact.versionName = badging.apkVersionName;
+      if (badging.apkVersionName && (kind === "nexus-plugin" || force || !artifact.versionName)) {
+        artifact.versionName = badging.apkVersionName;
+      }
       changed = true;
       updated += 1;
       console.log(`ok     ${app.id}:${artifact.target} ${artifact.packageName || "no-package"} ${artifact.sizeBytes} bytes`);

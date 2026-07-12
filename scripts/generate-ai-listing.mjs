@@ -2,14 +2,17 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  appFile,
+  artifactsFor,
   cleanMarkdown,
   githubReleases,
   inferRepo,
+  normalizeRegistryKind,
   parseArgs,
   pickStoreFields,
   readJson,
   readmeText,
+  registryFile,
+  releasesForRegistryKind,
   releaseToRegistry,
   writeJson,
 } from "./lib-github-content.mjs";
@@ -22,6 +25,7 @@ const usage = `Usage:
   node scripts/generate-ai-listing.mjs <app-id> [options]
 
 Options:
+  --kind <app|nexus-plugin>  Registry kind, default app.
   --repo <owner/repo>         Override GitHub repository.
   --readme-path <path>        README path inside the repo, default README.md.
   --readme-url <url>          Full README/raw markdown URL.
@@ -131,6 +135,7 @@ function prompt(app, repo, readme) {
         },
         app: {
           id: app.id,
+          kind: app.kind || "app",
           name: app.name,
           category: app.category,
           type: app.type,
@@ -138,7 +143,7 @@ function prompt(app, repo, readme) {
           currentDescription: app.description,
           phoneRequired: app.phoneRequired,
           sourceUrl: app.sourceUrl,
-          targets: (app.artifacts || []).map((artifact) => artifact.target),
+          targets: artifactsFor(app).map((artifact) => artifact.target),
         },
         repo,
         readme: truncate(cleanMarkdown(readme), 24000),
@@ -207,10 +212,11 @@ function writeReport(file, { app, repo, model, generated, releases }) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2), usage);
+  const kind = normalizeRegistryKind(args.kind);
   const appId = args._[0];
   if (!appId) throw new Error(usage);
 
-  const file = appFile(root, appId);
+  const file = registryFile(root, appId, kind);
   const app = readJson(file);
   const source = app.listingSource || {};
   const repo = args.repo || inferRepo(app);
@@ -233,7 +239,10 @@ async function main() {
     ...generated,
     ...(args.noReleases ? {} : { releases }),
   });
-  if (repo) {
+  if (kind === "nexus-plugin" && !args.noReleases) {
+    updated.releases = releasesForRegistryKind(releases, kind);
+  }
+  if (repo && kind === "app") {
     updated.listingSource = {
       type: "githubReadme",
       repo,

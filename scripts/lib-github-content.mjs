@@ -16,6 +16,41 @@ export function appFile(root, appId) {
   return path.join(root, "apps", `${appId}.json`);
 }
 
+export function normalizeRegistryKind(value = "app") {
+  const kind = value || "app";
+  if (!["app", "nexus-plugin"].includes(kind)) {
+    throw new Error(`Unsupported kind "${kind}"; expected app or nexus-plugin`);
+  }
+  return kind;
+}
+
+export function registryDirectory(root, kind = "app") {
+  return path.join(root, normalizeRegistryKind(kind) === "nexus-plugin" ? "plugins-nexus" : "apps");
+}
+
+export function registryFile(root, entryId, kind = "app") {
+  return path.join(registryDirectory(root, kind), `${entryId}.json`);
+}
+
+export function artifactsFor(entry) {
+  return entry.artifact ? [entry.artifact] : entry.artifacts || [];
+}
+
+export function releasesForRegistryKind(releases, kind = "app") {
+  if (normalizeRegistryKind(kind) === "app") return releases;
+  return (releases || []).map(({ version, date, notes }) => ({
+    version: nexusPluginVersion(version),
+    date,
+    notes: notes || "",
+  }));
+}
+
+function nexusPluginVersion(version) {
+  const value = String(version || "");
+  const semanticSuffix = /(?:^|[-_/])v?(\d+(?:\.\d+)+(?:[-+][0-9a-z.-]+)?)$/i.exec(value);
+  return semanticSuffix?.[1] || value.replace(/^v/i, "") || null;
+}
+
 export function parseArgs(argv, usage) {
   const args = { _: [] };
   for (let i = 0; i < argv.length; i += 1) {
@@ -67,7 +102,7 @@ export function repoFromUrl(url) {
 export function inferRepo(app) {
   return normalizeRepo(app.listingSource?.repo) ||
     repoFromUrl(app.sourceUrl) ||
-    repoFromUrl(app.artifacts?.[0]?.url);
+    repoFromUrl(artifactsFor(app)[0]?.url);
 }
 
 export async function fetchJson(url, label = url, token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {

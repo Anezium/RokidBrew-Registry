@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appsDir = path.join(root, "apps");
+const nexusPluginsDir = path.join(root, "plugins-nexus");
 const distDir = path.join(root, "dist");
 const iconDir = path.join(root, "assets", "icons");
 const screenshotDir = path.join(root, "assets", "screenshots");
@@ -12,16 +13,23 @@ const publicBranch = process.env.ROKIDBREW_PUBLIC_BRANCH || "main";
 const publicBaseUrl = (process.env.ROKIDBREW_PUBLIC_BASE_URL ||
   `https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/${publicBranch}`).replace(/\/$/, "");
 const newWindowDays = Number.parseInt(process.env.ROKIDBREW_NEW_WINDOW_DAYS || "2", 10);
-const generatedAt = new Date();
+const generatedAt = new Date(process.env.ROKIDBREW_GENERATED_AT || Date.now());
+if (Number.isNaN(generatedAt.getTime())) {
+  throw new Error("ROKIDBREW_GENERATED_AT must be a valid date when set");
+}
 
-const required = ["id", "name", "category", "type", "version", "summary", "author", "sourceUrl", "artifacts"];
+const appRequired = ["id", "name", "category", "type", "version", "summary", "author", "sourceUrl", "artifacts"];
+const nexusPluginRequired = [
+  "id", "kind", "name", "category", "summary", "description", "author", "sourceUrl",
+  "publishedAt", "iconAsset", "screenshotAssets", "listing", "releases", "nexus", "artifact",
+];
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
 }
 
 function assertApp(app, file) {
-  for (const key of required) {
+  for (const key of appRequired) {
     if (app[key] === undefined || app[key] === null || app[key] === "") {
       throw new Error(`${path.relative(root, file)} is missing "${key}"`);
     }
@@ -50,14 +58,100 @@ function assertApp(app, file) {
   }
 }
 
+function assertNexusPlugin(plugin, file) {
+  const relativeFile = path.relative(root, file);
+  for (const key of nexusPluginRequired) {
+    if (plugin[key] === undefined || plugin[key] === null || plugin[key] === "") {
+      throw new Error(`${relativeFile} is missing "${key}"`);
+    }
+  }
+  if (plugin.kind !== "nexus-plugin") {
+    throw new Error(`${plugin.id}: kind must be nexus-plugin`);
+  }
+  if (path.basename(file) !== `${plugin.id}.json`) {
+    throw new Error(`${relativeFile}: filename must match plugin id ${plugin.id}`);
+  }
+  if (!/^https?:\/\//.test(plugin.sourceUrl)) {
+    throw new Error(`${plugin.id}: sourceUrl must be http(s)`);
+  }
+  if (!normalizeDate(plugin.publishedAt)) {
+    throw new Error(`${plugin.id}: publishedAt must be a valid date`);
+  }
+  if (!Array.isArray(plugin.screenshotAssets)) {
+    throw new Error(`${plugin.id}: screenshotAssets must be an array`);
+  }
+  if (!plugin.listing?.descriptionMarkdown) {
+    throw new Error(`${plugin.id}: listing.descriptionMarkdown is required`);
+  }
+  if (!Array.isArray(plugin.releases)) {
+    throw new Error(`${plugin.id}: releases must be an array`);
+  }
+  for (const release of plugin.releases) {
+    if (!release.version || typeof release.version !== "string") {
+      throw new Error(`${plugin.id}: each release requires a version`);
+    }
+    if (!normalizeDate(release.date)) {
+      throw new Error(`${plugin.id}: each release requires a valid date`);
+    }
+    if (typeof release.notes !== "string") {
+      throw new Error(`${plugin.id}: each release requires notes (an empty string is allowed)`);
+    }
+  }
+
+  const nexus = plugin.nexus;
+  if (!nexus.pluginId || typeof nexus.pluginId !== "string") {
+    throw new Error(`${plugin.id}: nexus.pluginId is required`);
+  }
+  if (!Number.isInteger(nexus.apiVersion) || nexus.apiVersion < 1) {
+    throw new Error(`${plugin.id}: nexus.apiVersion must be a positive integer`);
+  }
+  if (!Array.isArray(nexus.capabilities) || nexus.capabilities.length === 0 ||
+      nexus.capabilities.some((capability) => typeof capability !== "string" || !capability)) {
+    throw new Error(`${plugin.id}: nexus.capabilities must be a non-empty string array`);
+  }
+  if (typeof nexus.launchable !== "boolean") {
+    throw new Error(`${plugin.id}: nexus.launchable must be boolean`);
+  }
+  if (!nexus.settingsActivity || typeof nexus.settingsActivity !== "string") {
+    throw new Error(`${plugin.id}: nexus.settingsActivity is required`);
+  }
+  if (!Number.isInteger(nexus.minHostVersionCode) || nexus.minHostVersionCode < 1) {
+    throw new Error(`${plugin.id}: nexus.minHostVersionCode must be a positive integer`);
+  }
+
+  const artifact = plugin.artifact;
+  if (artifact.target !== "phone") {
+    throw new Error(`${plugin.id}: artifact target must be phone`);
+  }
+  if (!artifact.url || !/^https?:\/\//.test(artifact.url)) {
+    throw new Error(`${plugin.id}: artifact url must be http(s)`);
+  }
+  if (!/^[0-9a-f]{64}$/i.test(artifact.sha256 || "")) {
+    throw new Error(`${plugin.id}: artifact sha256 must be 64 hexadecimal characters`);
+  }
+  if (!Number.isInteger(artifact.sizeBytes) || artifact.sizeBytes < 1) {
+    throw new Error(`${plugin.id}: artifact sizeBytes must be a positive integer`);
+  }
+  if (!artifact.packageName || typeof artifact.packageName !== "string") {
+    throw new Error(`${plugin.id}: artifact.packageName is required`);
+  }
+  if (!Number.isInteger(artifact.versionCode) || artifact.versionCode < 1) {
+    throw new Error(`${plugin.id}: artifact.versionCode must be a positive integer`);
+  }
+  if (!artifact.versionName || typeof artifact.versionName !== "string") {
+    throw new Error(`${plugin.id}: artifact.versionName is required`);
+  }
+}
+
 function assetUrl(relativePath) {
   return `${publicBaseUrl}/${relativePath.split(path.sep).join("/")}`;
 }
 
-function attachAssetUrls(app) {
-  const iconPath = path.join(iconDir, `${app.id}.png`);
+function attachAssetUrls(app, declaredIcon = false) {
+  const iconAsset = declaredIcon ? app.iconAsset : `${app.id}.png`;
+  const iconPath = path.join(iconDir, iconAsset);
   if (fs.existsSync(iconPath)) {
-    app.iconAsset = `${app.id}.png`;
+    app.iconAsset = iconAsset;
     app.iconUrl = assetUrl(path.relative(root, iconPath));
   }
 
@@ -101,6 +195,7 @@ function stripPrivateFields(app) {
   for (const artifact of app.artifacts || []) {
     delete artifact.update;
   }
+  if (app.artifact) delete app.artifact.update;
 }
 
 function featuredRank(app) {
@@ -168,6 +263,29 @@ const apps = fs.readdirSync(appsDir)
 const duplicate = apps.map((app) => app.id).find((id, index, ids) => ids.indexOf(id) !== index);
 if (duplicate) throw new Error(`Duplicate app id: ${duplicate}`);
 
+if (!fs.existsSync(nexusPluginsDir)) {
+  throw new Error("Missing plugins-nexus/ directory");
+}
+
+const nexusPlugins = fs.readdirSync(nexusPluginsDir)
+  .filter((name) => name.endsWith(".json") && !name.endsWith(".template.json"))
+  .sort()
+  .map((name) => {
+    const file = path.join(nexusPluginsDir, name);
+    const plugin = readJson(file);
+    assertNexusPlugin(plugin, file);
+    attachAssetUrls(plugin, true);
+    stripPrivateFields(plugin);
+    return plugin;
+  })
+  .sort(nameCompare);
+
+for (const key of ["id", "nexus.pluginId", "artifact.packageName"]) {
+  const values = nexusPlugins.map((plugin) => key.split(".").reduce((value, part) => value?.[part], plugin));
+  const repeated = values.find((value, index) => values.indexOf(value) !== index);
+  if (repeated) throw new Error(`Duplicate Nexus plugin ${key}: ${repeated}`);
+}
+
 fs.mkdirSync(distDir, { recursive: true });
 const brewFile = path.join(root, "brew.json");
 let brewVersion, brewVersionCode, brewApkUrl, brewReleaseUrl, brewNotes, brewChanges;
@@ -197,3 +315,10 @@ const output = {
 
 fs.writeFileSync(path.join(distDir, "apps.v1.json"), `${JSON.stringify(output, null, 2)}\n`);
 console.log(`Built dist/apps.v1.json with ${apps.length} apps`);
+
+const nexusOutput = {
+  version: 1,
+  plugins: nexusPlugins,
+};
+fs.writeFileSync(path.join(distDir, "nexus-plugins.v1.json"), `${JSON.stringify(nexusOutput, null, 2)}\n`);
+console.log(`Built dist/nexus-plugins.v1.json with ${nexusPlugins.length} plugins`);
