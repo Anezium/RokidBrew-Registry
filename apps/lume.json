@@ -4,8 +4,14 @@
   "category": "Reader",
   "type": "combo",
   "version": "1.0.0",
+  "publishedAt": "2026-07-08T13:01:15Z",
   "summary": "Glanceable RSVP reading on Rokid AR glasses with phone library for PDFs, TXT, and shared text",
   "description": "Lume enables speed reading on Rokid AR glasses using RSVP, streaming text from your phone. Import PDFs, TXT files, or share text from any Android app to read one word at a time with adjustable speed and progress sync.",
+  "screenshotAssets": [
+    "lume-library.png",
+    "lume-reader-playing.png",
+    "lume-reader-paused.png"
+  ],
   "author": "beyondlevi",
   "sourceUrl": "https://github.com/beyondlevi/lume",
   "phoneRequired": true,
@@ -34,8 +40,14 @@
       "version": "1.0.0",
       "date": "2026-07-08T13:01:15Z",
       "sourceReleaseUrl": "https://github.com/beyondlevi/lume/releases/tag/v1.0.0",
-      "notes": "**Full Changelog**: https://github.com/beyondlevi/lume/commits/v1.0.0",
-      "changes": []
+      "notes": "Initial public release of Lume.\n\n- RSVP reader for Rokid glasses with adaptive pacing, 150-700 wpm controls, pause context, sentence navigation, and synced progress.\n- Phone library for PDF and TXT import, pasted text, and document removal with on-device text extraction.\n- Android share target for text, PDF, and TXT files.\n- Hybrid CXR-L, BLE GATT, and Bluetooth SPP transport with versioned handshake and word-window streaming.\n- English and Portuguese UI, selected on the phone and synced to the glasses.",
+      "changes": [
+        "Adds an RSVP reader with adaptive pacing, 150-700 wpm controls, pause context, sentence navigation, and synced progress.",
+        "Adds a phone library for PDF and TXT import, pasted text, and document removal with on-device text extraction.",
+        "Adds an Android share target for text, PDF, and TXT files.",
+        "Adds hybrid CXR-L, BLE GATT, and Bluetooth SPP transport with a versioned handshake and word-window streaming.",
+        "Adds English and Portuguese UI, selected on the phone and synced to the glasses."
+      ]
     }
   ],
   "listingSource": {
@@ -44,17 +56,19 @@
     "path": "README.md"
   },
   "update": {
-    "source": "githubReleaseAssets",
+    "source": "githubRelease",
     "repo": "beyondlevi/lume",
     "release": "latest",
     "assets": [
       {
         "target": "glasses",
-        "match": "^lume-glasses-release\\.apk$"
+        "match": "^lume-glasses-release\\.apk$",
+        "packageName": "com.lume.glasses"
       },
       {
         "target": "phone",
-        "match": "^lume-phone-release\\.apk$"
+        "match": "^lume-phone-release\\.apk$",
+        "packageName": "com.lume.phone"
       }
     ]
   },
