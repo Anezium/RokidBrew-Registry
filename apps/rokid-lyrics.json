@@ -3,28 +3,28 @@
   "name": "Rokid Lyrics",
   "category": "Media",
   "type": "combo",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "summary": "Stream synchronized song lyrics from your Android phone to Rokid AR glasses via Bluetooth",
   "description": "Rokid Lyrics streams time-synced lyrics from an Android phone to Rokid AR glasses over Bluetooth. It supports multiple lyrics providers and syncs lyrics in real time without internet on the glasses. Requires companion apps on both phone and glasses.",
   "phoneRequired": true,
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-glasses-release.apk",
-      "sha256": "69675578039d24ee9ea2c6f157ba596abc1a7178d1464dd5fac10b024bbd02ab",
-      "sizeBytes": 1085869,
+      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.4.0/lyrics-glasses-release.apk",
+      "sha256": "f8625da6d1865e898cb9706fb5a86ad8fb22033df6f64e2611b9fc7c3b9ba84b",
+      "sizeBytes": 3497029,
       "packageName": "com.rokid.lyrics.glasses",
-      "versionCode": 8,
-      "versionName": "0.3.1"
+      "versionCode": 9,
+      "versionName": "0.4.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-phone-release.apk",
-      "sha256": "6c6fd45f6817d85f4de519cc991687c4205f3590a9743aeb1ce355c91a3e30df",
-      "sizeBytes": 1728109,
+      "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.4.0/lyrics-phone-release.apk",
+      "sha256": "4fa57338bd6a8ec47c682394aeb94d7a113789b12f09481668a0ff4253954330",
+      "sizeBytes": 1774649,
       "packageName": "com.rokid.lyrics.phone",
-      "versionCode": 8,
-      "versionName": "0.3.1"
+      "versionCode": 9,
+      "versionName": "0.4.0"
     }
   ],
   "author": "Anezium",
@@ -33,11 +33,22 @@
     "rokid-lyrics-phone.jpg",
     "rokid-lyrics-glasses.jpg"
   ],
-  "publishedAt": "2026-05-26T17:18:23Z",
+  "publishedAt": "2026-07-10T14:44:10Z",
   "listing": {
     "descriptionMarkdown": "# About\nRokid Lyrics streams synchronized song lyrics from your Android phone to Rokid AR glasses using Bluetooth Classic SPP. It detects the current track from Android media sessions and displays time-synced lyrics on the glasses HUD.\n\n# Key features\n- Time-synced lyrics displayed live on Rokid AR glasses\n- Multi-provider lyrics lookup pipeline (Musixmatch, Netease, LRCLIB) with graceful fallback\n- Works with any Android media session, not limited to a single music player\n- Bluetooth streaming between phone and glasses with no internet required on glasses\n- Press Enter on the glasses to play or pause music on the phone\n\n# How it works\nThe phone app monitors the active media session, fetches synced lyrics from providers, and streams a full lyrics snapshot plus progress sync events to the glasses. The glasses display lyrics in real time, staying in sync with the music.\n\n# Requirements\n- Android phone with the Rokid Lyrics phone app installed\n- Rokid AR glasses with the Rokid Lyrics glasses app installed\n- Bluetooth pairing between phone and glasses\n- Notification access permission granted on the phone\n\n# Notes\nFor improved lyrics accuracy, signing in to Musixmatch in the phone app is recommended but optional."
   },
   "releases": [
+    {
+      "version": "0.4.0",
+      "date": "2026-07-10T14:44:10Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.4.0",
+      "notes": "## What's Changed\n* Dev by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/2\n* Add Spotify lyrics with in-app sp_dc login by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/3\n\n## New Contributors\n* @Anezium made their first contribution in https://github.com/Anezium/Rokid-Lyrics/pull/2\n\n**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.3.1...v0.4.0",
+      "changes": [
+        "Dev by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/2",
+        "Add Spotify lyrics with in-app spdc login by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/3",
+        "@Anezium made their first contribution in https://github.com/Anezium/Rokid-Lyrics/pull/2"
+      ]
+    },
     {
       "version": "0.3.1",
       "date": "2026-05-26T17:18:23Z",

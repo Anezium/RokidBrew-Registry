@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-10T08:43:12.961Z",
+  "generatedAt": "2026-07-12T07:38:33.939Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -14,105 +14,98 @@
   ],
   "apps": [
     {
-      "id": "r08-access-bridge",
-      "name": "R08 Access Bridge",
-      "category": "Navigation",
-      "type": "glasses",
-      "version": "1.6.1",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
-      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
-      "phoneRequired": false,
+      "id": "rokid-lyrics",
+      "name": "Rokid Lyrics",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.4.0",
+      "summary": "Stream synchronized song lyrics from your Android phone to Rokid AR glasses via Bluetooth",
+      "description": "Rokid Lyrics streams time-synced lyrics from an Android phone to Rokid AR glasses over Bluetooth. It supports multiple lyrics providers and syncs lyrics in real time without internet on the glasses. Requires companion apps on both phone and glasses.",
+      "phoneRequired": true,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.6.1/R08-Access-Bridge-v1.6.1.apk",
-          "sha256": "c1c8488becf57d800c4bbacba986d023832783770a567c02a5a9aef58976551f",
-          "sizeBytes": 16267960,
-          "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 29,
-          "versionName": "1.6.1"
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.4.0/lyrics-glasses-release.apk",
+          "sha256": "f8625da6d1865e898cb9706fb5a86ad8fb22033df6f64e2611b9fc7c3b9ba84b",
+          "sizeBytes": 3497029,
+          "packageName": "com.rokid.lyrics.glasses",
+          "versionCode": 9,
+          "versionName": "0.4.0"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.4.0/lyrics-phone-release.apk",
+          "sha256": "4fa57338bd6a8ec47c682394aeb94d7a113789b12f09481668a0ff4253954330",
+          "sizeBytes": 1774649,
+          "packageName": "com.rokid.lyrics.phone",
+          "versionCode": 9,
+          "versionName": "0.4.0"
         }
       ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
+      "screenshotAssets": [
+        "rokid-lyrics-phone.jpg",
+        "rokid-lyrics-glasses.jpg"
+      ],
+      "publishedAt": "2026-07-10T14:44:10Z",
+      "listing": {
+        "descriptionMarkdown": "# About\nRokid Lyrics streams synchronized song lyrics from your Android phone to Rokid AR glasses using Bluetooth Classic SPP. It detects the current track from Android media sessions and displays time-synced lyrics on the glasses HUD.\n\n# Key features\n- Time-synced lyrics displayed live on Rokid AR glasses\n- Multi-provider lyrics lookup pipeline (Musixmatch, Netease, LRCLIB) with graceful fallback\n- Works with any Android media session, not limited to a single music player\n- Bluetooth streaming between phone and glasses with no internet required on glasses\n- Press Enter on the glasses to play or pause music on the phone\n\n# How it works\nThe phone app monitors the active media session, fetches synced lyrics from providers, and streams a full lyrics snapshot plus progress sync events to the glasses. The glasses display lyrics in real time, staying in sync with the music.\n\n# Requirements\n- Android phone with the Rokid Lyrics phone app installed\n- Rokid AR glasses with the Rokid Lyrics glasses app installed\n- Bluetooth pairing between phone and glasses\n- Notification access permission granted on the phone\n\n# Notes\nFor improved lyrics accuracy, signing in to Musixmatch in the phone app is recommended but optional."
+      },
       "releases": [
         {
-          "version": "1.6.1",
-          "date": "2026-07-08T17:32:37Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.1",
-          "notes": null,
+          "version": "0.4.0",
+          "date": "2026-07-10T14:44:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.4.0",
+          "notes": "## What's Changed\n* Dev by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/2\n* Add Spotify lyrics with in-app sp_dc login by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/3\n\n## New Contributors\n* @Anezium made their first contribution in https://github.com/Anezium/Rokid-Lyrics/pull/2\n\n**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.3.1...v0.4.0",
+          "changes": [
+            "Dev by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/2",
+            "Add Spotify lyrics with in-app spdc login by @Anezium in https://github.com/Anezium/Rokid-Lyrics/pull/3",
+            "@Anezium made their first contribution in https://github.com/Anezium/Rokid-Lyrics/pull/2"
+          ]
+        },
+        {
+          "version": "0.3.1",
+          "date": "2026-05-26T17:18:23Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.1",
+          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.3.0...v0.3.1",
           "changes": []
         },
         {
-          "version": "1.5.0",
-          "date": "2026-07-03T11:44:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
-          "notes": null,
+          "version": "0.3.0",
+          "date": "2026-04-04T22:57:41Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.0",
+          "notes": "## Highlights\n\n- Introduces a new multi-provider phone lyrics pipeline: `MUSIXMATCH -> NETEASE -> LRCLIB`\n- Adds in-app Musixmatch sign-in and on-device provider settings persistence\n- Expands fallback coverage for tracks that Musixmatch cannot resolve, especially around CJK catalog support\n\n## What's New\n\n- Added provider abstraction plus composite fallback logic for synced lyrics resolution\n- Added official Netease search and lyric fetch integration on the phone\n- Kept LRCLIB as the public fallback when no better synced source is available\n- Updated the phone UI with provider-aware source/status feedback and a dedicated Musixmatch settings dialog\n- Updated the glasses flow to stay compatible with the new provider-aware snapshots\n\n## Reliability Fixes\n\n- Prevent repeated lyrics lookups while playback is progressing\n- Keep already loaded lyrics visible if a same-track refresh fails\n- Remove the hidden Spotify preference from Android media-session selection\n- Prevent intermediate provider errors from polluting the final UI when a fallback succeeds\n- Improve Netease matching with stronger handling for album, artist, and variant scoring\n- Filter credit-only / metadata-only payloads and instrumental or unavailable-lyrics cases more cleanly\n\n## Testing and Release Quality\n\n- Added unit coverage for composite fallback behavior\n- Added tests for runtime lookup preservation and media-session priority\n- Added Musixmatch and Netease parser/scoring regression tests\n- GitHub Actions release workflow now publishes both release APKs:\n  - `lyrics-phone-release.apk`\n  - `lyrics-glasses-release.apk`\n\n## Notes\n\n- Some tracks may still fall back to Netease or LRCLIB when Musixmatch has no synced subtitle available\n- Full compare view: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.4...v0.3.0",
           "changes": []
         },
         {
-          "version": "1.4.8-unsigned.apk",
-          "date": "2026-07-02T20:58:19Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
-          "notes": null,
+          "version": "0.2.4",
+          "date": "2026-03-29T21:07:13Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.4",
+          "notes": "## [0.2.4] - 2026-03-29\n\n### Fixed\n- Kept the glasses lyrics screen awake while the lyrics activity is in the foreground so the display no longer times out\n\n**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.3...v0.2.4",
           "changes": []
         },
         {
-          "version": "1.4.7",
-          "date": "2026-06-28T11:02:53Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
-          "notes": null,
+          "version": "0.2.3",
+          "date": "2026-03-27T21:11:41Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.3",
+          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.2...v0.2.3",
           "changes": []
         },
         {
-          "version": "1.4.6",
-          "date": "2026-06-20T18:22:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-06-16T18:07:39Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.2",
-          "date": "2026-06-13T00:00:54Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.0",
-          "date": "2026-06-09T22:40:18Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
-          "notes": null,
+          "version": "0.2.0",
+          "date": "2026-03-26T22:02:35Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.0",
+          "notes": "## Phone app — Phosphor Glass UI redesign\n\n  Complete visual overhaul of the phone companion app, taking design cues from the Rokid glasses' monochrome green phosphor display.\n\n  **New layout**\n  - Track card with song title, artist, playing badge (▶ PLAYING / ■ IDLE), lyrics source pill (LRCLIB · N♪), and a live progress bar\n  - 4-line lyrics cascade: past line (ghost) → **current line** (full brightness, green left border) → next line → line after next, with\n  cascading opacity\n  - Status bar: notification access status, BT connection state, connected client count\n  - Outline-style action buttons: `[ NOTIF ACCESS ]` and `[ BT SETTINGS ]`",
           "changes": []
         }
       ],
-      "screenshotAssets": [
-        "r08-access-bridge.png",
-        "r08-access-bridge-2.png",
-        "r08-access-bridge-3.png",
-        "r08-access-bridge-4.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
-      },
-      "publishedAt": "2026-07-08T17:32:37Z",
-      "newUntil": "2026-07-10T17:32:37.000Z",
-      "iconAsset": "r08-access-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
+      "newUntil": "2026-07-12T14:44:10.000Z",
+      "iconAsset": "rokid-lyrics.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
       ]
     },
     {
@@ -236,6 +229,108 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
+    {
+      "id": "r08-access-bridge",
+      "name": "R08 Access Bridge",
+      "category": "Navigation",
+      "type": "glasses",
+      "version": "1.6.1",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
+      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v1.6.1/R08-Access-Bridge-v1.6.1.apk",
+          "sha256": "c1c8488becf57d800c4bbacba986d023832783770a567c02a5a9aef58976551f",
+          "sizeBytes": 16267960,
+          "packageName": "com.anezium.r08accessbridge",
+          "versionCode": 29,
+          "versionName": "1.6.1"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.6.1",
+          "date": "2026-07-08T17:32:37Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.1",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.5.0",
+          "date": "2026-07-03T11:44:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.8-unsigned.apk",
+          "date": "2026-07-02T20:58:19Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-06-28T11:02:53Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.6",
+          "date": "2026-06-20T18:22:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.5",
+          "date": "2026-06-16T18:07:39Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.2",
+          "date": "2026-06-13T00:00:54Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.2",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.0",
+          "date": "2026-06-09T22:40:18Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.0",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "r08-access-bridge.png",
+        "r08-access-bridge-2.png",
+        "r08-access-bridge-3.png",
+        "r08-access-bridge-4.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
+      },
+      "publishedAt": "2026-07-08T17:32:37Z",
+      "newUntil": "2026-07-10T17:32:37.000Z",
+      "iconAsset": "r08-access-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
       ]
     },
     {
@@ -2006,90 +2101,6 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-connect-hud-2.jpg"
-      ]
-    },
-    {
-      "id": "rokid-lyrics",
-      "name": "Rokid Lyrics",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.3.1",
-      "summary": "Stream synchronized song lyrics from your Android phone to Rokid AR glasses via Bluetooth",
-      "description": "Rokid Lyrics streams time-synced lyrics from an Android phone to Rokid AR glasses over Bluetooth. It supports multiple lyrics providers and syncs lyrics in real time without internet on the glasses. Requires companion apps on both phone and glasses.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-glasses-release.apk",
-          "sha256": "69675578039d24ee9ea2c6f157ba596abc1a7178d1464dd5fac10b024bbd02ab",
-          "sizeBytes": 1085869,
-          "packageName": "com.rokid.lyrics.glasses",
-          "versionCode": 8,
-          "versionName": "0.3.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Lyrics/releases/download/v0.3.1/lyrics-phone-release.apk",
-          "sha256": "6c6fd45f6817d85f4de519cc991687c4205f3590a9743aeb1ce355c91a3e30df",
-          "sizeBytes": 1728109,
-          "packageName": "com.rokid.lyrics.phone",
-          "versionCode": 8,
-          "versionName": "0.3.1"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Lyrics",
-      "screenshotAssets": [
-        "rokid-lyrics-phone.jpg",
-        "rokid-lyrics-glasses.jpg"
-      ],
-      "publishedAt": "2026-05-26T17:18:23Z",
-      "listing": {
-        "descriptionMarkdown": "# About\nRokid Lyrics streams synchronized song lyrics from your Android phone to Rokid AR glasses using Bluetooth Classic SPP. It detects the current track from Android media sessions and displays time-synced lyrics on the glasses HUD.\n\n# Key features\n- Time-synced lyrics displayed live on Rokid AR glasses\n- Multi-provider lyrics lookup pipeline (Musixmatch, Netease, LRCLIB) with graceful fallback\n- Works with any Android media session, not limited to a single music player\n- Bluetooth streaming between phone and glasses with no internet required on glasses\n- Press Enter on the glasses to play or pause music on the phone\n\n# How it works\nThe phone app monitors the active media session, fetches synced lyrics from providers, and streams a full lyrics snapshot plus progress sync events to the glasses. The glasses display lyrics in real time, staying in sync with the music.\n\n# Requirements\n- Android phone with the Rokid Lyrics phone app installed\n- Rokid AR glasses with the Rokid Lyrics glasses app installed\n- Bluetooth pairing between phone and glasses\n- Notification access permission granted on the phone\n\n# Notes\nFor improved lyrics accuracy, signing in to Musixmatch in the phone app is recommended but optional."
-      },
-      "releases": [
-        {
-          "version": "0.3.1",
-          "date": "2026-05-26T17:18:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.1",
-          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.3.0...v0.3.1",
-          "changes": []
-        },
-        {
-          "version": "0.3.0",
-          "date": "2026-04-04T22:57:41Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.3.0",
-          "notes": "## Highlights\n\n- Introduces a new multi-provider phone lyrics pipeline: `MUSIXMATCH -> NETEASE -> LRCLIB`\n- Adds in-app Musixmatch sign-in and on-device provider settings persistence\n- Expands fallback coverage for tracks that Musixmatch cannot resolve, especially around CJK catalog support\n\n## What's New\n\n- Added provider abstraction plus composite fallback logic for synced lyrics resolution\n- Added official Netease search and lyric fetch integration on the phone\n- Kept LRCLIB as the public fallback when no better synced source is available\n- Updated the phone UI with provider-aware source/status feedback and a dedicated Musixmatch settings dialog\n- Updated the glasses flow to stay compatible with the new provider-aware snapshots\n\n## Reliability Fixes\n\n- Prevent repeated lyrics lookups while playback is progressing\n- Keep already loaded lyrics visible if a same-track refresh fails\n- Remove the hidden Spotify preference from Android media-session selection\n- Prevent intermediate provider errors from polluting the final UI when a fallback succeeds\n- Improve Netease matching with stronger handling for album, artist, and variant scoring\n- Filter credit-only / metadata-only payloads and instrumental or unavailable-lyrics cases more cleanly\n\n## Testing and Release Quality\n\n- Added unit coverage for composite fallback behavior\n- Added tests for runtime lookup preservation and media-session priority\n- Added Musixmatch and Netease parser/scoring regression tests\n- GitHub Actions release workflow now publishes both release APKs:\n  - `lyrics-phone-release.apk`\n  - `lyrics-glasses-release.apk`\n\n## Notes\n\n- Some tracks may still fall back to Netease or LRCLIB when Musixmatch has no synced subtitle available\n- Full compare view: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.4...v0.3.0",
-          "changes": []
-        },
-        {
-          "version": "0.2.4",
-          "date": "2026-03-29T21:07:13Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.4",
-          "notes": "## [0.2.4] - 2026-03-29\n\n### Fixed\n- Kept the glasses lyrics screen awake while the lyrics activity is in the foreground so the display no longer times out\n\n**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.3...v0.2.4",
-          "changes": []
-        },
-        {
-          "version": "0.2.3",
-          "date": "2026-03-27T21:11:41Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.3",
-          "notes": "**Full Changelog**: https://github.com/Anezium/Rokid-Lyrics/compare/v0.2.2...v0.2.3",
-          "changes": []
-        },
-        {
-          "version": "0.2.0",
-          "date": "2026-03-26T22:02:35Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Lyrics/releases/tag/v0.2.0",
-          "notes": "## Phone app — Phosphor Glass UI redesign\n\n  Complete visual overhaul of the phone companion app, taking design cues from the Rokid glasses' monochrome green phosphor display.\n\n  **New layout**\n  - Track card with song title, artist, playing badge (▶ PLAYING / ■ IDLE), lyrics source pill (LRCLIB · N♪), and a live progress bar\n  - 4-line lyrics cascade: past line (ghost) → **current line** (full brightness, green left border) → next line → line after next, with\n  cascading opacity\n  - Status bar: notification access status, BT connection state, connected client count\n  - Outline-style action buttons: `[ NOTIF ACCESS ]` and `[ BT SETTINGS ]`",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-28T17:18:23.000Z",
-      "iconAsset": "rokid-lyrics.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lyrics.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-phone.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lyrics-glasses.jpg"
       ]
     },
     {
