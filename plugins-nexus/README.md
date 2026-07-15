@@ -47,4 +47,6 @@ node scripts/update-artifact-metadata.mjs --kind nexus-plugin --app feeds \
 
 When `apksigner` is available, the script still extracts the digest and rejects a mismatched fallback value. To refresh changelog entries later, run `node scripts/import-github-releases.mjs feeds --kind nexus-plugin --limit 5`.
 
-Run `node --test tests/*.test.mjs` to exercise the example descriptor, required join-key validation, and duplicate `nexus.pluginId` rejection.
+Pull requests that add or change a real plugin descriptor run `verify-nexus-plugins.yml`. The fork-safe job uses no secrets: it downloads the public APK, checks every pinned artifact field, verifies the single signer certificate, and enforces the exported plugin service metadata and headless manifest contract before merge.
+
+Run `node --test` to exercise signer parsing, phone-aligned descriptor validation, ingestion, and the static APK manifest checks.
