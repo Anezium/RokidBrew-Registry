@@ -36,6 +36,7 @@
     "target": "phone",
     "url": "https://github.com/Anezium/example-nexus-plugin/releases/download/v0.1.0/example-plugin-phone-release.apk",
     "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "signerSha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
     "sizeBytes": 123456,
     "packageName": "com.anezium.rokidbus.plugin.example",
     "versionCode": 1,

@@ -19,7 +19,7 @@ This directory is the source namespace for phone-only APK plugins installed into
 - `nexus.launchable`: whether Nexus may launch the plugin directly.
 - `nexus.settingsActivity`: activity class Nexus opens for plugin settings.
 - `nexus.minHostVersionCode`: minimum compatible Rokid Nexus host version code.
-- `artifact`: the single phone APK. `artifact.packageName` is the second installed-plugin join key; the remaining fields identify and verify the exact release APK (`url`, `sha256`, `sizeBytes`, `versionCode`, and `versionName`).
+- `artifact`: the single phone APK. `artifact.packageName` is the second installed-plugin join key. `artifact.signerSha256` is the lowercase hexadecimal SHA-256 digest of the APK's single signing certificate (the certificate DER bytes, not the APK). The remaining fields identify and verify the exact release APK (`url`, `sha256`, `sizeBytes`, `versionCode`, and `versionName`).
 
 Only add a real descriptor after its release APK is publicly available and all artifact verification fields have been extracted from that APK. Do not publish placeholder URLs, checksums, sizes, package names, or version metadata.
 
@@ -38,6 +38,13 @@ gh workflow run add-app-from-github.yml --ref main \
   -f dry_run=false
 ```
 
-The workflow downloads the APK to fill and verify `artifact.packageName`, `sha256`, `sizeBytes`, `versionCode`, and `versionName` before building the feed. To refresh changelog entries later, run `node scripts/import-github-releases.mjs feeds --kind nexus-plugin --limit 5`.
+The workflow downloads the APK to fill and verify `artifact.packageName`, `sha256`, `signerSha256`, `sizeBytes`, `versionCode`, and `versionName` before building the feed. Signer extraction uses `apksigner verify --print-certs` from Android build-tools. If `apksigner` is unavailable locally, independently obtain the lowercase certificate digest and pass it explicitly for one plugin:
+
+```bash
+node scripts/update-artifact-metadata.mjs --kind nexus-plugin --app feeds \
+  --signer-sha256 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+```
+
+When `apksigner` is available, the script still extracts the digest and rejects a mismatched fallback value. To refresh changelog entries later, run `node scripts/import-github-releases.mjs feeds --kind nexus-plugin --limit 5`.
 
 Run `node --test tests/*.test.mjs` to exercise the example descriptor, required join-key validation, and duplicate `nexus.pluginId` rejection.

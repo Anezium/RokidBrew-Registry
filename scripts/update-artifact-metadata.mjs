@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { artifactsFor, normalizeRegistryKind, registryDirectory } from "./lib-github-content.mjs";
+import { assertSignerSha256, parseApksignerCertificateSha256 } from "./lib-apk-signing.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const tmpDir = path.join(root, ".tmp", "artifact-metadata");
@@ -12,6 +13,14 @@ const softFail = process.argv.includes("--soft-fail");
 const appFilters = new Set(valuesFor("--app"));
 const kind = normalizeRegistryKind(valuesFor("--kind").at(-1));
 const entriesDir = registryDirectory(root, kind);
+const signerSha256Override = valuesFor("--signer-sha256").at(-1);
+
+if (signerSha256Override) {
+  assertSignerSha256(signerSha256Override, "--signer-sha256");
+  if (kind !== "nexus-plugin" || appFilters.size !== 1) {
+    throw new Error("--signer-sha256 requires --kind nexus-plugin and exactly one --app value");
+  }
+}
 
 fs.mkdirSync(tmpDir, { recursive: true });
 
@@ -32,7 +41,10 @@ function writeJson(file, value) {
 }
 
 function run(command, args) {
-  const result = spawnSync(command, args, { encoding: "utf8" });
+  const result = spawnSync(command, args, {
+    encoding: "utf8",
+    shell: process.platform === "win32" && /\.(?:bat|cmd)$/i.test(command),
+  });
   if (result.status !== 0) {
     throw new Error(`${command} ${args.join(" ")} failed: ${result.stderr || result.stdout}`);
   }
@@ -65,6 +77,24 @@ function findAapt() {
   return candidates.find((candidate) => fs.existsSync(candidate)) || null;
 }
 
+function findApksigner() {
+  if (process.env.APKSIGNER_PATH && fs.existsSync(process.env.APKSIGNER_PATH)) {
+    return process.env.APKSIGNER_PATH;
+  }
+  if (commandExists("apksigner")) return "apksigner";
+
+  const androidHome = process.env.ANDROID_HOME || process.env.ANDROID_SDK_ROOT;
+  if (!androidHome) return null;
+  const buildTools = path.join(androidHome, "build-tools");
+  if (!fs.existsSync(buildTools)) return null;
+
+  const executable = process.platform === "win32" ? "apksigner.bat" : "apksigner";
+  return fs.readdirSync(buildTools)
+    .sort((a, b) => b.localeCompare(a, undefined, { numeric: true }))
+    .map((version) => path.join(buildTools, version, executable))
+    .find((candidate) => fs.existsSync(candidate)) || null;
+}
+
 async function download(url, output) {
   const response = await fetch(url, {
     headers: { "User-Agent": "RokidBrew-Registry-Metadata" },
@@ -90,13 +120,33 @@ function parseBadging(aapt, apkPath) {
   };
 }
 
+function signerSha256(apksigner, apkPath) {
+  if (!apksigner) {
+    if (signerSha256Override) return signerSha256Override;
+    throw new Error(
+      "could not find apksigner; install Android build-tools, set APKSIGNER_PATH, " +
+      "or pass --signer-sha256 with --app as a documented manual fallback",
+    );
+  }
+
+  const extracted = parseApksignerCertificateSha256(
+    run(apksigner, ["verify", "--print-certs", apkPath]),
+  );
+  if (signerSha256Override && signerSha256Override !== extracted) {
+    throw new Error(
+      `--signer-sha256 mismatch: expected ${signerSha256Override}, apksigner reported ${extracted}`,
+    );
+  }
+  return extracted;
+}
+
 function needsMetadata(artifact) {
   return force ||
     !artifact.sha256 ||
     !artifact.sizeBytes ||
     !artifact.packageName ||
     !artifact.versionCode ||
-    (kind === "nexus-plugin" && !artifact.versionName);
+    (kind === "nexus-plugin" && (!artifact.versionName || !artifact.signerSha256));
 }
 
 const aapt = findAapt();
@@ -104,6 +154,7 @@ if (!aapt) {
   console.error("Could not find aapt. Install Android build-tools or set AAPT_PATH.");
   process.exit(1);
 }
+const apksigner = kind === "nexus-plugin" ? findApksigner() : null;
 
 const appFiles = fs.readdirSync(entriesDir)
   .filter((name) => name.endsWith(".json"))
@@ -138,6 +189,7 @@ for (const file of appFiles) {
       if (badging.apkVersionName && (kind === "nexus-plugin" || force || !artifact.versionName)) {
         artifact.versionName = badging.apkVersionName;
       }
+      if (kind === "nexus-plugin") artifact.signerSha256 = signerSha256(apksigner, apkPath);
       changed = true;
       updated += 1;
       console.log(`ok     ${app.id}:${artifact.target} ${artifact.packageName || "no-package"} ${artifact.sizeBytes} bytes`);

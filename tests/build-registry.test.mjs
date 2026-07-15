@@ -82,6 +82,7 @@ test("builds the excluded example into the version 1 Nexus feed shape", () => {
       assert.equal(feed.plugins.length, 1);
       assert.equal(feed.plugins[0].nexus.pluginId, pluginFixture.nexus.pluginId);
       assert.equal(feed.plugins[0].artifact.packageName, pluginFixture.artifact.packageName);
+      assert.equal(feed.plugins[0].artifact.signerSha256, pluginFixture.artifact.signerSha256);
       assert.equal(
         fs.readFileSync(path.join(root, "dist", "apps.v1.json"), "utf8"),
         appOnlyFeed,
@@ -97,6 +98,7 @@ const requiredCases = [
   ["nexus.pluginId", (plugin) => delete plugin.nexus.pluginId, /nexus\.pluginId is required/],
   ["artifact.packageName", (plugin) => delete plugin.artifact.packageName, /artifact\.packageName is required/],
   ["artifact.sha256", (plugin) => delete plugin.artifact.sha256, /artifact sha256 must be 64 hexadecimal characters/],
+  ["artifact.signerSha256", (plugin) => delete plugin.artifact.signerSha256, /artifact signerSha256 must be 64 lowercase hexadecimal characters/],
 ];
 
 for (const [field, removeField, expected] of requiredCases) {
@@ -109,6 +111,18 @@ for (const [field, removeField, expected] of requiredCases) {
     });
   });
 }
+
+test("rejects a non-lowercase artifact.signerSha256", () => {
+  const plugin = clone(pluginFixture);
+  plugin.artifact.signerSha256 = plugin.artifact.signerSha256.toUpperCase();
+  withBuild([plugin], ({ result }) => {
+    assert.notEqual(result.status, 0);
+    assert.match(
+      `${result.stderr}\n${result.stdout}`,
+      /artifact signerSha256 must be 64 lowercase hexadecimal characters/,
+    );
+  });
+});
 
 test("rejects duplicate nexus.pluginId values", () => {
   const first = clone(pluginFixture);

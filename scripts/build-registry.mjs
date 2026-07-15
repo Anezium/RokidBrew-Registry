@@ -129,6 +129,9 @@ function assertNexusPlugin(plugin, file) {
   if (!/^[0-9a-f]{64}$/i.test(artifact.sha256 || "")) {
     throw new Error(`${plugin.id}: artifact sha256 must be 64 hexadecimal characters`);
   }
+  if (!/^[0-9a-f]{64}$/.test(artifact.signerSha256 || "")) {
+    throw new Error(`${plugin.id}: artifact signerSha256 must be 64 lowercase hexadecimal characters`);
+  }
   if (!Number.isInteger(artifact.sizeBytes) || artifact.sizeBytes < 1) {
     throw new Error(`${plugin.id}: artifact sizeBytes must be a positive integer`);
   }
