@@ -59,7 +59,7 @@ on:
         required: false
         default: ""
       settings_activity:
-        description: "Nexus settings activity (required for nexus-plugin)"
+        description: "Optional Nexus settings activity"
         required: false
         default: ""
       model:

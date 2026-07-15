@@ -53,7 +53,7 @@ Options:
   --readme-ref <ref>        README branch/tag/SHA used later by the AI listing workflow.
   --plugin-id <id>          Nexus manifest plugin ID (required for nexus-plugin).
   --package-name <name>     Optional package name; APK metadata extraction verifies/fills it.
-  --settings-activity <cls> Nexus settings activity (required for nexus-plugin).
+  --settings-activity <cls> Optional Nexus settings activity.
   --api-version <n>         Nexus API version, default 3.
   --capabilities <csv>      Nexus capabilities, default surfaces.
   --launchable <bool>       Nexus launchable flag, default true.
@@ -248,7 +248,7 @@ async function importGeneric(input, args, report) {
   return { app, repo, release };
 }
 
-function nexusPluginFromApp(app, release, args) {
+export function nexusPluginFromApp(app, release, args) {
   const artifact = app.artifacts[0];
   const capabilities = String(args.capabilities || "surfaces")
     .split(",")
@@ -275,7 +275,7 @@ function nexusPluginFromApp(app, release, args) {
       apiVersion: Number.parseInt(args.apiVersion || "3", 10),
       capabilities,
       launchable: args.launchable == null ? true : args.launchable === "true",
-      settingsActivity: args.settingsActivity,
+      ...(args.settingsActivity ? { settingsActivity: args.settingsActivity } : {}),
       minHostVersionCode: Number.parseInt(args.minHostVersionCode || "6", 10),
     },
     artifact: {
@@ -315,8 +315,8 @@ async function main() {
   args.kind = kind;
   const input = args._[0];
   if (!input) throw new Error(usage);
-  if (kind === "nexus-plugin" && (!args.pluginId || !args.settingsActivity)) {
-    throw new Error("Nexus plugin ingestion requires --plugin-id and --settings-activity values copied from the APK manifest");
+  if (kind === "nexus-plugin" && !args.pluginId) {
+    throw new Error("Nexus plugin ingestion requires --plugin-id copied from the APK manifest");
   }
   const report = [];
   const eungUrl = eungInfoRawUrl(input);
@@ -355,7 +355,9 @@ async function main() {
   console.log(`Wrote ${path.relative(root, file).replace(/\\/g, "/")}`);
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
+}

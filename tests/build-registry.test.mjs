@@ -92,6 +92,27 @@ test("builds the excluded example into the version 1 Nexus feed shape", () => {
   });
 });
 
+test("accepts HTTPS URLs, matching ids, API 3, phone capabilities, and omitted settings", () => {
+  const plugin = clone(pluginFixture);
+  plugin.nexus.capabilities = ["surfaces", "microphone", "http_proxy", "camera"];
+  delete plugin.nexus.settingsActivity;
+
+  withBuild([plugin], ({ root, result }) => {
+    assert.equal(result.status, 0, result.stderr || result.stdout);
+    const feed = JSON.parse(fs.readFileSync(path.join(root, "dist", "nexus-plugins.v1.json"), "utf8"));
+    assert.deepEqual(feed.plugins[0].nexus.capabilities, plugin.nexus.capabilities);
+    assert.equal(Object.hasOwn(feed.plugins[0].nexus, "settingsActivity"), false);
+  });
+});
+
+test("accepts an empty capability set", () => {
+  const plugin = clone(pluginFixture);
+  plugin.nexus.capabilities = [];
+  withBuild([plugin], ({ result }) => {
+    assert.equal(result.status, 0, result.stderr || result.stdout);
+  });
+});
+
 const requiredCases = [
   ["id", (plugin) => delete plugin.id, /missing "id"/],
   ["kind", (plugin) => delete plugin.kind, /missing "kind"/],
@@ -124,15 +145,62 @@ test("rejects a non-lowercase artifact.signerSha256", () => {
   });
 });
 
-test("rejects duplicate nexus.pluginId values", () => {
+const phoneAlignmentCases = [
+  [
+    "an HTTP sourceUrl",
+    (plugin) => { plugin.sourceUrl = "http://example.com/plugin"; },
+    /sourceUrl must be an HTTPS URL/,
+  ],
+  [
+    "an HTTP artifact URL",
+    (plugin) => { plugin.artifact.url = "http://example.com/plugin.apk"; },
+    /artifact url must be an HTTPS URL/,
+  ],
+  [
+    "a mismatched plugin id",
+    (plugin) => { plugin.nexus.pluginId = "different-plugin"; },
+    /id must exactly equal nexus\.pluginId/,
+  ],
+  [
+    "an unknown capability",
+    (plugin) => { plugin.nexus.capabilities = ["SURFACES"]; },
+    /may only contain surfaces, microphone, http_proxy, or camera/,
+  ],
+  [
+    "an unsupported API version",
+    (plugin) => { plugin.nexus.apiVersion = 2; },
+    /nexus\.apiVersion must be exactly 3/,
+  ],
+  [
+    "a blank settings activity",
+    (plugin) => { plugin.nexus.settingsActivity = "  "; },
+    /settingsActivity must be a non-blank string when present/,
+  ],
+];
+
+for (const [description, mutate, expected] of phoneAlignmentCases) {
+  test(`rejects a Nexus plugin with ${description}`, () => {
+    const plugin = clone(pluginFixture);
+    mutate(plugin);
+    withBuild([plugin], ({ result }) => {
+      assert.notEqual(result.status, 0);
+      assert.match(`${result.stderr}\n${result.stdout}`, expected);
+    });
+  });
+}
+
+test("rejects duplicate artifact.packageName values", () => {
   const first = clone(pluginFixture);
   const second = clone(pluginFixture);
   second.id = "other-example-plugin";
+  second.nexus.pluginId = second.id;
   second.name = "Other Example Plugin";
-  second.artifact.packageName = "com.anezium.rokidbus.plugin.otherexample";
 
   withBuild([first, second], ({ result }) => {
     assert.notEqual(result.status, 0);
-    assert.match(`${result.stderr}\n${result.stdout}`, /Duplicate Nexus plugin nexus\.pluginId: example-plugin/);
+    assert.match(
+      `${result.stderr}\n${result.stdout}`,
+      /Duplicate Nexus plugin artifact\.packageName: com\.anezium\.rokidbus\.plugin\.example/,
+    );
   });
 });

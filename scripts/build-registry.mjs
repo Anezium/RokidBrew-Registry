@@ -23,9 +23,19 @@ const nexusPluginRequired = [
   "id", "kind", "name", "category", "summary", "description", "author", "sourceUrl",
   "publishedAt", "iconAsset", "screenshotAssets", "listing", "releases", "nexus", "artifact",
 ];
+const nexusCapabilityAllowlist = new Set(["surfaces", "microphone", "http_proxy", "camera"]);
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
+}
+
+function isHttpsUrl(value) {
+  if (typeof value !== "string" || !/^https:\/\//i.test(value)) return false;
+  try {
+    return new URL(value).protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 function assertApp(app, file) {
@@ -71,8 +81,8 @@ function assertNexusPlugin(plugin, file) {
   if (path.basename(file) !== `${plugin.id}.json`) {
     throw new Error(`${relativeFile}: filename must match plugin id ${plugin.id}`);
   }
-  if (!/^https?:\/\//.test(plugin.sourceUrl)) {
-    throw new Error(`${plugin.id}: sourceUrl must be http(s)`);
+  if (!isHttpsUrl(plugin.sourceUrl)) {
+    throw new Error(`${plugin.id}: sourceUrl must be an HTTPS URL`);
   }
   if (!normalizeDate(plugin.publishedAt)) {
     throw new Error(`${plugin.id}: publishedAt must be a valid date`);
@@ -102,18 +112,24 @@ function assertNexusPlugin(plugin, file) {
   if (!nexus.pluginId || typeof nexus.pluginId !== "string") {
     throw new Error(`${plugin.id}: nexus.pluginId is required`);
   }
-  if (!Number.isInteger(nexus.apiVersion) || nexus.apiVersion < 1) {
-    throw new Error(`${plugin.id}: nexus.apiVersion must be a positive integer`);
+  if (plugin.id !== nexus.pluginId) {
+    throw new Error(`${plugin.id}: id must exactly equal nexus.pluginId`);
   }
-  if (!Array.isArray(nexus.capabilities) || nexus.capabilities.length === 0 ||
-      nexus.capabilities.some((capability) => typeof capability !== "string" || !capability)) {
-    throw new Error(`${plugin.id}: nexus.capabilities must be a non-empty string array`);
+  if (nexus.apiVersion !== 3) {
+    throw new Error(`${plugin.id}: nexus.apiVersion must be exactly 3`);
+  }
+  if (!Array.isArray(nexus.capabilities) ||
+      nexus.capabilities.some((capability) => !nexusCapabilityAllowlist.has(capability))) {
+    throw new Error(
+      `${plugin.id}: nexus.capabilities may only contain surfaces, microphone, http_proxy, or camera`,
+    );
   }
   if (typeof nexus.launchable !== "boolean") {
     throw new Error(`${plugin.id}: nexus.launchable must be boolean`);
   }
-  if (!nexus.settingsActivity || typeof nexus.settingsActivity !== "string") {
-    throw new Error(`${plugin.id}: nexus.settingsActivity is required`);
+  if (nexus.settingsActivity != null &&
+      (typeof nexus.settingsActivity !== "string" || !nexus.settingsActivity.trim())) {
+    throw new Error(`${plugin.id}: nexus.settingsActivity must be a non-blank string when present`);
   }
   if (!Number.isInteger(nexus.minHostVersionCode) || nexus.minHostVersionCode < 1) {
     throw new Error(`${plugin.id}: nexus.minHostVersionCode must be a positive integer`);
@@ -123,8 +139,8 @@ function assertNexusPlugin(plugin, file) {
   if (artifact.target !== "phone") {
     throw new Error(`${plugin.id}: artifact target must be phone`);
   }
-  if (!artifact.url || !/^https?:\/\//.test(artifact.url)) {
-    throw new Error(`${plugin.id}: artifact url must be http(s)`);
+  if (!isHttpsUrl(artifact.url)) {
+    throw new Error(`${plugin.id}: artifact url must be an HTTPS URL`);
   }
   if (!/^[0-9a-f]{64}$/i.test(artifact.sha256 || "")) {
     throw new Error(`${plugin.id}: artifact sha256 must be 64 hexadecimal characters`);

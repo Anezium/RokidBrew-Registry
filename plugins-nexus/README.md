@@ -6,20 +6,20 @@ This directory is the source namespace for phone-only APK plugins installed into
 
 ## Descriptor fields
 
-- `id`: stable registry identifier and descriptor filename stem.
+- `id`: stable registry identifier and descriptor filename stem; it must exactly equal `nexus.pluginId`.
 - `kind`: always `nexus-plugin`.
-- `name`, `category`, `summary`, `description`, `author`, `sourceUrl`, and `publishedAt`: store metadata for the plugin and its published APK release.
+- `name`, `category`, `summary`, `description`, `author`, `sourceUrl`, and `publishedAt`: store metadata for the plugin and its published APK release. `sourceUrl` must use HTTPS.
 - `iconAsset`: filename under `assets/icons/`.
 - `screenshotAssets`: filenames under `assets/screenshots/`.
 - `listing.descriptionMarkdown`: long-form store listing.
 - `releases[]`: release history containing `version`, `date`, and `notes`.
 - `nexus.pluginId`: must exactly equal the installed APK manifest metadata value `com.anezium.rokidbus.plugin.ID`. The Nexus client uses this as an installed-plugin join key.
-- `nexus.apiVersion`: Nexus plugin API version declared by the plugin.
-- `nexus.capabilities`: plugin capabilities, such as `surfaces`.
+- `nexus.apiVersion`: Nexus plugin API version declared by the plugin; currently exactly `3`.
+- `nexus.capabilities`: zero or more exact capability wire values: `surfaces`, `microphone`, `http_proxy`, or `camera`.
 - `nexus.launchable`: whether Nexus may launch the plugin directly.
-- `nexus.settingsActivity`: activity class Nexus opens for plugin settings.
+- `nexus.settingsActivity`: optional activity class Nexus opens for plugin settings.
 - `nexus.minHostVersionCode`: minimum compatible Rokid Nexus host version code.
-- `artifact`: the single phone APK. `artifact.packageName` is the second installed-plugin join key. `artifact.signerSha256` is the lowercase hexadecimal SHA-256 digest of the APK's single signing certificate (the certificate DER bytes, not the APK). The remaining fields identify and verify the exact release APK (`url`, `sha256`, `sizeBytes`, `versionCode`, and `versionName`).
+- `artifact`: the single phone APK, served from an HTTPS `url`. `artifact.packageName` is the second installed-plugin join key. `artifact.signerSha256` is the lowercase hexadecimal SHA-256 digest of the APK's single signing certificate (the certificate DER bytes, not the APK). The remaining fields identify and verify the exact release APK (`sha256`, `sizeBytes`, `versionCode`, and `versionName`).
 
 Only add a real descriptor after its release APK is publicly available and all artifact verification fields have been extracted from that APK. Do not publish placeholder URLs, checksums, sizes, package names, or version metadata.
 
