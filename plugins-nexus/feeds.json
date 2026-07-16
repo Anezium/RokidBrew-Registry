@@ -1,0 +1,43 @@
+{
+  "id": "feeds",
+  "kind": "nexus-plugin",
+  "name": "Feeds",
+  "category": "News",
+  "summary": "Bluesky and X timelines on your glasses.",
+  "description": "Read your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+  "publishedAt": "2026-07-16T17:47:58Z",
+  "iconAsset": "feeds-icon.png",
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nRead your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-16T17:47:58Z",
+      "notes": "\\n- First release as a headless plugin APK.\\n- Bluesky and X timelines on the HUD (X via account session or WebView\\n  capture).\\n- In-plugin X sign-in; targeted cookie expiry on disconnect.\\n- Kit settings screen with per-source configuration and uninstall.\\n\\n### Artifact\\n\\n- File: `feeds-phone-release.apk`\\n- SHA-256: `e41a56bb156ea6ee73083101080d318fee29a945fd04613b211032e1346e38bb`\\n"
+    }
+  ],
+  "nexus": {
+    "pluginId": "feeds",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": ".FeedsSettingsActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/feeds-v1.0.0/feeds-phone-release.apk",
+    "sha256": "e41a56bb156ea6ee73083101080d318fee29a945fd04613b211032e1346e38bb",
+    "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+    "sizeBytes": 4945925,
+    "packageName": "com.anezium.rokidbus.plugin.feeds",
+    "versionCode": 1,
+    "versionName": "1.0.0"
+  }
+}

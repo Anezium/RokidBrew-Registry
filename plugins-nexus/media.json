@@ -1,0 +1,43 @@
+{
+  "id": "media",
+  "kind": "nexus-plugin",
+  "name": "Media Deck",
+  "category": "Music",
+  "summary": "Now playing and transport controls on the HUD.",
+  "description": "Whatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+  "publishedAt": "2026-07-16T17:50:17Z",
+  "iconAsset": "media-icon.png",
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-16T17:50:17Z",
+      "notes": "\\n- First release as a headless plugin APK (previously an in-hub built-in).\\n- Typed media surface with playback anchor and 96×96 one-bit artwork.\\n- Transport controls from the glasses: tap play/pause, swipe previous/next.\\n- Own notification listener (\\\"Nexus Media Deck\\\") and kit settings screen with\\n  notification-access onboarding and uninstall.\\n\\n### Artifact\\n\\n- File: `media-phone-release.apk`\\n- SHA-256: `506ebd725ab9013b6b6ac87c861ea2a8711382fdf256392de75e3cf161f7a3bd`\\n"
+    }
+  ],
+  "nexus": {
+    "pluginId": "media",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": "com.anezium.rokidbus.plugin.media.MediaDeckSettingsActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.0/media-phone-release.apk",
+    "sha256": "506ebd725ab9013b6b6ac87c861ea2a8711382fdf256392de75e3cf161f7a3bd",
+    "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+    "sizeBytes": 4687732,
+    "packageName": "com.anezium.rokidbus.plugin.media",
+    "versionCode": 1,
+    "versionName": "1.0.0"
+  }
+}

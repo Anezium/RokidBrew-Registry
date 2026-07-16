@@ -1,4 +1,220 @@
 {
   "version": 1,
-  "plugins": []
+  "plugins": [
+    {
+      "id": "feeds",
+      "kind": "nexus-plugin",
+      "name": "Feeds",
+      "category": "News",
+      "summary": "Bluesky and X timelines on your glasses.",
+      "description": "Read your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-07-16T17:47:58Z",
+      "iconAsset": "feeds-icon.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nRead your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-16T17:47:58Z",
+          "notes": "\\n- First release as a headless plugin APK.\\n- Bluesky and X timelines on the HUD (X via account session or WebView\\n  capture).\\n- In-plugin X sign-in; targeted cookie expiry on disconnect.\\n- Kit settings screen with per-source configuration and uninstall.\\n\\n### Artifact\\n\\n- File: `feeds-phone-release.apk`\\n- SHA-256: `e41a56bb156ea6ee73083101080d318fee29a945fd04613b211032e1346e38bb`\\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "feeds",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".FeedsSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/feeds-v1.0.0/feeds-phone-release.apk",
+        "sha256": "e41a56bb156ea6ee73083101080d318fee29a945fd04613b211032e1346e38bb",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 4945925,
+        "packageName": "com.anezium.rokidbus.plugin.feeds",
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      }
+    },
+    {
+      "id": "lens",
+      "kind": "nexus-plugin",
+      "name": "Lens",
+      "category": "Productivity",
+      "summary": "Live camera translation — point, freeze, read.",
+      "description": "Point the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-07-16T17:51:10Z",
+      "iconAsset": "lens-icon.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nPoint the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-16T17:51:10Z",
+          "notes": "\\n- Camera platform: generic `camera` capability with the phone-side OCR pipeline\\n  over an app-owned Wi-Fi Direct link (freeze and live translation).\\n- Cold-link reliability: discovery-primed joins, identity-aware watchdogs, and\\n  group-owner protection so a healthy join is never torn down by recovery.\\n- Live overlay reconciliation, adaptive OCR cadence, and multi-script frozen results.\\n\\n\\n### Artifact\\n\\n- File: `lens-phone-release.apk`\\n- SHA-256: `b6bb9f81e5af6589d12a4bd55af6bd1a2926bb01106a83e8ec6e7cb3de77b6db`\\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "lens",
+        "apiVersion": 3,
+        "capabilities": [
+          "camera"
+        ],
+        "launchable": false,
+        "settingsActivity": ".LensSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lens-v1.0.0/lens-phone-release.apk",
+        "sha256": "b6bb9f81e5af6589d12a4bd55af6bd1a2926bb01106a83e8ec6e7cb3de77b6db",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 123143804,
+        "packageName": "com.anezium.rokidbus.plugin.lens",
+        "versionCode": 10,
+        "versionName": "1.0.0"
+      }
+    },
+    {
+      "id": "lyrics",
+      "kind": "nexus-plugin",
+      "name": "Lyrics",
+      "category": "Music",
+      "summary": "Time-synced lyrics on your glasses.",
+      "description": "Synced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-07-16T17:50:19Z",
+      "iconAsset": "lyrics-icon.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nSynced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-16T17:50:19Z",
+          "notes": "\\n- First release as a headless plugin APK (previously an in-hub built-in).\\n- Time-synced lyrics on the HUD via the SDK timed-lines surface.\\n- Providers: Spotify synced lyrics (in-app sign-in), Musixmatch (optional),\\n  LrcLib, Netease.\\n- Auto-open on playback changes, toggleable in settings.\\n- Own notification listener (\\\"Nexus Lyrics\\\") and kit settings screen with\\n  notification-access onboarding and uninstall.\\n\\n### Artifact\\n\\n- File: `lyrics-phone-release.apk`\\n- SHA-256: `53ba1d551c73fe9af3bf6c731a765b48331f804199479614c5c1e75702d21e94`\\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "lyrics",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".LyricsSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.0/lyrics-phone-release.apk",
+        "sha256": "53ba1d551c73fe9af3bf6c731a765b48331f804199479614c5c1e75702d21e94",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 7484545,
+        "packageName": "com.anezium.rokidbus.plugin.lyrics",
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      }
+    },
+    {
+      "id": "media",
+      "kind": "nexus-plugin",
+      "name": "Media Deck",
+      "category": "Music",
+      "summary": "Now playing and transport controls on the HUD.",
+      "description": "Whatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-07-16T17:50:17Z",
+      "iconAsset": "media-icon.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-16T17:50:17Z",
+          "notes": "\\n- First release as a headless plugin APK (previously an in-hub built-in).\\n- Typed media surface with playback anchor and 96×96 one-bit artwork.\\n- Transport controls from the glasses: tap play/pause, swipe previous/next.\\n- Own notification listener (\\\"Nexus Media Deck\\\") and kit settings screen with\\n  notification-access onboarding and uninstall.\\n\\n### Artifact\\n\\n- File: `media-phone-release.apk`\\n- SHA-256: `506ebd725ab9013b6b6ac87c861ea2a8711382fdf256392de75e3cf161f7a3bd`\\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "media",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": "com.anezium.rokidbus.plugin.media.MediaDeckSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.0/media-phone-release.apk",
+        "sha256": "506ebd725ab9013b6b6ac87c861ea2a8711382fdf256392de75e3cf161f7a3bd",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 4687732,
+        "packageName": "com.anezium.rokidbus.plugin.media",
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      }
+    },
+    {
+      "id": "transit",
+      "kind": "nexus-plugin",
+      "name": "Transit",
+      "category": "Navigation",
+      "summary": "Nearby departures and saved stops on the HUD.",
+      "description": "Live public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-07-16T17:50:05Z",
+      "iconAsset": "transit-icon.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nLive public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-16T17:50:05Z",
+          "notes": "\\n- First release as a headless plugin APK (previously an in-hub built-in).\\n- Near Me live departures with a self-managed location foreground service.\\n- Favourite stops board; one-shot migration of favourites from the old\\n  built-in on first approval.\\n- Kit settings screen with permission handling, stop search, favourites,\\n  and uninstall.\\n\\n### Artifact\\n\\n- File: `transit-phone-release.apk`\\n- SHA-256: `08fac400501a280205d0fe8c7b8276e16d19cbf624b3798be70c3ca3d04f95c2`\\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "transit",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".TransitSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.0/transit-phone-release.apk",
+        "sha256": "08fac400501a280205d0fe8c7b8276e16d19cbf624b3798be70c3ca3d04f95c2",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 4859744,
+        "packageName": "com.anezium.rokidbus.plugin.transit",
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      }
+    }
+  ]
 }

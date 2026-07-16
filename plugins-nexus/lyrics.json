@@ -1,0 +1,43 @@
+{
+  "id": "lyrics",
+  "kind": "nexus-plugin",
+  "name": "Lyrics",
+  "category": "Music",
+  "summary": "Time-synced lyrics on your glasses.",
+  "description": "Synced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+  "publishedAt": "2026-07-16T17:50:19Z",
+  "iconAsset": "lyrics-icon.png",
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nSynced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-16T17:50:19Z",
+      "notes": "\\n- First release as a headless plugin APK (previously an in-hub built-in).\\n- Time-synced lyrics on the HUD via the SDK timed-lines surface.\\n- Providers: Spotify synced lyrics (in-app sign-in), Musixmatch (optional),\\n  LrcLib, Netease.\\n- Auto-open on playback changes, toggleable in settings.\\n- Own notification listener (\\\"Nexus Lyrics\\\") and kit settings screen with\\n  notification-access onboarding and uninstall.\\n\\n### Artifact\\n\\n- File: `lyrics-phone-release.apk`\\n- SHA-256: `53ba1d551c73fe9af3bf6c731a765b48331f804199479614c5c1e75702d21e94`\\n"
+    }
+  ],
+  "nexus": {
+    "pluginId": "lyrics",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": ".LyricsSettingsActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.0/lyrics-phone-release.apk",
+    "sha256": "53ba1d551c73fe9af3bf6c731a765b48331f804199479614c5c1e75702d21e94",
+    "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+    "sizeBytes": 7484545,
+    "packageName": "com.anezium.rokidbus.plugin.lyrics",
+    "versionCode": 1,
+    "versionName": "1.0.0"
+  }
+}
