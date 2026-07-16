@@ -53,7 +53,7 @@
       "description": "Point the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-16T18:59:54Z",
+      "publishedAt": "2026-07-16T19:16:40Z",
       "iconAsset": "lens-icon.png",
       "screenshotAssets": [],
       "listing": {
@@ -62,8 +62,8 @@
       "releases": [
         {
           "version": "1.0.1",
-          "date": "2026-07-16T18:59:54Z",
-          "notes": "\n- Non-Latin OCR script models (Japanese, Chinese, Korean, Devanagari) now download\n  on demand via Google Play Services instead of being bundled, cutting the app size\n  from ~120 MB to ~20 MB. Latin recognition stays bundled and instant.\n\n\n### Artifact\n\n- File: `lens-phone-release.apk`\n- SHA-256: `cbf6c36981736c1406cfe14a4db817c39caa839b230eb699bc4b86ee04a9c810`"
+          "date": "2026-07-16T19:16:40Z",
+          "notes": "\n- Ship an arm64-only APK, dropping the duplicated 32-bit and x86 copies of the\n  ML Kit native libraries. Cuts the download from ~120 MB to ~47 MB with no change\n  in behaviour: all OCR scripts stay bundled, offline, and instant.\n\n\n### Artifact\n\n- File: `lens-phone-release.apk`\n- SHA-256: `16815e3bb1d3da3f604b8b7523e5e15c5eef95f632c29933fedfc32cd3ed80b9`"
         },
         {
           "version": "1.0.0",
@@ -84,9 +84,9 @@
       "artifact": {
         "target": "phone",
         "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lens-v1.0.1/lens-phone-release.apk",
-        "sha256": "cbf6c36981736c1406cfe14a4db817c39caa839b230eb699bc4b86ee04a9c810",
+        "sha256": "16815e3bb1d3da3f604b8b7523e5e15c5eef95f632c29933fedfc32cd3ed80b9",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 41163916,
+        "sizeBytes": 43587584,
         "packageName": "com.anezium.rokidbus.plugin.lens",
         "versionCode": 11,
         "versionName": "1.0.1"
