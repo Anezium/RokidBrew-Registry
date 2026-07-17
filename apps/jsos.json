@@ -42,7 +42,7 @@
   "update": {
     "source": "githubRelease",
     "repo": "IWhatsskill/JSOS",
-    "release": "v2.0-preview",
+    "release": "latest",
     "assets": [
       {
         "target": "glasses",

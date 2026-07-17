@@ -35,7 +35,7 @@
     "assets": [
       {
         "target": "phone",
-        "match": "^rokid-relay-phone-v(?<version>\\d+(?:\\.\\d+)*)(?:-vc\\d+)?-debug\\.apk$",
+        "match": "^(?:rokid-relay-phone-v(?<version>\\d+(?:\\.\\d+)*)(?:-vc\\d+)?-debug|phone-debug)\\.apk$",
         "packageName": "com.anezium.rokidrelay.phone"
       }
     ]
