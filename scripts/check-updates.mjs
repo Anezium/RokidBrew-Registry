@@ -487,7 +487,7 @@ function applyCandidate(app, artifact, candidate) {
   upsertAppRelease(app, candidate);
 }
 
-async function checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log) {
+async function checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log, warn) {
   const repo = updateConfig.repo;
   const releaseSelector = updateConfig.release || updateConfig.tag || "latest";
   if (!repo) throw new Error(`${app.id}:${artifact.target} update.repo is required`);
@@ -528,6 +528,13 @@ async function checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log)
   }
 
   if (inspected.length === 0) {
+    const currentTag = parseGithubReleaseUrl(artifact.url)?.tag;
+    if (rule?.match && currentTag && currentTag !== release.tag_name) {
+      const apkNames = (release.assets || [])
+        .filter((asset) => asset.name?.toLowerCase().endsWith(".apk"))
+        .map((asset) => asset.name);
+      warn(`${app.id}:${artifact.target} ${repo}@${release.tag_name} differs from the current artifact tag ${currentTag} but no asset matches the configured pattern (release APKs: ${apkNames.join(", ") || "none"}) — renamed upstream?`);
+    }
     log(`skip   ${app.id}:${artifact.target} no matching APK in ${repo}@${release.tag_name}`);
     return null;
   }
@@ -629,7 +636,7 @@ function summarizeBrewChange(candidate, reason) {
   };
 }
 
-function buildReport({ updates, skipped, errors, logs }) {
+function buildReport({ updates, skipped, errors, warnings, logs }) {
   const lines = [
     "# RokidBrew app update check",
     "",
@@ -638,6 +645,7 @@ function buildReport({ updates, skipped, errors, logs }) {
     "",
     `Updates: ${updates.length}`,
     `Skipped/no change: ${skipped}`,
+    `Warnings: ${warnings.length}`,
     `Errors: ${errors.length}`,
   ];
 
@@ -647,6 +655,13 @@ function buildReport({ updates, skipped, errors, logs }) {
       const version = bestVersion([update.assetVersion, update.versionName]) || "unknown";
       lines.push(`- ${update.name} (${update.id}:${update.target}) -> ${version} / versionCode ${update.versionCode || "unknown"} (${update.reason})`);
       lines.push(`  - ${update.assetName || update.url}`);
+    }
+  }
+
+  if (warnings.length > 0) {
+    lines.push("", "## Warnings", "");
+    for (const warning of warnings) {
+      lines.push(`- ${warning}`);
     }
   }
 
@@ -675,11 +690,17 @@ const appFiles = fs.readdirSync(appsDir)
 const logs = [];
 const updates = [];
 const errors = [];
+const warnings = [];
 let skipped = 0;
 
 function log(message) {
   logs.push(message);
   console.log(message);
+}
+
+function warn(message) {
+  warnings.push(message);
+  log(`warn   ${message}`);
 }
 
 for (const file of appFiles) {
@@ -696,7 +717,7 @@ for (const file of appFiles) {
       let reason = null;
 
       if (updateConfig?.source === "githubRelease" || updateConfig?.source === "githubReleaseAssets") {
-        candidate = await checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log);
+        candidate = await checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log, warn);
       } else {
         candidate = await checkRawArtifact(aapt, app, artifact, log);
       }
@@ -740,10 +761,10 @@ if (shouldCheckBrew) {
   }
 }
 
-const report = buildReport({ updates, skipped, errors, logs });
+const report = buildReport({ updates, skipped, errors, warnings, logs });
 fs.writeFileSync(reportFile, report);
 console.log(`Wrote ${path.relative(root, reportFile)}`);
-console.log(`Updates ${updates.length}, skipped ${skipped}, errors ${errors.length}`);
+console.log(`Updates ${updates.length}, skipped ${skipped}, warnings ${warnings.length}, errors ${errors.length}`);
 
 if (strict && errors.length > 0) {
   process.exitCode = 1;

@@ -76,3 +76,15 @@ jobs:
               --title "Update RokidBrew app artifacts and metadata" \
               --body-file .tmp/update-report.md
           fi
+
+      - name: Fail on update-check errors or warnings
+        if: ${{ always() }}
+        run: |
+          report=".tmp/update-report.md"
+          [ -f "$report" ] || exit 0
+          errors="$(sed -n 's/^Errors: //p' "$report" | head -n 1)"
+          warnings="$(sed -n 's/^Warnings: //p' "$report" | head -n 1)"
+          if [ "${errors:-0}" -gt 0 ] || [ "${warnings:-0}" -gt 0 ]; then
+            echo "::error::check-updates reported ${errors:-0} error(s) and ${warnings:-0} warning(s); see the update report in the log above."
+            exit 1
+          fi
