@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-17T07:30:41.448Z",
+  "generatedAt": "2026-07-17T16:39:09.265Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,227 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "jsos",
+      "name": "JSOS",
+      "category": "AI",
+      "type": "combo",
+      "version": "2.0.33-watch-ui",
+      "publishedAt": "2026-07-16T15:36:47Z",
+      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
+      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
+      "screenshotAssets": [
+        "jsos-core-home.jpeg",
+        "jsos-core-session-chat.jpeg",
+        "jsos-core-hud-link.png",
+        "jsos-core-hud-deployment.jpeg",
+        "jsos-hud-session-chat.png",
+        "jsos-hud-options.png",
+        "jsos-hud-commands.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.33-watch-ui/JSOS-HUD-v2.0.32-openai-tts.apk",
+          "sha256": "46d68f659c4faf79b4cc91f50335fe63e6e0d210d3b8e2ee831a68546480da3c",
+          "sizeBytes": 21551743,
+          "packageName": "com.jsos.glasses",
+          "versionCode": 233,
+          "versionName": "2.0.32-openai-tts"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.33-watch-ui/JSOS-Core-v2.0.10-openai-tts.apk",
+          "sha256": "9367676230604d042feccd3d37d47205d1efb88b070f41b7cc535f23314d85db",
+          "sizeBytes": 53313895,
+          "packageName": "com.jsos.phone",
+          "versionCode": 210,
+          "versionName": "2.0.10-openai-tts"
+        }
+      ],
+      "author": "IWhatsskill",
+      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
+      "listing": {
+        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
+      },
+      "releases": [
+        {
+          "version": "2.0.33-watch-ui",
+          "date": "2026-07-16T15:36:47Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.33-watch-ui",
+          "notes": "JSOS v2.0.33 Watch UI preview.\n\nThis release refreshes the Wear OS companion with a cleaner cyan panel system designed for round watch displays.\n\nIncluded:\n\n- New overview-to-detail navigation across the Watch companion.\n- Cyan JSOS panels with clearer active controls and status accents.\n- Persistent Dark and Light appearance modes.\n- Stronger adaptive panel borders for reliable contrast in Light mode.\n- Round-display spacing and scrolling improvements to keep controls inside the visible area.\n- Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.\n- JSOS Watch `0.5-watch-ui` with versionCode `5`.\n- The unchanged JSOS Core `2.0.10-openai-tts` and JSOS HUD `2.0.32-openai-tts` APKs are included for a complete install set.\n- All APKs are bundled together in one zip for easier downloading.\n\nNotes:\n\n- Development preview, not a finished consumer product.\n- JSOS Core remains responsible for gateway access, credentials, sessions, models, Codex routing, and voice services.\n- The Watch companion communicates with JSOS Core through the Wear OS Data Layer and does not store OpenClaw credentials.",
+          "changes": [
+            "New overview-to-detail navigation across the Watch companion.",
+            "Cyan JSOS panels with clearer active controls and status accents.",
+            "Persistent Dark and Light appearance modes.",
+            "Stronger adaptive panel borders for reliable contrast in Light mode.",
+            "Round-display spacing and scrolling improvements to keep controls inside the visible area.",
+            "Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.",
+            "JSOS Watch 0.5-watch-ui with versionCode 5.",
+            "The unchanged JSOS Core 2.0.10-openai-tts and JSOS HUD 2.0.32-openai-tts APKs are included for a complete install set."
+          ]
+        },
+        {
+          "version": "2.0-preview",
+          "date": "2026-05-28T11:55:21Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
+          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-07-18T15:36:47.000Z",
+      "iconAsset": "jsos.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
+      ]
+    },
+    {
+      "id": "rokid-relay",
+      "name": "Rokid Relay",
+      "category": "Accessibility",
+      "type": "combo",
+      "version": "0.1.16",
+      "featured": true,
+      "featuredRank": 1,
+      "publishedAt": "2026-07-10T15:51:37Z",
+      "summary": "Reply to Android phone notifications from Rokid glasses.",
+      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
+      "screenshotAssets": [
+        "rokid-relay-phone-home.png",
+        "rokid-relay-phone-notifications.png",
+        "rokid-relay-phone-speech.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.16/phone-debug.apk",
+          "sha256": "6d4c463c12717099cf9a3f30fab13a02a1197ad5ef69d0171f41b870746a458d",
+          "sizeBytes": 26316188,
+          "packageName": "com.anezium.rokidrelay.phone",
+          "versionCode": 44,
+          "versionName": "0.1.16"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
+      },
+      "releases": [
+        {
+          "version": "0.1.16",
+          "date": "2026-07-10T15:51:37Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.16",
+          "notes": "# Rokid Relay v0.1.16\n\nRelease type: stable\nDate: 2026-07-10\n\n## Highlights\n\n### Voice replies work in the background again\n\nOn Android 14 and later, voice replies with the **Android CXR** engine only worked while the phone app was open. The cause: Android only lets an app acquire microphone rights for its service while a screen of the app is visible — every background path (companion-device presence, wake windows, even overlay permissions) is refused, and Google's recognizer rejects sessions without those rights even though Relay feeds it glasses audio and never opens the phone microphone.\n\nRelay now acquires the microphone rights while you are in the app and keeps its service alive for as long as the relay is armed with Android CXR. Voice replies from the glasses work with the phone in your pocket: verified end to end on hardware, from a background wake to a spoken reply landing in the notification.\n\nWhat this changes for you:\n\n- The Relay notification stays visible while the relay is armed with Android CXR. The CXR link itself still sleeps when idle — battery behavior and link availability for other apps are unchanged.\n- After a phone reboot, open Rokid Relay once; until then the notification reads \"Open Rokid Relay once to enable glasses voice replies\".\n\n### The glasses app updates itself, visibly\n\nInstalling a new phone APK now updates the glasses helper automatically as soon as the glasses link is up — no more Bootstrap run required to get glasses-side fixes. The **Glasses app** row shows the whole cycle: update available, \"Updating the glasses app… keep the glasses on (about 15 s)\", verifying, updated. If the phone's Wi-Fi radio is off (the transfer needs it), the row says so instead of failing silently. An update only counts as done once the glasses themselves report the new version.\n\nAutomatic updates only run when the glasses have confirmed their self-arm recovery in the current session, because reinstalling the helper drops its accessibility service and recovery is what brings it back. Not armed? The row says \"update waits for recovery arm — tap Bootstrap\".\n\n### Silent recovery, better glasses battery\n\nThe self-arm recovery no longer launches any window on the glasses — ever. If the system disables the Relay accessibility service while the helper is running, it repairs itself within the same second, invisibly. If the helper is force-stopped, the fallback watchdog revives it with a settings write alone.\n\nThe watchdog also got dramatically cheaper: it checks every 60 seconds instead of every 2, no longer starts activities or presses HOME, and caps its log file. Together with the relaunch-loop fix from v0.1.15 this removes the main glasses battery drains — and thanks to the automatic helper update above, these fixes reach your glasses without a Bootstrap run.\n\n### Small fix\n\n- The glasses inbox hint while the phone sleeps now reads \"Replying wakes the phone\" — which is what actually happens (and has since v0.1.15-preview.5) — instead of the outdated \"Replies resume on next notification\".\n\n## Verification\n\n- Full unit test suites pass on both modules.\n- On hardware: armed in foreground, backgrounded past the idle window — service kept the microphone type while the CXR link slept; a glasses voice reply from a background wake was transcribed live (\"streaming partials\") and delivered into the notification's reply slot.\n- Helper auto-update, settings-disable instant repair, force-stop watchdog revival, and the post-reboot notification hint were each exercised on the test rig.\n\n## Known limitations\n\n- After a phone reboot, background voice replies need one visit to the app (the notification will tell you). Everything else re-arms on its own.\n- On Xiaomi/MIUI, the app's automatic restart after reboot additionally requires the Autostart permission (Settings → Apps → Rokid Relay → Autostart).\n\n## Build Metadata\n\n- Phone: `0.1.16` / `versionCode 44`\n- Glasses helper bundled in phone APK: `0.1.11` / `versionCode 26`\n- Distribution path: development APK, not store-ready release signing.",
+          "changes": [
+            "After a phone reboot, open Rokid Relay once; until then the notification reads \"Open Rokid Relay once to enable glasses voice replies\".",
+            "Full unit test suites pass on both modules.",
+            "Helper auto-update, settings-disable instant repair, force-stop watchdog revival, and the post-reboot notification hint were each exercised on the test rig.",
+            "After a phone reboot, background voice replies need one visit to the app (the notification will tell you). Everything else re-arms on its own.",
+            "On Xiaomi/MIUI, the app's automatic restart after reboot additionally requires the Autostart permission (Settings → Apps → Rokid Relay → Autostart).",
+            "Phone: 0.1.16 / versionCode 44",
+            "Glasses helper bundled in phone APK: 0.1.11 / versionCode 26",
+            "Distribution path: development APK, not store-ready release signing."
+          ]
+        },
+        {
+          "version": "0.1.14",
+          "date": "2026-06-13T23:07:48Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.14",
+          "notes": "Rokid Relay v0.1.14 is a development-preview update focused on notification image previews on the glasses, safer update handling, and release traceability.\n\nversionName: 0.1.14\nversionCode: 15\nbundledGlassesVersionName: 0.1.9\nbundledGlassesVersionCode: 10\n\n## What's New\n\n### Notification Image Previews\n- Added an opt-in Image previews on glasses setting in the phone app.\n- Extracted notification images from large icons, MessagingStyle image messages, BigPicture notifications, and diagnostic test notifications.\n- Added a rokid_relay.media transfer channel so the phone can stream compact image payloads separately from text notification events.\n- Added a bounded image cache on the glasses helper and HUD rendering that shows the preview above the notification text while keeping reply actions available.\n\n### Diagnostics and Branding\n- Added a diagnostics image notification test using the updated Rokid preview image.\n- Replaced the project logo with the white Rokid wordmark on black.\n- Added CHANGELOG.md and refreshed README, plan, and QA matrix coverage for the image-preview path.\n\n### Update and QA Hardening\n- Kept the phone updater focused on phone APK assets even when a glasses APK is attached to the same GitHub release.\n- Added update-controller and release-metadata tests from the hardening work merged into this release.\n- Bumped the phone app to 0.1.14 / versionCode 15 and the bundled glasses helper to 0.1.9 / versionCode 10.\n\n## Known Limits\n\n- Image previews only appear when Android exposes an image for the notification and the opt-in setting is enabled.\n- The phone still sends compact JPEG previews rather than full-resolution original images.\n- Release APK assets are still debug builds while public signing/distribution is being finalized.\n\n## Validation\n\n- Gradle: :phone:testDebugUnitTest :glasses:testDebugUnitTest :phone:assembleDebug :glasses:assembleDebug\n- Device smoke: phone APK and glasses APK installed; image notification rendered on glasses; reply flow still displayed the listening state.\n- Git: merged into main with a fast-forward from the advisor branch.\n\n## Assets\n\n- rokid-relay-phone-v0.1.14-vc15-debug.apk\n- rokid-relay-glasses-v0.1.9-vc10-debug.apk\n\nSHA256(rokid-relay-phone-v0.1.14-vc15-debug.apk): eb27aa8ce5d79d88e890d837a2470851c8e250857b3180eed2a768efdf7751c1\nSHA256(rokid-relay-glasses-v0.1.9-vc10-debug.apk): 833fcf18d311f84bbf668336cc7bc92e51d6a54eae2de273c69c38e18b4e3aa9",
+          "changes": [
+            "Added an opt-in Image previews on glasses setting in the phone app.",
+            "Extracted notification images from large icons, MessagingStyle image messages, BigPicture notifications, and diagnostic test notifications.",
+            "Added a rokidrelay.media transfer channel so the phone can stream compact image payloads separately from text notification events.",
+            "Added a bounded image cache on the glasses helper and HUD rendering that shows the preview above the notification text while keeping reply actions available.",
+            "Added a diagnostics image notification test using the updated Rokid preview image.",
+            "Replaced the project logo with the white Rokid wordmark on black.",
+            "Added CHANGELOG.md and refreshed README, plan, and QA matrix coverage for the image-preview path.",
+            "Kept the phone updater focused on phone APK assets even when a glasses APK is attached to the same GitHub release."
+          ]
+        },
+        {
+          "version": "0.1.13",
+          "date": "2026-06-11T11:14:42Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.13",
+          "notes": "Rokid Relay v0.1.13 is a development-preview update focused on glasses input reliability, long notification readability, voice configuration, and repeatable QA.\n\nImportant: v0.1.13 supersedes v0.1.12. The v0.1.12 release notes described the app changes, but the published package still carried the previous bundled glasses helper version. This release republishes the full changelog with the corrected phone and bundled glasses versions.\n\nversionName: 0.1.13\nversionCode: 14\nbundledGlassesVersionName: 0.1.8\nbundledGlassesVersionCode: 9\n\n## What's New\n\n### More Reliable Glasses Controls\n- Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.\n- Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.\n- Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.\n- Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.\n- Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.\n\n### Better Notification and Inbox Reading\n- Reworked long notification paging with measured StaticLayout pages instead of clipping text.\n- Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.\n- Added inbox detail paging guards so boundary swipes do not accidentally move the list.\n\n### Voice and Companion Improvements\n- Added transcription language selection.\n- Added Azure Speech provider support alongside the existing STT choices.\n- Added companion-device linking for background microphone flows.\n- Suppressed the Rokid AI wake path while relay capture is active.\n- Made companion glasses detection more robust across device renames.\n- Fixed cases where the companion link could get stuck on Bluetooth search.\n- Stopped opening the glasses app just because the phone app opens.\n\n### QA and Regression Coverage\n- Added focused unit tests for debounce, key mapping, combo buffering, inbox two-finger gating, notification paging, and the new RelayInputInterpreter.\n- Added a generated QA matrix and starter scenario files under qa/.\n- Added scripts/rokid-regression.ps1, which can build, exercise connected phone/glasses devices, post a real test notification, capture logs/screenshots, and record a report.\n- Validated the release APK with zipalign -P 16 and confirmed the phone APK contains the updated bundled glasses helper APK.\n\n## Known Limits\n\n- The QA runner can now do real device smoke coverage, but exact internal assertions for some scenarios still need debug hooks such as DUMP_STATE, SEND_FAKE_CXR_MESSAGE, and fake voice/audio hooks.\n- Release APK assets are still debug builds while public signing/distribution is being finalized.\n\n## Validation\n\n- Gradle: :glasses:testDebugUnitTest\n- Gradle: :phone:assembleDebug, including bundled glasses helper copy\n- Device QA runner: phone + glasses build/install/launch smoke, ADB input alias replay, real phone test notification, glasses screenshot/log capture\n- Autoreview: Codex CLI clean, no accepted/actionable findings\n- APK check: zipalign -P 16 verification successful\n- APK package check: phone versionCode 14 / versionName 0.1.13\n- Bundled helper check: glasses versionCode 9 / versionName 0.1.8, matching the rebuilt glasses APK hash\n\nSHA256(rokid-relay-phone-v0.1.13-vc14-debug.apk): 0ba8cedef6875a39eb521b0a3f27dd0161aaebf5529dc64dd1ef59e5ba89a177",
+          "changes": [
+            "Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.",
+            "Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.",
+            "Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.",
+            "Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.",
+            "Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.",
+            "Reworked long notification paging with measured StaticLayout pages instead of clipping text.",
+            "Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.",
+            "Added inbox detail paging guards so boundary swipes do not accidentally move the list."
+          ]
+        },
+        {
+          "version": "0.1.11",
+          "date": "2026-06-09T10:57:49Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.11",
+          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+          "changes": [
+            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+            "Adds compatibility callbacks for newer Rokid APIs.",
+            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+          ]
+        },
+        {
+          "version": "0.1.6",
+          "date": "2026-06-06T10:32:01Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.6",
+          "notes": "versionCode: 7\n\nBugfix release for the phone UI polish after v0.1.5.\n\n- Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.\n- Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.\n- Fixes the Notifications tab top spacing so the Display panel matches other tabs.\n- Improves Update changelog display with a tappable preview and full changelog expansion.\n- Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.\n- Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK.",
+          "changes": [
+            "Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.",
+            "Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.",
+            "Fixes the Notifications tab top spacing so the Display panel matches other tabs.",
+            "Improves Update changelog display with a tappable preview and full changelog expansion.",
+            "Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.",
+            "Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK."
+          ]
+        },
+        {
+          "version": "0.1.4",
+          "date": "2026-05-29T21:23:14Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
+          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3",
+          "date": "2026-05-28T09:01:38Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
+          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2",
+          "date": "2026-05-27T22:55:35Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
+          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-07-12T15:51:37.000Z",
+      "iconAsset": "rokid-relay.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
     {
       "id": "r08-access-bridge",
       "name": "R08 Access Bridge",
@@ -113,129 +334,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
-      ]
-    },
-    {
-      "id": "rokid-relay",
-      "name": "Rokid Relay",
-      "category": "Accessibility",
-      "type": "combo",
-      "version": "0.1.14",
-      "featured": true,
-      "featuredRank": 1,
-      "publishedAt": "2026-06-13T23:07:48Z",
-      "summary": "Reply to Android phone notifications from Rokid glasses.",
-      "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
-      "screenshotAssets": [
-        "rokid-relay-phone-home.png",
-        "rokid-relay-phone-notifications.png",
-        "rokid-relay-phone-speech.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.14/rokid-relay-phone-v0.1.14-vc15-debug.apk",
-          "sha256": "eb27aa8ce5d79d88e890d837a2470851c8e250857b3180eed2a768efdf7751c1",
-          "sizeBytes": 13731549,
-          "packageName": "com.anezium.rokidrelay.phone",
-          "versionCode": 15,
-          "versionName": "0.1.14"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Relay",
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
-      },
-      "releases": [
-        {
-          "version": "0.1.14",
-          "date": "2026-06-13T23:07:48Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.14",
-          "notes": "Rokid Relay v0.1.14 is a development-preview update focused on notification image previews on the glasses, safer update handling, and release traceability.\n\nversionName: 0.1.14\nversionCode: 15\nbundledGlassesVersionName: 0.1.9\nbundledGlassesVersionCode: 10\n\n## What's New\n\n### Notification Image Previews\n- Added an opt-in Image previews on glasses setting in the phone app.\n- Extracted notification images from large icons, MessagingStyle image messages, BigPicture notifications, and diagnostic test notifications.\n- Added a rokid_relay.media transfer channel so the phone can stream compact image payloads separately from text notification events.\n- Added a bounded image cache on the glasses helper and HUD rendering that shows the preview above the notification text while keeping reply actions available.\n\n### Diagnostics and Branding\n- Added a diagnostics image notification test using the updated Rokid preview image.\n- Replaced the project logo with the white Rokid wordmark on black.\n- Added CHANGELOG.md and refreshed README, plan, and QA matrix coverage for the image-preview path.\n\n### Update and QA Hardening\n- Kept the phone updater focused on phone APK assets even when a glasses APK is attached to the same GitHub release.\n- Added update-controller and release-metadata tests from the hardening work merged into this release.\n- Bumped the phone app to 0.1.14 / versionCode 15 and the bundled glasses helper to 0.1.9 / versionCode 10.\n\n## Known Limits\n\n- Image previews only appear when Android exposes an image for the notification and the opt-in setting is enabled.\n- The phone still sends compact JPEG previews rather than full-resolution original images.\n- Release APK assets are still debug builds while public signing/distribution is being finalized.\n\n## Validation\n\n- Gradle: :phone:testDebugUnitTest :glasses:testDebugUnitTest :phone:assembleDebug :glasses:assembleDebug\n- Device smoke: phone APK and glasses APK installed; image notification rendered on glasses; reply flow still displayed the listening state.\n- Git: merged into main with a fast-forward from the advisor branch.\n\n## Assets\n\n- rokid-relay-phone-v0.1.14-vc15-debug.apk\n- rokid-relay-glasses-v0.1.9-vc10-debug.apk\n\nSHA256(rokid-relay-phone-v0.1.14-vc15-debug.apk): eb27aa8ce5d79d88e890d837a2470851c8e250857b3180eed2a768efdf7751c1\nSHA256(rokid-relay-glasses-v0.1.9-vc10-debug.apk): 833fcf18d311f84bbf668336cc7bc92e51d6a54eae2de273c69c38e18b4e3aa9",
-          "changes": [
-            "Added an opt-in Image previews on glasses setting in the phone app.",
-            "Extracted notification images from large icons, MessagingStyle image messages, BigPicture notifications, and diagnostic test notifications.",
-            "Added a rokidrelay.media transfer channel so the phone can stream compact image payloads separately from text notification events.",
-            "Added a bounded image cache on the glasses helper and HUD rendering that shows the preview above the notification text while keeping reply actions available.",
-            "Added a diagnostics image notification test using the updated Rokid preview image.",
-            "Replaced the project logo with the white Rokid wordmark on black.",
-            "Added CHANGELOG.md and refreshed README, plan, and QA matrix coverage for the image-preview path.",
-            "Kept the phone updater focused on phone APK assets even when a glasses APK is attached to the same GitHub release."
-          ]
-        },
-        {
-          "version": "0.1.13",
-          "date": "2026-06-11T11:14:42Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.13",
-          "notes": "Rokid Relay v0.1.13 is a development-preview update focused on glasses input reliability, long notification readability, voice configuration, and repeatable QA.\n\nImportant: v0.1.13 supersedes v0.1.12. The v0.1.12 release notes described the app changes, but the published package still carried the previous bundled glasses helper version. This release republishes the full changelog with the corrected phone and bundled glasses versions.\n\nversionName: 0.1.13\nversionCode: 14\nbundledGlassesVersionName: 0.1.8\nbundledGlassesVersionCode: 9\n\n## What's New\n\n### More Reliable Glasses Controls\n- Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.\n- Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.\n- Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.\n- Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.\n- Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.\n\n### Better Notification and Inbox Reading\n- Reworked long notification paging with measured StaticLayout pages instead of clipping text.\n- Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.\n- Added inbox detail paging guards so boundary swipes do not accidentally move the list.\n\n### Voice and Companion Improvements\n- Added transcription language selection.\n- Added Azure Speech provider support alongside the existing STT choices.\n- Added companion-device linking for background microphone flows.\n- Suppressed the Rokid AI wake path while relay capture is active.\n- Made companion glasses detection more robust across device renames.\n- Fixed cases where the companion link could get stuck on Bluetooth search.\n- Stopped opening the glasses app just because the phone app opens.\n\n### QA and Regression Coverage\n- Added focused unit tests for debounce, key mapping, combo buffering, inbox two-finger gating, notification paging, and the new RelayInputInterpreter.\n- Added a generated QA matrix and starter scenario files under qa/.\n- Added scripts/rokid-regression.ps1, which can build, exercise connected phone/glasses devices, post a real test notification, capture logs/screenshots, and record a report.\n- Validated the release APK with zipalign -P 16 and confirmed the phone APK contains the updated bundled glasses helper APK.\n\n## Known Limits\n\n- The QA runner can now do real device smoke coverage, but exact internal assertions for some scenarios still need debug hooks such as DUMP_STATE, SEND_FAKE_CXR_MESSAGE, and fake voice/audio hooks.\n- Release APK assets are still debug builds while public signing/distribution is being finalized.\n\n## Validation\n\n- Gradle: :glasses:testDebugUnitTest\n- Gradle: :phone:assembleDebug, including bundled glasses helper copy\n- Device QA runner: phone + glasses build/install/launch smoke, ADB input alias replay, real phone test notification, glasses screenshot/log capture\n- Autoreview: Codex CLI clean, no accepted/actionable findings\n- APK check: zipalign -P 16 verification successful\n- APK package check: phone versionCode 14 / versionName 0.1.13\n- Bundled helper check: glasses versionCode 9 / versionName 0.1.8, matching the rebuilt glasses APK hash\n\nSHA256(rokid-relay-phone-v0.1.13-vc14-debug.apk): 0ba8cedef6875a39eb521b0a3f27dd0161aaebf5529dc64dd1ef59e5ba89a177",
-          "changes": [
-            "Reworked glasses input through a shared pure RelayInputInterpreter used by both MainActivity and the AccessibilityService.",
-            "Fixed physical swipe aliasing so paired key events like RIGHT + DOWN count as one movement instead of skipping items.",
-            "Fixed RRLL-style combos so partial inputs like RRL no longer open the inbox early.",
-            "Preserved system two-finger controls outside Relay flows, so volume/brightness gestures are not swallowed by Relay unless a Relay action actually consumes them.",
-            "Kept inbox controls snappy while preventing accidental two-finger paging/navigation inside the inbox.",
-            "Reworked long notification paging with measured StaticLayout pages instead of clipping text.",
-            "Improved popup sizing so long multi-message notifications are paged/readable instead of being cut off.",
-            "Added inbox detail paging guards so boundary swipes do not accidentally move the list."
-          ]
-        },
-        {
-          "version": "0.1.11",
-          "date": "2026-06-09T10:57:49Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.11",
-          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
-          "changes": [
-            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
-            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
-            "Adds compatibility callbacks for newer Rokid APIs.",
-            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
-          ]
-        },
-        {
-          "version": "0.1.6",
-          "date": "2026-06-06T10:32:01Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.6",
-          "notes": "versionCode: 7\n\nBugfix release for the phone UI polish after v0.1.5.\n\n- Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.\n- Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.\n- Fixes the Notifications tab top spacing so the Display panel matches other tabs.\n- Improves Update changelog display with a tappable preview and full changelog expansion.\n- Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.\n- Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK.",
-          "changes": [
-            "Makes the notification popup font-size setting match the other numeric fields: label above, wide editable value field, and aligned - / + controls.",
-            "Allows manual font-size entry in addition to step buttons, saving on keyboard Done or focus loss.",
-            "Fixes the Notifications tab top spacing so the Display panel matches other tabs.",
-            "Improves Update changelog display with a tappable preview and full changelog expansion.",
-            "Inverts changelog emphasis so collapsed previews are muted and expanded notes are brighter.",
-            "Glasses helper is unchanged from v0.1.5 / versionCode 6; this release only updates the phone APK."
-          ]
-        },
-        {
-          "version": "0.1.4",
-          "date": "2026-05-29T21:23:14Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.4",
-          "notes": "versionCode: 5\n\nAdds adjustable notification display positioning for the glasses HUD.\n\n- Adds a Display panel in the phone Notifications tab with a draggable 480x640 glasses preview.\n- Saves the notification popup vertical offset to the glasses only when pressing Save.\n- Persists the overlay position on the glasses, so notifications do not need to carry the setting every time.\n- Applies the saved offset immediately to the accessibility overlay and after service restart.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3",
-          "date": "2026-05-28T09:01:38Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.3",
-          "notes": "versionCode: 4\n\nFixes CXR-L reconnection after Hi Rokid Global restarts.\n\n- Rebinds to Hi Rokid after the CXR-L service/binder dies instead of staying stuck on a dead connection.\n- Retries Relay notifications after reconnect so the glasses overlay comes back without restarting Relay.\n- Includes the CxrGlobal stale-binding fix in the bundled debug build.\n- Phone APK still bundles `rokid-relay-glasses.apk` for automatic glasses helper install/update.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2",
-          "date": "2026-05-27T22:55:35Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.2",
-          "notes": "versionCode: 3\n\nUpdater test build with bundled glasses helper upgrade support.\n\n- Bumps phone and glasses modules to 0.1.2.\n- Phone APK still bundles `rokid-relay-glasses.apk`.\n- After the phone app updates, the next glasses connection uploads the bundled helper again when its APK fingerprint changed, then starts it.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-06-15T23:07:48.000Z",
-      "iconAsset": "rokid-relay.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-relay.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
       ]
     },
     {
@@ -1446,72 +1544,6 @@
       "iconAsset": "hubu.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/hubu.png",
       "screenshotAssets": []
-    },
-    {
-      "id": "jsos",
-      "name": "JSOS",
-      "category": "AI",
-      "type": "combo",
-      "version": "2.0-preview",
-      "publishedAt": "2026-05-28T11:55:21Z",
-      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
-      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
-      "screenshotAssets": [
-        "jsos-core-home.jpeg",
-        "jsos-core-session-chat.jpeg",
-        "jsos-core-hud-link.png",
-        "jsos-core-hud-deployment.jpeg",
-        "jsos-hud-session-chat.png",
-        "jsos-hud-options.png",
-        "jsos-hud-commands.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-HUD-v2.0.apk",
-          "sha256": "bc4a46e1b154063600f65e68a100da6cea307fcfde8d361afea6f2aa6ab130b2",
-          "sizeBytes": 21353247,
-          "packageName": "com.jsos.glasses",
-          "versionCode": 200,
-          "versionName": "2.0"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0-preview/JSOS-Core-v2.0.apk",
-          "sha256": "364ca672b157b30e16ce9a9062df82808a1a2ef8f7b67b3a9c14d2c7c271c4ed",
-          "sizeBytes": 51614732,
-          "packageName": "com.jsos.phone",
-          "versionCode": 200,
-          "versionName": "2.0"
-        }
-      ],
-      "author": "IWhatsskill",
-      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
-      "listing": {
-        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
-      },
-      "releases": [
-        {
-          "version": "2.0-preview",
-          "date": "2026-05-28T11:55:21Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
-          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-05-30T11:55:21.000Z",
-      "iconAsset": "jsos.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
-      ]
     },
     {
       "id": "lc-hot100",

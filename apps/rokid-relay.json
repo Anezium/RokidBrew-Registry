@@ -3,10 +3,10 @@
   "name": "Rokid Relay",
   "category": "Accessibility",
   "type": "combo",
-  "version": "0.1.14",
+  "version": "0.1.16",
   "featured": true,
   "featuredRank": 1,
-  "publishedAt": "2026-06-13T23:07:48Z",
+  "publishedAt": "2026-07-10T15:51:37Z",
   "summary": "Reply to Android phone notifications from Rokid glasses.",
   "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
   "screenshotAssets": [
@@ -18,12 +18,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.14/rokid-relay-phone-v0.1.14-vc15-debug.apk",
-      "sha256": "eb27aa8ce5d79d88e890d837a2470851c8e250857b3180eed2a768efdf7751c1",
-      "sizeBytes": 13731549,
+      "url": "https://github.com/Anezium/Rokid-Relay/releases/download/v0.1.16/phone-debug.apk",
+      "sha256": "6d4c463c12717099cf9a3f30fab13a02a1197ad5ef69d0171f41b870746a458d",
+      "sizeBytes": 26316188,
       "packageName": "com.anezium.rokidrelay.phone",
-      "versionCode": 15,
-      "versionName": "0.1.14"
+      "versionCode": 44,
+      "versionName": "0.1.16"
     }
   ],
   "author": "Anezium",
@@ -44,6 +44,22 @@
     "descriptionMarkdown": "## About\nRokid Relay lets you reply to Android phone notifications directly from Rokid AR glasses using a small overlay and voice input.\n\n## Key features\n- Forwards replyable Android notifications to glasses\n- Compact green overlay on glasses for notifications\n- Voice reply using glasses microphone and speech-to-text\n- Supports Android built-in and cloud STT engines (OpenAI, ElevenLabs)\n- Inbox on glasses to browse recent notifications\n\n## How it works\n- Phone app listens for notifications with reply actions\n- Connects to glasses via Global Hi Rokid (CXR-L and CXR-S bridges)\n- Glasses app shows overlay and captures voice replies\n- Speech-to-text runs locally or via selected cloud API\n- Replies sent back through Android direct reply\n\n## Controls\n- Swipe left/right on glasses to start voice reply\n- Tap or back to dismiss notifications\n- Inbox accessed by quick direction combo (left,left,right,right)\n- Voice capture can be canceled or re-recorded\n\n## Requirements\n- Android phone running Android 12 or higher\n- Rokid glasses connected via Global Hi Rokid\n- Notification access and Bluetooth permissions granted\n- Enable Rokid Relay overlay accessibility service on glasses\n\n## Notes\n- Only notifications with free-form reply actions are supported\n- Disable overlapping notification mirroring in Hi Rokid to avoid duplicates\n- Speech-to-text API keys are optional and configured in the phone app\n- This is a development preview app intended for local testing"
   },
   "releases": [
+    {
+      "version": "0.1.16",
+      "date": "2026-07-10T15:51:37Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Relay/releases/tag/v0.1.16",
+      "notes": "# Rokid Relay v0.1.16\n\nRelease type: stable\nDate: 2026-07-10\n\n## Highlights\n\n### Voice replies work in the background again\n\nOn Android 14 and later, voice replies with the **Android CXR** engine only worked while the phone app was open. The cause: Android only lets an app acquire microphone rights for its service while a screen of the app is visible — every background path (companion-device presence, wake windows, even overlay permissions) is refused, and Google's recognizer rejects sessions without those rights even though Relay feeds it glasses audio and never opens the phone microphone.\n\nRelay now acquires the microphone rights while you are in the app and keeps its service alive for as long as the relay is armed with Android CXR. Voice replies from the glasses work with the phone in your pocket: verified end to end on hardware, from a background wake to a spoken reply landing in the notification.\n\nWhat this changes for you:\n\n- The Relay notification stays visible while the relay is armed with Android CXR. The CXR link itself still sleeps when idle — battery behavior and link availability for other apps are unchanged.\n- After a phone reboot, open Rokid Relay once; until then the notification reads \"Open Rokid Relay once to enable glasses voice replies\".\n\n### The glasses app updates itself, visibly\n\nInstalling a new phone APK now updates the glasses helper automatically as soon as the glasses link is up — no more Bootstrap run required to get glasses-side fixes. The **Glasses app** row shows the whole cycle: update available, \"Updating the glasses app… keep the glasses on (about 15 s)\", verifying, updated. If the phone's Wi-Fi radio is off (the transfer needs it), the row says so instead of failing silently. An update only counts as done once the glasses themselves report the new version.\n\nAutomatic updates only run when the glasses have confirmed their self-arm recovery in the current session, because reinstalling the helper drops its accessibility service and recovery is what brings it back. Not armed? The row says \"update waits for recovery arm — tap Bootstrap\".\n\n### Silent recovery, better glasses battery\n\nThe self-arm recovery no longer launches any window on the glasses — ever. If the system disables the Relay accessibility service while the helper is running, it repairs itself within the same second, invisibly. If the helper is force-stopped, the fallback watchdog revives it with a settings write alone.\n\nThe watchdog also got dramatically cheaper: it checks every 60 seconds instead of every 2, no longer starts activities or presses HOME, and caps its log file. Together with the relaunch-loop fix from v0.1.15 this removes the main glasses battery drains — and thanks to the automatic helper update above, these fixes reach your glasses without a Bootstrap run.\n\n### Small fix\n\n- The glasses inbox hint while the phone sleeps now reads \"Replying wakes the phone\" — which is what actually happens (and has since v0.1.15-preview.5) — instead of the outdated \"Replies resume on next notification\".\n\n## Verification\n\n- Full unit test suites pass on both modules.\n- On hardware: armed in foreground, backgrounded past the idle window — service kept the microphone type while the CXR link slept; a glasses voice reply from a background wake was transcribed live (\"streaming partials\") and delivered into the notification's reply slot.\n- Helper auto-update, settings-disable instant repair, force-stop watchdog revival, and the post-reboot notification hint were each exercised on the test rig.\n\n## Known limitations\n\n- After a phone reboot, background voice replies need one visit to the app (the notification will tell you). Everything else re-arms on its own.\n- On Xiaomi/MIUI, the app's automatic restart after reboot additionally requires the Autostart permission (Settings → Apps → Rokid Relay → Autostart).\n\n## Build Metadata\n\n- Phone: `0.1.16` / `versionCode 44`\n- Glasses helper bundled in phone APK: `0.1.11` / `versionCode 26`\n- Distribution path: development APK, not store-ready release signing.",
+      "changes": [
+        "After a phone reboot, open Rokid Relay once; until then the notification reads \"Open Rokid Relay once to enable glasses voice replies\".",
+        "Full unit test suites pass on both modules.",
+        "Helper auto-update, settings-disable instant repair, force-stop watchdog revival, and the post-reboot notification hint were each exercised on the test rig.",
+        "After a phone reboot, background voice replies need one visit to the app (the notification will tell you). Everything else re-arms on its own.",
+        "On Xiaomi/MIUI, the app's automatic restart after reboot additionally requires the Autostart permission (Settings → Apps → Rokid Relay → Autostart).",
+        "Phone: 0.1.16 / versionCode 44",
+        "Glasses helper bundled in phone APK: 0.1.11 / versionCode 26",
+        "Distribution path: development APK, not store-ready release signing."
+      ]
+    },
     {
       "version": "0.1.14",
       "date": "2026-06-13T23:07:48Z",
