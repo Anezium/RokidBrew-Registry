@@ -10,13 +10,18 @@
       "description": "Read your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-16T17:47:58Z",
+      "publishedAt": "2026-07-18T22:02:41Z",
       "iconAsset": "feeds-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nRead your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards."
       },
       "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-07-18T22:02:41Z",
+          "notes": "\n- The app icon in Android settings and installer dialogs is now the plugin's own glyph on the Nexus dark background (adaptive icon), instead of a washed-out or generic mark.\n\n### Artifact\n\n- File: `feeds-phone-release.apk`\n- SHA-256: `7cb7fdbb2621843fa702b7fac77955116cc3e25af4ca554d65e95db4d9476f01`"
+        },
         {
           "version": "1.0.0",
           "date": "2026-07-16T17:47:58Z",
@@ -35,13 +40,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/feeds-v1.0.0/feeds-phone-release.apk",
-        "sha256": "e41a56bb156ea6ee73083101080d318fee29a945fd04613b211032e1346e38bb",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/feeds-v1.0.1/feeds-phone-release.apk",
+        "sha256": "7cb7fdbb2621843fa702b7fac77955116cc3e25af4ca554d65e95db4d9476f01",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 4945925,
+        "sizeBytes": 4952505,
         "packageName": "com.anezium.rokidbus.plugin.feeds",
-        "versionCode": 1,
-        "versionName": "1.0.0"
+        "versionCode": 2,
+        "versionName": "1.0.1"
       }
     },
     {
@@ -53,13 +58,18 @@
       "description": "Point the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-16T19:55:23Z",
+      "publishedAt": "2026-07-18T21:59:50Z",
       "iconAsset": "lens-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nPoint the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device."
       },
       "releases": [
+        {
+          "version": "1.0.4",
+          "date": "2026-07-18T21:59:50Z",
+          "notes": "\n- The app icon in Android settings and installer dialogs is now the plugin's own glyph on the Nexus dark background (adaptive icon), instead of a washed-out or generic mark.\n\n### Artifact\n\n- File: `lens-phone-release.apk`\n- SHA-256: `07b624916f7f1ba969f991b05581b1813ed05c0ce422f451cf12c97229d76000`"
+        },
         {
           "version": "1.0.3",
           "date": "2026-07-16T19:55:23Z",
@@ -93,13 +103,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lens-v1.0.3/lens-phone-release.apk",
-        "sha256": "b29fc5bb15ef14ab0f6c84f82738f6d402617aae9b701c361456da8f64785883",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lens-v1.0.4/lens-phone-release.apk",
+        "sha256": "07b624916f7f1ba969f991b05581b1813ed05c0ce422f451cf12c97229d76000",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 43587580,
+        "sizeBytes": 43605656,
         "packageName": "com.anezium.rokidbus.plugin.lens",
-        "versionCode": 13,
-        "versionName": "1.0.3"
+        "versionCode": 14,
+        "versionName": "1.0.4"
       }
     },
     {
@@ -111,13 +121,18 @@
       "description": "Synced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-16T17:50:19Z",
+      "publishedAt": "2026-07-18T22:02:44Z",
       "iconAsset": "lyrics-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nSynced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it."
       },
       "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-07-18T22:02:44Z",
+          "notes": "\n- The app icon in Android settings and installer dialogs is now the plugin's own glyph on the Nexus dark background (adaptive icon), instead of a washed-out or generic mark.\n\n### Artifact\n\n- File: `lyrics-phone-release.apk`\n- SHA-256: `26e0fdfa2b51653130ec201e62230e7a28d8146773ca88061d8f3ab5f4736d49`"
+        },
         {
           "version": "1.0.0",
           "date": "2026-07-16T17:50:19Z",
@@ -136,13 +151,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.0/lyrics-phone-release.apk",
-        "sha256": "53ba1d551c73fe9af3bf6c731a765b48331f804199479614c5c1e75702d21e94",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.1/lyrics-phone-release.apk",
+        "sha256": "26e0fdfa2b51653130ec201e62230e7a28d8146773ca88061d8f3ab5f4736d49",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 7484545,
+        "sizeBytes": 7491085,
         "packageName": "com.anezium.rokidbus.plugin.lyrics",
-        "versionCode": 1,
-        "versionName": "1.0.0"
+        "versionCode": 2,
+        "versionName": "1.0.1"
       }
     },
     {
@@ -154,13 +169,18 @@
       "description": "Whatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-16T17:50:17Z",
+      "publishedAt": "2026-07-18T22:02:09Z",
       "iconAsset": "media-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
       },
       "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-07-18T22:02:09Z",
+          "notes": "\n- The app icon in Android settings and installer dialogs is now the plugin's own glyph on the Nexus dark background (adaptive icon), instead of a washed-out or generic mark.\n\n### Artifact\n\n- File: `media-phone-release.apk`\n- SHA-256: `5ea6cd809af90ab2d9aeeddb0901d0ce9634b3d895fa157e7c81e284ec940194`"
+        },
         {
           "version": "1.0.0",
           "date": "2026-07-16T17:50:17Z",
@@ -179,13 +199,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.0/media-phone-release.apk",
-        "sha256": "506ebd725ab9013b6b6ac87c861ea2a8711382fdf256392de75e3cf161f7a3bd",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.1/media-phone-release.apk",
+        "sha256": "5ea6cd809af90ab2d9aeeddb0901d0ce9634b3d895fa157e7c81e284ec940194",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 4687732,
+        "sizeBytes": 4694444,
         "packageName": "com.anezium.rokidbus.plugin.media",
-        "versionCode": 1,
-        "versionName": "1.0.0"
+        "versionCode": 2,
+        "versionName": "1.0.1"
       }
     },
     {
@@ -197,13 +217,18 @@
       "description": "Live public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-18T12:15:55Z",
+      "publishedAt": "2026-07-18T22:02:29Z",
       "iconAsset": "transit-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nLive public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone."
       },
       "releases": [
+        {
+          "version": "1.0.2",
+          "date": "2026-07-18T22:02:29Z",
+          "notes": "\n- The app icon in Android settings and installer dialogs is now the plugin's own glyph on the Nexus dark background (adaptive icon), instead of a washed-out or generic mark.\n\n### Artifact\n\n- File: `transit-phone-release.apk`\n- SHA-256: `42f168c109a6f20e04c217f8b7d513b5bb38548d98ebf81a2c7cbaea6df0b671`"
+        },
         {
           "version": "1.0.1",
           "date": "2026-07-18T12:15:55Z",
@@ -227,13 +252,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.1/transit-phone-release.apk",
-        "sha256": "e555ecfa2297ed9d9a44de64ab7e8c8f423e40c406ec3cc1e590e17562110f19",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.2/transit-phone-release.apk",
+        "sha256": "42f168c109a6f20e04c217f8b7d513b5bb38548d98ebf81a2c7cbaea6df0b671",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 4868100,
+        "sizeBytes": 4870232,
         "packageName": "com.anezium.rokidbus.plugin.transit",
-        "versionCode": 2,
-        "versionName": "1.0.1"
+        "versionCode": 3,
+        "versionName": "1.0.2"
       }
     }
   ]
