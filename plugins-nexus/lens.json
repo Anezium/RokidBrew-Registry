@@ -7,13 +7,18 @@
   "description": "Point the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-07-21T11:39:46Z",
+  "publishedAt": "2026-07-21T19:34:57Z",
   "iconAsset": "lens-icon.png",
   "screenshotAssets": [],
   "listing": {
     "descriptionMarkdown": "## About\n\nPoint the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device."
   },
   "releases": [
+    {
+      "version": "1.1.1",
+      "date": "2026-07-21T19:34:57Z",
+      "notes": "\n- Greek is now available as a translation target language.\n\n### Artifact\n\n- File: `lens-phone-release.apk`\n- SHA-256: `8b3c3be4e2872aa12080663ace8a5ca2abf1721d95e2ae8d0ceb050be3172511`"
+    },
     {
       "version": "1.1.0",
       "date": "2026-07-21T11:39:46Z",
@@ -57,12 +62,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lens-v1.1.0/lens-phone-release.apk",
-    "sha256": "041eb1b6335f1ae64c546f38d45a9c7a648406eb46e547fb77b2d7eab51c01af",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lens-v1.1.1/lens-phone-release.apk",
+    "sha256": "8b3c3be4e2872aa12080663ace8a5ca2abf1721d95e2ae8d0ceb050be3172511",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 43622040,
+    "sizeBytes": 43622036,
     "packageName": "com.anezium.rokidbus.plugin.lens",
-    "versionCode": 15,
-    "versionName": "1.1.0"
+    "versionCode": 16,
+    "versionName": "1.1.1"
   }
 }
