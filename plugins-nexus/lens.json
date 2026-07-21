@@ -3,7 +3,7 @@
   "kind": "nexus-plugin",
   "name": "Lens",
   "category": "Productivity",
-  "summary": "Live camera translation — point, freeze, read.",
+  "summary": "Live camera translation.",
   "description": "Point the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
