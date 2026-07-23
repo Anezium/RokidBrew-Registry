@@ -232,7 +232,7 @@
       "author": "Volund",
       "sourceUrl": "https://github.com/beyondlevi/nexus-shoplist",
       "publishedAt": "2026-07-23T18:04:07Z",
-      "iconAsset": "shoplist-icon.png",
+      "iconAsset": "shoplist-icon2.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nA headless Rokid Nexus plugin that shows your shopping list on the glasses HUD as a card. Walk the list with the R08 ring: move the cursor, tap to check an item off, back to close. Manage the list on the phone — add, remove, clear checked, or paste a multi-line list from another app to import every line at once."
@@ -269,7 +269,7 @@
         "versionCode": 3,
         "versionName": "1.1.1"
       },
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/shoplist-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/shoplist-icon2.png"
     },
     {
       "id": "transit",
