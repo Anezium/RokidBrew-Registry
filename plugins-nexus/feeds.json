@@ -7,13 +7,18 @@
   "description": "Read your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-07-18T22:02:41Z",
+  "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "feeds-icon.png",
   "screenshotAssets": [],
   "listing": {
     "descriptionMarkdown": "## About\n\nRead your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards."
   },
   "releases": [
+    {
+      "version": "1.0.2",
+      "date": "2026-07-23T21:44:01Z",
+      "notes": "\n- Android 11 support: the plugin now installs on Android 11 (API 30) phones.\n\n### Artifact\n\n- File: `feeds-phone-release.apk`\n- SHA-256: `2e64a18a31b5151ce9e0a3bff3e862f55b1a55cfb0ec646e125bdd168ff25704`"
+    },
     {
       "version": "1.0.1",
       "date": "2026-07-18T22:02:41Z",
@@ -37,12 +42,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/feeds-v1.0.1/feeds-phone-release.apk",
-    "sha256": "7cb7fdbb2621843fa702b7fac77955116cc3e25af4ca554d65e95db4d9476f01",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/feeds-v1.0.2/feeds-phone-release.apk",
+    "sha256": "2e64a18a31b5151ce9e0a3bff3e862f55b1a55cfb0ec646e125bdd168ff25704",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 4952505,
+    "sizeBytes": 5013689,
     "packageName": "com.anezium.rokidbus.plugin.feeds",
-    "versionCode": 2,
-    "versionName": "1.0.1"
+    "versionCode": 3,
+    "versionName": "1.0.2"
   }
 }

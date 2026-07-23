@@ -7,13 +7,18 @@
   "description": "Synced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-07-18T22:02:44Z",
+  "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "lyrics-icon.png",
   "screenshotAssets": [],
   "listing": {
     "descriptionMarkdown": "## About\n\nSynced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it."
   },
   "releases": [
+    {
+      "version": "1.0.2",
+      "date": "2026-07-23T21:44:01Z",
+      "notes": "\n- Android 11 support: the plugin now installs on Android 11 (API 30) phones.\n\n### Artifact\n\n- File: `lyrics-phone-release.apk`\n- SHA-256: `695a61c23a101c1fba532a1ca639e71e42700e7f4ec6762a78f1dbc61aadeb28`"
+    },
     {
       "version": "1.0.1",
       "date": "2026-07-18T22:02:44Z",
@@ -37,12 +42,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.1/lyrics-phone-release.apk",
-    "sha256": "26e0fdfa2b51653130ec201e62230e7a28d8146773ca88061d8f3ab5f4736d49",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.2/lyrics-phone-release.apk",
+    "sha256": "695a61c23a101c1fba532a1ca639e71e42700e7f4ec6762a78f1dbc61aadeb28",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 7491085,
+    "sizeBytes": 7566613,
     "packageName": "com.anezium.rokidbus.plugin.lyrics",
-    "versionCode": 2,
-    "versionName": "1.0.1"
+    "versionCode": 3,
+    "versionName": "1.0.2"
   }
 }

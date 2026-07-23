@@ -7,13 +7,18 @@
   "description": "Live public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-07-18T22:02:29Z",
+  "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "transit-icon.png",
   "screenshotAssets": [],
   "listing": {
     "descriptionMarkdown": "## About\n\nLive public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone."
   },
   "releases": [
+    {
+      "version": "1.0.3",
+      "date": "2026-07-23T21:44:01Z",
+      "notes": "\n- Android 11 support: the plugin now installs on Android 11 (API 30) phones.\n\n### Artifact\n\n- File: `transit-phone-release.apk`\n- SHA-256: `4fa47174227b52b3ae82dcdeb5f63594763038b4519fc407a220dc2027cc0a4e`"
+    },
     {
       "version": "1.0.2",
       "date": "2026-07-18T22:02:29Z",
@@ -42,12 +47,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.2/transit-phone-release.apk",
-    "sha256": "42f168c109a6f20e04c217f8b7d513b5bb38548d98ebf81a2c7cbaea6df0b671",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.3/transit-phone-release.apk",
+    "sha256": "4fa47174227b52b3ae82dcdeb5f63594763038b4519fc407a220dc2027cc0a4e",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 4870232,
+    "sizeBytes": 4929616,
     "packageName": "com.anezium.rokidbus.plugin.transit",
-    "versionCode": 3,
-    "versionName": "1.0.2"
+    "versionCode": 4,
+    "versionName": "1.0.3"
   }
 }

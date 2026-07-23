@@ -7,13 +7,18 @@
   "description": "Whatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-07-18T22:02:09Z",
+  "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "media-icon.png",
   "screenshotAssets": [],
   "listing": {
     "descriptionMarkdown": "## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
   },
   "releases": [
+    {
+      "version": "1.0.2",
+      "date": "2026-07-23T21:44:01Z",
+      "notes": "\n- Android 11 support: the plugin now installs on Android 11 (API 30) phones.\n\n### Artifact\n\n- File: `media-phone-release.apk`\n- SHA-256: `504e629ccb59f483c36345a13606edc6f3ce77807e90140af979b88b0bfd61ab`"
+    },
     {
       "version": "1.0.1",
       "date": "2026-07-18T22:02:09Z",
@@ -37,12 +42,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.1/media-phone-release.apk",
-    "sha256": "5ea6cd809af90ab2d9aeeddb0901d0ce9634b3d895fa157e7c81e284ec940194",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.2/media-phone-release.apk",
+    "sha256": "504e629ccb59f483c36345a13606edc6f3ce77807e90140af979b88b0bfd61ab",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 4694444,
+    "sizeBytes": 4753768,
     "packageName": "com.anezium.rokidbus.plugin.media",
-    "versionCode": 2,
-    "versionName": "1.0.1"
+    "versionCode": 3,
+    "versionName": "1.0.2"
   }
 }
