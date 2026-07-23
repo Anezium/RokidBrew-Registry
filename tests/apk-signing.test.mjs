@@ -33,6 +33,36 @@ test("rejects APKs with multiple signer certificates", () => {
   );
 });
 
+test("parses the per-scheme format printed by apksigner from build-tools 37", () => {
+  assert.equal(
+    parseApksignerCertificateSha256(
+      `V2 Signer: certificate DN: CN=Example\nV2 Signer: certificate SHA-256 digest: ${digest}\n`,
+    ),
+    digest,
+  );
+});
+
+test("dedupes the same certificate printed once per signature scheme", () => {
+  assert.equal(
+    parseApksignerCertificateSha256(
+      `V2 Signer: certificate SHA-256 digest: ${digest}\n` +
+      `V3 Signer: certificate SHA-256 digest: ${digest}\n` +
+      `V3.1 Signer: certificate SHA-256 digest: ${digest}\n`,
+    ),
+    digest,
+  );
+});
+
+test("rejects per-scheme output carrying two distinct certificates", () => {
+  assert.throws(
+    () => parseApksignerCertificateSha256(
+      `V2 Signer: certificate SHA-256 digest: ${digest}\n` +
+      `V3 Signer: certificate SHA-256 digest: ${"1".repeat(64)}\n`,
+    ),
+    /reported 2 signer certificates/,
+  );
+});
+
 test("requires the documented fallback digest to be lowercase hexadecimal", () => {
   assert.equal(assertSignerSha256(digest), digest);
   assert.throws(() => assertSignerSha256(digest.toUpperCase()), /64 lowercase hexadecimal/);
