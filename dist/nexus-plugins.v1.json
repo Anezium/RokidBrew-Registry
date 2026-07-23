@@ -231,13 +231,18 @@
       "description": "See your shopping list on the glasses HUD as a card and tick items off with the R08 ring. Add or remove items on the phone, or paste a whole list from another app and each line becomes an item.",
       "author": "Volund",
       "sourceUrl": "https://github.com/beyondlevi/nexus-shoplist",
-      "publishedAt": "2026-07-23T11:18:51Z",
+      "publishedAt": "2026-07-23T18:04:07Z",
       "iconAsset": "shoplist-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nA headless Rokid Nexus plugin that shows your shopping list on the glasses HUD as a card. Walk the list with the R08 ring: move the cursor, tap to check an item off, back to close. Manage the list on the phone — add, remove, clear checked, or paste a multi-line list from another app to import every line at once."
       },
       "releases": [
+        {
+          "version": "1.1.1",
+          "date": "2026-07-23T18:04:07Z",
+          "notes": "\n- Settings header now reads the real versionName from the package manager (no more version drift).\n- Launcher and monochrome app icon now use the plugin's own cart glyph everywhere.\n\n### Artifact\n\n- File: `shoplist-phone-release.apk`\n- SHA-256: `6677150f9e23da5e45303317b881ee9b6e49ede3d3658af96449b1425adc5bb7`"
+        },
         {
           "version": "1.1.0",
           "date": "2026-07-23T11:18:51Z",
@@ -256,13 +261,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/beyondlevi/nexus-shoplist/releases/download/shoplist-v1.1.0/shoplist-phone-release.apk",
-        "sha256": "e56b8be614f4e8e8fdf1571819e1daca50aaa342ab35f6a9c758caeacf7976be",
+        "url": "https://github.com/beyondlevi/nexus-shoplist/releases/download/shoplist-v1.1.1/shoplist-phone-release.apk",
+        "sha256": "6677150f9e23da5e45303317b881ee9b6e49ede3d3658af96449b1425adc5bb7",
         "signerSha256": "b479bf0dfd0c3328cfda1dcce836f257098c439e3e2617b9357152e52d63f20a",
-        "sizeBytes": 4788000,
+        "sizeBytes": 4776996,
         "packageName": "com.volund.nexus.plugin.shoplist",
-        "versionCode": 2,
-        "versionName": "1.1.0"
+        "versionCode": 3,
+        "versionName": "1.1.1"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/shoplist-icon.png"
     },
