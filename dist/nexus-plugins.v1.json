@@ -47,7 +47,8 @@
         "packageName": "com.anezium.rokidbus.plugin.feeds",
         "versionCode": 2,
         "versionName": "1.0.1"
-      }
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/feeds-icon.png"
     },
     {
       "id": "lens",
@@ -120,7 +121,8 @@
         "packageName": "com.anezium.rokidbus.plugin.lens",
         "versionCode": 16,
         "versionName": "1.1.1"
-      }
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lens-icon.png"
     },
     {
       "id": "lyrics",
@@ -168,7 +170,8 @@
         "packageName": "com.anezium.rokidbus.plugin.lyrics",
         "versionCode": 2,
         "versionName": "1.0.1"
-      }
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lyrics-icon.png"
     },
     {
       "id": "media",
@@ -216,7 +219,8 @@
         "packageName": "com.anezium.rokidbus.plugin.media",
         "versionCode": 2,
         "versionName": "1.0.1"
-      }
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/media-icon.png"
     },
     {
       "id": "shoplist",
@@ -313,7 +317,8 @@
         "packageName": "com.anezium.rokidbus.plugin.transit",
         "versionCode": 3,
         "versionName": "1.0.2"
-      }
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/transit-icon.png"
     }
   ]
 }
