@@ -1,9 +1,12 @@
+// Verifies changed Nexus plugin APK metadata, signing certificate, headless manifest,
+// and AGP build revision against the source repository's GitHub release tag.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { parseApksignerCertificateSha256 } from "./lib-apk-signing.mjs";
+import { verifyApkBuildProvenance } from "./lib-nexus-apk-provenance.mjs";
 import {
   compareArtifactMetadata,
   measuredArtifact,
@@ -155,6 +158,12 @@ async function verifyPlugin(file, tools, tempDir) {
     }
   } catch (failure) {
     reportError(errors, file, "manifest.AndroidManifest.xml", failure);
+  }
+
+  try {
+    verifyApkBuildProvenance(bytes, plugin.artifact.url, { cwd: root });
+  } catch (failure) {
+    reportError(errors, file, "artifact.buildProvenance", failure);
   }
 
   return errors;
