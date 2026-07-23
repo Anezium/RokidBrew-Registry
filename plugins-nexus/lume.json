@@ -1,0 +1,53 @@
+{
+  "id": "lume",
+  "kind": "nexus-plugin",
+  "name": "Lume",
+  "category": "Utility",
+  "summary": "Glanceable RSVP speed-reading on the HUD.",
+  "description": "Read PDFs, TXT files and shared text one word at a time on the glasses, streamed from your phone. Adaptive pacing, adjustable speed, pause and sentence stepping, and per-document progress. Manage your library on the phone; read hands-free with the R08 ring.",
+  "author": "beyondlevi",
+  "sourceUrl": "https://github.com/beyondlevi/lume-nexus",
+  "publishedAt": "2026-07-23T20:20:00Z",
+  "iconAsset": "lume-icon.png",
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nLume turns Rokid glasses into a wearable speed reader. It uses RSVP (Rapid Serial Visual Presentation): text flows one word at a time at a fixed point in your field of view, so your eyes never travel across a line.\n\n- Import PDF/TXT, paste text, or share into Lume from any app (extraction stays on-device).\n- Adaptive pacing: long words, clause/sentence endings and paragraph breaks hold longer.\n- Adjustable speed (150-700 wpm), pause, and sentence stepping, all on the R08 ring.\n- Per-document reading progress; resume where you left off.\n\nFully operable by the R08 Access Bridge one-axis ring: move to select, tap to open/play/pause, back to exit."
+  },
+  "releases": [
+    {
+      "version": "1.0.5",
+      "date": "2026-07-23T20:20:00Z",
+      "notes": "\n- Glasses HUD icon now uses Lume's own RSVP glyph, matching the Android app icon.\n- PDF import bounded (30 MB / 800 pages) with an out-of-memory guard.\n\n### Artifact\n\n- File: `lume-phone-release.apk`\n- SHA-256: `495dd82cedba7724b4aa666fd172911eb2faa9229cfd3bf4c6564565ea42aa1e`"
+    },
+    {
+      "version": "1.0.4",
+      "date": "2026-07-23T18:15:00Z",
+      "notes": "\n- Settings header now reads the real versionName from the package manager (no version drift).\n- Launcher and monochrome app icon now use Lume's own RSVP glyph everywhere.\n\n### Artifact\n\n- File: `lume-phone-release.apk`\n- SHA-256: `603b219dca69adced82b4ba981a4c289c8480f24b6797bcfc6e3859ab8099e4f`"
+    },
+    {
+      "version": "1.0.3",
+      "date": "2026-07-23T14:40:00Z",
+      "notes": "\n- First Nexus Store release of the Lume RSVP reader.\n- Reading streams as a CXR-safe sliding buffer, so documents of any length read even without the SPP data plane.\n- Documents open paused; a tap starts playback. The display stays awake while reading.\n- Phone library: import PDF/TXT, paste, share target, default speed, English/Portugues, per-document progress, remove.\n\n### Artifact\n\n- File: `lume-phone-release.apk`\n- SHA-256: `f250d8a33353923316abe1ab3f4bf06f235cb650086b45c6b9833212c47ac5ca`"
+    }
+  ],
+  "nexus": {
+    "pluginId": "lume",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": ".LumeSettingsActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/beyondlevi/lume-nexus/releases/download/lume-v1.0.5/lume-phone-release.apk",
+    "sha256": "495dd82cedba7724b4aa666fd172911eb2faa9229cfd3bf4c6564565ea42aa1e",
+    "signerSha256": "ddaf2d274de1a0ca8b39e11e451ff021ef48594ad43383ad67cf7ca54480703d",
+    "sizeBytes": 17430526,
+    "packageName": "com.beyondlevi.nexus.lume",
+    "versionCode": 6,
+    "versionName": "1.0.5"
+  }
+}
