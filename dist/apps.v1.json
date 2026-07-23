@@ -2970,8 +2970,54 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-2.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-3.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-4.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/your-voice-4.jpg"       
       ]
+    },
+    {
+      "id": "xiaozhi-glasses",
+      "name": "小质语音助手",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "为 Rokid 智能眼镜提供语音助手功能",
+      "description": "绑定小质设备后，可以通过语音指令与智能助手进行交互，支持语音识别、语音合成等功能。",
+      "author": "mdloverm",
+      "sourceUrl": "https://github.com/mdloverm/rokid-xiaozhi",
+      "iconAsset": null,
+      "iconUrl": null,
+      "screenshotAssets": [],
+      "screenshotUrls": ["https://github.com/mdloverm/rokid-xiaozhi/blob/main/photo/xiaozhi-glasses-1.jpg", "https://github.com/mdloverm/rokid-xiaozhi/blob/main/photo/xiaozhi-glasses-2.jpg"],
+      "featured": false,
+      "featuredRank": null,
+      "publishedAt": "2026-05-28",
+      "newUntil": "2026-06-28",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/mdloverm/rokid-xiaozhi/releases/download/rokid-xiaozhi/app-release-signed.apk",
+          "sha256": null,
+          "sizeBytes": null,
+          "packageName": "com.rokid.xiaozhi",
+          "versionCode": 1,
+          "versionName": "1.0.0"
+        }
+      ],
+      "update": {
+        "assets": [
+          {
+            "match": {
+              "type": "glasses",
+              "packageName": "com.rokid.xiaozhi"
+            },
+            "url": "https://github.com/mdloverm/rokid-xiaozhi/releases/download/rokid-xiaozhi/app-release-signed.apk",
+            "sha256": null,
+            "sizeBytes": null,
+            "versionCode": 1,
+            "versionName": "1.0.0"
+          }
+        ]
+      }
     }
   ]
 }
