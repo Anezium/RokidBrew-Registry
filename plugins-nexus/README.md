@@ -23,6 +23,51 @@ This directory is the source namespace for phone-only APK plugins installed into
 
 Only add a real descriptor after its release APK is publicly available and all artifact verification fields have been extracted from that APK. Do not publish placeholder URLs, checksums, sizes, package names, or version metadata.
 
+## Publishing descriptor changes
+
+`plugins-nexus/*.json` files are the source of truth, while
+`dist/nexus-plugins.v1.json` is the exact feed consumed by the Nexus Store.
+Every pull request that adds or updates a real descriptor must rebuild and
+commit the feed in the same change:
+
+```bash
+node scripts/build-registry.mjs
+git add plugins-nexus/<plugin-id>.json dist/nexus-plugins.v1.json
+git commit -m "Update <plugin-name>"
+git push
+```
+
+Before opening or merging the pull request, confirm that the generated feed
+contains the intended artifact version:
+
+```bash
+jq '.plugins[] | select(.id == "<plugin-id>") | .artifact' \
+  dist/nexus-plugins.v1.json
+```
+
+The `Build registry` CI job rebuilds both published feeds and fails if the
+committed files are stale. A green APK-verification job alone does not publish
+the new release: the generated Nexus feed must also be part of the pull request.
+
+### Updating an existing plugin
+
+1. Publish the APK release first.
+2. Update `publishedAt`, prepend the release notes, and replace every pinned
+   `artifact` field with metadata extracted from that exact APK.
+3. Run the APK verification and registry tests.
+4. Rebuild `dist/nexus-plugins.v1.json`.
+5. Commit the descriptor and generated feed together.
+
+For example:
+
+```bash
+node --test tests/*.test.mjs
+node scripts/build-registry.mjs
+git add plugins-nexus/<plugin-id>.json dist/nexus-plugins.v1.json
+git commit -m "Update <plugin-name>"
+node scripts/verify-nexus-plugin-apks.mjs --base origin/main --head HEAD
+```
+
 ## Importing a release
 
 The add workflow passes `kind` through the shared importer, README listing, APK metadata, and icon extraction steps. For example:

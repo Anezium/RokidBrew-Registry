@@ -29,6 +29,26 @@ After these steps, the app is live. RokidBrew pulls from:
 https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/dist/apps.v1.json
 ```
 
+Rokid Nexus plugins use a separate source directory and generated feed. Every
+change to a real `plugins-nexus/<plugin-id>.json` descriptor must include the
+corresponding rebuilt feed in the same pull request:
+
+```bash
+node scripts/build-registry.mjs
+git add plugins-nexus/<plugin-id>.json dist/nexus-plugins.v1.json
+git commit -m "Update <plugin-name>"
+git push
+```
+
+The Nexus Store reads:
+
+```text
+https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/dist/nexus-plugins.v1.json
+```
+
+See [`plugins-nexus/README.md`](plugins-nexus/README.md) for the complete
+descriptor, APK verification, and release-update workflow.
+
 ---
 
 ## App file format (`apps/<app-id>.json`)
@@ -123,11 +143,17 @@ push registry changes directly to `main`.
 Override with `ROKIDBREW_PUBLIC_BASE_URL` or `ROKIDBREW_PUBLIC_BRANCH` only when
 you intentionally need a non-production manifest.
 
+Both generated feeds are committed artifacts. The build job reconstructs them
+deterministically and fails when either `dist/apps.v1.json` or
+`dist/nexus-plugins.v1.json` differs from the committed result. This prevents a
+source descriptor from being merged without the Store-visible feed update.
+
 ### 2. Daily registry maintenance (`registry-maintenance.yml`)
 
 Runs once per day and can also be triggered manually. It checks upstream APK
 sources, refreshes APK metadata, extracts missing icons, rebuilds the registry,
-and opens or updates a review PR.
+and opens or updates a review PR. The maintenance PR includes both generated
+feeds, so it also repairs a Nexus feed that was left out of an earlier change.
 
 The workflow is resilient by design: individual APK metadata or icon failures are
 reported in logs, but do not block unrelated app updates from being proposed.

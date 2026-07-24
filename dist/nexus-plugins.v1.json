@@ -143,13 +143,18 @@
       "description": "Read PDFs, TXT files and shared text one word at a time on the glasses, streamed from your phone. Adaptive pacing, adjustable speed, pause and sentence stepping, and per-document progress. Manage your library on the phone; read hands-free with the R08 ring.",
       "author": "beyondlevi",
       "sourceUrl": "https://github.com/beyondlevi/lume-nexus",
-      "publishedAt": "2026-07-23T20:20:00Z",
+      "publishedAt": "2026-07-23T22:30:00Z",
       "iconAsset": "lume-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nLume turns Rokid glasses into a wearable speed reader. It uses RSVP (Rapid Serial Visual Presentation): text flows one word at a time at a fixed point in your field of view, so your eyes never travel across a line.\n\n- Import PDF/TXT, paste text, or share into Lume from any app (extraction stays on-device).\n- Adaptive pacing: long words, clause/sentence endings and paragraph breaks hold longer.\n- Adjustable speed (150-700 wpm), pause, and sentence stepping, all on the R08 ring.\n- Per-document reading progress; resume where you left off.\n\nFully operable by the R08 Access Bridge one-axis ring: move to select, tap to open/play/pause, back to exit."
       },
       "releases": [
+        {
+          "version": "1.0.6",
+          "date": "2026-07-23T22:30:00Z",
+          "notes": "\n- Icon: declare both the built-in ICON (bookmark, rendered natively on the glasses) and the phone-side ICON_DRAWABLE glyph. v1.0.5 declared only the drawable, which never reaches the glasses launcher.\n\n### Artifact\n\n- File: `lume-phone-release.apk`\n- SHA-256: `f7e526ee6ac1089572242cf4b4dc976f3167ebccd2d99434bd78ea8f62d7c8ef`"
+        },
         {
           "version": "1.0.5",
           "date": "2026-07-23T20:20:00Z",
@@ -178,13 +183,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/beyondlevi/lume-nexus/releases/download/lume-v1.0.5/lume-phone-release.apk",
-        "sha256": "495dd82cedba7724b4aa666fd172911eb2faa9229cfd3bf4c6564565ea42aa1e",
+        "url": "https://github.com/beyondlevi/lume-nexus/releases/download/lume-v1.0.6/lume-phone-release.apk",
+        "sha256": "f7e526ee6ac1089572242cf4b4dc976f3167ebccd2d99434bd78ea8f62d7c8ef",
         "signerSha256": "ddaf2d274de1a0ca8b39e11e451ff021ef48594ad43383ad67cf7ca54480703d",
-        "sizeBytes": 17430526,
+        "sizeBytes": 17430558,
         "packageName": "com.beyondlevi.nexus.lume",
-        "versionCode": 6,
-        "versionName": "1.0.5"
+        "versionCode": 7,
+        "versionName": "1.0.6"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lume-icon.png"
     },
@@ -305,13 +310,18 @@
       "description": "See your shopping list on the glasses HUD as a card and tick items off with the R08 ring. Add or remove items on the phone, or paste a whole list from another app and each line becomes an item.",
       "author": "Volund",
       "sourceUrl": "https://github.com/beyondlevi/nexus-shoplist",
-      "publishedAt": "2026-07-23T18:04:07Z",
+      "publishedAt": "2026-07-23T20:20:36Z",
       "iconAsset": "shoplist-icon2.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nA headless Rokid Nexus plugin that shows your shopping list on the glasses HUD as a card. Walk the list with the R08 ring: move the cursor, tap to check an item off, back to close. Manage the list on the phone — add, remove, clear checked, or paste a multi-line list from another app to import every line at once."
       },
       "releases": [
+        {
+          "version": "1.1.2",
+          "date": "2026-07-23T20:20:36Z",
+          "notes": "\n- Declares the built-in `ICON` key `cart` so the cart glyph also renders on the glasses HUD; keeps `ICON_DRAWABLE` as a fallback.\n\n### Artifact\n\n- File: `shoplist-phone-release.apk`\n- SHA-256: `8c9eeafbfe722012c10ec1aebdce8e309de35c7e1ac3a0e10ec3a65b45da4f77`"
+        },
         {
           "version": "1.1.1",
           "date": "2026-07-23T18:04:07Z",
@@ -335,13 +345,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/beyondlevi/nexus-shoplist/releases/download/shoplist-v1.1.1/shoplist-phone-release.apk",
-        "sha256": "6677150f9e23da5e45303317b881ee9b6e49ede3d3658af96449b1425adc5bb7",
+        "url": "https://github.com/beyondlevi/nexus-shoplist/releases/download/shoplist-v1.1.2/shoplist-phone-release.apk",
+        "sha256": "8c9eeafbfe722012c10ec1aebdce8e309de35c7e1ac3a0e10ec3a65b45da4f77",
         "signerSha256": "b479bf0dfd0c3328cfda1dcce836f257098c439e3e2617b9357152e52d63f20a",
-        "sizeBytes": 4776996,
+        "sizeBytes": 4777040,
         "packageName": "com.volund.nexus.plugin.shoplist",
-        "versionCode": 3,
-        "versionName": "1.1.1"
+        "versionCode": 4,
+        "versionName": "1.1.2"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/shoplist-icon2.png"
     },
