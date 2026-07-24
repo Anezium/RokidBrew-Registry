@@ -310,13 +310,18 @@
       "description": "See your shopping list on the glasses HUD as a card and tick items off with the R08 ring. Add or remove items on the phone, or paste a whole list from another app and each line becomes an item.",
       "author": "Volund",
       "sourceUrl": "https://github.com/beyondlevi/nexus-shoplist",
-      "publishedAt": "2026-07-23T20:20:36Z",
+      "publishedAt": "2026-07-24T15:21:12Z",
       "iconAsset": "shoplist-icon2.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nA headless Rokid Nexus plugin that shows your shopping list on the glasses HUD as a card. Walk the list with the R08 ring: move the cursor, tap to check an item off, back to close. Manage the list on the phone — add, remove, clear checked, or paste a multi-line list from another app to import every line at once."
       },
       "releases": [
+        {
+          "version": "1.2.2",
+          "date": "2026-07-24T15:21:12Z",
+          "notes": "\n- Add items by voice from the glasses: capture the mic (Nexus `microphone` capability + `/audio` receive prefix) and transcribe with OpenAI, then confirm (\"Add this item?\") before adding.\n- Voice settings (OpenAI key, language, model) in the plugin settings; no Android RECORD_AUDIO (audio arrives over the hub), adds INTERNET. Re-approve the plugin in Plugin access.\n\n### Artifact\n\n- File: `shoplist-phone-release.apk`\n- SHA-256: `121203cf7361be3c4a7e109b0644caeab7936a92648d73dfd53cf25c0ad9b530`"
+        },
         {
           "version": "1.1.2",
           "date": "2026-07-23T20:20:36Z",
@@ -337,7 +342,8 @@
         "pluginId": "shoplist",
         "apiVersion": 3,
         "capabilities": [
-          "surfaces"
+          "surfaces",
+          "microphone"
         ],
         "launchable": true,
         "settingsActivity": ".ShopListActivity",
@@ -345,13 +351,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/beyondlevi/nexus-shoplist/releases/download/shoplist-v1.1.2/shoplist-phone-release.apk",
-        "sha256": "8c9eeafbfe722012c10ec1aebdce8e309de35c7e1ac3a0e10ec3a65b45da4f77",
+        "url": "https://github.com/beyondlevi/nexus-shoplist/releases/download/shoplist-v1.2.2/shoplist-phone-release.apk",
+        "sha256": "121203cf7361be3c4a7e109b0644caeab7936a92648d73dfd53cf25c0ad9b530",
         "signerSha256": "b479bf0dfd0c3328cfda1dcce836f257098c439e3e2617b9357152e52d63f20a",
-        "sizeBytes": 4777040,
+        "sizeBytes": 6890330,
         "packageName": "com.volund.nexus.plugin.shoplist",
-        "versionCode": 4,
-        "versionName": "1.1.2"
+        "versionCode": 7,
+        "versionName": "1.2.2"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/shoplist-icon2.png"
     },
