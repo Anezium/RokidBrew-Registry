@@ -143,13 +143,18 @@
       "description": "Read PDFs, TXT files and shared text one word at a time on the glasses, streamed from your phone. Adaptive pacing, adjustable speed, pause and sentence stepping, and per-document progress. Manage your library on the phone; read hands-free with the R08 ring.",
       "author": "beyondlevi",
       "sourceUrl": "https://github.com/beyondlevi/lume-nexus",
-      "publishedAt": "2026-07-24T15:45:00Z",
+      "publishedAt": "2026-07-24T17:10:00Z",
       "iconAsset": "lume-icon.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nLume turns Rokid glasses into a wearable speed reader. It uses RSVP (Rapid Serial Visual Presentation): text flows one word at a time at a fixed point in your field of view, so your eyes never travel across a line.\n\n- Import PDF/TXT, paste text, or share into Lume from any app (extraction stays on-device).\n- Adaptive pacing: long words, clause/sentence endings and paragraph breaks hold longer.\n- Adjustable speed (150-700 wpm), pause, and sentence stepping, all on the R08 ring.\n- Per-document reading progress; resume where you left off.\n\nFully operable by the R08 Access Bridge one-axis ring: move to select, tap to open/play/pause, back to exit."
       },
       "releases": [
+        {
+          "version": "1.0.10",
+          "date": "2026-07-24T17:10:00Z",
+          "notes": "\n- Lowered minSdk to 30 for Android 11 (API 30) support: a minSdk-31 APK could not be parsed on an API 30 phone, so the Store install failed there. No functional change otherwise.\n\n### Artifact\n\n- File: `lume-phone-release.apk`\n- SHA-256: `2f68bc11f4a9f4f22a9f8289ec0d52fe88632170fc2a07e6fd9400aa35809341`"
+        },
         {
           "version": "1.0.9",
           "date": "2026-07-24T15:45:00Z",
@@ -188,13 +193,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/beyondlevi/lume-nexus/releases/download/lume-v1.0.9/lume-phone-release.apk",
-        "sha256": "ad42574b68713c8aa6e051ceeb5a6e5acc4959e9aa3429c060996887aa85d8f7",
+        "url": "https://github.com/beyondlevi/lume-nexus/releases/download/lume-v1.0.10/lume-phone-release.apk",
+        "sha256": "2f68bc11f4a9f4f22a9f8289ec0d52fe88632170fc2a07e6fd9400aa35809341",
         "signerSha256": "ddaf2d274de1a0ca8b39e11e451ff021ef48594ad43383ad67cf7ca54480703d",
-        "sizeBytes": 17456378,
+        "sizeBytes": 17585982,
         "packageName": "com.beyondlevi.nexus.lume",
-        "versionCode": 10,
-        "versionName": "1.0.9"
+        "versionCode": 11,
+        "versionName": "1.0.10"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lume-icon.png"
     },
