@@ -17,4 +17,18 @@ jobs:
         with:
           node-version: "22"
       - run: node --test tests/*.test.mjs
-      - run: node scripts/build-registry.mjs
+      - name: Rebuild registry deterministically
+        run: |
+          generated_at="$(node -e 'const fs = require("node:fs"); const feed = JSON.parse(fs.readFileSync("dist/apps.v1.json", "utf8")); process.stdout.write(feed.generatedAt || "")')"
+          if [ -z "$generated_at" ]; then
+            echo "::error::dist/apps.v1.json is missing generatedAt"
+            exit 1
+          fi
+          ROKIDBREW_GENERATED_AT="$generated_at" node scripts/build-registry.mjs
+
+      - name: Require generated feeds to be committed
+        run: |
+          if ! git diff --exit-code -- dist/apps.v1.json dist/nexus-plugins.v1.json; then
+            echo "::error::Generated registry feeds are stale. Run 'node scripts/build-registry.mjs' and commit both dist files."
+            exit 1
+          fi

@@ -68,7 +68,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain -- apps brew.json assets/icons)" ]; then
+          if [ -z "$(git status --porcelain -- apps plugins-nexus brew.json assets/icons dist/nexus-plugins.v1.json)" ]; then
             git checkout -- dist/apps.v1.json
             echo "No registry maintenance changes to propose."
             exit 0
@@ -89,7 +89,7 @@ jobs:
             echo "## Changed files"
             echo
             echo '```text'
-            git status --short apps brew.json assets/icons dist/apps.v1.json
+            git status --short apps plugins-nexus brew.json assets/icons dist/apps.v1.json dist/nexus-plugins.v1.json
             echo '```'
           } > "$body"
 
@@ -97,7 +97,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$branch:refs/remotes/origin/$branch" || true
           git checkout -B "$branch"
-          git add apps/*.json dist/apps.v1.json
+          git add apps/*.json plugins-nexus/*.json dist/apps.v1.json dist/nexus-plugins.v1.json
           [ -f brew.json ] && git add brew.json
           git add assets/icons/*.png 2>/dev/null || true
           git commit -m "Run registry maintenance"
