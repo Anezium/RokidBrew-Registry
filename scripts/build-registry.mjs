@@ -23,7 +23,14 @@ const nexusPluginRequired = [
   "id", "kind", "name", "category", "summary", "description", "author", "sourceUrl",
   "publishedAt", "iconAsset", "screenshotAssets", "listing", "releases", "nexus", "artifact",
 ];
-const nexusCapabilityAllowlist = new Set(["surfaces", "microphone", "http_proxy", "camera"]);
+const nexusCapabilityAllowlist = new Set([
+  "surfaces",
+  "microphone",
+  "stt",
+  "http_proxy",
+  "camera",
+  "mediasync",
+]);
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -121,7 +128,7 @@ function assertNexusPlugin(plugin, file) {
   if (!Array.isArray(nexus.capabilities) ||
       nexus.capabilities.some((capability) => !nexusCapabilityAllowlist.has(capability))) {
     throw new Error(
-      `${plugin.id}: nexus.capabilities may only contain surfaces, microphone, http_proxy, or camera`,
+      `${plugin.id}: nexus.capabilities may only contain ${[...nexusCapabilityAllowlist].join(", ")}`,
     );
   }
   if (typeof nexus.launchable !== "boolean") {

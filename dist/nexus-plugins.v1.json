@@ -312,6 +312,50 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/media-icon.png"
     },
     {
+      "id": "photosync",
+      "kind": "nexus-plugin",
+      "name": "Photos Sync",
+      "category": "Utility",
+      "summary": "Glasses captures land in your phone gallery.",
+      "description": "Photos and videos you take on the glasses copy themselves into your phone gallery, in the same Hi Rokid album. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-07-26T13:35:53Z",
+      "iconAsset": "photosync-icon.png",
+      "nexus": {
+        "pluginId": "photosync",
+        "apiVersion": 3,
+        "capabilities": [
+          "mediasync"
+        ],
+        "launchable": false,
+        "settingsActivity": ".PhotoSyncSettingsActivity",
+        "minHostVersionCode": 10043
+      },
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nPhotos and videos you take on the glasses copy themselves into your phone gallery, in the same `Download/Hi Rokid/` album Hi Rokid imports into. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.\n\n## Syncing\n\nChoose when it runs: **always**, so a capture syncs as soon as you take it; **while charging**, the default, so transfers happen while the glasses rest on the charger; or **manual only**.\n\nEvery file is checksum-verified before it reaches your gallery, and an interrupted transfer resumes where it stopped instead of starting over — so a long video finishes across several sessions.\n\nThe transfer stays out of the way of everything else on the connection: it pauses for a camera session and yields whenever anything else needs the link.\n\n## Freeing space\n\nDeleting captures from the glasses once they are safely on the phone is available as an opt-in, off by default. Some glasses refuse it, and the screen says so rather than pretending."
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/photosync-v1.0.0/photosync-phone-release.apk",
+        "sha256": "31e6e0ef49bed1e6b57d201256dcd1881421a59fe7d7fa5356b1391ff2e28993",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 4784748,
+        "packageName": "com.anezium.rokidbus.plugin.photosync",
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-26T13:35:53Z",
+          "notes": "\n- First release: glasses captures copy themselves into `Download/Hi Rokid/` on the phone, over Bluetooth — no Wi-Fi on either device.\n- Three sync modes: always, while charging (default), or manual only.\n- Interrupted transfers resume from where they stopped, and every file is checksum-verified before it reaches the gallery.\n- Requires Rokid Nexus 1.0.43 or newer.\n\n### Artifact\n\n- File: `photosync-phone-release.apk`\n- SHA-256: `31e6e0ef49bed1e6b57d201256dcd1881421a59fe7d7fa5356b1391ff2e28993`"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/photosync-icon.png"
+    },
+    {
       "id": "shoplist",
       "kind": "nexus-plugin",
       "name": "Shopping List",
