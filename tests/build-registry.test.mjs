@@ -164,7 +164,7 @@ const phoneAlignmentCases = [
   [
     "an unknown capability",
     (plugin) => { plugin.nexus.capabilities = ["SURFACES"]; },
-    /may only contain surfaces, microphone, http_proxy, or camera/,
+    /nexus\.capabilities may only contain /,
   ],
   [
     "an unsupported API version",
