@@ -3,8 +3,8 @@
   "name": "JSOS",
   "category": "AI",
   "type": "combo",
-  "version": "2.0.33-watch-ui",
-  "publishedAt": "2026-07-16T15:36:47Z",
+  "version": "2.0.35-hud-refresh",
+  "publishedAt": "2026-07-27T11:11:14Z",
   "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
   "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
   "screenshotAssets": [
@@ -20,21 +20,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.33-watch-ui/JSOS-HUD-v2.0.32-openai-tts.apk",
-      "sha256": "46d68f659c4faf79b4cc91f50335fe63e6e0d210d3b8e2ee831a68546480da3c",
-      "sizeBytes": 21551743,
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-HUD-v2.0.33-hud-refresh.apk",
+      "sha256": "45e423b4d644d93c60adb23b0c46297557cc352cb1d9e8ab99c41d206cb8e07d",
+      "sizeBytes": 21568127,
       "packageName": "com.jsos.glasses",
-      "versionCode": 233,
-      "versionName": "2.0.32-openai-tts"
+      "versionCode": 234,
+      "versionName": "2.0.33-hud-refresh"
     },
     {
       "target": "phone",
-      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.33-watch-ui/JSOS-Core-v2.0.10-openai-tts.apk",
-      "sha256": "9367676230604d042feccd3d37d47205d1efb88b070f41b7cc535f23314d85db",
-      "sizeBytes": 53313895,
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-Core-v2.0.11-session-routing.apk",
+      "sha256": "e93b77e18aef43d315591d24e031dc8028dc575d09a430141e38e9294566429b",
+      "sizeBytes": 53379431,
       "packageName": "com.jsos.phone",
-      "versionCode": 210,
-      "versionName": "2.0.10-openai-tts"
+      "versionCode": 211,
+      "versionName": "2.0.11-session-routing"
     }
   ],
   "author": "IWhatsskill",
@@ -60,6 +60,22 @@
     "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
   },
   "releases": [
+    {
+      "version": "2.0.35-hud-refresh",
+      "date": "2026-07-27T11:11:14Z",
+      "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.35-hud-refresh",
+      "notes": "# JSOS v2.0.35 HUD Refresh preview\n\nThis preview refreshes the public JSOS HUD conversation layout while keeping\nthe existing Rokid safe-zone and monochrome visual language.\n\n## Highlights\n\n- Finer, dynamically sized conversation panels using 94 percent of the HUD\n  width.\n- Assistant responses remain left-aligned; optional user messages appear\n  right-aligned.\n- A persistent `YOU ON` / `YOU OFF` display switch controls the user's own\n  panels in both the normal HUD and Codex view.\n- A fixed top-left pulse slot presents `READY`, `THINK`, `LIVE`, `DONE`,\n  voice, loading, wake, and error states without shifting the header.\n- The upper divider was removed and the time, battery, connection, and voice\n  areas were tightened for the available HUD width.\n- Public Agent Wake and session labels now derive from gateway session\n  metadata instead of a fixed agent topology.\n\n## APKs\n\n- `JSOS-Core-v2.0.11-session-routing.apk`\n  - package `com.jsos.phone`\n  - versionCode `211`\n- `JSOS-HUD-v2.0.33-hud-refresh.apk`\n  - package `com.jsos.glasses`\n  - versionCode `234`\n\nJSOS Watch is unchanged in this release and is not repackaged as a new\nversion.\n\n## Preview notice\n\nJSOS remains a preview for compatible Rokid hardware and OpenClaw setups.\nReview the public setup and security documentation before installing.\n\nSource and license information remain available in the public JSOS\nrepository under AGPL-3.0, with third-party notices in `COPYRIGHT`.",
+      "changes": [
+        "Finer, dynamically sized conversation panels using 94 percent of the HUD",
+        "Assistant responses remain left-aligned; optional user messages appear",
+        "A persistent YOU ON / YOU OFF display switch controls the user's own",
+        "A fixed top-left pulse slot presents READY, THINK, LIVE, DONE,",
+        "The upper divider was removed and the time, battery, connection, and voice",
+        "Public Agent Wake and session labels now derive from gateway session",
+        "package com.jsos.phone",
+        "versionCode 211"
+      ]
+    },
     {
       "version": "2.0.33-watch-ui",
       "date": "2026-07-16T15:36:47Z",
