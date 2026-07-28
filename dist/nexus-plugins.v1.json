@@ -321,7 +321,7 @@
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-07-26T13:35:53Z",
-      "iconAsset": "photosync-icon2.png",
+      "iconAsset": "photosync-icon3.png",
       "nexus": {
         "pluginId": "photosync",
         "apiVersion": 3,
@@ -353,7 +353,7 @@
           "notes": "\n- First release: glasses captures copy themselves into `Download/Hi Rokid/` on the phone, over Bluetooth — no Wi-Fi on either device.\n- Three sync modes: always, while charging (default), or manual only.\n- Interrupted transfers resume from where they stopped, and every file is checksum-verified before it reaches the gallery.\n- Requires Rokid Nexus 1.0.43 or newer.\n\n### Artifact\n\n- File: `photosync-phone-release.apk`\n- SHA-256: `31e6e0ef49bed1e6b57d201256dcd1881421a59fe7d7fa5356b1391ff2e28993`"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/photosync-icon2.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/photosync-icon3.png"
     },
     {
       "id": "shoplist",
