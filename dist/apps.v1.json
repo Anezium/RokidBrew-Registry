@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-29T21:13:59.665Z",
+  "generatedAt": "2026-07-29T21:17:17.710Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -749,6 +749,8 @@
       "listing": {
         "descriptionMarkdown": "About Dennou Hisho Loki\n\nDennou Hisho Loki transforms Rokid glasses into an experimental AI assistant controlled by Bluetooth keyboard, voice, and smartphone. It displays Gemini-based answers on the HUD, supports calendar and mail notifications, step tracking, and weather updates.\n\nKey Features\n\n- Input via Bluetooth keyboard, voice, and smartphone\n- Gemini API answers shown on HUD with speech output\n- Google Calendar, mail notifications, and Health Connect step count via smartphone\n- Approximate location and weather forecasts from Open-Meteo\n- HUD auto-displays when raising head and auto-hides after facing forward\n- Custom shortcut to launch a separately installed Zoom camera app\n\nRequirements\n\n- Compatible Rokid glasses with ADB setup\n- Android smartphone\n- User's own Gemini API key\n- Wi-Fi or tethering for communication between glasses and phone\n\nNotes\n\n- This is an alpha, personal project and not an official Rokid or Gemini product\n- Functionality depends on device, OS version, and network setup\n- Not suitable for critical uses such as medical or legal\n- Manual APK installation required; no Google Play distribution\n- Privacy-conscious design stores API keys and personal data locally\n\nFor detailed setup and limitations, please refer to the official documentation linked in the repository."
       },
+      "iconAsset": "dennou-hisho-loki.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dennou-hisho-loki.png",
       "screenshotAssets": []
     },
     {
