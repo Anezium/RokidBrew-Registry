@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-28T22:43:13.438Z",
+  "generatedAt": "2026-07-29T21:13:47.119Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,104 +13,6 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
-    {
-      "id": "jsos",
-      "name": "JSOS",
-      "category": "AI",
-      "type": "combo",
-      "version": "2.0.35-hud-refresh",
-      "publishedAt": "2026-07-27T11:11:14Z",
-      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
-      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
-      "screenshotAssets": [
-        "jsos-core-home.jpeg",
-        "jsos-core-session-chat.jpeg",
-        "jsos-core-hud-link.png",
-        "jsos-core-hud-deployment.jpeg",
-        "jsos-hud-session-chat.png",
-        "jsos-hud-options.png",
-        "jsos-hud-commands.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-HUD-v2.0.33-hud-refresh.apk",
-          "sha256": "45e423b4d644d93c60adb23b0c46297557cc352cb1d9e8ab99c41d206cb8e07d",
-          "sizeBytes": 21568127,
-          "packageName": "com.jsos.glasses",
-          "versionCode": 234,
-          "versionName": "2.0.33-hud-refresh"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-Core-v2.0.11-session-routing.apk",
-          "sha256": "e93b77e18aef43d315591d24e031dc8028dc575d09a430141e38e9294566429b",
-          "sizeBytes": 53379431,
-          "packageName": "com.jsos.phone",
-          "versionCode": 211,
-          "versionName": "2.0.11-session-routing"
-        }
-      ],
-      "author": "IWhatsskill",
-      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
-      "listing": {
-        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
-      },
-      "releases": [
-        {
-          "version": "2.0.35-hud-refresh",
-          "date": "2026-07-27T11:11:14Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.35-hud-refresh",
-          "notes": "# JSOS v2.0.35 HUD Refresh preview\n\nThis preview refreshes the public JSOS HUD conversation layout while keeping\nthe existing Rokid safe-zone and monochrome visual language.\n\n## Highlights\n\n- Finer, dynamically sized conversation panels using 94 percent of the HUD\n  width.\n- Assistant responses remain left-aligned; optional user messages appear\n  right-aligned.\n- A persistent `YOU ON` / `YOU OFF` display switch controls the user's own\n  panels in both the normal HUD and Codex view.\n- A fixed top-left pulse slot presents `READY`, `THINK`, `LIVE`, `DONE`,\n  voice, loading, wake, and error states without shifting the header.\n- The upper divider was removed and the time, battery, connection, and voice\n  areas were tightened for the available HUD width.\n- Public Agent Wake and session labels now derive from gateway session\n  metadata instead of a fixed agent topology.\n\n## APKs\n\n- `JSOS-Core-v2.0.11-session-routing.apk`\n  - package `com.jsos.phone`\n  - versionCode `211`\n- `JSOS-HUD-v2.0.33-hud-refresh.apk`\n  - package `com.jsos.glasses`\n  - versionCode `234`\n\nJSOS Watch is unchanged in this release and is not repackaged as a new\nversion.\n\n## Preview notice\n\nJSOS remains a preview for compatible Rokid hardware and OpenClaw setups.\nReview the public setup and security documentation before installing.\n\nSource and license information remain available in the public JSOS\nrepository under AGPL-3.0, with third-party notices in `COPYRIGHT`.",
-          "changes": [
-            "Finer, dynamically sized conversation panels using 94 percent of the HUD",
-            "Assistant responses remain left-aligned; optional user messages appear",
-            "A persistent YOU ON / YOU OFF display switch controls the user's own",
-            "A fixed top-left pulse slot presents READY, THINK, LIVE, DONE,",
-            "The upper divider was removed and the time, battery, connection, and voice",
-            "Public Agent Wake and session labels now derive from gateway session",
-            "package com.jsos.phone",
-            "versionCode 211"
-          ]
-        },
-        {
-          "version": "2.0.33-watch-ui",
-          "date": "2026-07-16T15:36:47Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.33-watch-ui",
-          "notes": "JSOS v2.0.33 Watch UI preview.\n\nThis release refreshes the Wear OS companion with a cleaner cyan panel system designed for round watch displays.\n\nIncluded:\n\n- New overview-to-detail navigation across the Watch companion.\n- Cyan JSOS panels with clearer active controls and status accents.\n- Persistent Dark and Light appearance modes.\n- Stronger adaptive panel borders for reliable contrast in Light mode.\n- Round-display spacing and scrolling improvements to keep controls inside the visible area.\n- Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.\n- JSOS Watch `0.5-watch-ui` with versionCode `5`.\n- The unchanged JSOS Core `2.0.10-openai-tts` and JSOS HUD `2.0.32-openai-tts` APKs are included for a complete install set.\n- All APKs are bundled together in one zip for easier downloading.\n\nNotes:\n\n- Development preview, not a finished consumer product.\n- JSOS Core remains responsible for gateway access, credentials, sessions, models, Codex routing, and voice services.\n- The Watch companion communicates with JSOS Core through the Wear OS Data Layer and does not store OpenClaw credentials.",
-          "changes": [
-            "New overview-to-detail navigation across the Watch companion.",
-            "Cyan JSOS panels with clearer active controls and status accents.",
-            "Persistent Dark and Light appearance modes.",
-            "Stronger adaptive panel borders for reliable contrast in Light mode.",
-            "Round-display spacing and scrolling improvements to keep controls inside the visible area.",
-            "Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.",
-            "JSOS Watch 0.5-watch-ui with versionCode 5.",
-            "The unchanged JSOS Core 2.0.10-openai-tts and JSOS HUD 2.0.32-openai-tts APKs are included for a complete install set."
-          ]
-        },
-        {
-          "version": "2.0-preview",
-          "date": "2026-05-28T11:55:21Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
-          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-07-29T11:11:14.000Z",
-      "iconAsset": "jsos.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
-      ]
-    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -1503,6 +1405,76 @@
       ]
     },
     {
+      "id": "glasstube",
+      "name": "GlassTube",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.3",
+      "summary": "Watch YouTube ad-free on Rokid AR glasses with ring navigation and paired phone+glasses apps",
+      "description": "GlassTube lets you watch YouTube ad-free on Rokid AR glasses using paired Android apps on your phone and glasses. Navigate with the R08 smart-ring and choose audio-only or audio+video modes. No Google login required.",
+      "author": "beyondlevi",
+      "sourceUrl": "https://github.com/beyondlevi/glasstube",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/beyondlevi/glasstube/releases/download/v0.1.3/glasstube-glasses-0.1.3-debug.apk",
+          "sha256": "45a5dccc90f84cd5a16299614bd8802982d615a99c7de56869c9c56f864f7189",
+          "sizeBytes": 15162637,
+          "packageName": "com.volund.glasstube.glasses",
+          "versionCode": 4,
+          "versionName": "0.1.3"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/beyondlevi/glasstube/releases/download/v0.1.3/glasstube-phone-0.1.3-debug.apk",
+          "sha256": "66add5d087d1f7cadea6e650e8ab66bfc68d10b3355eaaad46545801521bba28",
+          "sizeBytes": 19031024,
+          "packageName": "com.volund.glasstube.phone",
+          "versionCode": 4,
+          "versionName": "0.1.3"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.1.3",
+          "date": "2026-07-21T11:15:10Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.3",
+          "notes": "The link diagnostics traced the failure to the RFCOMM channel not establishing on either side, despite permission and pairing — the signature of a BLE-only bond (SPP needs a Bluetooth Classic bond). This release corrects the phone foreground-service type for Bluetooth and shows the exact connect exception on the glasses HUD. FIX ON YOUR SIDE: pair the phone and glasses over Bluetooth Classic in Android settings (not only via Hi Rokid), then retest.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2",
+          "date": "2026-07-21T10:57:29Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.2",
+          "notes": "Diagnostics release for the \"Connecting\" issue. The glasses HUD now shows exactly why it is not connected (no Bluetooth permission / no paired phone / connecting / waiting for handshake), and fixes a bug where a missing BLUETOOTH_CONNECT killed the connect loop silently. Install both, and read what the glasses HUD now says.",
+          "changes": []
+        },
+        {
+          "version": "0.1.1",
+          "date": "2026-07-21T10:00:54Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.1",
+          "notes": "Fixes the phone/glasses link getting stuck at \"Connecting\".\n\nThe transport was CXR-M-only with empty SDK seams, so it never connected. This release switches to a **direct Bluetooth Classic SPP (RFCOMM)** link — phone as server, glasses as client — the mechanism proven by the rokid-volund-os reference (its phone app has no Rokid SDK and connects over SPP).\n\n**Setup:**\n1. Pair the glasses with the phone at the OS Bluetooth level (Hi Rokid does this).\n2. Install both APKs; grant BLUETOOTH_CONNECT on both.\n3. Tap \"Connect to glasses\" on the phone; the glasses connect and handshake automatically.\n\nAPKs are debug builds. See CHANGELOG.md for details.",
+          "changes": [
+            "Pair the glasses with the phone at the OS Bluetooth level (Hi Rokid does this).",
+            "Install both APKs; grant BLUETOOTHCONNECT on both.",
+            "Tap \"Connect to glasses\" on the phone; the glasses connect and handshake automatically."
+          ]
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-07-21T02:14:01Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.0",
+          "notes": "First public release. Paired phone + glasses apps building end to end.\n\n**Modes:** audio-only (phone) and audio+video (glasses), ad-free via Piped. Optional Piped subscription feed. 100% R08 ring-navigable HUD.\n\n**APKs (debug):**\n- glasstube-phone-0.1.0-debug.apk — install on the Android phone.\n- glasstube-glasses-0.1.0-debug.apk — sideload on the Rokid glasses via Hi Rokid.\n\nDebug builds. The Rokid CXR-M SDK binding is left as marked seams; fill them before running on hardware. See README and CHANGELOG for full status and known gaps.",
+          "changes": []
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "About GlassTube\n\nGlassTube is a paired system of Android apps for Rokid AR glasses and your phone that enables ad-free YouTube playback. It uses a direct Bluetooth link for communication and supports two playback modes: audio-only and audio+video.\n\nKey Features\n\n- Ad-free YouTube streaming via Piped/NewPipeExtractor without Google login\n- Two playback modes: audio-only (phone plays audio) and audio+video (glasses play video)\n- Full navigation using the R08 smart-ring on the glasses\n- Phone app manages account, feed, search, and stream resolution\n- Glasses render video and handle playback controls\n\nHow It Works\n\n- Phone and glasses communicate over Bluetooth Classic SPP\n- Phone owns the Piped account and resolves streams\n- Glasses connect as a Bluetooth client and display the HUD\n- Audio-only mode streams audio from phone to glasses\n- Audio+video mode streams video directly to glasses over Wi-Fi\n\nRequirements\n\n- Rokid AR glasses paired with your Android phone via Bluetooth\n- Grant Bluetooth permissions on both devices\n- Use the R08 smart-ring for navigation\n\nNotes\n\n- Use for personal and educational purposes; ad-free extraction is a gray area legally\n- Not affiliated with Google, YouTube, or Rokid\n- Optional Piped account unlocks subscription feeds\n\nFor more details, visit the [GlassTube GitHub repository](https://github.com/beyondlevi/glasstube)."
+      },
+      "screenshotAssets": []
+    },
+    {
       "id": "hubu",
       "name": "hubu",
       "category": "Fitness",
@@ -1567,6 +1539,104 @@
       "iconAsset": "hubu.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/hubu.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "jsos",
+      "name": "JSOS",
+      "category": "AI",
+      "type": "combo",
+      "version": "2.0.35-hud-refresh",
+      "publishedAt": "2026-07-27T11:11:14Z",
+      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
+      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
+      "screenshotAssets": [
+        "jsos-core-home.jpeg",
+        "jsos-core-session-chat.jpeg",
+        "jsos-core-hud-link.png",
+        "jsos-core-hud-deployment.jpeg",
+        "jsos-hud-session-chat.png",
+        "jsos-hud-options.png",
+        "jsos-hud-commands.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-HUD-v2.0.33-hud-refresh.apk",
+          "sha256": "45e423b4d644d93c60adb23b0c46297557cc352cb1d9e8ab99c41d206cb8e07d",
+          "sizeBytes": 21568127,
+          "packageName": "com.jsos.glasses",
+          "versionCode": 234,
+          "versionName": "2.0.33-hud-refresh"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-Core-v2.0.11-session-routing.apk",
+          "sha256": "e93b77e18aef43d315591d24e031dc8028dc575d09a430141e38e9294566429b",
+          "sizeBytes": 53379431,
+          "packageName": "com.jsos.phone",
+          "versionCode": 211,
+          "versionName": "2.0.11-session-routing"
+        }
+      ],
+      "author": "IWhatsskill",
+      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
+      "listing": {
+        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
+      },
+      "releases": [
+        {
+          "version": "2.0.35-hud-refresh",
+          "date": "2026-07-27T11:11:14Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.35-hud-refresh",
+          "notes": "# JSOS v2.0.35 HUD Refresh preview\n\nThis preview refreshes the public JSOS HUD conversation layout while keeping\nthe existing Rokid safe-zone and monochrome visual language.\n\n## Highlights\n\n- Finer, dynamically sized conversation panels using 94 percent of the HUD\n  width.\n- Assistant responses remain left-aligned; optional user messages appear\n  right-aligned.\n- A persistent `YOU ON` / `YOU OFF` display switch controls the user's own\n  panels in both the normal HUD and Codex view.\n- A fixed top-left pulse slot presents `READY`, `THINK`, `LIVE`, `DONE`,\n  voice, loading, wake, and error states without shifting the header.\n- The upper divider was removed and the time, battery, connection, and voice\n  areas were tightened for the available HUD width.\n- Public Agent Wake and session labels now derive from gateway session\n  metadata instead of a fixed agent topology.\n\n## APKs\n\n- `JSOS-Core-v2.0.11-session-routing.apk`\n  - package `com.jsos.phone`\n  - versionCode `211`\n- `JSOS-HUD-v2.0.33-hud-refresh.apk`\n  - package `com.jsos.glasses`\n  - versionCode `234`\n\nJSOS Watch is unchanged in this release and is not repackaged as a new\nversion.\n\n## Preview notice\n\nJSOS remains a preview for compatible Rokid hardware and OpenClaw setups.\nReview the public setup and security documentation before installing.\n\nSource and license information remain available in the public JSOS\nrepository under AGPL-3.0, with third-party notices in `COPYRIGHT`.",
+          "changes": [
+            "Finer, dynamically sized conversation panels using 94 percent of the HUD",
+            "Assistant responses remain left-aligned; optional user messages appear",
+            "A persistent YOU ON / YOU OFF display switch controls the user's own",
+            "A fixed top-left pulse slot presents READY, THINK, LIVE, DONE,",
+            "The upper divider was removed and the time, battery, connection, and voice",
+            "Public Agent Wake and session labels now derive from gateway session",
+            "package com.jsos.phone",
+            "versionCode 211"
+          ]
+        },
+        {
+          "version": "2.0.33-watch-ui",
+          "date": "2026-07-16T15:36:47Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.33-watch-ui",
+          "notes": "JSOS v2.0.33 Watch UI preview.\n\nThis release refreshes the Wear OS companion with a cleaner cyan panel system designed for round watch displays.\n\nIncluded:\n\n- New overview-to-detail navigation across the Watch companion.\n- Cyan JSOS panels with clearer active controls and status accents.\n- Persistent Dark and Light appearance modes.\n- Stronger adaptive panel borders for reliable contrast in Light mode.\n- Round-display spacing and scrolling improvements to keep controls inside the visible area.\n- Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.\n- JSOS Watch `0.5-watch-ui` with versionCode `5`.\n- The unchanged JSOS Core `2.0.10-openai-tts` and JSOS HUD `2.0.32-openai-tts` APKs are included for a complete install set.\n- All APKs are bundled together in one zip for easier downloading.\n\nNotes:\n\n- Development preview, not a finished consumer product.\n- JSOS Core remains responsible for gateway access, credentials, sessions, models, Codex routing, and voice services.\n- The Watch companion communicates with JSOS Core through the Wear OS Data Layer and does not store OpenClaw credentials.",
+          "changes": [
+            "New overview-to-detail navigation across the Watch companion.",
+            "Cyan JSOS panels with clearer active controls and status accents.",
+            "Persistent Dark and Light appearance modes.",
+            "Stronger adaptive panel borders for reliable contrast in Light mode.",
+            "Round-display spacing and scrolling improvements to keep controls inside the visible area.",
+            "Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.",
+            "JSOS Watch 0.5-watch-ui with versionCode 5.",
+            "The unchanged JSOS Core 2.0.10-openai-tts and JSOS HUD 2.0.32-openai-tts APKs are included for a complete install set."
+          ]
+        },
+        {
+          "version": "2.0-preview",
+          "date": "2026-05-28T11:55:21Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
+          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-07-29T11:11:14.000Z",
+      "iconAsset": "jsos.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
+      ]
     },
     {
       "id": "lc-hot100",

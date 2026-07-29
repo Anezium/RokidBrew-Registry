@@ -1,0 +1,89 @@
+{
+  "id": "glasstube",
+  "name": "GlassTube",
+  "category": "Media",
+  "type": "combo",
+  "version": "0.1.3",
+  "summary": "Watch YouTube ad-free on Rokid AR glasses with ring navigation and paired phone+glasses apps",
+  "description": "GlassTube lets you watch YouTube ad-free on Rokid AR glasses using paired Android apps on your phone and glasses. Navigate with the R08 smart-ring and choose audio-only or audio+video modes. No Google login required.",
+  "author": "beyondlevi",
+  "sourceUrl": "https://github.com/beyondlevi/glasstube",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/beyondlevi/glasstube/releases/download/v0.1.3/glasstube-glasses-0.1.3-debug.apk",
+      "sha256": "45a5dccc90f84cd5a16299614bd8802982d615a99c7de56869c9c56f864f7189",
+      "sizeBytes": 15162637,
+      "packageName": "com.volund.glasstube.glasses",
+      "versionCode": 4,
+      "versionName": "0.1.3"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/beyondlevi/glasstube/releases/download/v0.1.3/glasstube-phone-0.1.3-debug.apk",
+      "sha256": "66add5d087d1f7cadea6e650e8ab66bfc68d10b3355eaaad46545801521bba28",
+      "sizeBytes": 19031024,
+      "packageName": "com.volund.glasstube.phone",
+      "versionCode": 4,
+      "versionName": "0.1.3"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.1.3",
+      "date": "2026-07-21T11:15:10Z",
+      "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.3",
+      "notes": "The link diagnostics traced the failure to the RFCOMM channel not establishing on either side, despite permission and pairing — the signature of a BLE-only bond (SPP needs a Bluetooth Classic bond). This release corrects the phone foreground-service type for Bluetooth and shows the exact connect exception on the glasses HUD. FIX ON YOUR SIDE: pair the phone and glasses over Bluetooth Classic in Android settings (not only via Hi Rokid), then retest.",
+      "changes": []
+    },
+    {
+      "version": "0.1.2",
+      "date": "2026-07-21T10:57:29Z",
+      "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.2",
+      "notes": "Diagnostics release for the \"Connecting\" issue. The glasses HUD now shows exactly why it is not connected (no Bluetooth permission / no paired phone / connecting / waiting for handshake), and fixes a bug where a missing BLUETOOTH_CONNECT killed the connect loop silently. Install both, and read what the glasses HUD now says.",
+      "changes": []
+    },
+    {
+      "version": "0.1.1",
+      "date": "2026-07-21T10:00:54Z",
+      "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.1",
+      "notes": "Fixes the phone/glasses link getting stuck at \"Connecting\".\n\nThe transport was CXR-M-only with empty SDK seams, so it never connected. This release switches to a **direct Bluetooth Classic SPP (RFCOMM)** link — phone as server, glasses as client — the mechanism proven by the rokid-volund-os reference (its phone app has no Rokid SDK and connects over SPP).\n\n**Setup:**\n1. Pair the glasses with the phone at the OS Bluetooth level (Hi Rokid does this).\n2. Install both APKs; grant BLUETOOTH_CONNECT on both.\n3. Tap \"Connect to glasses\" on the phone; the glasses connect and handshake automatically.\n\nAPKs are debug builds. See CHANGELOG.md for details.",
+      "changes": [
+        "Pair the glasses with the phone at the OS Bluetooth level (Hi Rokid does this).",
+        "Install both APKs; grant BLUETOOTHCONNECT on both.",
+        "Tap \"Connect to glasses\" on the phone; the glasses connect and handshake automatically."
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-07-21T02:14:01Z",
+      "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.0",
+      "notes": "First public release. Paired phone + glasses apps building end to end.\n\n**Modes:** audio-only (phone) and audio+video (glasses), ad-free via Piped. Optional Piped subscription feed. 100% R08 ring-navigable HUD.\n\n**APKs (debug):**\n- glasstube-phone-0.1.0-debug.apk — install on the Android phone.\n- glasstube-glasses-0.1.0-debug.apk — sideload on the Rokid glasses via Hi Rokid.\n\nDebug builds. The Rokid CXR-M SDK binding is left as marked seams; fill them before running on hardware. See README and CHANGELOG for full status and known gaps.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "beyondlevi/glasstube",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "beyondlevi/glasstube",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^glasstube-glasses-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)-debug\\.apk$"
+      },
+      {
+        "target": "phone",
+        "match": "^glasstube-phone-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)-debug\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "About GlassTube\n\nGlassTube is a paired system of Android apps for Rokid AR glasses and your phone that enables ad-free YouTube playback. It uses a direct Bluetooth link for communication and supports two playback modes: audio-only and audio+video.\n\nKey Features\n\n- Ad-free YouTube streaming via Piped/NewPipeExtractor without Google login\n- Two playback modes: audio-only (phone plays audio) and audio+video (glasses play video)\n- Full navigation using the R08 smart-ring on the glasses\n- Phone app manages account, feed, search, and stream resolution\n- Glasses render video and handle playback controls\n\nHow It Works\n\n- Phone and glasses communicate over Bluetooth Classic SPP\n- Phone owns the Piped account and resolves streams\n- Glasses connect as a Bluetooth client and display the HUD\n- Audio-only mode streams audio from phone to glasses\n- Audio+video mode streams video directly to glasses over Wi-Fi\n\nRequirements\n\n- Rokid AR glasses paired with your Android phone via Bluetooth\n- Grant Bluetooth permissions on both devices\n- Use the R08 smart-ring for navigation\n\nNotes\n\n- Use for personal and educational purposes; ad-free extraction is a gray area legally\n- Not affiliated with Google, YouTube, or Rokid\n- Optional Piped account unlocks subscription feeds\n\nFor more details, visit the [GlassTube GitHub repository](https://github.com/beyondlevi/glasstube)."
+  }
+}
