@@ -18,6 +18,15 @@
       "packageName": "xyz.hypeezcape.glowreader",
       "versionCode": 15,
       "versionName": "1.5"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/karlua86/glow-reader/releases/download/v1.5/GlowRemote-v1.4.apk",
+      "sha256": "efa3700ba138f28085cbf915b2a8468ac54951cb99aaebf8732789eb5e8e5410",
+      "sizeBytes": 839926,
+      "packageName": "xyz.hypeezcape.glowremote",
+      "versionCode": 14,
+      "versionName": "1.4"
     }
   ],
   "releases": [
@@ -98,9 +107,19 @@
       {
         "target": "glasses",
         "match": "^GlowReader-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      },
+      {
+        "target": "phone",
+        "match": "^GlowRemote-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
       }
     ]
   },
+  "screenshotAssets": [
+    "glow-reader-1.jpg",
+    "glow-reader-2.jpg",
+    "glow-reader-3.png",
+    "glow-reader-4.png"
+  ],
   "listing": {
     "descriptionMarkdown": "## About Glow Reader\nGlow Reader is a book reader app for Rokid AI Glasses that shows only floating words with no glowing background block, providing a truly invisible background for comfortable night reading.\n\n## Key Features\n- Supports EPUB, PDF (reflowed), TXT, and Markdown formats\n- Five reading modes: page flip, RSVP (word-by-word), teleprompter auto-scroll, sentence-by-sentence, and paragraph-by-paragraph\n- \"Close the book\" gesture: double-tap temple to power down display to full invisibility while keeping reading position\n- Adjustable text brightness and display area for low light conditions\n- Full-lines-only rendering to avoid half-cut words\n- Persistent settings and reading position per book\n- Books auto-appear from the glasses' Download folder or can be pushed via phone\n- AI summary feature via companion phone app using your own API key\n\n## Controls\n- Glasses temple touchpad: single tap to play/pause, swipe to turn page, double-tap to close/reopen book\n- Compatible with Bluetooth keyboard/mouse for navigation\n- Companion phone app (Glow Remote) offers remote control, live settings, and book transfer over WiFi\n\n## Requirements\n- Rokid AI Glasses with WiFi enabled\n- Rokid Manager installed\n- Companion phone app for remote features (optional)\n\nFor more details and downloads, visit the [GitHub repository](https://github.com/karlua86/glow-reader)."
   }
