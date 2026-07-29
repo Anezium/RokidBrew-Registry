@@ -1,0 +1,59 @@
+{
+  "id": "https://github.com/ksuzukigh/rokid-wifi-on/releases --id rokid-wifi-on --name Wi-Fi ON --category Utility --type glasses --target glasses --phone_required false --dry_run false[2]",
+  "name": "https://github.com/ksuzukigh/rokid-wifi-on/releases --id rokid-wifi-on --name Wi-Fi ON --category Utility --type glasses --target glasses --phone_required false --dry_run false[4]",
+  "category": "https://github.com/ksuzukigh/rokid-wifi-on/releases --id rokid-wifi-on --name Wi-Fi ON --category Utility --type glasses --target glasses --phone_required false --dry_run false[6]",
+  "type": "https://github.com/ksuzukigh/rokid-wifi-on/releases --id rokid-wifi-on --name Wi-Fi ON --category Utility --type glasses --target glasses --phone_required false --dry_run false[8]",
+  "version": "0.5",
+  "summary": "Restore Wi-Fi on Rokid Glasses RV101 standalone without phone or cable",
+  "description": "Wi-Fi ON is a utility app for Rokid AI Glasses RV101 that automatically turns on Wi-Fi and reconnects to registered networks without needing a phone or cable. It also restores Mac connection for Rokid Control after reboot.",
+  "author": "ksuzukigh",
+  "sourceUrl": "https://github.com/ksuzukigh/rokid-wifi-on",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "false",
+      "url": "https://github.com/ksuzukigh/rokid-wifi-on/releases/download/v0.5/Wi-Fi-ON.apk"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.5",
+      "date": "2026-07-28T07:03:00Z",
+      "sourceReleaseUrl": "https://github.com/ksuzukigh/rokid-wifi-on/releases/tag/v0.5",
+      "notes": "## 操作を自動復旧へ戻しました\n\nWi-Fi ONを開くだけで、Wi-FiとRokid Control用の接続が自動で復旧します。「Wi-Fiに接続しました」「Mac操作用の接続も復旧しました」と表示されたら、右テンプルを1回タップして閉じてください。\n\nADBの認証を独立環境で再検証し、登録済みの鍵を持たない接続がRV101のTLS認証で拒否されることを確認しました。",
+      "changes": []
+    },
+    {
+      "version": "0.4",
+      "date": "2026-07-28T06:19:31Z",
+      "sourceReleaseUrl": "https://github.com/ksuzukigh/rokid-wifi-on/releases/tag/v0.4",
+      "notes": "- 開き直すたびにWi-Fi接続を正しく確認\n- インストール前に付与する権限を明示\n- Mac操作用の接続は、画面案内後のテンプル操作時だけオン\n- 未登録パソコンからも接続できる実機結果をREADMEへ明記\n- 正式署名APK、SHA-256: e46cd2b4114ff8c8b3bbd0dc6cd9bb5c16f9d2d5df96b1b77dcf7cf1a82dd24e",
+      "changes": [
+        "開き直すたびにWi-Fi接続を正しく確認",
+        "インストール前に付与する権限を明示",
+        "Mac操作用の接続は、画面案内後のテンプル操作時だけオン",
+        "未登録パソコンからも接続できる実機結果をREADMEへ明記",
+        "正式署名APK、SHA-256: e46cd2b4114ff8c8b3bbd0dc6cd9bb5c16f9d2d5df96b1b77dcf7cf1a82dd24e"
+      ]
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "ksuzukigh/rokid-wifi-on",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "ksuzukigh/rokid-wifi-on",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "false",
+        "match": "^Wi-Fi-ON\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "About Wi-Fi ON\n\nWi-Fi ON is a small utility app for Rokid AI Glasses RV101 that restores Wi-Fi connectivity independently on the glasses. It automatically enables Wi-Fi and reconnects to previously registered networks.\n\nKey features\n\n- Automatically turns Wi-Fi on when launched\n- Reconnects to registered Wi-Fi networks without user input\n- Restores Mac connection for \"Rokid Control\" after device reboot\n- Does not require a phone or additional cables during normal use\n\nHow it works\n\nOpen the app from the glasses app list. It will enable Wi-Fi and connect to an available registered network. Once connected, it displays confirmation messages and can be closed with a single tap.\n\nSafety\n\n- Accesses only Wi-Fi and Rokid Control connection settings\n- Does not access camera, microphone, location, photos, or contacts\n- Only authorized Macs can connect via Wi-Fi\n\nNotes\n\n- Initial setup requires a Mac and Rokid development cable to install the app and configure permissions\n- Use on trusted Wi-Fi networks\n- For first-time Wi-Fi connections, register networks manually in Rokid settings\n- Designed specifically for Rokid AI Glasses RV101\n\nRemoval\n\nUninstall via the Rokid smartphone app under \"Glasses App Management\" and reboot the glasses to disable Mac connection recovery."
+  }
+}
