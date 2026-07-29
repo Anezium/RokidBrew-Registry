@@ -1,0 +1,46 @@
+{
+  "id": "https://github.com/qhduan/rokid-fc/releases --id rokid-fc --name Rokid FC --category Games --type glasses --target glasses --phone_required true --dry_run false[2]",
+  "name": "https://github.com/qhduan/rokid-fc/releases --id rokid-fc --name Rokid FC --category Games --type glasses --target glasses --phone_required true --dry_run false[4]",
+  "category": "https://github.com/qhduan/rokid-fc/releases --id rokid-fc --name Rokid FC --category Games --type glasses --target glasses --phone_required true --dry_run false[6]",
+  "type": "https://github.com/qhduan/rokid-fc/releases --id rokid-fc --name Rokid FC --category Games --type glasses --target glasses --phone_required true --dry_run false[8]",
+  "version": "0.1",
+  "summary": "Rokid FC NES emulator for Rokid AR glasses with phone browser as gamepad",
+  "description": "Rokid FC is an NES emulator for Rokid AR glasses that displays games on the glasses and uses a phone browser as a real-time gamepad over LAN. Upload .nes ROMs via the phone browser and control gameplay with low latency and instant save/load features.",
+  "author": "qhduan",
+  "sourceUrl": "https://github.com/qhduan/rokid-fc",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "true",
+      "url": "https://github.com/qhduan/rokid-fc/releases/download/0.1/app-release.apk"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.1",
+      "date": "2026-07-21T13:44:25Z",
+      "sourceReleaseUrl": "https://github.com/qhduan/rokid-fc/releases/tag/0.1",
+      "notes": null,
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "qhduan/rokid-fc",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "qhduan/rokid-fc",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "true",
+        "match": "^app-release\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "# About\nRokid FC is an NES (FC) emulator designed for Rokid smart glasses. It displays the game screen on the glasses while using a phone browser as a gamepad controller over a local network.\n\n# Key Features\n- Upload and play `.nes` ROMs with NesEmulator core supporting common mappers.\n- Phone browser acts as a gamepad with directional keys, A/B buttons, START/SELECT, volume control, and instant save/load.\n- Low latency input via persistent WebSocket connection ensuring smooth gameplay.\n- Game library management through the phone browser with upload and delete options.\n\n# How It Works\n- Open the app on the glasses to display the game list and server address.\n- On the phone, open the glasses' address in a browser to access the game library.\n- Upload games and enter gamepad mode to control the game running on the glasses.\n\n# Controls\n- Top center: Volume down/up, instant save/load.\n- Left side: Directional pad.\n- Right side: A (top right), B (bottom left) buttons.\n- Bottom center: SELECT and START buttons.\n\n# Notes\n- Adding the gamepad page to the phone's home screen enables a fullscreen experience without browser UI.\n- Ensure stable WiFi connection between glasses and phone for optimal performance."
+  }
+}
