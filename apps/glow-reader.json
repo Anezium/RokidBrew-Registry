@@ -1,0 +1,126 @@
+{
+  "id": "glow-reader",
+  "name": "Glow Reader",
+  "category": "Reader",
+  "type": "combo",
+  "version": "1.5",
+  "summary": "Floating-text book reader for Rokid AI Glasses with no glowing background, just words",
+  "description": "Glow Reader displays floating words on Rokid AI Glasses without a glowing background. It supports EPUB, PDF, TXT, and Markdown with multiple reading modes and a companion phone app for remote control and AI summaries.",
+  "author": "karlua86",
+  "sourceUrl": "https://github.com/karlua86/glow-reader",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/karlua86/glow-reader/releases/download/v1.5/GlowReader-v1.5.apk",
+      "sha256": "55e65f277d07d4fe89a9f782e207faadc7af02ce1b5f97f4338ea0210536c831",
+      "sizeBytes": 9930882,
+      "packageName": "xyz.hypeezcape.glowreader",
+      "versionCode": 15,
+      "versionName": "1.5"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/karlua86/glow-reader/releases/download/v1.5/GlowRemote-v1.4.apk",
+      "sha256": "efa3700ba138f28085cbf915b2a8468ac54951cb99aaebf8732789eb5e8e5410",
+      "sizeBytes": 839926,
+      "packageName": "xyz.hypeezcape.glowremote",
+      "versionCode": 14,
+      "versionName": "1.4"
+    }
+  ],
+  "releases": [
+    {
+      "version": "1.5",
+      "date": "2026-07-19T16:44:26Z",
+      "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.5",
+      "notes": "Tested in extreme darkness on real glasses:\n\n**Close-the-book is now TRULY see-through.** In v1.4, a closed book still left a very faint grey veil in total darkness (the display panel was on, showing black). v1.5 powers the panel down: brightness drops to zero instantly and the display is allowed to sleep, exactly like the glasses native idle state.\n\nWhat to expect:\n- Double-tap closes the book. A faint veil fades out over ~5 seconds as the panel sleeps, then the glass is completely clear.\n- Double-tap reopens at your exact position. If the display had fully slept, double-tap twice (first wakes the screen, second reopens).\n- While closed, all other taps and swipes are ignored.\n\n**Files:** GlowReader-v1.5.apk = glasses (new), GlowRemote-v1.4.apk = Android phone (unchanged). Install over the old version - nothing is lost.",
+      "changes": [
+        "Double-tap closes the book. A faint veil fades out over ~5 seconds as the panel sleeps, then the glass is completely clear.",
+        "Double-tap reopens at your exact position. If the display had fully slept, double-tap twice (first wakes the screen, second reopens).",
+        "While closed, all other taps and swipes are ignored."
+      ]
+    },
+    {
+      "version": "1.4",
+      "date": "2026-07-19T14:23:36Z",
+      "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.4",
+      "notes": "Two quality-of-life updates, both tested on real glasses:\n\n**Close the book (glasses):**\n- Double-tap the temple while reading: the display goes COMPLETELY invisible - you stay in the book, position kept, auto-play paused. Perfect for when someone talks to you.\n- Double-tap again to reopen exactly where you were.\n- While closed, taps and swipes do nothing, so you cannot light the display by accident.\n- Z key or the phone app button do the same. Note: double-tap no longer exits to the library - use the phone Library button or B key for that.\n\n**AI summary lengths (phone):**\n- Choose Short (1-2 sentences per chapter), Medium (~150 words) or Long (~400 words).\n- Each version saves under its own name, so you can keep all three per book.\n\n**Files:** GlowReader-v1.4.apk = glasses, GlowRemote-v1.4.apk = Android phone. Update by installing over the old version - nothing is lost.",
+      "changes": [
+        "Double-tap the temple while reading: the display goes COMPLETELY invisible - you stay in the book, position kept, auto-play paused. Perfect for when someone talks to you.",
+        "Double-tap again to reopen exactly where you were.",
+        "While closed, taps and swipes do nothing, so you cannot light the display by accident.",
+        "Z key or the phone app button do the same. Note: double-tap no longer exits to the library - use the phone Library button or B key for that.",
+        "Choose Short (1-2 sentences per chapter), Medium (~150 words) or Long (~400 words).",
+        "Each version saves under its own name, so you can keep all three per book."
+      ]
+    },
+    {
+      "version": "1.3",
+      "date": "2026-07-17T03:44:21Z",
+      "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.3",
+      "notes": "What is new since v1.0:\n\n**Glow Remote (phone):**\n- AI summary of the current book: chapter-by-chapter, in the book language, using YOUR OWN API key (DeepSeek / OpenAI / Claude) - the finished summary lands in the glasses library as a readable book\n- Manage / delete books on the glasses from the phone\n- Simplified remote: one Back / Play-Pause / Forward row that works in every mode\n\n**Glow Reader (glasses):**\n- Low-light mode fixed: now applies on every screen, and dims the text as a guaranteed fallback\n- Words-per-minute always visible in a status line at the bottom, in all 5 modes\n- Book text can no longer overlap the status line\n- Books sent from the phone are stored in the shared Books folder: they survive even an app uninstall\n- Updating the app never loses books, positions, highlights or settings - just install the new APK over the old one\n\n**Files:** GlowReader-v1.3.apk = glasses, GlowRemote-v1.2.apk = Android phone.",
+      "changes": [
+        "Manage / delete books on the glasses from the phone",
+        "Simplified remote: one Back / Play-Pause / Forward row that works in every mode",
+        "Low-light mode fixed: now applies on every screen, and dims the text as a guaranteed fallback",
+        "Words-per-minute always visible in a status line at the bottom, in all 5 modes",
+        "Book text can no longer overlap the status line",
+        "Books sent from the phone are stored in the shared Books folder: they survive even an app uninstall",
+        "Updating the app never loses books, positions, highlights or settings - just install the new APK over the old one"
+      ]
+    },
+    {
+      "version": "1.0",
+      "date": "2026-07-15T03:11:08Z",
+      "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.0",
+      "notes": "Big update: the phone app now mirrors the book open on the glasses!\n\n**New in Glow Remote (phone):**\n- 📑 Reader view: full book text on your phone, auto-follows the glasses position\n- Table of contents dropdown — pick a chapter, the glasses jump there\n- Position slider + double-tap anywhere in the text to send the glasses there\n- 🔖 Bookmarks (add / jump / delete)\n- ✨ Select text to highlight — shows yellow on the phone, brighter + underlined on the glasses\n\n**New in Glow Reader (glasses):**\n- Chapter extraction (EPUB chapters; detected headings in TXT/PDF)\n- Highlight rendering + navigation/highlight/bookmark API for the phone app\n- Reopening a book always resumes at your last position\n\n**Files:**\n- **GlowReader-v1.0.apk** — install on the Rokid AI Glasses\n- **GlowRemote-v1.0.apk** — install on your Android phone\n\nBoth apps must be v1.0 for the reader sync to work.",
+      "changes": [
+        "📑 Reader view: full book text on your phone, auto-follows the glasses position",
+        "Table of contents dropdown — pick a chapter, the glasses jump there",
+        "Position slider + double-tap anywhere in the text to send the glasses there",
+        "🔖 Bookmarks (add / jump / delete)",
+        "✨ Select text to highlight — shows yellow on the phone, brighter + underlined on the glasses",
+        "Chapter extraction (EPUB chapters; detected headings in TXT/PDF)",
+        "Highlight rendering + navigation/highlight/bookmark API for the phone app",
+        "Reopening a book always resumes at your last position"
+      ]
+    },
+    {
+      "version": "0.9",
+      "date": "2026-07-14T18:27:11Z",
+      "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v0.9",
+      "notes": "First public release!\n\n- **GlowReader-v0.9.apk** — install on the Rokid AI Glasses (the reader itself)\n- **GlowRemote-v0.4.apk** — install on your Android phone (remote control + settings + send books over WiFi)\n\nSee the README for features, controls and install instructions.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "karlua86/glow-reader",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "karlua86/glow-reader",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^GlowReader-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      },
+      {
+        "target": "phone",
+        "match": "^GlowRemote-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
+  },
+  "screenshotAssets": [
+    "glow-reader-1.jpg",
+    "glow-reader-2.jpg",
+    "glow-reader-3.png",
+    "glow-reader-4.png"
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About Glow Reader\nGlow Reader is a book reader app for Rokid AI Glasses that shows only floating words with no glowing background block, providing a truly invisible background for comfortable night reading.\n\n## Key Features\n- Supports EPUB, PDF (reflowed), TXT, and Markdown formats\n- Five reading modes: page flip, RSVP (word-by-word), teleprompter auto-scroll, sentence-by-sentence, and paragraph-by-paragraph\n- \"Close the book\" gesture: double-tap temple to power down display to full invisibility while keeping reading position\n- Adjustable text brightness and display area for low light conditions\n- Full-lines-only rendering to avoid half-cut words\n- Persistent settings and reading position per book\n- Books auto-appear from the glasses' Download folder or can be pushed via phone\n- AI summary feature via companion phone app using your own API key\n\n## Controls\n- Glasses temple touchpad: single tap to play/pause, swipe to turn page, double-tap to close/reopen book\n- Compatible with Bluetooth keyboard/mouse for navigation\n- Companion phone app (Glow Remote) offers remote control, live settings, and book transfer over WiFi\n\n## Requirements\n- Rokid AI Glasses with WiFi enabled\n- Rokid Manager installed\n- Companion phone app for remote features (optional)\n\nFor more details and downloads, visit the [GitHub repository](https://github.com/karlua86/glow-reader)."
+  }
+}

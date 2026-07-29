@@ -1,0 +1,51 @@
+{
+  "id": "rokid-fc",
+  "name": "Rokid FC",
+  "category": "Games",
+  "type": "glasses",
+  "version": "0.1",
+  "summary": "NES emulator for Rokid AR glasses with phone browser as gamepad over LAN",
+  "description": "Rokid FC is an NES emulator for Rokid AR glasses that displays games on the glasses while using a phone browser as a real-time gamepad. Upload .nes ROMs and control gameplay via a low-latency WebSocket connection.",
+  "author": "qhduan",
+  "sourceUrl": "https://github.com/qhduan/rokid-fc",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/qhduan/rokid-fc/releases/download/0.1/app-release.apk",
+      "sha256": "d2aa43467e6a510d87ea0b04788313954f735d31d8f2dc701d41528b6bd3349b",
+      "sizeBytes": 16263390,
+      "packageName": "com.risenav.rokid.fc",
+      "versionCode": 1000,
+      "versionName": "1.0.0"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.1",
+      "date": "2026-07-21T13:44:25Z",
+      "sourceReleaseUrl": "https://github.com/qhduan/rokid-fc/releases/tag/0.1",
+      "notes": null,
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "qhduan/rokid-fc",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "qhduan/rokid-fc",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^app-release\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "## About\nRokid FC is an NES (FC) emulator for Rokid AR glasses. The glasses display the game screen while a phone browser acts as a gamepad over a local network.\n\n## Key features\n- Upload and play .nes ROMs using the built-in emulator kernel\n- Phone browser gamepad with directional keys, A/B, START/SELECT buttons\n- Low-latency WebSocket connection for smooth, continuous input\n- Instant save and load game states per ROM\n- Volume control directly from the phone gamepad page\n- Manage game library via web interface with upload and delete\n\n## How it works\n- Launch the app on the glasses to show the game list and server address\n- Open the glasses' IP address in a phone browser to access the game library\n- Upload ROMs and enter gamepad mode to control the game running on the glasses\n\n## Controls\n- Top center: volume up/down, instant save/load\n- Left side: directional pad\n- Right side: A (top right), B (bottom left)\n- Bottom center: SELECT and START\n\n## Notes\n- Add the gamepad page to your phone's home screen for fullscreen, app-like experience\n- Requires phone and glasses on the same local network\n- If the phone cannot connect, check glasses WiFi status and restart if needed"
+  }
+}

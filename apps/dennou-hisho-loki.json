@@ -1,0 +1,73 @@
+{
+  "id": "dennou-hisho-loki",
+  "name": "Dennou Hisho Loki",
+  "category": "AI",
+  "type": "combo",
+  "version": "0.9.4-alpha",
+  "summary": "Experimental AI assistant for Rokid glasses with Bluetooth keyboard, voice, smartphone, Gemini, calendar, mail, and health integration",
+  "description": "Dennou Hisho Loki is an experimental AI assistant app suite for Rokid glasses, controlled via Bluetooth keyboard, voice, and smartphone. It integrates Gemini API responses, calendar, mail notifications, step count, and weather info. Requires a compatible Rokid device, Android phone, and Gemini API key.",
+  "author": "tenru-do",
+  "sourceUrl": "https://github.com/tenru-do/dennou-hisho-loki",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/tenru-do/dennou-hisho-loki/releases/download/v0.9.4-alpha/DennouHishoLoki-glass-v0.9.4-alpha.apk",
+      "sha256": "4e075c09bbc64f29e2759f7b1a1e54ac695584e823b83b1a131bfc697ba5da1a",
+      "sizeBytes": 1253931,
+      "packageName": "com.example.rokidkeyboardbridge",
+      "versionCode": 182,
+      "versionName": "0.9.4-alpha"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/tenru-do/dennou-hisho-loki/releases/download/v0.9.4-alpha/DennouHishoLoki-phone-v0.9.4-alpha.apk",
+      "sha256": "8e02adee9e400b9d1d74efdd631cf32ca347f59a336d4075539472a9a60e1c29",
+      "sizeBytes": 1122790,
+      "packageName": "com.example.rokidgeminisecretary",
+      "versionCode": 50,
+      "versionName": "0.9.4-alpha"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.9.4-alpha",
+      "date": "2026-07-26T01:57:24Z",
+      "sourceReleaseUrl": "https://github.com/tenru-do/dennou-hisho-loki/releases/tag/v0.9.4-alpha",
+      "notes": "## 電脳秘書ロキ 0.9.4-alpha\n\nRokidグラス側HUDとAndroidスマホ側ブリッジのアルファ版です。\n\n### ダウンロード\n\n- `DennouHishoLoki-phone-v0.9.4-alpha.apk`：Androidスマホへインストール\n- `DennouHishoLoki-glass-v0.9.4-alpha.apk`：開発者ケーブルとADBでRokidグラスへインストール\n- `SHA256SUMS.txt`：ダウンロードしたAPKの確認用\n\n詳しい手順はリポジトリの `docs/INSTALL.md` を参照してください。\n\n### 主な変更\n\n- インストール用APKの配布を開始\n- 直近3往復・30分間の会話文脈を保持\n- 天気・傘の質問を予定検索より優先\n- 回答中の画面保持と読み上げ区切りを改善\n- 同一質問の重複受信によるGemini再送を抑止\n- Geminiが回答候補を返さない場合、会話文脈なしで一度だけ再試行\n\n### CAMボタン\n\n`CAM` は、別途インストールした自作Zoomカメラアプリを起動するショートカットです。カメラ機能はこのAPKに内蔵されていません。\n\n- 対象パッケージ：`com.example.rokidzoomcamera`\n- Zoomカメラがインストール済みの場合のみ起動します\n\n### 注意\n\n- 個人開発のアルファ版です。対応端末やRokid OSの状態によっては動作しません。\n- APKはアルファ版用のテスト署名です。\n- Gemini APIキーは同梱されていません。利用者自身で用意してください。\n- Gemini APIのクォータや混雑により `429` / `503` が発生する場合があります。\n- スマホとグラス間のローカルHTTP通信は暗号化されません。信頼できるLANまたは自分のテザリングでのみ使用してください。",
+      "changes": [
+        "DennouHishoLoki-phone-v0.9.4-alpha.apk：Androidスマホへインストール",
+        "DennouHishoLoki-glass-v0.9.4-alpha.apk：開発者ケーブルとADBでRokidグラスへインストール",
+        "SHA256SUMS.txt：ダウンロードしたAPKの確認用",
+        "インストール用APKの配布を開始",
+        "直近3往復・30分間の会話文脈を保持",
+        "天気・傘の質問を予定検索より優先",
+        "回答中の画面保持と読み上げ区切りを改善",
+        "同一質問の重複受信によるGemini再送を抑止"
+      ]
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "tenru-do/dennou-hisho-loki",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "tenru-do/dennou-hisho-loki",
+    "release": "v0.9.4-alpha",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^DennouHishoLoki-glass-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      },
+      {
+        "target": "phone",
+        "match": "^DennouHishoLoki-phone-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "About Dennou Hisho Loki\n\nDennou Hisho Loki transforms Rokid glasses into an experimental AI assistant controlled by Bluetooth keyboard, voice, and smartphone. It displays Gemini-based answers on the HUD, supports calendar and mail notifications, step tracking, and weather updates.\n\nKey Features\n\n- Input via Bluetooth keyboard, voice, and smartphone\n- Gemini API answers shown on HUD with speech output\n- Google Calendar, mail notifications, and Health Connect step count via smartphone\n- Approximate location and weather forecasts from Open-Meteo\n- HUD auto-displays when raising head and auto-hides after facing forward\n- Custom shortcut to launch a separately installed Zoom camera app\n\nRequirements\n\n- Compatible Rokid glasses with ADB setup\n- Android smartphone\n- User's own Gemini API key\n- Wi-Fi or tethering for communication between glasses and phone\n\nNotes\n\n- This is an alpha, personal project and not an official Rokid or Gemini product\n- Functionality depends on device, OS version, and network setup\n- Not suitable for critical uses such as medical or legal\n- Manual APK installation required; no Google Play distribution\n- Privacy-conscious design stores API keys and personal data locally\n\nFor detailed setup and limitations, please refer to the official documentation linked in the repository."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "rokid-reader",
+  "name": "Rokid Reader",
+  "category": "Reader",
+  "type": "glasses",
+  "version": "0.2",
+  "summary": "Local novel reader for Rokid AR glasses with LAN book upload and custom pagination",
+  "description": "Rokid Reader is a local novel reader app optimized for Rokid AR glasses. Upload books via LAN from a computer browser and read with customizable pagination and font size. Supports txt, epub, and markdown formats.",
+  "author": "qhduan",
+  "sourceUrl": "https://github.com/qhduan/rokid-reader",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/qhduan/rokid-reader/releases/download/0.2/app-release.apk",
+      "sha256": "a0e107e64264c471e5abe2e2d32e19c59f17d9e54ba960a58f6234c4ade935c4",
+      "sizeBytes": 11540076,
+      "packageName": "com.risenav.rokid.reader",
+      "versionCode": 1000,
+      "versionName": "1.0.0"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.2",
+      "date": "2026-07-21T14:52:06Z",
+      "sourceReleaseUrl": "https://github.com/qhduan/rokid-reader/releases/tag/0.2",
+      "notes": null,
+      "changes": []
+    },
+    {
+      "version": "0.1",
+      "date": "2026-07-20T12:27:42Z",
+      "sourceReleaseUrl": "https://github.com/qhduan/rokid-reader/releases/tag/0.1",
+      "notes": null,
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "qhduan/rokid-reader",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "qhduan/rokid-reader",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^app-release\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "# About\nRokid Reader is a local novel reading app designed for Rokid AR glasses with monochrome diffractive waveguide displays. It allows users to upload and manage books over a local network from a computer browser.\n\n# Key Features\n- Local bookshelf management supporting txt, epub, and markdown files\n- LAN web interface for uploading, downloading, and deleting books\n- Customizable pagination: half page, 3/4 page, or full page turns\n- Three font sizes adjustable via the web interface\n- Automatic reading progress saving and resume\n- Full operation via glasses' roller and touchpad, no touchscreen needed\n\n# How It Works\n1. Launch the app on the glasses and select \"LAN Book Transfer\" to start the service.\n2. Access the displayed local web address from a computer browser.\n3. Drag and drop txt, epub, or md files to upload and manage your bookshelf.\n4. Select and open books on the glasses using the roller control.\n\n# Controls\n| Input           | Bookshelf Page       | Reading Page         |\n|-----------------|----------------------|----------------------|\n| Roller scroll up | Move selection up    | Previous page        |\n| Roller scroll down| Move selection down  | Next page            |\n| Roller press    | Open book / toggle transfer | Next page        |\n| BACK button     | Exit app             | Return to bookshelf  |\n\n# Format Support\n- `.txt`: UTF-8 and GBK encoding auto-detection\n- `.epub`: OPF spine order parsing with bold chapter titles\n- `.md`: Markdown stripped to plain text\n\n# Notes\n- Single file upload limit: 30MB\n- No backend or third-party dependencies; all parsing and HTTP server are custom implemented\n- Optimized for black background with white text and white highlight outlines"
+  }
+}

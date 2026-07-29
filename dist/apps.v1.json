@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-29T21:13:56.086Z",
+  "generatedAt": "2026-07-29T21:21:17.189Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -696,6 +696,62 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/dcim-server.jpg"
       ]
+    },
+    {
+      "id": "dennou-hisho-loki",
+      "name": "Dennou Hisho Loki",
+      "category": "AI",
+      "type": "combo",
+      "version": "0.9.4-alpha",
+      "summary": "Experimental AI assistant for Rokid glasses with Bluetooth keyboard, voice, smartphone, Gemini, calendar, mail, and health integration",
+      "description": "Dennou Hisho Loki is an experimental AI assistant app suite for Rokid glasses, controlled via Bluetooth keyboard, voice, and smartphone. It integrates Gemini API responses, calendar, mail notifications, step count, and weather info. Requires a compatible Rokid device, Android phone, and Gemini API key.",
+      "author": "tenru-do",
+      "sourceUrl": "https://github.com/tenru-do/dennou-hisho-loki",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/tenru-do/dennou-hisho-loki/releases/download/v0.9.4-alpha/DennouHishoLoki-glass-v0.9.4-alpha.apk",
+          "sha256": "4e075c09bbc64f29e2759f7b1a1e54ac695584e823b83b1a131bfc697ba5da1a",
+          "sizeBytes": 1253931,
+          "packageName": "com.example.rokidkeyboardbridge",
+          "versionCode": 182,
+          "versionName": "0.9.4-alpha"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/tenru-do/dennou-hisho-loki/releases/download/v0.9.4-alpha/DennouHishoLoki-phone-v0.9.4-alpha.apk",
+          "sha256": "8e02adee9e400b9d1d74efdd631cf32ca347f59a336d4075539472a9a60e1c29",
+          "sizeBytes": 1122790,
+          "packageName": "com.example.rokidgeminisecretary",
+          "versionCode": 50,
+          "versionName": "0.9.4-alpha"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.9.4-alpha",
+          "date": "2026-07-26T01:57:24Z",
+          "sourceReleaseUrl": "https://github.com/tenru-do/dennou-hisho-loki/releases/tag/v0.9.4-alpha",
+          "notes": "## 電脳秘書ロキ 0.9.4-alpha\n\nRokidグラス側HUDとAndroidスマホ側ブリッジのアルファ版です。\n\n### ダウンロード\n\n- `DennouHishoLoki-phone-v0.9.4-alpha.apk`：Androidスマホへインストール\n- `DennouHishoLoki-glass-v0.9.4-alpha.apk`：開発者ケーブルとADBでRokidグラスへインストール\n- `SHA256SUMS.txt`：ダウンロードしたAPKの確認用\n\n詳しい手順はリポジトリの `docs/INSTALL.md` を参照してください。\n\n### 主な変更\n\n- インストール用APKの配布を開始\n- 直近3往復・30分間の会話文脈を保持\n- 天気・傘の質問を予定検索より優先\n- 回答中の画面保持と読み上げ区切りを改善\n- 同一質問の重複受信によるGemini再送を抑止\n- Geminiが回答候補を返さない場合、会話文脈なしで一度だけ再試行\n\n### CAMボタン\n\n`CAM` は、別途インストールした自作Zoomカメラアプリを起動するショートカットです。カメラ機能はこのAPKに内蔵されていません。\n\n- 対象パッケージ：`com.example.rokidzoomcamera`\n- Zoomカメラがインストール済みの場合のみ起動します\n\n### 注意\n\n- 個人開発のアルファ版です。対応端末やRokid OSの状態によっては動作しません。\n- APKはアルファ版用のテスト署名です。\n- Gemini APIキーは同梱されていません。利用者自身で用意してください。\n- Gemini APIのクォータや混雑により `429` / `503` が発生する場合があります。\n- スマホとグラス間のローカルHTTP通信は暗号化されません。信頼できるLANまたは自分のテザリングでのみ使用してください。",
+          "changes": [
+            "DennouHishoLoki-phone-v0.9.4-alpha.apk：Androidスマホへインストール",
+            "DennouHishoLoki-glass-v0.9.4-alpha.apk：開発者ケーブルとADBでRokidグラスへインストール",
+            "SHA256SUMS.txt：ダウンロードしたAPKの確認用",
+            "インストール用APKの配布を開始",
+            "直近3往復・30分間の会話文脈を保持",
+            "天気・傘の質問を予定検索より優先",
+            "回答中の画面保持と読み上げ区切りを改善",
+            "同一質問の重複受信によるGemini再送を抑止"
+          ]
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "About Dennou Hisho Loki\n\nDennou Hisho Loki transforms Rokid glasses into an experimental AI assistant controlled by Bluetooth keyboard, voice, and smartphone. It displays Gemini-based answers on the HUD, supports calendar and mail notifications, step tracking, and weather updates.\n\nKey Features\n\n- Input via Bluetooth keyboard, voice, and smartphone\n- Gemini API answers shown on HUD with speech output\n- Google Calendar, mail notifications, and Health Connect step count via smartphone\n- Approximate location and weather forecasts from Open-Meteo\n- HUD auto-displays when raising head and auto-hides after facing forward\n- Custom shortcut to launch a separately installed Zoom camera app\n\nRequirements\n\n- Compatible Rokid glasses with ADB setup\n- Android smartphone\n- User's own Gemini API key\n- Wi-Fi or tethering for communication between glasses and phone\n\nNotes\n\n- This is an alpha, personal project and not an official Rokid or Gemini product\n- Functionality depends on device, OS version, and network setup\n- Not suitable for critical uses such as medical or legal\n- Manual APK installation required; no Google Play distribution\n- Privacy-conscious design stores API keys and personal data locally\n\nFor detailed setup and limitations, please refer to the official documentation linked in the repository."
+      },
+      "iconAsset": "dennou-hisho-loki.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/dennou-hisho-loki.png",
+      "screenshotAssets": []
     },
     {
       "id": "dragonball-scouter",
@@ -1402,6 +1458,190 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-overlay.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-reading.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glasses-reader-settings.jpg"
+      ]
+    },
+    {
+      "id": "glasstube",
+      "name": "GlassTube",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.3",
+      "summary": "Watch YouTube ad-free on Rokid AR glasses with ring navigation and paired phone+glasses apps",
+      "description": "GlassTube lets you watch YouTube ad-free on Rokid AR glasses using paired Android apps on your phone and glasses. Navigate with the R08 smart-ring and choose audio-only or audio+video modes. No Google login required.",
+      "author": "beyondlevi",
+      "sourceUrl": "https://github.com/beyondlevi/glasstube",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/beyondlevi/glasstube/releases/download/v0.1.3/glasstube-glasses-0.1.3-debug.apk",
+          "sha256": "45a5dccc90f84cd5a16299614bd8802982d615a99c7de56869c9c56f864f7189",
+          "sizeBytes": 15162637,
+          "packageName": "com.volund.glasstube.glasses",
+          "versionCode": 4,
+          "versionName": "0.1.3"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/beyondlevi/glasstube/releases/download/v0.1.3/glasstube-phone-0.1.3-debug.apk",
+          "sha256": "66add5d087d1f7cadea6e650e8ab66bfc68d10b3355eaaad46545801521bba28",
+          "sizeBytes": 19031024,
+          "packageName": "com.volund.glasstube.phone",
+          "versionCode": 4,
+          "versionName": "0.1.3"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.1.3",
+          "date": "2026-07-21T11:15:10Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.3",
+          "notes": "The link diagnostics traced the failure to the RFCOMM channel not establishing on either side, despite permission and pairing — the signature of a BLE-only bond (SPP needs a Bluetooth Classic bond). This release corrects the phone foreground-service type for Bluetooth and shows the exact connect exception on the glasses HUD. FIX ON YOUR SIDE: pair the phone and glasses over Bluetooth Classic in Android settings (not only via Hi Rokid), then retest.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2",
+          "date": "2026-07-21T10:57:29Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.2",
+          "notes": "Diagnostics release for the \"Connecting\" issue. The glasses HUD now shows exactly why it is not connected (no Bluetooth permission / no paired phone / connecting / waiting for handshake), and fixes a bug where a missing BLUETOOTH_CONNECT killed the connect loop silently. Install both, and read what the glasses HUD now says.",
+          "changes": []
+        },
+        {
+          "version": "0.1.1",
+          "date": "2026-07-21T10:00:54Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.1",
+          "notes": "Fixes the phone/glasses link getting stuck at \"Connecting\".\n\nThe transport was CXR-M-only with empty SDK seams, so it never connected. This release switches to a **direct Bluetooth Classic SPP (RFCOMM)** link — phone as server, glasses as client — the mechanism proven by the rokid-volund-os reference (its phone app has no Rokid SDK and connects over SPP).\n\n**Setup:**\n1. Pair the glasses with the phone at the OS Bluetooth level (Hi Rokid does this).\n2. Install both APKs; grant BLUETOOTH_CONNECT on both.\n3. Tap \"Connect to glasses\" on the phone; the glasses connect and handshake automatically.\n\nAPKs are debug builds. See CHANGELOG.md for details.",
+          "changes": [
+            "Pair the glasses with the phone at the OS Bluetooth level (Hi Rokid does this).",
+            "Install both APKs; grant BLUETOOTHCONNECT on both.",
+            "Tap \"Connect to glasses\" on the phone; the glasses connect and handshake automatically."
+          ]
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-07-21T02:14:01Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/glasstube/releases/tag/v0.1.0",
+          "notes": "First public release. Paired phone + glasses apps building end to end.\n\n**Modes:** audio-only (phone) and audio+video (glasses), ad-free via Piped. Optional Piped subscription feed. 100% R08 ring-navigable HUD.\n\n**APKs (debug):**\n- glasstube-phone-0.1.0-debug.apk — install on the Android phone.\n- glasstube-glasses-0.1.0-debug.apk — sideload on the Rokid glasses via Hi Rokid.\n\nDebug builds. The Rokid CXR-M SDK binding is left as marked seams; fill them before running on hardware. See README and CHANGELOG for full status and known gaps.",
+          "changes": []
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "About GlassTube\n\nGlassTube is a paired system of Android apps for Rokid AR glasses and your phone that enables ad-free YouTube playback. It uses a direct Bluetooth link for communication and supports two playback modes: audio-only and audio+video.\n\nKey Features\n\n- Ad-free YouTube streaming via Piped/NewPipeExtractor without Google login\n- Two playback modes: audio-only (phone plays audio) and audio+video (glasses play video)\n- Full navigation using the R08 smart-ring on the glasses\n- Phone app manages account, feed, search, and stream resolution\n- Glasses render video and handle playback controls\n\nHow It Works\n\n- Phone and glasses communicate over Bluetooth Classic SPP\n- Phone owns the Piped account and resolves streams\n- Glasses connect as a Bluetooth client and display the HUD\n- Audio-only mode streams audio from phone to glasses\n- Audio+video mode streams video directly to glasses over Wi-Fi\n\nRequirements\n\n- Rokid AR glasses paired with your Android phone via Bluetooth\n- Grant Bluetooth permissions on both devices\n- Use the R08 smart-ring for navigation\n\nNotes\n\n- Use for personal and educational purposes; ad-free extraction is a gray area legally\n- Not affiliated with Google, YouTube, or Rokid\n- Optional Piped account unlocks subscription feeds\n\nFor more details, visit the [GlassTube GitHub repository](https://github.com/beyondlevi/glasstube)."
+      },
+      "screenshotAssets": []
+    },
+    {
+      "id": "glow-reader",
+      "name": "Glow Reader",
+      "category": "Reader",
+      "type": "combo",
+      "version": "1.5",
+      "summary": "Floating-text book reader for Rokid AI Glasses with no glowing background, just words",
+      "description": "Glow Reader displays floating words on Rokid AI Glasses without a glowing background. It supports EPUB, PDF, TXT, and Markdown with multiple reading modes and a companion phone app for remote control and AI summaries.",
+      "author": "karlua86",
+      "sourceUrl": "https://github.com/karlua86/glow-reader",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/karlua86/glow-reader/releases/download/v1.5/GlowReader-v1.5.apk",
+          "sha256": "55e65f277d07d4fe89a9f782e207faadc7af02ce1b5f97f4338ea0210536c831",
+          "sizeBytes": 9930882,
+          "packageName": "xyz.hypeezcape.glowreader",
+          "versionCode": 15,
+          "versionName": "1.5"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/karlua86/glow-reader/releases/download/v1.5/GlowRemote-v1.4.apk",
+          "sha256": "efa3700ba138f28085cbf915b2a8468ac54951cb99aaebf8732789eb5e8e5410",
+          "sizeBytes": 839926,
+          "packageName": "xyz.hypeezcape.glowremote",
+          "versionCode": 14,
+          "versionName": "1.4"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.5",
+          "date": "2026-07-19T16:44:26Z",
+          "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.5",
+          "notes": "Tested in extreme darkness on real glasses:\n\n**Close-the-book is now TRULY see-through.** In v1.4, a closed book still left a very faint grey veil in total darkness (the display panel was on, showing black). v1.5 powers the panel down: brightness drops to zero instantly and the display is allowed to sleep, exactly like the glasses native idle state.\n\nWhat to expect:\n- Double-tap closes the book. A faint veil fades out over ~5 seconds as the panel sleeps, then the glass is completely clear.\n- Double-tap reopens at your exact position. If the display had fully slept, double-tap twice (first wakes the screen, second reopens).\n- While closed, all other taps and swipes are ignored.\n\n**Files:** GlowReader-v1.5.apk = glasses (new), GlowRemote-v1.4.apk = Android phone (unchanged). Install over the old version - nothing is lost.",
+          "changes": [
+            "Double-tap closes the book. A faint veil fades out over ~5 seconds as the panel sleeps, then the glass is completely clear.",
+            "Double-tap reopens at your exact position. If the display had fully slept, double-tap twice (first wakes the screen, second reopens).",
+            "While closed, all other taps and swipes are ignored."
+          ]
+        },
+        {
+          "version": "1.4",
+          "date": "2026-07-19T14:23:36Z",
+          "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.4",
+          "notes": "Two quality-of-life updates, both tested on real glasses:\n\n**Close the book (glasses):**\n- Double-tap the temple while reading: the display goes COMPLETELY invisible - you stay in the book, position kept, auto-play paused. Perfect for when someone talks to you.\n- Double-tap again to reopen exactly where you were.\n- While closed, taps and swipes do nothing, so you cannot light the display by accident.\n- Z key or the phone app button do the same. Note: double-tap no longer exits to the library - use the phone Library button or B key for that.\n\n**AI summary lengths (phone):**\n- Choose Short (1-2 sentences per chapter), Medium (~150 words) or Long (~400 words).\n- Each version saves under its own name, so you can keep all three per book.\n\n**Files:** GlowReader-v1.4.apk = glasses, GlowRemote-v1.4.apk = Android phone. Update by installing over the old version - nothing is lost.",
+          "changes": [
+            "Double-tap the temple while reading: the display goes COMPLETELY invisible - you stay in the book, position kept, auto-play paused. Perfect for when someone talks to you.",
+            "Double-tap again to reopen exactly where you were.",
+            "While closed, taps and swipes do nothing, so you cannot light the display by accident.",
+            "Z key or the phone app button do the same. Note: double-tap no longer exits to the library - use the phone Library button or B key for that.",
+            "Choose Short (1-2 sentences per chapter), Medium (~150 words) or Long (~400 words).",
+            "Each version saves under its own name, so you can keep all three per book."
+          ]
+        },
+        {
+          "version": "1.3",
+          "date": "2026-07-17T03:44:21Z",
+          "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.3",
+          "notes": "What is new since v1.0:\n\n**Glow Remote (phone):**\n- AI summary of the current book: chapter-by-chapter, in the book language, using YOUR OWN API key (DeepSeek / OpenAI / Claude) - the finished summary lands in the glasses library as a readable book\n- Manage / delete books on the glasses from the phone\n- Simplified remote: one Back / Play-Pause / Forward row that works in every mode\n\n**Glow Reader (glasses):**\n- Low-light mode fixed: now applies on every screen, and dims the text as a guaranteed fallback\n- Words-per-minute always visible in a status line at the bottom, in all 5 modes\n- Book text can no longer overlap the status line\n- Books sent from the phone are stored in the shared Books folder: they survive even an app uninstall\n- Updating the app never loses books, positions, highlights or settings - just install the new APK over the old one\n\n**Files:** GlowReader-v1.3.apk = glasses, GlowRemote-v1.2.apk = Android phone.",
+          "changes": [
+            "Manage / delete books on the glasses from the phone",
+            "Simplified remote: one Back / Play-Pause / Forward row that works in every mode",
+            "Low-light mode fixed: now applies on every screen, and dims the text as a guaranteed fallback",
+            "Words-per-minute always visible in a status line at the bottom, in all 5 modes",
+            "Book text can no longer overlap the status line",
+            "Books sent from the phone are stored in the shared Books folder: they survive even an app uninstall",
+            "Updating the app never loses books, positions, highlights or settings - just install the new APK over the old one"
+          ]
+        },
+        {
+          "version": "1.0",
+          "date": "2026-07-15T03:11:08Z",
+          "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v1.0",
+          "notes": "Big update: the phone app now mirrors the book open on the glasses!\n\n**New in Glow Remote (phone):**\n- 📑 Reader view: full book text on your phone, auto-follows the glasses position\n- Table of contents dropdown — pick a chapter, the glasses jump there\n- Position slider + double-tap anywhere in the text to send the glasses there\n- 🔖 Bookmarks (add / jump / delete)\n- ✨ Select text to highlight — shows yellow on the phone, brighter + underlined on the glasses\n\n**New in Glow Reader (glasses):**\n- Chapter extraction (EPUB chapters; detected headings in TXT/PDF)\n- Highlight rendering + navigation/highlight/bookmark API for the phone app\n- Reopening a book always resumes at your last position\n\n**Files:**\n- **GlowReader-v1.0.apk** — install on the Rokid AI Glasses\n- **GlowRemote-v1.0.apk** — install on your Android phone\n\nBoth apps must be v1.0 for the reader sync to work.",
+          "changes": [
+            "📑 Reader view: full book text on your phone, auto-follows the glasses position",
+            "Table of contents dropdown — pick a chapter, the glasses jump there",
+            "Position slider + double-tap anywhere in the text to send the glasses there",
+            "🔖 Bookmarks (add / jump / delete)",
+            "✨ Select text to highlight — shows yellow on the phone, brighter + underlined on the glasses",
+            "Chapter extraction (EPUB chapters; detected headings in TXT/PDF)",
+            "Highlight rendering + navigation/highlight/bookmark API for the phone app",
+            "Reopening a book always resumes at your last position"
+          ]
+        },
+        {
+          "version": "0.9",
+          "date": "2026-07-14T18:27:11Z",
+          "sourceReleaseUrl": "https://github.com/karlua86/glow-reader/releases/tag/v0.9",
+          "notes": "First public release!\n\n- **GlowReader-v0.9.apk** — install on the Rokid AI Glasses (the reader itself)\n- **GlowRemote-v0.4.apk** — install on your Android phone (remote control + settings + send books over WiFi)\n\nSee the README for features, controls and install instructions.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "glow-reader-1.jpg",
+        "glow-reader-2.jpg",
+        "glow-reader-3.png",
+        "glow-reader-4.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About Glow Reader\nGlow Reader is a book reader app for Rokid AI Glasses that shows only floating words with no glowing background block, providing a truly invisible background for comfortable night reading.\n\n## Key Features\n- Supports EPUB, PDF (reflowed), TXT, and Markdown formats\n- Five reading modes: page flip, RSVP (word-by-word), teleprompter auto-scroll, sentence-by-sentence, and paragraph-by-paragraph\n- \"Close the book\" gesture: double-tap temple to power down display to full invisibility while keeping reading position\n- Adjustable text brightness and display area for low light conditions\n- Full-lines-only rendering to avoid half-cut words\n- Persistent settings and reading position per book\n- Books auto-appear from the glasses' Download folder or can be pushed via phone\n- AI summary feature via companion phone app using your own API key\n\n## Controls\n- Glasses temple touchpad: single tap to play/pause, swipe to turn page, double-tap to close/reopen book\n- Compatible with Bluetooth keyboard/mouse for navigation\n- Companion phone app (Glow Remote) offers remote control, live settings, and book transfer over WiFi\n\n## Requirements\n- Rokid AI Glasses with WiFi enabled\n- Rokid Manager installed\n- Companion phone app for remote features (optional)\n\nFor more details and downloads, visit the [GitHub repository](https://github.com/karlua86/glow-reader)."
+      },
+      "iconAsset": "glow-reader.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/glow-reader.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glow-reader-1.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glow-reader-2.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glow-reader-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glow-reader-4.png"
       ]
     },
     {
@@ -2128,6 +2368,44 @@
       ]
     },
     {
+      "id": "rokid-fc",
+      "name": "Rokid FC",
+      "category": "Games",
+      "type": "glasses",
+      "version": "0.1",
+      "summary": "NES emulator for Rokid AR glasses with phone browser as gamepad over LAN",
+      "description": "Rokid FC is an NES emulator for Rokid AR glasses that displays games on the glasses while using a phone browser as a real-time gamepad. Upload .nes ROMs and control gameplay via a low-latency WebSocket connection.",
+      "author": "qhduan",
+      "sourceUrl": "https://github.com/qhduan/rokid-fc",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/qhduan/rokid-fc/releases/download/0.1/app-release.apk",
+          "sha256": "d2aa43467e6a510d87ea0b04788313954f735d31d8f2dc701d41528b6bd3349b",
+          "sizeBytes": 16263390,
+          "packageName": "com.risenav.rokid.fc",
+          "versionCode": 1000,
+          "versionName": "1.0.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.1",
+          "date": "2026-07-21T13:44:25Z",
+          "sourceReleaseUrl": "https://github.com/qhduan/rokid-fc/releases/tag/0.1",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid FC is an NES (FC) emulator for Rokid AR glasses. The glasses display the game screen while a phone browser acts as a gamepad over a local network.\n\n## Key features\n- Upload and play .nes ROMs using the built-in emulator kernel\n- Phone browser gamepad with directional keys, A/B, START/SELECT buttons\n- Low-latency WebSocket connection for smooth, continuous input\n- Instant save and load game states per ROM\n- Volume control directly from the phone gamepad page\n- Manage game library via web interface with upload and delete\n\n## How it works\n- Launch the app on the glasses to show the game list and server address\n- Open the glasses' IP address in a phone browser to access the game library\n- Upload ROMs and enter gamepad mode to control the game running on the glasses\n\n## Controls\n- Top center: volume up/down, instant save/load\n- Left side: directional pad\n- Right side: A (top right), B (bottom left)\n- Bottom center: SELECT and START\n\n## Notes\n- Add the gamepad page to your phone's home screen for fullscreen, app-like experience\n- Requires phone and glasses on the same local network\n- If the phone cannot connect, check glasses WiFi status and restart if needed"
+      },
+      "iconAsset": "rokid-fc.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-fc.png",
+      "screenshotAssets": []
+    },
+    {
       "id": "rokid-lyrics",
       "name": "Rokid Lyrics",
       "category": "Media",
@@ -2424,6 +2702,51 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-4.png"
       ]
+    },
+    {
+      "id": "rokid-reader",
+      "name": "Rokid Reader",
+      "category": "Reader",
+      "type": "glasses",
+      "version": "0.2",
+      "summary": "Local novel reader for Rokid AR glasses with LAN book upload and custom pagination",
+      "description": "Rokid Reader is a local novel reader app optimized for Rokid AR glasses. Upload books via LAN from a computer browser and read with customizable pagination and font size. Supports txt, epub, and markdown formats.",
+      "author": "qhduan",
+      "sourceUrl": "https://github.com/qhduan/rokid-reader",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/qhduan/rokid-reader/releases/download/0.2/app-release.apk",
+          "sha256": "a0e107e64264c471e5abe2e2d32e19c59f17d9e54ba960a58f6234c4ade935c4",
+          "sizeBytes": 11540076,
+          "packageName": "com.risenav.rokid.reader",
+          "versionCode": 1000,
+          "versionName": "1.0.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.2",
+          "date": "2026-07-21T14:52:06Z",
+          "sourceReleaseUrl": "https://github.com/qhduan/rokid-reader/releases/tag/0.2",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "0.1",
+          "date": "2026-07-20T12:27:42Z",
+          "sourceReleaseUrl": "https://github.com/qhduan/rokid-reader/releases/tag/0.1",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nRokid Reader is a local novel reading app designed for Rokid AR glasses with monochrome diffractive waveguide displays. It allows users to upload and manage books over a local network from a computer browser.\n\n# Key Features\n- Local bookshelf management supporting txt, epub, and markdown files\n- LAN web interface for uploading, downloading, and deleting books\n- Customizable pagination: half page, 3/4 page, or full page turns\n- Three font sizes adjustable via the web interface\n- Automatic reading progress saving and resume\n- Full operation via glasses' roller and touchpad, no touchscreen needed\n\n# How It Works\n1. Launch the app on the glasses and select \"LAN Book Transfer\" to start the service.\n2. Access the displayed local web address from a computer browser.\n3. Drag and drop txt, epub, or md files to upload and manage your bookshelf.\n4. Select and open books on the glasses using the roller control.\n\n# Controls\n| Input           | Bookshelf Page       | Reading Page         |\n|-----------------|----------------------|----------------------|\n| Roller scroll up | Move selection up    | Previous page        |\n| Roller scroll down| Move selection down  | Next page            |\n| Roller press    | Open book / toggle transfer | Next page        |\n| BACK button     | Exit app             | Return to bookshelf  |\n\n# Format Support\n- `.txt`: UTF-8 and GBK encoding auto-detection\n- `.epub`: OPF spine order parsing with bold chapter titles\n- `.md`: Markdown stripped to plain text\n\n# Notes\n- Single file upload limit: 30MB\n- No backend or third-party dependencies; all parsing and HTTP server are custom implemented\n- Optimized for black background with white text and white highlight outlines"
+      },
+      "iconAsset": "rokid-reader.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-reader.png",
+      "screenshotAssets": []
     },
     {
       "id": "rokid-shell",
