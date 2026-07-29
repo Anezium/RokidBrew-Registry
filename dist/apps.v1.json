@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-29T21:51:39.587Z",
+  "generatedAt": "2026-07-29T21:53:29.607Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -2633,13 +2633,6 @@
       ],
       "releases": [
         {
-          "version": "sdk-v0.7.0",
-          "date": "2026-07-29T19:47:17Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/sdk-v0.7.0",
-          "notes": "Rokid Nexus SDK version 0.7.0 targets Nexus plugin API version 3.\n\nJitPack coordinates: com.github.Anezium.Rokid-Nexus:bus-client:sdk-v0.7.0",
-          "changes": []
-        },
-        {
           "version": "1.0.48",
           "date": "2026-07-29T00:03:13Z",
           "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.48",
@@ -2669,13 +2662,6 @@
           ]
         },
         {
-          "version": "sdk-v0.6.0",
-          "date": "2026-07-29T00:04:49Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/sdk-v0.6.0",
-          "notes": "Rokid Nexus SDK version 0.6.0 targets Nexus plugin API version 3.\n\nJitPack coordinates: com.github.Anezium.Rokid-Nexus:bus-client:sdk-v0.6.0",
-          "changes": []
-        },
-        {
           "version": "1.0.46",
           "date": "2026-07-26T22:43:53Z",
           "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.46",
@@ -2690,12 +2676,25 @@
           ]
         }
       ],
+      "screenshotAssets": [
+        "rokid-nexus-1.png",
+        "rokid-nexus-2.png",
+        "rokid-nexus-3.png",
+        "rokid-nexus-4.png",
+        "rokid-nexus-5.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
       },
       "iconAsset": "rokid-nexus.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
-      "screenshotAssets": []
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+      ]
     },
     {
       "id": "rokid-reader",
