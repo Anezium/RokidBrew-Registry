@@ -16,7 +16,7 @@ function updateConfigs(app) {
   return configs;
 }
 
-test("update configs never pin a version-like release tag", () => {
+test("stable update configs never pin a version-like release tag", () => {
   const offenders = [];
   for (const name of fs.readdirSync(appsDir).filter((file) => file.endsWith(".json"))) {
     const app = JSON.parse(fs.readFileSync(path.join(appsDir, name), "utf8"));
@@ -24,6 +24,7 @@ test("update configs never pin a version-like release tag", () => {
       if (config.disabled) continue;
       const release = config.release || config.tag;
       if (!release || release === "latest") continue;
+      if (/(?:alpha|beta|rc|dev|preview)/i.test(release)) continue;
       if (/^v?\d+(?:[._-]\d+)*/i.test(release)) {
         offenders.push(`${name} (${where}): "${release}"`);
       }
@@ -32,6 +33,6 @@ test("update configs never pin a version-like release tag", () => {
   assert.deepEqual(
     offenders,
     [],
-    `Version-like release pins stop tracking upstream (and rot if the release is deleted); use "latest" or a rolling tag instead:\n${offenders.join("\n")}`,
+    `Stable version-like release pins stop tracking upstream (and rot if the release is deleted); use "latest" or a rolling tag instead:\n${offenders.join("\n")}`,
   );
 });

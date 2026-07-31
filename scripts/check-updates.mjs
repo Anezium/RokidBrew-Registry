@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
-import { bulletChanges, cleanMarkdown } from "./lib-github-content.mjs";
+import { bulletChanges, cleanMarkdown, fetchWithRetry } from "./lib-github-content.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appsDir = path.join(root, "apps");
@@ -82,12 +82,23 @@ function parseBadging(aapt, apkPath) {
   };
 }
 
+function retryOptions(label) {
+  return {
+    onRetry: ({ attempt, attempts, delayMs, error, status, statusText }) => {
+      const reason = error?.message || `${status} ${statusText}`.trim();
+      console.warn(
+        `retry  ${label} after ${reason}; attempt ${attempt + 1}/${attempts} in ${delayMs}ms`,
+      );
+    },
+  };
+}
+
 async function fetchBytes(url, label) {
-  const response = await fetch(url, {
+  const response = await fetchWithRetry(url, {
     headers: {
       "User-Agent": "RokidBrew-Registry-Update-Checker",
     },
-  });
+  }, retryOptions(label));
   if (!response.ok) throw new Error(`${label} download failed: ${response.status} ${response.statusText}`);
   return Buffer.from(await response.arrayBuffer());
 }
@@ -101,7 +112,7 @@ async function fetchJson(url, label) {
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
   if (token) headers.Authorization = `Bearer ${token}`;
 
-  const response = await fetch(url, { headers });
+  const response = await fetchWithRetry(url, { headers }, retryOptions(label));
   if (!response.ok) throw new Error(`${label} failed: ${response.status} ${response.statusText}`);
   return response.json();
 }

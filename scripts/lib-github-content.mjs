@@ -2,6 +2,70 @@ import fs from "node:fs";
 import path from "node:path";
 
 const githubApi = "https://api.github.com";
+const retryableHttpStatuses = new Set([408, 425, 429, 500, 502, 503, 504]);
+
+function retryAfterDelay(value, now = Date.now()) {
+  if (!value) return null;
+
+  const seconds = Number(value);
+  if (Number.isFinite(seconds)) return Math.max(0, seconds * 1000);
+
+  const date = Date.parse(value);
+  return Number.isNaN(date) ? null : Math.max(0, date - now);
+}
+
+function sleep(delayMs) {
+  return new Promise((resolve) => setTimeout(resolve, delayMs));
+}
+
+export async function fetchWithRetry(url, fetchOptions = {}, retryOptions = {}) {
+  const {
+    attempts = 3,
+    baseDelayMs = 1000,
+    maxDelayMs = 30_000,
+    fetchImpl = globalThis.fetch,
+    sleepImpl = sleep,
+    onRetry,
+  } = retryOptions;
+
+  if (!Number.isInteger(attempts) || attempts < 1) {
+    throw new Error("fetchWithRetry attempts must be a positive integer");
+  }
+  if (typeof fetchImpl !== "function") {
+    throw new Error("fetchWithRetry requires a fetch implementation");
+  }
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const response = await fetchImpl(url, fetchOptions);
+      const retryable = retryableHttpStatuses.has(response.status);
+      if (!retryable || attempt === attempts) return response;
+
+      const retryAfterMs = retryAfterDelay(response.headers.get("retry-after"));
+      const delayMs = Math.min(
+        maxDelayMs,
+        retryAfterMs ?? baseDelayMs * (2 ** (attempt - 1)),
+      );
+      await response.body?.cancel();
+      onRetry?.({
+        attempt,
+        attempts,
+        delayMs,
+        status: response.status,
+        statusText: response.statusText,
+      });
+      await sleepImpl(delayMs);
+    } catch (error) {
+      if (attempt === attempts) throw error;
+
+      const delayMs = Math.min(maxDelayMs, baseDelayMs * (2 ** (attempt - 1)));
+      onRetry?.({ attempt, attempts, delayMs, error });
+      await sleepImpl(delayMs);
+    }
+  }
+
+  throw new Error("fetchWithRetry exhausted its attempts");
+}
 
 export function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -112,7 +176,7 @@ export async function fetchJson(url, label = url, token = process.env.GITHUB_TOK
     "X-GitHub-Api-Version": "2022-11-28",
   };
   if (token && url.startsWith(githubApi)) headers.Authorization = `Bearer ${token}`;
-  const response = await fetch(url, { headers });
+  const response = await fetchWithRetry(url, { headers });
   if (!response.ok) throw new Error(`Failed to fetch ${label}: ${response.status} ${response.statusText}`);
   return response.json();
 }
@@ -120,13 +184,13 @@ export async function fetchJson(url, label = url, token = process.env.GITHUB_TOK
 export async function fetchText(url, label = url, token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
   const headers = { Accept: "text/plain,*/*", "User-Agent": "RokidBrew-Registry" };
   if (token && url.startsWith(githubApi)) headers.Authorization = `Bearer ${token}`;
-  const response = await fetch(url, { headers });
+  const response = await fetchWithRetry(url, { headers });
   if (!response.ok) throw new Error(`Failed to fetch ${label}: ${response.status} ${response.statusText}`);
   return response.text();
 }
 
 export async function fetchBytes(url, label = url) {
-  const response = await fetch(url, { headers: { "User-Agent": "RokidBrew-Registry" } });
+  const response = await fetchWithRetry(url, { headers: { "User-Agent": "RokidBrew-Registry" } });
   if (!response.ok) throw new Error(`Failed to fetch ${label}: ${response.status} ${response.statusText}`);
   return Buffer.from(await response.arrayBuffer());
 }

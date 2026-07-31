@@ -82,7 +82,7 @@
   "update": {
     "source": "githubReleaseAssets",
     "repo": "Anezium/Rokid-Nexus",
-    "release": "v1.0.48",
+    "release": "latest",
     "assets": [
       {
         "target": "glasses",
