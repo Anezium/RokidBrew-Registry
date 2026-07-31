@@ -320,7 +320,7 @@
       "description": "Photos and videos you take on the glasses copy themselves into your phone gallery, in the same Hi Rokid album. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-31T20:26:59Z",
+      "publishedAt": "2026-08-01T00:56:37Z",
       "iconAsset": "photosync-icon3.png",
       "nexus": {
         "pluginId": "photosync",
@@ -338,15 +338,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/photosync-v1.0.1/nexus-photosync-1.0.1.apk",
-        "sha256": "c54f859105398189744eb3b07e61d293244a627e616087c16b7c017137e461da",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/photosync-v1.0.2/photosync-phone-release.apk",
+        "sha256": "cceb8f91f955c4af52840961d4cdbd3a24ca27d0cc6bd6971f79ae095bf5bf67",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5002703,
+        "sizeBytes": 4981348,
         "packageName": "com.anezium.rokidbus.plugin.photosync",
-        "versionCode": 2,
-        "versionName": "1.0.1"
+        "versionCode": 3,
+        "versionName": "1.0.2"
       },
       "releases": [
+        {
+          "version": "1.0.2",
+          "date": "2026-08-01T00:56:37Z",
+          "notes": "\n- The plugin's mark matches its Store icon again: the sync arrow is full size and crosses the frame, rather than sitting in a corner as decoration.\n\n### Artifact\n\n- File: `photosync-phone-release.apk`\n- SHA-256: `cceb8f91f955c4af52840961d4cdbd3a24ca27d0cc6bd6971f79ae095bf5bf67`"
+        },
         {
           "version": "1.0.1",
           "date": "2026-07-31T20:26:59Z",
@@ -369,7 +374,7 @@
       "description": "A message you can reply to reaches the glasses as it arrives. Read it without taking the phone out, speak your answer, and it sends itself. Anything you miss waits for you in Messages.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-31T20:26:59Z",
+      "publishedAt": "2026-08-01T00:56:37Z",
       "iconAsset": "relay-icon.png",
       "nexus": {
         "pluginId": "relay",
@@ -388,15 +393,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.0.0/nexus-relay-1.0.0.apk",
-        "sha256": "619c5a912bb754849802c5aa6cb36b30593a64cc28592f1a6fdb5d07732bdd09",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.0.1/relay-phone-release.apk",
+        "sha256": "95079f10de87ee4f7cd061cee51c24ad17c72f6724e50e99796f77528c2f4f03",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5117391,
+        "sizeBytes": 5096572,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 1,
-        "versionName": "1.0.0"
+        "versionCode": 2,
+        "versionName": "1.0.1"
       },
       "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-08-01T00:56:37Z",
+          "notes": "\n- Relay has its own mark instead of the shared chat icon: two bubbles, the message that arrived and the answer going back. The same mark is now the app icon, so what you tap in the Store is what you find afterwards.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `95079f10de87ee4f7cd061cee51c24ad17c72f6724e50e99796f77528c2f4f03`"
+        },
         {
           "version": "1.0.0",
           "date": "2026-07-31T20:26:59Z",
