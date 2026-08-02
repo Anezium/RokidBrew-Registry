@@ -3,7 +3,7 @@
   "name": "Wi-Fi ON",
   "category": "Utility",
   "type": "glasses",
-  "version": "0.5",
+  "version": "0.7",
   "summary": "Restore Wi-Fi on Rokid Glasses RV101 standalone with automatic reconnection to saved networks",
   "description": "Wi-Fi ON is a small app for Rokid AI Glasses RV101 that automatically turns on Wi-Fi and reconnects to previously used networks without needing a Mac or cables. It also restores Mac connection for Rokid Control after reboot.",
   "author": "ksuzukigh",
@@ -12,15 +12,22 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/ksuzukigh/rokid-wifi-on/releases/download/v0.5/Wi-Fi-ON.apk",
-      "sha256": "2991653325c4dcbeb7bc0ab6f995c8db2057fe8424b43bd272e3f1b055b214de",
+      "url": "https://github.com/ksuzukigh/rokid-wifi-on/releases/download/v0.7/Wi-Fi-ON.apk",
+      "sha256": "486c11bbd55e25235273a694ad1d8a948394ea4d85d47e64ce09721ce1761b37",
       "sizeBytes": 13000,
       "packageName": "io.github.ksuzukigh.rokidwifion",
-      "versionCode": 5,
-      "versionName": "0.5"
+      "versionCode": 7,
+      "versionName": "0.7"
     }
   ],
   "releases": [
+    {
+      "version": "0.7",
+      "date": "2026-08-02T06:36:53Z",
+      "sourceReleaseUrl": "https://github.com/ksuzukigh/rokid-wifi-on/releases/tag/v0.7",
+      "notes": null,
+      "changes": []
+    },
     {
       "version": "0.5",
       "date": "2026-07-28T07:03:00Z",
@@ -66,5 +73,6 @@
   ],
   "listing": {
     "descriptionMarkdown": "## About\nWi-Fi ON is an app for Rokid AI Glasses RV101 that restores Wi-Fi connectivity independently. When Wi-Fi disconnects, simply open the app to automatically enable Wi-Fi and reconnect to a registered network.\n\n## Key features\n- Automatically turns Wi-Fi on and reconnects to saved networks\n- Restores Mac connection for \"Rokid Control\" after device reboot\n- No need for Mac or development cables during normal recovery\n\n## How it works\n1. Open \"Wi-Fi ON\" from the app list on Rokid Glasses\n2. The app enables Wi-Fi and connects to an available registered network\n3. Displays status messages confirming Wi-Fi and Mac connection restoration\n4. Close the app with a single tap once connected\n\n## Notes\n- Initial setup requires a Mac and Rokid development cable to install the app and configure Mac connection\n- The app does not run continuously; it only performs recovery on launch\n- Does not access camera, microphone, location, photos, or contacts\n- Use on trusted Wi-Fi networks\n\n## Removal\nUninstall via the Rokid smartphone app under \"Glasses App Management\" and restart the glasses to disable Mac connection recovery."
-  }
+  },
+  "publishedAt": "2026-08-02T06:36:53Z"
 }

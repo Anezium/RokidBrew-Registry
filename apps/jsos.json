@@ -3,8 +3,8 @@
   "name": "JSOS",
   "category": "AI",
   "type": "combo",
-  "version": "2.0.35-hud-refresh",
-  "publishedAt": "2026-07-27T11:11:14Z",
+  "version": "2.0.36-security-hardening",
+  "publishedAt": "2026-08-01T14:58:44Z",
   "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
   "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
   "screenshotAssets": [
@@ -20,21 +20,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-HUD-v2.0.33-hud-refresh.apk",
-      "sha256": "45e423b4d644d93c60adb23b0c46297557cc352cb1d9e8ab99c41d206cb8e07d",
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.36-security-hardening/JSOS-HUD-v2.0.34-security-hardening.apk",
+      "sha256": "8069b6b0178c2a941d8e09846fb3bf808431d5f292121888858acf213e443627",
       "sizeBytes": 21568127,
       "packageName": "com.jsos.glasses",
-      "versionCode": 234,
-      "versionName": "2.0.33-hud-refresh"
+      "versionCode": 235,
+      "versionName": "2.0.34-security-hardening"
     },
     {
       "target": "phone",
-      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.35-hud-refresh/JSOS-Core-v2.0.11-session-routing.apk",
-      "sha256": "e93b77e18aef43d315591d24e031dc8028dc575d09a430141e38e9294566429b",
-      "sizeBytes": 53379431,
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.36-security-hardening/JSOS-Core-v2.0.12-security-hardening.apk",
+      "sha256": "b64c3efd1392f905f3a91e98caa099b8359977ad404ba15046c9d42d358b470f",
+      "sizeBytes": 53395815,
       "packageName": "com.jsos.phone",
-      "versionCode": 211,
-      "versionName": "2.0.11-session-routing"
+      "versionCode": 212,
+      "versionName": "2.0.12-security-hardening"
     }
   ],
   "author": "IWhatsskill",
@@ -60,6 +60,22 @@
     "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
   },
   "releases": [
+    {
+      "version": "2.0.36-security-hardening",
+      "date": "2026-08-01T14:58:44Z",
+      "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.36-security-hardening",
+      "notes": "# JSOS v2.0.36 Security Hardening preview\n\nThis preview fixes five concrete weaknesses in the public JSOS Core and HUD communication paths.\n\n## What was fixed\n\n- **Core watch commands are now private to JSOS.** Other Android apps can no longer inject commands through the dynamically registered watch-command receiver, including on older supported Android versions.\n- **HUD ring commands are now private to JSOS.** The R08 command receiver is consistently non-exported across all supported Android versions.\n- **Malformed or excessive HUD chunks are rejected early.** Chunk IDs, message types, part sizes, part counts, pending streams, and total buffered data now have strict limits. Mismatched, expired, or oversized streams are discarded safely.\n- **Oversized Core-to-HUD messages are stopped before encoding.** Core now rejects payloads above 450 KiB before Base64 expansion and chunk transmission.\n- **Live Talk playback can no longer grow without bounds.** Output-audio chunks are limited to 64 KiB and the playback queue is capped at 32 chunks.\n\nThese changes reduce the risk of command injection and uncontrolled memory growth without changing the JSOS layout or normal interaction flow.\n\n## Versions\n\n- JSOS Core: `2.0.12-security-hardening` (`versionCode 212`)\n- JSOS HUD: `2.0.34-security-hardening` (`versionCode 235`)\n\nBoth APKs use the existing JSOS Preview public release certificate and higher version codes than the previous public release, so they are prepared for an in-place preview update.\n\nJSOS Watch remains available in source, but it is unchanged and is not repackaged in this release.\n\n## Assets\n\n- `JSOS-Core-v2.0.12-security-hardening.apk`\n- `JSOS-HUD-v2.0.34-security-hardening.apk`\n- `RELEASE_NOTES_v2.0.36-security-hardening.md`\n- `SHA256SUMS.txt`\n\n<details>\n<summary>Technical verification</summary>\n\n- Public security diff review completed with no patch-introduced findings.\n- Core unit tests passed: 27 tests, 0 failures.\n- Core and HUD release builds and `lintVital` passed.\n- APK package names, versions, labels, and non-debuggable status were checked with `aapt`.\n- APK signatures were verified with `apksigner` and the JSOS Preview public release certificate.\n- Source and APK secret/private-marker scans passed.\n\n</details>",
+      "changes": [
+        "HUD ring commands are now private to JSOS. The R08 command receiver is consistently non-exported across all supported Android versions.",
+        "Oversized Core-to-HUD messages are stopped before encoding. Core now rejects payloads above 450 KiB before Base64 expansion and chunk transmission.",
+        "Live Talk playback can no longer grow without bounds. Output-audio chunks are limited to 64 KiB and the playback queue is capped at 32 chunks.",
+        "JSOS Core: 2.0.12-security-hardening (versionCode 212)",
+        "JSOS HUD: 2.0.34-security-hardening (versionCode 235)",
+        "RELEASENOTESv2.0.36-security-hardening.md",
+        "SHA256SUMS.txt",
+        "Public security diff review completed with no patch-introduced findings."
+      ]
+    },
     {
       "version": "2.0.35-hud-refresh",
       "date": "2026-07-27T11:11:14Z",
