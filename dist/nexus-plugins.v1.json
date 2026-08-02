@@ -374,34 +374,40 @@
       "description": "A message you can reply to reaches the glasses as it arrives. Read it without taking the phone out, speak your answer, and it sends itself. Anything you miss waits for you in Messages.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-08-02T10:40:49Z",
+      "publishedAt": "2026-08-02T15:34:24Z",
       "iconAsset": "relay-icon.png",
       "nexus": {
         "pluginId": "relay",
         "apiVersion": 3,
         "capabilities": [
           "surfaces",
-          "stt"
+          "stt",
+          "tts"
         ],
         "launchable": true,
         "settingsActivity": ".RelaySettingsActivity",
-        "minHostVersionCode": 10100
+        "minHostVersionCode": 10105
       },
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses* and *Speech to text* in Nexus → Settings → Plugin access."
+        "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## Hearing it instead\n\nTurn on *Read notifications aloud* and the glasses speak the message as it arrives — the whole message, in the voice and at the speed you already chose in your Rokid assistant settings. It is produced on the glasses, so it works with the phone in your pocket and nothing leaves the device. Off by default.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses*, *Speech to text* and *Text to speech* in Nexus → Settings → Plugin access."
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.0.2/relay-phone-release.apk",
-        "sha256": "59104e1389207293374640f760476ca38faf5169dca8150ea6804a02cd9b4bf5",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.0/relay-phone-release.apk",
+        "sha256": "8c380dd4610df0f6c6a4e35430fb96a7317768a57f460277820fec50655edf00",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5099956,
+        "sizeBytes": 5125960,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 3,
-        "versionName": "1.0.2"
+        "versionCode": 4,
+        "versionName": "1.1.0"
       },
       "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-08-02T15:34:24Z",
+          "notes": "\n- **Read notifications aloud.** A new switch, off by default, has the glasses speak a message when it arrives — the newest message whole, not a preview. The band is held open while it reads and gives you the usual answering window once it stops. Answering interrupts the reading, and so does dictating. Needs Rokid Nexus 1.1.5; the speech is produced on the glasses, so nothing leaves the device.\n- **\"Sent\" lands on the chip you were watching**, instead of confirming above a button still counting down to a send that already happened.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `8c380dd4610df0f6c6a4e35430fb96a7317768a57f460277820fec50655edf00`"
+        },
         {
           "version": "1.0.2",
           "date": "2026-08-02T10:40:49Z",

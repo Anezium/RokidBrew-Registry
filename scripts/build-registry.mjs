@@ -27,6 +27,7 @@ const nexusCapabilityAllowlist = new Set([
   "surfaces",
   "microphone",
   "stt",
+  "tts",
   "http_proxy",
   "camera",
   "mediasync",
