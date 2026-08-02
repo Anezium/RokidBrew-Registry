@@ -374,7 +374,7 @@
       "description": "A message you can reply to reaches the glasses as it arrives. Read it without taking the phone out, speak your answer, and it sends itself. Anything you miss waits for you in Messages.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-08-01T00:56:37Z",
+      "publishedAt": "2026-08-02T10:40:49Z",
       "iconAsset": "relay-icon.png",
       "nexus": {
         "pluginId": "relay",
@@ -393,15 +393,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.0.1/relay-phone-release.apk",
-        "sha256": "95079f10de87ee4f7cd061cee51c24ad17c72f6724e50e99796f77528c2f4f03",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.0.2/relay-phone-release.apk",
+        "sha256": "59104e1389207293374640f760476ca38faf5169dca8150ea6804a02cd9b4bf5",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5096572,
+        "sizeBytes": 5099956,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 2,
-        "versionName": "1.0.1"
+        "versionCode": 3,
+        "versionName": "1.0.2"
       },
       "releases": [
+        {
+          "version": "1.0.2",
+          "date": "2026-08-02T10:40:49Z",
+          "notes": "\n- **Black out behind notifications.** A new switch, off by default, asks the glasses to hide everything else while a Relay notification is up — only the notification shows. Leaving it off keeps the band floating over whatever you were looking at. Needs Rokid Nexus 1.1.4; older hubs simply ignore the request.\n- The test harness can crowd the inbox: an Eight threads button posts eight conversations at once, one more than the glasses list shows at a time.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `59104e1389207293374640f760476ca38faf5169dca8150ea6804a02cd9b4bf5`"
+        },
         {
           "version": "1.0.1",
           "date": "2026-08-01T00:56:37Z",
