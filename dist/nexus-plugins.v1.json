@@ -2,6 +2,55 @@
   "version": 1,
   "plugins": [
     {
+      "id": "assistant",
+      "kind": "nexus-plugin",
+      "name": "Assistant",
+      "category": "Assistant",
+      "summary": "The assist gesture, answered by your own ChatGPT.",
+      "description": "Press the assist gesture and ask out loud: the answer streams onto the glasses and is spoken aloud. Signed into your own ChatGPT plan, it can see what you see, keeps the conversation going, and searches the web when it needs to.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-08-03T20:40:08Z",
+      "iconAsset": "assistant-icon.png",
+      "nexus": {
+        "pluginId": "assistant",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces",
+          "microphone",
+          "stt",
+          "tts",
+          "assistant",
+          "camera"
+        ],
+        "launchable": true,
+        "settingsActivity": ".AssistantSettingsActivity",
+        "minHostVersionCode": 10106
+      },
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nPress the assist gesture and ask out loud. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD, the answer streams into the same band, and then it is spoken aloud. No window to navigate — you ask, you hear, you keep walking.\n\n## Your own ChatGPT\n\nSign in with ChatGPT and answers come from your own ChatGPT plan — nothing to paste, no per-token bill. Pick the model, from fastest to deepest, and how long it may think. An OpenAI API key works as the alternative route.\n\nThe assistant can also carry the memories and custom instructions of the account you signed in with, so it starts out knowing what ChatGPT knows. Synced automatically, and it can be turned off.\n\n## It can look\n\nAsk about what is in front of you and the model takes one photo through the glasses camera. One photo per question, only when the question needs eyes — asking for the weather will never fire the shutter — and never saved to the glasses' own gallery.\n\n## Conversations\n\nA follow-up keeps its context instead of starting over, and a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — in a Conversations screen where each can be read, and deleted, one by one or all at once.\n\n## Web search\n\nBuilt in. The model decides when a question needs the web, so news and weather are answerable from your face.\n\n## What it keeps\n\nSign-in tokens are stored encrypted on the phone. Conversations, their photos and your memory text live in the plugin's private storage, never in your gallery, and are deleted the moment you ask.\n\n## Needs\n\nA ChatGPT account (or an OpenAI API key), plus *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* in Nexus → Settings → Plugin access. Requires Rokid Nexus 1.1.6."
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.0.0/assistant-phone-release.apk",
+        "sha256": "571ab6f8a598f9146545cb4fdb80b1a24ac7408585cf8b9215c869450ec70443",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 5376609,
+        "packageName": "com.anezium.rokidbus.plugin.assistant",
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-03T20:40:08Z",
+          "notes": "\n- First release: press the assist gesture, speak, and the answer streams onto the glasses. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD and the reply arrives in the same band, then is spoken aloud.\n- **Sign in with ChatGPT.** Answers come from your own ChatGPT plan — nothing to paste, no per-token bill. An OpenAI API key works as the alternative route.\n- **It can look.** Ask about what is in front of you and the model takes one photo through the glasses camera — one per question, only when the question needs eyes, and never saved to the glasses' own gallery.\n- **Conversations continue.** A follow-up question keeps its context instead of starting over; a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — and both can be deleted at any time.\n- **It starts out knowing you.** Memories and custom instructions from the ChatGPT account you signed in with are carried into the assistant, so you do not introduce yourself twice. Optional, synced automatically, and it can be turned off.\n- **Web search built in.** The model decides when a question needs the web, so the weather and the news are answerable from your face.\n- Pick the model (fastest to deepest) and how long it may think, in Settings.\n- Requires Rokid Nexus 1.1.6 or newer, with *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* approved in Nexus → Settings → Plugin access.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `571ab6f8a598f9146545cb4fdb80b1a24ac7408585cf8b9215c869450ec70443`"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/assistant-icon.png"
+    },
+    {
       "id": "feeds",
       "kind": "nexus-plugin",
       "name": "Feeds",

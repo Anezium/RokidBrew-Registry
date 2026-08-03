@@ -31,6 +31,7 @@ const nexusCapabilityAllowlist = new Set([
   "http_proxy",
   "camera",
   "mediasync",
+  "assistant",
 ]);
 
 function readJson(file) {
