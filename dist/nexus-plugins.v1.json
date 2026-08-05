@@ -6,8 +6,8 @@
       "kind": "nexus-plugin",
       "name": "Assistant",
       "category": "Assistant",
-      "summary": "The assist gesture, answered by your own ChatGPT.",
-      "description": "Press the assist gesture and ask out loud: the answer streams onto the glasses and is spoken aloud. Signed into your own ChatGPT plan, it can see what you see, keeps the conversation going, and searches the web when it needs to.",
+      "summary": "The assist gesture, answered by the AI of your choice.",
+      "description": "Press the assist gesture and ask out loud: the answer streams onto the glasses and is spoken aloud. Ride your own ChatGPT plan, or bring a key for OpenAI, OpenRouter, MiniMax, DeepSeek, GLM, or any OpenAI-compatible server. It can see what you see, keeps the conversation going, and searches the web when it needs to.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-08-03T20:40:08Z",
@@ -29,19 +29,24 @@
       },
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nPress the assist gesture and ask out loud. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD, the answer streams into the same band, and then it is spoken aloud. No window to navigate — you ask, you hear, you keep walking.\n\n## Your own ChatGPT\n\nSign in with ChatGPT and answers come from your own ChatGPT plan — nothing to paste, no per-token bill. Pick the model, from fastest to deepest, and how long it may think. An OpenAI API key works as the alternative route.\n\nThe assistant can also carry the memories and custom instructions of the account you signed in with, so it starts out knowing what ChatGPT knows. Synced automatically, and it can be turned off.\n\n## It can look\n\nAsk about what is in front of you and the model takes one photo through the glasses camera. One photo per question, only when the question needs eyes — asking for the weather will never fire the shutter — and never saved to the glasses' own gallery.\n\n## Conversations\n\nA follow-up keeps its context instead of starting over, and a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — in a Conversations screen where each can be read, and deleted, one by one or all at once.\n\n## Web search\n\nBuilt in. The model decides when a question needs the web, so news and weather are answerable from your face.\n\n## What it keeps\n\nSign-in tokens are stored encrypted on the phone. Conversations, their photos and your memory text live in the plugin's private storage, never in your gallery, and are deleted the moment you ask.\n\n## Needs\n\nA ChatGPT account (or an OpenAI API key), plus *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* in Nexus → Settings → Plugin access. Requires Rokid Nexus 1.2.0."
+        "descriptionMarkdown": "## About\n\nPress the assist gesture and ask out loud. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD, the answer streams into the same band, and then it is spoken aloud. No window to navigate — you ask, you hear, you keep walking.\n\n## The AI of your choice\n\nSign in with ChatGPT and answers come from your own ChatGPT plan — nothing to paste, no per-token bill. Pick the model, from fastest to deepest, and how long it may think.\n\nOr bring a key: OpenAI, OpenRouter, MiniMax (a Coding Plan key works as-is), DeepSeek, GLM (Z.ai), or any OpenAI-compatible server of your own. Every provider keeps its own key — encrypted on the phone — its own model, and its own endpoint, so switching is one tap. Type any model id your provider serves, and a Personality box holds your standing instructions whoever answers.\n\nSigned into ChatGPT, the assistant can also carry the memories and custom instructions of your account, so it starts out knowing what ChatGPT knows — with every provider. Synced automatically, and it can be turned off.\n\n## It can look\n\nAsk about what is in front of you and the model takes one photo through the glasses camera. One photo per question, only when the question needs eyes — asking for the weather will never fire the shutter — and never saved to the glasses' own gallery.\n\n## Conversations\n\nA follow-up keeps its context instead of starting over, and a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — in a Conversations screen where each can be read, and deleted, one by one or all at once.\n\n## Web search\n\nBuilt in. The model decides when a question needs the web, so news and weather are answerable from your face.\n\n## What it keeps\n\nSign-in tokens are stored encrypted on the phone. Conversations, their photos and your memory text live in the plugin's private storage, never in your gallery, and are deleted the moment you ask.\n\n## Needs\n\nA ChatGPT account (or an OpenAI API key), plus *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* in Nexus → Settings → Plugin access. Requires Rokid Nexus 1.2.0."
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.0.1/assistant-phone-release.apk",
-        "sha256": "b1306ddc08ac37e89a1247320217ef4e2f35e5d3527331e7103486a086d67578",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.1.0/assistant-phone-release.apk",
+        "sha256": "d0dfa744e92d4f9b3d25cee0e5d4e927bfdd908fb8208b7d8d1c931cdf088572",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5381297,
+        "sizeBytes": 5419157,
         "packageName": "com.anezium.rokidbus.plugin.assistant",
-        "versionCode": 2,
-        "versionName": "1.0.1"
+        "versionCode": 3,
+        "versionName": "1.1.0"
       },
       "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-08-05T13:06:58Z",
+          "notes": "\n- **Choose who answers.** Settings now opens on a provider list: your ChatGPT plan, an OpenAI key, OpenRouter, MiniMax (a Coding Plan key works as-is), DeepSeek, GLM (Z.ai), or any OpenAI-compatible server of your own. Each provider keeps its own key — encrypted on the phone — its own model choice, and its own endpoint, so switching is one tap, not a re-setup.\n- **Any model id.** Pick from the suggestions or type the exact model your provider serves. For a model the app does not know, say whether it can see photos; photo questions are handled gracefully either way.\n- **Give it a personality.** A new Personality box holds standing instructions — a persona, a tone, house rules — layered under the HUD formatting rules.\n- Your notes and synced ChatGPT memories keep riding along with every question, whichever provider answers; the Memory toggle remains the single off switch.\n- Signing out of ChatGPT no longer forgets the keys you saved for other providers.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `d0dfa744e92d4f9b3d25cee0e5d4e927bfdd908fb8208b7d8d1c931cdf088572`"
+        },
         {
           "version": "1.0.1",
           "date": "2026-08-04T16:16:15Z",
