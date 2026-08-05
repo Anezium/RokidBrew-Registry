@@ -577,6 +577,11 @@
       },
       "releases": [
         {
+          "version": "1.0.4",
+          "date": "2026-08-05T11:48:16Z",
+          "notes": "\n- Add realtime ETAs for Hong Kong KMB, Citybus, and green-minibus stops, with automatic fallback to Transitous schedules.\n\n### Artifact\n\n- File: `transit-phone-release.apk`\n- SHA-256: `3f7237c454f983264d9dfadaa8d75559491f359e359d6459c321787af7120a74`"
+        },
+        {
           "version": "1.0.3",
           "date": "2026-07-23T21:44:01Z",
           "notes": "\n- Android 11 support: the plugin now installs on Android 11 (API 30) phones.\n\n### Artifact\n\n- File: `transit-phone-release.apk`\n- SHA-256: `4fa47174227b52b3ae82dcdeb5f63594763038b4519fc407a220dc2027cc0a4e`"
@@ -609,13 +614,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.3/transit-phone-release.apk",
-        "sha256": "4fa47174227b52b3ae82dcdeb5f63594763038b4519fc407a220dc2027cc0a4e",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.4/transit-phone-release.apk",
+        "sha256": "3f7237c454f983264d9dfadaa8d75559491f359e359d6459c321787af7120a74",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 4929616,
+        "sizeBytes": 5241668,
         "packageName": "com.anezium.rokidbus.plugin.transit",
-        "versionCode": 4,
-        "versionName": "1.0.3"
+        "versionCode": 5,
+        "versionName": "1.0.4"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/transit-icon.png"
     }
