@@ -376,6 +376,59 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/media-icon.png"
     },
     {
+      "id": "news",
+      "kind": "nexus-plugin",
+      "name": "News",
+      "category": "News",
+      "summary": "RSS and Atom feeds on the HUD, read with the ring.",
+      "description": "Subscribe to RSS or Atom feeds on the phone and read them on the glasses: sources with unread counts, headlines newest first, and the article text paged for the HUD. Fully operable with the R08 ring.",
+      "author": "beyondlevi",
+      "sourceUrl": "https://github.com/beyondlevi/news-nexus",
+      "publishedAt": "2026-08-06T19:49:33Z",
+      "iconAsset": "news-icon.png",
+      "screenshotAssets": [
+        "news-1-sources.png",
+        "news-2-headlines.png",
+        "news-3-reader.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nNews puts your RSS and Atom feeds on the Rokid glasses. Subscribe on the phone, then browse headlines and read articles on the HUD without touching anything but the ring.\n\n- Three views on one axis: sources, headlines, reader. Forward/back moves, tap opens, double tap goes back.\n- Headlines use both text bands of a list row, with age and source as trailing tokens; read items dim instead of disappearing.\n- Article text is reduced to paragraphs on the phone and paged to the HUD, sized to what a prose row actually renders.\n- Per-feed unread counts, cached articles between sessions, and a feed that fails to fetch keeps what it had.\n- Add feeds by URL or from seven verified presets (BBC World, NYT World, Hacker News, Ars Technica, The Verge, G1, Tecnoblog); each feed names itself from its channel title on the first fetch.\n\nRequests only the `surfaces` capability: feeds are fetched phone-side with the app's own HTTP stack.\n"
+      },
+      "releases": [
+        {
+          "version": "1.0.2",
+          "date": "2026-08-06T19:49:33Z",
+          "notes": "\n- First Nexus Store release of the News RSS/Atom reader.\n- Three HUD views - sources, headlines, reader - fully operable with the R08 ring one-axis method.\n- Headlines read across both text bands of a list row, so roughly twice as much of each headline is legible.\n- Article text is paged for the HUD and wrapped at the measured capacity of a prose row, so no sentence is clipped.\n- Feeds are fetched by the phone with a hardened parser (no doctypes, no external entities, bounded input).\n\n### Artifact\n\n- File: `news-phone-release.apk`\n- SHA-256: `aa07baeaeed0ea40a38d4994dd095c27d639022ea93e04880daeb016276de950`\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "news",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".NewsSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/beyondlevi/news-nexus/releases/download/news-v1.0.2/news-phone-release.apk",
+        "sha256": "aa07baeaeed0ea40a38d4994dd095c27d639022ea93e04880daeb016276de950",
+        "signerSha256": "07d94dca37d6327e2e55783f5b6bfaad213fd49841ae306e8b5ed26168aedf17",
+        "sizeBytes": 5097704,
+        "packageName": "com.beyondlevi.nexus.news",
+        "versionCode": 3,
+        "versionName": "1.0.2"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/news-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/news-1-sources.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/news-2-headlines.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/news-3-reader.png"
+      ]
+    },
+    {
       "id": "photosync",
       "kind": "nexus-plugin",
       "name": "Photos Sync",
