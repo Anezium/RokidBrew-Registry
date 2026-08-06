@@ -30,15 +30,20 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.1.0/assistant-phone-release.apk",
-    "sha256": "d0dfa744e92d4f9b3d25cee0e5d4e927bfdd908fb8208b7d8d1c931cdf088572",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.1.1/assistant-phone-release.apk",
+    "sha256": "cd512d4265e25306be26867bc2f5423bde47dec7f941bb7c8f03def4aecfef04",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 5419157,
+    "sizeBytes": 5421893,
     "packageName": "com.anezium.rokidbus.plugin.assistant",
-    "versionCode": 3,
-    "versionName": "1.1.0"
+    "versionCode": 4,
+    "versionName": "1.1.1"
   },
   "releases": [
+    {
+      "version": "1.1.1",
+      "date": "2026-08-06T10:50:15Z",
+      "notes": "\n- **No more thinking out loud.** Models that reason inline — MiniMax, GLM, DeepSeek and anything similar behind OpenRouter or a custom server — were showing their raw `<think>` traces in every answer. Those blocks are now stripped from the stream before the glasses display them, the voice reads them, or the conversation keeps them: only the answer itself gets through.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `cd512d4265e25306be26867bc2f5423bde47dec7f941bb7c8f03def4aecfef04`"
+    },
     {
       "version": "1.1.0",
       "date": "2026-08-05T13:06:58Z",
