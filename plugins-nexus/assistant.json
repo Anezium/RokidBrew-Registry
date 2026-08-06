@@ -30,15 +30,20 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.1.1/assistant-phone-release.apk",
-    "sha256": "cd512d4265e25306be26867bc2f5423bde47dec7f941bb7c8f03def4aecfef04",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.2.0/assistant-phone-release.apk",
+    "sha256": "fd7889a7e0996ebc058c4e2ccf80afb90460ab48c6638d22f4f08cae583e1aa0",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 5421893,
+    "sizeBytes": 5444645,
     "packageName": "com.anezium.rokidbus.plugin.assistant",
-    "versionCode": 4,
-    "versionName": "1.1.1"
+    "versionCode": 5,
+    "versionName": "1.2.0"
   },
   "releases": [
+    {
+      "version": "1.2.0",
+      "date": "2026-08-06T19:19:08Z",
+      "notes": "\n- **Every provider can look now.** Photo questions were a ChatGPT-only power; API providers were told they could look and could only pretend. Now a vision-capable model on MiniMax, OpenRouter, GLM, DeepSeek, or your own server takes a real photo through the glasses camera — same one-photo-per-question rule, same privacy: never saved to the glasses' gallery.\n- A model that cannot see images is now told so and answers honestly, instead of inventing tool-call syntax in the middle of its reply. Set the \"can see photos\" switch for your model in the provider's settings to enable the camera.\n- A server that does not understand tools is retried once without them, so plain custom endpoints keep answering as before.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `fd7889a7e0996ebc058c4e2ccf80afb90460ab48c6638d22f4f08cae583e1aa0`"
+    },
     {
       "version": "1.1.1",
       "date": "2026-08-06T10:50:15Z",
