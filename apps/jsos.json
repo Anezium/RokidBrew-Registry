@@ -3,8 +3,8 @@
   "name": "JSOS",
   "category": "AI",
   "type": "combo",
-  "version": "2.0.36-security-hardening",
-  "publishedAt": "2026-08-01T14:58:44Z",
+  "version": "2.0.38-r08-accessibility-recovery",
+  "publishedAt": "2026-08-03T16:28:38Z",
   "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
   "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
   "screenshotAssets": [
@@ -20,12 +20,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.36-security-hardening/JSOS-HUD-v2.0.34-security-hardening.apk",
-      "sha256": "8069b6b0178c2a941d8e09846fb3bf808431d5f292121888858acf213e443627",
-      "sizeBytes": 21568127,
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.38-r08-accessibility-recovery/JSOS-HUD-v2.0.36-r08-accessibility-recovery.apk",
+      "sha256": "913a1c804a6326a4dba8e4a825c565ee23dd37e6418059e6e4796256707bd876",
+      "sizeBytes": 21584815,
       "packageName": "com.jsos.glasses",
-      "versionCode": 235,
-      "versionName": "2.0.34-security-hardening"
+      "versionCode": 237,
+      "versionName": "2.0.36-r08-accessibility-recovery"
     },
     {
       "target": "phone",
@@ -60,6 +60,22 @@
     "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
   },
   "releases": [
+    {
+      "version": "2.0.38-r08-accessibility-recovery",
+      "date": "2026-08-03T16:28:38Z",
+      "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.38-r08-accessibility-recovery",
+      "notes": "# JSOS v2.0.38 R08 Accessibility Recovery\n\nThis preview fixes R08 ring control becoming unavailable when some Rokid firmware disables the JSOS Accessibility Service after a power cycle or app update.\n\n## Fixed\n\n- JSOS HUD can restore only its own R08 Accessibility component after an optional one-time ADB grant.\n- Recovery runs at HUD startup and also listens for boot, unlock, package replacement, and Bluetooth startup.\n- Existing Accessibility services are preserved; JSOS adds only its own component and verifies the write.\n- Without `WRITE_SECURE_SETTINGS`, recovery is a strict no-op and manual Accessibility setup remains unchanged.\n- The existing isolated `:ring` process, bounded GATT timeout, active-client callback filtering, and 3/5/8/12-second reconnect behavior remain intact.\n\n## Included apps\n\n- JSOS Core `2.0.12-security-hardening` (`versionCode 212`)\n- JSOS HUD `2.0.36-r08-accessibility-recovery` (`versionCode 237`)\n- JSOS Watch remains available as source and is not included as an APK asset.\n\n## Optional one-time setup\n\nGrant the HUD permission once from a trusted computer:\n\n```text\nadb shell pm grant com.jsos.glasses android.permission.WRITE_SECURE_SETTINGS\n```\n\nThe grant normally survives reboots and in-place APK updates. If it is not granted, JSOS does not change Android Accessibility settings.\n\n## Verification\n\n- Core Debug unit tests: 27 passed, 0 failed.\n- Core Release unit tests: 27 passed, 0 failed.\n- Core and HUD release builds completed successfully.\n- Core and HUD `lintVitalRelease` completed with no issues.\n- APK package names, labels, versions, non-debuggable status, signatures, and the JSOS Preview certificate were verified.\n- Source and expanded-APK secret/private-marker scans passed; tracked public text files are BOM-free.",
+      "changes": [
+        "JSOS HUD can restore only its own R08 Accessibility component after an optional one-time ADB grant.",
+        "Recovery runs at HUD startup and also listens for boot, unlock, package replacement, and Bluetooth startup.",
+        "Existing Accessibility services are preserved; JSOS adds only its own component and verifies the write.",
+        "Without WRITESECURESETTINGS, recovery is a strict no-op and manual Accessibility setup remains unchanged.",
+        "The existing isolated :ring process, bounded GATT timeout, active-client callback filtering, and 3/5/8/12-second reconnect behavior remain intact.",
+        "JSOS Core 2.0.12-security-hardening (versionCode 212)",
+        "JSOS HUD 2.0.36-r08-accessibility-recovery (versionCode 237)",
+        "JSOS Watch remains available as source and is not included as an APK asset."
+      ]
+    },
     {
       "version": "2.0.36-security-hardening",
       "date": "2026-08-01T14:58:44Z",

@@ -3,7 +3,7 @@
   "name": "Rokid AI Assistant",
   "category": "AI",
   "type": "combo",
-  "version": "0.12.0",
+  "version": "1.0.0",
   "summary": "Open-source AI assistant with phone and glasses apps for voice, photo, and AI interaction",
   "description": "Rokid AI Assistant is a voice-controlled assistant for Rokid AR glasses requiring a companion phone app. It supports AI chat, photo capture, and multi-provider AI and speech-to-text services.",
   "phoneRequired": true,
@@ -19,9 +19,9 @@
     },
     {
       "target": "phone",
-      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/phone-app-release.apk",
-      "sha256": "e116999943613692eece919515fb4139aaf100ed1e972488c0b6d51a13cf6f61",
-      "sizeBytes": 10082310,
+      "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v1.0.0/phone-app-release.apk",
+      "sha256": "fdc0b54a208e8f7cf15af4f51f0a530725c02ab75d7bd6e22831d35a6796a0a7",
+      "sizeBytes": 10199575,
       "packageName": "com.example.rokidphone",
       "versionCode": 4,
       "versionName": "0.12.0"
@@ -33,6 +33,21 @@
     "descriptionMarkdown": "## About\nRokid AI Assistant is an AI-powered voice and vision assistant designed for Rokid AR glasses. It uses a companion phone app to handle AI queries and connectivity, providing a wearable interface on the glasses.\n\n## Key Features\n- Voice-to-text transcription and AI chat via glasses\n- Photo capture with AI image analysis from glasses camera\n- Communication between phone and glasses using Rokid CXR SDK\n- Support for multiple AI providers (e.g., Gemini, OpenAI, Anthropic)\n- Support for multiple speech-to-text providers\n- Conversation history persistence with Room database\n- Multi-language support (13 languages)\n\n## Requirements\n- Rokid AR glasses paired with a phone\n- GEMINI_API_KEY (or other AI provider keys) for AI processing\n- Phone app required for AI processing; glasses app provides interface\n\n## Notes\n- Standalone glasses operation without phone is not supported\n- Offline AI inference is not available\n- No video streaming or real-time AR overlays included"
   },
   "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-08-02T07:53:21Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v1.0.0",
+      "notes": "## Rokid AI Assistant v1.0.0\n\nFirst signed release build.\n\n### Highlights\n- Provider Registry architecture: 15 AI providers with dynamic model catalogs (live Models API → 24h cache → verified fallback → manual model ID)\n- Model-level capabilities: vision/audio/streaming/tools/reasoning decided per model, not per provider\n- Unified streaming (AiStreamEvent) for OpenAI (Responses + Chat Completions), Anthropic, Gemini, and OpenAI-compatible providers\n- OpenAI Responses API support with Chat Completions fallback; Perplexity citations preserved\n- Baidu Qianfan v2 (single API key) with legacy OAuth migration; DeepSeek V4 model migration\n- Per-provider model memory, Android Keystore-encrypted API key storage (no plaintext fallback)\n- Full localization (13 locales) for the new model catalog settings UI\n\n### Assets\n- **app-release.apk** — integrated app (`com.example.rokidaiassistant`), signed\n- **phone-app-release.apk** — modular phone app (`com.example.rokidphone`), signed\n\nBoth signed with the release keystore (SHA-256: 7CA3A3F7BAC7483C0D16BB9E1EBDB657F094CE779483DDBC7FE364324601E30B).\n\nFallback model catalog last verified: 2026-08-02.",
+      "changes": [
+        "Provider Registry architecture: 15 AI providers with dynamic model catalogs (live Models API → 24h cache → verified fallback → manual model ID)",
+        "Model-level capabilities: vision/audio/streaming/tools/reasoning decided per model, not per provider",
+        "Unified streaming (AiStreamEvent) for OpenAI (Responses + Chat Completions), Anthropic, Gemini, and OpenAI-compatible providers",
+        "OpenAI Responses API support with Chat Completions fallback; Perplexity citations preserved",
+        "Baidu Qianfan v2 (single API key) with legacy OAuth migration; DeepSeek V4 model migration",
+        "Per-provider model memory, Android Keystore-encrypted API key storage (no plaintext fallback)",
+        "Full localization (13 locales) for the new model catalog settings UI"
+      ]
+    },
     {
       "version": "0.12.0",
       "date": "2026-03-07T04:29:02Z",
@@ -66,5 +81,6 @@
     "type": "githubReadme",
     "repo": "zero2005x/RokidAIAssistant",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-08-02T07:53:21Z"
 }
