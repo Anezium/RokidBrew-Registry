@@ -1,0 +1,57 @@
+{
+  "id": "ek-world-radio",
+  "name": "EK World Radio",
+  "category": "Media",
+  "type": "glasses",
+  "version": "2.0.0",
+  "publishedAt": "2026-08-07",
+  "summary": "Listen to global radio stations easily",
+  "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
+  "listing": {
+    "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
+  },
+  "releases": [
+    {
+      "version": "2.0.0",
+      "date": "2026-08-07",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
+      "changes": []
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-08-07",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": "Fix bug when switching channels",
+      "changes": []
+    }
+  ],
+  "screenshotAssets": [
+    "ek-world-radio.jpg"
+  ],
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.0.0.apk",
+      "sha256": "3fccd1032989c68f5debf3c723eb0650586f84b01415a77abf21e5359b8dab40",
+      "sizeBytes": 6937137,
+      "packageName": "kr.pe.eung.ekworldradio",
+      "versionCode": 2,
+      "versionName": "2.0.0"
+    }
+  ],
+  "author": "EUNG SOFT",
+  "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "eung3392/eungsoft",
+    "release": "RokidGlassesApp",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^EKWorldRadio_v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?\\.apk$"
+      }
+    ]
+  }
+}
