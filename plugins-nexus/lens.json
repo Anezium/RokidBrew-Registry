@@ -9,7 +9,10 @@
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
   "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "lens-icon.png",
-  "screenshotAssets": [],
+  "screenshotAssets": [
+    "lens-1-live.png",
+    "lens-2-freeze.png"
+  ],
   "listing": {
     "descriptionMarkdown": "## About\n\nPoint the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device."
   },

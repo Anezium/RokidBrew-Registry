@@ -9,7 +9,9 @@
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
   "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "lyrics-icon.png",
-  "screenshotAssets": [],
+  "screenshotAssets": [
+    "lyrics-1-hud.png"
+  ],
   "listing": {
     "descriptionMarkdown": "## About\n\nSynced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it."
   },

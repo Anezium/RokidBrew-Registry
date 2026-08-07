@@ -81,7 +81,9 @@
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-07-23T21:44:01Z",
       "iconAsset": "feeds-icon.png",
-      "screenshotAssets": [],
+      "screenshotAssets": [
+        "feeds-1-timeline.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\n\nRead your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards."
       },
@@ -122,7 +124,10 @@
         "versionCode": 3,
         "versionName": "1.0.2"
       },
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/feeds-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/feeds-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/feeds-1-timeline.png"
+      ]
     },
     {
       "id": "lens",
@@ -135,7 +140,10 @@
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-07-23T21:44:01Z",
       "iconAsset": "lens-icon.png",
-      "screenshotAssets": [],
+      "screenshotAssets": [
+        "lens-1-live.png",
+        "lens-2-freeze.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\n\nPoint the glasses camera at text and read it translated on the HUD. Freeze a frame for a clean pass, or keep live translation running. Recognised text is sent for translation; images stay on device."
       },
@@ -201,7 +209,11 @@
         "versionCode": 17,
         "versionName": "1.1.2"
       },
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lens-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lens-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lens-1-live.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lens-2-freeze.png"
+      ]
     },
     {
       "id": "lume",
@@ -214,7 +226,11 @@
       "sourceUrl": "https://github.com/beyondlevi/lume-nexus",
       "publishedAt": "2026-07-24T17:10:00Z",
       "iconAsset": "lume-icon.png",
-      "screenshotAssets": [],
+      "screenshotAssets": [
+        "lume-reader-playing.png",
+        "lume-reader-paused.png",
+        "lume-library.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\n\nLume turns Rokid glasses into a wearable speed reader. It uses RSVP (Rapid Serial Visual Presentation): text flows one word at a time at a fixed point in your field of view, so your eyes never travel across a line.\n\n- Import PDF/TXT, paste text, or share into Lume from any app (extraction stays on-device).\n- Adaptive pacing: long words, clause/sentence endings and paragraph breaks hold longer.\n- Adjustable speed (150-700 wpm), pause, and sentence stepping, all on the R08 ring.\n- Per-document reading progress; resume where you left off.\n\nFully operable by the R08 Access Bridge one-axis ring: move to select, tap to open/play/pause, back to exit."
       },
@@ -270,7 +286,12 @@
         "versionCode": 11,
         "versionName": "1.0.10"
       },
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lume-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lume-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lume-reader-playing.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lume-reader-paused.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lume-library.png"
+      ]
     },
     {
       "id": "lyrics",
@@ -283,7 +304,9 @@
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-07-23T21:44:01Z",
       "iconAsset": "lyrics-icon.png",
-      "screenshotAssets": [],
+      "screenshotAssets": [
+        "lyrics-1-hud.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\n\nSynced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it."
       },
@@ -324,7 +347,10 @@
         "versionCode": 3,
         "versionName": "1.0.2"
       },
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lyrics-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lyrics-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lyrics-1-hud.png"
+      ]
     },
     {
       "id": "media",
@@ -337,7 +363,9 @@
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-07-23T21:44:01Z",
       "iconAsset": "media-icon.png",
-      "screenshotAssets": [],
+      "screenshotAssets": [
+        "media-1-nowplaying.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
       },
@@ -378,7 +406,10 @@
         "versionCode": 3,
         "versionName": "1.0.2"
       },
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/media-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/media-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/media-1-nowplaying.png"
+      ]
     },
     {
       "id": "news",
@@ -510,7 +541,10 @@
         "settingsActivity": ".RelaySettingsActivity",
         "minHostVersionCode": 10105
       },
-      "screenshotAssets": [],
+      "screenshotAssets": [
+        "relay-1-notice.png",
+        "relay-2-inbox.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\nHow long a message stays up normally scales with its length; *Message display time* in the plugin's settings holds every message for a fixed 5 to 45 seconds instead, for hands that want more time to reach the Reply chip.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## Hearing it instead\n\nTurn on *Read notifications aloud* and the glasses speak the message as it arrives — the whole message, in the voice and at the speed you already chose in your Rokid assistant settings. It is produced on the glasses, so it works with the phone in your pocket and nothing leaves the device. Off by default.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses*, *Speech to text* and *Text to speech* in Nexus → Settings → Plugin access."
       },
@@ -556,7 +590,11 @@
           "notes": "\n- First release: messages you can reply to reach the glasses as they arrive, and light the display if it was dark.\n- Each message keeps its sender beside it, and a long conversation turns pages.\n- Speak your reply and it sends itself after a few seconds, counted down where the answers are and cancellable for its whole length.\n- Anything you missed waits in **Messages** in the Nexus menu, newest first, updating while you look at it.\n- Nothing is stored: messages live in memory while the plugin runs and never reach disk or a log.\n- Requires Rokid Nexus 1.1.0 or newer.\n\n### Artifact\n\n- File: `nexus-relay-1.0.0.apk`\n- SHA-256: `619c5a912bb754849802c5aa6cb36b30593a64cc28592f1a6fdb5d07732bdd09`"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/relay-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/relay-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/relay-1-notice.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/relay-2-inbox.png"
+      ]
     },
     {
       "id": "shoplist",
@@ -688,7 +726,9 @@
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-07-23T21:44:01Z",
       "iconAsset": "transit-icon.png",
-      "screenshotAssets": [],
+      "screenshotAssets": [
+        "transit-1-departures.png"
+      ],
       "listing": {
         "descriptionMarkdown": "## About\n\nLive public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone."
       },
@@ -739,7 +779,10 @@
         "versionCode": 5,
         "versionName": "1.0.4"
       },
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/transit-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/transit-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/transit-1-departures.png"
+      ]
     }
   ]
 }

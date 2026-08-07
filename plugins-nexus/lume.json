@@ -9,7 +9,11 @@
   "sourceUrl": "https://github.com/beyondlevi/lume-nexus",
   "publishedAt": "2026-07-24T17:10:00Z",
   "iconAsset": "lume-icon.png",
-  "screenshotAssets": [],
+  "screenshotAssets": [
+    "lume-reader-playing.png",
+    "lume-reader-paused.png",
+    "lume-library.png"
+  ],
   "listing": {
     "descriptionMarkdown": "## About\n\nLume turns Rokid glasses into a wearable speed reader. It uses RSVP (Rapid Serial Visual Presentation): text flows one word at a time at a fixed point in your field of view, so your eyes never travel across a line.\n\n- Import PDF/TXT, paste text, or share into Lume from any app (extraction stays on-device).\n- Adaptive pacing: long words, clause/sentence endings and paragraph breaks hold longer.\n- Adjustable speed (150-700 wpm), pause, and sentence stepping, all on the R08 ring.\n- Per-document reading progress; resume where you left off.\n\nFully operable by the R08 Access Bridge one-axis ring: move to select, tap to open/play/pause, back to exit."
   },

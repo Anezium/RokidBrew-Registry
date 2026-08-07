@@ -21,7 +21,10 @@
     "settingsActivity": ".RelaySettingsActivity",
     "minHostVersionCode": 10105
   },
-  "screenshotAssets": [],
+  "screenshotAssets": [
+    "relay-1-notice.png",
+    "relay-2-inbox.png"
+  ],
   "listing": {
     "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\nHow long a message stays up normally scales with its length; *Message display time* in the plugin's settings holds every message for a fixed 5 to 45 seconds instead, for hands that want more time to reach the Reply chip.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## Hearing it instead\n\nTurn on *Read notifications aloud* and the glasses speak the message as it arrives — the whole message, in the voice and at the speed you already chose in your Rokid assistant settings. It is produced on the glasses, so it works with the phone in your pocket and nothing leaves the device. Off by default.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses*, *Speech to text* and *Text to speech* in Nexus → Settings → Plugin access."
   },

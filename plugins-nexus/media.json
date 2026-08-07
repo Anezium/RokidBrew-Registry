@@ -9,7 +9,9 @@
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
   "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "media-icon.png",
-  "screenshotAssets": [],
+  "screenshotAssets": [
+    "media-1-nowplaying.png"
+  ],
   "listing": {
     "descriptionMarkdown": "## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
   },

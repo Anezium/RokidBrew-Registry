@@ -9,7 +9,9 @@
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
   "publishedAt": "2026-07-23T21:44:01Z",
   "iconAsset": "feeds-icon.png",
-  "screenshotAssets": [],
+  "screenshotAssets": [
+    "feeds-1-timeline.png"
+  ],
   "listing": {
     "descriptionMarkdown": "## About\n\nRead your social feeds on the HUD. Bluesky needs no account; X connects through an in-app sign-in. Threads, images, and swipe navigation, rendered as structured cards."
   },
