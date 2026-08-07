@@ -2,6 +2,50 @@
   "version": 1,
   "plugins": [
     {
+      "id": "agenda",
+      "kind": "nexus-plugin",
+      "name": "Agenda",
+      "category": "Productivity",
+      "summary": "Your calendar on the HUD, walked with the ring.",
+      "description": "The calendars your phone already syncs, on the glasses: what is next first, then the event's participants and its full description, paged for the HUD. Read-only and fully operable with the R08 ring.",
+      "author": "beyondlevi",
+      "sourceUrl": "https://github.com/beyondlevi/rokid-agenda-nexus",
+      "publishedAt": "2026-08-07T15:09:00Z",
+      "iconAsset": "agenda-icon.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nAgenda puts the calendars your phone already syncs on the Rokid glasses. Nothing to configure beyond a permission: Google, Exchange/Outlook, CalDAV and local calendars all arrive through the phone's calendar provider, and nothing ever leaves the phone.\n\n- **The list leads with what is next.** Title, start time on the right (`now` while it runs, `all day` for a full-day entry), and the day, the end and the location underneath. A running or imminent event takes the brightest row tone; later days are dimmed.\n- **All-day and multi-day entries are context, not commitments.** Holidays, vacations and \"away\" blocks sort after the day's real meetings instead of holding the top of the list for weeks.\n- **One appointment, one row.** The same meeting mirrored into a second calendar (a work account plus its Outlook copy) is collapsed, keeping the copy that carries the location and notes.\n- **Participants.** The guest list of the open event, organiser first, RSVP on the right, declined guests dimmed. Invitations that carry only an address get a readable name.\n- **Notes.** The whole description, paged for the HUD, with the calendar's HTML and decorative rules stripped — not the first three lines and a silent truncation.\n- **One axis, four verbs.** Forward and back move, a tap opens, a double tap goes back. The row a tap would open carries a mark and the footer names it.\n- Settings on the phone: the horizon (1/3/7/14/30 days), all-day events, hiding events you declined, and which calendars to include.\n\nRequests only the `surfaces` capability. Calendar access is read-only.\n"
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-07T15:09:00Z",
+          "notes": "\n- First Nexus Store release of the Agenda plugin.\n- Agenda list, event detail, participants and a paged description, all operable with the R08 ring one-axis method.\n- Reads the phone's calendar provider read-only; no network and no account of its own.\n- Rows are sized to what the HUD actually renders: a list-row title is one line, prose is cut by wrapped lines so no text is silently clipped.\n- Duplicated (mirrored) appointments are collapsed into a single row.\n\n### Artifact\n\n- File: `agenda-phone-release.apk`\n- SHA-256: `e64ae01d10c26232a708f1d509a27cb0c1777827b95df79ba5b85b9cb8f6c56e`\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "agenda",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".AgendaActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/beyondlevi/rokid-agenda-nexus/releases/download/agenda-v1.0.0/agenda-phone-release.apk",
+        "sha256": "e64ae01d10c26232a708f1d509a27cb0c1777827b95df79ba5b85b9cb8f6c56e",
+        "signerSha256": "7c3025c9b3acbf68287efc03f8fe412404683790d3dab0533ce1bacf56109ef2",
+        "sizeBytes": 5125286,
+        "packageName": "com.beyondlevi.nexus.plugin.agenda",
+        "versionCode": 11,
+        "versionName": "1.0.0"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/agenda-icon.png"
+    },
+    {
       "id": "assistant",
       "kind": "nexus-plugin",
       "name": "Assistant",
