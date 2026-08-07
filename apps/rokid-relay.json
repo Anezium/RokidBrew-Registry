@@ -7,8 +7,8 @@
   "featured": true,
   "featuredRank": 1,
   "publishedAt": "2026-07-10T15:51:37Z",
-  "summary": "Reply to Android phone notifications from Rokid glasses.",
-  "description": "Phone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
+  "summary": "Deprecated — superseded by the Relay plugin for Rokid Nexus. Reply to Android phone notifications from Rokid glasses.",
+  "description": "Deprecated — superseded by the Relay plugin for Rokid Nexus. Install Rokid Nexus and get the Relay plugin from its Store instead — same job, carried by the Nexus bus, no separate transport to arm. This app is no longer maintained.\n\nPhone relay for replyable Android notifications, with a compact glasses overlay, glasses microphone speech-to-text, Android direct reply, and bundled glasses helper deployment through Hi Rokid.",
   "screenshotAssets": [
     "rokid-relay-phone-home.png",
     "rokid-relay-phone-notifications.png",
