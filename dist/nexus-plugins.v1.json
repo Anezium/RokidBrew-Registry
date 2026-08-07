@@ -629,6 +629,50 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/shoplist-icon2.png"
     },
     {
+      "id": "tasker",
+      "kind": "nexus-plugin",
+      "name": "Tasker",
+      "category": "Automation",
+      "summary": "Run your Tasker automations from the glasses.",
+      "description": "Your named Tasker tasks, listed on the glasses HUD. Swipe to the one you want, tap, and the phone runs it — lights, scenes, volumes, whatever you taught Tasker to do.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-08-07T10:29:11Z",
+      "iconAsset": "tasker-icon.png",
+      "nexus": {
+        "pluginId": "tasker",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".TaskerSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nEvery named task in your Tasker setup, listed on the glasses. Swipe through them, tap one, and the phone runs it where it stands — the glasses are the remote, Tasker does the work. Anything you can put in a task is now a glance and a tap away: toggle the lights, start a scene, silence the phone, log your coffee.\n\n## On the glasses\n\nTasks appear under the project they belong to, in one list. Tap a task and the card answers with *Sent* once Tasker has taken the order; the list stays open, so firing two or three tasks in a row is just more taps. If something is missing — Tasker disabled, external access off, permission not granted — the card says exactly what, and the plugin's settings on the phone walk you through fixing it.\n\n*Sent* means Tasker accepted the run. The card does not track what the task did afterwards — a task that itself fails does so on the phone, in Tasker's own logs.\n\n## Needs\n\n[Tasker](https://tasker.joaoapps.com/) installed on the phone with at least one named task, **Allow External Access** enabled in Tasker's preferences (Misc tab), and the Tasker run permission granted from the plugin's settings screen. On the Nexus side, only *Show on your glasses*."
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/tasker-v1.0.0/tasker-phone-release.apk",
+        "sha256": "6e4d17551030f0c15d8f6c2a9e181f9b4b51166d8858d720aac0fab3c67fe2d2",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 5036076,
+        "packageName": "com.anezium.rokidbus.plugin.tasker",
+        "versionCode": 1,
+        "versionName": "1.0.0"
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-07T10:29:11Z",
+          "notes": "\n- Initial port of Tasker Bridge to the Nexus plugin platform: browse your named Tasker tasks on the glasses HUD and run one with a tap. The old app's custom transport (BLE wake, RFCOMM bridge, CXR-L helper APK) is gone — the Nexus bus carries everything.\n\n### Artifact\n\n- File: `tasker-phone-release.apk`\n- SHA-256: `6e4d17551030f0c15d8f6c2a9e181f9b4b51166d8858d720aac0fab3c67fe2d2`"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/tasker-icon.png"
+    },
+    {
       "id": "transit",
       "kind": "nexus-plugin",
       "name": "Transit",
