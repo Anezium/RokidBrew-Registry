@@ -3,14 +3,21 @@
   "name": "EKReader",
   "category": "Reader",
   "type": "glasses",
-  "version": "1.4.0",
-  "publishedAt": "2026-03-24",
+  "version": "1.5.0",
+  "publishedAt": "2026-08-04T02:00:13Z",
   "summary": "Clean and intuitive E-book reader app for Rokid Glasses.",
   "description": "EKReader is a clean and intuitive e-book reader application supporting TXT and EPUB files. Key Screen Layout - Main Screen: Shows the list of books on the device in a card format, distinguishing file types (TXT, EPUB) with icons. - Reader Screen: The book title is displayed at the top, and contents can be read in the wide central area. The current reading progress (%) and a progress bar are displayed at the bottom. Core Features - Visual Comfort: Applies an optimized contrast ratio on a black background for eye comfort during long reading sessions. - Simple UI: Minimizes complex buttons and focuses on essential functions (navigation, font size). - Operation Optimization: Rokid Glasses environment optimized for swiping and touch operation.",
   "listing": {
     "descriptionMarkdown": "EKReader is a clean and intuitive e-book reader application supporting TXT and EPUB files.\n\n**Key Screen Layout**\n- **Main Screen:** Shows the list of books on the device in a card format, distinguishing file types (TXT, EPUB) with icons.\n- **Reader Screen:** The book title is displayed at the top, and contents can be read in the wide central area. The current reading progress (%) and a progress bar are displayed at the bottom.\n\n**Core Features**\n- **Visual Comfort:** Applies an optimized contrast ratio on a black background for eye comfort during long reading sessions.\n- **Simple UI:** Minimizes complex buttons and focuses on essential functions (navigation, font size).\n- **Operation Optimization:** Rokid Glasses environment optimized for swiping and touch operation.\n\n### Usage / Controls\n\n- **Open Menu:** Call the main menu touchs on the reader screen.\n- **Jump to Page/Location:**\n- Adjust location by 5% increments using swipe in the 'Jump to' dialog, then touchs.\n- **Font Size:** Select desired size from Small, Normal, Large, X-Large in the font size dialog.\n- **Check Progress:** Real-time current location (%) and progress bar are displayed at the bottom.\n- **File Transfer (Web Install):** Materials such as txt and epub can be transferred easily using the file upload button dedicated to EKReader after connecting the smart glasses from the Web Install menu on the site."
   },
   "releases": [
+    {
+      "version": "1.5.0",
+      "date": "2026-08-04T02:00:13Z",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": null,
+      "changes": []
+    },
     {
       "version": "1.4.0",
       "date": "2026-04-24",
@@ -58,12 +65,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.4.0.apk",
-      "sha256": "643e1653a1a9a3419561d603337b3c96c7afcb3cfc2f64b4c71cd1b06486ce88",
-      "sizeBytes": 4753960,
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKReader_v1.5.0.apk",
+      "sha256": "d883ffea99dc278e990c8526b1a99b6991c0297dc670bf61ce07dabb5d8540c9",
+      "sizeBytes": 4754964,
       "packageName": "kr.pe.eung.ekreader",
-      "versionCode": 1,
-      "versionName": "1.0"
+      "versionCode": 2,
+      "versionName": "1.5.0"
     }
   ],
   "author": "EUNG SOFT",
