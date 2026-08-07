@@ -7,7 +7,7 @@
   "description": "A message you can reply to reaches the glasses as it arrives. Read it without taking the phone out, speak your answer, and it sends itself. Anything you miss waits for you in Messages.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-08-04T14:23:05Z",
+  "publishedAt": "2026-08-07T12:15:57Z",
   "iconAsset": "relay-icon.png",
   "nexus": {
     "pluginId": "relay",
@@ -27,15 +27,20 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.1/relay-phone-release.apk",
-    "sha256": "6196f4171745e929d6817f4f26cacb3148443b608850ab00a58d0cea0e197af0",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.2/relay-phone-release.apk",
+    "sha256": "c378c901ae7aa9573effea3ef20776c0ddcc88e5fd3f9d6e95ed7fb2dcd100df",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 5148924,
+    "sizeBytes": 5153128,
     "packageName": "com.anezium.rokidbus.plugin.relay",
-    "versionCode": 5,
-    "versionName": "1.1.1"
+    "versionCode": 6,
+    "versionName": "1.1.2"
   },
   "releases": [
+    {
+      "version": "1.1.2",
+      "date": "2026-08-07T12:15:57Z",
+      "notes": "\n- **A message now waits for the glasses instead of being dropped after five seconds.** The link to the glasses drops and heals on its own all the time — a pocket, a doorway, standby — and healing routinely takes ten to thirty seconds. Relay used to give a captured message five seconds to reach the glasses and then silently gave up: the message sat in the inbox, and the band never came. A message now waits out the reconnection for up to two minutes and shows the moment the link is back. Relay also stopped trusting a \"sent\" that never left the phone, and transient hiccups during registration no longer throw the waiting message away. Pairs well with Rokid Nexus 1.2.8, which fixes a related blind spot on the glasses side for back-to-back messages.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `c378c901ae7aa9573effea3ef20776c0ddcc88e5fd3f9d6e95ed7fb2dcd100df`"
+    },
     {
       "version": "1.1.1",
       "date": "2026-08-04T14:23:05Z",
