@@ -576,7 +576,7 @@
       "description": "A message you can reply to reaches the glasses as it arrives. Read it without taking the phone out, speak your answer, and it sends itself. Anything you miss waits for you in Messages.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-08-07T12:15:57Z",
+      "publishedAt": "2026-08-07T21:26:56Z",
       "iconAsset": "relay-icon.png",
       "nexus": {
         "pluginId": "relay",
@@ -599,15 +599,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.2/relay-phone-release.apk",
-        "sha256": "c378c901ae7aa9573effea3ef20776c0ddcc88e5fd3f9d6e95ed7fb2dcd100df",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.3/relay-phone-release.apk",
+        "sha256": "bd73200282e03aaef4cd72e10758739539c53a0b08be153434add18c0abaf40d",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5153128,
+        "sizeBytes": 5176388,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 6,
-        "versionName": "1.1.2"
+        "versionCode": 7,
+        "versionName": "1.1.3"
       },
       "releases": [
+        {
+          "version": "1.1.3",
+          "date": "2026-08-07T21:26:56Z",
+          "notes": "\n- **Messages Android hides can now come through.** Since Android 15 the system blanks out any notification it reads as carrying a code — and it reads far more than real codes that way, so an ordinary message with a few digits in it arrived on the glasses as \"Sensitive notification content hidden\". The only exemption Android grants is to an app registered as a device's companion, which is exactly what Relay is, so a new **Show messages Android hides** entry under Access offers to register it with your glasses. It is off until you ask for it, and Android's own dialog tells you what registering covers before anything happens. The registration is worth having on its own: it also lets Relay keep running when the system would otherwise stop it, which is one of the ways a message used to go missing entirely.\n- **When Android does hide a message, Relay now says so in its own words** instead of showing you the system's placeholder as though it were the message.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `bd73200282e03aaef4cd72e10758739539c53a0b08be153434add18c0abaf40d`"
+        },
         {
           "version": "1.1.2",
           "date": "2026-08-07T12:15:57Z",
