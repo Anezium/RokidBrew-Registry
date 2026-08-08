@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-07T21:47:22.920Z",
+  "generatedAt": "2026-08-08T05:57:52.810Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -14,63 +14,11 @@
   ],
   "apps": [
     {
-      "id": "ek-world-radio",
-      "name": "EK World Radio",
-      "category": "Media",
-      "type": "glasses",
-      "version": "2.0.0",
-      "publishedAt": "2026-08-07",
-      "summary": "Listen to global radio stations easily",
-      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
-      "listing": {
-        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
-      },
-      "releases": [
-        {
-          "version": "2.0.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
-          "changes": []
-        },
-        {
-          "version": "1.1.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Fix bug when switching channels",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "ek-world-radio.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.0.0.apk",
-          "sha256": "3fccd1032989c68f5debf3c723eb0650586f84b01415a77abf21e5359b8dab40",
-          "sizeBytes": 6937137,
-          "packageName": "kr.pe.eung.ekworldradio",
-          "versionCode": 2,
-          "versionName": "2.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
-      "newUntil": "2026-08-09T00:00:00.000Z",
-      "iconAsset": "ek-world-radio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
-      ]
-    },
-    {
       "id": "rokid-nexus",
       "name": "Rokid Nexus",
       "category": "Launcher",
       "type": "combo",
-      "version": "1.2.6",
+      "version": "1.2.11",
       "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
       "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
       "author": "Anezium",
@@ -79,24 +27,31 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.2.6/nexus-glasses-1.2.6.apk",
-          "sha256": "8a6e0438715277f454fc6a8ab1e8f5aba98772ed7663ec53d6c3cc14b23046a9",
-          "sizeBytes": 16357375,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.2.11/nexus-glasses-1.2.11.apk",
+          "sha256": "23e923ce5ad33e9098c87b192826f9bb755bc98f01861bd50b426016c7f58280",
+          "sizeBytes": 16373763,
           "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10206,
-          "versionName": "1.2.6"
+          "versionCode": 10211,
+          "versionName": "1.2.11"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.2.6/nexus-phone-1.2.6.apk",
-          "sha256": "45f00a8889a8fd3ef7cf37d7576df8df7f4bc438f06591b4e32b6ff3aa62b96a",
-          "sizeBytes": 17944857,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.2.11/nexus-phone-1.2.11.apk",
+          "sha256": "2d3779c064048f989f03b8adaaeae38092beee0226c5050fa8032618d278cba7",
+          "sizeBytes": 17994173,
           "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10206,
-          "versionName": "1.2.6"
+          "versionCode": 10211,
+          "versionName": "1.2.11"
         }
       ],
       "releases": [
+        {
+          "version": "1.2.11",
+          "date": "2026-08-07T19:10:51Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "1.2.6",
           "date": "2026-08-06T22:50:10Z",
@@ -165,8 +120,8 @@
       "listing": {
         "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
       },
-      "publishedAt": "2026-08-06T22:50:10Z",
-      "newUntil": "2026-08-08T22:50:10.000Z",
+      "publishedAt": "2026-08-07T19:10:51Z",
+      "newUntil": "2026-08-09T19:10:51.000Z",
       "iconAsset": "rokid-nexus.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
       "screenshotUrls": [
@@ -175,6 +130,58 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+      ]
+    },
+    {
+      "id": "ek-world-radio",
+      "name": "EK World Radio",
+      "category": "Media",
+      "type": "glasses",
+      "version": "2.0.0",
+      "publishedAt": "2026-08-07",
+      "summary": "Listen to global radio stations easily",
+      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
+      "listing": {
+        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
+      },
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
+          "changes": []
+        },
+        {
+          "version": "1.1.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Fix bug when switching channels",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-world-radio.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.0.0.apk",
+          "sha256": "3fccd1032989c68f5debf3c723eb0650586f84b01415a77abf21e5359b8dab40",
+          "sizeBytes": 6937137,
+          "packageName": "kr.pe.eung.ekworldradio",
+          "versionCode": 2,
+          "versionName": "2.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
+      "newUntil": "2026-08-09T00:00:00.000Z",
+      "iconAsset": "ek-world-radio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
       ]
     },
     {
