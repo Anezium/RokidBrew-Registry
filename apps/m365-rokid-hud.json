@@ -3,28 +3,28 @@
   "name": "M365 Rokid HUD",
   "category": "Mobility",
   "type": "combo",
-  "version": "1.1",
+  "version": "1.3.1",
   "summary": "BLE scooter telemetry HUD for Rokid glasses with real-time Xiaomi M365 data display",
   "description": "M365 Rokid HUD connects to Xiaomi M365 scooters via BLE to show real-time telemetry on Rokid AR glasses. The phone app manages BLE and the glasses app renders the HUD. Requires Android 10+ and Bluetooth permissions.",
   "phoneRequired": true,
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/glass-hud-release.apk",
-      "sha256": "e55c75d68d53acd7aa3fb1a08663fbcb5622f0d5918cd7383f502c2baa1e04dc",
-      "sizeBytes": 7607683,
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.3.1/M365-Rokid-HUD-glasses-v1.3.1.apk",
+      "sha256": "37ac5f00acc61df3147db6ff429e3776d852611c9af738c08459b53990bfb31d",
+      "sizeBytes": 11919494,
       "packageName": "com.m365hud.glass",
-      "versionCode": 2,
-      "versionName": "1.1"
+      "versionCode": 4,
+      "versionName": "1.3.1"
     },
     {
       "target": "phone",
-      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.1/app-release.apk",
-      "sha256": "4b908fb9544fb495f05437077c0e398668ff057b5cd831f00f08d58152f70646",
-      "sizeBytes": 23207889,
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.3.1/M365-Rokid-HUD-phone-v1.3.1.apk",
+      "sha256": "d5b4184dc37efaa6314333e6fca01974451ff90af986dbd95818d8c987e6e3a7",
+      "sizeBytes": 25249809,
       "packageName": "com.m365bleapp",
-      "versionCode": 2,
-      "versionName": "1.1"
+      "versionCode": 6,
+      "versionName": "1.3.1"
     }
   ],
   "author": "zero2005x",
@@ -33,6 +33,13 @@
     "descriptionMarkdown": "# About\nM365 Rokid HUD is an Android app that connects to Xiaomi/Ninebot M365 electric scooters via Bluetooth Low Energy (BLE) and displays real-time telemetry on Rokid AR glasses as a heads-up display (HUD).\n\n# Key Features\n- Automatic BLE scanning and discovery of nearby M365 scooters\n- Secure pairing with ECDH key exchange and token-based login\n- Real-time telemetry including speed, battery, temperature, and mileage\n- Remote motor lock/unlock and tail light control\n- Signal quality and data freshness indicators on the HUD\n- Multi-language support (11 languages)\n- Modern UI built with Jetpack Compose and Material3\n\n# How It Works\n- The phone app connects to the scooter via BLE and handles all communication.\n- Enable the \"Rokid HUD Gateway\" on the phone app to broadcast telemetry data.\n- The Rokid glasses app scans for the phone's gateway and displays telemetry in AR.\n\n# Requirements\n- Android 10 (API 29) or higher on the phone\n- Bluetooth and Location permissions for BLE scanning\n- Rokid AR glasses with the companion HUD app installed\n\n# Notes\n- Registration unpairs the scooter from other apps; register only your own devices.\n- Disable battery optimization on the phone app to maintain stable BLE connection.\n- The HUD shows speed, scooter battery, phone battery, glasses battery, current time, and signal quality.\n\n# Source\n[GitHub Repository](https://github.com/zero2005x/M365-Rokid-HUD)"
   },
   "releases": [
+    {
+      "version": "1.3.1",
+      "date": "2026-08-08T09:24:24Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.3.1",
+      "notes": "<html>\n<body>\n<html><head></head><body><h1>v1.3.1 — Glasses APK &amp; Release Automation | 眼鏡端 APK 與發布自動化</h1>\n<p>This is a <strong>packaging and build-correctness release</strong>. The phone app's\napplication code is unchanged from v1.3; everything below concerns the glasses\napp, the native library, and how releases are produced.</p>\n<p>這是一次<strong>打包與建置正確性</strong>的發布。手機端的應用程式碼與 v1.3 相同；以下變更集中在眼鏡端、原生函式庫，以及發布流程本身。</p>\n<hr>\n<h2>Downloads | 下載</h2>\n\nAPK | Description | 說明 | Size\n-- | -- | -- | --\nM365-Rokid-HUD-phone-v1.3.1.apk | Phone app — M365 BLE client + Rokid gateway | 手機端 — M365 BLE 用戶端 + Rokid 閘道 | 24.6 MB\nM365-Rokid-HUD-glasses-v1.3.1.apk | Glasses app — Rokid AR HUD display | 眼鏡端 — Rokid AR 抬頭顯示器 | 11.4 MB\nSHA256SUMS.txt | Checksums for both APKs | 兩顆 APK 的雜湊值 | —\n\n<hr>\n<h2>Known Limitations | 已知限制</h2>\n<ul>\n<li><strong>CXR-M channel discovery is not implemented.</strong> <code>UnifiedConnectionManager</code>\ncannot obtain an ARTC channel id automatically, so the CXR-M path falls back\nto Wi-Fi or BLE unless a channel id is supplied explicitly. The R8 fix above\nmakes the transport <em>reachable</em>; it does not complete the discovery mechanism.\n<strong>CXR-M 頻道探索尚未實作。</strong> <code>UnifiedConnectionManager</code> 無法自動取得 ARTC channel\nid，因此除非明確指定，CXR-M 路徑會退回 Wi-Fi 或 BLE。上述 R8 修正讓該傳輸<em>可被觸及</em>，\n但並未完成探索機制。</li>\n<li>The glasses release build now runs R8 for the first time. If you encounter\nbehaviour that differs from a debug build, please open an issue.\n眼鏡端 release 版本首次啟用 R8。若發現與 debug 版本行為不同，請回報 issue。</li>\n</ul>\n<hr>\n<h2>Upgrade Notes | 升級說明</h2>\n<p>Coming from <strong>v1.3</strong>: install both APKs. The phone app's behaviour is unchanged;\nthe glasses app gains a working CXR-M code path and is signed and versioned\nalongside the phone app for the first time.</p>\n<p>從 <strong>v1.3</strong> 升級：請安裝兩顆 APK。手機端行為不變；眼鏡端修復了 CXR-M 程式路徑，\n並首次與手機端採用一致的簽章與版本編號。</p>\n<p>Coming from <strong>v1.1 or earlier</strong>: see the v1.3 release notes for the Wi-Fi\ngateway and security hardening changes introduced there.</p>\n<p>從 <strong>v1.1 或更早版本</strong>升級：Wi-Fi 閘道與安全性強化的內容請參閱 v1.3 的發布說明。</p>\n<p><strong>Full Changelog</strong>: https://github.com/zero2005x/M365-Rokid-HUD/compare/v1.3...v1.3.1</p></body></html>\n</body>\n</html>",
+      "changes": []
+    },
     {
       "version": "1.1",
       "date": "2026-01-11T08:03:13Z",
@@ -52,5 +59,6 @@
     "type": "githubReadme",
     "repo": "zero2005x/M365-Rokid-HUD",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-08-08T09:24:24Z"
 }
