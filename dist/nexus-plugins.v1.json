@@ -615,15 +615,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.3/relay-phone-release.apk",
-        "sha256": "bd73200282e03aaef4cd72e10758739539c53a0b08be153434add18c0abaf40d",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.4/relay-phone-release.apk",
+        "sha256": "6268b2f3867c956b9e16b8bfc5612ac3ed573faeafcd8820332bd5a78bd613fd",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5176388,
+        "sizeBytes": 5176404,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 7,
-        "versionName": "1.1.3"
+        "versionCode": 8,
+        "versionName": "1.1.4"
       },
       "releases": [
+        {
+          "version": "1.1.4",
+          "date": "2026-08-08T13:02:15Z",
+          "notes": "\n- **After a reply is sent, the inbox comes back a bit sooner.** The \"Sent\" screen used to hand you back to the list after 1.2 seconds — which turned out to be the exact moment most people tap Back, so the tap landed on a list they had not seen yet and threw them out of Relay entirely. The hand-back now happens at 0.85 seconds: still enough to read \"Sent\", but the switch is over before your thumb gets there.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `6268b2f3867c956b9e16b8bfc5612ac3ed573faeafcd8820332bd5a78bd613fd`"
+        },
         {
           "version": "1.1.3",
           "date": "2026-08-07T21:26:56Z",
