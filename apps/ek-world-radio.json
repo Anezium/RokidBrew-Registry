@@ -50,7 +50,7 @@
     "assets": [
       {
         "target": "glasses",
-        "match": "^EKWorldRadio_v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?\\.apk$"
+        "match": "^EKWorldRadio_v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
       }
     ]
   }
