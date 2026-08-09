@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T10:14:19.313Z",
+  "generatedAt": "2026-08-09T06:00:02.857Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,107 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "rokid-ai-assistant",
+      "name": "Rokid AI Assistant",
+      "category": "AI",
+      "type": "combo",
+      "version": "1.1.0",
+      "summary": "Open-source AI assistant with phone and glasses apps for voice, photo, and AI interaction",
+      "description": "Rokid AI Assistant is a voice-controlled assistant for Rokid AR glasses requiring a companion phone app. It supports AI chat, photo capture, and multi-provider AI and speech-to-text services.",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v1.1.0/rokid-glasses-v1.1.0.apk",
+          "sha256": "a3f43e1617260322c0fa1da9ed823f127bded017dd57ac40fab64537e2c7c17f",
+          "sizeBytes": 4595477,
+          "packageName": "com.example.rokidglasses",
+          "versionCode": 5,
+          "versionName": "1.1.0"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v1.1.0/rokid-phone-v1.1.0.apk",
+          "sha256": "fb60852c3cd89e76fd71f84ebeeff5dbf55a160c38f3cabe9b91248bf81f0f8b",
+          "sizeBytes": 10256970,
+          "packageName": "com.example.rokidphone",
+          "versionCode": 5,
+          "versionName": "1.1.0"
+        }
+      ],
+      "author": "zero2005x",
+      "sourceUrl": "https://github.com/zero2005x/RokidAIAssistant",
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid AI Assistant is an AI-powered voice and vision assistant designed for Rokid AR glasses. It uses a companion phone app to handle AI queries and connectivity, providing a wearable interface on the glasses.\n\n## Key Features\n- Voice-to-text transcription and AI chat via glasses\n- Photo capture with AI image analysis from glasses camera\n- Communication between phone and glasses using Rokid CXR SDK\n- Support for multiple AI providers (e.g., Gemini, OpenAI, Anthropic)\n- Support for multiple speech-to-text providers\n- Conversation history persistence with Room database\n- Multi-language support (13 languages)\n\n## Requirements\n- Rokid AR glasses paired with a phone\n- GEMINI_API_KEY (or other AI provider keys) for AI processing\n- Phone app required for AI processing; glasses app provides interface\n\n## Notes\n- Standalone glasses operation without phone is not supported\n- Offline AI inference is not available\n- No video streaming or real-time AR overlays included"
+      },
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-08-08T10:16:34Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v1.1.0",
+          "notes": "# Rokid AI Assistant v1.1.0\n\nRelease date: 2026-08-08\n\n## English\n\n### Highlights\n\n- Added the experimental on-device Local Gemma provider foundation and manual vision capability overrides for custom OpenAI-compatible endpoints.\n- Hardened Bluetooth reconnection, camera capture, photo transfer, recording pause/resume, and phone-to-glasses event delivery.\n- Improved cancellation, timeout, resource cleanup, and error handling across AI, STT, TTS, and streaming services.\n- Protected credentials and logs, added safe log-file access, and preserved user data with an explicit Room database migration.\n- Improved provider/model compatibility, encoded-audio transcription, localized errors, and documentation language fallback.\n- Published three signed APK variants with signature verification and SHA-256 checksums.\n\n### Validation\n\n- 861 unit tests pass across the app, common, glasses-app, and phone-app modules.\n- Android lint passes with no unbaselined errors.\n- Signed release APKs build successfully for all three application modules.\n\n### Assets\n\n- `rokid-ai-assistant-v1.1.0.apk` — integrated/legacy application.\n- `rokid-phone-v1.1.0.apk` — modular phone application.\n- `rokid-glasses-v1.1.0.apk` — Rokid glasses application.\n- `SHA256SUMS.txt` — checksums for all APK assets.\n\n## 中文（繁體）\n\n### 更新重點\n\n- 新增實驗性的裝置端 Local Gemma 服務基礎，以及自訂 OpenAI 相容端點的手動視覺能力設定。\n- 強化藍牙自動重連、相機拍攝、照片傳輸、錄音暫停／繼續，以及手機與眼鏡間的事件傳遞。\n- 改善 AI、STT、TTS 與串流服務的取消、逾時、資源釋放及錯誤處理。\n- 加強憑證與日誌保護、安全的日誌檔案存取，並透過明確的 Room 資料庫遷移保留使用者資料。\n- 改善服務商／模型相容性、編碼音訊轉錄、在地化錯誤訊息，以及文件語言備援行為。\n- 發布三個已簽署 APK 版本，並提供 APK 簽章驗證與 SHA-256 校驗碼。\n\n### 驗證結果\n\n- app、common、glasses-app 與 phone-app 共 861 個單元測試全部通過。\n- Android lint 通過，沒有未列入基準的錯誤。\n- 三個應用程式模組皆可成功建立已簽署的 release APK。\n\n### 下載檔案\n\n- `rokid-ai-assistant-v1.1.0.apk` — 整合版／舊版應用程式。\n- `rokid-phone-v1.1.0.apk` — 模組化手機端應用程式。\n- `rokid-glasses-v1.1.0.apk` — Rokid 眼鏡端應用程式。\n- `SHA256SUMS.txt` — 所有 APK 的校驗碼。\n\n## Compatibility / 相容性\n\n- Minimum Android version / 最低 Android 版本：Android 9 (API 28)\n- Release signing certificate SHA-256: `7C:A3:A3:F7:BA:C7:48:3C:0D:16:BB:9E:1E:BD:B6:57:F0:94:CE:77:94:83:DD:BC:7F:E3:64:32:46:01:E3:0B`",
+          "changes": [
+            "Added the experimental on-device Local Gemma provider foundation and manual vision capability overrides for custom OpenAI-compatible endpoints.",
+            "Hardened Bluetooth reconnection, camera capture, photo transfer, recording pause/resume, and phone-to-glasses event delivery.",
+            "Improved cancellation, timeout, resource cleanup, and error handling across AI, STT, TTS, and streaming services.",
+            "Protected credentials and logs, added safe log-file access, and preserved user data with an explicit Room database migration.",
+            "Improved provider/model compatibility, encoded-audio transcription, localized errors, and documentation language fallback.",
+            "Published three signed APK variants with signature verification and SHA-256 checksums.",
+            "861 unit tests pass across the app, common, glasses-app, and phone-app modules.",
+            "Android lint passes with no unbaselined errors."
+          ]
+        },
+        {
+          "version": "1.0.0",
+          "date": "2026-08-02T07:53:21Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v1.0.0",
+          "notes": "## Rokid AI Assistant v1.0.0\n\nFirst signed release build.\n\n### Highlights\n- Provider Registry architecture: 15 AI providers with dynamic model catalogs (live Models API → 24h cache → verified fallback → manual model ID)\n- Model-level capabilities: vision/audio/streaming/tools/reasoning decided per model, not per provider\n- Unified streaming (AiStreamEvent) for OpenAI (Responses + Chat Completions), Anthropic, Gemini, and OpenAI-compatible providers\n- OpenAI Responses API support with Chat Completions fallback; Perplexity citations preserved\n- Baidu Qianfan v2 (single API key) with legacy OAuth migration; DeepSeek V4 model migration\n- Per-provider model memory, Android Keystore-encrypted API key storage (no plaintext fallback)\n- Full localization (13 locales) for the new model catalog settings UI\n\n### Assets\n- **app-release.apk** — integrated app (`com.example.rokidaiassistant`), signed\n- **phone-app-release.apk** — modular phone app (`com.example.rokidphone`), signed\n\nBoth signed with the release keystore (SHA-256: 7CA3A3F7BAC7483C0D16BB9E1EBDB657F094CE779483DDBC7FE364324601E30B).\n\nFallback model catalog last verified: 2026-08-02.",
+          "changes": [
+            "Provider Registry architecture: 15 AI providers with dynamic model catalogs (live Models API → 24h cache → verified fallback → manual model ID)",
+            "Model-level capabilities: vision/audio/streaming/tools/reasoning decided per model, not per provider",
+            "Unified streaming (AiStreamEvent) for OpenAI (Responses + Chat Completions), Anthropic, Gemini, and OpenAI-compatible providers",
+            "OpenAI Responses API support with Chat Completions fallback; Perplexity citations preserved",
+            "Baidu Qianfan v2 (single API key) with legacy OAuth migration; DeepSeek V4 model migration",
+            "Per-provider model memory, Android Keystore-encrypted API key storage (no plaintext fallback)",
+            "Full localization (13 locales) for the new model catalog settings UI"
+          ]
+        },
+        {
+          "version": "0.12.0",
+          "date": "2026-03-07T04:29:02Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.12.0",
+          "notes": "### New Features\n\n- **TTS Settings Screen** — New dedicated Text-to-Speech settings UI (`TtsSettingsScreen`) with support for configuring TTS provider, voice, speed, and pitch. Includes full navigation integration and settings persistence.\n- **Edge TTS Client** — Added `EdgeTtsClient` for Microsoft Edge TTS integration, providing high-quality cloud-based text-to-speech synthesis.\n- **TTS Provider Model** — New `TtsProvider` data model for managing multiple TTS engine configurations.\n- **AI Model Registry** — Introduced type-safe `AIModel` sealed class hierarchy with provider-specific subclasses (Gemini, Claude, OpenAI, Grok), including model metadata such as context window size, preview/deprecated status, and provider categorization via `ModelRepository`.\n\n### Improvements\n\n- **Bluetooth Auto-Reconnect (Glasses)** — `BluetoothSppClient` now automatically reconnects to the last connected device after an unexpected disconnection, with a 2-second delay to allow the phone server to restart its listening socket.\n- **Bluetooth Reconnection Timing** — Increased connection retry backoff from `1.5s + attempt × 1s` to `2.5s + attempt × 1.5s` for more reliable reconnection across varying Bluetooth conditions.\n- **Bluetooth Server Socket Recovery (Phone)** — Increased server socket re-creation delay from 300ms to 1000ms in `BluetoothSppManager`, ensuring the Bluetooth stack fully releases resources before accepting new connections.\n- **Localization** — Added TTS-related strings across all 13 supported languages (Arabic, Spanish, French, Italian, Japanese, Korean, Russian, Thai, Ukrainian, Vietnamese, Simplified Chinese, Traditional Chinese, English).\n- **Locale Config** — Added missing `vi` (Vietnamese) and `th` (Thai) entries to `locales_config.xml`.\n\n### Documentation\n\n- **ARCHITECTURE.md** — Fixed 10 discrepancies to match current codebase (MessageType enum, ConnectionState/DeviceInfo, AiServiceProvider interface, service/ai file listing, ai/provider directory, AiServiceFactory signature, provider example code, etc.).\n- **API_SETTINGS.md** — Updated provider tables, model names, and base URLs to reflect current code.\n- **Project Documentation Site** — Added index.html for GitHub Pages hosting.\n\n### Testing\n\n- **4 new test files** with 100+ test cases covering previously untested code:\n  - `BluetoothSppClientTest` (glasses-app) — 23 tests covering client state, connect guards, heartbeat, sendMessage, auto-reconnect, and retry backoff.\n  - `BluetoothSppManagerTest` (phone-app) — 23 tests covering server state, permission checks, sendMessage, handleDisconnection, binary buffer reset, disconnect, getPacketLength, and getPairedDevices.\n  - `ProviderSettingTest` (phone-app) — 30 tests covering `isValid()` for all 12 AI providers (including Baidu dual-key and Custom baseUrl-only validation), `fromId()`, and `getDefaultProviders()`.\n  - `ProviderTest` (phone-app) — 33 tests covering `ChatMessage` custom equals/hashCode with ByteArray content equality, `MessageRole`, `GenerationOptions`, `GenerationResult`, `FinishReason`, `Model`, `MessageChunk`, `TranscriptionResult`, and `ValidationResult`.\n- **Updated existing tests** — `AIModelTest`, `TtsProviderTest`, `ApiSettingsTest`, `TtsSettingsHelpersTest`, `AnthropicServiceTest`, `OpenAiCompatibleServiceTest` updated for new features and model IDs.\n- **Total test count: 550+** across all modules.\n\n### Build\n\n- Version bumped to `0.12.0` (versionCode 4).\n- Signed release APKs: **phone-app** (9.62 MB), **glasses-app** (4.37 MB).\n\n---\n\n**Full Changelog:** v0.11.0...v0.12.0",
+          "changes": []
+        },
+        {
+          "version": "0.11.0",
+          "date": "2026-02-22T00:06:12Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.11.0",
+          "notes": "## Release v0.11.0 (versionCode 3)\n\n### Changes\n- Version bump to 0.11.0\n- Fixed Gradle dependency verification for guava-parent, aapt2-linux, lint, groovy, intellij-core, and other CI artifacts\n\n### APKs\n- **glasses-app-release.apk** - Rokid glasses companion app\n- **phone-app-release.apk** - Phone companion app",
+          "changes": []
+        },
+        {
+          "version": "0.10.0",
+          "date": "2026-02-19T12:18:28Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.10.0",
+          "notes": "## What's Changed\n\n### Bug Fixes\n- Fix Bluetooth initialization race conditions and crashes\n- Fix missing permission check for device name retrieval\n- Fix Gradle CI build (remove hardcoded Windows Java home path)\n\n### Improvements\n- Complete ProGuard/R8 rules for Room, Kotlin Serialization, Retrofit, Coroutines, DataStore, Coil\n- Update dependencies (KSP, OkHttp, Compose BOM, etc.)\n- Refactor RecordingsScreen to use string resources\n- Single-source SN authentication strategy\n- Enhanced security: sensitive properties loaded from local.properties\n\n### APK Downloads\n| File | Description |\n|------|-------------|\n| `phone-app-release-signed.apk` | Phone App (AI, Bluetooth control) |\n| `glasses-app-release-signed.apk` | Glasses App (Display, Voice input) |\n\n**Full Changelog**: https://github.com/zero2005x/RokidAIAssistant/compare/v0.9.0...v0.10.0",
+          "changes": []
+        },
+        {
+          "version": "0.9.0",
+          "date": "2026-02-12T09:40:37Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.9.0",
+          "notes": "Rokid AI Assistant v0.9.0 (Pre-release)\nDownloads:\n\nphone-app-release.apk — Install on your Android phone\nglasses-app-release.apk — Install on Rokid AR glasses\nRequirements:\n\nAndroid 8.0+ (phone), Android 12+ (glasses)\nRokid AR glasses (CXR-S compatible)\nAPI key for at least one AI provider\nSetup:\n\nInstall the phone app on your phone\nInstall the glasses app on your Rokid glasses (via ADB)\nPair via Bluetooth and configure API keys in Settings",
+          "changes": []
+        }
+      ],
+      "publishedAt": "2026-08-08T10:16:34Z",
+      "newUntil": "2026-08-10T10:16:34.000Z",
+      "iconAsset": "rokid-ai-assistant.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ai-assistant.png",
+      "screenshotAssets": []
+    },
     {
       "id": "m365-rokid-hud",
       "name": "M365 Rokid HUD",
@@ -193,58 +294,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
-      ]
-    },
-    {
-      "id": "ek-world-radio",
-      "name": "EK World Radio",
-      "category": "Media",
-      "type": "glasses",
-      "version": "2.0.0",
-      "publishedAt": "2026-08-07",
-      "summary": "Listen to global radio stations easily",
-      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
-      "listing": {
-        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
-      },
-      "releases": [
-        {
-          "version": "2.0.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
-          "changes": []
-        },
-        {
-          "version": "1.1.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Fix bug when switching channels",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "ek-world-radio.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.0.0.apk",
-          "sha256": "3fccd1032989c68f5debf3c723eb0650586f84b01415a77abf21e5359b8dab40",
-          "sizeBytes": 6937137,
-          "packageName": "kr.pe.eung.ekworldradio",
-          "versionCode": 2,
-          "versionName": "2.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
-      "newUntil": "2026-08-09T00:00:00.000Z",
-      "iconAsset": "ek-world-radio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
       ]
     },
     {
@@ -1369,6 +1418,58 @@
       ]
     },
     {
+      "id": "ek-world-radio",
+      "name": "EK World Radio",
+      "category": "Media",
+      "type": "glasses",
+      "version": "2.0.0",
+      "publishedAt": "2026-08-07",
+      "summary": "Listen to global radio stations easily",
+      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
+      "listing": {
+        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
+      },
+      "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
+          "changes": []
+        },
+        {
+          "version": "1.1.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Fix bug when switching channels",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-world-radio.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.0.0.apk",
+          "sha256": "3fccd1032989c68f5debf3c723eb0650586f84b01415a77abf21e5359b8dab40",
+          "sizeBytes": 6937137,
+          "packageName": "kr.pe.eung.ekworldradio",
+          "versionCode": 2,
+          "versionName": "2.0.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
+      "newUntil": "2026-08-09T00:00:00.000Z",
+      "iconAsset": "ek-world-radio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
+      ]
+    },
+    {
       "id": "ek-home",
       "name": "EKHome",
       "category": "Launcher",
@@ -2411,91 +2512,6 @@
       ],
       "iconAsset": "photo-del.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/photo-del.png",
-      "screenshotAssets": []
-    },
-    {
-      "id": "rokid-ai-assistant",
-      "name": "Rokid AI Assistant",
-      "category": "AI",
-      "type": "combo",
-      "version": "1.0.0",
-      "summary": "Open-source AI assistant with phone and glasses apps for voice, photo, and AI interaction",
-      "description": "Rokid AI Assistant is a voice-controlled assistant for Rokid AR glasses requiring a companion phone app. It supports AI chat, photo capture, and multi-provider AI and speech-to-text services.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v0.12.0/glasses-app-release.apk",
-          "sha256": "f0be0b42d410ea0b5a2109551f6a157309c19966e60015e733ee351ae2702d0b",
-          "sizeBytes": 4579061,
-          "packageName": "com.example.rokidglasses",
-          "versionCode": 4,
-          "versionName": "0.12.0"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/zero2005x/RokidAIAssistant/releases/download/v1.0.0/phone-app-release.apk",
-          "sha256": "fdc0b54a208e8f7cf15af4f51f0a530725c02ab75d7bd6e22831d35a6796a0a7",
-          "sizeBytes": 10199575,
-          "packageName": "com.example.rokidphone",
-          "versionCode": 4,
-          "versionName": "0.12.0"
-        }
-      ],
-      "author": "zero2005x",
-      "sourceUrl": "https://github.com/zero2005x/RokidAIAssistant",
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid AI Assistant is an AI-powered voice and vision assistant designed for Rokid AR glasses. It uses a companion phone app to handle AI queries and connectivity, providing a wearable interface on the glasses.\n\n## Key Features\n- Voice-to-text transcription and AI chat via glasses\n- Photo capture with AI image analysis from glasses camera\n- Communication between phone and glasses using Rokid CXR SDK\n- Support for multiple AI providers (e.g., Gemini, OpenAI, Anthropic)\n- Support for multiple speech-to-text providers\n- Conversation history persistence with Room database\n- Multi-language support (13 languages)\n\n## Requirements\n- Rokid AR glasses paired with a phone\n- GEMINI_API_KEY (or other AI provider keys) for AI processing\n- Phone app required for AI processing; glasses app provides interface\n\n## Notes\n- Standalone glasses operation without phone is not supported\n- Offline AI inference is not available\n- No video streaming or real-time AR overlays included"
-      },
-      "releases": [
-        {
-          "version": "1.0.0",
-          "date": "2026-08-02T07:53:21Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v1.0.0",
-          "notes": "## Rokid AI Assistant v1.0.0\n\nFirst signed release build.\n\n### Highlights\n- Provider Registry architecture: 15 AI providers with dynamic model catalogs (live Models API → 24h cache → verified fallback → manual model ID)\n- Model-level capabilities: vision/audio/streaming/tools/reasoning decided per model, not per provider\n- Unified streaming (AiStreamEvent) for OpenAI (Responses + Chat Completions), Anthropic, Gemini, and OpenAI-compatible providers\n- OpenAI Responses API support with Chat Completions fallback; Perplexity citations preserved\n- Baidu Qianfan v2 (single API key) with legacy OAuth migration; DeepSeek V4 model migration\n- Per-provider model memory, Android Keystore-encrypted API key storage (no plaintext fallback)\n- Full localization (13 locales) for the new model catalog settings UI\n\n### Assets\n- **app-release.apk** — integrated app (`com.example.rokidaiassistant`), signed\n- **phone-app-release.apk** — modular phone app (`com.example.rokidphone`), signed\n\nBoth signed with the release keystore (SHA-256: 7CA3A3F7BAC7483C0D16BB9E1EBDB657F094CE779483DDBC7FE364324601E30B).\n\nFallback model catalog last verified: 2026-08-02.",
-          "changes": [
-            "Provider Registry architecture: 15 AI providers with dynamic model catalogs (live Models API → 24h cache → verified fallback → manual model ID)",
-            "Model-level capabilities: vision/audio/streaming/tools/reasoning decided per model, not per provider",
-            "Unified streaming (AiStreamEvent) for OpenAI (Responses + Chat Completions), Anthropic, Gemini, and OpenAI-compatible providers",
-            "OpenAI Responses API support with Chat Completions fallback; Perplexity citations preserved",
-            "Baidu Qianfan v2 (single API key) with legacy OAuth migration; DeepSeek V4 model migration",
-            "Per-provider model memory, Android Keystore-encrypted API key storage (no plaintext fallback)",
-            "Full localization (13 locales) for the new model catalog settings UI"
-          ]
-        },
-        {
-          "version": "0.12.0",
-          "date": "2026-03-07T04:29:02Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.12.0",
-          "notes": "### New Features\n\n- **TTS Settings Screen** — New dedicated Text-to-Speech settings UI (`TtsSettingsScreen`) with support for configuring TTS provider, voice, speed, and pitch. Includes full navigation integration and settings persistence.\n- **Edge TTS Client** — Added `EdgeTtsClient` for Microsoft Edge TTS integration, providing high-quality cloud-based text-to-speech synthesis.\n- **TTS Provider Model** — New `TtsProvider` data model for managing multiple TTS engine configurations.\n- **AI Model Registry** — Introduced type-safe `AIModel` sealed class hierarchy with provider-specific subclasses (Gemini, Claude, OpenAI, Grok), including model metadata such as context window size, preview/deprecated status, and provider categorization via `ModelRepository`.\n\n### Improvements\n\n- **Bluetooth Auto-Reconnect (Glasses)** — `BluetoothSppClient` now automatically reconnects to the last connected device after an unexpected disconnection, with a 2-second delay to allow the phone server to restart its listening socket.\n- **Bluetooth Reconnection Timing** — Increased connection retry backoff from `1.5s + attempt × 1s` to `2.5s + attempt × 1.5s` for more reliable reconnection across varying Bluetooth conditions.\n- **Bluetooth Server Socket Recovery (Phone)** — Increased server socket re-creation delay from 300ms to 1000ms in `BluetoothSppManager`, ensuring the Bluetooth stack fully releases resources before accepting new connections.\n- **Localization** — Added TTS-related strings across all 13 supported languages (Arabic, Spanish, French, Italian, Japanese, Korean, Russian, Thai, Ukrainian, Vietnamese, Simplified Chinese, Traditional Chinese, English).\n- **Locale Config** — Added missing `vi` (Vietnamese) and `th` (Thai) entries to `locales_config.xml`.\n\n### Documentation\n\n- **ARCHITECTURE.md** — Fixed 10 discrepancies to match current codebase (MessageType enum, ConnectionState/DeviceInfo, AiServiceProvider interface, service/ai file listing, ai/provider directory, AiServiceFactory signature, provider example code, etc.).\n- **API_SETTINGS.md** — Updated provider tables, model names, and base URLs to reflect current code.\n- **Project Documentation Site** — Added index.html for GitHub Pages hosting.\n\n### Testing\n\n- **4 new test files** with 100+ test cases covering previously untested code:\n  - `BluetoothSppClientTest` (glasses-app) — 23 tests covering client state, connect guards, heartbeat, sendMessage, auto-reconnect, and retry backoff.\n  - `BluetoothSppManagerTest` (phone-app) — 23 tests covering server state, permission checks, sendMessage, handleDisconnection, binary buffer reset, disconnect, getPacketLength, and getPairedDevices.\n  - `ProviderSettingTest` (phone-app) — 30 tests covering `isValid()` for all 12 AI providers (including Baidu dual-key and Custom baseUrl-only validation), `fromId()`, and `getDefaultProviders()`.\n  - `ProviderTest` (phone-app) — 33 tests covering `ChatMessage` custom equals/hashCode with ByteArray content equality, `MessageRole`, `GenerationOptions`, `GenerationResult`, `FinishReason`, `Model`, `MessageChunk`, `TranscriptionResult`, and `ValidationResult`.\n- **Updated existing tests** — `AIModelTest`, `TtsProviderTest`, `ApiSettingsTest`, `TtsSettingsHelpersTest`, `AnthropicServiceTest`, `OpenAiCompatibleServiceTest` updated for new features and model IDs.\n- **Total test count: 550+** across all modules.\n\n### Build\n\n- Version bumped to `0.12.0` (versionCode 4).\n- Signed release APKs: **phone-app** (9.62 MB), **glasses-app** (4.37 MB).\n\n---\n\n**Full Changelog:** v0.11.0...v0.12.0",
-          "changes": []
-        },
-        {
-          "version": "0.11.0",
-          "date": "2026-02-22T00:06:12Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.11.0",
-          "notes": "## Release v0.11.0 (versionCode 3)\n\n### Changes\n- Version bump to 0.11.0\n- Fixed Gradle dependency verification for guava-parent, aapt2-linux, lint, groovy, intellij-core, and other CI artifacts\n\n### APKs\n- **glasses-app-release.apk** - Rokid glasses companion app\n- **phone-app-release.apk** - Phone companion app",
-          "changes": []
-        },
-        {
-          "version": "0.10.0",
-          "date": "2026-02-19T12:18:28Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.10.0",
-          "notes": "## What's Changed\n\n### Bug Fixes\n- Fix Bluetooth initialization race conditions and crashes\n- Fix missing permission check for device name retrieval\n- Fix Gradle CI build (remove hardcoded Windows Java home path)\n\n### Improvements\n- Complete ProGuard/R8 rules for Room, Kotlin Serialization, Retrofit, Coroutines, DataStore, Coil\n- Update dependencies (KSP, OkHttp, Compose BOM, etc.)\n- Refactor RecordingsScreen to use string resources\n- Single-source SN authentication strategy\n- Enhanced security: sensitive properties loaded from local.properties\n\n### APK Downloads\n| File | Description |\n|------|-------------|\n| `phone-app-release-signed.apk` | Phone App (AI, Bluetooth control) |\n| `glasses-app-release-signed.apk` | Glasses App (Display, Voice input) |\n\n**Full Changelog**: https://github.com/zero2005x/RokidAIAssistant/compare/v0.9.0...v0.10.0",
-          "changes": []
-        },
-        {
-          "version": "0.9.0",
-          "date": "2026-02-12T09:40:37Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/RokidAIAssistant/releases/tag/v0.9.0",
-          "notes": "Rokid AI Assistant v0.9.0 (Pre-release)\nDownloads:\n\nphone-app-release.apk — Install on your Android phone\nglasses-app-release.apk — Install on Rokid AR glasses\nRequirements:\n\nAndroid 8.0+ (phone), Android 12+ (glasses)\nRokid AR glasses (CXR-S compatible)\nAPI key for at least one AI provider\nSetup:\n\nInstall the phone app on your phone\nInstall the glasses app on your Rokid glasses (via ADB)\nPair via Bluetooth and configure API keys in Settings",
-          "changes": []
-        }
-      ],
-      "publishedAt": "2026-08-02T07:53:21Z",
-      "newUntil": "2026-08-04T07:53:21.000Z",
-      "iconAsset": "rokid-ai-assistant.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-ai-assistant.png",
       "screenshotAssets": []
     },
     {
