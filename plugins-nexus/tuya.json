@@ -1,0 +1,53 @@
+{
+  "id": "tuya",
+  "kind": "nexus-plugin",
+  "name": "Tuya Smart Home",
+  "category": "Utility",
+  "summary": "Your Tuya / Smart Life home on the HUD, walked with the ring.",
+  "description": "The homes, rooms and devices of your Tuya / Smart Life account on the glasses: pick a home, pick a room, pick a device, and act on its own datapoints. Switches toggle in place, modes open a value list, temperature and brightness open a stepper. Fully operable with the R08 ring.",
+  "author": "beyondlevi",
+  "sourceUrl": "https://github.com/beyondlevi/rokid-tuya-nexus",
+  "publishedAt": "2026-08-11T14:35:00Z",
+  "iconAsset": "tuya-icon.png",
+  "screenshotAssets": [
+    "tuya-1-homes-en.png",
+    "tuya-2-devices-en.png",
+    "tuya-3-controls-en.png",
+    "tuya-4-modes-en.png"
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nTuya Smart Home brings the smart-home account you already use on your phone to the Rokid glasses. It walks the same hierarchy the Smart Life app does — **home, room, device** — and then shows the device's real datapoints, read from the device itself rather than from a fixed list of supported models.\n\n- **Every control is typed from the device.** A boolean datapoint becomes a switch that flips on tap; an enum opens its declared options; an integer opens a stepper clamped to the range and step the device reports. Sensors and other reported-only values are shown dimmed, so it is obvious what can be acted on.\n- **Infrared air conditioners work.** IR bridges accept one set of codes and report another (`switch` versus `power`, `fan` versus `wind`); the plugin resolves them onto each other instead of showing an empty state.\n- **Shared homes degrade honestly.** Tuya only serves the room list to a home's owner, so a home you merely administer is shown as a single flat device list rather than failing.\n- **One axis, always.** Forward and back move the selection, tap acts, double tap goes up a level — nothing needs a pointer, a gesture or a second axis.\n\n## Setup\n\nCreate a cloud project on [iot.tuya.com](https://iot.tuya.com), link the Smart Life account to it, and paste the **Access ID** and **Access Secret** into the plugin's settings along with the project's data center. A *Test connection* button reports how many homes and devices the project can actually see, and the account UID is resolved automatically.\n\nThe plugin talks to the Tuya cloud from the phone. It requests only the `surfaces` capability — no microphone, no camera.\n\n## Privacy\n\nYour Tuya keys are stored on the phone, in the plugin's own private storage, and are sent to nothing but Tuya's API."
+  },
+  "releases": [
+    {
+      "version": "1.0.1",
+      "date": "2026-08-11T14:35:00Z",
+      "notes": "\n- The Tuya Access Secret is no longer written to a plaintext preferences file. Credentials now live in `EncryptedSharedPreferences`, sealed with an AES key held in the Android Keystore; a store written by 1.0.0 is migrated on first launch and then deleted. If the Keystore is unavailable the plugin fails closed and asks for the keys again rather than falling back to plaintext.\n- Network responses are bounded (2 MiB) and rejected before parsing, and every call carries a whole-call timeout alongside the connect/read ones.\n- Leaving a screen while it is still loading now abandons that request; a reply landing after BACK could previously reopen the screen the wearer had just left.\n\n### Artifact\n\n- File: `tuya-phone-release.apk`\n- SHA-256: `dc058c4bf60cb57d905e867d7cd6b111dd58f10ccb120f788fbdedbf6b3c1538`\n"
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-08-11T13:20:00Z",
+      "notes": "\n- First release. Homes → rooms → devices → device controls on the glasses HUD, driven entirely by the R08 one-axis input (NEXT / PREV / SELECT / BACK).\n- Tuya Cloud client with HMAC-SHA256 request signing, token refresh and per-region endpoints.\n- Datapoint typing: boolean switches toggle in place, enums open a value list, integers open a range-clamped stepper, reported-only datapoints render dimmed.\n- Settings screen on the NexusUi kit: credentials, data center, optional UID, connection test and the uninstall row.\n\n### Artifact\n\n- File: `tuya-phone-release.apk`\n- SHA-256: `e76fbde01fe71070816b59ca6d71df8c662b951b7b5ec31f3ab51ea02d5b51eb`\n"
+    }
+  ],
+  "nexus": {
+    "pluginId": "tuya",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": ".TuyaSettingsActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/beyondlevi/rokid-tuya-nexus/releases/download/tuya-v1.0.1/tuya-phone-release.apk",
+    "sha256": "dc058c4bf60cb57d905e867d7cd6b111dd58f10ccb120f788fbdedbf6b3c1538",
+    "signerSha256": "e72a896cb4791546bdb44be06d09f8b3342ddfe95bdfe4ff696baec7d9eb83ba",
+    "sizeBytes": 8067997,
+    "packageName": "com.beyondlevi.nexus.plugin.tuya",
+    "versionCode": 2,
+    "versionName": "1.0.1"
+  }
+}
