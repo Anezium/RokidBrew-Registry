@@ -15,7 +15,7 @@ This directory is the source namespace for phone-only APK plugins installed into
 - `releases[]`: release history containing `version`, `date`, and `notes`.
 - `nexus.pluginId`: must exactly equal the installed APK manifest metadata value `com.anezium.rokidbus.plugin.ID`. The Nexus client uses this as an installed-plugin join key.
 - `nexus.apiVersion`: Nexus plugin API version declared by the plugin; currently exactly `3`.
-- `nexus.capabilities`: zero or more exact capability wire values: `surfaces`, `microphone`, `http_proxy`, or `camera`.
+- `nexus.capabilities`: zero or more exact capability wire values: `surfaces`, `microphone`, `stt`, `tts`, `http_proxy`, `camera`, `mediasync`, `assistant`, or `wireless_debugging`.
 - `nexus.launchable`: whether Nexus may launch the plugin directly.
 - `nexus.settingsActivity`: optional activity class Nexus opens for plugin settings.
 - `nexus.minHostVersionCode`: minimum compatible Rokid Nexus host version code.

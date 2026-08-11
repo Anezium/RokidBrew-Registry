@@ -7,7 +7,7 @@
   "description": "A message you can reply to reaches the glasses as it arrives. Read it without taking the phone out, speak your answer, and it sends itself. Anything you miss waits for you in Messages.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-08-07T21:26:56Z",
+  "publishedAt": "2026-08-11T12:12:07Z",
   "iconAsset": "relay-icon.png",
   "nexus": {
     "pluginId": "relay",
@@ -30,15 +30,20 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.4/relay-phone-release.apk",
-    "sha256": "6268b2f3867c956b9e16b8bfc5612ac3ed573faeafcd8820332bd5a78bd613fd",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.2.0/relay-phone-release.apk",
+    "sha256": "ddb5c5bb813fdf6a0905583b6cda8111f271b6ab1689e1bd16989a4c0c689ea3",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 5176404,
+    "sizeBytes": 5619160,
     "packageName": "com.anezium.rokidbus.plugin.relay",
-    "versionCode": 8,
-    "versionName": "1.1.4"
+    "versionCode": 9,
+    "versionName": "1.2.0"
   },
   "releases": [
+    {
+      "version": "1.2.0",
+      "date": "2026-08-11T12:12:07Z",
+      "notes": "\n- **A conversation from Messages now opens as a full-screen reader.** Instead of a band that paginates, the thread wraps as prose and scrolls in the native glasses renderer, so a long exchange reads like a page. Tapping still starts a reply, and Back still returns to the Messages list.\n- **An open conversation stays live.** A message arriving while you are reading is added in place, keeping your scroll position, and without interrupting dictation, the review of a reply, or a send already counting down.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `ddb5c5bb813fdf6a0905583b6cda8111f271b6ab1689e1bd16989a4c0c689ea3`"
+    },
     {
       "version": "1.1.4",
       "date": "2026-08-08T13:02:15Z",

@@ -70,7 +70,7 @@
       "description": "Press the assist gesture and ask out loud: the answer streams onto the glasses and is spoken aloud. Ride your own ChatGPT plan, or bring a key for OpenAI, OpenRouter, MiniMax, DeepSeek, GLM, or any OpenAI-compatible server. It can see what you see, take notes and set reminders, keep the conversation going, and search the web when it needs to.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-08-03T20:40:08Z",
+      "publishedAt": "2026-08-11T12:06:49Z",
       "iconAsset": "assistant-icon.png",
       "nexus": {
         "pluginId": "assistant",
@@ -93,15 +93,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.3.0/assistant-phone-release.apk",
-        "sha256": "f8ecee3a016634318a402210a7f62259a8ff68e43d682a141a64c9da56b79500",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.0/assistant-phone-release.apk",
+        "sha256": "b92e13a52e1a87a0baf1b3f4929bc7d20bf65e32dba323e011c57aac830593cc",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5605513,
+        "sizeBytes": 6099819,
         "packageName": "com.anezium.rokidbus.plugin.assistant",
-        "versionCode": 6,
-        "versionName": "1.3.0"
+        "versionCode": 7,
+        "versionName": "1.4.0"
       },
       "releases": [
+        {
+          "version": "1.4.0",
+          "date": "2026-08-11T12:06:49Z",
+          "notes": "\n- **Your phone calendar is a real tool too.** Ask the assistant to add an appointment, read what is coming up, or delete one by its exact title and start time. Ambiguous matches and recurring series are refused instead of guessed.\n- **Answers can become native interactive pages.** The assistant can author a strict Ink page, or pick one of seven bounded templates, for results that benefit from layout, charts, progress, or an action. The same phone compiler, native glasses renderer, typed limits and `ink_surface` grant used by public plugins apply; plain text and card answers remain the fallback.\n- **The answer no longer goes dark during handover.** Listening, processing, and the final card or Ink page now share one display episode, whose scoped wake lock survives the band-to-surface morph and is released when that episode actually ends.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `b92e13a52e1a87a0baf1b3f4929bc7d20bf65e32dba323e011c57aac830593cc`"
+        },
         {
           "version": "1.3.0",
           "date": "2026-08-07T16:20:00Z",
@@ -367,7 +372,7 @@
       "description": "Synced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-07-23T21:44:01Z",
+      "publishedAt": "2026-08-11T12:17:46Z",
       "iconAsset": "lyrics-icon.png",
       "screenshotAssets": [
         "lyrics-1-hud.png"
@@ -376,6 +381,11 @@
         "descriptionMarkdown": "## About\n\nSynced lyrics that follow whatever is playing on your phone. Spotify sign-in for synced lines, with LrcLib and Netease fallbacks. Opens itself when a track starts, if you let it."
       },
       "releases": [
+        {
+          "version": "1.0.3",
+          "date": "2026-08-11T12:17:46Z",
+          "notes": "\n- **Lines no longer lag a beat behind.** The playback anchor is refreshed at every timed-line boundary, so transport latency can no longer leave the glasses highlighting the line you have already sung past.\n\n### Artifact\n\n- File: `lyrics-phone-release.apk`\n- SHA-256: `62c0295a14fa259b1c7e68b8ee9fa0eb8b683802f2ae540a2039c0eb61fe87e0`"
+        },
         {
           "version": "1.0.2",
           "date": "2026-07-23T21:44:01Z",
@@ -404,13 +414,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.2/lyrics-phone-release.apk",
-        "sha256": "695a61c23a101c1fba532a1ca639e71e42700e7f4ec6762a78f1dbc61aadeb28",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/lyrics-v1.0.3/lyrics-phone-release.apk",
+        "sha256": "62c0295a14fa259b1c7e68b8ee9fa0eb8b683802f2ae540a2039c0eb61fe87e0",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 7566613,
+        "sizeBytes": 8216049,
         "packageName": "com.anezium.rokidbus.plugin.lyrics",
-        "versionCode": 3,
-        "versionName": "1.0.2"
+        "versionCode": 4,
+        "versionName": "1.0.3"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lyrics-icon.png",
       "screenshotUrls": [
@@ -538,7 +548,7 @@
       "description": "Photos and videos you take on the glasses copy themselves into your phone gallery, in the same Hi Rokid album. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-08-01T00:56:37Z",
+      "publishedAt": "2026-08-11T12:14:48Z",
       "iconAsset": "photosync-icon3.png",
       "nexus": {
         "pluginId": "photosync",
@@ -556,15 +566,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/photosync-v1.0.2/photosync-phone-release.apk",
-        "sha256": "cceb8f91f955c4af52840961d4cdbd3a24ca27d0cc6bd6971f79ae095bf5bf67",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/photosync-v1.1.0/photosync-phone-release.apk",
+        "sha256": "f75a41253b7eb7dcf71b7e51e9fb608c79d5204cdee3b8376f5745e5ddd1e917",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 4981348,
+        "sizeBytes": 5382984,
         "packageName": "com.anezium.rokidbus.plugin.photosync",
-        "versionCode": 3,
-        "versionName": "1.0.2"
+        "versionCode": 4,
+        "versionName": "1.1.0"
       },
       "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-08-11T12:14:48Z",
+          "notes": "\n- **Choose which capture types sync.** Settings now lists photos, AR photos, videos and AR videos as separate switches, so a type you never want copied stops crossing the Bluetooth link at all instead of being deleted after the fact. Everything stays on by default.\n- The screen also says plainly what a synced file will look like: AR overlays and video stabilization are added by the Hi Rokid app after its own import, so captures synced here arrive as the raw file — plain photos, and clips without stabilization. One line per type, next to its switch.\n\n### Artifact\n\n- File: `photosync-phone-release.apk`\n- SHA-256: `f75a41253b7eb7dcf71b7e51e9fb608c79d5204cdee3b8376f5745e5ddd1e917`"
+        },
         {
           "version": "1.0.2",
           "date": "2026-08-01T00:56:37Z",
@@ -592,7 +607,7 @@
       "description": "A message you can reply to reaches the glasses as it arrives. Read it without taking the phone out, speak your answer, and it sends itself. Anything you miss waits for you in Messages.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-08-07T21:26:56Z",
+      "publishedAt": "2026-08-11T12:12:07Z",
       "iconAsset": "relay-icon.png",
       "nexus": {
         "pluginId": "relay",
@@ -615,15 +630,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.1.4/relay-phone-release.apk",
-        "sha256": "6268b2f3867c956b9e16b8bfc5612ac3ed573faeafcd8820332bd5a78bd613fd",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.2.0/relay-phone-release.apk",
+        "sha256": "ddb5c5bb813fdf6a0905583b6cda8111f271b6ab1689e1bd16989a4c0c689ea3",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5176404,
+        "sizeBytes": 5619160,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 8,
-        "versionName": "1.1.4"
+        "versionCode": 9,
+        "versionName": "1.2.0"
       },
       "releases": [
+        {
+          "version": "1.2.0",
+          "date": "2026-08-11T12:12:07Z",
+          "notes": "\n- **A conversation from Messages now opens as a full-screen reader.** Instead of a band that paginates, the thread wraps as prose and scrolls in the native glasses renderer, so a long exchange reads like a page. Tapping still starts a reply, and Back still returns to the Messages list.\n- **An open conversation stays live.** A message arriving while you are reading is added in place, keeping your scroll position, and without interrupting dictation, the review of a reply, or a send already counting down.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `ddb5c5bb813fdf6a0905583b6cda8111f271b6ab1689e1bd16989a4c0c689ea3`"
+        },
         {
           "version": "1.1.4",
           "date": "2026-08-08T13:02:15Z",
@@ -858,6 +878,50 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/transit-1-departures.png"
       ]
+    },
+    {
+      "id": "wirelessadb",
+      "kind": "nexus-plugin",
+      "name": "Wireless ADB",
+      "category": "Developer",
+      "summary": "Put the glasses on ADB over Wi-Fi, without a cable.",
+      "description": "Turn on Android's real wireless debugging on the glasses and get a pairing code with the exact adb pair and adb connect commands to run from your computer. No cable, no Settings automation, no Accessibility.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-08-11T12:09:15Z",
+      "iconAsset": "wirelessadb-icon.png",
+      "nexus": {
+        "pluginId": "wirelessadb",
+        "apiVersion": 3,
+        "capabilities": [
+          "wireless_debugging"
+        ],
+        "launchable": false,
+        "settingsActivity": ".WirelessAdbSettingsActivity",
+        "minHostVersionCode": 10401
+      },
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nThe glasses have no USB port you would want to use for this. Wireless ADB turns on Android's own wireless debugging transport on them and hands you the two commands to paste — `adb pair` with a fresh code, then `adb connect` — so a computer on the same network is talking to the glasses in under a minute.\n\nIt does not drive the Settings app and it does not use Accessibility. The plugin sends typed requests through Nexus; the phone hub checks the signer-bound *Wireless debugging* grant and stamps the plugin's identity, and the glasses hub performs only the fixed system operations involved: trust the current Wi-Fi network, start pairing, cancel pairing, disable ADB.\n\n## Using it\n\nApprove **Wireless debugging** in Nexus plugin access, open the plugin's settings, and tap **Enable & pair computer**. If the glasses' Wi-Fi radio is off, Nexus turns it on and waits for a saved network first — it does not choose or configure one for you. Run the `adb pair` command it shows, then the `adb connect` command, from your computer.\n\n**Disable wireless debugging** closes the transport when you are done. It disables ADB only, and leaves the glasses on their normal Wi-Fi network.\n\n## About the code\n\nThe pairing code lives for two minutes and is never logged or written to disk — after a hub restart only the service name and the expiry deadline survive, enough to close the window but not to reopen it. **Copy command** deliberately puts the command, code included, on the Android clipboard: clear it afterwards if your phone syncs its clipboard elsewhere. While a code is on screen the settings window blocks screenshots and screen recording.\n\nIf the pairing window cannot be closed the normal way, Nexus disables wireless debugging outright; if that fails too, it keeps showing the window as open and retries, rather than telling you it is closed.\n\n## Needs\n\nRokid Nexus 1.4.1 or newer on both the phone and the glasses, installed through their normal signed upgrade path, with *Wireless debugging* approved in Nexus → Settings → Plugin access. A saved Wi-Fi network on the glasses, developer access already set up, and a computer on the same LAN. The validated Rokid Android 12L (API 32) firmware — other API levels fail closed."
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/wirelessadb-v1.0.1/wirelessadb-phone-release.apk",
+        "sha256": "f5ded1fcaebf1a8ac5fe6ddab4daa8bb6e70ee833a4d040c4f67d44213dd821d",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 5376284,
+        "packageName": "com.anezium.rokidbus.plugin.wirelessadb",
+        "versionCode": 2,
+        "versionName": "1.0.1"
+      },
+      "releases": [
+        {
+          "version": "1.0.1",
+          "date": "2026-08-11T12:09:15Z",
+          "notes": "\n- First release: enable Android's wireless debugging transport on the glasses without a cable and without automating Settings. The plugin creates a two-minute pairing code and shows the exact `adb pair` and `adb connect` commands to run from a computer on the same network, and can cancel an open pairing window or disable the transport again.\n- **Enable & pair restores Wi-Fi when it needs to.** If the glasses' Wi-Fi radio is off, Nexus turns it on and waits for a saved network before enabling ADB, instead of failing on a radio it could have switched on.\n- **Disable stays scoped to ADB.** It closes wireless debugging without disconnecting the glasses from the network they were using.\n- The code is never logged or persisted, and the settings window blocks screenshots and screen recording while it is visible.\n- Requires Rokid Nexus 1.4.1 or newer on the phone and the glasses, and the validated Rokid Android 12L (API 32) firmware.\n\n### Artifact\n\n- File: `wirelessadb-phone-release.apk`\n- SHA-256: `f5ded1fcaebf1a8ac5fe6ddab4daa8bb6e70ee833a4d040c4f67d44213dd821d`"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/wirelessadb-icon.png"
     }
   ]
 }

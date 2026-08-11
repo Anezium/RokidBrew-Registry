@@ -7,7 +7,7 @@
   "description": "Photos and videos you take on the glasses copy themselves into your phone gallery, in the same Hi Rokid album. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-08-01T00:56:37Z",
+  "publishedAt": "2026-08-11T12:14:48Z",
   "iconAsset": "photosync-icon3.png",
   "nexus": {
     "pluginId": "photosync",
@@ -25,15 +25,20 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/photosync-v1.0.2/photosync-phone-release.apk",
-    "sha256": "cceb8f91f955c4af52840961d4cdbd3a24ca27d0cc6bd6971f79ae095bf5bf67",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/photosync-v1.1.0/photosync-phone-release.apk",
+    "sha256": "f75a41253b7eb7dcf71b7e51e9fb608c79d5204cdee3b8376f5745e5ddd1e917",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 4981348,
+    "sizeBytes": 5382984,
     "packageName": "com.anezium.rokidbus.plugin.photosync",
-    "versionCode": 3,
-    "versionName": "1.0.2"
+    "versionCode": 4,
+    "versionName": "1.1.0"
   },
   "releases": [
+    {
+      "version": "1.1.0",
+      "date": "2026-08-11T12:14:48Z",
+      "notes": "\n- **Choose which capture types sync.** Settings now lists photos, AR photos, videos and AR videos as separate switches, so a type you never want copied stops crossing the Bluetooth link at all instead of being deleted after the fact. Everything stays on by default.\n- The screen also says plainly what a synced file will look like: AR overlays and video stabilization are added by the Hi Rokid app after its own import, so captures synced here arrive as the raw file — plain photos, and clips without stabilization. One line per type, next to its switch.\n\n### Artifact\n\n- File: `photosync-phone-release.apk`\n- SHA-256: `f75a41253b7eb7dcf71b7e51e9fb608c79d5204cdee3b8376f5745e5ddd1e917`"
+    },
     {
       "version": "1.0.2",
       "date": "2026-08-01T00:56:37Z",

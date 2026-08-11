@@ -32,6 +32,7 @@ const nexusCapabilityAllowlist = new Set([
   "camera",
   "mediasync",
   "assistant",
+  "wireless_debugging",
 ]);
 
 function readJson(file) {

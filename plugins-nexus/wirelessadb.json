@@ -1,0 +1,43 @@
+{
+  "id": "wirelessadb",
+  "kind": "nexus-plugin",
+  "name": "Wireless ADB",
+  "category": "Developer",
+  "summary": "Put the glasses on ADB over Wi-Fi, without a cable.",
+  "description": "Turn on Android's real wireless debugging on the glasses and get a pairing code with the exact adb pair and adb connect commands to run from your computer. No cable, no Settings automation, no Accessibility.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+  "publishedAt": "2026-08-11T12:09:15Z",
+  "iconAsset": "wirelessadb-icon.png",
+  "nexus": {
+    "pluginId": "wirelessadb",
+    "apiVersion": 3,
+    "capabilities": [
+      "wireless_debugging"
+    ],
+    "launchable": false,
+    "settingsActivity": ".WirelessAdbSettingsActivity",
+    "minHostVersionCode": 10401
+  },
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nThe glasses have no USB port you would want to use for this. Wireless ADB turns on Android's own wireless debugging transport on them and hands you the two commands to paste — `adb pair` with a fresh code, then `adb connect` — so a computer on the same network is talking to the glasses in under a minute.\n\nIt does not drive the Settings app and it does not use Accessibility. The plugin sends typed requests through Nexus; the phone hub checks the signer-bound *Wireless debugging* grant and stamps the plugin's identity, and the glasses hub performs only the fixed system operations involved: trust the current Wi-Fi network, start pairing, cancel pairing, disable ADB.\n\n## Using it\n\nApprove **Wireless debugging** in Nexus plugin access, open the plugin's settings, and tap **Enable & pair computer**. If the glasses' Wi-Fi radio is off, Nexus turns it on and waits for a saved network first — it does not choose or configure one for you. Run the `adb pair` command it shows, then the `adb connect` command, from your computer.\n\n**Disable wireless debugging** closes the transport when you are done. It disables ADB only, and leaves the glasses on their normal Wi-Fi network.\n\n## About the code\n\nThe pairing code lives for two minutes and is never logged or written to disk — after a hub restart only the service name and the expiry deadline survive, enough to close the window but not to reopen it. **Copy command** deliberately puts the command, code included, on the Android clipboard: clear it afterwards if your phone syncs its clipboard elsewhere. While a code is on screen the settings window blocks screenshots and screen recording.\n\nIf the pairing window cannot be closed the normal way, Nexus disables wireless debugging outright; if that fails too, it keeps showing the window as open and retries, rather than telling you it is closed.\n\n## Needs\n\nRokid Nexus 1.4.1 or newer on both the phone and the glasses, installed through their normal signed upgrade path, with *Wireless debugging* approved in Nexus → Settings → Plugin access. A saved Wi-Fi network on the glasses, developer access already set up, and a computer on the same LAN. The validated Rokid Android 12L (API 32) firmware — other API levels fail closed."
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/wirelessadb-v1.0.1/wirelessadb-phone-release.apk",
+    "sha256": "f5ded1fcaebf1a8ac5fe6ddab4daa8bb6e70ee833a4d040c4f67d44213dd821d",
+    "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+    "sizeBytes": 5376284,
+    "packageName": "com.anezium.rokidbus.plugin.wirelessadb",
+    "versionCode": 2,
+    "versionName": "1.0.1"
+  },
+  "releases": [
+    {
+      "version": "1.0.1",
+      "date": "2026-08-11T12:09:15Z",
+      "notes": "\n- First release: enable Android's wireless debugging transport on the glasses without a cable and without automating Settings. The plugin creates a two-minute pairing code and shows the exact `adb pair` and `adb connect` commands to run from a computer on the same network, and can cancel an open pairing window or disable the transport again.\n- **Enable & pair restores Wi-Fi when it needs to.** If the glasses' Wi-Fi radio is off, Nexus turns it on and waits for a saved network before enabling ADB, instead of failing on a radio it could have switched on.\n- **Disable stays scoped to ADB.** It closes wireless debugging without disconnecting the glasses from the network they were using.\n- The code is never logged or persisted, and the settings window blocks screenshots and screen recording while it is visible.\n- Requires Rokid Nexus 1.4.1 or newer on the phone and the glasses, and the validated Rokid Android 12L (API 32) firmware.\n\n### Artifact\n\n- File: `wirelessadb-phone-release.apk`\n- SHA-256: `f5ded1fcaebf1a8ac5fe6ddab4daa8bb6e70ee833a4d040c4f67d44213dd821d`"
+    }
+  ]
+}
