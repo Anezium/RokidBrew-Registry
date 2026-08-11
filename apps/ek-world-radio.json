@@ -3,14 +3,21 @@
   "name": "EK World Radio",
   "category": "Media",
   "type": "glasses",
-  "version": "2.0.0",
-  "publishedAt": "2026-08-07",
+  "version": "2.1.0",
+  "publishedAt": "2026-08-10T08:39:34Z",
   "summary": "Listen to global radio stations easily",
   "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
   "listing": {
     "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
   },
   "releases": [
+    {
+      "version": "2.1.0",
+      "date": "2026-08-10T08:39:34Z",
+      "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+      "notes": null,
+      "changes": []
+    },
     {
       "version": "2.0.0",
       "date": "2026-08-07",
@@ -33,12 +40,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.0.0.apk",
-      "sha256": "3fccd1032989c68f5debf3c723eb0650586f84b01415a77abf21e5359b8dab40",
-      "sizeBytes": 6937137,
+      "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.1.0.apk",
+      "sha256": "a3e5fa0b632eeab5e6ef87db22fb79f6a81d869a475c57d273921c6f2ad1b8bc",
+      "sizeBytes": 6938261,
       "packageName": "kr.pe.eung.ekworldradio",
-      "versionCode": 2,
-      "versionName": "2.0.0"
+      "versionCode": 3,
+      "versionName": "2.1.0"
     }
   ],
   "author": "EUNG SOFT",
