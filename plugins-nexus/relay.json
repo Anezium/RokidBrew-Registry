@@ -19,7 +19,7 @@
     ],
     "launchable": true,
     "settingsActivity": ".RelaySettingsActivity",
-    "minHostVersionCode": 10105
+    "minHostVersionCode": 10401
   },
   "screenshotAssets": [
     "relay-1-notice.png",
