@@ -70,7 +70,7 @@
       "description": "Press the assist gesture and ask out loud: the answer streams onto the glasses and is spoken aloud. Ride your own ChatGPT plan, or bring a key for OpenAI, OpenRouter, MiniMax, DeepSeek, GLM, Hermes, or any OpenAI-compatible server. It can see what you see, take notes and set reminders, keep the conversation going, and search the web when it needs to.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-08-11T21:02:15Z",
+      "publishedAt": "2026-08-11T22:06:05Z",
       "iconAsset": "assistant-icon.png",
       "nexus": {
         "pluginId": "assistant",
@@ -93,15 +93,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.1/assistant-phone-release.apk",
-        "sha256": "bf927164812152b7c636afdf5d2eac51da4c39694edf055b3e68833faf5fb63b",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.2/assistant-phone-release.apk",
+        "sha256": "83b2a4083a0c85c5c02e75f2752c26ba35ba638c7cc0ac1a2f3d611916e67a1a",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 6139475,
+        "sizeBytes": 6146483,
         "packageName": "com.anezium.rokidbus.plugin.assistant",
-        "versionCode": 8,
-        "versionName": "1.4.1"
+        "versionCode": 9,
+        "versionName": "1.4.2"
       },
       "releases": [
+        {
+          "version": "1.4.2",
+          "date": "2026-08-11T22:06:05Z",
+          "notes": "\n- **Reminders, notes, timers and the calendar now work on Hermes too.** A server that runs its own tools never hands one back to the phone, so the assistant asks for a Nexus phone tool in plain text and Nexus runs it — the same tools every other provider gets, Ink pages aside.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `83b2a4083a0c85c5c02e75f2752c26ba35ba638c7cc0ac1a2f3d611916e67a1a`"
+        },
         {
           "version": "1.4.1",
           "date": "2026-08-11T21:02:15Z",
