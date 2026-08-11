@@ -94,4 +94,26 @@ When `apksigner` is available, the script still extracts the digest and rejects 
 
 Pull requests that add or change a real plugin descriptor run `verify-nexus-plugins.yml`. The fork-safe job uses no secrets: it downloads the public APK, checks every pinned artifact field, verifies the single signer certificate, and enforces the exported plugin service metadata and headless manifest contract before merge.
 
+### Reviewing the released source
+
+A descriptor PR normally changes only JSON, generated feeds, and store assets.
+Maintainers can add the `plugin-source-review` label to review the actual source
+behind its GitHub release in the isolated
+[`RokidBrew-Plugin-Reviews`](https://github.com/Anezium/RokidBrew-Plugin-Reviews)
+repository.
+
+The review automation resolves the exact release-tag commit, materializes the
+Nexus SDK contract declared by the plugin, and opens a disposable PR containing
+the real source diff from the previously registered release. Codex, CodeRabbit,
+and Greptile findings from that PR are collected into one updated comment on the
+original Registry PR. Inline findings link to immutable lines in the plugin
+author's repository because external source files cannot be attached as inline
+comments to this Registry diff.
+
+The source is copied as bounded text only and is never built or executed by the
+privileged workflow. Removing the label or closing the Registry PR closes the
+generated review and deletes its temporary branches. AI review remains advisory;
+the existing APK provenance, signer, manifest, descriptor, and feed checks stay
+mandatory.
+
 Run `node --test` to exercise signer parsing, phone-aligned descriptor validation, ingestion, and the static APK manifest checks.
