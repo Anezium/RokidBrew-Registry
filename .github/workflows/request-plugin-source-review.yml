@@ -1,0 +1,47 @@
+name: Request Nexus plugin source review
+
+on:
+  pull_request_target:
+    types: [labeled, unlabeled, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    if: >-
+      (github.event.action == 'unlabeled' && github.event.label.name == 'plugin-source-review') ||
+      (github.event.action == 'closed' && contains(github.event.pull_request.labels.*.name, 'plugin-source-review')) ||
+      (contains(github.event.pull_request.labels.*.name, 'plugin-source-review') &&
+       (github.event.action != 'labeled' || github.event.label.name == 'plugin-source-review'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require review dispatcher token
+        env:
+          REVIEW_TOKEN: ${{ secrets.ROKIDBREW_REVIEW_TOKEN }}
+        run: |
+          if [ -z "$REVIEW_TOKEN" ]; then
+            echo "::error::Add the ROKIDBREW_REVIEW_TOKEN Actions secret. See RokidBrew-Plugin-Reviews README."
+            exit 1
+          fi
+
+      - name: Dispatch isolated source review
+        env:
+          GH_TOKEN: ${{ secrets.ROKIDBREW_REVIEW_TOKEN }}
+          EVENT_ACTION: ${{ github.event.action }}
+          REGISTRY_REPOSITORY: ${{ github.repository }}
+          REGISTRY_PR: ${{ github.event.pull_request.number }}
+          REGISTRY_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          operation=prepare
+          if [ "$EVENT_ACTION" = "closed" ] || [ "$EVENT_ACTION" = "unlabeled" ]; then
+            operation=cleanup
+          fi
+          gh workflow run plugin-source-review.yml \
+            --repo Anezium/RokidBrew-Plugin-Reviews \
+            --ref main \
+            -f operation="$operation" \
+            -f registry_repository="$REGISTRY_REPOSITORY" \
+            -f registry_pr="$REGISTRY_PR" \
+            -f registry_head_sha="$REGISTRY_HEAD_SHA"
