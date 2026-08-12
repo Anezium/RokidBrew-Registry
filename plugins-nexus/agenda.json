@@ -13,12 +13,17 @@
     "agenda-1-list-en.png",
     "agenda-2-detail-en.png",
     "agenda-3-participants-en.png",
-    "agenda-4-notes-en.png"
+    "agenda-4-notes-reader.png"
   ],
   "listing": {
-    "descriptionMarkdown": "## About\n\nAgenda puts the calendars your phone already syncs on the Rokid glasses. Nothing to configure beyond a permission: Google, Exchange/Outlook, CalDAV and local calendars all arrive through the phone's calendar provider, and nothing ever leaves the phone.\n\n- **The list leads with what is next.** Title, start time on the right (`now` while it runs, `all day` for a full-day entry), and the day, the end and the location underneath. A running or imminent event takes the brightest row tone; later days are dimmed.\n- **All-day and multi-day entries are context, not commitments.** Holidays, vacations and \"away\" blocks sort after the day's real meetings instead of holding the top of the list for weeks.\n- **One appointment, one row.** The same meeting mirrored into a second calendar (a work account plus its Outlook copy) is collapsed, keeping the copy that carries the location and notes.\n- **Participants.** The guest list of the open event, organiser first, RSVP on the right, declined guests dimmed. Invitations that carry only an address get a readable name.\n- **Notes.** The whole description, paged for the HUD, with the calendar's HTML and decorative rules stripped — not the first three lines and a silent truncation.\n- **One axis, four verbs.** Forward and back move, a tap opens, a double tap goes back. The row a tap would open carries a mark and the footer names it.\n- Settings on the phone: the horizon (1/3/7/14/30 days), all-day events, hiding events you declined, and which calendars to include.\n\nRequests only the `surfaces` capability. Calendar access is read-only.\n\nAvailable in English and Portuguese; pick either in Android's per-app language settings, independently of the phone's language.\n"
+    "descriptionMarkdown": "## About\n\nAgenda puts the calendars your phone already syncs on the Rokid glasses. Nothing to configure beyond a permission: Google, Exchange/Outlook, CalDAV and local calendars all arrive through the phone's calendar provider, and nothing ever leaves the phone.\n\n- **The list leads with what is next.** Title, start time on the right (`now` while it runs, `all day` for a full-day entry), and the day, the end and the location underneath. A running or imminent event takes the brightest row tone; later days are dimmed.\n- **All-day and multi-day entries are context, not commitments.** Holidays, vacations and \"away\" blocks sort after the day's real meetings instead of holding the top of the list for weeks.\n- **One appointment, one row.** The same meeting mirrored into a second calendar (a work account plus its Outlook copy) is collapsed, keeping the copy that carries the location and notes.\n- **Participants.** The guest list of the open event, organiser first, RSVP on the right, declined guests dimmed. Invitations that carry only an address get a readable name.\n- **Notes.** The whole description as a native reader document — no line clamp, no pages, scrolled by the glasses themselves and opened at its first line, with the calendar's HTML and decorative rules stripped.\n- **One axis, four verbs.** Forward and back move, a tap opens, a double tap goes back. The row a tap would open carries a mark and the footer names it.\n- Settings on the phone: the horizon (1/3/7/14/30 days), all-day events, hiding events you declined, and which calendars to include.\n\nRequests only the `surfaces` capability. Calendar access is read-only.\n\nAvailable in English and Portuguese; pick either in Android's per-app language settings, independently of the phone's language.\n"
   },
   "releases": [
+    {
+      "version": "1.1.1",
+      "date": "2026-08-12T18:40:00Z",
+      "notes": "\n- The event description is now a native **reader surface**: no three-line clamp, no pages, up to 40,000 characters, opened at its first line. The glasses own the wrapping and the scrolling.\n- The document is budgeted in serialized bytes against both platform ceilings (the 64 KiB payload limit and the control-channel link), the shell is measured rather than assumed, and a description that had to be cut delivers its beginning plus a closing note.\n- Requires glasses hub 1.4.3 or newer, which is where a reader page can open at the top of a document instead of its end.\n- Built against bus-client sdk-v0.15.0.\n\n### Artifact\n\n- File: `agenda-phone-release.apk`\n- SHA-256: `708b7e96bdc3bd65d16adf45e48d62183db40520afbf59b16eabcf4960c50bae`\n"
+    },
     {
       "version": "1.0.1",
       "date": "2026-08-07T21:30:00Z",
@@ -38,16 +43,16 @@
     ],
     "launchable": true,
     "settingsActivity": ".AgendaActivity",
-    "minHostVersionCode": 6
+    "minHostVersionCode": 10403
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/beyondlevi/rokid-agenda-nexus/releases/download/agenda-v1.0.1/agenda-phone-release.apk",
-    "sha256": "21432a21d7747c458c4bcc744b82758e4787dc8a99752716bb3b5c8c4f2d8616",
+    "url": "https://github.com/beyondlevi/rokid-agenda-nexus/releases/download/agenda-v1.1.1/agenda-phone-release.apk",
+    "sha256": "708b7e96bdc3bd65d16adf45e48d62183db40520afbf59b16eabcf4960c50bae",
     "signerSha256": "7c3025c9b3acbf68287efc03f8fe412404683790d3dab0533ce1bacf56109ef2",
-    "sizeBytes": 5126058,
+    "sizeBytes": 5503042,
     "packageName": "com.beyondlevi.nexus.plugin.agenda",
-    "versionCode": 12,
-    "versionName": "1.0.1"
+    "versionCode": 14,
+    "versionName": "1.1.1"
   }
 }

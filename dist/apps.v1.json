@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T06:43:12.184Z",
+  "generatedAt": "2026-08-12T21:55:19.462Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -239,65 +239,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
-      ]
-    },
-    {
-      "id": "ek-world-radio",
-      "name": "EK World Radio",
-      "category": "Media",
-      "type": "glasses",
-      "version": "2.1.0",
-      "publishedAt": "2026-08-10T08:39:34Z",
-      "summary": "Listen to global radio stations easily",
-      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
-      "listing": {
-        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
-      },
-      "releases": [
-        {
-          "version": "2.1.0",
-          "date": "2026-08-10T08:39:34Z",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "2.0.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
-          "changes": []
-        },
-        {
-          "version": "1.1.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Fix bug when switching channels",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "ek-world-radio.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.1.0.apk",
-          "sha256": "a3e5fa0b632eeab5e6ef87db22fb79f6a81d869a475c57d273921c6f2ad1b8bc",
-          "sizeBytes": 6938261,
-          "packageName": "kr.pe.eung.ekworldradio",
-          "versionCode": 3,
-          "versionName": "2.1.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
-      "newUntil": "2026-08-12T08:39:34.000Z",
-      "iconAsset": "ek-world-radio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
       ]
     },
     {
@@ -1317,6 +1258,65 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-word-up-2.jpg"
+      ]
+    },
+    {
+      "id": "ek-world-radio",
+      "name": "EK World Radio",
+      "category": "Media",
+      "type": "glasses",
+      "version": "2.1.0",
+      "publishedAt": "2026-08-10T08:39:34Z",
+      "summary": "Listen to global radio stations easily",
+      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
+      "listing": {
+        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
+      },
+      "releases": [
+        {
+          "version": "2.1.0",
+          "date": "2026-08-10T08:39:34Z",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "2.0.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
+          "changes": []
+        },
+        {
+          "version": "1.1.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Fix bug when switching channels",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-world-radio.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.1.0.apk",
+          "sha256": "a3e5fa0b632eeab5e6ef87db22fb79f6a81d869a475c57d273921c6f2ad1b8bc",
+          "sizeBytes": 6938261,
+          "packageName": "kr.pe.eung.ekworldradio",
+          "versionCode": 3,
+          "versionName": "2.1.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
+      "newUntil": "2026-08-12T08:39:34.000Z",
+      "iconAsset": "ek-world-radio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
       ]
     },
     {
