@@ -7,7 +7,7 @@
   "description": "Subscribe to RSS or Atom feeds on the phone and read them on the glasses: sources with unread counts, headlines newest first, and the article text paged for the HUD. Fully operable with the R08 ring.",
   "author": "beyondlevi",
   "sourceUrl": "https://github.com/beyondlevi/news-nexus",
-  "publishedAt": "2026-08-12T14:46:06Z",
+  "publishedAt": "2026-08-12T17:33:57Z",
   "iconAsset": "news-icon.png",
   "screenshotAssets": [
     "news-1-sources.png",
@@ -18,6 +18,11 @@
     "descriptionMarkdown": "## About\n\nNews puts your RSS and Atom feeds on the Rokid glasses. Subscribe on the phone, then browse headlines and read articles on the HUD without touching anything but the ring.\n\n- Three views on one axis: sources, headlines, reader. Forward/back moves, tap opens, double tap goes back.\n- Headlines use both text bands of a list row, with age and source as trailing tokens; read items dim instead of disappearing.\n- Article text is reduced to paragraphs on the phone and rendered on the glasses' native reader surface: continuous prose that the ring scrolls, opening on the first paragraph.\n- Per-feed unread counts, cached articles between sessions, and a feed that fails to fetch keeps what it had.\n- Add feeds by URL or from seven verified presets (BBC World, NYT World, Hacker News, Ars Technica, The Verge, G1, Tecnoblog); each feed names itself from its channel title on the first fetch.\n\nRequests only the `surfaces` capability: feeds are fetched phone-side with the app's own HTTP stack.\n"
   },
   "releases": [
+    {
+      "version": "1.1.1",
+      "date": "2026-08-12T17:33:57Z",
+      "notes": "\n- Fixes from the Store's automated source review of 1.1.0.\n- The control-only document is budgeted in UTF-8 bytes rather than characters, so a CJK or emoji article is no longer measured at a third of its real size and dropped by the hub.\n- The closing note is reserved before the article text is laid in; it could previously push the document past the SDK's character limit, which throws inside the plugin's own process.\n- Surface sends dedupe on the rendered document instead of the article id, so a feed that rewrites an open article now reaches the wearer instead of leaving stale text on screen.\n\n### Requires\n\n- Glasses hub 1.4.3 or newer (versionCode 10403).\n\n### Artifact\n\n- File: `news-phone-release.apk`\n- SHA-256: `5e0d97092c600e47cca7be86841813e4ec31a7e36cbbae42f970c697263d5de4`\n"
+    },
     {
       "version": "1.1.0",
       "date": "2026-08-12T14:46:06Z",
@@ -41,12 +46,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/beyondlevi/news-nexus/releases/download/news-v1.1.0/news-phone-release.apk",
-    "sha256": "e72dc713c3f9e4dc67f1865a517fd77a7f8506fd8f8fa22f84275e93bb86c519",
+    "url": "https://github.com/beyondlevi/news-nexus/releases/download/news-v1.1.1/news-phone-release.apk",
+    "sha256": "5e0d97092c600e47cca7be86841813e4ec31a7e36cbbae42f970c697263d5de4",
     "signerSha256": "07d94dca37d6327e2e55783f5b6bfaad213fd49841ae306e8b5ed26168aedf17",
-    "sizeBytes": 5467348,
+    "sizeBytes": 5470272,
     "packageName": "com.beyondlevi.nexus.news",
-    "versionCode": 4,
-    "versionName": "1.1.0"
+    "versionCode": 5,
+    "versionName": "1.1.1"
   }
 }
