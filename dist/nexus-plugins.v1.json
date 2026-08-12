@@ -507,7 +507,7 @@
       "name": "News",
       "category": "News",
       "summary": "RSS and Atom feeds on the HUD, read with the ring.",
-      "description": "Subscribe to RSS or Atom feeds on the phone and read them on the glasses: sources with unread counts, headlines newest first, and the article text paged for the HUD. Fully operable with the R08 ring.",
+      "description": "Subscribe to RSS or Atom feeds on the phone and read them on the glasses: sources with unread counts, headlines newest first, and the article text on the glasses' native reader surface. Fully operable with the R08 ring.",
       "author": "beyondlevi",
       "sourceUrl": "https://github.com/beyondlevi/news-nexus",
       "publishedAt": "2026-08-12T17:33:57Z",
