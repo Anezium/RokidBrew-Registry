@@ -627,13 +627,18 @@
       "description": "Watches notifications after explicit Android approval, extracts likely one-time codes, and shows timed alerts plus a ten-entry history through Rokid Nexus.",
       "author": "Zhilin",
       "sourceUrl": "https://github.com/azhilin246/rokid-nexus-otps",
-      "publishedAt": "2026-08-17T15:54:37Z",
+      "publishedAt": "2026-08-17T22:04:12Z",
       "iconAsset": "otps.png",
       "screenshotAssets": [],
       "listing": {
         "descriptionMarkdown": "## About\n\nSee high-confidence verification codes from phone notifications without reaching for the phone. Timed alerts include a countdown and Close action; alerts without a timer remain until closed or replaced. Opening OTPs from the Nexus launcher shows the newest ten entries.\n\n## Privacy\n\nNotification access must be granted explicitly in Android. All notification text and extracted codes are processed locally, the plugin has no Internet permission, and only the newest ten entries are kept in private app storage."
       },
       "releases": [
+        {
+          "version": "1.0.8",
+          "date": "2026-08-17T22:04:12Z",
+          "notes": "- Add password-encrypted export and import for alert enablement, auto-close mode, and alert duration.\n- Exclude notification contents, extracted codes, and OTP history from backups.\n- Keep the Export settings and Import settings actions visible at phone widths."
+        },
         {
           "version": "1.0.6",
           "date": "2026-08-17T15:54:37Z",
@@ -652,12 +657,12 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/azhilin246/rokid-nexus-otps/releases/download/otps-v1.0.6/otps-phone-release.apk",
+        "url": "https://github.com/azhilin246/rokid-nexus-otps/releases/download/otps-v1.0.8/otps-phone-release.apk",
         "packageName": "com.havoc.rokidbus.plugin.otps",
-        "sha256": "d76a266fa6ba965d000dc3353ff67b88e9ad1b7a2dd56c5916bc86f1b9d6fa43",
-        "sizeBytes": 5427852,
-        "versionCode": 7,
-        "versionName": "1.0.6",
+        "sha256": "02088c772e9f8fba23c2f1a8f2c4af5fb432eea3d963dc867199410643a884df",
+        "sizeBytes": 5445356,
+        "versionCode": 9,
+        "versionName": "1.0.8",
         "signerSha256": "4c6e4d3eb60204794f0c8e5823cebc3112ab2511bae11f7773febf9a0a48f62e"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/otps.png"
