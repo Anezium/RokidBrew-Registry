@@ -30,15 +30,20 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.2/assistant-phone-release.apk",
-    "sha256": "83b2a4083a0c85c5c02e75f2752c26ba35ba638c7cc0ac1a2f3d611916e67a1a",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.3/assistant-phone-release.apk",
+    "sha256": "eda8b146e57a08dd997eb335fb72e44dd14da30189f470de91e35d741c4f092a",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 6146483,
+    "sizeBytes": 6146531,
     "packageName": "com.anezium.rokidbus.plugin.assistant",
-    "versionCode": 9,
-    "versionName": "1.4.2"
+    "versionCode": 10,
+    "versionName": "1.4.3"
   },
   "releases": [
+    {
+      "version": "1.4.3",
+      "date": "2026-08-17T20:58:30Z",
+      "notes": "\n- **Hermes draws the cards now.** A weather question through a Hermes backend came back as plain text while the same model on any other provider drew the card. The seven bounded templates — weather, charts, metrics, rankings, comparisons, schedules and steps — now travel the same plain-text bridge as the other phone tools. Freeform Ink pages remain out of it.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `eda8b146e57a08dd997eb335fb72e44dd14da30189f470de91e35d741c4f092a`"
+    },
     {
       "version": "1.4.2",
       "date": "2026-08-11T22:06:05Z",
