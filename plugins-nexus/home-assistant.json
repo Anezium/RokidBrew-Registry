@@ -7,13 +7,18 @@
   "description": "An unofficial community plugin that renders configurable Home Assistant pages on Rokid Nexus and runs the action assigned to the selected widget.",
   "author": "Zhilin",
   "sourceUrl": "https://github.com/azhilin246/rokid-nexus-home-assistant",
-  "publishedAt": "2026-08-17T15:55:27Z",
+  "publishedAt": "2026-08-17T22:04:58Z",
   "iconAsset": "home-assistant.png",
   "screenshotAssets": [],
   "listing": {
     "descriptionMarkdown": "## About\n\nBuild pages from live Home Assistant values, buttons, toggles, status rows, and progress widgets, then browse and control them from the glasses. Priority-based context rules can select the most relevant page automatically.\n\nThe Home Assistant URL and long-lived access token are configured on the phone. The token is protected by Android Keystore and never enters a Nexus surface or glasses payload. The connection is active only while settings or a Nexus HUD session needs it.\n\n## Unofficial integration\n\nThis is an unofficial community plugin. It is not affiliated with or endorsed by the Home Assistant project, Nabu Casa, or Rokid."
   },
   "releases": [
+    {
+      "version": "0.2.2",
+      "date": "2026-08-17T22:04:58Z",
+      "notes": "- Add password-encrypted export and import for connection credentials and dashboard configuration.\n- Include the Home Assistant URL, long-lived access token, Rokid token, pages, widgets, actions, value bindings, and context rules.\n- Validate imported data before replacing the current credentials and dashboard."
+    },
     {
       "version": "0.2.1",
       "date": "2026-08-17T15:55:27Z",
@@ -32,12 +37,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/azhilin246/rokid-nexus-home-assistant/releases/download/home-assistant-v0.2.1/home-assistant-phone-release.apk",
+    "url": "https://github.com/azhilin246/rokid-nexus-home-assistant/releases/download/home-assistant-v0.2.2/home-assistant-phone-release.apk",
     "packageName": "dev.havoc.rokidhome.phone",
-    "sha256": "abceed3bbe08fa688e484edbcab35f1e0c781841fe31e7618bbdf188f84e8215",
-    "sizeBytes": 9166184,
-    "versionCode": 3,
-    "versionName": "0.2.1",
+    "sha256": "434993ba8856b998613a3b44bbe586b026605b00b2f01deef20e94ec87233775",
+    "sizeBytes": 9228492,
+    "versionCode": 4,
+    "versionName": "0.2.2",
     "signerSha256": "7bd9efa45669281ff4e310388343c028cc44632a9f381c605041f7b83c1b2937"
   }
 }
