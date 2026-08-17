@@ -210,6 +210,50 @@
       ]
     },
     {
+      "id": "home-assistant",
+      "kind": "nexus-plugin",
+      "name": "Home Assistant",
+      "category": "Automation",
+      "summary": "Home Assistant dashboards and controls on the glasses.",
+      "description": "An unofficial community plugin that renders configurable Home Assistant pages on Rokid Nexus and runs the action assigned to the selected widget.",
+      "author": "Zhilin",
+      "sourceUrl": "https://github.com/azhilin246/rokid-nexus-home-assistant",
+      "publishedAt": "2026-08-17T15:55:27Z",
+      "iconAsset": "home-assistant.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nBuild pages from live Home Assistant values, buttons, toggles, status rows, and progress widgets, then browse and control them from the glasses. Priority-based context rules can select the most relevant page automatically.\n\nThe Home Assistant URL and long-lived access token are configured on the phone. The token is protected by Android Keystore and never enters a Nexus surface or glasses payload. The connection is active only while settings or a Nexus HUD session needs it.\n\n## Unofficial integration\n\nThis is an unofficial community plugin. It is not affiliated with or endorsed by the Home Assistant project, Nabu Casa, or Rokid."
+      },
+      "releases": [
+        {
+          "version": "0.2.1",
+          "date": "2026-08-17T15:55:27Z",
+          "notes": "- Replace the opinionated starter dashboard with a neutral setup guide.\n- Remove legacy built-in starter pages and rules while preserving user-created pages.\n- Keep the in-app unofficial community-plugin disclosure.\n- Build against the latest published Nexus SDK (sdk-v0.15.0)."
+        }
+      ],
+      "nexus": {
+        "pluginId": "home-assistant",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".MainActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/azhilin246/rokid-nexus-home-assistant/releases/download/home-assistant-v0.2.1/home-assistant-phone-release.apk",
+        "packageName": "dev.havoc.rokidhome.phone",
+        "sha256": "abceed3bbe08fa688e484edbcab35f1e0c781841fe31e7618bbdf188f84e8215",
+        "sizeBytes": 9166184,
+        "versionCode": 3,
+        "versionName": "0.2.1",
+        "signerSha256": "7bd9efa45669281ff4e310388343c028cc44632a9f381c605041f7b83c1b2937"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/home-assistant.png"
+    },
+    {
       "id": "lens",
       "kind": "nexus-plugin",
       "name": "Lens",
@@ -565,6 +609,50 @@
       ]
     },
     {
+      "id": "otps",
+      "kind": "nexus-plugin",
+      "name": "OTPs",
+      "category": "Utility",
+      "summary": "High-confidence verification codes from phone notifications on the glasses.",
+      "description": "Watches notifications after explicit Android approval, extracts likely one-time codes, and shows timed alerts plus a ten-entry history through Rokid Nexus.",
+      "author": "Zhilin",
+      "sourceUrl": "https://github.com/azhilin246/rokid-nexus-otps",
+      "publishedAt": "2026-08-17T15:54:37Z",
+      "iconAsset": "otps.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nSee high-confidence verification codes from phone notifications without reaching for the phone. Timed alerts include a countdown and Close action; alerts without a timer remain until closed or replaced. Opening OTPs from the Nexus launcher shows the newest ten entries.\n\n## Privacy\n\nNotification access must be granted explicitly in Android. All notification text and extracted codes are processed locally, the plugin has no Internet permission, and only the newest ten entries are kept in private app storage."
+      },
+      "releases": [
+        {
+          "version": "1.0.6",
+          "date": "2026-08-17T15:54:37Z",
+          "notes": "- Reissue the public release from a sanitized repository history.\n- Build against the latest published Nexus SDK (sdk-v0.15.0)."
+        }
+      ],
+      "nexus": {
+        "pluginId": "otps",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".OtpSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/azhilin246/rokid-nexus-otps/releases/download/otps-v1.0.6/otps-phone-release.apk",
+        "packageName": "com.havoc.rokidbus.plugin.otps",
+        "sha256": "d76a266fa6ba965d000dc3353ff67b88e9ad1b7a2dd56c5916bc86f1b9d6fa43",
+        "sizeBytes": 5427852,
+        "versionCode": 7,
+        "versionName": "1.0.6",
+        "signerSha256": "4c6e4d3eb60204794f0c8e5823cebc3112ab2511bae11f7773febf9a0a48f62e"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/otps.png"
+    },
+    {
       "id": "photosync",
       "kind": "nexus-plugin",
       "name": "Photos Sync",
@@ -834,6 +922,50 @@
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/tasker-icon.png"
+    },
+    {
+      "id": "taxi-hud-pin",
+      "kind": "nexus-plugin",
+      "name": "Taxi Plate",
+      "category": "Navigation",
+      "summary": "Live taxi plate, vehicle, pickup, and trip timing on the glasses.",
+      "description": "Reads supported taxi notifications on the phone, keeps the active ride state, and shows pickup or trip timing through native Rokid Nexus cards and PINs.",
+      "author": "Zhilin",
+      "sourceUrl": "https://github.com/azhilin246/rokid-nexus-taxi-plate",
+      "publishedAt": "2026-08-17T15:54:42Z",
+      "iconAsset": "taxi-hud-pin.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nKeep the useful part of an active taxi ride in view: plate, vehicle, pickup status, waiting time, and remaining trip time. Taxi Plate reads enabled provider notifications on the phone and publishes native Nexus cards and compact PINs to the glasses.\n\n## Providers and privacy\n\nA Yandex Go adapter is included. Additional providers can be added with validated JSON adapter bundles from the phone settings. Notification access is granted explicitly in Android; diagnostics stay local unless you export them yourself.\n\nThe plugin is phone-only. Rokid Nexus owns the glasses connection and rendering, so no separate glasses APK or Hi Rokid authorization is required."
+      },
+      "releases": [
+        {
+          "version": "0.6.2",
+          "date": "2026-08-17T15:54:42Z",
+          "notes": "- Replace test fixtures with clearly synthetic ride data.\n- Resolve the Android SDK from the current user's local application-data directory.\n- Build against the latest published Nexus SDK (sdk-v0.15.0)."
+        }
+      ],
+      "nexus": {
+        "pluginId": "taxi-hud-pin",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": "dev.havoc.taxihud.phone.MainActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/azhilin246/rokid-nexus-taxi-plate/releases/download/taxi-hud-pin-v0.6.2/taxi-hud-pin-phone-release.apk",
+        "packageName": "com.havoc.rokid.plugin.taxihudpin",
+        "sha256": "b8e0cbaebcc7837d6ea9dafcb4deb73a5a6d984a686df7a4cb0628093de28f75",
+        "sizeBytes": 6384859,
+        "versionCode": 14,
+        "versionName": "0.6.2",
+        "signerSha256": "865bf6e5cf91d35db070bdd9c882f4320c783677c39958f1341c9b9e9ffb4816"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/taxi-hud-pin.png"
     },
     {
       "id": "transit",
