@@ -1,0 +1,43 @@
+{
+  "id": "otps",
+  "kind": "nexus-plugin",
+  "name": "OTPs",
+  "category": "Utility",
+  "summary": "High-confidence verification codes from phone notifications on the glasses.",
+  "description": "Watches notifications after explicit Android approval, extracts likely one-time codes, and shows timed alerts plus a ten-entry history through Rokid Nexus.",
+  "author": "Zhilin",
+  "sourceUrl": "https://github.com/azhilin246/rokid-nexus-otps",
+  "publishedAt": "2026-08-17T15:54:37Z",
+  "iconAsset": "otps.png",
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nSee high-confidence verification codes from phone notifications without reaching for the phone. Timed alerts include a countdown and Close action; alerts without a timer remain until closed or replaced. Opening OTPs from the Nexus launcher shows the newest ten entries.\n\n## Privacy\n\nNotification access must be granted explicitly in Android. All notification text and extracted codes are processed locally, the plugin has no Internet permission, and only the newest ten entries are kept in private app storage."
+  },
+  "releases": [
+    {
+      "version": "1.0.6",
+      "date": "2026-08-17T15:54:37Z",
+      "notes": "- Reissue the public release from a sanitized repository history.\n- Build against the latest published Nexus SDK (sdk-v0.15.0)."
+    }
+  ],
+  "nexus": {
+    "pluginId": "otps",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": ".OtpSettingsActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/azhilin246/rokid-nexus-otps/releases/download/otps-v1.0.6/otps-phone-release.apk",
+    "packageName": "com.havoc.rokidbus.plugin.otps",
+    "sha256": "d76a266fa6ba965d000dc3353ff67b88e9ad1b7a2dd56c5916bc86f1b9d6fa43",
+    "sizeBytes": 5427852,
+    "versionCode": 7,
+    "versionName": "1.0.6",
+    "signerSha256": "4c6e4d3eb60204794f0c8e5823cebc3112ab2511bae11f7773febf9a0a48f62e"
+  }
+}

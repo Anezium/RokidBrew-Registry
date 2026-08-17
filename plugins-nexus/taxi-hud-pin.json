@@ -1,0 +1,43 @@
+{
+  "id": "taxi-hud-pin",
+  "kind": "nexus-plugin",
+  "name": "Taxi Plate",
+  "category": "Navigation",
+  "summary": "Live taxi plate, vehicle, pickup, and trip timing on the glasses.",
+  "description": "Reads supported taxi notifications on the phone, keeps the active ride state, and shows pickup or trip timing through native Rokid Nexus cards and PINs.",
+  "author": "Zhilin",
+  "sourceUrl": "https://github.com/azhilin246/rokid-nexus-taxi-plate",
+  "publishedAt": "2026-08-17T15:54:42Z",
+  "iconAsset": "taxi-hud-pin.png",
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nKeep the useful part of an active taxi ride in view: plate, vehicle, pickup status, waiting time, and remaining trip time. Taxi Plate reads enabled provider notifications on the phone and publishes native Nexus cards and compact PINs to the glasses.\n\n## Providers and privacy\n\nA Yandex Go adapter is included. Additional providers can be added with validated JSON adapter bundles from the phone settings. Notification access is granted explicitly in Android; diagnostics stay local unless you export them yourself.\n\nThe plugin is phone-only. Rokid Nexus owns the glasses connection and rendering, so no separate glasses APK or Hi Rokid authorization is required."
+  },
+  "releases": [
+    {
+      "version": "0.6.2",
+      "date": "2026-08-17T15:54:42Z",
+      "notes": "- Replace test fixtures with clearly synthetic ride data.\n- Resolve the Android SDK from the current user's local application-data directory.\n- Build against the latest published Nexus SDK (sdk-v0.15.0)."
+    }
+  ],
+  "nexus": {
+    "pluginId": "taxi-hud-pin",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": "dev.havoc.taxihud.phone.MainActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/azhilin246/rokid-nexus-taxi-plate/releases/download/taxi-hud-pin-v0.6.2/taxi-hud-pin-phone-release.apk",
+    "packageName": "com.havoc.rokid.plugin.taxihudpin",
+    "sha256": "b8e0cbaebcc7837d6ea9dafcb4deb73a5a6d984a686df7a4cb0628093de28f75",
+    "sizeBytes": 6384859,
+    "versionCode": 14,
+    "versionName": "0.6.2",
+    "signerSha256": "865bf6e5cf91d35db070bdd9c882f4320c783677c39958f1341c9b9e9ffb4816"
+  }
+}
