@@ -954,16 +954,21 @@
       "name": "Taxi Plate",
       "category": "Navigation",
       "summary": "Live taxi plate, vehicle, pickup, and trip timing on the glasses.",
-      "description": "Reads supported taxi notifications on the phone, keeps the active ride state, and shows pickup or trip timing through native Rokid Nexus cards and PINs.",
+      "description": "Reads supported taxi notifications on the phone, keeps the active ride state, and shows pickup or trip timing through native Rokid Nexus cards and pins.",
       "author": "Zhilin",
       "sourceUrl": "https://github.com/azhilin246/rokid-nexus-taxi-plate",
-      "publishedAt": "2026-08-17T15:54:42Z",
+      "publishedAt": "2026-08-17T22:04:19Z",
       "iconAsset": "taxi-hud-pin.png",
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nKeep the useful part of an active taxi ride in view: plate, vehicle, pickup status, waiting time, and remaining trip time. Taxi Plate reads enabled provider notifications on the phone and publishes native Nexus cards and compact PINs to the glasses.\n\n## Providers and privacy\n\nA Yandex Go adapter is included. Additional providers can be added with validated JSON adapter bundles from the phone settings. Notification access is granted explicitly in Android; diagnostics stay local unless you export them yourself.\n\nThe plugin is phone-only. Rokid Nexus owns the glasses connection and rendering, so no separate glasses APK or Hi Rokid authorization is required."
+        "descriptionMarkdown": "## About\n\nKeep the useful part of an active taxi ride in view: plate, vehicle, pickup status, waiting time, and remaining trip time. Taxi Plate reads enabled provider notifications on the phone and publishes native Nexus cards and compact pins to the glasses.\n\n## Providers and privacy\n\nA Yandex Go adapter is included. Additional providers can be added with validated JSON adapter bundles from the phone settings. Notification access is granted explicitly in Android; diagnostics stay local unless you export them yourself.\n\nThe plugin is phone-only. Rokid Nexus owns the glasses connection and rendering, so no separate glasses APK or Hi Rokid authorization is required."
       },
       "releases": [
+        {
+          "version": "0.6.5",
+          "date": "2026-08-17T22:04:19Z",
+          "notes": "- Display every requested package name in a confirmation dialog before an imported adapter bundle is applied.\n- Validate imported regular expressions with RE2/J and cap matched notification text at 8192 characters.\n- Add password-encrypted export and import for Taxi Plate settings."
+        },
         {
           "version": "0.6.2",
           "date": "2026-08-17T15:54:42Z",
@@ -982,12 +987,12 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/azhilin246/rokid-nexus-taxi-plate/releases/download/taxi-hud-pin-v0.6.2/taxi-hud-pin-phone-release.apk",
+        "url": "https://github.com/azhilin246/rokid-nexus-taxi-plate/releases/download/taxi-hud-pin-v0.6.5/taxi-hud-pin-phone-release.apk",
         "packageName": "com.havoc.rokid.plugin.taxihudpin",
-        "sha256": "b8e0cbaebcc7837d6ea9dafcb4deb73a5a6d984a686df7a4cb0628093de28f75",
-        "sizeBytes": 6384859,
-        "versionCode": 14,
-        "versionName": "0.6.2",
+        "sha256": "f4a604ed1fd5b96dbae0fcfb60b9120139ba07e4858b2f98fcc5010e910753a5",
+        "sizeBytes": 6583355,
+        "versionCode": 17,
+        "versionName": "0.6.5",
         "signerSha256": "865bf6e5cf91d35db070bdd9c882f4320c783677c39958f1341c9b9e9ffb4816"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/taxi-hud-pin.png"
