@@ -759,19 +759,24 @@
         "relay-2-inbox.png"
       ],
       "listing": {
-        "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\nHow long a message stays up normally scales with its length; *Message display time* in the plugin's settings holds every message for a fixed 5 to 45 seconds instead, for hands that want more time to reach the Reply chip.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## Hearing it instead\n\nTurn on *Read notifications aloud* and the glasses speak the message as it arrives — the whole message, in the voice and at the speed you already chose in your Rokid assistant settings. It is produced on the glasses, so it works with the phone in your pocket and nothing leaves the device. Off by default.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses*, *Speech to text* and *Text to speech* in Nexus → Settings → Plugin access."
+        "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\n*Message display time* in the plugin's settings is a number you type, 2 to 45 seconds, and *Longer for long messages* adds reading time per character on top for threads that need it.\n\n## Privacy\n\nIn public or in a meeting, *Hide message text on the glasses* keeps the band to the sender's name and a Show chip — the words appear only when you tap for them, and Reply stays one tap away. *Hide previews in the inbox* does the same for the Messages list. While the band is hidden, read-aloud names the sender only.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## Hearing it instead\n\nTurn on *Read notifications aloud* and the glasses speak the message as it arrives — the whole message, in the voice and at the speed you already chose in your Rokid assistant settings. It is produced on the glasses, so it works with the phone in your pocket and nothing leaves the device. Off by default.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses*, *Speech to text* and *Text to speech* in Nexus → Settings → Plugin access."
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.2.0/relay-phone-release.apk",
-        "sha256": "ddb5c5bb813fdf6a0905583b6cda8111f271b6ab1689e1bd16989a4c0c689ea3",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.2.1/relay-phone-release.apk",
+        "sha256": "8b2fa6d329f59ca0b3a2f51591c5c07239c57b4cd07bf04bc9487c5dfc92468b",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5619160,
+        "sizeBytes": 5641356,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 9,
-        "versionName": "1.2.0"
+        "versionCode": 10,
+        "versionName": "1.2.1"
       },
       "releases": [
+        {
+          "version": "1.2.1",
+          "date": "2026-08-20T00:12:18Z",
+          "notes": "\n- **The glasses can name who messaged without showing what.** Two new switches: *Hide message text on the glasses* keeps the band to the sender and a Show chip — tap it when the moment is right, and Reply is still one tap away — and *Hide previews in the inbox* keeps the list to names; opening a conversation still reads it. Read-aloud names the sender only while the band is hidden.\n- **Message display time is now a number you type.** Two to 45 seconds, 3 by default, with a separate *Longer for long messages* switch that adds reading time per character. Existing settings carry over: Auto becomes 3 seconds with scaling on, a fixed value stays fixed.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `8b2fa6d329f59ca0b3a2f51591c5c07239c57b4cd07bf04bc9487c5dfc92468b`"
+        },
         {
           "version": "1.2.0",
           "date": "2026-08-11T12:12:07Z",
