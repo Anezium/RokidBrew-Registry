@@ -830,6 +830,59 @@
       ]
     },
     {
+      "id": "rokidhub.yandex",
+      "kind": "nexus-plugin",
+      "name": "RokidHub · Yandex",
+      "category": "Automation",
+      "summary": "Control Yandex Smart Home by voice from Rokid RV101.",
+      "description": "An unofficial community plugin that listens through Nexus STT, controls Yandex Smart Home, and returns the result on the HUD and through Nexus TTS.",
+      "author": "Azat Akhmetshin",
+      "sourceUrl": "https://github.com/lavAzza2/rokidhub-nexus-yandex",
+      "publishedAt": "2026-08-25T09:37:21.000Z",
+      "iconAsset": "rokidhub-yandex-icon.png",
+      "screenshotAssets": [
+        "rokidhub-yandex-nexus-home.png",
+        "rokidhub-yandex-settings.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nControl Yandex Smart Home from Rokid RV101 without saying the wake word “Alice”. Open **RokidHub · Yandex** from the Nexus launcher, speak a natural Russian command, and get the result on the HUD and through Nexus TTS.\n\nSupported in the first release:\n\n- turn devices on and off;\n- ask for a temperature sensor reading;\n- repeat a command with a tap while the plugin is open.\n\n## Setup\n\nInstall the plugin on the Android phone, approve the `surfaces`, `stt`, and `tts` capabilities in Rokid Nexus, then open its settings and sign in with Yandex. Triple-tap the glasses touchpad to open the Nexus launcher.\n\n## Privacy\n\nIn the recommended direct mode, sign-in uses the official Yandex LoginSDK. The OAuth token stays on the phone, encrypted by Android Keystore, and is sent only to the Yandex IoT API. It is not sent to RokidHub.\n\nAn optional cloud mode is disabled by default. It uses a separate revocable RokidHub installation credential; the plugin never receives the server-side Yandex OAuth token.\n\n## Unofficial integration\n\nThis is an unofficial community project and is not affiliated with or endorsed by Yandex, Rokid, or Anezium."
+      },
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-25T09:37:21.000Z",
+          "notes": "- First public Rokid Nexus release.\n- Voice on/off commands and temperature queries for Yandex Smart Home.\n- Direct OAuth mode with Android Keystore protection.\n- Optional separately revocable RokidHub cloud mode."
+        }
+      ],
+      "nexus": {
+        "pluginId": "rokidhub.yandex",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces",
+          "stt",
+          "tts"
+        ],
+        "launchable": true,
+        "settingsActivity": ".RokidHubSettingsActivity",
+        "minHostVersionCode": 6
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/lavAzza2/rokidhub-nexus-yandex/releases/download/v1.0.0/rokidhub-yandex-phone-release.apk",
+        "sha256": "81a8799c6f2956bbdf9bbf30f140afb5d419ff71d0ef67eb90d7969103547420",
+        "signerSha256": "3f99ac53abd4b8fc2f31d61d736f65685d488cda2b12a234f17c983e49923493",
+        "sizeBytes": 8401224,
+        "packageName": "com.rokidhub.nexus.plugin.yandex",
+        "versionCode": 10,
+        "versionName": "1.0.0"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokidhub-yandex-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokidhub-yandex-nexus-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokidhub-yandex-settings.png"
+      ]
+    },
+    {
       "id": "shoplist",
       "kind": "nexus-plugin",
       "name": "Shopping List",
