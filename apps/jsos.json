@@ -3,8 +3,8 @@
   "name": "JSOS",
   "category": "AI",
   "type": "combo",
-  "version": "2.0.38-r08-accessibility-recovery",
-  "publishedAt": "2026-08-03T16:28:38Z",
+  "version": "2.0.40-hi-rokid-ai-coexist",
+  "publishedAt": "2026-08-25T16:32:17Z",
   "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
   "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
   "screenshotAssets": [
@@ -20,21 +20,21 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.38-r08-accessibility-recovery/JSOS-HUD-v2.0.36-r08-accessibility-recovery.apk",
-      "sha256": "913a1c804a6326a4dba8e4a825c565ee23dd37e6418059e6e4796256707bd876",
-      "sizeBytes": 21584815,
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.40-hi-rokid-ai-coexist/JSOS-HUD-v2.0.37-hi-rokid-cxrl.apk",
+      "sha256": "65c94df6d90e5d28002c5bec3b5754acaa5c68b900d8d7ce5b2bc7c0675c622a",
+      "sizeBytes": 21584819,
       "packageName": "com.jsos.glasses",
-      "versionCode": 237,
-      "versionName": "2.0.36-r08-accessibility-recovery"
+      "versionCode": 238,
+      "versionName": "2.0.37-hi-rokid-cxrl"
     },
     {
       "target": "phone",
-      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.36-security-hardening/JSOS-Core-v2.0.12-security-hardening.apk",
-      "sha256": "b64c3efd1392f905f3a91e98caa099b8359977ad404ba15046c9d42d358b470f",
-      "sizeBytes": 53395815,
+      "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.40-hi-rokid-ai-coexist/JSOS-Core-v2.0.14-hi-rokid-ai-coexist.apk",
+      "sha256": "8b8f8b4a2cc4883d9ac451a4adc207cdb3479c20342176aea32fed6e5b575dd7",
+      "sizeBytes": 53578808,
       "packageName": "com.jsos.phone",
-      "versionCode": 212,
-      "versionName": "2.0.12-security-hardening"
+      "versionCode": 214,
+      "versionName": "2.0.14-hi-rokid-ai-coexist"
     }
   ],
   "author": "IWhatsskill",
@@ -60,6 +60,22 @@
     "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
   },
   "releases": [
+    {
+      "version": "2.0.40-hi-rokid-ai-coexist",
+      "date": "2026-08-25T16:32:17Z",
+      "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.40-hi-rokid-ai-coexist",
+      "notes": "# JSOS v2.0.40 Hi Rokid AI coexistence preview\n\nThis preview keeps JSOS voice control and the native Hi Rokid assistant from\nclaiming the same glasses AI-key events.\n\n## What changed\n\n- Kept JSOS AI-key handling active for the direct Bluetooth CXR-M transport.\n- Left native assistant ownership with Hi Rokid while JSOS uses the Global Hi\n  Rokid CXR-L transport.\n- Added a passive CXR-L AI-event guard so the vendor callback does not\n  immediately close the native Hi Rokid assistant after it opens.\n- Applied the saved transport choice before Rokid SDK initialization so a cold\n  start does not briefly claim the wrong AI-key owner.\n- Installed and removed the CXR-L guard consistently for normal HUD links and\n  Hi Rokid HUD deployment sessions.\n- Added focused contract and transport-ownership unit tests.\n\nThe glasses long press continues to start JSOS voice on the direct CXR-M path.\nHi Rokid CXR-L keeps the glasses AI key available to the native Hi Rokid\nassistant.\n\n## Install and connect\n\n1. Install JSOS Core on the Android phone.\n2. Pair and connect the glasses in the Global Hi Rokid app.\n3. Open **HUD Link** in JSOS Core, choose **Connect via Hi Rokid**, and approve\n   the Global Hi Rokid authorization screen.\n4. Install and launch JSOS HUD on the glasses.\n\nDirect CXR-M remains available from **Direct Bluetooth (CXR-M)**. JSOS Watch\nis unchanged and is not repackaged in this release.\n\n## Included assets\n\n- `JSOS-Core-v2.0.14-hi-rokid-ai-coexist.apk`\n  - package `com.jsos.phone`\n  - versionCode `214`\n  - versionName `2.0.14-hi-rokid-ai-coexist`\n- `JSOS-HUD-v2.0.37-hi-rokid-cxrl.apk`\n  - package `com.jsos.glasses`\n  - versionCode `238`\n  - versionName `2.0.37-hi-rokid-cxrl`\n- `SHA256SUMS.txt`\n\nBoth APKs are non-debuggable and signed with the established JSOS Preview\ncertificate using APK Signature Scheme v2.\n\n## Verification boundary\n\n- Core Debug unit tests: `33 / 33 PASS`\n- Core Release unit tests: `33 / 33 PASS`\n- Core and HUD `lintVitalRelease`: `PASS`\n- Core and HUD Release builds: `PASS`\n- Strict offline rerun: `192 / 192` tasks executed, `PASS`\n- Source and expanded APK secret/private-marker scans: `PASS`\n- UTF-8 BOM, encoding-artifact and forbidden tracked-artifact scans: `PASS`\n\nThese Public APKs were built and statically verified locally. They were not\ninstalled on a phone or glasses during this preparation round. No Git commit,\npush, tag, GitHub upload, or release publication is part of this preparation.\n\nJSOS is distributed under AGPL-3.0. Attribution and third-party notices remain\navailable in `COPYRIGHT` in the source repository.",
+      "changes": [
+        "Kept JSOS AI-key handling active for the direct Bluetooth CXR-M transport.",
+        "Left native assistant ownership with Hi Rokid while JSOS uses the Global Hi",
+        "Added a passive CXR-L AI-event guard so the vendor callback does not",
+        "Applied the saved transport choice before Rokid SDK initialization so a cold",
+        "Installed and removed the CXR-L guard consistently for normal HUD links and",
+        "Added focused contract and transport-ownership unit tests.",
+        "Install JSOS Core on the Android phone.",
+        "Pair and connect the glasses in the Global Hi Rokid app."
+      ]
+    },
     {
       "version": "2.0.38-r08-accessibility-recovery",
       "date": "2026-08-03T16:28:38Z",

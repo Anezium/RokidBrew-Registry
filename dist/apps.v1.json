@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T05:47:25.973Z",
+  "generatedAt": "2026-08-26T05:51:14.934Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -14,129 +14,258 @@
   ],
   "apps": [
     {
-      "id": "rokid-nexus",
-      "name": "Rokid Nexus",
-      "category": "Launcher",
+      "id": "jsos",
+      "name": "JSOS",
+      "category": "AI",
       "type": "combo",
-      "version": "1.4.5",
-      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
-      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "version": "2.0.40-hi-rokid-ai-coexist",
+      "publishedAt": "2026-08-25T16:32:17Z",
+      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
+      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
+      "screenshotAssets": [
+        "jsos-core-home.jpeg",
+        "jsos-core-session-chat.jpeg",
+        "jsos-core-hud-link.png",
+        "jsos-core-hud-deployment.jpeg",
+        "jsos-hud-session-chat.png",
+        "jsos-hud-options.png",
+        "jsos-hud-commands.png"
+      ],
       "phoneRequired": true,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.5/nexus-glasses-1.4.5.apk",
-          "sha256": "5c4ac150cd887f45e95ccb3b7dfb2f5fdd152b513154e588d8e15f97657310cf",
-          "sizeBytes": 19260551,
-          "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10405,
-          "versionName": "1.4.5"
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.40-hi-rokid-ai-coexist/JSOS-HUD-v2.0.37-hi-rokid-cxrl.apk",
+          "sha256": "65c94df6d90e5d28002c5bec3b5754acaa5c68b900d8d7ce5b2bc7c0675c622a",
+          "sizeBytes": 21584819,
+          "packageName": "com.jsos.glasses",
+          "versionCode": 238,
+          "versionName": "2.0.37-hi-rokid-cxrl"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.5/nexus-phone-1.4.5.apk",
-          "sha256": "868f7f7e6d1103a99d9dc5dafa3aabb43f99c9e9d8dc16551d36a78cb6b55c9a",
-          "sizeBytes": 18555841,
-          "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10405,
-          "versionName": "1.4.5"
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.40-hi-rokid-ai-coexist/JSOS-Core-v2.0.14-hi-rokid-ai-coexist.apk",
+          "sha256": "8b8f8b4a2cc4883d9ac451a4adc207cdb3479c20342176aea32fed6e5b575dd7",
+          "sizeBytes": 53578808,
+          "packageName": "com.jsos.phone",
+          "versionCode": 214,
+          "versionName": "2.0.14-hi-rokid-ai-coexist"
         }
       ],
+      "author": "IWhatsskill",
+      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
+      "listing": {
+        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
+      },
       "releases": [
         {
-          "version": "1.4.5",
-          "date": "2026-08-20T00:14:57Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.4",
-          "date": "2026-08-14T19:32:00Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.3",
-          "date": "2026-08-11T22:13:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.11",
-          "date": "2026-08-07T19:10:51Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.6",
-          "date": "2026-08-06T22:50:10Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.1.3",
-          "date": "2026-08-01T00:02:48Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.1.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.0.48",
-          "date": "2026-07-29T00:03:13Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.48",
-          "notes": "### Activities\n\n- A new tier between a pin and a surface: an ongoing process — a ride\n  approaching, a timer running, a transfer in flight — holds a stable corner\n  of the HUD. It draws as a compact chip, and the primary activity can open\n  into a panel with progress, details, and up to three platform-drawn\n  actions the wearer steps through with scroll and fires with a tap.\n- A significant update lets the panel flare to catch the eye — throttled by\n  the platform, and never by holding the screen on: an activity still cannot\n  wake or keep the display, exactly like every other tier.\n- An idle panel folds back to its chip after about ten seconds. A new\n  Settings switch keeps the primary activity expanded instead; it is the\n  wearer's preference, and no plugin can read, set, or override it.\n\n### Notices learn to ask a real question\n\n- A notice can now carry up to three answers, drawn as glyph chips under\n  the band — the same row an activity panel uses, drawn by the same view,\n  so the wearer learns it once. Scroll steps along it, the selection wraps\n  and follows its answer across updates, and a tap fires the one that is\n  chosen.\n- A notice takes exactly one answer, of either kind. The moment it is\n  given, the row leaves the band, nothing fires again, and the phone\n  refuses a duplicate — measured on hardware, two temple taps 188 ms apart\n  used to mean two replies sent. This deliberately changes 1.0.46\n  behaviour, where an interactive band replied on every tap.\n- Clearing a field of a shown notice now actually reaches the glasses: the\n  phone relays the patch a plugin sent instead of re-serialising its own\n  state, so an emptied footer, a withdrawn question, or a cleared row\n  arrives as exactly that.\n\n### Plugin SDK 0.6.0\n\n- The activity tier and notice actions land in the SDK: `NexusActivity`,\n  `NexusNoticeAction`, `actions` on notices and their updates, the\n  `onNexusActivityAction` and `onNexusNoticeAction` callbacks, and a\n  nullable `interactive` on `NexusNoticeUpdate` so a band can be asked\n  again.\n- The guide gains a visual reference of the notice band's four states,\n  with the one-answer rule as an interactive demo\n  (`docs/notice-band-states.html`).",
+          "version": "2.0.40-hi-rokid-ai-coexist",
+          "date": "2026-08-25T16:32:17Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.40-hi-rokid-ai-coexist",
+          "notes": "# JSOS v2.0.40 Hi Rokid AI coexistence preview\n\nThis preview keeps JSOS voice control and the native Hi Rokid assistant from\nclaiming the same glasses AI-key events.\n\n## What changed\n\n- Kept JSOS AI-key handling active for the direct Bluetooth CXR-M transport.\n- Left native assistant ownership with Hi Rokid while JSOS uses the Global Hi\n  Rokid CXR-L transport.\n- Added a passive CXR-L AI-event guard so the vendor callback does not\n  immediately close the native Hi Rokid assistant after it opens.\n- Applied the saved transport choice before Rokid SDK initialization so a cold\n  start does not briefly claim the wrong AI-key owner.\n- Installed and removed the CXR-L guard consistently for normal HUD links and\n  Hi Rokid HUD deployment sessions.\n- Added focused contract and transport-ownership unit tests.\n\nThe glasses long press continues to start JSOS voice on the direct CXR-M path.\nHi Rokid CXR-L keeps the glasses AI key available to the native Hi Rokid\nassistant.\n\n## Install and connect\n\n1. Install JSOS Core on the Android phone.\n2. Pair and connect the glasses in the Global Hi Rokid app.\n3. Open **HUD Link** in JSOS Core, choose **Connect via Hi Rokid**, and approve\n   the Global Hi Rokid authorization screen.\n4. Install and launch JSOS HUD on the glasses.\n\nDirect CXR-M remains available from **Direct Bluetooth (CXR-M)**. JSOS Watch\nis unchanged and is not repackaged in this release.\n\n## Included assets\n\n- `JSOS-Core-v2.0.14-hi-rokid-ai-coexist.apk`\n  - package `com.jsos.phone`\n  - versionCode `214`\n  - versionName `2.0.14-hi-rokid-ai-coexist`\n- `JSOS-HUD-v2.0.37-hi-rokid-cxrl.apk`\n  - package `com.jsos.glasses`\n  - versionCode `238`\n  - versionName `2.0.37-hi-rokid-cxrl`\n- `SHA256SUMS.txt`\n\nBoth APKs are non-debuggable and signed with the established JSOS Preview\ncertificate using APK Signature Scheme v2.\n\n## Verification boundary\n\n- Core Debug unit tests: `33 / 33 PASS`\n- Core Release unit tests: `33 / 33 PASS`\n- Core and HUD `lintVitalRelease`: `PASS`\n- Core and HUD Release builds: `PASS`\n- Strict offline rerun: `192 / 192` tasks executed, `PASS`\n- Source and expanded APK secret/private-marker scans: `PASS`\n- UTF-8 BOM, encoding-artifact and forbidden tracked-artifact scans: `PASS`\n\nThese Public APKs were built and statically verified locally. They were not\ninstalled on a phone or glasses during this preparation round. No Git commit,\npush, tag, GitHub upload, or release publication is part of this preparation.\n\nJSOS is distributed under AGPL-3.0. Attribution and third-party notices remain\navailable in `COPYRIGHT` in the source repository.",
           "changes": [
-            "A new tier between a pin and a surface: an ongoing process — a ride",
-            "A significant update lets the panel flare to catch the eye — throttled by",
-            "An idle panel folds back to its chip after about ten seconds. A new",
-            "A notice can now carry up to three answers, drawn as glyph chips under",
-            "A notice takes exactly one answer, of either kind. The moment it is",
-            "Clearing a field of a shown notice now actually reaches the glasses: the",
-            "The activity tier and notice actions land in the SDK: NexusActivity,",
-            "The guide gains a visual reference of the notice band's four states,"
+            "Kept JSOS AI-key handling active for the direct Bluetooth CXR-M transport.",
+            "Left native assistant ownership with Hi Rokid while JSOS uses the Global Hi",
+            "Added a passive CXR-L AI-event guard so the vendor callback does not",
+            "Applied the saved transport choice before Rokid SDK initialization so a cold",
+            "Installed and removed the CXR-L guard consistently for normal HUD links and",
+            "Added focused contract and transport-ownership unit tests.",
+            "Install JSOS Core on the Android phone.",
+            "Pair and connect the glasses in the Global Hi Rokid app."
           ]
         },
         {
-          "version": "1.0.47",
-          "date": "2026-07-28T16:24:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.47",
-          "notes": "### Phone battery\n\n- Your phone's charge now sits in the glasses' status row, beside the clock\n  and the weather: a small phone glyph and the percentage, with a plus while\n  it charges. The glasses always knew their own battery; now they admit the\n  phone they depend on has one too.\n- The chip behaves like the ROM's own indicators. It shows on the launcher\n  and its screens, follows the status row when an app like the teleprompter\n  moves it, tucks in beside the clock when the weather steps out, and never\n  sits on top of anything.\n- Not interested? Settings has a switch. Off means off — the chip leaves\n  immediately and stays gone.\n\n### Plugin marks\n\n- A plugin's own icon now reaches the glasses. Until now a custom mark showed\n  on the phone and fell back to a generic tile in the glasses launcher, which\n  never had the plugin's APK to load it from; the mark itself now travels, as\n  bare geometry the glasses draw in the HUD's one green.\n- The design system holds: a plugin ships a shape, never a colour, a size, or\n  a look. Tests now catch a mark that drifts from the rules instead of prose\n  hoping it will not.",
+          "version": "2.0.38-r08-accessibility-recovery",
+          "date": "2026-08-03T16:28:38Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.38-r08-accessibility-recovery",
+          "notes": "# JSOS v2.0.38 R08 Accessibility Recovery\n\nThis preview fixes R08 ring control becoming unavailable when some Rokid firmware disables the JSOS Accessibility Service after a power cycle or app update.\n\n## Fixed\n\n- JSOS HUD can restore only its own R08 Accessibility component after an optional one-time ADB grant.\n- Recovery runs at HUD startup and also listens for boot, unlock, package replacement, and Bluetooth startup.\n- Existing Accessibility services are preserved; JSOS adds only its own component and verifies the write.\n- Without `WRITE_SECURE_SETTINGS`, recovery is a strict no-op and manual Accessibility setup remains unchanged.\n- The existing isolated `:ring` process, bounded GATT timeout, active-client callback filtering, and 3/5/8/12-second reconnect behavior remain intact.\n\n## Included apps\n\n- JSOS Core `2.0.12-security-hardening` (`versionCode 212`)\n- JSOS HUD `2.0.36-r08-accessibility-recovery` (`versionCode 237`)\n- JSOS Watch remains available as source and is not included as an APK asset.\n\n## Optional one-time setup\n\nGrant the HUD permission once from a trusted computer:\n\n```text\nadb shell pm grant com.jsos.glasses android.permission.WRITE_SECURE_SETTINGS\n```\n\nThe grant normally survives reboots and in-place APK updates. If it is not granted, JSOS does not change Android Accessibility settings.\n\n## Verification\n\n- Core Debug unit tests: 27 passed, 0 failed.\n- Core Release unit tests: 27 passed, 0 failed.\n- Core and HUD release builds completed successfully.\n- Core and HUD `lintVitalRelease` completed with no issues.\n- APK package names, labels, versions, non-debuggable status, signatures, and the JSOS Preview certificate were verified.\n- Source and expanded-APK secret/private-marker scans passed; tracked public text files are BOM-free.",
           "changes": [
-            "Your phone's charge now sits in the glasses' status row, beside the clock",
-            "The chip behaves like the ROM's own indicators. It shows on the launcher",
-            "Not interested? Settings has a switch. Off means off — the chip leaves",
-            "A plugin's own icon now reaches the glasses. Until now a custom mark showed",
-            "The design system holds: a plugin ships a shape, never a colour, a size, or"
+            "JSOS HUD can restore only its own R08 Accessibility component after an optional one-time ADB grant.",
+            "Recovery runs at HUD startup and also listens for boot, unlock, package replacement, and Bluetooth startup.",
+            "Existing Accessibility services are preserved; JSOS adds only its own component and verifies the write.",
+            "Without WRITESECURESETTINGS, recovery is a strict no-op and manual Accessibility setup remains unchanged.",
+            "The existing isolated :ring process, bounded GATT timeout, active-client callback filtering, and 3/5/8/12-second reconnect behavior remain intact.",
+            "JSOS Core 2.0.12-security-hardening (versionCode 212)",
+            "JSOS HUD 2.0.36-r08-accessibility-recovery (versionCode 237)",
+            "JSOS Watch remains available as source and is not included as an APK asset."
           ]
+        },
+        {
+          "version": "2.0.36-security-hardening",
+          "date": "2026-08-01T14:58:44Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.36-security-hardening",
+          "notes": "# JSOS v2.0.36 Security Hardening preview\n\nThis preview fixes five concrete weaknesses in the public JSOS Core and HUD communication paths.\n\n## What was fixed\n\n- **Core watch commands are now private to JSOS.** Other Android apps can no longer inject commands through the dynamically registered watch-command receiver, including on older supported Android versions.\n- **HUD ring commands are now private to JSOS.** The R08 command receiver is consistently non-exported across all supported Android versions.\n- **Malformed or excessive HUD chunks are rejected early.** Chunk IDs, message types, part sizes, part counts, pending streams, and total buffered data now have strict limits. Mismatched, expired, or oversized streams are discarded safely.\n- **Oversized Core-to-HUD messages are stopped before encoding.** Core now rejects payloads above 450 KiB before Base64 expansion and chunk transmission.\n- **Live Talk playback can no longer grow without bounds.** Output-audio chunks are limited to 64 KiB and the playback queue is capped at 32 chunks.\n\nThese changes reduce the risk of command injection and uncontrolled memory growth without changing the JSOS layout or normal interaction flow.\n\n## Versions\n\n- JSOS Core: `2.0.12-security-hardening` (`versionCode 212`)\n- JSOS HUD: `2.0.34-security-hardening` (`versionCode 235`)\n\nBoth APKs use the existing JSOS Preview public release certificate and higher version codes than the previous public release, so they are prepared for an in-place preview update.\n\nJSOS Watch remains available in source, but it is unchanged and is not repackaged in this release.\n\n## Assets\n\n- `JSOS-Core-v2.0.12-security-hardening.apk`\n- `JSOS-HUD-v2.0.34-security-hardening.apk`\n- `RELEASE_NOTES_v2.0.36-security-hardening.md`\n- `SHA256SUMS.txt`\n\n<details>\n<summary>Technical verification</summary>\n\n- Public security diff review completed with no patch-introduced findings.\n- Core unit tests passed: 27 tests, 0 failures.\n- Core and HUD release builds and `lintVital` passed.\n- APK package names, versions, labels, and non-debuggable status were checked with `aapt`.\n- APK signatures were verified with `apksigner` and the JSOS Preview public release certificate.\n- Source and APK secret/private-marker scans passed.\n\n</details>",
+          "changes": [
+            "HUD ring commands are now private to JSOS. The R08 command receiver is consistently non-exported across all supported Android versions.",
+            "Oversized Core-to-HUD messages are stopped before encoding. Core now rejects payloads above 450 KiB before Base64 expansion and chunk transmission.",
+            "Live Talk playback can no longer grow without bounds. Output-audio chunks are limited to 64 KiB and the playback queue is capped at 32 chunks.",
+            "JSOS Core: 2.0.12-security-hardening (versionCode 212)",
+            "JSOS HUD: 2.0.34-security-hardening (versionCode 235)",
+            "RELEASENOTESv2.0.36-security-hardening.md",
+            "SHA256SUMS.txt",
+            "Public security diff review completed with no patch-introduced findings."
+          ]
+        },
+        {
+          "version": "2.0.35-hud-refresh",
+          "date": "2026-07-27T11:11:14Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.35-hud-refresh",
+          "notes": "# JSOS v2.0.35 HUD Refresh preview\n\nThis preview refreshes the public JSOS HUD conversation layout while keeping\nthe existing Rokid safe-zone and monochrome visual language.\n\n## Highlights\n\n- Finer, dynamically sized conversation panels using 94 percent of the HUD\n  width.\n- Assistant responses remain left-aligned; optional user messages appear\n  right-aligned.\n- A persistent `YOU ON` / `YOU OFF` display switch controls the user's own\n  panels in both the normal HUD and Codex view.\n- A fixed top-left pulse slot presents `READY`, `THINK`, `LIVE`, `DONE`,\n  voice, loading, wake, and error states without shifting the header.\n- The upper divider was removed and the time, battery, connection, and voice\n  areas were tightened for the available HUD width.\n- Public Agent Wake and session labels now derive from gateway session\n  metadata instead of a fixed agent topology.\n\n## APKs\n\n- `JSOS-Core-v2.0.11-session-routing.apk`\n  - package `com.jsos.phone`\n  - versionCode `211`\n- `JSOS-HUD-v2.0.33-hud-refresh.apk`\n  - package `com.jsos.glasses`\n  - versionCode `234`\n\nJSOS Watch is unchanged in this release and is not repackaged as a new\nversion.\n\n## Preview notice\n\nJSOS remains a preview for compatible Rokid hardware and OpenClaw setups.\nReview the public setup and security documentation before installing.\n\nSource and license information remain available in the public JSOS\nrepository under AGPL-3.0, with third-party notices in `COPYRIGHT`.",
+          "changes": [
+            "Finer, dynamically sized conversation panels using 94 percent of the HUD",
+            "Assistant responses remain left-aligned; optional user messages appear",
+            "A persistent YOU ON / YOU OFF display switch controls the user's own",
+            "A fixed top-left pulse slot presents READY, THINK, LIVE, DONE,",
+            "The upper divider was removed and the time, battery, connection, and voice",
+            "Public Agent Wake and session labels now derive from gateway session",
+            "package com.jsos.phone",
+            "versionCode 211"
+          ]
+        },
+        {
+          "version": "2.0.33-watch-ui",
+          "date": "2026-07-16T15:36:47Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.33-watch-ui",
+          "notes": "JSOS v2.0.33 Watch UI preview.\n\nThis release refreshes the Wear OS companion with a cleaner cyan panel system designed for round watch displays.\n\nIncluded:\n\n- New overview-to-detail navigation across the Watch companion.\n- Cyan JSOS panels with clearer active controls and status accents.\n- Persistent Dark and Light appearance modes.\n- Stronger adaptive panel borders for reliable contrast in Light mode.\n- Round-display spacing and scrolling improvements to keep controls inside the visible area.\n- Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.\n- JSOS Watch `0.5-watch-ui` with versionCode `5`.\n- The unchanged JSOS Core `2.0.10-openai-tts` and JSOS HUD `2.0.32-openai-tts` APKs are included for a complete install set.\n- All APKs are bundled together in one zip for easier downloading.\n\nNotes:\n\n- Development preview, not a finished consumer product.\n- JSOS Core remains responsible for gateway access, credentials, sessions, models, Codex routing, and voice services.\n- The Watch companion communicates with JSOS Core through the Wear OS Data Layer and does not store OpenClaw credentials.",
+          "changes": [
+            "New overview-to-detail navigation across the Watch companion.",
+            "Cyan JSOS panels with clearer active controls and status accents.",
+            "Persistent Dark and Light appearance modes.",
+            "Stronger adaptive panel borders for reliable contrast in Light mode.",
+            "Round-display spacing and scrolling improvements to keep controls inside the visible area.",
+            "Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.",
+            "JSOS Watch 0.5-watch-ui with versionCode 5.",
+            "The unchanged JSOS Core 2.0.10-openai-tts and JSOS HUD 2.0.32-openai-tts APKs are included for a complete install set."
+          ]
+        },
+        {
+          "version": "2.0-preview",
+          "date": "2026-05-28T11:55:21Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
+          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-08-27T16:32:17.000Z",
+      "iconAsset": "jsos.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
+      ]
+    },
+    {
+      "id": "rokid-live-studio",
+      "name": "Rokid Live Studio",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.7",
+      "featured": true,
+      "featuredRank": 4,
+      "publishedAt": "2026-08-24T20:38:59Z",
+      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
+      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
+      "listing": {
+        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
+        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
+      },
+      "releases": [
+        {
+          "version": "0.1.7",
+          "date": "2026-08-24T20:38:59Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.7%2B8",
+          "notes": "## What's new\n\n### Custom RTMP destination\nStream to any `rtmp://` or `rtmps://` endpoint — IRL relays, restreaming gateways, self-hosted servers. No YouTube or Twitch account involved: just paste your server URL and stream key in the new **Custom RTMP** tab. Resolution, rotation (for 16:9 landscape output) and bitrate controls work exactly like the other destinations.\n\n### Anonymous Twitch chat\nRead a Twitch channel's chat on the glasses with **only a channel name** — no OAuth token, no client ID, no developer app. Available from the Custom RTMP tab, works with or without an active stream. (The OAuth-based Twitch chat is still there for people who already set it up.)\n\n### Fixes\n- The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).\n- Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution.\n\n## Assets\n- `rokid-live-studio-phone-0.1.7-vc8.apk` — install on your Android phone (bundles the glasses helper).\n- `rokid-live-studio-glasses-helper-0.1.5-vc6.apk` — glasses helper (unchanged since 0.1.5), for manual ADB installs only; the phone app installs it for you otherwise.",
+          "changes": [
+            "The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).",
+            "Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution."
+          ]
+        },
+        {
+          "version": "0.1.6",
+          "date": "2026-07-03T14:12:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.6%2B7",
+          "notes": "Adjustable chat overlay position (#1).\n\n- Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.\n- Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.\n- Older phone/helper combinations remain compatible; a missing offset falls back to 0.\n- Release APK assets were checked with zipalign -P 16 and signature verification.",
+          "changes": [
+            "Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.",
+            "Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.",
+            "Older phone/helper combinations remain compatible; a missing offset falls back to 0.",
+            "Release APK assets were checked with zipalign -P 16 and signature verification."
+          ]
+        },
+        {
+          "version": "0.1.5",
+          "date": "2026-06-09T10:58:26Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.5%2B6",
+          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+          "changes": [
+            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+            "Adds compatibility callbacks for newer Rokid APIs.",
+            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+          ]
+        },
+        {
+          "version": "0.1.4+5",
+          "date": "2026-05-26T17:18:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
+          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3+4",
+          "date": "2026-05-21T17:37:07Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
+          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2+3",
+          "date": "2026-05-11T18:18:44Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
+          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
+          "changes": []
+        },
+        {
+          "version": "0.1.1+2",
+          "date": "2026-05-10T21:57:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
+          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
+          "changes": []
         }
       ],
       "screenshotAssets": [
-        "rokid-nexus-1.png",
-        "rokid-nexus-2.png",
-        "rokid-nexus-3.png",
-        "rokid-nexus-4.png",
-        "rokid-nexus-5.png"
+        "rokid-live-studio-home.jpg",
+        "rokid-live-studio-youtube.jpg",
+        "rokid-live-studio-twitch.jpg",
+        "rokid-live-studio-chat.png"
       ],
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
-      },
-      "publishedAt": "2026-08-20T00:14:57Z",
-      "newUntil": "2026-08-22T00:14:57.000Z",
-      "iconAsset": "rokid-nexus.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.7%2B8/rokid-live-studio-phone-0.1.7-vc8.apk",
+          "sha256": "7ec874bab6d7b396d19fe985c1b559f7912a570e50dcb16f0cd2f332932e5ca8",
+          "sizeBytes": 39004323,
+          "packageName": "com.anezium.rokidlive.phone",
+          "versionCode": 8,
+          "versionName": "0.1.7"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
+      "newUntil": "2026-08-26T20:38:59.000Z",
+      "iconAsset": "rokid-live-studio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
       ]
     },
     {
@@ -429,105 +558,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
-      ]
-    },
-    {
-      "id": "rokid-live-studio",
-      "name": "Rokid Live Studio",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.1.6",
-      "featured": true,
-      "featuredRank": 4,
-      "publishedAt": "2026-07-03T14:12:24Z",
-      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
-      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
-      "listing": {
-        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
-        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
-      },
-      "releases": [
-        {
-          "version": "0.1.6",
-          "date": "2026-07-03T14:12:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.6%2B7",
-          "notes": "Adjustable chat overlay position (#1).\n\n- Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.\n- Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.\n- Older phone/helper combinations remain compatible; a missing offset falls back to 0.\n- Release APK assets were checked with zipalign -P 16 and signature verification.",
-          "changes": [
-            "Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.",
-            "Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.",
-            "Older phone/helper combinations remain compatible; a missing offset falls back to 0.",
-            "Release APK assets were checked with zipalign -P 16 and signature verification."
-          ]
-        },
-        {
-          "version": "0.1.5",
-          "date": "2026-06-09T10:58:26Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.5%2B6",
-          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
-          "changes": [
-            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
-            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
-            "Adds compatibility callbacks for newer Rokid APIs.",
-            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
-          ]
-        },
-        {
-          "version": "0.1.4+5",
-          "date": "2026-05-26T17:18:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
-          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3+4",
-          "date": "2026-05-21T17:37:07Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
-          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2+3",
-          "date": "2026-05-11T18:18:44Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
-          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
-          "changes": []
-        },
-        {
-          "version": "0.1.1+2",
-          "date": "2026-05-10T21:57:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
-          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-live-studio-home.jpg",
-        "rokid-live-studio-youtube.jpg",
-        "rokid-live-studio-twitch.jpg",
-        "rokid-live-studio-chat.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.6%2B7/rokid-live-studio-phone-0.1.6-vc7.apk",
-          "sha256": "9cca9e84fc7cb040ec2e66b9a7a370c3a17bd0bd78ddbc7c24cf5a9f55855695",
-          "sizeBytes": 38906011,
-          "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 7,
-          "versionName": "0.1.6"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-07-05T14:12:24.000Z",
-      "iconAsset": "rokid-live-studio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
       ]
     },
     {
@@ -1903,136 +1933,6 @@
       "screenshotAssets": []
     },
     {
-      "id": "jsos",
-      "name": "JSOS",
-      "category": "AI",
-      "type": "combo",
-      "version": "2.0.38-r08-accessibility-recovery",
-      "publishedAt": "2026-08-03T16:28:38Z",
-      "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
-      "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
-      "screenshotAssets": [
-        "jsos-core-home.jpeg",
-        "jsos-core-session-chat.jpeg",
-        "jsos-core-hud-link.png",
-        "jsos-core-hud-deployment.jpeg",
-        "jsos-hud-session-chat.png",
-        "jsos-hud-options.png",
-        "jsos-hud-commands.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.38-r08-accessibility-recovery/JSOS-HUD-v2.0.36-r08-accessibility-recovery.apk",
-          "sha256": "913a1c804a6326a4dba8e4a825c565ee23dd37e6418059e6e4796256707bd876",
-          "sizeBytes": 21584815,
-          "packageName": "com.jsos.glasses",
-          "versionCode": 237,
-          "versionName": "2.0.36-r08-accessibility-recovery"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.36-security-hardening/JSOS-Core-v2.0.12-security-hardening.apk",
-          "sha256": "b64c3efd1392f905f3a91e98caa099b8359977ad404ba15046c9d42d358b470f",
-          "sizeBytes": 53395815,
-          "packageName": "com.jsos.phone",
-          "versionCode": 212,
-          "versionName": "2.0.12-security-hardening"
-        }
-      ],
-      "author": "IWhatsskill",
-      "sourceUrl": "https://github.com/IWhatsskill/JSOS",
-      "listing": {
-        "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
-      },
-      "releases": [
-        {
-          "version": "2.0.38-r08-accessibility-recovery",
-          "date": "2026-08-03T16:28:38Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.38-r08-accessibility-recovery",
-          "notes": "# JSOS v2.0.38 R08 Accessibility Recovery\n\nThis preview fixes R08 ring control becoming unavailable when some Rokid firmware disables the JSOS Accessibility Service after a power cycle or app update.\n\n## Fixed\n\n- JSOS HUD can restore only its own R08 Accessibility component after an optional one-time ADB grant.\n- Recovery runs at HUD startup and also listens for boot, unlock, package replacement, and Bluetooth startup.\n- Existing Accessibility services are preserved; JSOS adds only its own component and verifies the write.\n- Without `WRITE_SECURE_SETTINGS`, recovery is a strict no-op and manual Accessibility setup remains unchanged.\n- The existing isolated `:ring` process, bounded GATT timeout, active-client callback filtering, and 3/5/8/12-second reconnect behavior remain intact.\n\n## Included apps\n\n- JSOS Core `2.0.12-security-hardening` (`versionCode 212`)\n- JSOS HUD `2.0.36-r08-accessibility-recovery` (`versionCode 237`)\n- JSOS Watch remains available as source and is not included as an APK asset.\n\n## Optional one-time setup\n\nGrant the HUD permission once from a trusted computer:\n\n```text\nadb shell pm grant com.jsos.glasses android.permission.WRITE_SECURE_SETTINGS\n```\n\nThe grant normally survives reboots and in-place APK updates. If it is not granted, JSOS does not change Android Accessibility settings.\n\n## Verification\n\n- Core Debug unit tests: 27 passed, 0 failed.\n- Core Release unit tests: 27 passed, 0 failed.\n- Core and HUD release builds completed successfully.\n- Core and HUD `lintVitalRelease` completed with no issues.\n- APK package names, labels, versions, non-debuggable status, signatures, and the JSOS Preview certificate were verified.\n- Source and expanded-APK secret/private-marker scans passed; tracked public text files are BOM-free.",
-          "changes": [
-            "JSOS HUD can restore only its own R08 Accessibility component after an optional one-time ADB grant.",
-            "Recovery runs at HUD startup and also listens for boot, unlock, package replacement, and Bluetooth startup.",
-            "Existing Accessibility services are preserved; JSOS adds only its own component and verifies the write.",
-            "Without WRITESECURESETTINGS, recovery is a strict no-op and manual Accessibility setup remains unchanged.",
-            "The existing isolated :ring process, bounded GATT timeout, active-client callback filtering, and 3/5/8/12-second reconnect behavior remain intact.",
-            "JSOS Core 2.0.12-security-hardening (versionCode 212)",
-            "JSOS HUD 2.0.36-r08-accessibility-recovery (versionCode 237)",
-            "JSOS Watch remains available as source and is not included as an APK asset."
-          ]
-        },
-        {
-          "version": "2.0.36-security-hardening",
-          "date": "2026-08-01T14:58:44Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.36-security-hardening",
-          "notes": "# JSOS v2.0.36 Security Hardening preview\n\nThis preview fixes five concrete weaknesses in the public JSOS Core and HUD communication paths.\n\n## What was fixed\n\n- **Core watch commands are now private to JSOS.** Other Android apps can no longer inject commands through the dynamically registered watch-command receiver, including on older supported Android versions.\n- **HUD ring commands are now private to JSOS.** The R08 command receiver is consistently non-exported across all supported Android versions.\n- **Malformed or excessive HUD chunks are rejected early.** Chunk IDs, message types, part sizes, part counts, pending streams, and total buffered data now have strict limits. Mismatched, expired, or oversized streams are discarded safely.\n- **Oversized Core-to-HUD messages are stopped before encoding.** Core now rejects payloads above 450 KiB before Base64 expansion and chunk transmission.\n- **Live Talk playback can no longer grow without bounds.** Output-audio chunks are limited to 64 KiB and the playback queue is capped at 32 chunks.\n\nThese changes reduce the risk of command injection and uncontrolled memory growth without changing the JSOS layout or normal interaction flow.\n\n## Versions\n\n- JSOS Core: `2.0.12-security-hardening` (`versionCode 212`)\n- JSOS HUD: `2.0.34-security-hardening` (`versionCode 235`)\n\nBoth APKs use the existing JSOS Preview public release certificate and higher version codes than the previous public release, so they are prepared for an in-place preview update.\n\nJSOS Watch remains available in source, but it is unchanged and is not repackaged in this release.\n\n## Assets\n\n- `JSOS-Core-v2.0.12-security-hardening.apk`\n- `JSOS-HUD-v2.0.34-security-hardening.apk`\n- `RELEASE_NOTES_v2.0.36-security-hardening.md`\n- `SHA256SUMS.txt`\n\n<details>\n<summary>Technical verification</summary>\n\n- Public security diff review completed with no patch-introduced findings.\n- Core unit tests passed: 27 tests, 0 failures.\n- Core and HUD release builds and `lintVital` passed.\n- APK package names, versions, labels, and non-debuggable status were checked with `aapt`.\n- APK signatures were verified with `apksigner` and the JSOS Preview public release certificate.\n- Source and APK secret/private-marker scans passed.\n\n</details>",
-          "changes": [
-            "HUD ring commands are now private to JSOS. The R08 command receiver is consistently non-exported across all supported Android versions.",
-            "Oversized Core-to-HUD messages are stopped before encoding. Core now rejects payloads above 450 KiB before Base64 expansion and chunk transmission.",
-            "Live Talk playback can no longer grow without bounds. Output-audio chunks are limited to 64 KiB and the playback queue is capped at 32 chunks.",
-            "JSOS Core: 2.0.12-security-hardening (versionCode 212)",
-            "JSOS HUD: 2.0.34-security-hardening (versionCode 235)",
-            "RELEASENOTESv2.0.36-security-hardening.md",
-            "SHA256SUMS.txt",
-            "Public security diff review completed with no patch-introduced findings."
-          ]
-        },
-        {
-          "version": "2.0.35-hud-refresh",
-          "date": "2026-07-27T11:11:14Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.35-hud-refresh",
-          "notes": "# JSOS v2.0.35 HUD Refresh preview\n\nThis preview refreshes the public JSOS HUD conversation layout while keeping\nthe existing Rokid safe-zone and monochrome visual language.\n\n## Highlights\n\n- Finer, dynamically sized conversation panels using 94 percent of the HUD\n  width.\n- Assistant responses remain left-aligned; optional user messages appear\n  right-aligned.\n- A persistent `YOU ON` / `YOU OFF` display switch controls the user's own\n  panels in both the normal HUD and Codex view.\n- A fixed top-left pulse slot presents `READY`, `THINK`, `LIVE`, `DONE`,\n  voice, loading, wake, and error states without shifting the header.\n- The upper divider was removed and the time, battery, connection, and voice\n  areas were tightened for the available HUD width.\n- Public Agent Wake and session labels now derive from gateway session\n  metadata instead of a fixed agent topology.\n\n## APKs\n\n- `JSOS-Core-v2.0.11-session-routing.apk`\n  - package `com.jsos.phone`\n  - versionCode `211`\n- `JSOS-HUD-v2.0.33-hud-refresh.apk`\n  - package `com.jsos.glasses`\n  - versionCode `234`\n\nJSOS Watch is unchanged in this release and is not repackaged as a new\nversion.\n\n## Preview notice\n\nJSOS remains a preview for compatible Rokid hardware and OpenClaw setups.\nReview the public setup and security documentation before installing.\n\nSource and license information remain available in the public JSOS\nrepository under AGPL-3.0, with third-party notices in `COPYRIGHT`.",
-          "changes": [
-            "Finer, dynamically sized conversation panels using 94 percent of the HUD",
-            "Assistant responses remain left-aligned; optional user messages appear",
-            "A persistent YOU ON / YOU OFF display switch controls the user's own",
-            "A fixed top-left pulse slot presents READY, THINK, LIVE, DONE,",
-            "The upper divider was removed and the time, battery, connection, and voice",
-            "Public Agent Wake and session labels now derive from gateway session",
-            "package com.jsos.phone",
-            "versionCode 211"
-          ]
-        },
-        {
-          "version": "2.0.33-watch-ui",
-          "date": "2026-07-16T15:36:47Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.33-watch-ui",
-          "notes": "JSOS v2.0.33 Watch UI preview.\n\nThis release refreshes the Wear OS companion with a cleaner cyan panel system designed for round watch displays.\n\nIncluded:\n\n- New overview-to-detail navigation across the Watch companion.\n- Cyan JSOS panels with clearer active controls and status accents.\n- Persistent Dark and Light appearance modes.\n- Stronger adaptive panel borders for reliable contrast in Light mode.\n- Round-display spacing and scrolling improvements to keep controls inside the visible area.\n- Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.\n- JSOS Watch `0.5-watch-ui` with versionCode `5`.\n- The unchanged JSOS Core `2.0.10-openai-tts` and JSOS HUD `2.0.32-openai-tts` APKs are included for a complete install set.\n- All APKs are bundled together in one zip for easier downloading.\n\nNotes:\n\n- Development preview, not a finished consumer product.\n- JSOS Core remains responsible for gateway access, credentials, sessions, models, Codex routing, and voice services.\n- The Watch companion communicates with JSOS Core through the Wear OS Data Layer and does not store OpenClaw credentials.",
-          "changes": [
-            "New overview-to-detail navigation across the Watch companion.",
-            "Cyan JSOS panels with clearer active controls and status accents.",
-            "Persistent Dark and Light appearance modes.",
-            "Stronger adaptive panel borders for reliable contrast in Light mode.",
-            "Round-display spacing and scrolling improvements to keep controls inside the visible area.",
-            "Cleaner Assistant, Status, Controls, Session, Codex, Codex session, and Voice pages.",
-            "JSOS Watch 0.5-watch-ui with versionCode 5.",
-            "The unchanged JSOS Core 2.0.10-openai-tts and JSOS HUD 2.0.32-openai-tts APKs are included for a complete install set."
-          ]
-        },
-        {
-          "version": "2.0-preview",
-          "date": "2026-05-28T11:55:21Z",
-          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0-preview",
-          "notes": "First installable JSOS development-preview APK release. Includes JSOS Core for the phone and JSOS HUD for Rokid glasses. Configure OpenClaw, Rokid CXR credentials, optional voice/TTS keys, and optional private Admin Codex bridge locally inside JSOS Core. No signing keys, API keys, OpenClaw tokens, Rokid credentials, or private configs are included.",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-08-05T16:28:38.000Z",
-      "iconAsset": "jsos.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-home.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-session-chat.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-link.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-core-hud-deployment.jpeg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
-      ]
-    },
-    {
       "id": "lc-hot100",
       "name": "LC Hot100",
       "category": "Learning",
@@ -2865,6 +2765,132 @@
       },
       "releases": [],
       "screenshotAssets": []
+    },
+    {
+      "id": "rokid-nexus",
+      "name": "Rokid Nexus",
+      "category": "Launcher",
+      "type": "combo",
+      "version": "1.4.5",
+      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
+      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.5/nexus-glasses-1.4.5.apk",
+          "sha256": "5c4ac150cd887f45e95ccb3b7dfb2f5fdd152b513154e588d8e15f97657310cf",
+          "sizeBytes": 19260551,
+          "packageName": "com.anezium.rokidbus.glasses",
+          "versionCode": 10405,
+          "versionName": "1.4.5"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.5/nexus-phone-1.4.5.apk",
+          "sha256": "868f7f7e6d1103a99d9dc5dafa3aabb43f99c9e9d8dc16551d36a78cb6b55c9a",
+          "sizeBytes": 18555841,
+          "packageName": "com.anezium.rokidbus.phone",
+          "versionCode": 10405,
+          "versionName": "1.4.5"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.4.5",
+          "date": "2026-08-20T00:14:57Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.4",
+          "date": "2026-08-14T19:32:00Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.3",
+          "date": "2026-08-11T22:13:23Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.11",
+          "date": "2026-08-07T19:10:51Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.6",
+          "date": "2026-08-06T22:50:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.1.3",
+          "date": "2026-08-01T00:02:48Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.1.3",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.0.48",
+          "date": "2026-07-29T00:03:13Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.48",
+          "notes": "### Activities\n\n- A new tier between a pin and a surface: an ongoing process — a ride\n  approaching, a timer running, a transfer in flight — holds a stable corner\n  of the HUD. It draws as a compact chip, and the primary activity can open\n  into a panel with progress, details, and up to three platform-drawn\n  actions the wearer steps through with scroll and fires with a tap.\n- A significant update lets the panel flare to catch the eye — throttled by\n  the platform, and never by holding the screen on: an activity still cannot\n  wake or keep the display, exactly like every other tier.\n- An idle panel folds back to its chip after about ten seconds. A new\n  Settings switch keeps the primary activity expanded instead; it is the\n  wearer's preference, and no plugin can read, set, or override it.\n\n### Notices learn to ask a real question\n\n- A notice can now carry up to three answers, drawn as glyph chips under\n  the band — the same row an activity panel uses, drawn by the same view,\n  so the wearer learns it once. Scroll steps along it, the selection wraps\n  and follows its answer across updates, and a tap fires the one that is\n  chosen.\n- A notice takes exactly one answer, of either kind. The moment it is\n  given, the row leaves the band, nothing fires again, and the phone\n  refuses a duplicate — measured on hardware, two temple taps 188 ms apart\n  used to mean two replies sent. This deliberately changes 1.0.46\n  behaviour, where an interactive band replied on every tap.\n- Clearing a field of a shown notice now actually reaches the glasses: the\n  phone relays the patch a plugin sent instead of re-serialising its own\n  state, so an emptied footer, a withdrawn question, or a cleared row\n  arrives as exactly that.\n\n### Plugin SDK 0.6.0\n\n- The activity tier and notice actions land in the SDK: `NexusActivity`,\n  `NexusNoticeAction`, `actions` on notices and their updates, the\n  `onNexusActivityAction` and `onNexusNoticeAction` callbacks, and a\n  nullable `interactive` on `NexusNoticeUpdate` so a band can be asked\n  again.\n- The guide gains a visual reference of the notice band's four states,\n  with the one-answer rule as an interactive demo\n  (`docs/notice-band-states.html`).",
+          "changes": [
+            "A new tier between a pin and a surface: an ongoing process — a ride",
+            "A significant update lets the panel flare to catch the eye — throttled by",
+            "An idle panel folds back to its chip after about ten seconds. A new",
+            "A notice can now carry up to three answers, drawn as glyph chips under",
+            "A notice takes exactly one answer, of either kind. The moment it is",
+            "Clearing a field of a shown notice now actually reaches the glasses: the",
+            "The activity tier and notice actions land in the SDK: NexusActivity,",
+            "The guide gains a visual reference of the notice band's four states,"
+          ]
+        },
+        {
+          "version": "1.0.47",
+          "date": "2026-07-28T16:24:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.47",
+          "notes": "### Phone battery\n\n- Your phone's charge now sits in the glasses' status row, beside the clock\n  and the weather: a small phone glyph and the percentage, with a plus while\n  it charges. The glasses always knew their own battery; now they admit the\n  phone they depend on has one too.\n- The chip behaves like the ROM's own indicators. It shows on the launcher\n  and its screens, follows the status row when an app like the teleprompter\n  moves it, tucks in beside the clock when the weather steps out, and never\n  sits on top of anything.\n- Not interested? Settings has a switch. Off means off — the chip leaves\n  immediately and stays gone.\n\n### Plugin marks\n\n- A plugin's own icon now reaches the glasses. Until now a custom mark showed\n  on the phone and fell back to a generic tile in the glasses launcher, which\n  never had the plugin's APK to load it from; the mark itself now travels, as\n  bare geometry the glasses draw in the HUD's one green.\n- The design system holds: a plugin ships a shape, never a colour, a size, or\n  a look. Tests now catch a mark that drifts from the rules instead of prose\n  hoping it will not.",
+          "changes": [
+            "Your phone's charge now sits in the glasses' status row, beside the clock",
+            "The chip behaves like the ROM's own indicators. It shows on the launcher",
+            "Not interested? Settings has a switch. Off means off — the chip leaves",
+            "A plugin's own icon now reaches the glasses. Until now a custom mark showed",
+            "The design system holds: a plugin ships a shape, never a colour, a size, or"
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-nexus-1.png",
+        "rokid-nexus-2.png",
+        "rokid-nexus-3.png",
+        "rokid-nexus-4.png",
+        "rokid-nexus-5.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
+      },
+      "publishedAt": "2026-08-20T00:14:57Z",
+      "newUntil": "2026-08-22T00:14:57.000Z",
+      "iconAsset": "rokid-nexus.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+      ]
     },
     {
       "id": "rokid-reader",
