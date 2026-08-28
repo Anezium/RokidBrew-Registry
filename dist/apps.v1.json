@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T21:47:42.037Z",
+  "generatedAt": "2026-08-28T21:48:40.605Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -1962,11 +1962,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar/releases/download/v1.0.0/InTheSkyRadarGlasses-v1.0.0.apk"
+          "url": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar/releases/download/v1.0.0/InTheSkyRadarGlasses-v1.0.0.apk",
+          "sha256": "d9f6fe70d40cbcb04a2bf30e2cd180e33551af363d4fc584db1e6b42b78ac60d",
+          "sizeBytes": 19119983,
+          "packageName": "com.inthesky.radar.glasses",
+          "versionCode": 100,
+          "versionName": "1.0.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar/releases/download/v1.0.0/InTheSkyRadarPhone-v1.0.0.apk"
+          "url": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar/releases/download/v1.0.0/InTheSkyRadarPhone-v1.0.0.apk",
+          "sha256": "440136c2be47aff34c2556ec52f73ac2376c1aee62d65b2f07708c3e462004f8",
+          "sizeBytes": 6643074,
+          "packageName": "com.inthesky.radar.phone",
+          "versionCode": 100,
+          "versionName": "1.0.0"
         }
       ],
       "releases": [
