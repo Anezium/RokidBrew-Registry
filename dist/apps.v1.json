@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T17:28:09.781Z",
+  "generatedAt": "2026-08-28T21:47:42.037Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -1947,6 +1947,54 @@
       "iconAsset": "hubu.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/hubu.png",
       "screenshotAssets": []
+    },
+    {
+      "id": "in-the-sky-rokid-radar",
+      "name": "In The Sky - Rokid Radar",
+      "category": "Navigation",
+      "type": "combo",
+      "version": "1.0.0",
+      "summary": "Track nearby aircraft live on your Rokid Glasses.",
+      "description": "Turn your Rokid Glasses into a live aircraft radar. The Android companion uses GPS and OpenSky data to show nearby aircraft, range, bearing, altitude, speed, track, callsign, and category in a lightweight glasses HUD. Configure a 1-200 mile range, aircraft-entry alerts, automatic HUD popups, and compass-oriented tracking from the phone.",
+      "author": "robhowden-sudo",
+      "sourceUrl": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar/releases/download/v1.0.0/InTheSkyRadarGlasses-v1.0.0.apk"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar/releases/download/v1.0.0/InTheSkyRadarPhone-v1.0.0.apk"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-08-27T17:06:00Z",
+          "sourceReleaseUrl": "https://github.com/robhowden-sudo/InTheSky-Rokid-Radar/releases/tag/v1.0.0",
+          "notes": "First hardware-tested release of In The Sky — Rokid Radar.\n\nHighlights:\n- Phone-controlled Hi Rokid/CXR radar sessions\n- OpenSky OAuth live aircraft data\n- 1–200 mile range, range markers and alert zone\n- Aircraft-entry sonar and optional 10-second alert HUD\n- Selectable contacts and aircraft-category symbols\n- Correct altitude handling and live/stale status\n- Smooth phone-compass heading-up mode with -90° default offset\n- Screen-off phone background operation\n- Proven clear glasses renderer with no map/background layer\n\nInstall the phone APK on Android and the glasses APK on Rokid. Launch the HUD from the phone app through Hi Rokid.",
+          "changes": [
+            "Phone-controlled Hi Rokid/CXR radar sessions",
+            "OpenSky OAuth live aircraft data",
+            "1–200 mile range, range markers and alert zone",
+            "Aircraft-entry sonar and optional 10-second alert HUD",
+            "Selectable contacts and aircraft-category symbols",
+            "Correct altitude handling and live/stale status",
+            "Smooth phone-compass heading-up mode with -90° default offset",
+            "Screen-off phone background operation"
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "in-the-sky-rokid-radar.png",
+        "in-the-sky-rokid-radar-2.jpg"
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/in-the-sky-rokid-radar.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/in-the-sky-rokid-radar-2.jpg"
+      ]
     },
     {
       "id": "lc-hot100",
