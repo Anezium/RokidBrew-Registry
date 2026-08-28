@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T05:51:14.934Z",
+  "generatedAt": "2026-08-28T17:28:09.781Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -18,8 +18,8 @@
       "name": "JSOS",
       "category": "AI",
       "type": "combo",
-      "version": "2.0.40-hi-rokid-ai-coexist",
-      "publishedAt": "2026-08-25T16:32:17Z",
+      "version": "2.0.41-cxrl-photo-jsos-voice",
+      "publishedAt": "2026-08-28T00:21:06Z",
       "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
       "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
       "screenshotAssets": [
@@ -35,21 +35,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.40-hi-rokid-ai-coexist/JSOS-HUD-v2.0.37-hi-rokid-cxrl.apk",
-          "sha256": "65c94df6d90e5d28002c5bec3b5754acaa5c68b900d8d7ce5b2bc7c0675c622a",
-          "sizeBytes": 21584819,
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.41-cxrl-photo-jsos-voice/JSOS-HUD-v2.0.38-jsos-voice-assistant-block.apk",
+          "sha256": "3522414050319b82dd14d0463ef34cdc99429d0f361113f6447484609cbee8ac",
+          "sizeBytes": 21584823,
           "packageName": "com.jsos.glasses",
-          "versionCode": 238,
-          "versionName": "2.0.37-hi-rokid-cxrl"
+          "versionCode": 239,
+          "versionName": "2.0.38-jsos-voice-assistant-block"
         },
         {
           "target": "phone",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.40-hi-rokid-ai-coexist/JSOS-Core-v2.0.14-hi-rokid-ai-coexist.apk",
-          "sha256": "8b8f8b4a2cc4883d9ac451a4adc207cdb3479c20342176aea32fed6e5b575dd7",
-          "sizeBytes": 53578808,
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.41-cxrl-photo-jsos-voice/JSOS-Core-v2.0.15-cxrl-photo-capture.apk",
+          "sha256": "897b2be084528579a41bc0c293dea7f6c8cb7e38601951d0e09c7a0da0557034",
+          "sizeBytes": 53595196,
           "packageName": "com.jsos.phone",
-          "versionCode": 214,
-          "versionName": "2.0.14-hi-rokid-ai-coexist"
+          "versionCode": 215,
+          "versionName": "2.0.15-cxrl-photo-capture"
         }
       ],
       "author": "IWhatsskill",
@@ -58,6 +58,22 @@
         "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
       },
       "releases": [
+        {
+          "version": "2.0.41-cxrl-photo-jsos-voice",
+          "date": "2026-08-28T00:21:06Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.41-cxrl-photo-jsos-voice",
+          "notes": "# JSOS v2.0.41 CXR-L photo and JSOS voice preview\n\nThis preview restores photo capture through Hi Rokid and makes the glasses\nhardware hold open JSOS voice without briefly showing the native Rokid\nassistant.\n\n## What changed\n\n- Routed photo capture through whichever glasses transport is active, including\n  the Global Hi Rokid CXR-L connection.\n- Added a scoped camera response callback with timeout and clear failure\n  reporting when the glasses do not return a photo.\n- Made a hardware hold of about 1.3 seconds open JSOS voice directly.\n- Blocked the native Rokid assistant start only while that JSOS voice action is\n  active, preventing the assistant from flashing before the microphone opens.\n- Kept a one-shot accessibility fallback for Rokid versions that start the\n  native assistant before the ordered broadcast can be stopped.\n- Distinguished the native Rokid assistant screen from JavaScript AIUI screens,\n  so regular AIUI and ring interactions remain available.\n- Left the normal Rokid assistant unchanged outside an active JSOS voice hold.\n\n## Included assets\n\n- `JSOS-Core-v2.0.15-cxrl-photo-capture.apk`\n  - package `com.jsos.phone`\n  - versionCode `215`\n  - versionName `2.0.15-cxrl-photo-capture`\n- `JSOS-HUD-v2.0.38-jsos-voice-assistant-block.apk`\n  - package `com.jsos.glasses`\n  - versionCode `239`\n  - versionName `2.0.38-jsos-voice-assistant-block`\n- `SHA256SUMS.txt`\n\nBoth APKs are non-debuggable and signed with the established JSOS Preview\ncertificate using APK Signature Scheme v2.\n\n## Verification boundary\n\n- Core Debug unit tests: `34 / 34 PASS`\n- Core Release unit tests: `34 / 34 PASS`\n- Core and HUD `lintVitalRelease`: `PASS`\n- Core and HUD signed Release builds: `PASS`\n- Source and expanded APK secret/private-marker scans: `PASS`\n- APK package, version, label, signer and SHA-256 checks: `PASS`\n\nThe device behavior was tested during development. These final Public APKs were\nbuilt and statically verified locally but were not installed again after the\nfinal release build.\n\n## Thanks\n\nThanks to [@plizer123](https://github.com/plizer123) for reporting the CXR-L\nhardware-button and photo-capture problem in\n[issue #4](https://github.com/IWhatsskill/JSOS/issues/4).\n\nJSOS is distributed under AGPL-3.0. Attribution and third-party notices remain\navailable in `COPYRIGHT` in the source repository.",
+          "changes": [
+            "Routed photo capture through whichever glasses transport is active, including",
+            "Added a scoped camera response callback with timeout and clear failure",
+            "Made a hardware hold of about 1.3 seconds open JSOS voice directly.",
+            "Blocked the native Rokid assistant start only while that JSOS voice action is",
+            "Kept a one-shot accessibility fallback for Rokid versions that start the",
+            "Distinguished the native Rokid assistant screen from JavaScript AIUI screens,",
+            "Left the normal Rokid assistant unchanged outside an active JSOS voice hold.",
+            "package com.jsos.phone"
+          ]
+        },
         {
           "version": "2.0.40-hi-rokid-ai-coexist",
           "date": "2026-08-25T16:32:17Z",
@@ -146,7 +162,7 @@
           "changes": []
         }
       ],
-      "newUntil": "2026-08-27T16:32:17.000Z",
+      "newUntil": "2026-08-30T00:21:06.000Z",
       "iconAsset": "jsos.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
       "screenshotUrls": [
@@ -157,115 +173,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-session-chat.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-options.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/jsos-hud-commands.png"
-      ]
-    },
-    {
-      "id": "rokid-live-studio",
-      "name": "Rokid Live Studio",
-      "category": "Media",
-      "type": "combo",
-      "version": "0.1.7",
-      "featured": true,
-      "featuredRank": 4,
-      "publishedAt": "2026-08-24T20:38:59Z",
-      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
-      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
-      "listing": {
-        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
-        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
-      },
-      "releases": [
-        {
-          "version": "0.1.7",
-          "date": "2026-08-24T20:38:59Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.7%2B8",
-          "notes": "## What's new\n\n### Custom RTMP destination\nStream to any `rtmp://` or `rtmps://` endpoint — IRL relays, restreaming gateways, self-hosted servers. No YouTube or Twitch account involved: just paste your server URL and stream key in the new **Custom RTMP** tab. Resolution, rotation (for 16:9 landscape output) and bitrate controls work exactly like the other destinations.\n\n### Anonymous Twitch chat\nRead a Twitch channel's chat on the glasses with **only a channel name** — no OAuth token, no client ID, no developer app. Available from the Custom RTMP tab, works with or without an active stream. (The OAuth-based Twitch chat is still there for people who already set it up.)\n\n### Fixes\n- The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).\n- Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution.\n\n## Assets\n- `rokid-live-studio-phone-0.1.7-vc8.apk` — install on your Android phone (bundles the glasses helper).\n- `rokid-live-studio-glasses-helper-0.1.5-vc6.apk` — glasses helper (unchanged since 0.1.5), for manual ADB installs only; the phone app installs it for you otherwise.",
-          "changes": [
-            "The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).",
-            "Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution."
-          ]
-        },
-        {
-          "version": "0.1.6",
-          "date": "2026-07-03T14:12:24Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.6%2B7",
-          "notes": "Adjustable chat overlay position (#1).\n\n- Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.\n- Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.\n- Older phone/helper combinations remain compatible; a missing offset falls back to 0.\n- Release APK assets were checked with zipalign -P 16 and signature verification.",
-          "changes": [
-            "Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.",
-            "Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.",
-            "Older phone/helper combinations remain compatible; a missing offset falls back to 0.",
-            "Release APK assets were checked with zipalign -P 16 and signature verification."
-          ]
-        },
-        {
-          "version": "0.1.5",
-          "date": "2026-06-09T10:58:26Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.5%2B6",
-          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
-          "changes": [
-            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
-            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
-            "Adds compatibility callbacks for newer Rokid APIs.",
-            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
-          ]
-        },
-        {
-          "version": "0.1.4+5",
-          "date": "2026-05-26T17:18:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
-          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
-          "changes": []
-        },
-        {
-          "version": "0.1.3+4",
-          "date": "2026-05-21T17:37:07Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
-          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
-          "changes": []
-        },
-        {
-          "version": "0.1.2+3",
-          "date": "2026-05-11T18:18:44Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
-          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
-          "changes": []
-        },
-        {
-          "version": "0.1.1+2",
-          "date": "2026-05-10T21:57:45Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
-          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-live-studio-home.jpg",
-        "rokid-live-studio-youtube.jpg",
-        "rokid-live-studio-twitch.jpg",
-        "rokid-live-studio-chat.png"
-      ],
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.7%2B8/rokid-live-studio-phone-0.1.7-vc8.apk",
-          "sha256": "7ec874bab6d7b396d19fe985c1b559f7912a570e50dcb16f0cd2f332932e5ca8",
-          "sizeBytes": 39004323,
-          "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 8,
-          "versionName": "0.1.7"
-        }
-      ],
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-08-26T20:38:59.000Z",
-      "iconAsset": "rokid-live-studio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
       ]
     },
     {
@@ -558,6 +465,115 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-2.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-meta-player-3.jpg"
+      ]
+    },
+    {
+      "id": "rokid-live-studio",
+      "name": "Rokid Live Studio",
+      "category": "Media",
+      "type": "combo",
+      "version": "0.1.7",
+      "featured": true,
+      "featuredRank": 4,
+      "publishedAt": "2026-08-24T20:38:59Z",
+      "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
+      "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
+      "listing": {
+        "about": "Rokid Live Studio turns the phone into a small broadcast desk for Rokid glasses. It receives the glasses camera and microphone feed, gives you a local preview, then helps stream to YouTube or Twitch.\n\nIt supports stream-key mode, OAuth flows for YouTube and Twitch, and optional chat messages that can be rendered back into the glasses helper overlay. The phone carries the streaming setup and account work, while the glasses remain the capture device.\n\nUse it for demos, live walkthroughs, developer streams, or quick wearable-camera tests where seeing and managing the feed from the phone matters.",
+        "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
+      },
+      "releases": [
+        {
+          "version": "0.1.7",
+          "date": "2026-08-24T20:38:59Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.7%2B8",
+          "notes": "## What's new\n\n### Custom RTMP destination\nStream to any `rtmp://` or `rtmps://` endpoint — IRL relays, restreaming gateways, self-hosted servers. No YouTube or Twitch account involved: just paste your server URL and stream key in the new **Custom RTMP** tab. Resolution, rotation (for 16:9 landscape output) and bitrate controls work exactly like the other destinations.\n\n### Anonymous Twitch chat\nRead a Twitch channel's chat on the glasses with **only a channel name** — no OAuth token, no client ID, no developer app. Available from the Custom RTMP tab, works with or without an active stream. (The OAuth-based Twitch chat is still there for people who already set it up.)\n\n### Fixes\n- The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).\n- Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution.\n\n## Assets\n- `rokid-live-studio-phone-0.1.7-vc8.apk` — install on your Android phone (bundles the glasses helper).\n- `rokid-live-studio-glasses-helper-0.1.5-vc6.apk` — glasses helper (unchanged since 0.1.5), for manual ADB installs only; the phone app installs it for you otherwise.",
+          "changes": [
+            "The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).",
+            "Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution."
+          ]
+        },
+        {
+          "version": "0.1.6",
+          "date": "2026-07-03T14:12:24Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.6%2B7",
+          "notes": "Adjustable chat overlay position (#1).\n\n- Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.\n- Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.\n- Older phone/helper combinations remain compatible; a missing offset falls back to 0.\n- Release APK assets were checked with zipalign -P 16 and signature verification.",
+          "changes": [
+            "Adds a \"Chat position (bottom offset)\" control next to the font size and message count steppers in the chat cards. One shared setting for YouTube and Twitch.",
+            "Raises the chat overlay on the glasses by up to 200dp, in steps; updates live during a stream and persists across restarts. Defaults to 0, so nothing moves unless you set it.",
+            "Older phone/helper combinations remain compatible; a missing offset falls back to 0.",
+            "Release APK assets were checked with zipalign -P 16 and signature verification."
+          ]
+        },
+        {
+          "version": "0.1.5",
+          "date": "2026-06-09T10:58:26Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.5%2B6",
+          "notes": "CXR-L / CXR bridge compatibility refresh.\n\n- Updates CXR-L integrations to client-l 1.0.3 where applicable.\n- Updates CXR service bridge native libs for 16 KB page-size compatibility.\n- Adds compatibility callbacks for newer Rokid APIs.\n- Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation.",
+          "changes": [
+            "Updates CXR-L integrations to client-l 1.0.3 where applicable.",
+            "Updates CXR service bridge native libs for 16 KB page-size compatibility.",
+            "Adds compatibility callbacks for newer Rokid APIs.",
+            "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
+          ]
+        },
+        {
+          "version": "0.1.4+5",
+          "date": "2026-05-26T17:18:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.4%2B5",
+          "notes": "## Changes\n- Fix Android 12+ phone splash screen to use a dedicated padded asset generated from the real app logo.\n- Keep the phone splash background dark and aligned with the app theme.\n- Bump phone app version to 0.1.4 (versionCode 5).\n\n## Verification\n- Built signed release APK.\n- Installed on device R5CW12DK1AY.\n- Launched com.anezium.rokidlive.phone/.MainActivity successfully.",
+          "changes": []
+        },
+        {
+          "version": "0.1.3+4",
+          "date": "2026-05-21T17:37:07Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.3%2B4",
+          "notes": "versionCode: 4\n\nFixed compatibility with the latest Hi Rokid update by using bitmap launcher icons and sending the required auth package during CXR-L service binding. This prevents authorization crashes and restores helper upload through the updated global Hi Rokid service.",
+          "changes": []
+        },
+        {
+          "version": "0.1.2+3",
+          "date": "2026-05-11T18:18:44Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.2%2B3",
+          "notes": "# Rokid Live Studio 0.1.2\n\nversionCode: 3\n\nWhat's new:\n- Added a 768x1024 capture profile as a lower-resolution streaming option while keeping the existing Rokid quality profiles.\n- Added foreground keep-alive for active streams so the phone can keep receiving and streaming when the screen is locked or the app is in the background.\n- Added wake-lock and low-latency Wi-Fi lock handling during active camera transport.\n- Added camera recovery on the glasses helper: if Rokid OS temporarily takes the camera, the helper retries camera startup up to 5 times.\n- Added Android 11/API 30 install compatibility for the phone app.\n\nNote:\n- Higher resolutions can still heat the glasses quickly and drain battery fast. For long streams, hide preview when possible and use external power.\n\nSHA-256:\n`0D20C393A60CC3894A43DAA76C282C6AB72E5D4AB81FABAD102E7034D6019415`",
+          "changes": []
+        },
+        {
+          "version": "0.1.1+2",
+          "date": "2026-05-10T21:57:45Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.1%2B2",
+          "notes": "Current public APK for Rokid Live Studio.\n\n- Adds visible helper install progress and success/failure feedback.\n- Polishes the Settings update action.\n- Bundles the signed glasses helper APK.\n\nversionCode: 2",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-live-studio-home.jpg",
+        "rokid-live-studio-youtube.jpg",
+        "rokid-live-studio-twitch.jpg",
+        "rokid-live-studio-chat.png"
+      ],
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.7%2B8/rokid-live-studio-phone-0.1.7-vc8.apk",
+          "sha256": "7ec874bab6d7b396d19fe985c1b559f7912a570e50dcb16f0cd2f332932e5ca8",
+          "sizeBytes": 39004323,
+          "packageName": "com.anezium.rokidlive.phone",
+          "versionCode": 8,
+          "versionName": "0.1.7"
+        }
+      ],
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
+      "newUntil": "2026-08-26T20:38:59.000Z",
+      "iconAsset": "rokid-live-studio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-home.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-youtube.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-twitch.jpg",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-live-studio-chat.png"
       ]
     },
     {
