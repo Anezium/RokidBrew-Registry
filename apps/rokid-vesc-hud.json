@@ -1,0 +1,58 @@
+{
+  "id": "rokid-vesc-hud",
+  "name": "Rokid VESC HUD",
+  "category": "Mobility",
+  "type": "glasses",
+  "version": "0.6.1",
+  "summary": "Read-only Rokid AI Glasses HUD for VESC telemetry over BLE, with configurable board profiles and battery curves.",
+  "description": "Read-only Rokid AI Glasses HUD for VESC telemetry over BLE, with configurable board profiles and battery curves.",
+  "author": "ShaBP",
+  "sourceUrl": "https://github.com/ShaBP/rokid-vesc-hud",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/ShaBP/rokid-vesc-hud/releases/download/v0.6.1/vesc-hud-adaptive-v0.6.1.apk",
+      "sha256": "412f640f1fb78e1ac5bb7fe7da6f270565aa556bc69a8a0588f9e0fabef654a5",
+      "sizeBytes": 717633,
+      "packageName": "dev.veschud",
+      "versionCode": 10,
+      "versionName": "0.6.1"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.6.1",
+      "date": "2026-08-31T12:20:41Z",
+      "sourceReleaseUrl": "https://github.com/ShaBP/rokid-vesc-hud/releases/tag/v0.6.1",
+      "notes": "## What's new\n\n- Added rounded duty-cycle percentage beside the current speed\n- Added per-ride maximum speed and persistent per-board maximum speed\n- Added configurable metric/imperial display units\n- Tightened HUD spacing and moved lower status rows upward\n- Added an up-to-date HUD screen example to the README\n\nTested with 13 passing unit tests. Install over an existing build with adb install -r.",
+      "changes": [
+        "Added rounded duty-cycle percentage beside the current speed",
+        "Added per-ride maximum speed and persistent per-board maximum speed",
+        "Added configurable metric/imperial display units",
+        "Tightened HUD spacing and moved lower status rows upward",
+        "Added an up-to-date HUD screen example to the README"
+      ]
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "ShaBP/rokid-vesc-hud",
+    "branch": "main",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "ShaBP/rokid-vesc-hud",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^vesc-hud-adaptive-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
+  },
+  "screenshotAssets": [
+    "rokid-vesc-hud.png"
+  ]
+}
