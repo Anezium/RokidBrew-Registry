@@ -12,7 +12,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/tenru-do/lokizaru/releases/download/v1.1.0/Lokizaru-v1.1.0-rokid-glasses-debug.apk"
+      "url": "https://github.com/tenru-do/lokizaru/releases/download/v1.1.0/Lokizaru-v1.1.0-rokid-glasses-debug.apk",
+      "sha256": "c08d2e7a973c05a2a6c1463c6e6cd3f59f4d361657eb0fcf493da938dfb16ced",
+      "sizeBytes": 273882,
+      "packageName": "jp.codex.lokizaru",
+      "versionCode": 2,
+      "versionName": "1.1.0-rokid-glasses"
     }
   ],
   "releases": [
