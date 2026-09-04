@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T20:21:33.864Z",
+  "generatedAt": "2026-09-04T11:31:39.971Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -3484,6 +3484,58 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-2.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-newpipe-4.png"
+      ]
+    },
+    {
+      "id": "rokikoma",
+      "name": "Rokikoma",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "0.16.0",
+      "summary": "An offline animated robot companion that lives on your Rokid AI Glasses display",
+      "description": "Rokikoma is an unofficial desktop pet for Rokid AI Glasses: a tiny multi-legged robot that walks across walls and ceilings, jumps on a thread, observes its surroundings, sings an original startup song, and synchronizes lyrics, notes, voice, and dancing. It works fully offline without accounts, ads, analytics, network access, location, camera, or microphone permissions. The current public APK is a developer-signed debug build tested by the author on Rokid AI Glasses.",
+      "author": "tenru-do",
+      "sourceUrl": "https://github.com/tenru-do/rokikoma",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/tenru-do/rokikoma/releases/download/v0.16.0/Rokikoma-v0.16.0-startup-song-debug.apk"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.16.0",
+          "date": "2026-08-30T14:28:04Z",
+          "sourceReleaseUrl": "https://github.com/tenru-do/rokikoma/releases/tag/v0.16.0",
+          "notes": "## 更新内容\n\n- 起動直後にロキコマ専用のオリジナル曲からスタート\n- 歌詞・音符・ダンス・音声を同期\n- 2コマ間のクロスフェード補間でアニメーションを滑らかに\n- 実フレーム時間追従と発進時イージングを追加\n- 壁面走行、糸ジャンプ、天井ぶら下がり、観察モードを収録\n\nRokid AIグラス実機で、v0.16.0のオーバーレイ表示と起動を確認済みです。\n\n> タチコマへのリスペクトから生まれた、非公式・個人制作のオリジナルデスクトップペットです。権利元各社とは関係ありません。",
+          "changes": [
+            "起動直後にロキコマ専用のオリジナル曲からスタート",
+            "歌詞・音符・ダンス・音声を同期",
+            "2コマ間のクロスフェード補間でアニメーションを滑らかに",
+            "実フレーム時間追従と発進時イージングを追加",
+            "壁面走行、糸ジャンプ、天井ぶら下がり、観察モードを収録"
+          ]
+        },
+        {
+          "version": "0.12.0",
+          "date": "2026-08-01T05:01:43Z",
+          "sourceReleaseUrl": "https://github.com/tenru-do/rokikoma/releases/tag/v0.12.0",
+          "notes": "タチコマへのリスペクトから生まれた、Rokid AIグラス向け非公式デスクトップペットです。\n\n- 音声を約3倍の体感音量へ調整\n- 発話頻度を向上\n- かわいめの高い声へ調整\n- 左右の進行方向に合わせて向きを変更\n- 糸を飛ばしてジャンプするギミックを追加\n\n非公式の個人ファンメイド作品であり、各権利者とは関係ありません。",
+          "changes": [
+            "音声を約3倍の体感音量へ調整",
+            "発話頻度を向上",
+            "かわいめの高い声へ調整",
+            "左右の進行方向に合わせて向きを変更",
+            "糸を飛ばしてジャンプするギミックを追加"
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "rokikoma.png"
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokikoma.png"
       ]
     },
     {
