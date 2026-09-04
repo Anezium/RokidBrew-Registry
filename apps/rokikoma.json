@@ -12,7 +12,12 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/tenru-do/rokikoma/releases/download/v0.16.0/Rokikoma-v0.16.0-startup-song-debug.apk"
+      "url": "https://github.com/tenru-do/rokikoma/releases/download/v0.16.0/Rokikoma-v0.16.0-startup-song-debug.apk",
+      "sha256": "7df1398e676e48ac212ae129d5e41bb0a798feb4fa43d604c6bff3a16e331f36",
+      "sizeBytes": 1437415,
+      "packageName": "jp.codex.rokikoma",
+      "versionCode": 16,
+      "versionName": "0.16.0-startup-song"
     }
   ],
   "releases": [
