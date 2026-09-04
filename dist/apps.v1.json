@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-04T11:34:41.800Z",
+  "generatedAt": "2026-09-04T11:41:44.965Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -2033,6 +2033,48 @@
       },
       "releases": [],
       "screenshotAssets": []
+    },
+    {
+      "id": "lokizaru",
+      "name": "Lokizaru",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.1.0",
+      "summary": "A tiny offline animated pet that walks, jumps, and sleeps across your Rokid display",
+      "description": "Lokizaru is a small green desktop pet built specifically for Rokid AI Glasses. Its 65 transparent animation frames let it walk in four directions, idle, jump, react happily, and sleep above the launcher while playing built-in sounds. Launch it again to stop the overlay. It works offline without accounts, ads, analytics, crash reporting, network access, camera, microphone, location, or input collection. The current public APK is a developer-signed debug build and requires the Android overlay permission on first launch.",
+      "author": "tenru-do",
+      "sourceUrl": "https://github.com/tenru-do/lokizaru",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/tenru-do/lokizaru/releases/download/v1.1.0/Lokizaru-v1.1.0-rokid-glasses-debug.apk"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-07-18T13:55:28Z",
+          "sourceReleaseUrl": "https://github.com/tenru-do/lokizaru/releases/tag/v1.1.0",
+          "notes": "# Lokizaru v1.1.0 — Rokid Glasses Edition\n\nRokid AIグラス向けデスクトップペット「ロキザル」の初回公開版です。\n\n## Features\n\n- WALK RIGHT / LEFT / UP / DOWN\n- IDLE / JUMP・HAPPY REACTION / SLEEPING\n- 全65フレームの透過アニメーション\n- 顔の向きに追従するRokid風スマートグラス\n- ランダム行動と端末内蔵サウンド\n- ランチャーから再度起動すると停止\n\n## Privacy and security\n\n- ネットワーク権限なし\n- 広告・解析・クラッシュ収集SDKなし\n- カメラ、マイク、位置情報、入力情報を使用しない\n- オーバーレイは `FLAG_NOT_TOUCHABLE` で入力を取得しない\n\n## APK\n\nFile: `Lokizaru-v1.1.0-rokid-glasses-debug.apk`\n\nSHA-256: `C08D2E7A973C05A2A6C1463C6E6CD3F59F4D361657EB0FCF493DA938DFB16CED`\n\n初回起動時にAndroidの「他のアプリの上に表示」を許可してください。",
+          "changes": [
+            "WALK RIGHT / LEFT / UP / DOWN",
+            "IDLE / JUMP・HAPPY REACTION / SLEEPING",
+            "全65フレームの透過アニメーション",
+            "顔の向きに追従するRokid風スマートグラス",
+            "ランダム行動と端末内蔵サウンド",
+            "ランチャーから再度起動すると停止",
+            "ネットワーク権限なし",
+            "広告・解析・クラッシュ収集SDKなし"
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "lokizaru.png"
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lokizaru.png"
+      ]
     },
     {
       "id": "lume",
