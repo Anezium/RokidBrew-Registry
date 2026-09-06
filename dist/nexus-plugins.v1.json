@@ -90,23 +90,28 @@
         ],
         "launchable": true,
         "settingsActivity": ".AssistantSettingsActivity",
-        "minHostVersionCode": 10200
+        "minHostVersionCode": 10406
       },
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nPress the assist gesture and ask out loud. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD, the answer streams into the same band, and then it is spoken aloud. No window to navigate — you ask, you hear, you keep walking.\n\n## The AI of your choice\n\nSign in with ChatGPT and answers come from your own ChatGPT plan — nothing to paste, no per-token bill. Pick the model, from fastest to deepest, and how long it may think.\n\nOr bring a key: OpenAI, OpenRouter, MiniMax (a Coding Plan key works as-is), DeepSeek, GLM (Z.ai), your own Hermes API server, or any OpenAI-compatible server of your own. Every provider keeps its own key — encrypted on the phone — its own model, and its own endpoint, so switching is one tap. Type any model id your provider serves, and a Personality box holds your standing instructions whoever answers.\n\nSigned into ChatGPT, the assistant can also carry the memories and custom instructions of your account, so it starts out knowing what ChatGPT knows — with every provider. Synced automatically, and it can be turned off.\n\n## It can look\n\nAsk about what is in front of you and the model takes one photo through the glasses camera. One photo per question, only when the question needs eyes — asking for the weather will never fire the shutter — and never saved to the glasses' own gallery.\n\n## Notes, reminders and timers\n\nAsk it to remind you in twenty minutes, to set a timer, or to take a note, and it does — out loud, mid-sentence. When a reminder comes due the phone notifies you and the glasses raise it, waking the display if it went dark; away from the glasses, the phone still tells you. Everything lands in a Notes & reminders screen where you can read a note in full, delete one, or cancel a reminder before it rings. It stays on your phone, and it survives a reboot.\n\n## Conversations\n\nA follow-up keeps its context instead of starting over, and a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — in a Conversations screen where each can be read, and deleted, one by one or all at once.\n\n## Web search\n\nBuilt in. The model decides when a question needs the web, so news and weather are answerable from your face.\n\n## What it keeps\n\nSign-in tokens are stored encrypted on the phone. Conversations, their photos and your memory text live in the plugin's private storage, never in your gallery, and are deleted the moment you ask.\n\n## Needs\n\nA ChatGPT account (or an OpenAI API key), plus *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* in Nexus → Settings → Plugin access. Requires Rokid Nexus 1.2.0."
+        "descriptionMarkdown": "## About\n\nPress the assist gesture and ask out loud. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD, the answer streams into the same band, and then it is spoken aloud. No window to navigate — you ask, you hear, you keep walking.\n\n## The AI of your choice\n\nSign in with ChatGPT and answers come from your own ChatGPT plan — nothing to paste, no per-token bill. Pick the model, from fastest to deepest, and how long it may think.\n\nOr bring a key: OpenAI, OpenRouter, MiniMax (a Coding Plan key works as-is), DeepSeek, GLM (Z.ai), your own Hermes API server, or any OpenAI-compatible server of your own. Every provider keeps its own key — encrypted on the phone — its own model, and its own endpoint, so switching is one tap. Type any model id your provider serves, and a Personality box holds your standing instructions whoever answers.\n\nSigned into ChatGPT, the assistant can also carry the memories and custom instructions of your account, so it starts out knowing what ChatGPT knows — with every provider. Synced automatically, and it can be turned off.\n\n## It can look\n\nAsk about what is in front of you and the model takes one photo through the glasses camera. One photo per question, only when the question needs eyes — asking for the weather will never fire the shutter — and never saved to the glasses' own gallery.\n\n## Notes, reminders and timers\n\nAsk it to remind you in twenty minutes, to set a timer, or to take a note, and it does — out loud, mid-sentence. When a reminder comes due the phone notifies you and the glasses raise it, waking the display if it went dark; away from the glasses, the phone still tells you. Everything lands in a Notes & reminders screen where you can read a note in full, delete one, or cancel a reminder before it rings. It stays on your phone, and it survives a reboot. An *Add note* button on the Productivity screen opens a text field on the glasses to type one directly, with no model and no microphone involved.\n\n## Conversations\n\nA follow-up keeps its context instead of starting over, and a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — in a Conversations screen where each can be read, and deleted, one by one or all at once.\n\n## Web search\n\nBuilt in. The model decides when a question needs the web, so news and weather are answerable from your face.\n\n## What it keeps\n\nSign-in tokens are stored encrypted on the phone. Conversations, their photos and your memory text live in the plugin's private storage, never in your gallery, and are deleted the moment you ask.\n\n## Needs\n\nA ChatGPT account (or an OpenAI API key), plus *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* in Nexus → Settings → Plugin access. Requires Rokid Nexus 1.4.6."
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.3/assistant-phone-release.apk",
-        "sha256": "eda8b146e57a08dd997eb335fb72e44dd14da30189f470de91e35d741c4f092a",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.4/assistant-phone-release.apk",
+        "sha256": "38843b408db28053a346c7585a852861eb9f61b4df3c7701b8f450490895685c",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 6146531,
+        "sizeBytes": 6160535,
         "packageName": "com.anezium.rokidbus.plugin.assistant",
-        "versionCode": 10,
-        "versionName": "1.4.3"
+        "versionCode": 11,
+        "versionName": "1.4.4"
       },
       "releases": [
+        {
+          "version": "1.4.4",
+          "date": "2026-09-06T18:42:34Z",
+          "notes": "\n- **Add note, typed.** A new *Add note* button on the Productivity screen opens a text field on the glasses to type a note directly: no model call and no microphone, so it works without any AI provider configured. Needs Assistant open on the glasses, and Rokid Nexus 1.4.6. Thanks to ruruw.\n- **Long Hermes answers now show whole.** A long answer was cut line by line, so anything past the eighth line was silently lost on the glasses. The answer is now trimmed against the notice's overall budget instead, and the glasses page through the rest.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `38843b408db28053a346c7585a852861eb9f61b4df3c7701b8f450490895685c`"
+        },
         {
           "version": "1.4.3",
           "date": "2026-08-17T20:58:30Z",
@@ -752,26 +757,31 @@
         ],
         "launchable": true,
         "settingsActivity": ".RelaySettingsActivity",
-        "minHostVersionCode": 10401
+        "minHostVersionCode": 10406
       },
       "screenshotAssets": [
         "relay-1-notice.png",
         "relay-2-inbox.png"
       ],
       "listing": {
-        "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\n*Message display time* in the plugin's settings is a number you type, 2 to 45 seconds, and *Longer for long messages* adds reading time per character on top for threads that need it.\n\n## Privacy\n\nIn public or in a meeting, *Hide message text on the glasses* keeps the band to the sender's name and a Show chip — the words appear only when you tap for them, and Reply stays one tap away. *Hide previews in the inbox* does the same for the Messages list. While the band is hidden, read-aloud names the sender only.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## Hearing it instead\n\nTurn on *Read notifications aloud* and the glasses speak the message as it arrives — the whole message, in the voice and at the speed you already chose in your Rokid assistant settings. It is produced on the glasses, so it works with the phone in your pocket and nothing leaves the device. Off by default.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses*, *Speech to text* and *Text to speech* in Nexus → Settings → Plugin access."
+        "descriptionMarkdown": "## About\n\nA message you can reply to reaches the glasses as it arrives, and lights the display if it was dark. You read it where you are already looking, answer out loud, and the phone stays in your pocket.\n\n## Reading\n\nEach message keeps its sender beside it, so a group conversation reads as a conversation rather than a wall of text. A long thread turns pages instead of stopping at eight lines.\n\n*Message display time* in the plugin's settings is a number you type, 2 to 45 seconds, and *Longer for long messages* adds reading time per character on top for threads that need it.\n\n## Privacy\n\nIn public or in a meeting, *Hide message text on the glasses* keeps the band to the sender's name and a Show chip — the words appear only when you tap for them, and Reply stays one tap away. *Hide previews in the inbox* does the same for the Messages list. While the band is hidden, read-aloud names the sender only.\n\n## Answering\n\nSpeak your reply and it sends itself after a few seconds, counted down on the chip you are looking at — cancellable for its whole length, and never sent before you have seen what it heard. If the glasses went dark or lost the link, the clock stops and waits for you.\n\nPrefer to type? *Reply by typing* in the plugin's settings opens a text field on the glasses instead: a keyboard paired to the glasses works, and so does Nexus's own Keyboard & remote screen on the phone. Enter sends it through the same steps. Needs Rokid Nexus 1.4.6.\n\n## Messages you missed\n\nOne you let go, or one that arrived while you were in another plugin, is in **Messages** in the Nexus menu: every conversation waiting on you, newest first, read and answered the same way. The list updates while you are looking at it.\n\n## Hearing it instead\n\nTurn on *Read notifications aloud* and the glasses speak the message as it arrives — the whole message, in the voice and at the speed you already chose in your Rokid assistant settings. It is produced on the glasses, so it works with the phone in your pocket and nothing leaves the device. Off by default.\n\n## What it relays\n\nAnything with a reply box, from any app. Nothing else, and nothing to tick first.\n\n## What it keeps\n\nNothing. Messages live in memory while the plugin runs, are never written to disk, and never appear in a log. Revoke notification access and what it captured goes with it.\n\n## Needs\n\nNotification access on the phone, plus *Show on your glasses*, *Speech to text* and *Text to speech* in Nexus → Settings → Plugin access."
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.2.1/relay-phone-release.apk",
-        "sha256": "8b2fa6d329f59ca0b3a2f51591c5c07239c57b4cd07bf04bc9487c5dfc92468b",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/relay-v1.2.2/relay-phone-release.apk",
+        "sha256": "4db1b9a0cc0e1d0fe655a10ea4a7c807bdf32c5469f3bc7c6eb2c6dad9242678",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 5641356,
+        "sizeBytes": 5662408,
         "packageName": "com.anezium.rokidbus.plugin.relay",
-        "versionCode": 10,
-        "versionName": "1.2.1"
+        "versionCode": 11,
+        "versionName": "1.2.2"
       },
       "releases": [
+        {
+          "version": "1.2.2",
+          "date": "2026-09-06T18:42:48Z",
+          "notes": "\n- **Reply by typing.** A new switch, off by default: Reply opens a text field on the glasses instead of listening. Type on a keyboard paired to the glasses, or from Nexus's Keyboard & remote screen on the phone, and Enter sends the reply through the same confirm-and-send steps as a spoken one. A message arriving while you are mid-reply now waits its turn instead of replacing what you were answering, and the band no longer times out while you dictate or type. Needs Rokid Nexus 1.4.6; on an older hub the switch falls back to dictation. Thanks to ruruw.\n\n### Artifact\n\n- File: `relay-phone-release.apk`\n- SHA-256: `4db1b9a0cc0e1d0fe655a10ea4a7c807bdf32c5469f3bc7c6eb2c6dad9242678`"
+        },
         {
           "version": "1.2.1",
           "date": "2026-08-20T00:12:18Z",
