@@ -840,6 +840,59 @@
       ]
     },
     {
+      "id": "rokidhub.codex",
+      "kind": "nexus-plugin",
+      "name": "RokidHub · Codex",
+      "category": "Developer",
+      "summary": "Run local Codex tasks by voice from Rokid RV101.",
+      "description": "An open-source community plugin that uses Nexus speech, HUD, TTS and camera to route coding tasks through RokidHub to Codex running on the user's own Windows PC.",
+      "author": "Azat Akhmetshin",
+      "sourceUrl": "https://github.com/lavAzza2/rokidhub-codex",
+      "publishedAt": "2026-09-08T08:04:34.000Z",
+      "iconAsset": "rokidhub-codex-icon.png",
+      "screenshotAssets": [
+        "rokidhub-codex-nexus-plugins.png",
+        "rokidhub-codex-desktop-overview.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nUse Rokid Glasses as a voice interface for Codex running locally on your Windows PC. Open **RokidHub · Codex** from the Nexus launcher, speak a task, and follow its status on the HUD. A short final summary is spoken through Nexus TTS; source code and project files stay on the computer.\n\n## What it can do\n\n- start a task in an allowed local project;\n- continue, steer, summarize, or stop the same Codex thread;\n- select a project by a user-defined voice alias;\n- take one glasses-camera photo only after an explicit voice request and attach it to the local task;\n- show the active project alias and job state on the HUD.\n\n## Setup\n\nInstall and approve the `surfaces`, `stt`, `tts`, and `camera` capabilities in Rokid Nexus. Pair the plugin to your RokidHub account with its one-time code. On the Windows PC, install RokidHub Desktop Connector, choose the folders that voice tasks may use, select a local access policy, and pair that PC separately. Codex must already be installed and authorized locally.\n\nFull setup guide: https://github.com/lavAzza2/rokidhub-codex/blob/main/docs/guide-ru.md\n\n## Privacy and security\n\nCodex authorization, source files, absolute paths, project aliases, thread IDs, and local access policies stay on the PC. RokidHub never receives the user's Codex OAuth token and never connects directly to Codex App Server. Desktop Connector opens an outbound HTTPS polling connection; no inbound PC port or router configuration is required.\n\nVoice requests, job status, short results, and an explicitly requested photo transit through RokidHub so the user's own paired devices can communicate. Photos are bound to one job and connector, deleted after one-time download or a short expiry, and are never given a public URL. Nexus and each PC use separate revocable credentials.\n\n## Beta and unofficial integration\n\nThis is a public beta. Start with read-only access and allow only the project folders you intend to use. This community project is not affiliated with or endorsed by OpenAI, Rokid, or Anezium."
+      },
+      "releases": [
+        {
+          "version": "0.6.0-beta.4",
+          "date": "2026-09-08T08:04:34.000Z",
+          "notes": "- First Nexus Store submission for RokidHub · Codex.\n- Voice tasks, continuation, steering, interruption and short summaries.\n- Local project selection with user-defined voice aliases.\n- Explicit one-shot glasses-camera capture for a local Codex task.\n- Separate revocable pairing for Nexus and every Windows PC.\n- Built from the exact public Git tag with verifiable Android VCS provenance.\n- Requires RokidHub Desktop Connector and a locally authorized Codex installation."
+        }
+      ],
+      "nexus": {
+        "pluginId": "rokidhub.codex",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces",
+          "stt",
+          "tts",
+          "camera"
+        ],
+        "launchable": true,
+        "minHostVersionCode": 10405
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/lavAzza2/rokidhub-codex/releases/download/nexus-v0.6.0-beta.4/RokidHub-Codex-Nexus-v0.6.0-beta.4.apk",
+        "sha256": "2de6c7ed6877c08c6b610c56b80373b50246f806d138c4ac7ce99139a778d0f9",
+        "signerSha256": "319faa368dbfc7c1a937cf5f1f1951c011daba8173f25830c5939efb7a5e677b",
+        "sizeBytes": 5420370,
+        "packageName": "com.rokidhub.nexus.plugin.codex",
+        "versionCode": 9,
+        "versionName": "0.6.0-beta.4"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokidhub-codex-icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokidhub-codex-nexus-plugins.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokidhub-codex-desktop-overview.png"
+      ]
+    },
+    {
       "id": "rokidhub.yandex",
       "kind": "nexus-plugin",
       "name": "RokidHub · Yandex",
