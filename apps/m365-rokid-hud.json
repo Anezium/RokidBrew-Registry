@@ -3,28 +3,28 @@
   "name": "M365 Rokid HUD",
   "category": "Mobility",
   "type": "combo",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "summary": "BLE scooter telemetry HUD for Rokid glasses with real-time Xiaomi M365 data display",
   "description": "M365 Rokid HUD connects to Xiaomi M365 scooters via BLE to show real-time telemetry on Rokid AR glasses. The phone app manages BLE and the glasses app renders the HUD. Requires Android 10+ and Bluetooth permissions.",
   "phoneRequired": true,
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.3.1/M365-Rokid-HUD-glasses-v1.3.1.apk",
-      "sha256": "37ac5f00acc61df3147db6ff429e3776d852611c9af738c08459b53990bfb31d",
-      "sizeBytes": 11919494,
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.4.0/M365-Rokid-HUD-glasses-v1.4.0.apk",
+      "sha256": "0f36911ba9b1c1ad349e6127566355605161e1cf38aafc330cab0a4881dcd284",
+      "sizeBytes": 9799187,
       "packageName": "com.m365hud.glass",
-      "versionCode": 4,
-      "versionName": "1.3.1"
+      "versionCode": 5,
+      "versionName": "1.4.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.3.1/M365-Rokid-HUD-phone-v1.3.1.apk",
-      "sha256": "d5b4184dc37efaa6314333e6fca01974451ff90af986dbd95818d8c987e6e3a7",
-      "sizeBytes": 25249809,
+      "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.4.0/M365-Rokid-HUD-phone-v1.4.0.apk",
+      "sha256": "1272150e7573020eb563cecbb6271325654793e6db3cc6555254a0b6c9c25266",
+      "sizeBytes": 27086808,
       "packageName": "com.m365bleapp",
-      "versionCode": 6,
-      "versionName": "1.3.1"
+      "versionCode": 7,
+      "versionName": "1.4.0"
     }
   ],
   "author": "zero2005x",
@@ -33,6 +33,22 @@
     "descriptionMarkdown": "# About\nM365 Rokid HUD is an Android app that connects to Xiaomi/Ninebot M365 electric scooters via Bluetooth Low Energy (BLE) and displays real-time telemetry on Rokid AR glasses as a heads-up display (HUD).\n\n# Key Features\n- Automatic BLE scanning and discovery of nearby M365 scooters\n- Secure pairing with ECDH key exchange and token-based login\n- Real-time telemetry including speed, battery, temperature, and mileage\n- Remote motor lock/unlock and tail light control\n- Signal quality and data freshness indicators on the HUD\n- Multi-language support (11 languages)\n- Modern UI built with Jetpack Compose and Material3\n\n# How It Works\n- The phone app connects to the scooter via BLE and handles all communication.\n- Enable the \"Rokid HUD Gateway\" on the phone app to broadcast telemetry data.\n- The Rokid glasses app scans for the phone's gateway and displays telemetry in AR.\n\n# Requirements\n- Android 10 (API 29) or higher on the phone\n- Bluetooth and Location permissions for BLE scanning\n- Rokid AR glasses with the companion HUD app installed\n\n# Notes\n- Registration unpairs the scooter from other apps; register only your own devices.\n- Disable battery optimization on the phone app to maintain stable BLE connection.\n- The HUD shows speed, scooter battery, phone battery, glasses battery, current time, and signal quality.\n\n# Source\n[GitHub Repository](https://github.com/zero2005x/M365-Rokid-HUD)"
   },
   "releases": [
+    {
+      "version": "1.4.0",
+      "date": "2026-09-11T16:13:26Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.4.0",
+      "notes": "# v1.4.0 — 2025/2026 Google Play Compliance, API Modernization & AAB Packaging | 應用商店合規性、API 現代化與 AAB 打包\n\nThis release updates the project to the latest Android 16 (API 36) specifications, fully satisfies Google Play Store 2025/2026 publishing policies, packages both APK and AAB (Android App Bundle) artifacts, resolves deprecated APIs, and integrates automated CI & SonarQube code quality pipelines.\n\n本次發布全面更新至 Android 16 (API 36) 最新標準，全方位符合 Google Play Store 2025/2026 最新上架政策，同步打包 APK 與 AAB (Android App Bundle) 檔案，修復過時 API，並整合自動化 CI 測試與 SonarQube 代碼品質檢查流水線。\n\n---\n\n## Downloads | 檔案下載\n\n| File 檔案 | Format 格式 | Description | 說明 |\n| :--- | :---: | :--- | :--- |\n| **M365-Rokid-HUD-phone-v1.4.0.apk** | APK | Phone app — M365 BLE client + Rokid gateway (sideload) | 手機端 — M365 BLE 用戶端 + Rokid 閘道（直接安裝） |\n| **M365-Rokid-HUD-glasses-v1.4.0.apk** | APK | Glasses app — Rokid AR HUD display (sideload) | 眼鏡端 — Rokid AR 抬頭顯示器（直接安裝） |\n| **M365-Rokid-HUD-phone-v1.4.0.aab** | AAB | Phone app — Google Play publishing bundle | 手機端 — Google Play 商店上架專用 App Bundle |\n| **M365-Rokid-HUD-glasses-v1.4.0.aab** | AAB | Glasses app — Google Play publishing bundle | 眼鏡端 — Google Play 商店上架專用 App Bundle |\n| **SHA256SUMS.txt** | Checksums | SHA256 hashes for all release artifacts | 所有發布產物之 SHA256 雜湊驗證碼 |\n\nVerify downloads | 下載驗證指令：\n```powershell\nGet-FileHash .\\M365-Rokid-HUD-phone-v1.4.0.apk -Algorithm SHA256\n```\n```bash\nsha256sum -c SHA256SUMS.txt\n```\n\n---\n\n## Highlights & Changes | 重點更新與變更\n\n### 1. Google Play Store 2025/2026 Policy Compliance | 符合應用商店最新政策\n- **16 KB Memory Page Size Support (強制 16 KB 記憶體分頁對齊)**:\n  - Ensured all native shared libraries (`libninebot_ffi.so`) across all 4 architectures (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`) strictly comply with 16 KB ELF segment alignment (`p_align >= 0x4000`), passing Google Play 2025/2026 mandatory verification.\n  - 確保所有四種架構的 Rust 原生動態庫均符合 16 KB 分頁對齊標準，完全滿足 Google Play 強制要求。\n- **Battery Optimization Policy Compliance (移除高風險電池權限)**:\n  - Removed restricted `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` permission from manifests to eliminate Google Play companion app rejection risks.\n  - Replaced direct exemption requests with safe system settings navigation (`Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS`), allowing users to grant unrestricted battery usage voluntarily.\n  - 徹底移除高被拒風險的受限權限，改由安全引導使用者至系統電池設定進行手動排除。\n- **Foreground Service & Data Safety (前台服務與資料安全)**:\n  - Both foreground services declare `connectedDevice` type and `FOREGROUND_SERVICE_CONNECTED_DEVICE` permission, with runtime checks before activation.\n  - Preserved `neverForLocation` flags and capped location permissions to API 30, eliminating redundant location disclosures in modern Data Safety forms.\n  - 確保前台服務型態與藍牙權限檢驗完全符合規範，且免除現代 Android 上的非必要位置追蹤申報。\n\n### 2. API Modernization & Platform Features | API 現代化與系統特性\n- **Target SDK 36 (Android 16)**:\n  - Full compatibility with Android 15 & Android 16 runtime behaviors.\n  - 完全適配 Android 15 與 Android 16 平台最新行為規範。\n- **Edge-to-Edge Enforced Display (邊緣延伸全螢幕適配)**:\n  - Added explicit `enableEdgeToEdge()` call in `MainActivity`, ensuring seamless full-screen layout across all Android versions.\n  - 在 `MainActivity` 啟用邊緣到邊緣繪製，配合 `Scaffold` 提供沉浸式版面。\n- **Predictive Back Navigation (預測性返回支援)**:\n  - Enabled `android:enableOnBackInvokedCallback=\"true\"` in both phone and glasses manifests for modern gesture animations.\n  - 雙模組清單皆啟用預測性返回回調，支援系統返回動畫。\n- **Deprecated API Fixes (修復過時 API)**:\n  - `BluetoothHelper`: Replaced deprecated `Settings.Secure.LOCATION_MODE` with `LocationManager.isLocationEnabled` on API 28+.\n  - `LocaleHelper`: Replaced deprecated `Locale(String, String)` constructors with modern `Locale.Builder()`.\n  - `LogViewerScreen`: Upgraded deprecated Material 3 `TabRow` to `PrimaryTabRow`.\n  - `WifiGatewayClient`: Replaced deprecated `serviceInfo.host` with `serviceInfo.hostAddresses` on API 34+.\n  - Dependencies: Upgraded `androidx.core:core-ktx` to `1.17.0` and `androidx.lifecycle:lifecycle-runtime-ktx` to `2.10.0`.\n\n### 3. Release & CI Automation | 發布與持續整合自動化\n- **AAB & APK Dual Packaging (支援 AAB 與 APK 雙發布)**:\n  - Release workflow now automatically produces, signs, and attaches both `.apk` and `.aab` artifacts to GitHub Releases.\n  - 自動化發布流水線全面支援同時建置、簽名並上傳 APK 與 Google Play 專用的 AAB 格式。\n- **CI Pipeline with SonarQube (CI 與程式碼品質檢查)**:\n  - Added `.github/workflows/ci.yml` running unit tests, debug builds, 16 KB page alignment verification, and SonarQube static code analysis on every push and pull request.\n  - 建立正式的 CI 流水線，自動執行單元測試、16 KB 分頁對齊驗證以及 SonarQube 代碼品質掃描。",
+      "changes": [
+        "16 KB Memory Page Size Support (強制 16 KB 記憶體分頁對齊):",
+        "確保所有四種架構的 Rust 原生動態庫均符合 16 KB 分頁對齊標準，完全滿足 Google Play 強制要求。",
+        "Battery Optimization Policy Compliance (移除高風險電池權限):",
+        "Removed restricted REQUESTIGNOREBATTERYOPTIMIZATIONS permission from manifests to eliminate Google Play companion app rejection risks.",
+        "徹底移除高被拒風險的受限權限，改由安全引導使用者至系統電池設定進行手動排除。",
+        "Foreground Service & Data Safety (前台服務與資料安全):",
+        "Both foreground services declare connectedDevice type and FOREGROUNDSERVICECONNECTEDDEVICE permission, with runtime checks before activation.",
+        "Preserved neverForLocation flags and capped location permissions to API 30, eliminating redundant location disclosures in modern Data Safety forms."
+      ]
+    },
     {
       "version": "1.3.1",
       "date": "2026-08-08T09:24:24Z",
@@ -60,5 +76,5 @@
     "repo": "zero2005x/M365-Rokid-HUD",
     "path": "README.md"
   },
-  "publishedAt": "2026-08-08T09:24:24Z"
+  "publishedAt": "2026-09-11T16:13:26Z"
 }
