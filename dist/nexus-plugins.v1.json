@@ -110,7 +110,7 @@
         {
           "version": "1.4.5",
           "date": "2026-09-14T19:39:30Z",
-          "notes": "\n\n- **Picked from the launcher, Assistant listens at once.** No more \"press the\n  assist button\" card: choose Assistant in the glasses launcher and ask. Tap the\n  card to ask again. This is the way in when the assist button is left to\n  Rokid's assistant.\n- **Swipe for options.** On that card, a swipe opens one row: *Assist button:\n  Nexus* or *Rokid*. Tap it to hand the button over or take it back, without\n  touching the permission on the phone. Needs Rokid Nexus 1.4.8 on the phone;\n  an older hub says so. Asked for in #35.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `bc98c918ce233fe9158198899c05e46d7287173fbe89cb2b592cc34aed0d3079`"
+          "notes": "\n- **Picked from the launcher, Assistant listens at once.** No more \"press the\n  assist button\" card: choose Assistant in the glasses launcher and ask. Tap the\n  card to ask again. This is the way in when the assist button is left to\n  Rokid's assistant.\n- **Swipe for options.** On that card, a swipe opens one row: *Assist button:\n  Nexus* or *Rokid*. Tap it to hand the button over or take it back, without\n  touching the permission on the phone. Needs Rokid Nexus 1.4.8 on the phone;\n  an older hub says so. Asked for in #35.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `bc98c918ce233fe9158198899c05e46d7287173fbe89cb2b592cc34aed0d3079`"
         },
         {
           "version": "1.4.4",
