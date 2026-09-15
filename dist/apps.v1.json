@@ -2451,6 +2451,48 @@
       "screenshotAssets": []
     },
     {
+      "id": "notification-history",
+      "name": "Notification History",
+      "category": "Accessibility",
+      "type": "glasses",
+      "version": "1.9.1",
+      "summary": "Capture mirrored notifications and keep a persistent, scrollable history on Rokid AI glasses",
+      "description": "Notification History captures notification popups exposed by the Rokid interface and stores up to 200 entries locally on the glasses. Its one-time on-glasses self-pair setup restores Accessibility monitoring after shutdown and restart without requiring a PC, Android phone, or USB development cable.",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/ShaBP/rokid-notification-history/releases/download/v1.9.1/Notification-History-v1.9.1.apk",
+          "sha256": "87a21a4026559111ec7c81a691ff03bbab2370b311b2637962f6f6401b710c2a",
+          "sizeBytes": 5897232,
+          "packageName": "com.shabp.rokid.notificationhistory",
+          "versionCode": 17,
+          "versionName": "1.9.1"
+        }
+      ],
+      "author": "ShaBP",
+      "sourceUrl": "https://github.com/ShaBP/rokid-notification-history",
+      "iconAsset": "notification-history.png",
+      "screenshotAssets": [
+        "notification-history-example.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## Why it is useful\n- Keeps a notification available when another notification replaces its popup before you finish reading it.\n- History often contains more text than fits in the original glasses popup. Open History when you want to read the fuller message.\n\nNotification History stores up to 200 entries locally and supports English and Hebrew/RTL content.\n\n## One-time setup\n\n**Important:** Android's Settings screens are not formatted for the glasses display. Text, buttons, or the selection highlight can be clipped or oddly positioned. Navigate slowly and swipe through the whole screen. It can be difficult to read, but the setup is possible and only needs to be completed once.\n\n### Enable capture\n1. Install and open Notification History.\n2. Tap the instruction screen to open Android Accessibility settings.\n3. Carefully find **Notification History Capture** and turn it on.\n4. On Android's confirmation screen, swipe until **ALLOW** is highlighted and select it.\n5. Go back once and verify the service is on, then go back again. The app should show **LISTENING**.\n\n### Enable recovery after restart\n1. Select **DEBUG**, then **SELF-PAIR**.\n2. If Device information opens, select **Build number** seven times. Return to the app and select **DEBUG** and **SELF-PAIR** again.\n3. In Developer options, turn on **Wireless debugging** and confirm the prompt.\n4. Open **Wireless debugging**, then **Pair device with pairing code**.\n5. Leave that dialog open. You do not need to type or remember the code; the app reads it through Accessibility and pairs locally.\n6. Return to the app and open DEBUG. Confirm **Recovery ready; grant applied** and **granted**.\n7. Restart the glasses once as a test. The app should open already in **LISTENING** mode.\n\nNo PC, Android phone, USB development cable, or typed ADB command is required.\n\n## Privacy and security\nNotification text remains in the app's private SQLite database and is never uploaded. Internet permission is used only for the one-time ADB connection to `127.0.0.1`. Self-pairing uses Android's temporary Wireless debugging ports and does not enable persistent network ADB.\n\n## Known limitation\nA very brief popup can occasionally be absent from History when notifications arrive close together, even though capture remains in LISTENING mode.\n\n## Compatibility\nShutdown/restart recovery was tested successfully on Rokid AI glasses firmware `1.25.012-20260901-150201`. Other firmware versions may behave differently."
+      },
+      "releases": [
+        {
+          "version": "1.9.1",
+          "date": "2026-09-14T12:51:04Z",
+          "sourceReleaseUrl": "https://github.com/ShaBP/rokid-notification-history/releases/tag/v1.9.1",
+          "notes": "## Notification History 1.9.1\n\n- Added an on-glasses self-pairing flow that needs no PC or USB development cable.\n- Added an explicit one-time secure-settings grant for Accessibility recovery.\n- Restores notification monitoring after shutdown/restart and package updates.\n- Preserves other enabled Accessibility services.\n- Uses temporary Wireless debugging ports and localhost only; persistent network ADB is not enabled.\n- Verified through shutdown and restart on Rokid AI glasses firmware `1.25.012-20260901-150201`."
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/notification-history.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/notification-history-example.png"
+      ]
+    },
+    {
       "id": "overlayrec",
       "name": "OverlayRec",
       "category": "Media",
