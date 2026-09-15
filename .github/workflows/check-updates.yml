@@ -30,6 +30,8 @@ jobs:
         with:
           node-version: "22"
       - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
       - run: sdkmanager "build-tools;35.0.0"
       - name: Check upstream updates
         env:

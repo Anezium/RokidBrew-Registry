@@ -25,6 +25,8 @@ jobs:
           distribution: "temurin"
           java-version: "21"
       - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
       - name: Install Android build tools
         run: sdkmanager "build-tools;35.0.0"
       - name: Verify added and changed Nexus plugin APKs
