@@ -3,7 +3,7 @@
   "name": "Rokid Nexus",
   "category": "Launcher",
   "type": "combo",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
   "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
   "author": "Anezium",
@@ -12,24 +12,31 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.7/nexus-glasses-1.4.7.apk",
-      "sha256": "9c0005be631015de0562383bc5f8e1d93c5c4d9ff41711d57f91db9c9b6b6e26",
+      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.8/nexus-glasses-1.4.8.apk",
+      "sha256": "a662c2c111f909540835f7df8d61dbaa07f5e2c970a96bda4d6b22159be792ac",
       "sizeBytes": 19293319,
       "packageName": "com.anezium.rokidbus.glasses",
-      "versionCode": 10407,
-      "versionName": "1.4.7"
+      "versionCode": 10408,
+      "versionName": "1.4.8"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.7/nexus-phone-1.4.7.apk",
-      "sha256": "8a7c938b06ad83c68e648db2b012f23c3f7a745b2ce245d1e0c08f345cd3924b",
-      "sizeBytes": 18572229,
+      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.8/nexus-phone-1.4.8.apk",
+      "sha256": "8ca9f05b6f9a00912a0c28d292be4f2c53fa9b473da2c8d7bf04c55855ed5e8e",
+      "sizeBytes": 18572225,
       "packageName": "com.anezium.rokidbus.phone",
-      "versionCode": 10407,
-      "versionName": "1.4.7"
+      "versionCode": 10408,
+      "versionName": "1.4.8"
     }
   ],
   "releases": [
+    {
+      "version": "1.4.8",
+      "date": "2026-09-14T19:38:40Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
+      "notes": null,
+      "changes": []
+    },
     {
       "version": "1.4.7",
       "date": "2026-09-07T19:29:12Z",
@@ -78,13 +85,6 @@
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.6",
       "notes": null,
       "changes": []
-    },
-    {
-      "version": "1.1.3",
-      "date": "2026-08-01T00:02:48Z",
-      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.1.3",
-      "notes": null,
-      "changes": []
     }
   ],
   "listingSource": {
@@ -117,5 +117,5 @@
   "listing": {
     "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
   },
-  "publishedAt": "2026-09-07T19:29:12Z"
+  "publishedAt": "2026-09-14T19:38:40Z"
 }
