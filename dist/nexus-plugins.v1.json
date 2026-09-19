@@ -98,15 +98,20 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.5/assistant-phone-release.apk",
-        "sha256": "bc98c918ce233fe9158198899c05e46d7287173fbe89cb2b592cc34aed0d3079",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.6/assistant-phone-release.apk",
+        "sha256": "b5647b48f0c2c0d0015449211ecb4014a360b4797b629d815d63279a9d58c425",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 6181867,
+        "sizeBytes": 6181979,
         "packageName": "com.anezium.rokidbus.plugin.assistant",
-        "versionCode": 14,
-        "versionName": "1.4.5"
+        "versionCode": 15,
+        "versionName": "1.4.6"
       },
       "releases": [
+        {
+          "version": "1.4.6",
+          "date": "2026-09-19T16:55:50Z",
+          "notes": "\n- **Ink answers keep the Thinking band off.** An answer drawn as a page is no\n  longer covered by \"Thinking\" after the page appears, and that band no longer\n  lingers after the reply.\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `b5647b48f0c2c0d0015449211ecb4014a360b4797b629d815d63279a9d58c425`"
+        },
         {
           "version": "1.4.5",
           "date": "2026-09-14T19:39:30Z",
