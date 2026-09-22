@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-22T08:28:45.837Z",
+  "generatedAt": "2026-09-22T08:30:01.785Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -1758,6 +1758,8 @@
           "changes": []
         }
       ],
+      "iconAsset": "gscp.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gscp.png",
       "screenshotAssets": []
     },
     {
@@ -2856,6 +2858,8 @@
           "changes": []
         }
       ],
+      "iconAsset": "rokid-glass-browser.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-glass-browser.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-remote.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-keyboard.png",
@@ -3280,6 +3284,8 @@
           ]
         }
       ],
+      "iconAsset": "rokid-recorder.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-recorder.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-recorder.png"
       ]
