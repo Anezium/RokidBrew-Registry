@@ -1,0 +1,48 @@
+{
+  "id": "rokid-scan-vision",
+  "name": "Rokid Scan Vision",
+  "category": "Experiment",
+  "type": "glasses",
+  "version": "0.5.1",
+  "summary": "Experimental on-device object detection with numbered targets on the glasses HUD",
+  "description": "Rokid Scan Vision captures camera frames on the glasses and runs an EfficientDet Lite model locally, rendering detections as numbered HUD targets. No phone detection pipeline is needed. This experimental debug APK is distributed under the Terminator_Vision prerelease tag; its Android version is 0.5.1. Detection alignment and calibration are experimental, and the release tag's README still describes an older architecture.",
+  "author": "robhowden-sudo",
+  "sourceUrl": "https://github.com/robhowden-sudo/Rokid-Scan-Vision",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/robhowden-sudo/Rokid-Scan-Vision/releases/download/Terminator_Vision/glasses-debug.apk",
+      "sha256": "096a2abe4ce74fe6db7d42377b9209abac621d6906c8bdac770e7875aa69ece1",
+      "sizeBytes": 53083721,
+      "packageName": "com.rokid.scanvision.glasses",
+      "versionCode": 8,
+      "versionName": "0.5.1"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.5.1",
+      "date": "2026-09-10T11:43:46Z",
+      "sourceReleaseUrl": "https://github.com/robhowden-sudo/Rokid-Scan-Vision/releases/tag/Terminator_Vision",
+      "notes": "Updated the scan alignment",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "robhowden-sudo/Rokid-Scan-Vision",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "robhowden-sudo/Rokid-Scan-Vision",
+    "release": "Terminator_Vision",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^glasses-debug\\.apk$"
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "rokid-recorder",
+  "name": "Rokid Recorder",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "1.2",
+  "summary": "Start native meeting audio recording directly from your glasses controls",
+  "description": "Record meetings without taking out your phone. A single temple-button press or touchpad tap starts recording; a double press stops it. A minimal HUD shows the timer while the native Rokid recorder saves 16 kHz mono WAV files in /sdcard/Recordings. Uses an internal assistserver interface without root or a private SDK. Tested by the author on RG-glasses firmware 1.25.015-20260903-150201; firmware updates may affect compatibility. Audio and storage permissions must be granted during setup.",
+  "screenshotAssets": ["rokid-recorder.png"],
+  "author": "jackytianjp",
+  "sourceUrl": "https://github.com/jackytianjp/rokid-recorder",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/jackytianjp/rokid-recorder/releases/download/v1.2/Recorder-1.2.apk",
+      "sha256": "67a568fd8cc158fcf7438d742ddc787a3152fa756c54351256841e381d43809a",
+      "sizeBytes": 19514324,
+      "packageName": "com.rokid.meetingkey",
+      "versionCode": 3,
+      "versionName": "1.2"
+    }
+  ],
+  "releases": [
+    {
+      "version": "1.2",
+      "date": "2026-09-20T16:42:55Z",
+      "sourceReleaseUrl": "https://github.com/jackytianjp/rokid-recorder/releases/tag/v1.2",
+      "notes": "### 新图标\n\n图标由 **Qwen-Image-2.1** 生成，采用霓虹线条风格（与 Otolith 同一套视觉语言）：深黑底 + 薄荷绿发光的霓虹麦克风线稿。\n\n### 说明\n\n- 出图自带白边，已裁到图标本体、圆角外用底色填满，五个密度（48/72/96/144/192px）四角实测均为纯深色\n- 自适应图标改为位图前景 + 主色背景\n- 48px 以下霓虹细线会略软，是该风格的固有取舍\n\n### 用法（不变）\n\n- 镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止\n- 落盘 `/sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav`（PCM 16kHz 单声道）\n\n---\n由 **DeepSeek v4.1-flash** 开发。",
+      "changes": [
+        "出图自带白边，已裁到图标本体、圆角外用底色填满，五个密度（48/72/96/144/192px）四角实测均为纯深色",
+        "自适应图标改为位图前景 + 主色背景",
+        "48px 以下霓虹细线会略软，是该风格的固有取舍",
+        "镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止",
+        "落盘 /sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav（PCM 16kHz 单声道）"
+      ]
+    },
+    {
+      "version": "1.1",
+      "date": "2026-09-20T16:39:38Z",
+      "sourceReleaseUrl": "https://github.com/jackytianjp/rokid-recorder/releases/tag/v1.1",
+      "notes": "### 更名\n\n应用从 **会议记录键** 改为 **录音机**（英文 Recorder）：显示名、界面文案、通知标题都改了，录音引擎与文件格式保持不变。\n\n### 用法\n\n- 镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止\n- 录音落盘 `/sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav`（PCM 16kHz 单声道，与系统录音一致）\n- 实测：67.6 秒录音，文件 2.16MB，格式校验通过（pcm_s16le / 16000Hz / 单声道）\n\n### 说明\n\n- 包名仍是 `com.rokid.meetingkey` —— 改名会导致覆盖安装变成全新安装、丢设置，所以保留\n- 仓库已从 `rokid-meeting-key` 更名为 `rokid-recorder`，旧链接自动跳转\n\n---\n由 **DeepSeek v4.1-flash** 开发。",
+      "changes": [
+        "镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止",
+        "录音落盘 /sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav（PCM 16kHz 单声道，与系统录音一致）",
+        "实测：67.6 秒录音，文件 2.16MB，格式校验通过（pcms16le / 16000Hz / 单声道）",
+        "包名仍是 com.rokid.meetingkey —— 改名会导致覆盖安装变成全新安装、丢设置，所以保留",
+        "仓库已从 rokid-meeting-key 更名为 rokid-recorder，旧链接自动跳转"
+      ]
+    },
+    {
+      "version": "1.0",
+      "date": "2026-09-19T07:55:49Z",
+      "sourceReleaseUrl": "https://github.com/jackytianjp/rokid-recorder/releases/tag/v1.0",
+      "notes": "## 会议记录键 v1.0\n\n在 Rokid Glasses 上**按一下镜腿键就开录 Rokid 原生会议记录**，不用再掏手机。\n\n### 用法\n\n| 操作 | 效果 |\n| --- | --- |\n| 镜腿键单击 / 触控板轻点 | 开始录音 |\n| 镜腿键双击 | 停止 |\n\n界面只占屏幕最下方两行，不挡视线：`○ 待机` / `● 00:12 录音中` / `▶ 开始` / `■■ 停止`\n\n### 产出\n\n`/sdcard/Recordings/record-YYYYMMDD-HHMMSS-xx.wav`\nPCM 16bit / 16kHz / 单声道 —— 与手机 App 触发的会议记录**完全同一规格**，手机 Rokid App 里的转写、导出照常可用。\n\n### 安装\n\n**免数据线（推荐）**：新版 Rokid AI App 支持通过 Wi-Fi 给眼镜安装 APK —— 手机和眼镜连同一网络，在 App 里选本 APK 装上即可。\n\n**ADB**：\n\n```bash\nadb install -r MeetingKey-1.0.apk\nadb shell pm grant com.rokid.meetingkey android.permission.RECORD_AUDIO\nadb shell pm grant com.rokid.meetingkey android.permission.READ_EXTERNAL_STORAGE\n```\n\n### 文件信息\n\n- 文件名：`MeetingKey-1.0.apk`\n- 包名：`com.rokid.meetingkey`\n- 版本：1.0（versionCode 1）\n- minSdk 31 / targetSdk 36\n- 已签名（RSA 2048）\n\n### 实测环境\n\n- 设备：Rokid Glasses（`RG-glasses`）\n- 固件：`1.25.015-20260903-150201`（YodaOS-Sprite / Android 12 / API 32）\n\n### 注意\n\n非官方工具。它调用的是系统内部的 assistserver binder 接口，**固件升级后可能失效**；\n不需要 root，也不依赖任何 Rokid 私有 SDK。",
+      "changes": [
+        "包名：com.rokid.meetingkey",
+        "版本：1.0（versionCode 1）",
+        "minSdk 31 / targetSdk 36",
+        "已签名（RSA 2048）",
+        "设备：Rokid Glasses（RG-glasses）",
+        "固件：1.25.015-20260903-150201（YodaOS-Sprite / Android 12 / API 32）"
+      ]
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "jackytianjp/rokid-recorder",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "jackytianjp/rokid-recorder",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^Recorder-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
+  }
+}

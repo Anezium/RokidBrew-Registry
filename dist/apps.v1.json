@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-21T10:45:52.736Z",
+  "generatedAt": "2026-09-22T08:28:45.837Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,117 +13,6 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
-    {
-      "id": "rokid-nexus",
-      "name": "Rokid Nexus",
-      "category": "Launcher",
-      "type": "combo",
-      "version": "1.4.10",
-      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
-      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.10/nexus-glasses-1.4.10.apk",
-          "sha256": "613095804753fc4c3707471f1f776d737a594120ff18f2ab52a3c375e6b3b2a2",
-          "sizeBytes": 19293319,
-          "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10410,
-          "versionName": "1.4.10"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.10/nexus-phone-1.4.10.apk",
-          "sha256": "d7dd3b5d216f2c3fb010984749f9d6f201afedd9bbd91bf062a1a4da34f9943b",
-          "sizeBytes": 18588613,
-          "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10410,
-          "versionName": "1.4.10"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.4.10",
-          "date": "2026-09-19T21:19:43Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.8",
-          "date": "2026-09-14T19:38:40Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-09-07T19:29:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.6",
-          "date": "2026-09-06T18:44:47Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-08-20T00:14:57Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.4",
-          "date": "2026-08-14T19:32:00Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.3",
-          "date": "2026-08-11T22:13:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.11",
-          "date": "2026-08-07T19:10:51Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
-          "notes": null,
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-nexus-1.png",
-        "rokid-nexus-2.png",
-        "rokid-nexus-3.png",
-        "rokid-nexus-4.png",
-        "rokid-nexus-5.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
-      },
-      "publishedAt": "2026-09-19T21:19:43Z",
-      "newUntil": "2026-09-21T21:19:43.000Z",
-      "iconAsset": "rokid-nexus.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
-      ]
-    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -1832,6 +1721,46 @@
       ]
     },
     {
+      "id": "gscp",
+      "name": "GSCP",
+      "category": "Utility",
+      "type": "phone",
+      "version": "1.2.1",
+      "summary": "View your glasses camera, HUD, and audio together on an Android phone",
+      "description": "GSCP combines the Rokid glasses camera view, HUD overlay, and audio into one live viewer with adjustable transparency, brightness, scale, rotation, and black-key blending. This APK installs on an arm64 Android phone. First configure the glasses connection using the Windows, macOS, or Linux desktop version and a USB data cable; then connect the phone and glasses to the same Wi-Fi network. Desktop builds also support wired viewing. The Android client is distributed under GPL-3.0.",
+      "author": "tonytsangzen",
+      "sourceUrl": "https://github.com/tonytsangzen/gscp",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.1/gscp_1.2.1_aarch64.apk",
+          "sha256": "bbd4e7d8c256e06cce0f4d1c6a8ee8b5299174ea0feaf1fa7f260591509d77ca",
+          "sizeBytes": 6221602,
+          "packageName": "com.gscp.desktop",
+          "versionCode": 1,
+          "versionName": "1.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.2.1",
+          "date": "2026-09-21T11:59:45Z",
+          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.1",
+          "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v1.2.0...v1.2.1",
+          "changes": []
+        },
+        {
+          "version": "1.2.0",
+          "date": "2026-09-18T18:21:07Z",
+          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.0",
+          "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": []
+    },
+    {
       "id": "hubu",
       "name": "hubu",
       "category": "Fitness",
@@ -2864,6 +2793,76 @@
       "screenshotAssets": []
     },
     {
+      "id": "rokid-glass-browser",
+      "name": "Rokid Glass Browser",
+      "category": "Browser",
+      "type": "glasses",
+      "version": "1.31.1",
+      "summary": "Browse on RV101 with glasses controls or a phone web remote over Wi-Fi",
+      "description": "A standalone browser for Rokid RV101 with on-glasses keyboard and touchpad navigation. Its optional web remote works in an Android or iOS browser on the same Wi-Fi network, offering a live HUD preview, text entry, scrolling, and cursor control without installing a phone companion. Gemini voice input and AI browsing tools require your own API key and internet access. The HUD preview is capped at about 5 fps and is intended for navigation rather than video playback.",
+      "screenshotAssets": [
+        "rokid-glass-browser-remote.png",
+        "rokid-glass-browser-keyboard.png",
+        "rokid-glass-browser-agent.png"
+      ],
+      "author": "xnohat",
+      "sourceUrl": "https://github.com/xnohat/rokid-glass-browser",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/xnohat/rokid-glass-browser/releases/download/v1.31.1/rokid-glass-browser-1.31.1.apk",
+          "sha256": "584594e824e013b6eceb0f80dfdd6c7a76656e361e30a3011ce60f7d2e30dffe",
+          "sizeBytes": 70063457,
+          "packageName": "com.snorlytics.browser_glasses",
+          "versionCode": 148,
+          "versionName": "1.28.6"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.31.1",
+          "date": "2026-09-09T21:47:39Z",
+          "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.31.1",
+          "notes": "Python 3.13 run_python + pure-Python wheel install; sandboxed file/shell/git tools; camera and Gemini multimodal; full session history controls; AI console stays open until double-tap; ASR supports longer speech. FFmpeg/ImageMagick/Node are not shipped because RV101/YodaOS blocks their native execution/loading paths; no broken tool is advertised.",
+          "changes": []
+        },
+        {
+          "version": "1.26.1",
+          "date": "2026-09-09T06:32:04Z",
+          "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.26.1",
+          "notes": "Camera vision (still/time-sampled), sandboxed file CRUD/download/media reading, full session-history management, and an allowlisted Android toybox run_shell tool confined to agent_workspace. Verified on-device: camera scene analysis, write/read text, download+understand a cat image, and pwd/ls shell commands.",
+          "changes": []
+        },
+        {
+          "version": "1.24.0",
+          "date": "2026-09-08T23:38:05Z",
+          "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.24.0",
+          "notes": "Agent file tools in a private, sandboxed workspace on the glasses: list/read/write/delete/download. read_file understands text and media (images/audio/video via Gemini). Downloads are http/https only and size-capped; paths cannot escape the workspace. Tools now carry detailed usage + how-to-combine guidance. Verified: write+read a note, and download an image then read it ('a cat').",
+          "changes": []
+        },
+        {
+          "version": "1.23.1",
+          "date": "2026-09-08T23:27:44Z",
+          "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.23.1",
+          "notes": "Multimodal honesty/safety fixes; verified see_page and watch_video on-device.",
+          "changes": []
+        },
+        {
+          "version": "1.23.0",
+          "date": "2026-09-08T23:22:39Z",
+          "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.23.0",
+          "notes": "The AI agent can now SEE and HEAR via Gemini: see_page (understand images / on-screen content), watch_video (summarise the playing video — YouTube URLs go straight to Gemini's video understanding; other sites use captured frames + audio), and listen_audio (transcribe/describe sound). Verified: asking about a playing YouTube video returns a correct summary.",
+          "changes": []
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-remote.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-keyboard.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-agent.png"
+      ]
+    },
+    {
       "id": "rokid-lyrics",
       "name": "Rokid Lyrics",
       "category": "Media",
@@ -3059,6 +3058,117 @@
       "screenshotAssets": []
     },
     {
+      "id": "rokid-nexus",
+      "name": "Rokid Nexus",
+      "category": "Launcher",
+      "type": "combo",
+      "version": "1.4.10",
+      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
+      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.10/nexus-glasses-1.4.10.apk",
+          "sha256": "613095804753fc4c3707471f1f776d737a594120ff18f2ab52a3c375e6b3b2a2",
+          "sizeBytes": 19293319,
+          "packageName": "com.anezium.rokidbus.glasses",
+          "versionCode": 10410,
+          "versionName": "1.4.10"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.10/nexus-phone-1.4.10.apk",
+          "sha256": "d7dd3b5d216f2c3fb010984749f9d6f201afedd9bbd91bf062a1a4da34f9943b",
+          "sizeBytes": 18588613,
+          "packageName": "com.anezium.rokidbus.phone",
+          "versionCode": 10410,
+          "versionName": "1.4.10"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.4.10",
+          "date": "2026-09-19T21:19:43Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.8",
+          "date": "2026-09-14T19:38:40Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-09-07T19:29:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.6",
+          "date": "2026-09-06T18:44:47Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.5",
+          "date": "2026-08-20T00:14:57Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.4",
+          "date": "2026-08-14T19:32:00Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.3",
+          "date": "2026-08-11T22:13:23Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.11",
+          "date": "2026-08-07T19:10:51Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-nexus-1.png",
+        "rokid-nexus-2.png",
+        "rokid-nexus-3.png",
+        "rokid-nexus-4.png",
+        "rokid-nexus-5.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
+      },
+      "publishedAt": "2026-09-19T21:19:43Z",
+      "newUntil": "2026-09-21T21:19:43.000Z",
+      "iconAsset": "rokid-nexus.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+      ]
+    },
+    {
       "id": "rokid-reader",
       "name": "Rokid Reader",
       "category": "Reader",
@@ -3101,6 +3211,110 @@
       },
       "iconAsset": "rokid-reader.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-reader.png",
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-recorder",
+      "name": "Rokid Recorder",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.2",
+      "summary": "Start native meeting audio recording directly from your glasses controls",
+      "description": "Record meetings without taking out your phone. A single temple-button press or touchpad tap starts recording; a double press stops it. A minimal HUD shows the timer while the native Rokid recorder saves 16 kHz mono WAV files in /sdcard/Recordings. Uses an internal assistserver interface without root or a private SDK. Tested by the author on RG-glasses firmware 1.25.015-20260903-150201; firmware updates may affect compatibility. Audio and storage permissions must be granted during setup.",
+      "screenshotAssets": [
+        "rokid-recorder.png"
+      ],
+      "author": "jackytianjp",
+      "sourceUrl": "https://github.com/jackytianjp/rokid-recorder",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/jackytianjp/rokid-recorder/releases/download/v1.2/Recorder-1.2.apk",
+          "sha256": "67a568fd8cc158fcf7438d742ddc787a3152fa756c54351256841e381d43809a",
+          "sizeBytes": 19514324,
+          "packageName": "com.rokid.meetingkey",
+          "versionCode": 3,
+          "versionName": "1.2"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.2",
+          "date": "2026-09-20T16:42:55Z",
+          "sourceReleaseUrl": "https://github.com/jackytianjp/rokid-recorder/releases/tag/v1.2",
+          "notes": "### 新图标\n\n图标由 **Qwen-Image-2.1** 生成，采用霓虹线条风格（与 Otolith 同一套视觉语言）：深黑底 + 薄荷绿发光的霓虹麦克风线稿。\n\n### 说明\n\n- 出图自带白边，已裁到图标本体、圆角外用底色填满，五个密度（48/72/96/144/192px）四角实测均为纯深色\n- 自适应图标改为位图前景 + 主色背景\n- 48px 以下霓虹细线会略软，是该风格的固有取舍\n\n### 用法（不变）\n\n- 镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止\n- 落盘 `/sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav`（PCM 16kHz 单声道）\n\n---\n由 **DeepSeek v4.1-flash** 开发。",
+          "changes": [
+            "出图自带白边，已裁到图标本体、圆角外用底色填满，五个密度（48/72/96/144/192px）四角实测均为纯深色",
+            "自适应图标改为位图前景 + 主色背景",
+            "48px 以下霓虹细线会略软，是该风格的固有取舍",
+            "镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止",
+            "落盘 /sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav（PCM 16kHz 单声道）"
+          ]
+        },
+        {
+          "version": "1.1",
+          "date": "2026-09-20T16:39:38Z",
+          "sourceReleaseUrl": "https://github.com/jackytianjp/rokid-recorder/releases/tag/v1.1",
+          "notes": "### 更名\n\n应用从 **会议记录键** 改为 **录音机**（英文 Recorder）：显示名、界面文案、通知标题都改了，录音引擎与文件格式保持不变。\n\n### 用法\n\n- 镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止\n- 录音落盘 `/sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav`（PCM 16kHz 单声道，与系统录音一致）\n- 实测：67.6 秒录音，文件 2.16MB，格式校验通过（pcm_s16le / 16000Hz / 单声道）\n\n### 说明\n\n- 包名仍是 `com.rokid.meetingkey` —— 改名会导致覆盖安装变成全新安装、丢设置，所以保留\n- 仓库已从 `rokid-meeting-key` 更名为 `rokid-recorder`，旧链接自动跳转\n\n---\n由 **DeepSeek v4.1-flash** 开发。",
+          "changes": [
+            "镜腿单击 / 触控板轻点 = 开始录音；镜腿双击（或连点两下）= 停止",
+            "录音落盘 /sdcard/Recordings/record-yyyyMMdd-HHmmss-xx.wav（PCM 16kHz 单声道，与系统录音一致）",
+            "实测：67.6 秒录音，文件 2.16MB，格式校验通过（pcms16le / 16000Hz / 单声道）",
+            "包名仍是 com.rokid.meetingkey —— 改名会导致覆盖安装变成全新安装、丢设置，所以保留",
+            "仓库已从 rokid-meeting-key 更名为 rokid-recorder，旧链接自动跳转"
+          ]
+        },
+        {
+          "version": "1.0",
+          "date": "2026-09-19T07:55:49Z",
+          "sourceReleaseUrl": "https://github.com/jackytianjp/rokid-recorder/releases/tag/v1.0",
+          "notes": "## 会议记录键 v1.0\n\n在 Rokid Glasses 上**按一下镜腿键就开录 Rokid 原生会议记录**，不用再掏手机。\n\n### 用法\n\n| 操作 | 效果 |\n| --- | --- |\n| 镜腿键单击 / 触控板轻点 | 开始录音 |\n| 镜腿键双击 | 停止 |\n\n界面只占屏幕最下方两行，不挡视线：`○ 待机` / `● 00:12 录音中` / `▶ 开始` / `■■ 停止`\n\n### 产出\n\n`/sdcard/Recordings/record-YYYYMMDD-HHMMSS-xx.wav`\nPCM 16bit / 16kHz / 单声道 —— 与手机 App 触发的会议记录**完全同一规格**，手机 Rokid App 里的转写、导出照常可用。\n\n### 安装\n\n**免数据线（推荐）**：新版 Rokid AI App 支持通过 Wi-Fi 给眼镜安装 APK —— 手机和眼镜连同一网络，在 App 里选本 APK 装上即可。\n\n**ADB**：\n\n```bash\nadb install -r MeetingKey-1.0.apk\nadb shell pm grant com.rokid.meetingkey android.permission.RECORD_AUDIO\nadb shell pm grant com.rokid.meetingkey android.permission.READ_EXTERNAL_STORAGE\n```\n\n### 文件信息\n\n- 文件名：`MeetingKey-1.0.apk`\n- 包名：`com.rokid.meetingkey`\n- 版本：1.0（versionCode 1）\n- minSdk 31 / targetSdk 36\n- 已签名（RSA 2048）\n\n### 实测环境\n\n- 设备：Rokid Glasses（`RG-glasses`）\n- 固件：`1.25.015-20260903-150201`（YodaOS-Sprite / Android 12 / API 32）\n\n### 注意\n\n非官方工具。它调用的是系统内部的 assistserver binder 接口，**固件升级后可能失效**；\n不需要 root，也不依赖任何 Rokid 私有 SDK。",
+          "changes": [
+            "包名：com.rokid.meetingkey",
+            "版本：1.0（versionCode 1）",
+            "minSdk 31 / targetSdk 36",
+            "已签名（RSA 2048）",
+            "设备：Rokid Glasses（RG-glasses）",
+            "固件：1.25.015-20260903-150201（YodaOS-Sprite / Android 12 / API 32）"
+          ]
+        }
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-recorder.png"
+      ]
+    },
+    {
+      "id": "rokid-scan-vision",
+      "name": "Rokid Scan Vision",
+      "category": "Experiment",
+      "type": "glasses",
+      "version": "0.5.1",
+      "summary": "Experimental on-device object detection with numbered targets on the glasses HUD",
+      "description": "Rokid Scan Vision captures camera frames on the glasses and runs an EfficientDet Lite model locally, rendering detections as numbered HUD targets. No phone detection pipeline is needed. This experimental debug APK is distributed under the Terminator_Vision prerelease tag; its Android version is 0.5.1. Detection alignment and calibration are experimental, and the release tag's README still describes an older architecture.",
+      "author": "robhowden-sudo",
+      "sourceUrl": "https://github.com/robhowden-sudo/Rokid-Scan-Vision",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/robhowden-sudo/Rokid-Scan-Vision/releases/download/Terminator_Vision/glasses-debug.apk",
+          "sha256": "096a2abe4ce74fe6db7d42377b9209abac621d6906c8bdac770e7875aa69ece1",
+          "sizeBytes": 53083721,
+          "packageName": "com.rokid.scanvision.glasses",
+          "versionCode": 8,
+          "versionName": "0.5.1"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.5.1",
+          "date": "2026-09-10T11:43:46Z",
+          "sourceReleaseUrl": "https://github.com/robhowden-sudo/Rokid-Scan-Vision/releases/tag/Terminator_Vision",
+          "notes": "Updated the scan alignment",
+          "changes": []
+        }
+      ],
       "screenshotAssets": []
     },
     {

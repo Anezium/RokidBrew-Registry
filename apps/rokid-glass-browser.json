@@ -1,0 +1,77 @@
+{
+  "id": "rokid-glass-browser",
+  "name": "Rokid Glass Browser",
+  "category": "Browser",
+  "type": "glasses",
+  "version": "1.31.1",
+  "summary": "Browse on RV101 with glasses controls or a phone web remote over Wi-Fi",
+  "description": "A standalone browser for Rokid RV101 with on-glasses keyboard and touchpad navigation. Its optional web remote works in an Android or iOS browser on the same Wi-Fi network, offering a live HUD preview, text entry, scrolling, and cursor control without installing a phone companion. Gemini voice input and AI browsing tools require your own API key and internet access. The HUD preview is capped at about 5 fps and is intended for navigation rather than video playback.",
+  "screenshotAssets": ["rokid-glass-browser-remote.png", "rokid-glass-browser-keyboard.png", "rokid-glass-browser-agent.png"],
+  "author": "xnohat",
+  "sourceUrl": "https://github.com/xnohat/rokid-glass-browser",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/xnohat/rokid-glass-browser/releases/download/v1.31.1/rokid-glass-browser-1.31.1.apk",
+      "sha256": "584594e824e013b6eceb0f80dfdd6c7a76656e361e30a3011ce60f7d2e30dffe",
+      "sizeBytes": 70063457,
+      "packageName": "com.snorlytics.browser_glasses",
+      "versionCode": 148,
+      "versionName": "1.28.6"
+    }
+  ],
+  "releases": [
+    {
+      "version": "1.31.1",
+      "date": "2026-09-09T21:47:39Z",
+      "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.31.1",
+      "notes": "Python 3.13 run_python + pure-Python wheel install; sandboxed file/shell/git tools; camera and Gemini multimodal; full session history controls; AI console stays open until double-tap; ASR supports longer speech. FFmpeg/ImageMagick/Node are not shipped because RV101/YodaOS blocks their native execution/loading paths; no broken tool is advertised.",
+      "changes": []
+    },
+    {
+      "version": "1.26.1",
+      "date": "2026-09-09T06:32:04Z",
+      "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.26.1",
+      "notes": "Camera vision (still/time-sampled), sandboxed file CRUD/download/media reading, full session-history management, and an allowlisted Android toybox run_shell tool confined to agent_workspace. Verified on-device: camera scene analysis, write/read text, download+understand a cat image, and pwd/ls shell commands.",
+      "changes": []
+    },
+    {
+      "version": "1.24.0",
+      "date": "2026-09-08T23:38:05Z",
+      "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.24.0",
+      "notes": "Agent file tools in a private, sandboxed workspace on the glasses: list/read/write/delete/download. read_file understands text and media (images/audio/video via Gemini). Downloads are http/https only and size-capped; paths cannot escape the workspace. Tools now carry detailed usage + how-to-combine guidance. Verified: write+read a note, and download an image then read it ('a cat').",
+      "changes": []
+    },
+    {
+      "version": "1.23.1",
+      "date": "2026-09-08T23:27:44Z",
+      "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.23.1",
+      "notes": "Multimodal honesty/safety fixes; verified see_page and watch_video on-device.",
+      "changes": []
+    },
+    {
+      "version": "1.23.0",
+      "date": "2026-09-08T23:22:39Z",
+      "sourceReleaseUrl": "https://github.com/xnohat/rokid-glass-browser/releases/tag/v1.23.0",
+      "notes": "The AI agent can now SEE and HEAR via Gemini: see_page (understand images / on-screen content), watch_video (summarise the playing video — YouTube URLs go straight to Gemini's video understanding; other sites use captured frames + audio), and listen_audio (transcribe/describe sound). Verified: asking about a playing YouTube video returns a correct summary.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "xnohat/rokid-glass-browser",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "xnohat/rokid-glass-browser",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^rokid-glass-browser-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
+  }
+}

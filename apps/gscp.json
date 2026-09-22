@@ -1,0 +1,55 @@
+{
+  "id": "gscp",
+  "name": "GSCP",
+  "category": "Utility",
+  "type": "phone",
+  "version": "1.2.1",
+  "summary": "View your glasses camera, HUD, and audio together on an Android phone",
+  "description": "GSCP combines the Rokid glasses camera view, HUD overlay, and audio into one live viewer with adjustable transparency, brightness, scale, rotation, and black-key blending. This APK installs on an arm64 Android phone. First configure the glasses connection using the Windows, macOS, or Linux desktop version and a USB data cable; then connect the phone and glasses to the same Wi-Fi network. Desktop builds also support wired viewing. The Android client is distributed under GPL-3.0.",
+  "author": "tonytsangzen",
+  "sourceUrl": "https://github.com/tonytsangzen/gscp",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "phone",
+      "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.1/gscp_1.2.1_aarch64.apk",
+      "sha256": "bbd4e7d8c256e06cce0f4d1c6a8ee8b5299174ea0feaf1fa7f260591509d77ca",
+      "sizeBytes": 6221602,
+      "packageName": "com.gscp.desktop",
+      "versionCode": 1,
+      "versionName": "1.0"
+    }
+  ],
+  "releases": [
+    {
+      "version": "1.2.1",
+      "date": "2026-09-21T11:59:45Z",
+      "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.1",
+      "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v1.2.0...v1.2.1",
+      "changes": []
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-09-18T18:21:07Z",
+      "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.0",
+      "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "tonytsangzen/gscp",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "tonytsangzen/gscp",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "phone",
+        "match": "^gscp_v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)_aarch64\\.apk$"
+      }
+    ]
+  }
+}
