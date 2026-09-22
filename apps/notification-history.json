@@ -3,19 +3,19 @@
   "name": "Notification History",
   "category": "Accessibility",
   "type": "glasses",
-  "version": "1.9.1",
+  "version": "1.10.2",
   "summary": "Capture mirrored notifications and keep a persistent, scrollable history on Rokid AI glasses",
   "description": "Notification History captures notification popups exposed by the Rokid interface and stores up to 200 entries locally on the glasses. Its one-time on-glasses self-pair setup restores Accessibility monitoring after shutdown and restart without requiring a PC, Android phone, or USB development cable.",
   "phoneRequired": false,
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/ShaBP/rokid-notification-history/releases/download/v1.9.1/Notification-History-v1.9.1.apk",
-      "sha256": "87a21a4026559111ec7c81a691ff03bbab2370b311b2637962f6f6401b710c2a",
-      "sizeBytes": 5897232,
+      "url": "https://github.com/ShaBP/rokid-notification-history/releases/download/v1.10.2/Notification-History-v1.10.2.apk",
+      "sha256": "6ed0e837b6617e10ed3ed6f693a26b47de859f116837a3b276339efe03d3291b",
+      "sizeBytes": 5035360,
       "packageName": "com.shabp.rokid.notificationhistory",
-      "versionCode": 17,
-      "versionName": "1.9.1"
+      "versionCode": 20,
+      "versionName": "1.10.2"
     }
   ],
   "author": "ShaBP",
@@ -29,6 +29,12 @@
   },
   "releases": [
     {
+      "version": "1.10.2",
+      "date": "2026-09-22T19:42:35Z",
+      "sourceReleaseUrl": "https://github.com/ShaBP/rokid-notification-history/releases/tag/v1.10.2",
+      "notes": "## Notification History 1.10.2\n\n- Added a display-safe Accessibility watchdog to recover notification capture without interrupting Rokid notification countdowns.\n- Added permanent release signing for reliable future updates.\n- This is the one-time signing transition: users of v1.9.1 or other earlier builds must uninstall the old app before installing v1.10.2, then re-enable Accessibility and repeat SELF-PAIR. Future releases signed with this certificate will update normally."
+    },
+    {
       "version": "1.9.1",
       "date": "2026-09-14T12:51:04Z",
       "sourceReleaseUrl": "https://github.com/ShaBP/rokid-notification-history/releases/tag/v1.9.1",
@@ -39,5 +45,16 @@
     "type": "githubReadme",
     "repo": "ShaBP/rokid-notification-history",
     "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "ShaBP/rokid-notification-history",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^Notification-History-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
   }
 }
