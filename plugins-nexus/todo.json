@@ -1,0 +1,55 @@
+{
+  "id": "todo",
+  "kind": "nexus-plugin",
+  "name": "Rokid To Do",
+  "category": "Utility",
+  "summary": "Manage persistent tasks from the glasses with voice input and HUD controls",
+  "description": "A phone-side Rokid Nexus plugin for persistent task lists. Add tasks, browse All/Today/Older views, mark items done, or delete them from the glasses and phone. Voice requests send audio from the glasses microphone to Gemini using your own API key; Nexus TTS can read remaining tasks aloud. Requires Nexus surfaces, microphone, and tts permissions. Published as a debug-signed test build.",
+  "author": "Paradise-My-Colors",
+  "sourceUrl": "https://github.com/Paradise-My-Colors/RokidToDo",
+  "publishedAt": "2026-09-12T22:22:12Z",
+  "iconAsset": "todo.png",
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "Manage persistent tasks on your glasses and phone with All, Today, Older, and completed views.\n\nInstall on the Android phone running Rokid Nexus, then approve surfaces, microphone, and tts in Plugin access. Configure your own Gemini API key in the plugin settings to add tasks or ask about remaining tasks by voice. Audio is sent to Gemini only when you start a voice request.\n\nThis is a debug-signed test release; no additional glasses APK is required."
+  },
+  "releases": [
+    {
+      "version": "0.1.2",
+      "date": "2026-09-12T22:22:12Z",
+      "notes": "Fixes Gemini API-key setup: the Save button is now full-width and directly visible below the key field, saved state is shown explicitly, blank keys are rejected, and persistence is synchronously confirmed before success is displayed."
+    },
+    {
+      "version": "0.1.1",
+      "date": "2026-09-12T22:06:31Z",
+      "notes": "Free-tier AI setup update: Gemini 3.7 Flash is now the default direct-audio model, legacy 3.8 settings migrate automatically, and the phone UI clearly links to free Gemini API key setup. No Nexus or Android STT is used."
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-09-12T12:14:01Z",
+      "notes": "First test release: raw glasses microphone audio to phone-side AI, persistent All/Today/Older lists, Done/Delete actions, completed history, and spoken remaining-task recall. This is a debug-signed test APK."
+    }
+  ],
+  "nexus": {
+    "pluginId": "todo",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces",
+      "microphone",
+      "tts"
+    ],
+    "launchable": true,
+    "settingsActivity": ".ToDoActivity",
+    "minHostVersionCode": 6
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Paradise-My-Colors/RokidToDo/releases/download/v0.1.2/RokidToDo-v0.1.2-debug.apk",
+    "sha256": "380e466d68f0092b5e3f1765f95a69368d9a2873ad1175f6ad9b7871ebc76f48",
+    "sizeBytes": 6537244,
+    "packageName": "com.paradisemc.nexus.plugin.todo",
+    "versionCode": 3,
+    "versionName": "0.1.2",
+    "signerSha256": "ddaae0a2c5badcdc278497a42eaddd58304158dc00d2ca8abbf7213d8dc2ef37"
+  }
+}
