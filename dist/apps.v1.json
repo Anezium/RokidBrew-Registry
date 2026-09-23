@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-23T08:43:56.627Z",
+  "generatedAt": "2026-09-23T08:57:26.474Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -2154,6 +2154,8 @@
       "listing": {
         "descriptionMarkdown": "## LightMem-Ego\nCapture the glasses camera and microphone to build a searchable timeline of daily events. Ask questions by voice or from the companion web UI, and read memory-grounded answers with timestamps on the Rokid HUD.\n\n**Backend required:** The app needs a reachable LightMem-Ego server. The published APK is preconfigured to upload captured frames and audio to the authors' hosted demo at `https://lightmem-ego.zjukg.cn/api`. To use your own server, change `API_BASE_URL` in `LightMemEgoConfig.kt` and rebuild from source before recording. Do not start a capture session with private content unless you accept the configured destination.\n\nA phone is not required. See the upstream README for the Docker backend, model/API credentials, and glasses controls."
       },
+      "iconAsset": "lightmem-ego.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/lightmem-ego.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lightmem-ego.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lightmem-ego-session.png"
