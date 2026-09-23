@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-22T20:14:29.215Z",
+  "generatedAt": "2026-09-23T08:43:56.627Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -591,6 +591,46 @@
       "newUntil": "2026-05-31T22:02:46.000Z",
       "iconAsset": "rokid-gmaps.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-gmaps.png"
+    },
+    {
+      "id": "aerofly-rokid-hud",
+      "name": "Aerofly Rokid HUD",
+      "category": "Games",
+      "type": "glasses",
+      "version": "2.6",
+      "summary": "Aerofly FS 4 flight telemetry on the Rokid glasses HUD",
+      "description": "Shows live Aerofly FS 4 telemetry on Rokid glasses over the local network, including airspeed, altitude, heading, attitude, controls, warnings, maps, and runway data. Requires Aerofly FS 4 on a Windows PC plus the matching AeroflyRokidHud.dll and AeroflyRokidRunways.dat from the same 2.6 AutoRunway bundle in the PC's external_dll directory. This is the English glasses APK; a Chinese build is also available upstream. The author confirmed hardware operation for 2.5, but has not yet reported full on-glasses validation of the 2.6 AutoRunway update. The repository notes that its source code has not been synchronized with this binary release.",
+      "author": "sjkxciuciu",
+      "sourceUrl": "https://github.com/sjkxciuciu/aerofly-rokid-hud",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://raw.githubusercontent.com/sjkxciuciu/aerofly-rokid-hud/e4d5cb33afb02a7bd3bd74b404c75c9979193c87/release/AeroflyRokidHud-2.6-AutoRunway-English.apk",
+          "sha256": "c3857c6938f535630b83f3f63d3092f3eeef64f02913a88692115bc440234adf",
+          "sizeBytes": 35777,
+          "packageName": "com.evan.aeroflyrokidhud",
+          "versionCode": 29,
+          "versionName": "2.6"
+        }
+      ],
+      "releases": [
+        {
+          "version": "2.6",
+          "date": "2026-09-22T22:06:53Z",
+          "sourceReleaseUrl": "https://github.com/sjkxciuciu/aerofly-rokid-hud/tree/e4d5cb33afb02a7bd3bd74b404c75c9979193c87/release",
+          "notes": "2.6 AutoRunway English APK from the repository's release directory. Install the matching Windows DLL and runway database from the complete bundle before use. The 2.6 update has not been fully validated on Rokid hardware by the author."
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "## Aerofly Rokid HUD\nDisplay Aerofly FS 4 speed, altitude, attitude, runway, and control information on Rokid glasses.\n\n**PC setup required:** Install Aerofly FS 4 on Windows and copy the matching `AeroflyRokidHud.dll` and `AeroflyRokidRunways.dat` from the upstream **2.6 AutoRunway bundle** into `Documents/Aerofly FS 4/external_dll`. Connect the PC and glasses on the same LAN. This store entry provides only the English glasses APK; the full bundle and Chinese APK are linked in the upstream repository.\n\nThe author verified 2.5 on hardware but has not yet confirmed the 2.6 AutoRunway feature on glasses. The published binary is newer than the source code currently in the repository."
+      },
+      "screenshotAssets": [
+        "aerofly-rokid-hud.png"
+      ],
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/aerofly-rokid-hud.png"
+      ]
     },
     {
       "id": "assist-bridge",
@@ -2075,6 +2115,49 @@
       },
       "releases": [],
       "screenshotAssets": []
+    },
+    {
+      "id": "lightmem-ego",
+      "name": "LightMem-Ego",
+      "category": "AI",
+      "type": "glasses",
+      "version": "1.0.0",
+      "summary": "Ask questions about your day using a camera-and-audio memory backend",
+      "description": "LightMem-Ego captures camera frames and microphone audio on Rokid AI Glasses, uploads them to a connected backend, and displays answers with timestamped visual and transcript evidence on the HUD. A phone is not required, but a reachable LightMem-Ego backend and internet connection are. IMPORTANT: the published APK points to the authors' hosted demo server by default, so captured camera and microphone data is sent there. Using your own backend requires rebuilding the app with a different API_BASE_URL in LightMemEgoConfig.kt. Do not start capture with sensitive content unless you accept that destination.",
+      "screenshotAssets": [
+        "lightmem-ego.png",
+        "lightmem-ego-session.png"
+      ],
+      "author": "zjunlp",
+      "sourceUrl": "https://github.com/zjunlp/LightMem-Ego",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/zjunlp/LightMem-Ego/releases/download/v1.0.0/app-release.apk",
+          "sha256": "2b43014e15f6f1c25b6e7f2438700b5d55eee2014633a24d918aa238b0b49264",
+          "sizeBytes": 21346487,
+          "packageName": "cn.zjukg.lightmem.glass",
+          "versionCode": 2,
+          "versionName": "1.0.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-14T16:31:18Z",
+          "sourceReleaseUrl": "https://github.com/zjunlp/LightMem-Ego/releases/tag/v1.0.0",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "## LightMem-Ego\nCapture the glasses camera and microphone to build a searchable timeline of daily events. Ask questions by voice or from the companion web UI, and read memory-grounded answers with timestamps on the Rokid HUD.\n\n**Backend required:** The app needs a reachable LightMem-Ego server. The published APK is preconfigured to upload captured frames and audio to the authors' hosted demo at `https://lightmem-ego.zjukg.cn/api`. To use your own server, change `API_BASE_URL` in `LightMemEgoConfig.kt` and rebuild from source before recording. Do not start a capture session with private content unless you accept the configured destination.\n\nA phone is not required. See the upstream README for the Docker backend, model/API credentials, and glasses controls."
+      },
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lightmem-ego.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lightmem-ego-session.png"
+      ]
     },
     {
       "id": "lokizaru",

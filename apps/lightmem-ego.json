@@ -1,0 +1,52 @@
+{
+  "id": "lightmem-ego",
+  "name": "LightMem-Ego",
+  "category": "AI",
+  "type": "glasses",
+  "version": "1.0.0",
+  "summary": "Ask questions about your day using a camera-and-audio memory backend",
+  "description": "LightMem-Ego captures camera frames and microphone audio on Rokid AI Glasses, uploads them to a connected backend, and displays answers with timestamped visual and transcript evidence on the HUD. A phone is not required, but a reachable LightMem-Ego backend and internet connection are. IMPORTANT: the published APK points to the authors' hosted demo server by default, so captured camera and microphone data is sent there. Using your own backend requires rebuilding the app with a different API_BASE_URL in LightMemEgoConfig.kt. Do not start capture with sensitive content unless you accept that destination.",
+  "screenshotAssets": ["lightmem-ego.png", "lightmem-ego-session.png"],
+  "author": "zjunlp",
+  "sourceUrl": "https://github.com/zjunlp/LightMem-Ego",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/zjunlp/LightMem-Ego/releases/download/v1.0.0/app-release.apk",
+      "sha256": "2b43014e15f6f1c25b6e7f2438700b5d55eee2014633a24d918aa238b0b49264",
+      "sizeBytes": 21346487,
+      "packageName": "cn.zjukg.lightmem.glass",
+      "versionCode": 2,
+      "versionName": "1.0.0"
+    }
+  ],
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-14T16:31:18Z",
+      "sourceReleaseUrl": "https://github.com/zjunlp/LightMem-Ego/releases/tag/v1.0.0",
+      "notes": null,
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "zjunlp/LightMem-Ego",
+    "path": "README.md"
+  },
+  "listing": {
+    "descriptionMarkdown": "## LightMem-Ego\nCapture the glasses camera and microphone to build a searchable timeline of daily events. Ask questions by voice or from the companion web UI, and read memory-grounded answers with timestamps on the Rokid HUD.\n\n**Backend required:** The app needs a reachable LightMem-Ego server. The published APK is preconfigured to upload captured frames and audio to the authors' hosted demo at `https://lightmem-ego.zjukg.cn/api`. To use your own server, change `API_BASE_URL` in `LightMemEgoConfig.kt` and rebuild from source before recording. Do not start a capture session with private content unless you accept the configured destination.\n\nA phone is not required. See the upstream README for the Docker backend, model/API credentials, and glasses controls."
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "zjunlp/LightMem-Ego",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^app-release\\.apk$"
+      }
+    ]
+  }
+}
