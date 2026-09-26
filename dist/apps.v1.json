@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-23T08:57:26.474Z",
+  "generatedAt": "2026-09-26T09:54:56.282Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,117 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "rokid-nexus",
+      "name": "Rokid Nexus",
+      "category": "Launcher",
+      "type": "combo",
+      "version": "1.4.13",
+      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
+      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.13/nexus-glasses-1.4.13.apk",
+          "sha256": "72c226d738219f562ae30b2528dcfd5a8fa89596503a81f257387795822808b8",
+          "sizeBytes": 19376003,
+          "packageName": "com.anezium.rokidbus.glasses",
+          "versionCode": 10413,
+          "versionName": "1.4.13"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.13/nexus-phone-1.4.13.apk",
+          "sha256": "5902e657515fb674ce93eaaae1765859786faee60f1479765ffa8ab7adf971f8",
+          "sizeBytes": 18673449,
+          "packageName": "com.anezium.rokidbus.phone",
+          "versionCode": 10413,
+          "versionName": "1.4.13"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.4.13",
+          "date": "2026-09-25T23:26:37Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.13",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.11",
+          "date": "2026-09-22T12:55:59Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.11",
+          "notes": "### Upgrade together\n\nInstall **both Nexus hubs 1.4.11** before using notices, then update Relay to\n**1.2.3**. Notice protocol v5 requires matching phone and glasses hubs; mixed\nhub versions are not supported for notices. Plugins need to be rebuilt with\nSDK **0.19.0** to gain the new callback protection. Plugin API version 3 and\nexisting grants are unchanged.\n\n### Phone and glasses hubs\n\n- **An SPP interruption no longer disables a live notice's SDK callbacks.**\n  Losing or restoring one glasses transport leaves the current question intact;\n  an explicit hide, replacement, or fresh registration still protects against\n  stale replies. A newer owner hide also clears an older visible band when a\n  replacement show was lost or failed image decoding.\n- **HUD routing has dedicated owners.** The phone hub delegates notices, pins,\n  activities, ordinary surfaces, and Ink to separate routers, with regression\n  tests for owner delivery, reconnect state, and closure. Surface detach still\n  preserves an active microphone lease through the existing audio lifecycle.\n- **Notice replies stay with the question the wearer saw.** Both hubs now bind\n  actions, gestures, and dismissals to the notice instance and question, so a\n  delayed event cannot act on a replacement from the same plugin. The SDK also\n  filters stale callbacks already queued for a plugin. Notice protocol v5\n  requires matching phone and glasses hubs; rebuild plugins with the updated\n  SDK to gain the callback protection.\n- **A failed notice reply is visible.** The glasses show *Delivery not confirmed*\n  when the transport rejects a send, retaining the one-answer guard instead of\n  risking a duplicate effect after a partial write.\n- **An interactive notice keeps key priority over focused Nexus windows.**\n  Direction, confirm, and Back now reach the notice before the launcher or\n  surface beneath it, including local activity and overlay windows. Confirming\n  a notice can no longer activate an underlying control through those paths.\n  The same dispatcher handles accessibility input and paired directional keys.\n- **Relay countdowns keep the same question.** The SDK's optional `rearm = false`\n  update refreshes action labels without invalidating a tap in flight.\n- **Directional input can select Ink actions.** Tappable controls now have an\n  outlined selection tracked by their node id. Confirm activates the selected\n  control, and updates retain that selection when the node still exists. Paired\n  directional key reports count as one move. A notice can take input above the\n  page and return to the same selected Ink control when dismissed.\n\n### Plugin SDK 0.19.0\n\n- Add optional `NexusNoticeUpdate.rearm`. With `rearm = false`, a label-only\n  action update preserves the current question, selection, and one-answer\n  guard. This requires `noticeInteractionVersion: 1`; an older phone hub returns\n  `CAPABILITY_NOT_AVAILABLE` rather than silently changing the question.\n- Filter queued notice callbacks by the current local question. An SPP-only\n  interruption does not retire that context, and reconnecting does not undo an\n  explicit hide.\n- **Callback contract change:** `onNoticeClosed` belongs to the current local\n  notice context, not to every `showNotice` call. An immediate hide followed by\n  show may suppress the previous `closed(owner)` callback. Plugins must not\n  depend on exactly one close callback per show to clean up replaced state.\n\nValidation and remaining transport-recovery follow-ups are recorded in the\n[review and device retest](https://github.com/Anezium/Rokid-Nexus/blob/v1.4.11/docs/reviews/hud-interaction-review-follow-up.md).\n",
+          "changes": []
+        },
+        {
+          "version": "1.4.10",
+          "date": "2026-09-19T21:19:43Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.8",
+          "date": "2026-09-14T19:38:40Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-09-07T19:29:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.6",
+          "date": "2026-09-06T18:44:47Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.5",
+          "date": "2026-08-20T00:14:57Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.4",
+          "date": "2026-08-14T19:32:00Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-nexus-1.png",
+        "rokid-nexus-2.png",
+        "rokid-nexus-3.png",
+        "rokid-nexus-4.png",
+        "rokid-nexus-5.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
+      },
+      "publishedAt": "2026-09-25T23:26:37Z",
+      "newUntil": "2026-09-27T23:26:37.000Z",
+      "iconAsset": "rokid-nexus.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+      ]
+    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -1765,7 +1876,7 @@
       "name": "GSCP",
       "category": "Utility",
       "type": "phone",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "summary": "View your glasses camera, HUD, and audio together on an Android phone",
       "description": "GSCP combines the Rokid glasses camera view, HUD overlay, and audio into one live viewer with adjustable transparency, brightness, scale, rotation, and black-key blending. This APK installs on an arm64 Android phone. First configure the glasses connection using the Windows, macOS, or Linux desktop version and a USB data cable; then connect the phone and glasses to the same Wi-Fi network. Desktop builds also support wired viewing. The Android client is distributed under GPL-3.0.",
       "author": "tonytsangzen",
@@ -1774,15 +1885,22 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.1/gscp_1.2.1_aarch64.apk",
-          "sha256": "bbd4e7d8c256e06cce0f4d1c6a8ee8b5299174ea0feaf1fa7f260591509d77ca",
-          "sizeBytes": 6221602,
+          "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.2/gscp_1.2.2_aarch64.apk",
+          "sha256": "8670789ffa2da014084378f8f88e5c6660f5e04f3aa92174d1f8295f9cbc651f",
+          "sizeBytes": 34610978,
           "packageName": "com.gscp.desktop",
           "versionCode": 1,
           "versionName": "1.0"
         }
       ],
       "releases": [
+        {
+          "version": "1.2.2",
+          "date": "2026-09-22T14:28:12Z",
+          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.2",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "1.2.1",
           "date": "2026-09-21T11:59:45Z",
@@ -1798,6 +1916,8 @@
           "changes": []
         }
       ],
+      "publishedAt": "2026-09-22T14:28:12Z",
+      "newUntil": "2026-09-24T14:28:12.000Z",
       "iconAsset": "gscp.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gscp.png",
       "screenshotAssets": []
@@ -3151,124 +3271,6 @@
       },
       "releases": [],
       "screenshotAssets": []
-    },
-    {
-      "id": "rokid-nexus",
-      "name": "Rokid Nexus",
-      "category": "Launcher",
-      "type": "combo",
-      "version": "1.4.11",
-      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
-      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.11/nexus-glasses-1.4.11.apk",
-          "sha256": "f5745465eabd6cd9d8f14891b3ce9459dc18049a73fa50b2a0fa0137e4e93775",
-          "sizeBytes": 19326155,
-          "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10411,
-          "versionName": "1.4.11"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.11/nexus-phone-1.4.11.apk",
-          "sha256": "625a0d85b4fd465394c2204f690f437fbeaabf17366c118a55811eec57e40dd5",
-          "sizeBytes": 18621381,
-          "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10411,
-          "versionName": "1.4.11"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.4.11",
-          "date": "2026-09-22T12:55:59Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.11",
-          "notes": "### Upgrade together\n\nInstall **both Nexus hubs 1.4.11** before using notices, then update Relay to\n**1.2.3**. Notice protocol v5 requires matching phone and glasses hubs; mixed\nhub versions are not supported for notices. Plugins need to be rebuilt with\nSDK **0.19.0** to gain the new callback protection. Plugin API version 3 and\nexisting grants are unchanged.\n\n### Phone and glasses hubs\n\n- **An SPP interruption no longer disables a live notice's SDK callbacks.**\n  Losing or restoring one glasses transport leaves the current question intact;\n  an explicit hide, replacement, or fresh registration still protects against\n  stale replies. A newer owner hide also clears an older visible band when a\n  replacement show was lost or failed image decoding.\n- **HUD routing has dedicated owners.** The phone hub delegates notices, pins,\n  activities, ordinary surfaces, and Ink to separate routers, with regression\n  tests for owner delivery, reconnect state, and closure. Surface detach still\n  preserves an active microphone lease through the existing audio lifecycle.\n- **Notice replies stay with the question the wearer saw.** Both hubs now bind\n  actions, gestures, and dismissals to the notice instance and question, so a\n  delayed event cannot act on a replacement from the same plugin. The SDK also\n  filters stale callbacks already queued for a plugin. Notice protocol v5\n  requires matching phone and glasses hubs; rebuild plugins with the updated\n  SDK to gain the callback protection.\n- **A failed notice reply is visible.** The glasses show *Delivery not confirmed*\n  when the transport rejects a send, retaining the one-answer guard instead of\n  risking a duplicate effect after a partial write.\n- **An interactive notice keeps key priority over focused Nexus windows.**\n  Direction, confirm, and Back now reach the notice before the launcher or\n  surface beneath it, including local activity and overlay windows. Confirming\n  a notice can no longer activate an underlying control through those paths.\n  The same dispatcher handles accessibility input and paired directional keys.\n- **Relay countdowns keep the same question.** The SDK's optional `rearm = false`\n  update refreshes action labels without invalidating a tap in flight.\n- **Directional input can select Ink actions.** Tappable controls now have an\n  outlined selection tracked by their node id. Confirm activates the selected\n  control, and updates retain that selection when the node still exists. Paired\n  directional key reports count as one move. A notice can take input above the\n  page and return to the same selected Ink control when dismissed.\n\n### Plugin SDK 0.19.0\n\n- Add optional `NexusNoticeUpdate.rearm`. With `rearm = false`, a label-only\n  action update preserves the current question, selection, and one-answer\n  guard. This requires `noticeInteractionVersion: 1`; an older phone hub returns\n  `CAPABILITY_NOT_AVAILABLE` rather than silently changing the question.\n- Filter queued notice callbacks by the current local question. An SPP-only\n  interruption does not retire that context, and reconnecting does not undo an\n  explicit hide.\n- **Callback contract change:** `onNoticeClosed` belongs to the current local\n  notice context, not to every `showNotice` call. An immediate hide followed by\n  show may suppress the previous `closed(owner)` callback. Plugins must not\n  depend on exactly one close callback per show to clean up replaced state.\n\nValidation and remaining transport-recovery follow-ups are recorded in the\n[review and device retest](https://github.com/Anezium/Rokid-Nexus/blob/v1.4.11/docs/reviews/hud-interaction-review-follow-up.md).\n",
-          "changes": []
-        },
-        {
-          "version": "1.4.10",
-          "date": "2026-09-19T21:19:43Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.8",
-          "date": "2026-09-14T19:38:40Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-09-07T19:29:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.6",
-          "date": "2026-09-06T18:44:47Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-08-20T00:14:57Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.4",
-          "date": "2026-08-14T19:32:00Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.3",
-          "date": "2026-08-11T22:13:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.11",
-          "date": "2026-08-07T19:10:51Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
-          "notes": null,
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-nexus-1.png",
-        "rokid-nexus-2.png",
-        "rokid-nexus-3.png",
-        "rokid-nexus-4.png",
-        "rokid-nexus-5.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
-      },
-      "publishedAt": "2026-09-19T21:19:43Z",
-      "newUntil": "2026-09-21T21:19:43.000Z",
-      "iconAsset": "rokid-nexus.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
-      ]
     },
     {
       "id": "rokid-reader",
