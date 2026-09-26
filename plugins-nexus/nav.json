@@ -1,0 +1,43 @@
+{
+  "id": "nav",
+  "kind": "nexus-plugin",
+  "name": "Navigation",
+  "category": "Navigation",
+  "summary": "Your Google Maps or Citymapper route, live on the glasses.",
+  "description": "Start a route in Google Maps or Citymapper and it stays on your glasses as one live activity: the next turn and its distance, or the walk to the stop, the line to board and the stops left. The moment that matters beats once so it is not missed.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+  "publishedAt": "2026-09-26T19:54:59Z",
+  "iconAsset": "nav-icon.png",
+  "nexus": {
+    "pluginId": "nav",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces"
+    ],
+    "launchable": true,
+    "settingsActivity": ".NavSettingsActivity",
+    "minHostVersionCode": 10415
+  },
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nStart a route in Google Maps or Citymapper and Navigation keeps it on your glasses as one live activity: the next turn and how far it is, or the walk to the stop, the line to board and the stops left, with your arrival time. A new step flares on its own; a turn a few metres away, or the stop to get off at, beats once so it is not missed. When the app stops guiding, the activity ends.\n\n## Your app, your route\n\nNexus routes nothing and draws no map. Navigation reads the guidance Google Maps and Citymapper already post as notifications, so it follows whatever route you chose in them, on foot or by public transport. Open Navigation from the glasses launcher to see the whole current instruction.\n\n## Switches\n\nThe plugin screen on the phone has a main switch and one per app, so Google Maps or Citymapper can be kept off the glasses without uninstalling anything. Switched back on, a route already running is picked up straight away.\n\n## What it reads\n\nGoogle Maps' guidance and Citymapper's GO trip, and nothing else: every other notification is ignored before it is read. The route lives in memory while it lasts; nothing is stored, and nothing leaves the phone except what your glasses show.\n\n## Needs\n\nNotification Access for Navigation (a button on its screen), *Show on your glasses* in Nexus → Settings → Plugin access, and Rokid Nexus 1.4.15 on the phone and the glasses. Google Maps and Citymapper set to English or French, the two wordings it reads."
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/nav-v0.1.0/nav-phone-release.apk",
+    "sha256": "7db8d3e3e339b1d669250e76d6c61af95a34ad4f6f10059171e7be994855cdfa",
+    "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+    "sizeBytes": 5523588,
+    "packageName": "com.anezium.rokidbus.plugin.nav",
+    "versionCode": 1,
+    "versionName": "0.1.0"
+  },
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-09-26T19:54:59Z",
+      "notes": "\n- First release: Google Maps turn-by-turn and public transport, and\n  Citymapper GO, as one live activity on the glasses, read from their\n  notifications. A new step flares; a turn a few metres away or the stop to get\n  off at beats once. Needs both Nexus hubs 1.4.15.\n- Opening Navigation on the glasses shows the whole current instruction, or\n  how to start one.\n- A main switch and one switch per app, so Google Maps or Citymapper can be\n  kept off the glasses without uninstalling anything.\n\n### Artifact\n\n- File: `nav-phone-release.apk`\n- SHA-256: `7db8d3e3e339b1d669250e76d6c61af95a34ad4f6f10059171e7be994855cdfa`\n"
+    }
+  ]
+}

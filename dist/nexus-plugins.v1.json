@@ -94,19 +94,24 @@
       },
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nPress the assist gesture and ask out loud. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD, the answer streams into the same band, and then it is spoken aloud. No window to navigate — you ask, you hear, you keep walking.\n\n## From the launcher, or from the button\n\nPick Assistant in the Nexus launcher and it listens at once; tap the card to ask again. A swipe on that card opens one option: whether the assist button opens Nexus or Rokid's own assistant. Hand it back to Rokid and keep Nexus one launcher pick away, without touching the permission on the phone; the same switch lives under *Replace the glasses assistant* in Nexus → Settings → Plugin access.\n\n## Or type it\n\nSomewhere you can't talk? The *Input* setting lets you type the question instead. *Voice + Type button* adds a Type chip a moment after it starts listening; *Type first* skips the microphone altogether. The band itself becomes the text field — your words appear inside it as you type — and your phone's keyboard opens on its own, then closes when you send. *Voice only* stays the default. Typing inside the band needs Rokid Nexus 1.4.13; from 1.4.6 the field opens as its own card.\n\n## The AI of your choice\n\nSign in with ChatGPT and answers come from your own ChatGPT plan — nothing to paste, no per-token bill. Pick the model, from fastest to deepest, and how long it may think.\n\nOr bring a key: OpenAI, OpenRouter, MiniMax (a Coding Plan key works as-is), DeepSeek, GLM (Z.ai), your own Hermes API server, or any OpenAI-compatible server of your own. Every provider keeps its own key — encrypted on the phone — its own model, and its own endpoint, so switching is one tap. Type any model id your provider serves, and a Personality box holds your standing instructions whoever answers.\n\nSigned into ChatGPT, the assistant can also carry the memories and custom instructions of your account, so it starts out knowing what ChatGPT knows — with every provider. Synced automatically, and it can be turned off.\n\n## It can look\n\nAsk about what is in front of you and the model takes one photo through the glasses camera. One photo per question, only when the question needs eyes — asking for the weather will never fire the shutter — and never saved to the glasses' own gallery.\n\n## Notes, reminders and timers\n\nAsk it to remind you in twenty minutes, to set a timer, or to take a note, and it does — out loud, mid-sentence. When a reminder comes due the phone notifies you and the glasses raise it, waking the display if it went dark; away from the glasses, the phone still tells you. Everything lands in a Notes & reminders screen where you can read a note in full, delete one, or cancel a reminder before it rings. It stays on your phone, and it survives a reboot. An *Add note* button on the Productivity screen opens a text field on the glasses to type one directly, with no model and no microphone involved.\n\n## Conversations\n\nA follow-up keeps its context instead of starting over, and a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — in a Conversations screen where each can be read, and deleted, one by one or all at once.\n\n## Web search\n\nBuilt in. The model decides when a question needs the web, so news and weather are answerable from your face.\n\n## What it keeps\n\nSign-in tokens are stored encrypted on the phone. Conversations, their photos and your memory text live in the plugin's private storage, never in your gallery, and are deleted the moment you ask.\n\n## Needs\n\nA ChatGPT account (or an OpenAI API key), plus *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* in Nexus → Settings → Plugin access. Requires Rokid Nexus 1.4.8."
+        "descriptionMarkdown": "## About\n\nPress the assist gesture and ask out loud. The stock Rokid assistant window is closed for you the moment it appears; your words transcribe live in a band on the HUD, the answer streams into the same band, and then it is spoken aloud. No window to navigate — you ask, you hear, you keep walking.\n\n## From the launcher, or from the button\n\nPick Assistant in the Nexus launcher and it listens at once; tap the card to ask again. A swipe on that card opens one option: whether the assist button opens Nexus or Rokid's own assistant. Hand it back to Rokid and keep Nexus one launcher pick away, without touching the permission on the phone; the same switch lives under *Replace the glasses assistant* in Nexus → Settings → Plugin access.\n\n## Or type it\n\nSomewhere you can't talk? The *Input* setting lets you type the question instead. *Voice + Type button* adds a Type chip a moment after it starts listening; *Type first* skips the microphone altogether. The band itself becomes the text field — your words appear inside it as you type — and your phone's keyboard opens on its own, then closes when you send. Asked with the assist button, the question and its answer stay in the band, with nothing opening behind them. *Voice only* stays the default. Typing inside the band needs Rokid Nexus 1.4.13; from 1.4.6 the field opens as its own card.\n\n## The AI of your choice\n\nSign in with ChatGPT and answers come from your own ChatGPT plan — nothing to paste, no per-token bill. Pick the model, from fastest to deepest, and how long it may think.\n\nOr bring a key: OpenAI, OpenRouter, MiniMax (a Coding Plan key works as-is), DeepSeek, GLM (Z.ai), your own Hermes API server, or any OpenAI-compatible server of your own. Every provider keeps its own key — encrypted on the phone — its own model, and its own endpoint, so switching is one tap. Type any model id your provider serves, and a Personality box holds your standing instructions whoever answers.\n\nSigned into ChatGPT, the assistant can also carry the memories and custom instructions of your account, so it starts out knowing what ChatGPT knows — with every provider. Synced automatically, and it can be turned off.\n\n## It can look\n\nAsk about what is in front of you and the model takes one photo through the glasses camera. One photo per question, only when the question needs eyes — asking for the weather will never fire the shutter — and never saved to the glasses' own gallery.\n\n## Notes, reminders and timers\n\nAsk it to remind you in twenty minutes, to set a timer, or to take a note, and it does — out loud, mid-sentence. When a reminder comes due the phone notifies you and the glasses raise it, waking the display if it went dark; away from the glasses, the phone still tells you. Everything lands in a Notes & reminders screen where you can read a note in full, delete one, or cancel a reminder before it rings. It stays on your phone, and it survives a reboot. An *Add note* button on the Productivity screen opens a text field on the glasses to type one directly, with no model and no microphone involved.\n\n## Conversations\n\nA follow-up keeps its context instead of starting over, and a thread ends on its own after a quiet delay you choose. The phone keeps the transcripts — with the photos, if you want them kept — in a Conversations screen where each can be read, and deleted, one by one or all at once.\n\n## Web search\n\nBuilt in. The model decides when a question needs the web, so news and weather are answerable from your face.\n\n## Drawn answers\n\nSome answers are better drawn than said: a forecast, figures, steps, a ranking, a comparison, a schedule, a chart. The *Visual answers* setting keeps those pages to the fixed layouts made for the glasses (the default), lets the model draw free pages too, or turns them off so every answer stays text in the band.\n\n## What it keeps\n\nSign-in tokens are stored encrypted on the phone. Conversations, their photos and your memory text live in the plugin's private storage, never in your gallery, and are deleted the moment you ask.\n\n## Needs\n\nA ChatGPT account (or an OpenAI API key), plus *Show on your glasses*, *Glasses microphone*, *Speech to text*, *Text to speech*, *Replace the glasses assistant* and *Glasses camera* in Nexus → Settings → Plugin access. Requires Rokid Nexus 1.4.8."
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.7/assistant-phone-release.apk",
-        "sha256": "8fbab273bab89e44130201f97d2990d87405d408fc0e032c827acfcb04ac337a",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/assistant-v1.4.8/assistant-phone-release.apk",
+        "sha256": "39de06f7b7a756eb4717961746f34f9caaed27f462ee882f80123cde4cb218f3",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 6248079,
+        "sizeBytes": 6281967,
         "packageName": "com.anezium.rokidbus.plugin.assistant",
-        "versionCode": 16,
-        "versionName": "1.4.7"
+        "versionCode": 17,
+        "versionName": "1.4.8"
       },
       "releases": [
+        {
+          "version": "1.4.8",
+          "date": "2026-09-26T19:55:59Z",
+          "notes": "\n- **With the assist button, typing keeps to the band.** No full Assistant card\n  opens behind it, while you type or after you send: only the band, with\n  Thinking and then the answer, as when you ask out loud. Assistant closes on\n  its own once the answer has been shown and read.\n- **A question asked out loud with the assist button no longer leaves\n  Assistant open.** Once its band and its voice were done, the hub still counted\n  Assistant as the plugin on screen, so another plugin's card — Relay's *Type*,\n  for one — was refused as \"Screen busy\" until Assistant was stopped. It now\n  closes as soon as nothing of the question is left, heard or not.\n- **Choose how answers are drawn.** A new *Visual answers* setting.\n  *Templates only*, the new default, keeps drawn answers to the fixed layouts\n  made for the glasses — forecast, figures, steps, ranking, comparison,\n  schedule, chart — so the model no longer lays out pages of its own that come\n  out too big, cut off or half empty. *Free pages* brings those back alongside\n  the templates, as before. *Off* keeps every answer as text in the band.\n- **Template pages keep to what fits.** Every text in a template now has a\n  length the glasses draw whole — a tile's value, a row's label, a schedule's\n  time — and the model is told those lengths up front. Anything longer is sent\n  back to be shortened, instead of arriving cut off, squeezed or spilling out of\n  its box. With Rokid Nexus 1.4.15, a grid of figures also keeps every row at\n  full height.\n\n\n### Artifact\n\n- File: `assistant-phone-release.apk`\n- SHA-256: `39de06f7b7a756eb4717961746f34f9caaed27f462ee882f80123cde4cb218f3`\n"
+        },
         {
           "version": "1.4.7",
           "date": "2026-09-26T13:31:33Z",
@@ -579,6 +584,50 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/media-1-nowplaying.png"
       ]
+    },
+    {
+      "id": "nav",
+      "kind": "nexus-plugin",
+      "name": "Navigation",
+      "category": "Navigation",
+      "summary": "Your Google Maps or Citymapper route, live on the glasses.",
+      "description": "Start a route in Google Maps or Citymapper and it stays on your glasses as one live activity: the next turn and its distance, or the walk to the stop, the line to board and the stops left. The moment that matters beats once so it is not missed.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-09-26T19:54:59Z",
+      "iconAsset": "nav-icon.png",
+      "nexus": {
+        "pluginId": "nav",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces"
+        ],
+        "launchable": true,
+        "settingsActivity": ".NavSettingsActivity",
+        "minHostVersionCode": 10415
+      },
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nStart a route in Google Maps or Citymapper and Navigation keeps it on your glasses as one live activity: the next turn and how far it is, or the walk to the stop, the line to board and the stops left, with your arrival time. A new step flares on its own; a turn a few metres away, or the stop to get off at, beats once so it is not missed. When the app stops guiding, the activity ends.\n\n## Your app, your route\n\nNexus routes nothing and draws no map. Navigation reads the guidance Google Maps and Citymapper already post as notifications, so it follows whatever route you chose in them, on foot or by public transport. Open Navigation from the glasses launcher to see the whole current instruction.\n\n## Switches\n\nThe plugin screen on the phone has a main switch and one per app, so Google Maps or Citymapper can be kept off the glasses without uninstalling anything. Switched back on, a route already running is picked up straight away.\n\n## What it reads\n\nGoogle Maps' guidance and Citymapper's GO trip, and nothing else: every other notification is ignored before it is read. The route lives in memory while it lasts; nothing is stored, and nothing leaves the phone except what your glasses show.\n\n## Needs\n\nNotification Access for Navigation (a button on its screen), *Show on your glasses* in Nexus → Settings → Plugin access, and Rokid Nexus 1.4.15 on the phone and the glasses. Google Maps and Citymapper set to English or French, the two wordings it reads."
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/nav-v0.1.0/nav-phone-release.apk",
+        "sha256": "7db8d3e3e339b1d669250e76d6c61af95a34ad4f6f10059171e7be994855cdfa",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 5523588,
+        "packageName": "com.anezium.rokidbus.plugin.nav",
+        "versionCode": 1,
+        "versionName": "0.1.0"
+      },
+      "releases": [
+        {
+          "version": "0.1.0",
+          "date": "2026-09-26T19:54:59Z",
+          "notes": "\n- First release: Google Maps turn-by-turn and public transport, and\n  Citymapper GO, as one live activity on the glasses, read from their\n  notifications. A new step flares; a turn a few metres away or the stop to get\n  off at beats once. Needs both Nexus hubs 1.4.15.\n- Opening Navigation on the glasses shows the whole current instruction, or\n  how to start one.\n- A main switch and one switch per app, so Google Maps or Citymapper can be\n  kept off the glasses without uninstalling anything.\n\n### Artifact\n\n- File: `nav-phone-release.apk`\n- SHA-256: `7db8d3e3e339b1d669250e76d6c61af95a34ad4f6f10059171e7be994855cdfa`\n"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/nav-icon.png"
     },
     {
       "id": "news",
