@@ -1,0 +1,47 @@
+{
+  "id": "ai-glasses-manager",
+  "name": "AI Glasses Manager (formerly Rokid Manager)",
+  "category": "Utility",
+  "type": "glasses",
+  "version": "2.6.2",
+  "summary": "Manage apps, photos, files, and settings directly on Rokid AI Glasses",
+  "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
+  "author": "Bruce",
+  "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/download/v2.6.2/AI-Glasses-Manager-2.6.2.apk",
+      "sha256": "c4a9e82ed171f319521c42c8f5f41a634561df1ce03ad6d95d27e2bb45812b8a",
+      "sizeBytes": 176969654,
+      "packageName": "com.bruce.rokidmanager",
+      "versionCode": 16,
+      "versionName": "2.6.2"
+    }
+  ],
+  "iconAsset": "ai-glasses-manager.png",
+  "publishedAt": "2026-09-28T11:37:23Z",
+  "screenshotAssets": [
+    "ai-glasses-manager-home.png",
+    "ai-glasses-manager-app-store.png",
+    "ai-glasses-manager-camera.png"
+  ],
+  "listing": {
+    "descriptionMarkdown": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- Camera tools and photo and video viewing\n- File browsing and wireless file transfers\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
+  },
+  "releases": [
+    {
+      "version": "2.6.2",
+      "date": "2026-09-28T11:37:23Z",
+      "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.2",
+      "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nImproved App Store reliability, offline recovery, and added some network guidance\nAdded new Camera settings with shutter sounds and clearer capture feedback\nFile browsing is smoother \nGallery QoL improvements. Displayed menus are less intrusive\nManager updates are easier to notice\nHome icons are now more visually balanced\n\n**Chinese**\n\n提升应用商店的稳定性、离线恢复和网络提示\n新增相机设置、快门音效及更清晰的拍摄反馈\n文件浏览更加流畅，图库提升一些和信息显示更简洁\n管理器更新更醒目，主页图标也更加协调统一",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Phantom-Not/ai-glasses-manager-releases",
+    "path": "README.md"
+  }
+}

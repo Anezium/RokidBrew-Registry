@@ -1,13 +1,13 @@
 {
   "id": "rokid-manager",
-  "name": "Rokid Manager",
+  "name": "Rokid Manager 1.5 (legacy)",
   "category": "Utility",
   "type": "glasses",
   "version": "1.5",
-  "summary": "Access advanced settings and tools on Rokid glasses",
-  "description": "Rokid Manager is a community-developed app for managing various settings on Rokid AR glasses. It provides access to connectivity, apps, storage, sound, battery, camera, files, and device controls without requiring a phone companion.",
-  "author": "Unknown",
-  "sourceUrl": "https://github.com/Anezium/RokidBrew-Registry/blob/main/assets/apks/rokid-manager-1.5.apk",
+  "summary": "Legacy settings utility; see AI Glasses Manager for the current app",
+  "description": "Legacy Rokid Manager 1.5 by Bruce. The app is now called AI Glasses Manager, with ongoing fixes and new features. This entry keeps the old 1.5 APK available; see the separate AI Glasses Manager listing for the current version.",
+  "author": "Bruce",
+  "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
   "phoneRequired": false,
   "artifacts": [
     {
@@ -23,12 +23,7 @@
   "iconAsset": "rokid-manager.png",
   "publishedAt": "2026-05-25T23:45:12Z",
   "listing": {
-    "descriptionMarkdown": "About Rokid Manager\n\nRokid Manager is a glasses-side utility app that allows users to access and manage advanced settings on Rokid AR glasses.\n\nKey features\n\n- Manage connectivity options\n- Access installed apps\n- Monitor and control storage usage\n- Adjust sound and battery settings\n- Control camera and file management\n- Operate various device controls\n\nRequirements\n\n- Designed for Rokid AR glasses\n- No phone companion app required"
+    "descriptionMarkdown": "Legacy Rokid Manager 1.5 by Bruce. The app is now called AI Glasses Manager, with ongoing fixes and new features. This entry keeps the old 1.5 APK available; see the separate AI Glasses Manager listing for the current version.\n\n[Get AI Glasses Manager](https://github.com/Phantom-Not/ai-glasses-manager-releases)\n\nThe current version includes a 3-day free trial and costs $1.99 per device, paid once. It uses a different Android package and installs separately from 1.5."
   },
-  "releases": [],
-  "listingSource": {
-    "type": "githubReadme",
-    "repo": "Anezium/RokidBrew-Registry",
-    "path": "README.md"
-  }
+  "releases": []
 }
