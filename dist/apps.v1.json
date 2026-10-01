@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T21:39:48.696Z",
+  "generatedAt": "2026-10-01T22:22:26.532Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,50 +13,6 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
-    {
-      "id": "apsis-warp-lab",
-      "name": "Apsis Warp Lab",
-      "category": "Experiment",
-      "type": "glasses",
-      "version": "0.4.6",
-      "summary": "Audio-reactive spatial flight visualization for Rokid waveguide glasses",
-      "description": "Apsis Warp Lab transforms surrounding sound into a reactive starfield cockpit on compatible Rokid waveguide glasses. Directional audio drives luminous objects, trails, radar contacts, and cockpit instrumentation, while sensor fusion, manual recentering, and depth-separated parallax respond to head movement. Audio analysis stays on the glasses, and the app requests no Internet access.",
-      "author": "Apsis AI",
-      "sourceUrl": "https://github.com/ridderek/Apsis-Warp-Releases",
-      "phoneRequired": false,
-      "publishedAt": "2026-09-28T18:14:26Z",
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/ridderek/Apsis-Warp-Releases/releases/download/v0.4.6-community-preview/Apsis-Warp-Lab-v0.4.6-Community-Preview.apk",
-          "sha256": "32c0a7361c0a91aa0f6446de4df25cd5092db16666697cd2d2847464d9d266cd",
-          "sizeBytes": 47352,
-          "packageName": "com.apsis.warp.lab",
-          "versionCode": 16,
-          "versionName": "0.4.6"
-        }
-      ],
-      "listing": {
-        "descriptionMarkdown": "## About\nApsis Warp Lab turns compatible Rokid waveguide glasses into an audio-reactive spatial flight environment. Surrounding sound becomes luminous objects, trails, radar contacts, and cockpit instrumentation in real time.\n\n## Key Features\n- Directional audio visualization with stereo and mono fallback modes\n- Persistent bearing radar with contact history and localization confidence\n- Procedural stars, travelers, trails, echoes, ripples, and rare anomalies\n- Artificial horizon with wrap-safe yaw, pitch, and roll smoothing\n- Manual recentering and depth-separated parallax\n- Guided eight-sector microphone calibration\n\n## Privacy\nAudio analysis runs locally on the glasses. The app does not request Internet access and does not record, retain, upload, transmit, or transcribe audio.\n\n## Requirements\n- Compatible Rokid RG-series waveguide glasses\n- Microphone permission\n- Game rotation vector / IMU support\n\n## Notes\n- This is an experimental Community Preview\n- Do not use while driving or during safety-critical activities\n- Stop using the display if it causes discomfort, disorientation, headache, or visual strain\n- Independent community project; not affiliated with or endorsed by Rokid"
-      },
-      "releases": [
-        {
-          "version": "0.4.6",
-          "date": "2026-09-28T18:14:26Z",
-          "sourceReleaseUrl": "https://github.com/ridderek/Apsis-Warp-Releases/releases/tag/v0.4.6-community-preview",
-          "notes": "## Apsis Warp Lab v0.4.6 — Attitude & Depth\n\nCommunity Preview for compatible Rokid RG-series waveguide glasses.\n\n### What changed\n\n- Corrected the fused IMU coordinate frame for the glasses' optical/display orientation\n- Added wrap-safe yaw, pitch, and roll smoothing\n- Strengthened the artificial horizon while preserving restrained self-leveling\n- Added compact bank and pitch reference marks\n- Added manual Recenter View control\n- Increased parallax travel and widened depth separation while keeping the cockpit visually anchored\n- Preserved the spatial-audio pipeline, directional calibration, Sonic Constellations, controls, and long-wear visual restraint",
-          "changes": [
-            "Corrected the fused IMU coordinate frame for the glasses' optical/display orientation",
-            "Added wrap-safe yaw, pitch, and roll smoothing",
-            "Strengthened the artificial horizon with compact bank and pitch reference marks",
-            "Added manual Recenter View control",
-            "Increased parallax travel and widened depth separation"
-          ]
-        }
-      ],
-      "newUntil": "2026-09-30T18:14:26.000Z",
-      "screenshotAssets": []
-    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -675,6 +631,52 @@
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/aerofly-rokid-hud.png"
       ]
+    },
+    {
+      "id": "apsis-warp-lab",
+      "name": "Apsis Warp Lab",
+      "category": "Experiment",
+      "type": "glasses",
+      "version": "0.4.6",
+      "summary": "Audio-reactive spatial flight visualization for Rokid waveguide glasses",
+      "description": "Apsis Warp Lab transforms surrounding sound into a reactive starfield cockpit on compatible Rokid waveguide glasses. Directional audio drives luminous objects, trails, radar contacts, and cockpit instrumentation, while sensor fusion, manual recentering, and depth-separated parallax respond to head movement. Audio analysis stays on the glasses, and the app requests no Internet access.",
+      "author": "Apsis AI",
+      "sourceUrl": "https://github.com/ridderek/Apsis-Warp-Releases",
+      "phoneRequired": false,
+      "publishedAt": "2026-09-28T18:14:26Z",
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/ridderek/Apsis-Warp-Releases/releases/download/v0.4.6-community-preview/Apsis-Warp-Lab-v0.4.6-Community-Preview.apk",
+          "sha256": "32c0a7361c0a91aa0f6446de4df25cd5092db16666697cd2d2847464d9d266cd",
+          "sizeBytes": 47352,
+          "packageName": "com.apsis.warp.lab",
+          "versionCode": 16,
+          "versionName": "0.4.6"
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nApsis Warp Lab turns compatible Rokid waveguide glasses into an audio-reactive spatial flight environment. Surrounding sound becomes luminous objects, trails, radar contacts, and cockpit instrumentation in real time.\n\n## Key Features\n- Directional audio visualization with stereo and mono fallback modes\n- Persistent bearing radar with contact history and localization confidence\n- Procedural stars, travelers, trails, echoes, ripples, and rare anomalies\n- Artificial horizon with wrap-safe yaw, pitch, and roll smoothing\n- Manual recentering and depth-separated parallax\n- Guided eight-sector microphone calibration\n\n## Privacy\nAudio analysis runs locally on the glasses. The app does not request Internet access and does not record, retain, upload, transmit, or transcribe audio.\n\n## Requirements\n- Compatible Rokid RG-series waveguide glasses\n- Microphone permission\n- Game rotation vector / IMU support\n\n## Notes\n- This is an experimental Community Preview\n- Do not use while driving or during safety-critical activities\n- Stop using the display if it causes discomfort, disorientation, headache, or visual strain\n- Independent community project; not affiliated with or endorsed by Rokid"
+      },
+      "releases": [
+        {
+          "version": "0.4.6",
+          "date": "2026-09-28T18:14:26Z",
+          "sourceReleaseUrl": "https://github.com/ridderek/Apsis-Warp-Releases/releases/tag/v0.4.6-community-preview",
+          "notes": "## Apsis Warp Lab v0.4.6 — Attitude & Depth\n\nCommunity Preview for compatible Rokid RG-series waveguide glasses.\n\n### What changed\n\n- Corrected the fused IMU coordinate frame for the glasses' optical/display orientation\n- Added wrap-safe yaw, pitch, and roll smoothing\n- Strengthened the artificial horizon while preserving restrained self-leveling\n- Added compact bank and pitch reference marks\n- Added manual Recenter View control\n- Increased parallax travel and widened depth separation while keeping the cockpit visually anchored\n- Preserved the spatial-audio pipeline, directional calibration, Sonic Constellations, controls, and long-wear visual restraint",
+          "changes": [
+            "Corrected the fused IMU coordinate frame for the glasses' optical/display orientation",
+            "Added wrap-safe yaw, pitch, and roll smoothing",
+            "Strengthened the artificial horizon with compact bank and pitch reference marks",
+            "Added manual Recenter View control",
+            "Increased parallax travel and widened depth separation"
+          ]
+        }
+      ],
+      "newUntil": "2026-09-30T18:14:26.000Z",
+      "iconAsset": "apsis-warp-lab.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/apsis-warp-lab.png",
+      "screenshotAssets": []
     },
     {
       "id": "assist-bridge",
