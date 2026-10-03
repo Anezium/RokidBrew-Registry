@@ -4,11 +4,19 @@
   "category": "Utility",
   "type": "glasses",
   "version": "2.6.2",
-  "summary": "Manage apps, photos, files, and settings directly on Rokid AI Glasses",
+  "summary": "Paid ($1.99 one-time, 3-day trial) · Manage apps, photos, files, and settings on Rokid glasses",
   "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
   "author": "Bruce",
   "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
   "phoneRequired": false,
+  "pricing": {
+    "model": "paid",
+    "price": "$1.99",
+    "currency": "USD",
+    "perDevice": true,
+    "trialDays": 3,
+    "activation": "online license check (developer server)"
+  },
   "artifacts": [
     {
       "target": "glasses",

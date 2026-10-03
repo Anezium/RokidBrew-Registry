@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T22:22:26.532Z",
+  "generatedAt": "2026-10-03T15:37:49.400Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -638,11 +638,19 @@
       "category": "Utility",
       "type": "glasses",
       "version": "2.6.2",
-      "summary": "Manage apps, photos, files, and settings directly on Rokid AI Glasses",
+      "summary": "Paid ($1.99 one-time, 3-day trial) · Manage apps, photos, files, and settings on Rokid glasses",
       "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
       "author": "Bruce",
       "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
       "phoneRequired": false,
+      "pricing": {
+        "model": "paid",
+        "price": "$1.99",
+        "currency": "USD",
+        "perDevice": true,
+        "trialDays": 3,
+        "activation": "online license check (developer server)"
+      },
       "artifacts": [
         {
           "target": "glasses",
@@ -3153,7 +3161,7 @@
       "category": "Utility",
       "type": "glasses",
       "version": "1.5",
-      "summary": "Legacy settings utility; see AI Glasses Manager for the current app",
+      "summary": "Legacy free 1.5 build; the current app is AI Glasses Manager (paid)",
       "description": "Legacy Rokid Manager 1.5 by Bruce. The app is now called AI Glasses Manager, with ongoing fixes and new features. This entry keeps the old 1.5 APK available; see the separate AI Glasses Manager listing for the current version.",
       "author": "Bruce",
       "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
