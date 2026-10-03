@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T22:22:26.532Z",
+  "generatedAt": "2026-10-03T10:27:18.001Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,57 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "gscp",
+      "name": "GSCP",
+      "category": "Utility",
+      "type": "phone",
+      "version": "1.2.3",
+      "summary": "View your glasses camera, HUD, and audio together on an Android phone",
+      "description": "GSCP combines the Rokid glasses camera view, HUD overlay, and audio into one live viewer with adjustable transparency, brightness, scale, rotation, and black-key blending. This APK installs on an arm64 Android phone. First configure the glasses connection using the Windows, macOS, or Linux desktop version and a USB data cable; then connect the phone and glasses to the same Wi-Fi network. Desktop builds also support wired viewing. The Android client is distributed under GPL-3.0.",
+      "author": "tonytsangzen",
+      "sourceUrl": "https://github.com/tonytsangzen/gscp",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.3/gscp_1.2.3_aarch64.apk",
+          "sha256": "d40392f0831db81e5a3b892285f3f8e0355d8252cc184dc783f71e0a93c79a7e",
+          "sizeBytes": 31220428,
+          "packageName": "com.gscp.desktop",
+          "versionCode": 1,
+          "versionName": "1.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.2.3",
+          "date": "2026-10-02T10:27:25Z",
+          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.3",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.1",
+          "date": "2026-09-21T11:59:45Z",
+          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.1",
+          "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v1.2.0...v1.2.1",
+          "changes": []
+        },
+        {
+          "version": "1.2.0",
+          "date": "2026-09-18T18:21:07Z",
+          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.0",
+          "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0",
+          "changes": []
+        }
+      ],
+      "publishedAt": "2026-10-02T10:27:25Z",
+      "newUntil": "2026-10-04T10:27:25.000Z",
+      "iconAsset": "gscp.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gscp.png",
+      "screenshotAssets": []
+    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -157,7 +208,7 @@
       "name": "R08 Access Bridge",
       "category": "Navigation",
       "type": "glasses",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "featured": true,
       "featuredRank": 2,
       "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
@@ -168,15 +219,22 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v2.0.1/R08-Access-Bridge-v2.0.1.apk",
-          "sha256": "97b674932eb504a54dc78ff625d772943f10149c475a8e0389649b448d3ec26e",
-          "sizeBytes": 18544074,
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v2.0.2/R08-Access-Bridge-v2.0.2.apk",
+          "sha256": "e64fb726ebd4a36aaa6137f2b64d9ae1e92e0cea60b1ed3b99dd5d8f1276ba83",
+          "sizeBytes": 18968891,
           "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 36,
-          "versionName": "2.0.1"
+          "versionCode": 37,
+          "versionName": "2.0.2"
         }
       ],
       "releases": [
+        {
+          "version": "2.0.2",
+          "date": "2026-09-27T14:04:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.2",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "2.0.1",
           "date": "2026-08-11T11:58:10Z",
@@ -225,13 +283,6 @@
           "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
           "notes": null,
           "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-06-28T11:02:53Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
         }
       ],
       "screenshotAssets": [
@@ -243,8 +294,8 @@
       "listing": {
         "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
       },
-      "publishedAt": "2026-08-11T11:58:10Z",
-      "newUntil": "2026-08-13T11:58:10.000Z",
+      "publishedAt": "2026-09-27T14:04:31Z",
+      "newUntil": "2026-09-29T14:04:31.000Z",
       "iconAsset": "r08-access-bridge.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
       "screenshotUrls": [
@@ -1548,8 +1599,8 @@
       "name": "GlassesReader",
       "category": "Reader",
       "type": "combo",
-      "version": "1.2.2",
-      "publishedAt": "2026-05-09",
+      "version": "2.0.0",
+      "publishedAt": "2026-09-30T12:47:03Z",
       "summary": "Phone app streams visible reading text to Rokid glasses via Bluetooth in real time",
       "description": "GlassesReader captures visible text from Android apps using accessibility services and streams it live to Rokid AR glasses. It supports Chinese reading apps like WeChat Reading and works with other readers exposing text to accessibility. The UI is in Chinese and requires Bluetooth connection to Rokid glasses.",
       "screenshotAssets": [
@@ -1562,12 +1613,12 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/conclean/RokidGlassesReader/releases/download/v1.2.2/GlassesReader_release_v1.2.2_20260329_152430.apk",
-          "sha256": "07ac5227399d535a83631eb0d8697b87aa121b45673917611ac71acfa540fb9c",
-          "sizeBytes": 20164541,
+          "url": "https://github.com/conclean/RokidGlassesReader/releases/download/v2.0.0/GlassesReader_release_v2.0.0_20260930_202640.apk",
+          "sha256": "35295c0ee1852c81872784e90891bd4c12134f1f134d2f6547b0765f332f7026",
+          "sizeBytes": 17662695,
           "packageName": "com.app.glassesreader",
-          "versionCode": 12,
-          "versionName": "1.2.2"
+          "versionCode": 21,
+          "versionName": "2.0.0-dev"
         }
       ],
       "author": "conclean",
@@ -1576,6 +1627,20 @@
         "descriptionMarkdown": "About GlassesReader\n\nGlassesReader is an Android companion app that captures visible text from the phone screen using accessibility services and streams it in real time to Rokid smart glasses via Bluetooth. It is designed primarily for Chinese reading apps such as WeChat Reading but also supports other reading scenarios where text is accessible.\n\nKey features\n\n- Intelligent text capture from foreground apps using accessibility service\n- Real-time text streaming to Rokid glasses with custom display pages\n- Automatic reconnection to previously paired Rokid devices\n- Dual control interfaces: main floating action button and draggable floating toggle\n- Adjustable display settings including brightness, font size, and text processing options\n\nHow it works\n\n- Requires enabling accessibility service, overlay permissions, and Bluetooth permissions\n- Connects to Rokid glasses via Bluetooth SDK\n- Captures screen text changes and pushes updates to glasses\n\nControls\n\n- Main floating action button to start/pause text streaming service\n- Floating toggle button to show/hide overlay and control service\n\nRequirements\n\n- Android 10 or higher\n- Bluetooth-enabled Android phone\n- Rokid smart glasses in pairing mode (disconnect official app first)\n\nNotes\n\n- Only one app can connect to Rokid glasses at a time; disconnect official app before connecting\n- Text capture depends on accessibility node availability; some apps using custom rendering may not be fully supported\n- UI is Chinese only\n\nFor more details and APK downloads, visit the [project homepage](https://glassesreader.conclean.top/) or the [GitHub repository](https://github.com/conclean/GlassesReader)."
       },
       "releases": [
+        {
+          "version": "2.0.0",
+          "date": "2026-09-30T12:47:03Z",
+          "sourceReleaseUrl": "https://github.com/conclean/RokidGlassesReader/releases/tag/v2.0.0",
+          "notes": "重要版本更新\n- 使用全新的CXR-L SDK\n- 支持与Rokid AI 官方应用同时使用！\n- 去除自制AR截图与AR录屏，欢迎使用官方原生功能记录\n- 不再需要蓝牙权限\n- 优化部分页面UI样式\n- 支持荣耀AI键控制翻页\n\n版本更新较大\n如有任何异常故障，欢迎直接联系我的小红书：conclean",
+          "changes": [
+            "使用全新的CXR-L SDK",
+            "支持与Rokid AI 官方应用同时使用！",
+            "去除自制AR截图与AR录屏，欢迎使用官方原生功能记录",
+            "不再需要蓝牙权限",
+            "优化部分页面UI样式",
+            "支持荣耀AI键控制翻页"
+          ]
+        },
         {
           "version": "1.2.2",
           "date": "2026-03-29T07:31:33Z",
@@ -1612,7 +1677,7 @@
           "changes": []
         }
       ],
-      "newUntil": "2026-05-11T00:00:00.000Z",
+      "newUntil": "2026-10-02T12:47:03.000Z",
       "iconAsset": "glasses-reader.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/glasses-reader.png",
       "screenshotUrls": [
@@ -1805,48 +1870,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glow-reader-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/glow-reader-4.png"
       ]
-    },
-    {
-      "id": "gscp",
-      "name": "GSCP",
-      "category": "Utility",
-      "type": "phone",
-      "version": "1.2.1",
-      "summary": "View your glasses camera, HUD, and audio together on an Android phone",
-      "description": "GSCP combines the Rokid glasses camera view, HUD overlay, and audio into one live viewer with adjustable transparency, brightness, scale, rotation, and black-key blending. This APK installs on an arm64 Android phone. First configure the glasses connection using the Windows, macOS, or Linux desktop version and a USB data cable; then connect the phone and glasses to the same Wi-Fi network. Desktop builds also support wired viewing. The Android client is distributed under GPL-3.0.",
-      "author": "tonytsangzen",
-      "sourceUrl": "https://github.com/tonytsangzen/gscp",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.1/gscp_1.2.1_aarch64.apk",
-          "sha256": "bbd4e7d8c256e06cce0f4d1c6a8ee8b5299174ea0feaf1fa7f260591509d77ca",
-          "sizeBytes": 6221602,
-          "packageName": "com.gscp.desktop",
-          "versionCode": 1,
-          "versionName": "1.0"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.2.1",
-          "date": "2026-09-21T11:59:45Z",
-          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.1",
-          "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v1.2.0...v1.2.1",
-          "changes": []
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-09-18T18:21:07Z",
-          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.0",
-          "notes": "**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0\n\n**Full Changelog**: https://github.com/tonytsangzen/gscp/compare/v0.2.0...v1.2.0",
-          "changes": []
-        }
-      ],
-      "iconAsset": "gscp.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gscp.png",
-      "screenshotAssets": []
     },
     {
       "id": "hubu",
@@ -2325,28 +2348,28 @@
       "name": "M365 Rokid HUD",
       "category": "Mobility",
       "type": "combo",
-      "version": "1.4.0",
+      "version": "1.5.2",
       "summary": "BLE scooter telemetry HUD for Rokid glasses with real-time Xiaomi M365 data display",
       "description": "M365 Rokid HUD connects to Xiaomi M365 scooters via BLE to show real-time telemetry on Rokid AR glasses. The phone app manages BLE and the glasses app renders the HUD. Requires Android 10+ and Bluetooth permissions.",
       "phoneRequired": true,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.4.0/M365-Rokid-HUD-glasses-v1.4.0.apk",
-          "sha256": "0f36911ba9b1c1ad349e6127566355605161e1cf38aafc330cab0a4881dcd284",
-          "sizeBytes": 9799187,
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.5.2/M365-Rokid-HUD-glasses-v1.5.2.apk",
+          "sha256": "6efee99559f49d3f1c040b82de64280b4318d702a6dcc0b9c58f44d1195b98a3",
+          "sizeBytes": 1951249,
           "packageName": "com.m365hud.glass",
-          "versionCode": 5,
-          "versionName": "1.4.0"
+          "versionCode": 8,
+          "versionName": "1.5.2"
         },
         {
           "target": "phone",
-          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.4.0/M365-Rokid-HUD-phone-v1.4.0.apk",
-          "sha256": "1272150e7573020eb563cecbb6271325654793e6db3cc6555254a0b6c9c25266",
-          "sizeBytes": 27086808,
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.5.2/M365-Rokid-HUD-phone-v1.5.2.apk",
+          "sha256": "62e0f2b0073fba52a67ba300733c969dcbcc424ad0b8223e6dfa6cd6551fb0ab",
+          "sizeBytes": 7853154,
           "packageName": "com.m365bleapp",
-          "versionCode": 7,
-          "versionName": "1.4.0"
+          "versionCode": 11,
+          "versionName": "1.5.2"
         }
       ],
       "author": "zero2005x",
@@ -2355,6 +2378,22 @@
         "descriptionMarkdown": "# About\nM365 Rokid HUD is an Android app that connects to Xiaomi/Ninebot M365 electric scooters via Bluetooth Low Energy (BLE) and displays real-time telemetry on Rokid AR glasses as a heads-up display (HUD).\n\n# Key Features\n- Automatic BLE scanning and discovery of nearby M365 scooters\n- Secure pairing with ECDH key exchange and token-based login\n- Real-time telemetry including speed, battery, temperature, and mileage\n- Remote motor lock/unlock and tail light control\n- Signal quality and data freshness indicators on the HUD\n- Multi-language support (11 languages)\n- Modern UI built with Jetpack Compose and Material3\n\n# How It Works\n- The phone app connects to the scooter via BLE and handles all communication.\n- Enable the \"Rokid HUD Gateway\" on the phone app to broadcast telemetry data.\n- The Rokid glasses app scans for the phone's gateway and displays telemetry in AR.\n\n# Requirements\n- Android 10 (API 29) or higher on the phone\n- Bluetooth and Location permissions for BLE scanning\n- Rokid AR glasses with the companion HUD app installed\n\n# Notes\n- Registration unpairs the scooter from other apps; register only your own devices.\n- Disable battery optimization on the phone app to maintain stable BLE connection.\n- The HUD shows speed, scooter battery, phone battery, glasses battery, current time, and signal quality.\n\n# Source\n[GitHub Repository](https://github.com/zero2005x/M365-Rokid-HUD)"
       },
       "releases": [
+        {
+          "version": "1.5.2",
+          "date": "2026-10-01T07:37:42Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.5.2",
+          "notes": "# v1.5.2 — Per-model scooter detection, Play Console fixes, full translations | 依型號辨識滑板車、Play Console 修正、翻譯補齊\n\nPhone app `com.m365bleapp` versionCode 11, glasses app `com.m365hud.glass`\nversionCode 8. Both report versionName 1.5.2.\n\n手機端 `com.m365bleapp` versionCode 11，眼鏡端 `com.m365hud.glass` versionCode 8，\nversionName 皆為 1.5.2。\n\nThis is the first GitHub Release since v1.4.0 and it includes everything from\n1.5.0 and 1.5.1:\n\n- **1.5.0** has no GitHub Release. Its notes are in\n  `doc/RELEASE_NOTES_v1.5.0.md`.\n- **1.5.1** (versionCode 10) went to Google Play only. The `v1.5.1` tag exists,\n  but its release workflow failed before publishing, so there is no GitHub\n  Release for it. Its notes are in `doc/RELEASE_NOTES_v1.5.1.md`.\n- **1.5.2** adds per-model scooter detection on top of 1.5.1.\n\n這是 v1.4.0 之後的第一個 GitHub Release，內容包含 1.5.0 與 1.5.1 的全部變更：\n\n- **1.5.0** 沒有 GitHub Release，說明見 `doc/RELEASE_NOTES_v1.5.0.md`。\n- **1.5.1**（versionCode 10）僅發佈於 Google Play。`v1.5.1` tag 雖然存在，但其發布\n  流程在發布前失敗，所以沒有對應的 GitHub Release，說明見 `doc/RELEASE_NOTES_v1.5.1.md`。\n- **1.5.2** 在 1.5.1 之上新增依型號辨識滑板車。\n\n---\n\n## ⚠️ Experimental — not verified on a scooter | 實驗性 — 未經實車驗證\n\nThe model detection added in this release is covered by unit tests only and has\nnot been verified on a scooter. Support for Ninebot-family scooters rests on\nstatic reverse engineering, and the register layouts for those families are not\nestablished (see `doc/MODEL_SUPPORT.md`). Controls are capability-gated per\nmodel and demo data is marked `DEMO`. Do not rely on any reading or command as\ncorrect until it is verified on your scooter.\n\n本版新增的型號辨識僅有單元測試涵蓋，尚未在實車上驗證。對 Ninebot 系列滑板車的支援\n建立在靜態逆向分析上，這些車系的暫存器配置尚未確立（見 `doc/MODEL_SUPPORT.md`）。\n控制項依車型能力顯示，示範資料標記為 `DEMO`。在你的滑板車上驗證之前，切勿把任何讀數\n或命令當成正確。\n\n---\n\n## Downloads | 檔案下載\n\n| File 檔案 | Format 格式 | Description | 說明 |\n| :--- | :---: | :--- | :--- |\n| **M365-Rokid-HUD-phone-v1.5.2.apk** | APK | Phone app — M365 BLE client + Rokid gateway (sideload) | 手機端 — M365 BLE 客戶端 + Rokid 閘道（側載安裝） |\n| **M365-Rokid-HUD-glasses-v1.5.2.apk** | APK | Glasses app — Rokid AR HUD display (sideload) | 眼鏡端 — Rokid AR HUD 顯示（側載安裝） |\n| **M365-Rokid-HUD-phone-v1.5.2.aab** | AAB | Phone app — Google Play publishing bundle | 手機端 — Google Play 發佈用 App Bundle |\n| **M365-Rokid-HUD-glasses-v1.5.2.aab** | AAB | Glasses app — Google Play publishing bundle | 眼鏡端 — Google Play 發佈用 App Bundle |\n| **SHA256SUMS.txt** | Checksums | SHA256 hashes for all release artifacts | 所有產物的 SHA256 校驗值 |\n\nVerify downloads | 下載校驗：\n```bash\nsha256sum -c SHA256SUMS.txt\n```\n\nSigned with the same release key as v1.4.0 (`SHA256 7C:A3:A3:F7:…`), so existing\ninstalls update by sideload without uninstalling.\n以與 v1.4.0 相同的 release key 簽章（`SHA256 7C:A3:A3:F7:…`），既有安裝可直接側載\n升級，無需先解除安裝。\n\n---\n\n## Highlights | 重點更新\n\n### 1. New in 1.5.2: per-model scooter detection | 1.5.2 新增：依型號辨識滑板車\n- Scooters are now recognised by the model code in their BLE advertisement\n  (manufacturer data, company id `0x424E`). The advertised name stays as a\n  fallback and is reported as unverified. Only codes this project can name are\n  mapped; an unknown code falls back instead of being forced onto the nearest\n  model.\n- The GATT characteristic lookup now scans every discovered service instead of\n  only the expected one, so a device that exposes the same characteristics under\n  a different service no longer fails silently. The expected service is tried\n  first, so existing devices behave as before.\n- Per-model board addressing in the Rust core, documented in\n  `doc/MODEL_SUPPORT.md`. The Xiaomi profiles keep the addresses the code\n  already used.\n- 現在會依 BLE 廣播中的型號代碼（廠商自訂資料，company id `0x424E`）辨識滑板車；\n  廣播名稱僅作為備援，並標示為未驗證。只對應本專案能確認的代碼，未知代碼會走備援\n  流程，不會被硬套到最接近的車型。\n- GATT 特徵查找現在會掃描所有已探索的服務，而非只找預期的服務，因此將相同特徵放在\n  其他服務下的裝置不再無聲失敗。預期的服務會優先嘗試，既有裝置行為不變。\n- Rust 核心新增依車型的板子位址，記錄於 `doc/MODEL_SUPPORT.md`。小米車型沿用程式\n  原本使用的位址。\n\n### 2. From 1.5.1: Play Console fixes | 來自 1.5.1：Play Console 修正\n- Narrowed R8 keep rules: phone DEX 22.5 MB → 2.5 MB, with the large majority of\n  classes now renamed (96% phone, 99% glasses in this build). This clears the\n  Play \"DEX optimization 13%\" warning.\n- Edge-to-edge is set up by the app itself and no longer uses the deprecated\n  `LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES`.\n- 收窄 R8 keep 規則：手機端 DEX 22.5 MB → 2.5 MB，絕大多數類別已混淆（本版手機端\n  96%、眼鏡端 99%），解決 Play「DEX 最佳化 13%」警告。\n- 無邊框顯示改由 app 自行處理，不再使用已淘汰的\n  `LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES`。\n\n### 3. From 1.5.1: translations and layout | 來自 1.5.1：翻譯與版面\n- All 10 translations completed (58–72 missing strings each).\n- Arabic now lays out right-to-left.\n- Motor lock buttons no longer break in Russian / Ukrainian.\n- Demo Ride switch in Settings reflects its state.\n- Refreshed store screenshots for 11 languages and a promo video.\n- 補齊 10 種語言翻譯（每種缺 58–72 條）。\n- 阿拉伯文改為由右至左版面。\n- 修正俄文／烏克蘭文的馬達鎖定按鈕版面。\n- 設定中的模擬騎乘開關會正確顯示狀態。\n- 更新 11 種語言商店截圖與宣傳影片。\n\n### 4. Build and release pipeline | 建置與發布流程\n- Release builds no longer compile Rokid CXR-M credentials into the app, and the\n  release workflow scans every artifact for them before publishing.\n- Fixed the release workflow aborting on the scan's \"nothing configured\" result,\n  which is the normal state in CI.\n- Both modules report versionName 1.5.2.\n- 發布版不再把 Rokid CXR-M 憑證編進 app，發布流程會在上架前掃描每個產物。\n- 修正發布流程在掃描回傳「未設定憑證」（CI 的正常狀態）時中止的問題。\n- 兩個模組的 versionName 皆為 1.5.2。\n\n---\n\n## Play \"What's new\" text | Play「最新異動」文字\n\nen-US:\n\n```\n• Recognises scooters by their model code\n• Fully translated into all 11 supported languages\n• Arabic now displays right-to-left\n• Smaller, faster app (optimized release build)\n• Better display on Android 15 edge-to-edge screens\n```\n\nzh-TW:\n\n```\n• 依型號代碼辨識滑板車\n• 11 種語言翻譯全數補齊\n• 阿拉伯文改為由右至左顯示\n• 安裝檔更小、執行更有效率\n• 改善 Android 15 無邊框畫面的顯示\n```\n\n## Build | 建置\n\nUpload the matching `mapping-*.txt` to Play Console for readable crash reports.\n`libninebot_ffi.so` must be present for all four ABIs with 16 KB `PT_LOAD`\nalignment, and `scripts/verify-bundle-secrets.sh` should report no Rokid\ncredential in either bundle.\n\n請一併上傳對應的 `mapping-*.txt` 至 Play Console，以取得可讀的當機報告。四種 ABI 都必須\n含有 16 KB 對齊的 `libninebot_ffi.so`，且 `scripts/verify-bundle-secrets.sh` 應顯示兩個\nbundle 內都沒有 Rokid 憑證。",
+          "changes": [
+            "1.5.0 has no GitHub Release. Its notes are in",
+            "1.5.1 (versionCode 10) went to Google Play only. The v1.5.1 tag exists,",
+            "1.5.2 adds per-model scooter detection on top of 1.5.1.",
+            "1.5.0 沒有 GitHub Release，說明見 doc/RELEASENOTESv1.5.0.md。",
+            "1.5.1（versionCode 10）僅發佈於 Google Play。v1.5.1 tag 雖然存在，但其發布",
+            "1.5.2 在 1.5.1 之上新增依型號辨識滑板車。",
+            "Scooters are now recognised by the model code in their BLE advertisement",
+            "The GATT characteristic lookup now scans every discovered service instead of"
+          ]
+        },
         {
           "version": "1.4.0",
           "date": "2026-09-11T16:13:26Z",
@@ -2393,8 +2432,8 @@
           "changes": []
         }
       ],
-      "publishedAt": "2026-09-11T16:13:26Z",
-      "newUntil": "2026-09-13T16:13:26.000Z",
+      "publishedAt": "2026-10-01T07:37:42Z",
+      "newUntil": "2026-10-03T07:37:42.000Z",
       "iconAsset": "m365-rokid-hud.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/m365-rokid-hud.png",
       "screenshotAssets": []
@@ -3203,7 +3242,7 @@
       "name": "Rokid Nexus",
       "category": "Launcher",
       "type": "combo",
-      "version": "1.4.11",
+      "version": "1.5.0",
       "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
       "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
       "author": "Anezium",
@@ -3212,24 +3251,31 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.11/nexus-glasses-1.4.11.apk",
-          "sha256": "f5745465eabd6cd9d8f14891b3ce9459dc18049a73fa50b2a0fa0137e4e93775",
-          "sizeBytes": 19326155,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.5.0/nexus-glasses-1.5.0.apk",
+          "sha256": "dbed54ffbac6cc5640900f30e262abf408a99bb7e4d5e60367c3fd7a99e492e0",
+          "sizeBytes": 19427719,
           "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10411,
-          "versionName": "1.4.11"
+          "versionCode": 10500,
+          "versionName": "1.5.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.11/nexus-phone-1.4.11.apk",
-          "sha256": "625a0d85b4fd465394c2204f690f437fbeaabf17366c118a55811eec57e40dd5",
-          "sizeBytes": 18621381,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.5.0/nexus-phone-1.5.0.apk",
+          "sha256": "401a4fbc2e95679bc37a746942104ba45f42ff9446a65b37fac0e87beee38dd8",
+          "sizeBytes": 18713289,
           "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10411,
-          "versionName": "1.4.11"
+          "versionCode": 10500,
+          "versionName": "1.5.0"
         }
       ],
       "releases": [
+        {
+          "version": "1.5.0",
+          "date": "2026-09-26T20:14:49Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.5.0",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "1.4.11",
           "date": "2026-09-22T12:55:59Z",
@@ -3278,20 +3324,6 @@
           "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
           "notes": null,
           "changes": []
-        },
-        {
-          "version": "1.4.3",
-          "date": "2026-08-11T22:13:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.11",
-          "date": "2026-08-07T19:10:51Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
-          "notes": null,
-          "changes": []
         }
       ],
       "screenshotAssets": [
@@ -3304,8 +3336,8 @@
       "listing": {
         "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
       },
-      "publishedAt": "2026-09-19T21:19:43Z",
-      "newUntil": "2026-09-21T21:19:43.000Z",
+      "publishedAt": "2026-09-26T20:14:49Z",
+      "newUntil": "2026-09-28T20:14:49.000Z",
       "iconAsset": "rokid-nexus.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
       "screenshotUrls": [
