@@ -3,8 +3,8 @@
   "name": "GlassesReader",
   "category": "Reader",
   "type": "combo",
-  "version": "1.2.2",
-  "publishedAt": "2026-05-09",
+  "version": "2.0.0",
+  "publishedAt": "2026-09-30T12:47:03Z",
   "summary": "Phone app streams visible reading text to Rokid glasses via Bluetooth in real time",
   "description": "GlassesReader captures visible text from Android apps using accessibility services and streams it live to Rokid AR glasses. It supports Chinese reading apps like WeChat Reading and works with other readers exposing text to accessibility. The UI is in Chinese and requires Bluetooth connection to Rokid glasses.",
   "screenshotAssets": [
@@ -17,12 +17,12 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/conclean/RokidGlassesReader/releases/download/v1.2.2/GlassesReader_release_v1.2.2_20260329_152430.apk",
-      "sha256": "07ac5227399d535a83631eb0d8697b87aa121b45673917611ac71acfa540fb9c",
-      "sizeBytes": 20164541,
+      "url": "https://github.com/conclean/RokidGlassesReader/releases/download/v2.0.0/GlassesReader_release_v2.0.0_20260930_202640.apk",
+      "sha256": "35295c0ee1852c81872784e90891bd4c12134f1f134d2f6547b0765f332f7026",
+      "sizeBytes": 17662695,
       "packageName": "com.app.glassesreader",
-      "versionCode": 12,
-      "versionName": "1.2.2"
+      "versionCode": 21,
+      "versionName": "2.0.0-dev"
     }
   ],
   "author": "conclean",
@@ -31,6 +31,20 @@
     "descriptionMarkdown": "About GlassesReader\n\nGlassesReader is an Android companion app that captures visible text from the phone screen using accessibility services and streams it in real time to Rokid smart glasses via Bluetooth. It is designed primarily for Chinese reading apps such as WeChat Reading but also supports other reading scenarios where text is accessible.\n\nKey features\n\n- Intelligent text capture from foreground apps using accessibility service\n- Real-time text streaming to Rokid glasses with custom display pages\n- Automatic reconnection to previously paired Rokid devices\n- Dual control interfaces: main floating action button and draggable floating toggle\n- Adjustable display settings including brightness, font size, and text processing options\n\nHow it works\n\n- Requires enabling accessibility service, overlay permissions, and Bluetooth permissions\n- Connects to Rokid glasses via Bluetooth SDK\n- Captures screen text changes and pushes updates to glasses\n\nControls\n\n- Main floating action button to start/pause text streaming service\n- Floating toggle button to show/hide overlay and control service\n\nRequirements\n\n- Android 10 or higher\n- Bluetooth-enabled Android phone\n- Rokid smart glasses in pairing mode (disconnect official app first)\n\nNotes\n\n- Only one app can connect to Rokid glasses at a time; disconnect official app before connecting\n- Text capture depends on accessibility node availability; some apps using custom rendering may not be fully supported\n- UI is Chinese only\n\nFor more details and APK downloads, visit the [project homepage](https://glassesreader.conclean.top/) or the [GitHub repository](https://github.com/conclean/GlassesReader)."
   },
   "releases": [
+    {
+      "version": "2.0.0",
+      "date": "2026-09-30T12:47:03Z",
+      "sourceReleaseUrl": "https://github.com/conclean/RokidGlassesReader/releases/tag/v2.0.0",
+      "notes": "重要版本更新\n- 使用全新的CXR-L SDK\n- 支持与Rokid AI 官方应用同时使用！\n- 去除自制AR截图与AR录屏，欢迎使用官方原生功能记录\n- 不再需要蓝牙权限\n- 优化部分页面UI样式\n- 支持荣耀AI键控制翻页\n\n版本更新较大\n如有任何异常故障，欢迎直接联系我的小红书：conclean",
+      "changes": [
+        "使用全新的CXR-L SDK",
+        "支持与Rokid AI 官方应用同时使用！",
+        "去除自制AR截图与AR录屏，欢迎使用官方原生功能记录",
+        "不再需要蓝牙权限",
+        "优化部分页面UI样式",
+        "支持荣耀AI键控制翻页"
+      ]
+    },
     {
       "version": "1.2.2",
       "date": "2026-03-29T07:31:33Z",
