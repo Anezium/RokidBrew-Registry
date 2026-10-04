@@ -357,3 +357,9 @@ Useful inputs:
 5. Daily registry maintenance opens PRs for new releases, metadata, and icons
 6. (Optional) Add or adjust screenshots manually
 ```
+
+## License
+
+Licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE) for attribution.
+
+Contributions are accepted under the same license (Apache-2.0, section 5) — no CLA required.
