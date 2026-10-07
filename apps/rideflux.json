@@ -1,0 +1,81 @@
+{
+  "id": "rideflux",
+  "name": "RideFlux",
+  "category": "Mobility",
+  "type": "combo",
+  "version": "0.1.10",
+  "summary": "See electric-unicycle telemetry and alerts on your phone and Rokid HUD.",
+  "description": "RideFlux connects an Android phone to an electric unicycle over BLE and can send speed, battery, temperature, and ride alerts to the Rokid HUD. It also provides live charts, wheel parameters, and trip recording. The author develops and tests it with a Begode A2 and Rokid RV101; support for other wheel protocols has varying validation levels. Install the phone app and the separate glasses HUD. Both APKs require Android 9 or later.",
+  "author": "zero2005x",
+  "sourceUrl": "https://github.com/zero2005x/RideFlux",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/zero2005x/RideFlux/releases/download/v0.1.10/hud-app-release.apk",
+      "sha256": "9dee72de13e918351b6e9c5810643c96b2e2b33147afc5b660a14386dc66381e",
+      "sizeBytes": 4371358,
+      "packageName": "com.rideflux.hud",
+      "versionCode": 11,
+      "versionName": "0.1.10"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/zero2005x/RideFlux/releases/download/v0.1.10/app-release.apk",
+      "sha256": "28c310698aec737fc7195c01350b6eaa7efb3fcb0f645ab2f9d5634ef997944c",
+      "sizeBytes": 6750170,
+      "packageName": "com.rideflux.app",
+      "versionCode": 11,
+      "versionName": "0.1.10"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.1.10",
+      "date": "2026-10-01T07:24:20Z",
+      "sourceReleaseUrl": "https://github.com/zero2005x/RideFlux/releases/tag/v0.1.10",
+      "notes": "## What's Changed\n* Fix phone↔HUD BLE bridge pairing: token identity, GATT registration gating, scan budget by @zero2005x in https://github.com/zero2005x/RideFlux/pull/1\n* ci: bump actions/setup-java from 5 to 6 in the github-actions group by @dependabot[bot] in https://github.com/zero2005x/RideFlux/pull/2\n* Improve RideFlux BLE connectivity: bridge stability, unclassified wheel discovery, and classifier coverage by @zero2005x with @Copilot in https://github.com/zero2005x/RideFlux/pull/3\n* Fix Kotlin type inference failure in WheelCodecFactoryImplTest by @zero2005x with @Copilot in https://github.com/zero2005x/RideFlux/pull/4\n* Add 17-language localization, correct README drift, cover domain contracts by @zero2005x in https://github.com/zero2005x/RideFlux/pull/6\n* feat: prepare RideFlux for Google Play Store release by @zero2005x in https://github.com/zero2005x/RideFlux/pull/7\n* Bump app and HUD to 0.1.6 (versionCode 7) by @zero2005x in https://github.com/zero2005x/RideFlux/pull/8\n* Add privacy policy for the Play Store listing by @zero2005x in https://github.com/zero2005x/RideFlux/pull/9\n* Add Play Store listing assets and generator tooling by @zero2005x in https://github.com/zero2005x/RideFlux/pull/10\n* Prepare 0.1.8: bridge autostart off, readable control labels, README by @zero2005x in https://github.com/zero2005x/RideFlux/pull/11\n* Fix 16 KB page compatibility for Play release by @zero2005x in https://github.com/zero2005x/RideFlux/pull/12\n* Upgrade to AGP 9.4.0, Gradle 9.6.0 and Kotlin 2.3.21 by @zero2005x in https://github.com/zero2005x/RideFlux/pull/14\n* Point JaCoCo aggregate at AGP 9's Kotlin class output by @zero2005x in https://github.com/zero2005x/RideFlux/pull/15\n* Bump app and HUD to 0.1.10 (versionCode 11) by @zero2005x in https://github.com/zero2005x/RideFlux/pull/13\n* Improve new-code coverage for Android-backed logic by @zero2005x in https://github.com/zero2005x/RideFlux/pull/16\n* Fix JaCoCo class selection under the configuration cache and cover three untested units by @zero2005x in https://github.com/zero2005x/RideFlux/pull/18\n* Read the Veteran frame length from offset 3, not from the voltage by @zero2005x in https://github.com/zero2005x/RideFlux/pull/19\n* Fix three InMotion I1 decoder defects reproduced on real frames by @zero2005x in https://github.com/zero2005x/RideFlux/pull/20\n* Ask for the battery pack size instead of guessing Begode's charge by @zero2005x in https://github.com/zero2005x/RideFlux/pull/17\n* Rebuild the glasses bridge when Bluetooth restarts by @zero2005x in https://github.com/zero2005x/RideFlux/pull/21\n* Stop streaming to glasses as soon as they are removed from the approved list by @zero2005x in https://github.com/zero2005x/RideFlux/pull/22\n* Ask for the notification permission when a feature that needs it is turned on by @zero2005x in https://github.com/zero2005x/RideFlux/pull/23\n* Keep MainActivity running when a Bluetooth input device connects or drops by @zero2005x in https://github.com/zero2005x/RideFlux/pull/24\n* Tell the rider when notifications are off and where to turn them on by @zero2005x in https://github.com/zero2005x/RideFlux/pull/25\n* Restart the glasses' bridge link when it stays open but goes silent by @zero2005x in https://github.com/zero2005x/RideFlux/pull/26\n\n## New Contributors\n* @zero2005x made their first contribution in https://github.com/zero2005x/RideFlux/pull/1\n* @dependabot[bot] made their first contribution in https://github.com/zero2005x/RideFlux/pull/2\n* @zero2005x with @Copilot made their first contribution in https://github.com/zero2005x/RideFlux/pull/3\n\n**Full Changelog**: https://github.com/zero2005x/RideFlux/commits/v0.1.10",
+      "changes": [
+        "Fix phone↔HUD BLE bridge pairing: token identity, GATT registration gating, scan budget by @zero2005x in https://github.com/zero2005x/RideFlux/pull/1",
+        "ci: bump actions/setup-java from 5 to 6 in the github-actions group by @dependabot[bot] in https://github.com/zero2005x/RideFlux/pull/2",
+        "Fix Kotlin type inference failure in WheelCodecFactoryImplTest by @zero2005x with @Copilot in https://github.com/zero2005x/RideFlux/pull/4",
+        "Add 17-language localization, correct README drift, cover domain contracts by @zero2005x in https://github.com/zero2005x/RideFlux/pull/6",
+        "feat: prepare RideFlux for Google Play Store release by @zero2005x in https://github.com/zero2005x/RideFlux/pull/7",
+        "Bump app and HUD to 0.1.6 (versionCode 7) by @zero2005x in https://github.com/zero2005x/RideFlux/pull/8",
+        "Add privacy policy for the Play Store listing by @zero2005x in https://github.com/zero2005x/RideFlux/pull/9",
+        "Add Play Store listing assets and generator tooling by @zero2005x in https://github.com/zero2005x/RideFlux/pull/10"
+      ]
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "zero2005x/RideFlux",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "zero2005x/RideFlux",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^hud-app-release\\.apk$"
+      },
+      {
+        "target": "phone",
+        "match": "^app-release\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "## About\nRideFlux connects an Android phone to an electric unicycle over BLE and can send speed, battery, temperature, and ride alerts to the Rokid HUD. It also provides live charts, wheel parameters, and trip recording. The author develops and tests it with a Begode A2 and Rokid RV101; support for other wheel protocols has varying validation levels. Install the phone app and the separate glasses HUD. Both APKs require Android 9 or later."
+  },
+  "publishedAt": "2026-10-01T07:24:20Z",
+  "screenshotAssets": [
+    "rideflux-01-dashboard.png",
+    "rideflux-02-live-charts.png",
+    "rideflux-04-trip-recording.png",
+    "rideflux-06-hud.png"
+  ],
+  "iconAsset": "rideflux.png"
+}

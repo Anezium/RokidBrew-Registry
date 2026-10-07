@@ -1,0 +1,66 @@
+{
+  "id": "restep",
+  "name": "ReStep",
+  "category": "Utility",
+  "type": "combo",
+  "version": "0.18 / Android 0.1 (preview)",
+  "summary": "Capture disassembly photos and voice notes, then follow the steps in reverse.",
+  "description": "ReStep records repair or disassembly photos and spoken notes on Rokid RG-glasses, syncs them to a phone, and presents the steps in reverse order for reassembly. Offline Russian and English voice commands and temple taps control capture. This preview pairs glasses 0.18 with Android companion 0.1; an iPhone companion is available separately upstream. The glasses flow was exercised on RG-glasses/Android 12, but Android Bluetooth pairing and direct Wi-Fi transfer still need physical-phone validation. The Android companion requires Android 10 or later.",
+  "author": "oldmelnick-afk",
+  "sourceUrl": "https://github.com/oldmelnick-afk/restep",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/oldmelnick-afk/restep/releases/download/preview-2026-10/restep-glasses-v0.18.apk",
+      "sha256": "49ca320f6c9f163129f8adfed2d5bda5c85d9afa1f55828d601928965db2a69e",
+      "sizeBytes": 104017949,
+      "packageName": "com.rocketglasses.soberyobratno",
+      "versionCode": 18,
+      "versionName": "0.18"
+    },
+    {
+      "target": "phone",
+      "url": "https://github.com/oldmelnick-afk/restep/releases/download/preview-2026-10/ReStep-Android-v0.1.apk",
+      "sha256": "921ab8c8fbc1ec3d6c4870b5087e69a909b91b9b6f338847b2be603bb5e152c8",
+      "sizeBytes": 3086694,
+      "packageName": "com.rocketglasses.restep.phone",
+      "versionCode": 1,
+      "versionName": "0.1"
+    }
+  ],
+  "releases": [
+    {
+      "version": "preview-2026-10",
+      "date": "2026-10-02T23:55:11Z",
+      "sourceReleaseUrl": "https://github.com/oldmelnick-afk/restep/releases/tag/preview-2026-10",
+      "notes": "Hands-free capture: say Take photo, dictate the step, then Send.\n\nInstall the glasses APK on RG-glasses; the Android APK on an Android 10+ PHONE; re-sign the iPhone IPA with Sideloadly/AltStore. Standard iPhone build, no Auto Wi-Fi.\n\nAndroid phone build/lint and two focused emulator checks passed; physical Android BLE/Wi-Fi transfer is not yet verified. See README for controls, permissions and testing limits.\n\nTags: Rokid, smart glasses, hands-free, repair, Android, iOS.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "oldmelnick-afk/restep",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "oldmelnick-afk/restep",
+    "release": "preview-2026-10",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^restep-glasses-v(?<version>\\d+(?:\\.\\d+)*)\\.apk$"
+      },
+      {
+        "target": "phone",
+        "match": "^ReStep-Android-v(?<version>\\d+(?:\\.\\d+)*)\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "## About\nReStep records repair or disassembly photos and spoken notes on Rokid RG-glasses, syncs them to a phone, and presents the steps in reverse order for reassembly. Offline Russian and English voice commands and temple taps control capture. This preview pairs glasses 0.18 with Android companion 0.1; an iPhone companion is available separately upstream. The glasses flow was exercised on RG-glasses/Android 12, but Android Bluetooth pairing and direct Wi-Fi transfer still need physical-phone validation. The Android companion requires Android 10 or later."
+  },
+  "publishedAt": "2026-10-02T23:55:11Z",
+  "iconAsset": "restep.png"
+}

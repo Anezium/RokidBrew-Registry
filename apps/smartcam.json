@@ -1,0 +1,35 @@
+{
+  "id": "smartcam",
+  "author": "ShaBP",
+  "sourceUrl": "https://github.com/ShaBP/smartcam-rokid-apk",
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "ShaBP/smartcam-rokid-apk",
+    "path": "README.md",
+    "branch": "main"
+  },
+  "name": "SmartCam",
+  "category": "Camera",
+  "type": "glasses",
+  "version": "2.0.0",
+  "summary": "Record rolling video clips hands-free on Rokid AI Glasses.",
+  "description": "SmartCam is a proprietary freemium rolling video recorder for Rokid AI Glasses. Free mode saves three-minute interval clips; Pro adds MARK, Total Recall, marked-only saves, and more interval lengths. Camera and microphone permissions are required, and recordings stay on the glasses. Pro uses per-device activation; the upstream documentation currently describes a test/sandbox checkout. This entry distributes the upstream APK, not source code.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://raw.githubusercontent.com/ShaBP/smartcam-rokid-apk/main/SmartCam-Freemium-v2.0.0.apk",
+      "sha256": "ca76b5d57a2d70451392cec0686ef2719c2811530831b0235b5adfc4e3c31799",
+      "sizeBytes": 6353474,
+      "packageName": "com.shabp.rokid.intervalrecorder",
+      "versionCode": 34,
+      "versionName": "2.0.0"
+    }
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About\nSmartCam is a proprietary freemium rolling video recorder for Rokid AI Glasses. Free mode saves three-minute interval clips; Pro adds MARK, Total Recall, marked-only saves, and more interval lengths. Camera and microphone permissions are required, and recordings stay on the glasses. Pro uses per-device activation; the upstream documentation currently describes a test/sandbox checkout. This entry distributes the upstream APK, not source code."
+  },
+  "releases": [],
+  "iconAsset": "smartcam.png",
+  "publishedAt": "2026-09-30T09:24:40Z"
+}

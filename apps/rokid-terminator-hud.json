@@ -1,0 +1,63 @@
+{
+  "id": "rokid-terminator-hud",
+  "name": "Rokid Terminator HUD",
+  "category": "Experiment",
+  "type": "glasses",
+  "version": "0.9",
+  "summary": "Try a sci-fi camera HUD with face tracking and head-motion radar.",
+  "description": "Fan-made sci-fi HUD built and launched on Rokid RG-glasses running Android 12. The glasses camera tracks a face, runs a visual scan sequence, and draws a translucent reticle; IMU readings animate a relative-orientation radar. The dossiers are fictional and the animated coordinates are not GPS. This is an entertainment demo, not a person-identification tool. Other Rokid models are untested.",
+  "author": "oldmelnick-afk",
+  "sourceUrl": "https://github.com/oldmelnick-afk/rokid-terminator-hud",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://github.com/oldmelnick-afk/rokid-terminator-hud/releases/download/v0.9/rokid-terminator-hud-v0.9.apk",
+      "sha256": "899b63b00a842b504750602eed738b54f3421a48a7e51ce8c63a073da5abc546",
+      "sizeBytes": 44139115,
+      "packageName": "com.rocketglasses.terminatorpreview",
+      "versionCode": 9,
+      "versionName": "0.9-rokid-branding"
+    }
+  ],
+  "releases": [
+    {
+      "version": "0.9",
+      "date": "2026-10-03T09:16:26Z",
+      "sourceReleaseUrl": "https://github.com/oldmelnick-afk/rokid-terminator-hud/releases/tag/v0.9",
+      "notes": "Corrects the displayed heading to ROKID / TERMINATOR. Runtime colors and behavior are unchanged from v0.7. Includes APK, source ZIP and refreshed promotional images. Build and package metadata verified; installation of this update on glasses is pending USB connection.",
+      "changes": []
+    },
+    {
+      "version": "0.7",
+      "date": "2026-10-01T17:25:09Z",
+      "sourceReleaseUrl": "https://github.com/oldmelnick-afk/rokid-terminator-hud/releases/tag/v0.7",
+      "notes": "First public fan-made HUD build for Rokid Glasses (RG-glasses, Android 12).\n\n**Download:** `rocket-terminator-hud-v0.7.apk` below. Install on the glasses with `adb install -r rocket-terminator-hud-v0.7.apk`, then open **Terminator HUD** in the glasses launcher and allow camera access. The APK is for the glasses, not the iPhone companion app.\n\n**Included:** face tracking and translucent reticle; scan/target sequence; 16 fictional dossier cards; playful smile/gesture score; animated telemetry and rotation-sensor radar. Camera analysis runs locally.\n\n`rokid-terminator-hud-source-v0.7.zip` contains the Android project source. The preview image in the README is a concept visualization with a generated person.\n\n**SHA-256 (APK):** `14FEC85247D52F8C2698767C824753996FE9600DFF64FFD0F6EBCF5E21B6C060`\n\nLimitations: distance is approximate; profile fields are fictional; azimuth is relative, not magnetic north. See the README for details and the real no-face screen capture.",
+      "changes": []
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "oldmelnick-afk/rokid-terminator-hud",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "oldmelnick-afk/rokid-terminator-hud",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "glasses",
+        "match": "^rokid-terminator-hud-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "## About\nFan-made sci-fi HUD built and launched on Rokid RG-glasses running Android 12. The glasses camera tracks a face, runs a visual scan sequence, and draws a translucent reticle; IMU readings animate a relative-orientation radar. The dossiers are fictional and the animated coordinates are not GPS. This is an entertainment demo, not a person-identification tool. Other Rokid models are untested."
+  },
+  "publishedAt": "2026-10-03T09:16:26Z",
+  "screenshotAssets": [
+    "rokid-terminator-hud-screenshot-glasses-no-face.png"
+  ],
+  "iconAsset": "rokid-terminator-hud.png"
+}

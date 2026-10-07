@@ -1,0 +1,35 @@
+{
+  "id": "warlock-camera",
+  "author": "Warlock94",
+  "sourceUrl": "https://github.com/Warlock94/WarlockCamera",
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "Warlock94/WarlockCamera",
+    "path": "README.md",
+    "branch": "main"
+  },
+  "name": "Warlock Camera",
+  "category": "Camera",
+  "type": "glasses",
+  "version": "2.6.1",
+  "summary": "Take photos and record video directly on Rokid RV101.",
+  "description": "Native Camera2 camera app for Rokid RV101, with live preview, photos, video recording, configurable preview position, and temple-button controls. This entry uses the upstream public 2.6.1 APK. Button events and camera behavior depend on firmware; the project README does not establish physical RV101 validation.",
+  "phoneRequired": false,
+  "artifacts": [
+    {
+      "target": "glasses",
+      "url": "https://raw.githubusercontent.com/Warlock94/WarlockCamera/main/apk/WarlockCamera2_RV101_v2.6.1.apk",
+      "sha256": "e3d7c229ab85e2d6c6536c94d3861ea995c3e316202e7174e9c9fcee1e18efd9",
+      "sizeBytes": 4361996,
+      "packageName": "com.warlock.rokidcamera",
+      "versionCode": 37,
+      "versionName": "2.6.1"
+    }
+  ],
+  "listing": {
+    "descriptionMarkdown": "## About\nNative Camera2 camera app for Rokid RV101, with live preview, photos, video recording, configurable preview position, and temple-button controls. This entry uses the upstream public 2.6.1 APK. Button events and camera behavior depend on firmware; the project README does not establish physical RV101 validation."
+  },
+  "releases": [],
+  "iconAsset": "warlock-camera.png",
+  "publishedAt": "2026-09-27T10:07:08Z"
+}

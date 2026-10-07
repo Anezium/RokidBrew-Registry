@@ -1,0 +1,62 @@
+{
+  "id": "rokidlab",
+  "name": "RokidLab",
+  "category": "Utility",
+  "type": "phone",
+  "version": "4.1",
+  "summary": "Manage Rokid glasses with AI, mirroring, files, ADB tools, and RokidBrew.",
+  "description": "RokidLab turns an Android phone into a control center for Rokid glasses. It includes a RokidBrew app store, OpenAI-compatible voice and vision assistance, two-way screen mirroring, wireless file management, ADB tools, and Bluetooth HID controls. The phone APK bundles the RokidLink glasses helper and installs it from within the app. Android 10 or later is required on the phone.",
+  "author": "mdloverm",
+  "sourceUrl": "https://github.com/mdloverm/RokidLab",
+  "phoneRequired": true,
+  "artifacts": [
+    {
+      "target": "phone",
+      "url": "https://github.com/mdloverm/RokidLab/releases/download/v4.1/RokidLab-v4.1-release.apk",
+      "sha256": "466fddb6c0ab96c39c41b9f824fd1e2d358455c7a2d02530c4fdd2e1e8d07742",
+      "sizeBytes": 63887683,
+      "packageName": "com.rokidlab.phone",
+      "versionCode": 26,
+      "versionName": "4.1"
+    }
+  ],
+  "releases": [
+    {
+      "version": "4.1",
+      "date": "2026-09-26T01:17:14Z",
+      "sourceReleaseUrl": "https://github.com/mdloverm/RokidLab/releases/tag/v4.1",
+      "notes": "## RokidLab v4.1 正式版\n\n### ✨ 新功能\n- **屏幕操作（无障碍）**：AI 可读屏 / 点击 / 滑动 / 按键 / 输入，直接替你操作任意 App\n  - 读屏取元素树而非截图，更省更快更准；新增无障碍截屏通道，不再每次弹系统授权框\n  - 需在设置 → 本机执行环境 → 无障碍服务中开通\n- **本机网页预览**：容器里拉起常驻网页服务，聊天页实时预览，点开即看\n- **模型供应商管理**：内置 12 家品牌预设，密钥 Keystore 加密，支持拉取模型清单与余额查询\n- **聊天富卡片**：公式（KaTeX）/ 图表（mermaid）/ 表格 / 文件 / 音视频，全部本地离线渲染\n- 聊天输入栏上拉面板：一键切换供应商与模型\n- 容器产出文件自动成卡，单次最多 3 个\n- 眼镜端 ASR 推送双通道（WiFi 优先、蓝牙兜底）+ 下行链路自愈\n\n### 🔧 修复\n- 中文 txt 乱码（改走 GB18030 / UTF-16 解码链）\n- 图片按 EXIF 校正方向\n- 文件卡 SAF 授权过期后打不开\n- 眼镜端 RFCOMM 推送监听失败后永久死亡（退避重建）\n\n### 📦 眼镜端\n- RokidLink 4.1（versionCode 19），内置 R8 混淆 release 包，随手机端一同安装",
+      "changes": [
+        "屏幕操作（无障碍）：AI 可读屏 / 点击 / 滑动 / 按键 / 输入，直接替你操作任意 App",
+        "读屏取元素树而非截图，更省更快更准；新增无障碍截屏通道，不再每次弹系统授权框",
+        "需在设置 → 本机执行环境 → 无障碍服务中开通",
+        "本机网页预览：容器里拉起常驻网页服务，聊天页实时预览，点开即看",
+        "模型供应商管理：内置 12 家品牌预设，密钥 Keystore 加密，支持拉取模型清单与余额查询",
+        "聊天富卡片：公式（KaTeX）/ 图表（mermaid）/ 表格 / 文件 / 音视频，全部本地离线渲染",
+        "聊天输入栏上拉面板：一键切换供应商与模型",
+        "容器产出文件自动成卡，单次最多 3 个"
+      ]
+    }
+  ],
+  "listingSource": {
+    "type": "githubReadme",
+    "repo": "mdloverm/RokidLab",
+    "path": "README.md"
+  },
+  "update": {
+    "source": "githubReleaseAssets",
+    "repo": "mdloverm/RokidLab",
+    "release": "latest",
+    "assets": [
+      {
+        "target": "phone",
+        "match": "^RokidLab-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)-release\\.apk$"
+      }
+    ]
+  },
+  "listing": {
+    "descriptionMarkdown": "## About\nRokidLab turns an Android phone into a control center for Rokid glasses. It includes a RokidBrew app store, OpenAI-compatible voice and vision assistance, two-way screen mirroring, wireless file management, ADB tools, and Bluetooth HID controls. The phone APK bundles the RokidLink glasses helper and installs it from within the app. Android 10 or later is required on the phone."
+  },
+  "publishedAt": "2026-09-26T01:17:14Z",
+  "iconAsset": "rokidlab.png"
+}
