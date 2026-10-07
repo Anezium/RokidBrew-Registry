@@ -3,7 +3,7 @@
   "name": "Rokid Nexus",
   "category": "Launcher",
   "type": "combo",
-  "version": "1.4.11",
+  "version": "1.6.0",
   "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
   "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
   "author": "Anezium",
@@ -12,24 +12,31 @@
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.11/nexus-glasses-1.4.11.apk",
-      "sha256": "f5745465eabd6cd9d8f14891b3ce9459dc18049a73fa50b2a0fa0137e4e93775",
-      "sizeBytes": 19326155,
+      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.6.0/nexus-glasses-1.6.0.apk",
+      "sha256": "0d2f793365c4eb671aa97781fba3bdf0c3f9e0fc801e66f7a29b61ca453a6e53",
+      "sizeBytes": 19394743,
       "packageName": "com.anezium.rokidbus.glasses",
-      "versionCode": 10411,
-      "versionName": "1.4.11"
+      "versionCode": 10600,
+      "versionName": "1.6.0"
     },
     {
       "target": "phone",
-      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.11/nexus-phone-1.4.11.apk",
-      "sha256": "625a0d85b4fd465394c2204f690f437fbeaabf17366c118a55811eec57e40dd5",
-      "sizeBytes": 18621381,
+      "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.6.0/nexus-phone-1.6.0.apk",
+      "sha256": "670fce743485d84afe98ac804fbd8f34b32d0f304ef901890d0d59740c39a847",
+      "sizeBytes": 19122681,
       "packageName": "com.anezium.rokidbus.phone",
-      "versionCode": 10411,
-      "versionName": "1.4.11"
+      "versionCode": 10600,
+      "versionName": "1.6.0"
     }
   ],
   "releases": [
+    {
+      "version": "1.6.0",
+      "date": "2026-10-07T15:49:01Z",
+      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.6.0",
+      "notes": "\nInstall both Nexus hubs 1.6.0 and Patcher 1.0.0 for guided YouTube setup.\n\n- Open native Android apps from the glasses launcher, with cached app icons.\n- Guide MicroG installation, stock YouTube download, on-phone patching, and Google\n  sign-in through Keyboard & remote. Nexus never reads Google accounts or tokens.\n- Opening YouTube or MicroG restores the glasses' Wi-Fi radio when needed.\n  Automatic phone-keyboard opening for YouTube remains an explicit preference.\n\n- Use the target-aware Patcher plugin for YouTube setup, keeping signer-bound approval,\n  result-byte validation, same-signer CXR updates and confirmed-install records.\n- Patcher replaces the unpublished YouTube Patcher package and generates a new key;\n  existing output needs an imported backup or an explicit manual reinstall on glasses.\n- YouTube setup says what to expect from Patcher: about 6–7 minutes, kept going in a\n  small window while you use other apps, then checked and installed by Nexus. When a\n  patched APK is waiting, step 3 leads with Install on glasses and says whether the\n  glasses still need connecting.\n- Returning to setup while a patch is pending offers **Open Patcher** to check\n  progress or use the saved result, without claiming the patch has stopped.\n- Ready notifications carry the completed job to the existing Patcher window,\n  including after activity recreation, so its authenticated result reaches Nexus.\n\n",
+      "changes": []
+    },
     {
       "version": "1.4.11",
       "date": "2026-09-22T12:55:59Z",
@@ -78,20 +85,6 @@
       "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
       "notes": null,
       "changes": []
-    },
-    {
-      "version": "1.4.3",
-      "date": "2026-08-11T22:13:23Z",
-      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
-      "notes": null,
-      "changes": []
-    },
-    {
-      "version": "1.2.11",
-      "date": "2026-08-07T19:10:51Z",
-      "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
-      "notes": null,
-      "changes": []
     }
   ],
   "listingSource": {
@@ -124,5 +117,5 @@
   "listing": {
     "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
   },
-  "publishedAt": "2026-09-19T21:19:43Z"
+  "publishedAt": "2026-10-07T15:49:01Z"
 }

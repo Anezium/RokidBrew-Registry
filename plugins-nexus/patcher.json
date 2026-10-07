@@ -1,0 +1,45 @@
+{
+  "id": "patcher",
+  "kind": "nexus-plugin",
+  "name": "Patcher",
+  "category": "Utility",
+  "summary": "Patch YouTube on your phone for the Rokid glasses.",
+  "description": "Choose the stock YouTube APK, review the Rokid and Morphe patches, and follow the work on your phone. Nexus checks the signed result and installs it on the glasses. Patching takes about 6–7 minutes with the screen or floating window visible.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+  "publishedAt": "2026-10-07T15:47:45Z",
+  "iconAsset": "patcher-icon.png",
+  "screenshotAssets": [
+    "patcher-phone.png",
+    "patcher-youtube-feed.png",
+    "patcher-youtube-player.png"
+  ],
+  "listing": {
+    "descriptionMarkdown": "## YouTube for the glasses\n\nPatcher builds a signed YouTube APK on your phone with Rokid touchpad and R08 ring controls: a one-card feed, Sections and Search, a player rail, and speed, quality and caption options. Review the selected patches before starting; Rokid controls, GmsCore support and the other compatible Morphe patches are available in the same screen. Your APK stays on your phone.\n\n## Using it\n\nInstall both Nexus hubs 1.6.0, install Patcher from the Nexus Store and approve it in Plugin access. Open **Glasses apps → Set up YouTube** in Nexus. The setup guides MicroG installation, the stock YouTube 21.04.223 download, patching, installation on the glasses, and Google sign-in with **Keyboard & remote**. Nexus never reads your Google accounts or tokens.\n\nPatching takes about **6–7 minutes** with the patch screen or floating window visible. You can use other apps while the small window keeps the job going. Locking the phone or closing that window makes it much slower. The notification lets you reopen the patch screen or cancel the current job; a saved result remains available when you return. Keep the glasses connected for installation.\n\nIn YouTube's home feed, **Back opens Sections; another Back returns to the Rokid launcher**. Both the touchpad and R08 controls keep an exit route.\n\n## Keep YouTube updatable\n\nPatcher creates a private signing key on your phone. Export a password-protected backup from its Signing key section before removing the plugin. Later APK updates must use that same key. If a different patcher signed the installed YouTube, import its compatible key backup or explicitly remove and reinstall YouTube yourself; Nexus does not remove it to bypass the signing check.\n\n## Needs\n\nA phone running Android 11 or newer, Nexus 1.6.0 on the phone and glasses, and stock YouTube 21.04.223. Patcher is a phone-only tool opened through Nexus, with no launcher entry on the glasses. Its source is GPL-3.0-only and uses Morphe Patcher with the Rokid 1.39.1-rokid.3 bundle."
+  },
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-07T15:47:45Z",
+      "notes": "\n- Deliver ready-notification job identity to the existing hub-attached window and\n  preserve it across recreation. Nexus setup offers Open Patcher while waiting.\n- Ship the Rokid patches 1.39.1-rokid.3 bundle: the first-launch \"Restart required\"\n  dialog and other Morphe dialogs now work with the glasses touchpad and the R08 ring.\n- Enter picture-in-picture while a patch runs and design that window: a label with a\n  breathing dot, a large elapsed clock, the live line and a thin phosphor bar, closing\n  in the outcome's colour at the end, with a Cancel action.\n- Say honestly that a patch takes about 6–7 minutes with the screen or the floating\n  window visible and much longer hidden or locked; drop the \"a few minutes\" and\n  \"turn the display off\" claims everywhere.\n- Name substeps in plain words with grouped class counts and decimal megabytes, show a\n  notification bar only for measured movement, and put the substep and elapsed time in\n  the notification text. The ready notification asks to keep the glasses connected.\n- Show how old a saved result is above a plain \"Use this result\" action when Nexus asks\n  again, and phrase every fallback message as what happened, then what to do.\n- Rename the unpublished plugin to Patcher (`:plugin-patcher`, package\n  `com.anezium.rokidbus.plugin.patcher`, id `patcher`). The new package generates a\n  new private signing key; import a portable backup or manually reinstall YouTube\n  on the glasses. Nexus still refuses signer changes and never uninstalls for you.\n- Run explicit file preparation and patch jobs in a `dataSync` foreground service\n  in `:patcher`, with notifications, explicit cancellation and a timed wake lock.\n  App switches, screen-off and activity recreation preserve the job; interrupted\n  work is reported with retry and completed results remain available on return.\n- Add typed observable phases, byte/patch fractions, completed patch counts and\n  monotonic elapsed time. Keep remaining time unknown until it can be estimated.\n- Show the patch as a live screen: a ticking elapsed clock, a phosphor bar that fills\n  when the amount is known and sweeps when it is not (static when animations are\n  off), the current sub-phase, the last applied patch with its count, and five stages\n  marked done, current or upcoming. Success, failure, cancelled and interrupted each\n  explain themselves and offer the next step; nothing resets silently.\n- Name the target and the phase in notifications, with elapsed time and Cancel while\n  running and a result channel for ready, failed, cancelled and interrupted. Tapping\n  one returns to the live screen even when it sits in the hub's task.\n- Ask for notification permission once, at the first patch, with the reason shown\n  beforehand; patching runs the same when it is denied.\n- Log each measured phase under `Patcher`; atomically move the verified result,\n  avoid the activity's redundant result hash/manifest read and retain stock for retries.\n- Make stock signer/version/API-range checks, bundle pin/source, defaults and output\n  identity target data. YouTube is the first target. Require a target id in the\n  activity hand-off and keep signer-bound hub approval and byte validation intact.\n\n- Add phone-only YouTube patching with real Morphe Patcher 1.7.0 and build-time\n  Android preparation of the pinned genuine Rokid patch bundle.\n- Validate stock identity and every split signature, merge splits for the glasses,\n  expose compatible editable patch defaults and persist choices by version.\n- Add visible progress, dedicated-process cancellation, persistent signing,\n  authenticated password-protected key backups and content-URI/share/save output.\n- Add JVM tests; complete phone-to-glasses patching and installation passed on real devices.\n- Target the glasses: fixed `arm64-v8a` ABI, every density split kept for a\n  density-universal merge, 32-bit-only input refused, and the merged manifest\n  verified to carry no split requirement.\n- Keep patching across rotation and other configuration changes; only explicit Cancel\n  stops the patch job. Back and closing the screen leave it running.\n- Bound result retention: 24 hours at most, results older than the newest one after\n  10 minutes, never the result being handed to the hub.\n- Remember an online bundle update rejected for its content (no Android DEX, wrong\n  patcher API, or no compatible patches) so it is not downloaded again until its\n  version or URL changes or the plugin is reinstalled or updated; load the bundle\n  once per screen opening.\n- Switch to a different prepared bundle shipped in a plugin update on the next\n  opening, after validation, forgetting earlier update rejections.\n- Add tests for the GmsCore package default and bundle updates.\n- Release CI: `patcher-v<semver>` tags (requiring a dedicated\n  `read:packages` secret), unit tests in the Tests workflow, and GitHub Packages\n  credentials passed only to this plugin's Gradle steps.\n- Build on Windows: platform classpath separator and a configurable Python\n  interpreter (`-PpythonExecutable`); the D8 and platform paths follow the SDK\n  components AGP uses and name any missing one.\n- Reproducible `bundled.mpp`: fixed ZIP metadata for the added DEX, so its recorded\n  SHA-256 is stable across builds.\n- Keep dependency licence and notice files in the APK and list every runtime\n  dependency with its licence in `NOTICE`.\n\n### Artifact\n\n- File: `patcher-phone-release.apk`\n- SHA-256: `fb2625c8d6fe4b26b6e5585c58571d7a1b74600cc0a3d89a177f84887d629f48`\n"
+    }
+  ],
+  "nexus": {
+    "pluginId": "patcher",
+    "apiVersion": 3,
+    "capabilities": [],
+    "launchable": false,
+    "settingsActivity": ".PatchActivity",
+    "minHostVersionCode": 10600
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/patcher-v1.0.0/patcher-phone-release.apk",
+    "sha256": "fb2625c8d6fe4b26b6e5585c58571d7a1b74600cc0a3d89a177f84887d629f48",
+    "sizeBytes": 36086093,
+    "packageName": "com.anezium.rokidbus.plugin.patcher",
+    "versionCode": 1,
+    "versionName": "1.0.0",
+    "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
+  }
+}
