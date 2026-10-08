@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T15:51:09.765Z",
+  "generatedAt": "2026-10-08T08:56:34.568Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -4706,6 +4706,44 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-wifi-on-3.jpg",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-wifi-on-4.png"
       ]
+    },
+    {
+      "id": "xiaozhi-glasses",
+      "name": "Xiaozhi Voice Assistant",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "rokid-xiaozhi",
+      "summary": "Voice conversations with Xiaozhi AI on Rokid AR glasses",
+      "description": "Xiaozhi Voice Assistant brings voice-based AI conversations to Rokid AR glasses. Connect to Wi-Fi to start listening, speak naturally, and hear AI replies, with conversation history and audio activity shown on a green matrix-style interface.",
+      "author": "mdloverm",
+      "sourceUrl": "https://github.com/mdloverm/rokid-xiaozhi",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/mdloverm/rokid-xiaozhi/releases/download/rokid-xiaozhi/app-release-signed.apk",
+          "sha256": "dd5c755dafdcdec3c9548ca754de4aafaf57c03dee21bde11ea59ceeea787f59",
+          "sizeBytes": 15277540,
+          "packageName": "com.rokid.xiaozhi",
+          "versionCode": 1,
+          "versionName": "1.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "rokid-xiaozhi",
+          "date": "2026-05-24T02:43:26Z",
+          "sourceReleaseUrl": "https://github.com/mdloverm/rokid-xiaozhi/releases/tag/rokid-xiaozhi",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "About\n\nXiaozhi Voice Assistant is a voice conversation app for Rokid AR glasses, with a green matrix-style interface. After connecting to Wi-Fi and the server, the app listens for speech, plays AI replies, and returns to listening for the next turn.\n\nKey features\n- Voice-driven conversations with audio replies\n- Conversation history and connection status on screen\n- Dynamic waveform display while speaking\n- Automatic Wi-Fi connection attempt, with Wi-Fi settings shown if needed\n\nHow it works\n- On first launch, the app requests microphone and network permissions.\n- Once connected, speak to begin a conversation. The app recognizes speech, plays the AI response, and resumes listening."
+      },
+      "iconAsset": "xiaozhi-glasses.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/xiaozhi-glasses.png",
+      "screenshotAssets": []
     },
     {
       "id": "your-voice",
