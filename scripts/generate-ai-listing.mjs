@@ -18,7 +18,7 @@ import {
 } from "./lib-github-content.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const defaultModel = process.env.OPENROUTER_MODEL || "openai/gpt-4.1-mini";
+const defaultModel = process.env.OPENROUTER_MODEL || "openai/gpt-6-luna";
 const openRouterUrl = "https://openrouter.ai/api/v1/chat/completions";
 
 const usage = `Usage:

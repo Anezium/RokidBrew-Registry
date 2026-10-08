@@ -22,7 +22,7 @@ on:
       model:
         description: "OpenRouter model"
         required: false
-        default: "openai/gpt-4.1-mini"
+        default: "openai/gpt-6-luna"
       release_limit:
         description: "Number of GitHub Releases to copy into releases[]"
         required: false

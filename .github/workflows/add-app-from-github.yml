@@ -65,7 +65,7 @@ on:
       model:
         description: "OpenRouter model for README description"
         required: false
-        default: "openai/gpt-4.1-mini"
+        default: "openai/gpt-6-luna"
       dry_run:
         description: "Generate only, without creating a PR"
         required: false
