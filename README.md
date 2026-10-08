@@ -341,7 +341,7 @@ Useful inputs:
 | `repo` | Optional `owner/repo` override if it cannot be inferred. |
 | `readme_path` | Optional README path inside the repo. |
 | `readme_ref` | Optional branch, tag, or SHA. |
-| `model` | OpenRouter model, defaults to `openai/gpt-4.1-mini`. |
+| `model` | OpenRouter model, defaults to `openai/gpt-6-luna`. |
 | `release_limit` | Number of GitHub Releases to copy into `releases[]`. |
 | `dry_run` | Runs generation without creating a PR. |
 
