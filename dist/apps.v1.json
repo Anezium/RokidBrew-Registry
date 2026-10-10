@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T09:02:11.087Z",
+  "generatedAt": "2026-10-10T12:25:47.087Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -18,7 +18,7 @@
       "name": "Rokid Nexus",
       "category": "Launcher",
       "type": "combo",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
       "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
       "author": "Anezium",
@@ -26,25 +26,34 @@
       "phoneRequired": true,
       "artifacts": [
         {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.6.0/nexus-glasses-1.6.0.apk",
-          "sha256": "0d2f793365c4eb671aa97781fba3bdf0c3f9e0fc801e66f7a29b61ca453a6e53",
-          "sizeBytes": 19394743,
-          "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10600,
-          "versionName": "1.6.0"
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-phone-1.7.0.apk",
+          "sha256": "2c198eaf4b3e64d91e91de86be9df74b4d27c9c55f60b1dd706f960815592593",
+          "sizeBytes": 19409086,
+          "packageName": "com.anezium.rokidbus.phone",
+          "versionCode": 10700,
+          "versionName": "1.7.0",
+          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
         },
         {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.6.0/nexus-phone-1.6.0.apk",
-          "sha256": "670fce743485d84afe98ac804fbd8f34b32d0f304ef901890d0d59740c39a847",
-          "sizeBytes": 19122681,
-          "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10600,
-          "versionName": "1.6.0"
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-glasses-1.7.0.apk",
+          "sha256": "899a736f7d00a4c915c69cd68dfc59b1e8f5c93a0d8128fc05894e890cf5226e",
+          "sizeBytes": 19722531,
+          "packageName": "com.anezium.rokidbus.glasses",
+          "versionCode": 10700,
+          "versionName": "1.7.0",
+          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
         }
       ],
       "releases": [
+        {
+          "version": "1.7.0",
+          "date": "2026-10-10T12:24:32Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.0",
+          "notes": "\nUpdate both Nexus hubs together and install Patcher 1.1.0 for the integrated YouTube and Reddit guides. Reddit remains Preview: physical R08 and real Reddit writes have not been validated. This app release does not publish an Assistant update.\n\nPlugins that publish no skill catalog keep working unchanged, and a plugin built with the new SDK keeps working on older hubs: every skills call reports the hub as not supporting skills instead of sending.\n\n### Phone hub\n\n- Move the complete YouTube/MicroG tutorial and the Reddit tutorial into Patcher's app entries. Glasses apps keeps the installed-app inventory and opening actions, without duplicate setup cards. Keep the handoff caller authenticated and both tutorials private.\n- Add official Reddit 2026.14.0 complete-APKM verification, native installation inventory and the existing explicit auto-keyboard preference for Reddit search and replies. Credentials stay in Reddit.\n- **Skills.** A plugin can publish typed operations in a catalog the hub reads\n  without starting it; an approved caller, Assistant first, invokes them\n  through the hub. The hub stamps both identities, validates arguments and\n  results against a bounded schema, hands out opaque expiring references\n  instead of the provider's identifiers, reuses the outcome of an exact\n  duplicate, refuses excess work as busy, and ends every call within 15\n  seconds. A provider is bound for the call only, never opened, and cannot\n  draw, notify, or listen on the strength of it. Revocation, package changes,\n  and a caller or provider going away end calls, and late answers are\n  dropped. The bus inspector shows each outcome without its content.\n- **Per-operation consent.** A provider's Plugin access screen lists its\n  operations with one switch per operation and assistant, all off, under a\n  note that results may reach the assistant's AI provider. A changed\n  operation needs approving again; an invalid catalog shows why instead of\n  failing the plugin.\n- New grants `skills_provider` and `skills_client`, requested through their\n  own metadata keys so older hubs keep loading those plugins. Requesting one\n  returns an installed plugin to Pending for approval.\n\n### Plugin SDK\n\n- Skills for providers (`onNexusSkillInvoked`, `NexusSkillInvocation`) and\n  callers (`requestSkillCatalog`, `invokeSkill`, `cancelSkill`,\n  `closeSkillSession`), gated on `supportsSkills`.\n- `NexusGuidancePlanner`, `NexusGuidanceStep`, and `NexusGuidanceGlyphs`: the\n  guidance-to-activity planner Navigation used, now shared.\n- `holdNexusOngoingWork` / `releaseNexusOngoingWork` for an ongoing process\n  the wearer started, such as journey guidance.\n\n### Glasses hub\n\n- Preserve the launcher session stack and shared input arbiter, so Back returns through logical stops without trapping users in an app or reopening a dismissed overlay.\n- Keep native Reddit opening and inventory alongside YouTube, with the existing trusted hub-to-hub remote input path.\n\n",
+          "changes": []
+        },
         {
           "version": "1.6.0",
           "date": "2026-10-07T15:49:01Z",
@@ -112,8 +121,8 @@
       "listing": {
         "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
       },
-      "publishedAt": "2026-10-07T15:49:01Z",
-      "newUntil": "2026-10-09T15:49:01.000Z",
+      "publishedAt": "2026-10-10T12:24:32Z",
+      "newUntil": "2026-10-12T12:24:32.000Z",
       "iconAsset": "rokid-nexus.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
       "screenshotUrls": [
@@ -122,117 +131,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
-      ]
-    },
-    {
-      "id": "rokid-lumen",
-      "name": "Rokid Lumen",
-      "category": "Launcher",
-      "type": "combo",
-      "version": "0.2.0-beta.18",
-      "summary": "Run a web-app launcher on Rokid RG glasses with Meta Neural Band controls.",
-      "description": "Rokid Lumen is a beta launcher and web-app platform for Rokid RG glasses with a 480x640 monochrome HUD. Meta Neural Band gestures navigate apps, notifications, and text input; the Android companion relays phone notifications, dictation, and connectivity. Install the glasses APK and the separate companion APK. The glasses APK requires Android 10 or later; the arm64 phone companion requires Android 12 or later. A Meta Neural Band is required for the documented control workflow. Lumen Telegram, WhatsApp, Reddit, and Instagram are separate web apps, not APKs.",
-      "author": "beyondlevi",
-      "sourceUrl": "https://github.com/beyondlevi/rokid-lumen",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/beyondlevi/rokid-lumen/releases/download/v0.2.0-beta.18/rokid-lumen-glasses-0.2.0-beta.18.apk",
-          "sha256": "4fdef88c024a58d6efb0d88c6195243904773ae49dc385a17088ca0e42d23b3a",
-          "sizeBytes": 116587588,
-          "packageName": "dev.lumen.glasses",
-          "versionCode": 20018,
-          "versionName": "0.2.0-beta.18"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/beyondlevi/rokid-lumen/releases/download/v0.2.0-beta.18/rokid-lumen-companion-0.2.0-beta.18.apk",
-          "sha256": "af284a2ac184715386f6606d43fa3e82840e94c39f3b909f4500dee6d8898414",
-          "sizeBytes": 9357274,
-          "packageName": "dev.lumen.companion",
-          "versionCode": 20018,
-          "versionName": "0.2.0-beta.18"
-        }
-      ],
-      "releases": [
-        {
-          "version": "0.2.0-beta.18",
-          "date": "2026-10-06T21:08:54Z",
-          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.18",
-          "notes": "### Companion\n\n- **Air Mouse on the phone** (experimental): a phone profile can put it on a gesture. A cursor\n  shows in the middle of the screen and your forearm moves it; the index pinch is a finger there\n  (tap, long press, hold and move to drag and scroll), the middle pinch is Back, and the same\n  gesture hides it. Its speed, steadiness and flick boost are sliders in the Phone settings. It\n  goes through Screen gestures, the accessibility service the screen actions already use.\n- The Glasses settings list every gesture of the glasses, with the actions grouped and\n  **Restore the default gestures**, and the glasses' Air Mouse sliders.\n\n### Glasses\n\n- **Every band gesture is mappable** on the glasses (the navigation was fixed), with the same\n  defaults as before.\n- **Air Mouse on the glasses** (experimental): the same cursor on the display, from any gesture.\n  It taps apps and web pages, and on Lumen's home the tab, app, control or notification under it.",
-          "changes": [
-            "Air Mouse on the phone (experimental): a phone profile can put it on a gesture. A cursor",
-            "The Glasses settings list every gesture of the glasses, with the actions grouped and",
-            "Every band gesture is mappable on the glasses (the navigation was fixed), with the same",
-            "Air Mouse on the glasses (experimental): the same cursor on the display, from any gesture."
-          ]
-        },
-        {
-          "version": "0.2.0-beta.17",
-          "date": "2026-10-06T19:19:39Z",
-          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.17",
-          "notes": "### Companion\n\n- **Air Mouse** (experimental): with the band on a computer, a gesture turns it on and the same\n  gesture off; off and on again is the clutch, to set the arm somewhere comfortable while the\n  pointer stays. The forearm moves the pointer like a mouse (relative, steadied while the arm is\n  still, accelerated on a flick); the index pinch is the left button and the middle pinch the\n  right one, held to drag; swipes keep their actions. Pointer speed, steadiness and flick boost\n  are sliders in the Computer settings. Ported from kinesis' experimental air cursor.\n\n### Band\n\n- The orientation and gyro samples reach the air mouse (they were read and dropped before), with\n  their lateness measured by the band's clock: late data is skipped and a held button let go.",
-          "changes": [
-            "Air Mouse (experimental): with the band on a computer, a gesture turns it on and the same",
-            "The orientation and gyro samples reach the air mouse (they were read and dropped before), with"
-          ]
-        },
-        {
-          "version": "0.2.0-beta.16",
-          "date": "2026-10-06T15:18:19Z",
-          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.16",
-          "notes": "### Companion\n\n- **The band on a computer**: **Other device**, the switch's third choice, keeps the band on the\n  phone and makes the phone a computer's Bluetooth keyboard and mouse, with nothing to install\n  there. Pair from the computer's Bluetooth settings (a computer already paired with the phone\n  is listed); the phone reconnects to the last one by itself.\n- **Computer profiles**: *Notebook* (scrolling, desktops, Enter, Esc, writing) and *Presentation*\n  (the arrows), plus your own, with keys, macOS desktops and Mission Control, the app switcher,\n  scrolling, media, volume and brightness; the phone's switch gesture moves between them.\n- **Writing on the computer**: a gesture turns the band's handwriting on and types each letter\n  at the computer's cursor; the middle tap ends it. A notification on the phone shows the last\n  letters.\n- **The computer's settings**: its keyboard layout (ABC/US or Brazilian ABNT2), the scrolling\n  speed, reversed scrolling. The Band tab's settings follow the band to the device it moves to.\n\n### Glasses and companion\n\n- Debug builds: the simulated band writes (`--es handwriting_text`), and `--es simulated`\n  switches it from adb; the companion's `WRITE_TEXT` types into the handwriting keyboard or the\n  computer while they write.",
-          "changes": [
-            "The band on a computer: Other device, the switch's third choice, keeps the band on the",
-            "Computer profiles: Notebook (scrolling, desktops, Enter, Esc, writing) and Presentation",
-            "Writing on the computer: a gesture turns the band's handwriting on and types each letter",
-            "The computer's settings: its keyboard layout (ABC/US or Brazilian ABNT2), the scrolling",
-            "Debug builds: the simulated band writes (--es handwritingtext), and --es simulated"
-          ]
-        },
-        {
-          "version": "0.2.0-beta.15",
-          "date": "2026-10-06T02:31:04Z",
-          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.15",
-          "notes": "### Companion\n\n- **Gesture profiles on the phone**: Media, Navigation and your own, each with every gesture, its\n  pinch and turn and whether the band listens while the phone is locked. A switch gesture (the\n  same in every profile) moves to the next one, and any gesture can go to the next, the previous\n  or a given profile; the phone names the new profile in a short notification. Your layout from\n  before became *My layout*.\n- **The locked phone**: a profile that doesn't listen while locked turns the band off (its power\n  saving) until the phone is unlocked.\n- **The Band tab, redesigned**: where the band is and the switch on top, then the phone's and\n  the glasses' settings apart; a page per profile, and **Key and pairing** on its own page.\n- Home shows the band's state from the device it's with (it said *Off* while the band was on\n  the phone).\n\n### Glasses and companion\n\n- **Pinch and turn follows the audio**: while something plays it's the volume; otherwise what\n  you chose (the glasses: navigation, brightness, volume or nothing; the phone: brightness,\n  arrows, volume or nothing).\n\n### Band\n\n- After a handwriting session, the hand still moving while the band is restored can't pause the\n  band any more.",
-          "changes": [
-            "Gesture profiles on the phone: Media, Navigation and your own, each with every gesture, its",
-            "The locked phone: a profile that doesn't listen while locked turns the band off (its power",
-            "The Band tab, redesigned: where the band is and the switch on top, then the phone's and",
-            "Home shows the band's state from the device it's with (it said Off while the band was on",
-            "Pinch and turn follows the audio: while something plays it's the volume; otherwise what",
-            "After a handwriting session, the hand still moving while the band is restored can't pause the"
-          ]
-        },
-        {
-          "version": "0.2.0-beta.14",
-          "date": "2026-10-06T01:51:55Z",
-          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.14",
-          "notes": "### Companion\n\n- **Handwriting keyboard**: *Lumen handwriting*, a keyboard for the phone's own apps. With the band\n  on the phone, a text field switches the band's handwriting on and each letter goes in at the\n  cursor; the middle tap ends it and hides the keyboard, a pause stops it. Password fields never\n  get the band; with the band on the glasses it offers to bring it over. Band tab: *Handwriting\n  keyboard* shows whether it's on and opens the keyboard settings or the picker.",
-          "changes": [
-            "Handwriting keyboard: Lumen handwriting, a keyboard for the phone's own apps. With the band"
-          ]
-        }
-      ],
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Lumen is a beta launcher and web-app platform for Rokid RG glasses with a 480x640 monochrome HUD. Meta Neural Band gestures navigate apps, notifications, and text input; the Android companion relays phone notifications, dictation, and connectivity. Install the glasses APK and the separate companion APK. The glasses APK requires Android 10 or later; the arm64 phone companion requires Android 12 or later. A Meta Neural Band is required for the documented control workflow. Lumen Telegram, WhatsApp, Reddit, and Instagram are separate web apps, not APKs."
-      },
-      "publishedAt": "2026-10-06T21:08:54Z",
-      "screenshotAssets": [
-        "rokid-lumen-grid-lens.png",
-        "rokid-lumen-controls-lens.png",
-        "rokid-lumen-composer-lens.png",
-        "rokid-lumen-companion-home.png"
-      ],
-      "iconAsset": "rokid-lumen.png",
-      "newUntil": "2026-10-08T21:08:54.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lumen.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-grid-lens.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-controls-lens.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-composer-lens.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-companion-home.png"
       ]
     },
     {
@@ -3385,6 +3283,117 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-remote.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-keyboard.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-glass-browser-agent.png"
+      ]
+    },
+    {
+      "id": "rokid-lumen",
+      "name": "Rokid Lumen",
+      "category": "Launcher",
+      "type": "combo",
+      "version": "0.2.0-beta.18",
+      "summary": "Run a web-app launcher on Rokid RG glasses with Meta Neural Band controls.",
+      "description": "Rokid Lumen is a beta launcher and web-app platform for Rokid RG glasses with a 480x640 monochrome HUD. Meta Neural Band gestures navigate apps, notifications, and text input; the Android companion relays phone notifications, dictation, and connectivity. Install the glasses APK and the separate companion APK. The glasses APK requires Android 10 or later; the arm64 phone companion requires Android 12 or later. A Meta Neural Band is required for the documented control workflow. Lumen Telegram, WhatsApp, Reddit, and Instagram are separate web apps, not APKs.",
+      "author": "beyondlevi",
+      "sourceUrl": "https://github.com/beyondlevi/rokid-lumen",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/beyondlevi/rokid-lumen/releases/download/v0.2.0-beta.18/rokid-lumen-glasses-0.2.0-beta.18.apk",
+          "sha256": "4fdef88c024a58d6efb0d88c6195243904773ae49dc385a17088ca0e42d23b3a",
+          "sizeBytes": 116587588,
+          "packageName": "dev.lumen.glasses",
+          "versionCode": 20018,
+          "versionName": "0.2.0-beta.18"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/beyondlevi/rokid-lumen/releases/download/v0.2.0-beta.18/rokid-lumen-companion-0.2.0-beta.18.apk",
+          "sha256": "af284a2ac184715386f6606d43fa3e82840e94c39f3b909f4500dee6d8898414",
+          "sizeBytes": 9357274,
+          "packageName": "dev.lumen.companion",
+          "versionCode": 20018,
+          "versionName": "0.2.0-beta.18"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.2.0-beta.18",
+          "date": "2026-10-06T21:08:54Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.18",
+          "notes": "### Companion\n\n- **Air Mouse on the phone** (experimental): a phone profile can put it on a gesture. A cursor\n  shows in the middle of the screen and your forearm moves it; the index pinch is a finger there\n  (tap, long press, hold and move to drag and scroll), the middle pinch is Back, and the same\n  gesture hides it. Its speed, steadiness and flick boost are sliders in the Phone settings. It\n  goes through Screen gestures, the accessibility service the screen actions already use.\n- The Glasses settings list every gesture of the glasses, with the actions grouped and\n  **Restore the default gestures**, and the glasses' Air Mouse sliders.\n\n### Glasses\n\n- **Every band gesture is mappable** on the glasses (the navigation was fixed), with the same\n  defaults as before.\n- **Air Mouse on the glasses** (experimental): the same cursor on the display, from any gesture.\n  It taps apps and web pages, and on Lumen's home the tab, app, control or notification under it.",
+          "changes": [
+            "Air Mouse on the phone (experimental): a phone profile can put it on a gesture. A cursor",
+            "The Glasses settings list every gesture of the glasses, with the actions grouped and",
+            "Every band gesture is mappable on the glasses (the navigation was fixed), with the same",
+            "Air Mouse on the glasses (experimental): the same cursor on the display, from any gesture."
+          ]
+        },
+        {
+          "version": "0.2.0-beta.17",
+          "date": "2026-10-06T19:19:39Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.17",
+          "notes": "### Companion\n\n- **Air Mouse** (experimental): with the band on a computer, a gesture turns it on and the same\n  gesture off; off and on again is the clutch, to set the arm somewhere comfortable while the\n  pointer stays. The forearm moves the pointer like a mouse (relative, steadied while the arm is\n  still, accelerated on a flick); the index pinch is the left button and the middle pinch the\n  right one, held to drag; swipes keep their actions. Pointer speed, steadiness and flick boost\n  are sliders in the Computer settings. Ported from kinesis' experimental air cursor.\n\n### Band\n\n- The orientation and gyro samples reach the air mouse (they were read and dropped before), with\n  their lateness measured by the band's clock: late data is skipped and a held button let go.",
+          "changes": [
+            "Air Mouse (experimental): with the band on a computer, a gesture turns it on and the same",
+            "The orientation and gyro samples reach the air mouse (they were read and dropped before), with"
+          ]
+        },
+        {
+          "version": "0.2.0-beta.16",
+          "date": "2026-10-06T15:18:19Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.16",
+          "notes": "### Companion\n\n- **The band on a computer**: **Other device**, the switch's third choice, keeps the band on the\n  phone and makes the phone a computer's Bluetooth keyboard and mouse, with nothing to install\n  there. Pair from the computer's Bluetooth settings (a computer already paired with the phone\n  is listed); the phone reconnects to the last one by itself.\n- **Computer profiles**: *Notebook* (scrolling, desktops, Enter, Esc, writing) and *Presentation*\n  (the arrows), plus your own, with keys, macOS desktops and Mission Control, the app switcher,\n  scrolling, media, volume and brightness; the phone's switch gesture moves between them.\n- **Writing on the computer**: a gesture turns the band's handwriting on and types each letter\n  at the computer's cursor; the middle tap ends it. A notification on the phone shows the last\n  letters.\n- **The computer's settings**: its keyboard layout (ABC/US or Brazilian ABNT2), the scrolling\n  speed, reversed scrolling. The Band tab's settings follow the band to the device it moves to.\n\n### Glasses and companion\n\n- Debug builds: the simulated band writes (`--es handwriting_text`), and `--es simulated`\n  switches it from adb; the companion's `WRITE_TEXT` types into the handwriting keyboard or the\n  computer while they write.",
+          "changes": [
+            "The band on a computer: Other device, the switch's third choice, keeps the band on the",
+            "Computer profiles: Notebook (scrolling, desktops, Enter, Esc, writing) and Presentation",
+            "Writing on the computer: a gesture turns the band's handwriting on and types each letter",
+            "The computer's settings: its keyboard layout (ABC/US or Brazilian ABNT2), the scrolling",
+            "Debug builds: the simulated band writes (--es handwritingtext), and --es simulated"
+          ]
+        },
+        {
+          "version": "0.2.0-beta.15",
+          "date": "2026-10-06T02:31:04Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.15",
+          "notes": "### Companion\n\n- **Gesture profiles on the phone**: Media, Navigation and your own, each with every gesture, its\n  pinch and turn and whether the band listens while the phone is locked. A switch gesture (the\n  same in every profile) moves to the next one, and any gesture can go to the next, the previous\n  or a given profile; the phone names the new profile in a short notification. Your layout from\n  before became *My layout*.\n- **The locked phone**: a profile that doesn't listen while locked turns the band off (its power\n  saving) until the phone is unlocked.\n- **The Band tab, redesigned**: where the band is and the switch on top, then the phone's and\n  the glasses' settings apart; a page per profile, and **Key and pairing** on its own page.\n- Home shows the band's state from the device it's with (it said *Off* while the band was on\n  the phone).\n\n### Glasses and companion\n\n- **Pinch and turn follows the audio**: while something plays it's the volume; otherwise what\n  you chose (the glasses: navigation, brightness, volume or nothing; the phone: brightness,\n  arrows, volume or nothing).\n\n### Band\n\n- After a handwriting session, the hand still moving while the band is restored can't pause the\n  band any more.",
+          "changes": [
+            "Gesture profiles on the phone: Media, Navigation and your own, each with every gesture, its",
+            "The locked phone: a profile that doesn't listen while locked turns the band off (its power",
+            "The Band tab, redesigned: where the band is and the switch on top, then the phone's and",
+            "Home shows the band's state from the device it's with (it said Off while the band was on",
+            "Pinch and turn follows the audio: while something plays it's the volume; otherwise what",
+            "After a handwriting session, the hand still moving while the band is restored can't pause the"
+          ]
+        },
+        {
+          "version": "0.2.0-beta.14",
+          "date": "2026-10-06T01:51:55Z",
+          "sourceReleaseUrl": "https://github.com/beyondlevi/rokid-lumen/releases/tag/v0.2.0-beta.14",
+          "notes": "### Companion\n\n- **Handwriting keyboard**: *Lumen handwriting*, a keyboard for the phone's own apps. With the band\n  on the phone, a text field switches the band's handwriting on and each letter goes in at the\n  cursor; the middle tap ends it and hides the keyboard, a pause stops it. Password fields never\n  get the band; with the band on the glasses it offers to bring it over. Band tab: *Handwriting\n  keyboard* shows whether it's on and opens the keyboard settings or the picker.",
+          "changes": [
+            "Handwriting keyboard: Lumen handwriting, a keyboard for the phone's own apps. With the band"
+          ]
+        }
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Lumen is a beta launcher and web-app platform for Rokid RG glasses with a 480x640 monochrome HUD. Meta Neural Band gestures navigate apps, notifications, and text input; the Android companion relays phone notifications, dictation, and connectivity. Install the glasses APK and the separate companion APK. The glasses APK requires Android 10 or later; the arm64 phone companion requires Android 12 or later. A Meta Neural Band is required for the documented control workflow. Lumen Telegram, WhatsApp, Reddit, and Instagram are separate web apps, not APKs."
+      },
+      "publishedAt": "2026-10-06T21:08:54Z",
+      "screenshotAssets": [
+        "rokid-lumen-grid-lens.png",
+        "rokid-lumen-controls-lens.png",
+        "rokid-lumen-composer-lens.png",
+        "rokid-lumen-companion-home.png"
+      ],
+      "iconAsset": "rokid-lumen.png",
+      "newUntil": "2026-10-08T21:08:54.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-lumen.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-grid-lens.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-controls-lens.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-composer-lens.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-lumen-companion-home.png"
       ]
     },
     {
