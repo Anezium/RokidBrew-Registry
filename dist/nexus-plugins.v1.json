@@ -775,7 +775,7 @@
       "description": "Open Patcher to follow the complete YouTube or Reddit setup guide. Choose the matching official stock APK or complete split bundle, review the patches and patch locally on your phone. Nexus checks the signed result and installs it on the glasses. Reddit remains Preview; physical R08 and real posting are unverified.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-10-10T12:22:11Z",
+      "publishedAt": "2026-10-10T18:48:13Z",
       "iconAsset": "patcher-icon.png",
       "screenshotAssets": [
         "patcher-phone.png",
@@ -783,9 +783,14 @@
         "patcher-youtube-player.png"
       ],
       "listing": {
-        "descriptionMarkdown": "## YouTube and Reddit on the glasses\n\nPatcher prepares a signed glasses APK locally on your phone. YouTube uses the existing Rokid/Morphe controls; Reddit Preview adds a green monochrome feed with media previews, paged post reading, nested comments and phone-keyboard drafts. Reddit uses its native account and media services and does not need MicroG.\n\n## Set up either app\n\nUpdate **both Nexus hubs to 1.7.0**, install **Patcher 1.1.0** from the Nexus Store and approve it in Plugin access. Open **Patcher**, then choose **Set up YouTube** or **Set up Reddit**. These complete guides now live in Patcher; the old App management setup cards have been removed.\n\nThe YouTube guide covers MicroG, official stock **YouTube 21.04.223**, patching, installation and native Google sign-in. Reddit uses the official complete **Reddit 2026.14.0 APKM**; a base-only download is not sufficient. Download the stock package separately, review the selected patches and keep the glasses connected for installation. Nexus never reads your account passwords or tokens.\n\nEnable the per-app automatic phone keyboard in the guide's Advanced options if you want search and editors to open **Keyboard & remote**. Sending a Reddit reply always requires an explicit Send.\n\nPatching continues when you leave the screen. For YouTube, measured work takes about **6–7 minutes** with the patch screen or floating window visible; locking the phone or closing the window can make it slower. No equivalent Reddit duration is claimed. The notification reopens the job or cancels it, and a saved result remains available when you return.\n\n## Preserve your signing key\n\nPatcher creates a private signing key on the phone. Export a password-protected backup before removing the plugin. Future patched APK updates must use that same key. If another tool signed the installed app, import a compatible backup or explicitly remove and reinstall the app yourself. Nexus never removes it to bypass a signer check.\n\n## Reddit Preview limits\n\nThe implementation has device evidence for feeds, Popular, post/comment navigation, media and unsent drafts across preview builds. The new R08 transport is implemented and tested in code, but **physical R08 is not yet validated**. Real sends/posts, votes/save and optical comfort are also unverified. This release does not promise those integrations are certified.\n\nPatcher requires Android 11 or newer and runs on the phone through Nexus. It has no glasses launcher entry. Source is GPL-3.0-only. Stock Reddit/YouTube APKs and private signing keys are not included in the public patch-code release.\n"
+        "descriptionMarkdown": "## YouTube and Reddit on the glasses\n\nPatcher prepares a signed glasses APK locally on your phone. YouTube uses the existing Rokid/Morphe controls; Reddit Preview adds a green monochrome feed with media previews, paged post reading, nested comments and phone-keyboard drafts. Reddit uses its native account and media services and does not need MicroG.\n\n## Set up either app\n\nUpdate **both Nexus hubs to 1.7.0**, install **Patcher 1.1.1** from the Nexus Store and approve it in Plugin access. Open **Patcher**, then choose **Set up YouTube** or **Set up Reddit**. These complete guides now live in Patcher; the old App management setup cards have been removed.\n\nThe YouTube guide covers MicroG, official stock **YouTube 21.04.223**, patching, installation and native Google sign-in. Reddit uses the official complete **Reddit 2026.14.0 APKM**; a base-only download is not sufficient. Download the stock package separately, review the selected patches and keep the glasses connected for installation. Nexus never reads your account passwords or tokens.\n\nEnable the per-app automatic phone keyboard in the guide's Advanced options if you want search and editors to open **Keyboard & remote**. Sending a Reddit reply always requires an explicit Send.\n\nPatching continues when you leave the screen. For YouTube, measured work takes about **6–7 minutes** with the patch screen or floating window visible; locking the phone or closing the window can make it slower. No equivalent Reddit duration is claimed. The notification reopens the job or cancels it, and a saved result remains available when you return.\n\n## Preserve your signing key\n\nPatcher creates a private signing key on the phone. Export a password-protected backup before removing the plugin. Future patched APK updates must use that same key. If another tool signed the installed app, import a compatible backup or explicitly remove and reinstall the app yourself. Nexus never removes it to bypass a signer check.\n\n## Reddit Preview limits\n\nThe implementation has device evidence for feeds, Popular, post/comment navigation, media and unsent drafts across preview builds. The new R08 transport is implemented and tested in code, but **physical R08 is not yet validated**. Real sends/posts, votes/save and optical comfort are also unverified. This release does not promise those integrations are certified.\n\nPatcher requires Android 11 or newer and runs on the phone through Nexus. It has no glasses launcher entry. Source is GPL-3.0-only. Stock Reddit/YouTube APKs and private signing keys are not included in the public patch-code release.\n"
       },
       "releases": [
+        {
+          "version": "1.1.1",
+          "date": "2026-10-10T18:48:13Z",
+          "notes": "\n- Show the installed version in the Patcher header, which still said v1.0.0 in 1.1.0.\n\n\n### Artifact\n\n- File: `patcher-phone-release.apk`\n- SHA-256: `ae6357319d23f27929889123035580b8b9036316b1fc37d96884f09e2a45b28d`\n"
+        },
         {
           "version": "1.1.0",
           "date": "2026-10-10T12:22:11Z",
@@ -807,12 +812,12 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/patcher-v1.1.0/patcher-phone-release.apk",
-        "sha256": "ecebb23ec45357d9fb14a23ed0e17a982f798feeeb7348c001fe312a5d3eef66",
-        "sizeBytes": 44815453,
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/patcher-v1.1.1/patcher-phone-release.apk",
+        "sha256": "ae6357319d23f27929889123035580b8b9036316b1fc37d96884f09e2a45b28d",
+        "sizeBytes": 44816173,
         "packageName": "com.anezium.rokidbus.plugin.patcher",
-        "versionCode": 2,
-        "versionName": "1.1.0",
+        "versionCode": 3,
+        "versionName": "1.1.1",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/patcher-icon.png",
