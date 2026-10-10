@@ -3,19 +3,24 @@
   "kind": "nexus-plugin",
   "name": "Media Deck",
   "category": "Music",
-  "summary": "Now playing and transport controls on the HUD.",
-  "description": "Whatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus.",
+  "summary": "Now playing and transport controls, with approved Assistant Skills.",
+  "description": "Show compatible phone media sessions on the glasses and use transport controls. With both Nexus hubs 1.7.0, notification access and explicit operation approvals, Assistant can read now-playing information and control the observed session. Stale session references are rejected. Device Skills tests used an Android test player; real music-player compatibility remains unverified.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-07-23T21:44:01Z",
+  "publishedAt": "2026-10-10T13:14:21Z",
   "iconAsset": "media-icon.png",
   "screenshotAssets": [
     "media-1-nowplaying.png"
   ],
   "listing": {
-    "descriptionMarkdown": "## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
+    "descriptionMarkdown": "## Assistant Skills in 1.0.3\n\nRequires **both Nexus hubs 1.7.0**, **Assistant 1.5.0**, notification access and explicit operation approvals. Read now-playing information or control the observed phone session, without opening the Media Deck HUD for a headless call. Tests used an Android test player; real music-player compatibility remains unverified.\n\n## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
   },
   "releases": [
+    {
+      "version": "1.0.3",
+      "date": "2026-10-10T13:14:21Z",
+      "notes": "\n- Expose approved now-playing and playback operations to Assistant through\n  Nexus Skills. Requires Nexus hubs 1.7.0, notification access, and operation\n  approvals; a call does not open the plugin's HUD.\n- Keep media references tied to the observed session and reject stale targets.\n- Device tests covered now-playing and pause with an Android test player.\n  Compatibility with real music players remains unverified.\n\n\n### Artifact\n\n- File: `media-phone-release.apk`\n- SHA-256: `c702f3e924552b1ac63fc30a2ea72d0defccda40e3fc74677585c9feed28b378`\n"
+    },
     {
       "version": "1.0.2",
       "date": "2026-07-23T21:44:01Z",
@@ -40,16 +45,16 @@
     ],
     "launchable": true,
     "settingsActivity": "com.anezium.rokidbus.plugin.media.MediaDeckSettingsActivity",
-    "minHostVersionCode": 6
+    "minHostVersionCode": 10700
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.2/media-phone-release.apk",
-    "sha256": "504e629ccb59f483c36345a13606edc6f3ce77807e90140af979b88b0bfd61ab",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.3/media-phone-release.apk",
+    "sha256": "c702f3e924552b1ac63fc30a2ea72d0defccda40e3fc74677585c9feed28b378",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 4753768,
+    "sizeBytes": 5706561,
     "packageName": "com.anezium.rokidbus.plugin.media",
-    "versionCode": 3,
-    "versionName": "1.0.2"
+    "versionCode": 4,
+    "versionName": "1.0.3"
   }
 }

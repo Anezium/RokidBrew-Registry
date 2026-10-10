@@ -3,19 +3,24 @@
   "kind": "nexus-plugin",
   "name": "Transit",
   "category": "Navigation",
-  "summary": "Nearby departures and saved stops on the HUD.",
-  "description": "Live public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone.",
+  "summary": "Public transport on the HUD, with approved Assistant Skills.",
+  "description": "Save stops and view public-transport departures on the HUD. Assistant can use approved Skills for favorite stops, stop search, departures and journey guidance. Update both Nexus hubs to 1.7.0 and approve each operation; changed operation contracts require renewed approval. Stationary favorite/departure reads were device-tested. Guidance during a real journey remains unverified.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-07-23T21:44:01Z",
+  "publishedAt": "2026-10-10T13:15:03Z",
   "iconAsset": "transit-icon.png",
   "screenshotAssets": [
     "transit-1-departures.png"
   ],
   "listing": {
-    "descriptionMarkdown": "## About\n\nLive public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone."
+    "descriptionMarkdown": "## Assistant Skills in 1.0.5\n\nRequires **both Nexus hubs 1.7.0** and an enabled Skills client such as **Assistant 1.5.0**. Approve only the operations you want in Nexus Plugin access. Favorites, stop search and departures are read operations; journey guidance can use location and show a live activity. If a contract changed, approve that operation again. Stationary favorite/departure reads were tested; guidance during a real journey remains unverified.\n\n## About\n\nLive public-transport departures for the stops you care about. Save favourites, search for a stop, and glance at the next departures without reaching for your phone."
   },
   "releases": [
+    {
+      "version": "1.0.5",
+      "date": "2026-10-10T13:15:03Z",
+      "notes": "\n- Skills require Nexus hubs 1.7.0 and explicit approval for each operation.\n  Favorite-stop and departure reads were exercised on devices while stationary;\n  journey guidance during a real trip remains unverified.\n\n- Explicit bus, metro, tram, and RER selectors now constrain the transport mode.\n  An ambiguous board no longer supplies a departure anchor for a follow-up.\n  Without a named line, destinations such as Orly list all matching directions.\n- After this skill catalog update, re-approve \"Departures at a stop\" for Assistant\n  in Nexus plugin access. Contract fingerprints include descriptions and schemas;\n  existing approvals are intentionally invalidated when those change.\n\n- Skills for an approved assistant: favorite stops, stop search, and\n  departures with their observation time and realtime quality, including \"the\n  one after that\" by trip identity rather than row position.\n- **Lines and directions as you say them.** Asking for departures accepts\n  \"ligne 14\", \"M14\", or \"RER C\" for a line and \"vers Orly\" or \"aÃ©roport\" for\n  AÃ©roport d'Orly, matching whole words only. When a name fits several lines\n  or directions the answer lists them, and when nothing fits it lists the\n  lines and directions the stop actually has instead of reporting no\n  departure.\n- **Journey guidance.** \"Take me home\" plans a public transport journey to a\n  saved home and guides it step by step in Transit's own activity on the\n  glasses: walk, board, ride with the stops left, get off at the next stop,\n  transfer, arrive. A missed departure replans once, and boarding a later\n  vehicle is still noticed. The journey survives a restart, and opening\n  Transit during it shows every leg.\n- Home setting, chosen from the geocoder. Only its name ever reaches an\n  assistant; its location and yours stay in Transit.\n- Requests identify Transit with its version and a contact.\n\n\n### Artifact\n\n- File: `transit-phone-release.apk`\n- SHA-256: `b228af34a9c49848f1cafd03addd04d582b368128b4e682f075817c56b7ad7d9`\n"
+    },
     {
       "version": "1.0.4",
       "date": "2026-08-05T11:48:16Z",
@@ -50,16 +55,16 @@
     ],
     "launchable": true,
     "settingsActivity": ".TransitSettingsActivity",
-    "minHostVersionCode": 6
+    "minHostVersionCode": 10700
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.4/transit-phone-release.apk",
-    "sha256": "3f7237c454f983264d9dfadaa8d75559491f359e359d6459c321787af7120a74",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/transit-v1.0.5/transit-phone-release.apk",
+    "sha256": "b228af34a9c49848f1cafd03addd04d582b368128b4e682f075817c56b7ad7d9",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 5241668,
+    "sizeBytes": 6013981,
     "packageName": "com.anezium.rokidbus.plugin.transit",
-    "versionCode": 5,
-    "versionName": "1.0.4"
+    "versionCode": 6,
+    "versionName": "1.0.5"
   }
 }
