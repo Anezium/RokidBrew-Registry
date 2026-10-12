@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T18:49:50.048Z",
+  "generatedAt": "2026-10-12T08:51:29.361Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,60 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "rokid-phone-mirroring",
+      "name": "Rokid Phone Mirroring",
+      "category": "Utility",
+      "type": "combo",
+      "version": "0.1.0-ci.769b216",
+      "summary": "Mirror your Android phone or a single app to Rokid glasses over encrypted local Wi-Fi.",
+      "description": "Phone and glasses app pair for screen mirroring, zoom/pan, pointer controls, and an extended workspace over an encrypted local-network connection. Install the phone sender on Android 10+ and the receiver on Android 12+ glasses, then pair on the same Wi-Fi network or phone hotspot. The upstream project documents sustained playback on RG-glasses with a Galaxy S25. This is an unmodified upstream CI development build, pinned to commit 769b216; RokidBrew has not tested this snapshot on hardware. Both APKs use debug signatures, so future upstream builds may require reinstalling if their signing certificates change. Source and GPL-3.0-or-later license are included with the download.",
+      "author": "pcoronaf / Rokid Mirror contributors",
+      "sourceUrl": "https://github.com/pcoronaf/Rockid-mirror",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/RokidBrew-Registry/releases/download/rokid-phone-mirroring-ci-769b216/rokid-phone-mirroring-phone-769b216.apk",
+          "sha256": "c6ba4d642751fdf61fce32c2cf9ebe67d91aef119cbfd5b4e0b8f5e5319fb0ca",
+          "sizeBytes": 15664436,
+          "packageName": "com.rokidmirror.sender.debug",
+          "versionCode": 1,
+          "versionName": "0.1.0"
+        },
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/RokidBrew-Registry/releases/download/rokid-phone-mirroring-ci-769b216/rokid-phone-mirroring-glasses-769b216.apk",
+          "sha256": "909abc84d87859db7844c379b17e80a22307d334957020c667eec383ca37252a",
+          "sizeBytes": 24350911,
+          "packageName": "com.rokidmirror.receiver.debug",
+          "versionCode": 1,
+          "versionName": "0.1.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.1.0-ci.769b216",
+          "date": "2026-10-12T08:50:11Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/RokidBrew-Registry/releases/tag/rokid-phone-mirroring-ci-769b216",
+          "notes": "# Rokid Phone Mirroring — upstream CI snapshot\n\nUnmodified development APKs from [pcoronaf/Rockid-mirror](https://github.com/pcoronaf/Rockid-mirror), mirrored here for installation through RokidBrew. This is a community-hosted snapshot, not an official upstream release.\n\n- Upstream commit: `769b2162909b1a71b276e80e20bf6a7c5f413c69`.\n- Both APKs come from the same successful [upstream CI run](https://github.com/pcoronaf/Rockid-mirror/actions/runs/38122668438).\n- `rokid-phone-mirroring-phone-769b216.apk`: Android phone sender, Android 10+.\n- `rokid-phone-mirroring-glasses-769b216.apk`: glasses receiver, Android 12+.\n- APK version: `0.1.0`, versionCode `1`. Both use upstream CI debug signatures. Future builds may need an uninstall/reinstall if upstream changes its debug signing certificate; this can remove saved pairing/settings.\n\nInstall both apps, connect the phone and glasses to the same Wi-Fi network or phone hotspot, open the receiver, and pair from the phone using the displayed code. The upstream project documents hardware testing on RG-glasses with a Samsung Galaxy S25; this mirrored snapshot has not been tested on hardware by RokidBrew.\n\nThe matching complete project source archive, `LICENSE.txt`, and `NOTICE.txt` are attached. The project is licensed under GPL-3.0-or-later; third-party attribution is retained in the source and notice. Build instructions are in the source README. The APK files have not been modified or re-signed.\n\nThis snapshot is pinned. Updates require another verified upstream build; no automatic CI update tracking is configured.",
+          "changes": [
+            "Upstream commit: 769b2162909b1a71b276e80e20bf6a7c5f413c69.",
+            "Both APKs come from the same successful upstream CI run.",
+            "rokid-phone-mirroring-phone-769b216.apk: Android phone sender, Android 10+.",
+            "rokid-phone-mirroring-glasses-769b216.apk: glasses receiver, Android 12+."
+          ]
+        }
+      ],
+      "publishedAt": "2026-10-12T08:50:11Z",
+      "iconAsset": "rokid-phone-mirroring.png",
+      "listing": {
+        "descriptionMarkdown": "## About\nPhone and glasses app pair for screen mirroring, zoom/pan, pointer controls, and an extended workspace over an encrypted local-network connection. Install the phone sender on Android 10+ and the receiver on Android 12+ glasses, then pair on the same Wi-Fi network or phone hotspot. The upstream project documents sustained playback on RG-glasses with a Galaxy S25. This is an unmodified upstream CI development build, pinned to commit 769b216; RokidBrew has not tested this snapshot on hardware. Both APKs use debug signatures, so future upstream builds may require reinstalling if their signing certificates change. Source and GPL-3.0-or-later license are included with the download.\n\n## Setup\n1. Install both APKs on their respective devices.\n2. Open the glasses receiver and connect both devices to the same Wi-Fi network or phone hotspot.\n3. Connect from the phone sender and enter the code shown on the glasses.\n4. Choose whole-screen or single-app mirroring and approve Android screen capture.\n\n## Development snapshot\nThis download mirrors [upstream CI run 38122668438](https://github.com/pcoronaf/Rockid-mirror/actions/runs/38122668438). It is pinned and does not track future CI builds automatically.\n\n[Matching source, GPL license, and third-party notice](https://github.com/Anezium/RokidBrew-Registry/releases/tag/rokid-phone-mirroring-ci-769b216)."
+      },
+      "newUntil": "2026-10-14T08:50:11.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-phone-mirroring.png",
+      "screenshotAssets": []
+    },
     {
       "id": "rokid-nexus",
       "name": "Rokid Nexus",
