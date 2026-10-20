@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T08:51:29.361Z",
+  "generatedAt": "2026-10-20T11:21:50.812Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -14,177 +14,67 @@
   ],
   "apps": [
     {
-      "id": "rokid-phone-mirroring",
-      "name": "Rokid Phone Mirroring",
+      "id": "ai-glasses-manager",
+      "name": "AI Glasses Manager (formerly Rokid Manager)",
       "category": "Utility",
-      "type": "combo",
-      "version": "0.1.0-ci.769b216",
-      "summary": "Mirror your Android phone or a single app to Rokid glasses over encrypted local Wi-Fi.",
-      "description": "Phone and glasses app pair for screen mirroring, zoom/pan, pointer controls, and an extended workspace over an encrypted local-network connection. Install the phone sender on Android 10+ and the receiver on Android 12+ glasses, then pair on the same Wi-Fi network or phone hotspot. The upstream project documents sustained playback on RG-glasses with a Galaxy S25. This is an unmodified upstream CI development build, pinned to commit 769b216; RokidBrew has not tested this snapshot on hardware. Both APKs use debug signatures, so future upstream builds may require reinstalling if their signing certificates change. Source and GPL-3.0-or-later license are included with the download.",
-      "author": "pcoronaf / Rokid Mirror contributors",
-      "sourceUrl": "https://github.com/pcoronaf/Rockid-mirror",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/RokidBrew-Registry/releases/download/rokid-phone-mirroring-ci-769b216/rokid-phone-mirroring-phone-769b216.apk",
-          "sha256": "c6ba4d642751fdf61fce32c2cf9ebe67d91aef119cbfd5b4e0b8f5e5319fb0ca",
-          "sizeBytes": 15664436,
-          "packageName": "com.rokidmirror.sender.debug",
-          "versionCode": 1,
-          "versionName": "0.1.0"
-        },
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/RokidBrew-Registry/releases/download/rokid-phone-mirroring-ci-769b216/rokid-phone-mirroring-glasses-769b216.apk",
-          "sha256": "909abc84d87859db7844c379b17e80a22307d334957020c667eec383ca37252a",
-          "sizeBytes": 24350911,
-          "packageName": "com.rokidmirror.receiver.debug",
-          "versionCode": 1,
-          "versionName": "0.1.0"
-        }
-      ],
-      "releases": [
-        {
-          "version": "0.1.0-ci.769b216",
-          "date": "2026-10-12T08:50:11Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/RokidBrew-Registry/releases/tag/rokid-phone-mirroring-ci-769b216",
-          "notes": "# Rokid Phone Mirroring — upstream CI snapshot\n\nUnmodified development APKs from [pcoronaf/Rockid-mirror](https://github.com/pcoronaf/Rockid-mirror), mirrored here for installation through RokidBrew. This is a community-hosted snapshot, not an official upstream release.\n\n- Upstream commit: `769b2162909b1a71b276e80e20bf6a7c5f413c69`.\n- Both APKs come from the same successful [upstream CI run](https://github.com/pcoronaf/Rockid-mirror/actions/runs/38122668438).\n- `rokid-phone-mirroring-phone-769b216.apk`: Android phone sender, Android 10+.\n- `rokid-phone-mirroring-glasses-769b216.apk`: glasses receiver, Android 12+.\n- APK version: `0.1.0`, versionCode `1`. Both use upstream CI debug signatures. Future builds may need an uninstall/reinstall if upstream changes its debug signing certificate; this can remove saved pairing/settings.\n\nInstall both apps, connect the phone and glasses to the same Wi-Fi network or phone hotspot, open the receiver, and pair from the phone using the displayed code. The upstream project documents hardware testing on RG-glasses with a Samsung Galaxy S25; this mirrored snapshot has not been tested on hardware by RokidBrew.\n\nThe matching complete project source archive, `LICENSE.txt`, and `NOTICE.txt` are attached. The project is licensed under GPL-3.0-or-later; third-party attribution is retained in the source and notice. Build instructions are in the source README. The APK files have not been modified or re-signed.\n\nThis snapshot is pinned. Updates require another verified upstream build; no automatic CI update tracking is configured.",
-          "changes": [
-            "Upstream commit: 769b2162909b1a71b276e80e20bf6a7c5f413c69.",
-            "Both APKs come from the same successful upstream CI run.",
-            "rokid-phone-mirroring-phone-769b216.apk: Android phone sender, Android 10+.",
-            "rokid-phone-mirroring-glasses-769b216.apk: glasses receiver, Android 12+."
-          ]
-        }
-      ],
-      "publishedAt": "2026-10-12T08:50:11Z",
-      "iconAsset": "rokid-phone-mirroring.png",
-      "listing": {
-        "descriptionMarkdown": "## About\nPhone and glasses app pair for screen mirroring, zoom/pan, pointer controls, and an extended workspace over an encrypted local-network connection. Install the phone sender on Android 10+ and the receiver on Android 12+ glasses, then pair on the same Wi-Fi network or phone hotspot. The upstream project documents sustained playback on RG-glasses with a Galaxy S25. This is an unmodified upstream CI development build, pinned to commit 769b216; RokidBrew has not tested this snapshot on hardware. Both APKs use debug signatures, so future upstream builds may require reinstalling if their signing certificates change. Source and GPL-3.0-or-later license are included with the download.\n\n## Setup\n1. Install both APKs on their respective devices.\n2. Open the glasses receiver and connect both devices to the same Wi-Fi network or phone hotspot.\n3. Connect from the phone sender and enter the code shown on the glasses.\n4. Choose whole-screen or single-app mirroring and approve Android screen capture.\n\n## Development snapshot\nThis download mirrors [upstream CI run 38122668438](https://github.com/pcoronaf/Rockid-mirror/actions/runs/38122668438). It is pinned and does not track future CI builds automatically.\n\n[Matching source, GPL license, and third-party notice](https://github.com/Anezium/RokidBrew-Registry/releases/tag/rokid-phone-mirroring-ci-769b216)."
+      "type": "glasses",
+      "version": "2.6.3",
+      "summary": "Paid ($1.99 one-time, 3-day trial) · New camera filters, APK installation, and Wi-Fi transfers",
+      "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
+      "author": "Bruce",
+      "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
+      "phoneRequired": false,
+      "pricing": {
+        "model": "paid",
+        "price": "$1.99",
+        "currency": "USD",
+        "perDevice": true,
+        "trialDays": 3,
+        "activation": "online license check (developer server)"
       },
-      "newUntil": "2026-10-14T08:50:11.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-phone-mirroring.png",
-      "screenshotAssets": []
-    },
-    {
-      "id": "rokid-nexus",
-      "name": "Rokid Nexus",
-      "category": "Launcher",
-      "type": "combo",
-      "version": "1.7.0",
-      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
-      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "phoneRequired": true,
       "artifacts": [
         {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-phone-1.7.0.apk",
-          "sha256": "2c198eaf4b3e64d91e91de86be9df74b4d27c9c55f60b1dd706f960815592593",
-          "sizeBytes": 19409086,
-          "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10700,
-          "versionName": "1.7.0",
-          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
-        },
-        {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-glasses-1.7.0.apk",
-          "sha256": "899a736f7d00a4c915c69cd68dfc59b1e8f5c93a0d8128fc05894e890cf5226e",
-          "sizeBytes": 19722531,
-          "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10700,
-          "versionName": "1.7.0",
-          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
+          "url": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/download/v2.6.3/AI-Glasses-Manager-2.6.3.apk",
+          "sha256": "72786cc06951109ab3777e08176e4cd0a369b222b91b68bff77ef082b2f4a0e7",
+          "sizeBytes": 208570191,
+          "packageName": "com.bruce.rokidmanager",
+          "versionCode": 17,
+          "versionName": "2.6.3"
         }
       ],
-      "releases": [
-        {
-          "version": "1.7.0",
-          "date": "2026-10-10T12:24:32Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.0",
-          "notes": "\nUpdate both Nexus hubs together and install Patcher 1.1.0 for the integrated YouTube and Reddit guides. Reddit remains Preview: physical R08 and real Reddit writes have not been validated. This app release does not publish an Assistant update.\n\nPlugins that publish no skill catalog keep working unchanged, and a plugin built with the new SDK keeps working on older hubs: every skills call reports the hub as not supporting skills instead of sending.\n\n### Phone hub\n\n- Move the complete YouTube/MicroG tutorial and the Reddit tutorial into Patcher's app entries. Glasses apps keeps the installed-app inventory and opening actions, without duplicate setup cards. Keep the handoff caller authenticated and both tutorials private.\n- Add official Reddit 2026.14.0 complete-APKM verification, native installation inventory and the existing explicit auto-keyboard preference for Reddit search and replies. Credentials stay in Reddit.\n- **Skills.** A plugin can publish typed operations in a catalog the hub reads\n  without starting it; an approved caller, Assistant first, invokes them\n  through the hub. The hub stamps both identities, validates arguments and\n  results against a bounded schema, hands out opaque expiring references\n  instead of the provider's identifiers, reuses the outcome of an exact\n  duplicate, refuses excess work as busy, and ends every call within 15\n  seconds. A provider is bound for the call only, never opened, and cannot\n  draw, notify, or listen on the strength of it. Revocation, package changes,\n  and a caller or provider going away end calls, and late answers are\n  dropped. The bus inspector shows each outcome without its content.\n- **Per-operation consent.** A provider's Plugin access screen lists its\n  operations with one switch per operation and assistant, all off, under a\n  note that results may reach the assistant's AI provider. A changed\n  operation needs approving again; an invalid catalog shows why instead of\n  failing the plugin.\n- New grants `skills_provider` and `skills_client`, requested through their\n  own metadata keys so older hubs keep loading those plugins. Requesting one\n  returns an installed plugin to Pending for approval.\n\n### Plugin SDK\n\n- Skills for providers (`onNexusSkillInvoked`, `NexusSkillInvocation`) and\n  callers (`requestSkillCatalog`, `invokeSkill`, `cancelSkill`,\n  `closeSkillSession`), gated on `supportsSkills`.\n- `NexusGuidancePlanner`, `NexusGuidanceStep`, and `NexusGuidanceGlyphs`: the\n  guidance-to-activity planner Navigation used, now shared.\n- `holdNexusOngoingWork` / `releaseNexusOngoingWork` for an ongoing process\n  the wearer started, such as journey guidance.\n\n### Glasses hub\n\n- Preserve the launcher session stack and shared input arbiter, so Back returns through logical stops without trapping users in an app or reopening a dismissed overlay.\n- Keep native Reddit opening and inventory alongside YouTube, with the existing trusted hub-to-hub remote input path.\n\n",
-          "changes": []
-        },
-        {
-          "version": "1.6.0",
-          "date": "2026-10-07T15:49:01Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.6.0",
-          "notes": "\nInstall both Nexus hubs 1.6.0 and Patcher 1.0.0 for guided YouTube setup.\n\n- Open native Android apps from the glasses launcher, with cached app icons.\n- Guide MicroG installation, stock YouTube download, on-phone patching, and Google\n  sign-in through Keyboard & remote. Nexus never reads Google accounts or tokens.\n- Opening YouTube or MicroG restores the glasses' Wi-Fi radio when needed.\n  Automatic phone-keyboard opening for YouTube remains an explicit preference.\n\n- Use the target-aware Patcher plugin for YouTube setup, keeping signer-bound approval,\n  result-byte validation, same-signer CXR updates and confirmed-install records.\n- Patcher replaces the unpublished YouTube Patcher package and generates a new key;\n  existing output needs an imported backup or an explicit manual reinstall on glasses.\n- YouTube setup says what to expect from Patcher: about 6–7 minutes, kept going in a\n  small window while you use other apps, then checked and installed by Nexus. When a\n  patched APK is waiting, step 3 leads with Install on glasses and says whether the\n  glasses still need connecting.\n- Returning to setup while a patch is pending offers **Open Patcher** to check\n  progress or use the saved result, without claiming the patch has stopped.\n- Ready notifications carry the completed job to the existing Patcher window,\n  including after activity recreation, so its authenticated result reaches Nexus.\n\n",
-          "changes": []
-        },
-        {
-          "version": "1.4.11",
-          "date": "2026-09-22T12:55:59Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.11",
-          "notes": "### Upgrade together\n\nInstall **both Nexus hubs 1.4.11** before using notices, then update Relay to\n**1.2.3**. Notice protocol v5 requires matching phone and glasses hubs; mixed\nhub versions are not supported for notices. Plugins need to be rebuilt with\nSDK **0.19.0** to gain the new callback protection. Plugin API version 3 and\nexisting grants are unchanged.\n\n### Phone and glasses hubs\n\n- **An SPP interruption no longer disables a live notice's SDK callbacks.**\n  Losing or restoring one glasses transport leaves the current question intact;\n  an explicit hide, replacement, or fresh registration still protects against\n  stale replies. A newer owner hide also clears an older visible band when a\n  replacement show was lost or failed image decoding.\n- **HUD routing has dedicated owners.** The phone hub delegates notices, pins,\n  activities, ordinary surfaces, and Ink to separate routers, with regression\n  tests for owner delivery, reconnect state, and closure. Surface detach still\n  preserves an active microphone lease through the existing audio lifecycle.\n- **Notice replies stay with the question the wearer saw.** Both hubs now bind\n  actions, gestures, and dismissals to the notice instance and question, so a\n  delayed event cannot act on a replacement from the same plugin. The SDK also\n  filters stale callbacks already queued for a plugin. Notice protocol v5\n  requires matching phone and glasses hubs; rebuild plugins with the updated\n  SDK to gain the callback protection.\n- **A failed notice reply is visible.** The glasses show *Delivery not confirmed*\n  when the transport rejects a send, retaining the one-answer guard instead of\n  risking a duplicate effect after a partial write.\n- **An interactive notice keeps key priority over focused Nexus windows.**\n  Direction, confirm, and Back now reach the notice before the launcher or\n  surface beneath it, including local activity and overlay windows. Confirming\n  a notice can no longer activate an underlying control through those paths.\n  The same dispatcher handles accessibility input and paired directional keys.\n- **Relay countdowns keep the same question.** The SDK's optional `rearm = false`\n  update refreshes action labels without invalidating a tap in flight.\n- **Directional input can select Ink actions.** Tappable controls now have an\n  outlined selection tracked by their node id. Confirm activates the selected\n  control, and updates retain that selection when the node still exists. Paired\n  directional key reports count as one move. A notice can take input above the\n  page and return to the same selected Ink control when dismissed.\n\n### Plugin SDK 0.19.0\n\n- Add optional `NexusNoticeUpdate.rearm`. With `rearm = false`, a label-only\n  action update preserves the current question, selection, and one-answer\n  guard. This requires `noticeInteractionVersion: 1`; an older phone hub returns\n  `CAPABILITY_NOT_AVAILABLE` rather than silently changing the question.\n- Filter queued notice callbacks by the current local question. An SPP-only\n  interruption does not retire that context, and reconnecting does not undo an\n  explicit hide.\n- **Callback contract change:** `onNoticeClosed` belongs to the current local\n  notice context, not to every `showNotice` call. An immediate hide followed by\n  show may suppress the previous `closed(owner)` callback. Plugins must not\n  depend on exactly one close callback per show to clean up replaced state.\n\nValidation and remaining transport-recovery follow-ups are recorded in the\n[review and device retest](https://github.com/Anezium/Rokid-Nexus/blob/v1.4.11/docs/reviews/hud-interaction-review-follow-up.md).\n",
-          "changes": []
-        },
-        {
-          "version": "1.4.10",
-          "date": "2026-09-19T21:19:43Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.8",
-          "date": "2026-09-14T19:38:40Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-09-07T19:29:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.6",
-          "date": "2026-09-06T18:44:47Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-08-20T00:14:57Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.4",
-          "date": "2026-08-14T19:32:00Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
-          "notes": null,
-          "changes": []
-        }
-      ],
+      "iconAsset": "ai-glasses-manager.png",
+      "publishedAt": "2026-10-20T10:30:44Z",
       "screenshotAssets": [
-        "rokid-nexus-1.png",
-        "rokid-nexus-2.png",
-        "rokid-nexus-3.png",
-        "rokid-nexus-4.png",
-        "rokid-nexus-5.png"
+        "ai-glasses-manager-home.png",
+        "ai-glasses-manager-app-store.png",
+        "ai-glasses-manager-camera.png"
       ],
       "listing": {
-        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
+        "descriptionMarkdown": "## New in 2.6.3: Camera filters are here!\n\nGive your captures a new look with three camera filter styles, including Matrix. The Camera interface also has clearer, easier-to-read controls.\n\nYou can now transfer and install APKs directly through File Explorer and Wi-Fi Drop. Wi-Fi Drop also has a redesigned browser interface and transfer reliability fixes.\n\nAI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Three camera filter styles, including Matrix, plus camera tools and photo and video viewing\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- File browsing and wireless file transfers with direct APK installation through File Explorer and Wi-Fi Drop\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
       },
-      "publishedAt": "2026-10-10T12:24:32Z",
-      "newUntil": "2026-10-12T12:24:32.000Z",
-      "iconAsset": "rokid-nexus.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
+      "releases": [
+        {
+          "version": "2.6.3",
+          "date": "2026-10-20T10:30:44Z",
+          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.3",
+          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nCamera Filters are here! Choose between three unique styles (including the Matrix filter) to customize your captures.\n\nDirect APK Installation: Both the File Explorer and Wi-Fi Drop now support direct APK transfers and on-device installation.\n\nWi-Fi Drop Overhaul: Revamped the browser UI and patched the transfer pipeline for improved reliability.\n\nCamera UI Polish: Upgraded interface readability for a cleaner experience.\n\n**Chinese**\n\n相机滤镜正式上线！提供三种独特风格（包括矩阵滤镜）任你选择，自由定制拍摄效果。\n\nAPK 直接安装： 文件管理器和 Wi-Fi Drop 现已全面支持 APK 的直接传输与设备端安装。\n\nWi-Fi Drop 全面升级： 重新设计了网页端 UI，并修复了底层传输管道以大幅提升稳定性。\n\n相机界面优化： 提升了界面的视觉可读性，带来更清爽的操作体验。",
+          "changes": []
+        },
+        {
+          "version": "2.6.2",
+          "date": "2026-09-28T11:37:23Z",
+          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.2",
+          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nImproved App Store reliability, offline recovery, and added some network guidance\nAdded new Camera settings with shutter sounds and clearer capture feedback\nFile browsing is smoother \nGallery QoL improvements. Displayed menus are less intrusive\nManager updates are easier to notice\nHome icons are now more visually balanced\n\n**Chinese**\n\n提升应用商店的稳定性、离线恢复和网络提示\n新增相机设置、快门音效及更清晰的拍摄反馈\n文件浏览更加流畅，图库提升一些和信息显示更简洁\n管理器更新更醒目，主页图标也更加协调统一",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-10-22T10:30:44.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ai-glasses-manager.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-app-store.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-camera.png"
       ]
     },
     {
@@ -804,63 +694,6 @@
       ],
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/aerofly-rokid-hud.png"
-      ]
-    },
-    {
-      "id": "ai-glasses-manager",
-      "name": "AI Glasses Manager (formerly Rokid Manager)",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "2.6.2",
-      "summary": "Paid ($1.99 one-time, 3-day trial) · Manage apps, photos, files, and settings on Rokid glasses",
-      "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
-      "author": "Bruce",
-      "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
-      "phoneRequired": false,
-      "pricing": {
-        "model": "paid",
-        "price": "$1.99",
-        "currency": "USD",
-        "perDevice": true,
-        "trialDays": 3,
-        "activation": "online license check (developer server)"
-      },
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/download/v2.6.2/AI-Glasses-Manager-2.6.2.apk",
-          "sha256": "c4a9e82ed171f319521c42c8f5f41a634561df1ce03ad6d95d27e2bb45812b8a",
-          "sizeBytes": 176969654,
-          "packageName": "com.bruce.rokidmanager",
-          "versionCode": 16,
-          "versionName": "2.6.2"
-        }
-      ],
-      "iconAsset": "ai-glasses-manager.png",
-      "publishedAt": "2026-09-28T11:37:23Z",
-      "screenshotAssets": [
-        "ai-glasses-manager-home.png",
-        "ai-glasses-manager-app-store.png",
-        "ai-glasses-manager-camera.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- Camera tools and photo and video viewing\n- File browsing and wireless file transfers\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
-      },
-      "releases": [
-        {
-          "version": "2.6.2",
-          "date": "2026-09-28T11:37:23Z",
-          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.2",
-          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nImproved App Store reliability, offline recovery, and added some network guidance\nAdded new Camera settings with shutter sounds and clearer capture feedback\nFile browsing is smoother \nGallery QoL improvements. Displayed menus are less intrusive\nManager updates are easier to notice\nHome icons are now more visually balanced\n\n**Chinese**\n\n提升应用商店的稳定性、离线恢复和网络提示\n新增相机设置、快门音效及更清晰的拍摄反馈\n文件浏览更加流畅，图库提升一些和信息显示更简洁\n管理器更新更醒目，主页图标也更加协调统一",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-09-30T11:37:23.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ai-glasses-manager.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-app-store.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-camera.png"
       ]
     },
     {
@@ -3643,6 +3476,180 @@
         "descriptionMarkdown": "# About\nRokid Music Score is a piano score viewer designed specifically for Rokid AR glasses. It features built-in classic simplified piano scores by Jay Chou.\n\n# Key features\n- View piano scores directly on Rokid AR glasses\n- Includes classic Jay Chou simplified scores for practice\n\n# Requirements\n- Compatible with Rokid AR glasses\n- No phone required"
       },
       "releases": [],
+      "screenshotAssets": []
+    },
+    {
+      "id": "rokid-nexus",
+      "name": "Rokid Nexus",
+      "category": "Launcher",
+      "type": "combo",
+      "version": "1.7.0",
+      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
+      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-phone-1.7.0.apk",
+          "sha256": "2c198eaf4b3e64d91e91de86be9df74b4d27c9c55f60b1dd706f960815592593",
+          "sizeBytes": 19409086,
+          "packageName": "com.anezium.rokidbus.phone",
+          "versionCode": 10700,
+          "versionName": "1.7.0",
+          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
+        },
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-glasses-1.7.0.apk",
+          "sha256": "899a736f7d00a4c915c69cd68dfc59b1e8f5c93a0d8128fc05894e890cf5226e",
+          "sizeBytes": 19722531,
+          "packageName": "com.anezium.rokidbus.glasses",
+          "versionCode": 10700,
+          "versionName": "1.7.0",
+          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.7.0",
+          "date": "2026-10-10T12:24:32Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.0",
+          "notes": "\nUpdate both Nexus hubs together and install Patcher 1.1.0 for the integrated YouTube and Reddit guides. Reddit remains Preview: physical R08 and real Reddit writes have not been validated. This app release does not publish an Assistant update.\n\nPlugins that publish no skill catalog keep working unchanged, and a plugin built with the new SDK keeps working on older hubs: every skills call reports the hub as not supporting skills instead of sending.\n\n### Phone hub\n\n- Move the complete YouTube/MicroG tutorial and the Reddit tutorial into Patcher's app entries. Glasses apps keeps the installed-app inventory and opening actions, without duplicate setup cards. Keep the handoff caller authenticated and both tutorials private.\n- Add official Reddit 2026.14.0 complete-APKM verification, native installation inventory and the existing explicit auto-keyboard preference for Reddit search and replies. Credentials stay in Reddit.\n- **Skills.** A plugin can publish typed operations in a catalog the hub reads\n  without starting it; an approved caller, Assistant first, invokes them\n  through the hub. The hub stamps both identities, validates arguments and\n  results against a bounded schema, hands out opaque expiring references\n  instead of the provider's identifiers, reuses the outcome of an exact\n  duplicate, refuses excess work as busy, and ends every call within 15\n  seconds. A provider is bound for the call only, never opened, and cannot\n  draw, notify, or listen on the strength of it. Revocation, package changes,\n  and a caller or provider going away end calls, and late answers are\n  dropped. The bus inspector shows each outcome without its content.\n- **Per-operation consent.** A provider's Plugin access screen lists its\n  operations with one switch per operation and assistant, all off, under a\n  note that results may reach the assistant's AI provider. A changed\n  operation needs approving again; an invalid catalog shows why instead of\n  failing the plugin.\n- New grants `skills_provider` and `skills_client`, requested through their\n  own metadata keys so older hubs keep loading those plugins. Requesting one\n  returns an installed plugin to Pending for approval.\n\n### Plugin SDK\n\n- Skills for providers (`onNexusSkillInvoked`, `NexusSkillInvocation`) and\n  callers (`requestSkillCatalog`, `invokeSkill`, `cancelSkill`,\n  `closeSkillSession`), gated on `supportsSkills`.\n- `NexusGuidancePlanner`, `NexusGuidanceStep`, and `NexusGuidanceGlyphs`: the\n  guidance-to-activity planner Navigation used, now shared.\n- `holdNexusOngoingWork` / `releaseNexusOngoingWork` for an ongoing process\n  the wearer started, such as journey guidance.\n\n### Glasses hub\n\n- Preserve the launcher session stack and shared input arbiter, so Back returns through logical stops without trapping users in an app or reopening a dismissed overlay.\n- Keep native Reddit opening and inventory alongside YouTube, with the existing trusted hub-to-hub remote input path.\n\n",
+          "changes": []
+        },
+        {
+          "version": "1.6.0",
+          "date": "2026-10-07T15:49:01Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.6.0",
+          "notes": "\nInstall both Nexus hubs 1.6.0 and Patcher 1.0.0 for guided YouTube setup.\n\n- Open native Android apps from the glasses launcher, with cached app icons.\n- Guide MicroG installation, stock YouTube download, on-phone patching, and Google\n  sign-in through Keyboard & remote. Nexus never reads Google accounts or tokens.\n- Opening YouTube or MicroG restores the glasses' Wi-Fi radio when needed.\n  Automatic phone-keyboard opening for YouTube remains an explicit preference.\n\n- Use the target-aware Patcher plugin for YouTube setup, keeping signer-bound approval,\n  result-byte validation, same-signer CXR updates and confirmed-install records.\n- Patcher replaces the unpublished YouTube Patcher package and generates a new key;\n  existing output needs an imported backup or an explicit manual reinstall on glasses.\n- YouTube setup says what to expect from Patcher: about 6–7 minutes, kept going in a\n  small window while you use other apps, then checked and installed by Nexus. When a\n  patched APK is waiting, step 3 leads with Install on glasses and says whether the\n  glasses still need connecting.\n- Returning to setup while a patch is pending offers **Open Patcher** to check\n  progress or use the saved result, without claiming the patch has stopped.\n- Ready notifications carry the completed job to the existing Patcher window,\n  including after activity recreation, so its authenticated result reaches Nexus.\n\n",
+          "changes": []
+        },
+        {
+          "version": "1.4.11",
+          "date": "2026-09-22T12:55:59Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.11",
+          "notes": "### Upgrade together\n\nInstall **both Nexus hubs 1.4.11** before using notices, then update Relay to\n**1.2.3**. Notice protocol v5 requires matching phone and glasses hubs; mixed\nhub versions are not supported for notices. Plugins need to be rebuilt with\nSDK **0.19.0** to gain the new callback protection. Plugin API version 3 and\nexisting grants are unchanged.\n\n### Phone and glasses hubs\n\n- **An SPP interruption no longer disables a live notice's SDK callbacks.**\n  Losing or restoring one glasses transport leaves the current question intact;\n  an explicit hide, replacement, or fresh registration still protects against\n  stale replies. A newer owner hide also clears an older visible band when a\n  replacement show was lost or failed image decoding.\n- **HUD routing has dedicated owners.** The phone hub delegates notices, pins,\n  activities, ordinary surfaces, and Ink to separate routers, with regression\n  tests for owner delivery, reconnect state, and closure. Surface detach still\n  preserves an active microphone lease through the existing audio lifecycle.\n- **Notice replies stay with the question the wearer saw.** Both hubs now bind\n  actions, gestures, and dismissals to the notice instance and question, so a\n  delayed event cannot act on a replacement from the same plugin. The SDK also\n  filters stale callbacks already queued for a plugin. Notice protocol v5\n  requires matching phone and glasses hubs; rebuild plugins with the updated\n  SDK to gain the callback protection.\n- **A failed notice reply is visible.** The glasses show *Delivery not confirmed*\n  when the transport rejects a send, retaining the one-answer guard instead of\n  risking a duplicate effect after a partial write.\n- **An interactive notice keeps key priority over focused Nexus windows.**\n  Direction, confirm, and Back now reach the notice before the launcher or\n  surface beneath it, including local activity and overlay windows. Confirming\n  a notice can no longer activate an underlying control through those paths.\n  The same dispatcher handles accessibility input and paired directional keys.\n- **Relay countdowns keep the same question.** The SDK's optional `rearm = false`\n  update refreshes action labels without invalidating a tap in flight.\n- **Directional input can select Ink actions.** Tappable controls now have an\n  outlined selection tracked by their node id. Confirm activates the selected\n  control, and updates retain that selection when the node still exists. Paired\n  directional key reports count as one move. A notice can take input above the\n  page and return to the same selected Ink control when dismissed.\n\n### Plugin SDK 0.19.0\n\n- Add optional `NexusNoticeUpdate.rearm`. With `rearm = false`, a label-only\n  action update preserves the current question, selection, and one-answer\n  guard. This requires `noticeInteractionVersion: 1`; an older phone hub returns\n  `CAPABILITY_NOT_AVAILABLE` rather than silently changing the question.\n- Filter queued notice callbacks by the current local question. An SPP-only\n  interruption does not retire that context, and reconnecting does not undo an\n  explicit hide.\n- **Callback contract change:** `onNoticeClosed` belongs to the current local\n  notice context, not to every `showNotice` call. An immediate hide followed by\n  show may suppress the previous `closed(owner)` callback. Plugins must not\n  depend on exactly one close callback per show to clean up replaced state.\n\nValidation and remaining transport-recovery follow-ups are recorded in the\n[review and device retest](https://github.com/Anezium/Rokid-Nexus/blob/v1.4.11/docs/reviews/hud-interaction-review-follow-up.md).\n",
+          "changes": []
+        },
+        {
+          "version": "1.4.10",
+          "date": "2026-09-19T21:19:43Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.8",
+          "date": "2026-09-14T19:38:40Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-09-07T19:29:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.6",
+          "date": "2026-09-06T18:44:47Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.5",
+          "date": "2026-08-20T00:14:57Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.4",
+          "date": "2026-08-14T19:32:00Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-nexus-1.png",
+        "rokid-nexus-2.png",
+        "rokid-nexus-3.png",
+        "rokid-nexus-4.png",
+        "rokid-nexus-5.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
+      },
+      "publishedAt": "2026-10-10T12:24:32Z",
+      "newUntil": "2026-10-12T12:24:32.000Z",
+      "iconAsset": "rokid-nexus.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+      ]
+    },
+    {
+      "id": "rokid-phone-mirroring",
+      "name": "Rokid Phone Mirroring",
+      "category": "Utility",
+      "type": "combo",
+      "version": "0.1.0-ci.769b216",
+      "summary": "Mirror your Android phone or a single app to Rokid glasses over encrypted local Wi-Fi.",
+      "description": "Phone and glasses app pair for screen mirroring, zoom/pan, pointer controls, and an extended workspace over an encrypted local-network connection. Install the phone sender on Android 10+ and the receiver on Android 12+ glasses, then pair on the same Wi-Fi network or phone hotspot. The upstream project documents sustained playback on RG-glasses with a Galaxy S25. This is an unmodified upstream CI development build, pinned to commit 769b216; RokidBrew has not tested this snapshot on hardware. Both APKs use debug signatures, so future upstream builds may require reinstalling if their signing certificates change. Source and GPL-3.0-or-later license are included with the download.",
+      "author": "pcoronaf / Rokid Mirror contributors",
+      "sourceUrl": "https://github.com/pcoronaf/Rockid-mirror",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/RokidBrew-Registry/releases/download/rokid-phone-mirroring-ci-769b216/rokid-phone-mirroring-phone-769b216.apk",
+          "sha256": "c6ba4d642751fdf61fce32c2cf9ebe67d91aef119cbfd5b4e0b8f5e5319fb0ca",
+          "sizeBytes": 15664436,
+          "packageName": "com.rokidmirror.sender.debug",
+          "versionCode": 1,
+          "versionName": "0.1.0"
+        },
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/RokidBrew-Registry/releases/download/rokid-phone-mirroring-ci-769b216/rokid-phone-mirroring-glasses-769b216.apk",
+          "sha256": "909abc84d87859db7844c379b17e80a22307d334957020c667eec383ca37252a",
+          "sizeBytes": 24350911,
+          "packageName": "com.rokidmirror.receiver.debug",
+          "versionCode": 1,
+          "versionName": "0.1.0"
+        }
+      ],
+      "releases": [
+        {
+          "version": "0.1.0-ci.769b216",
+          "date": "2026-10-12T08:50:11Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/RokidBrew-Registry/releases/tag/rokid-phone-mirroring-ci-769b216",
+          "notes": "# Rokid Phone Mirroring — upstream CI snapshot\n\nUnmodified development APKs from [pcoronaf/Rockid-mirror](https://github.com/pcoronaf/Rockid-mirror), mirrored here for installation through RokidBrew. This is a community-hosted snapshot, not an official upstream release.\n\n- Upstream commit: `769b2162909b1a71b276e80e20bf6a7c5f413c69`.\n- Both APKs come from the same successful [upstream CI run](https://github.com/pcoronaf/Rockid-mirror/actions/runs/38122668438).\n- `rokid-phone-mirroring-phone-769b216.apk`: Android phone sender, Android 10+.\n- `rokid-phone-mirroring-glasses-769b216.apk`: glasses receiver, Android 12+.\n- APK version: `0.1.0`, versionCode `1`. Both use upstream CI debug signatures. Future builds may need an uninstall/reinstall if upstream changes its debug signing certificate; this can remove saved pairing/settings.\n\nInstall both apps, connect the phone and glasses to the same Wi-Fi network or phone hotspot, open the receiver, and pair from the phone using the displayed code. The upstream project documents hardware testing on RG-glasses with a Samsung Galaxy S25; this mirrored snapshot has not been tested on hardware by RokidBrew.\n\nThe matching complete project source archive, `LICENSE.txt`, and `NOTICE.txt` are attached. The project is licensed under GPL-3.0-or-later; third-party attribution is retained in the source and notice. Build instructions are in the source README. The APK files have not been modified or re-signed.\n\nThis snapshot is pinned. Updates require another verified upstream build; no automatic CI update tracking is configured.",
+          "changes": [
+            "Upstream commit: 769b2162909b1a71b276e80e20bf6a7c5f413c69.",
+            "Both APKs come from the same successful upstream CI run.",
+            "rokid-phone-mirroring-phone-769b216.apk: Android phone sender, Android 10+.",
+            "rokid-phone-mirroring-glasses-769b216.apk: glasses receiver, Android 12+."
+          ]
+        }
+      ],
+      "publishedAt": "2026-10-12T08:50:11Z",
+      "iconAsset": "rokid-phone-mirroring.png",
+      "listing": {
+        "descriptionMarkdown": "## About\nPhone and glasses app pair for screen mirroring, zoom/pan, pointer controls, and an extended workspace over an encrypted local-network connection. Install the phone sender on Android 10+ and the receiver on Android 12+ glasses, then pair on the same Wi-Fi network or phone hotspot. The upstream project documents sustained playback on RG-glasses with a Galaxy S25. This is an unmodified upstream CI development build, pinned to commit 769b216; RokidBrew has not tested this snapshot on hardware. Both APKs use debug signatures, so future upstream builds may require reinstalling if their signing certificates change. Source and GPL-3.0-or-later license are included with the download.\n\n## Setup\n1. Install both APKs on their respective devices.\n2. Open the glasses receiver and connect both devices to the same Wi-Fi network or phone hotspot.\n3. Connect from the phone sender and enter the code shown on the glasses.\n4. Choose whole-screen or single-app mirroring and approve Android screen capture.\n\n## Development snapshot\nThis download mirrors [upstream CI run 38122668438](https://github.com/pcoronaf/Rockid-mirror/actions/runs/38122668438). It is pinned and does not track future CI builds automatically.\n\n[Matching source, GPL license, and third-party notice](https://github.com/Anezium/RokidBrew-Registry/releases/tag/rokid-phone-mirroring-ci-769b216)."
+      },
+      "newUntil": "2026-10-14T08:50:11.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-phone-mirroring.png",
       "screenshotAssets": []
     },
     {
