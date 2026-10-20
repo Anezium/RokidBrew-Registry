@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T11:21:50.812Z",
+  "generatedAt": "2026-10-20T11:58:14.004Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -1837,7 +1837,7 @@
       "name": "GSCP",
       "category": "Utility",
       "type": "phone",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "summary": "View your glasses camera, HUD, and audio together on an Android phone",
       "description": "GSCP combines the Rokid glasses camera view, HUD overlay, and audio into one live viewer with adjustable transparency, brightness, scale, rotation, and black-key blending. This APK installs on an arm64 Android phone. First configure the glasses connection using the Windows, macOS, or Linux desktop version and a USB data cable; then connect the phone and glasses to the same Wi-Fi network. Desktop builds also support wired viewing. The Android client is distributed under GPL-3.0.",
       "author": "tonytsangzen",
@@ -1846,15 +1846,22 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.5/gscp_1.2.5_aarch64.apk",
-          "sha256": "4fadd90c94e07082afea194f50befcb83987f1a30702b10e6f49cd572ec3c566",
-          "sizeBytes": 31220428,
+          "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.6/gscp_1.2.6_aarch64.apk",
+          "sha256": "3f0da30c8af654a829817a19048ef236078c2242f97a9c4cfd9299ac2bc69a0d",
+          "sizeBytes": 125832078,
           "packageName": "com.gscp.desktop",
-          "versionCode": 1,
-          "versionName": "1.0"
+          "versionCode": 10206,
+          "versionName": "1.2.6"
         }
       ],
       "releases": [
+        {
+          "version": "1.2.6",
+          "date": "2026-10-14T12:01:06Z",
+          "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.6",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "1.2.5",
           "date": "2026-10-03T16:57:46Z",
@@ -1877,8 +1884,8 @@
           "changes": []
         }
       ],
-      "publishedAt": "2026-10-03T16:57:46Z",
-      "newUntil": "2026-10-05T16:57:46.000Z",
+      "publishedAt": "2026-10-14T12:01:06Z",
+      "newUntil": "2026-10-16T12:01:06.000Z",
       "iconAsset": "gscp.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/gscp.png",
       "screenshotAssets": []
@@ -1888,19 +1895,19 @@
       "name": "hubu",
       "category": "Fitness",
       "type": "glasses",
-      "version": "0.1.8",
+      "version": "0.1.9",
       "summary": "Fitness HUD displaying BLE workout metrics like pace, heart rate, and cadence on Rokid glasses",
       "description": "hubu connects to BLE devices such as Garmin watches to show real-time workout data on Rokid glasses. It displays pace, heart rate, and cadence in a clear HUD format. The app automatically scans and connects to compatible devices supporting heart rate and running speed services.",
       "phoneRequired": false,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk",
-          "sha256": "2b307d9aac357040b2d1302666cd9012ce856aec5404f7e6b1271d04bb12f70f",
-          "sizeBytes": 3028606,
+          "url": "https://github.com/hanabix/hubu/releases/download/0.1.9/hubu-release.apk",
+          "sha256": "8c4f963e2d3f44bdf58e1e51c451960fc1b123ca17f35346335eb3b774d37cc1",
+          "sizeBytes": 3152699,
           "packageName": "hanabix.hubu",
-          "versionCode": 9,
-          "versionName": "0.1.8"
+          "versionCode": 10,
+          "versionName": "0.1.9"
         }
       ],
       "author": "hanabix",
@@ -1909,6 +1916,22 @@
         "descriptionMarkdown": "About hubu\n\nhubu is a fitness HUD app for Rokid Glasses that connects to low-energy Bluetooth devices like Garmin watches to display real-time workout metrics.\n\nKey features\n\n- Displays pace (mm'ss\"), heart rate (bpm), and cadence on the glasses\n- Shows current time, connected device name, and glasses battery percentage\n- Supports Heart Rate Service and Running Speed and Cadence Service over BLE\n- Automatically scans and connects to compatible devices\n- Provides a \"Tap to Reconnect\" option if no device is found\n\nKnown limitations\n\n- Only supports running speed and cadence necessary measurements (speed and cadence)\n- Does not support cycling speed, cadence, or power services\n- Does not allow manual device selection\n\nFor more details, visit the [GitHub repository](https://github.com/hanabix/hubu)."
       },
       "releases": [
+        {
+          "version": "0.1.9",
+          "date": "2026-10-13T11:28:29Z",
+          "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.9",
+          "notes": "## What's Changed\n* Bump com.google.android.material:material from 1.12.0 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/13\n* Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/21\n* Bump kotlin from 2.3.20 to 2.3.21 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/18\n* Bump lifecycleRuntimeKtx from 2.9.1 to 2.10.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/14\n* Bump androidx.activity:activity-compose from 1.10.1 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/16\n* Bump kotlin from 2.3.21 to 2.4.10 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/22\n* fix: request Bluetooth runtime permissions by @zhongl in https://github.com/hanabix/hubu/pull/25\n\n## New Contributors\n* @dependabot[bot] made their first contribution in https://github.com/hanabix/hubu/pull/13\n\n**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.8...0.1.9",
+          "changes": [
+            "Bump com.google.android.material:material from 1.12.0 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/13",
+            "Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/21",
+            "Bump kotlin from 2.3.20 to 2.3.21 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/18",
+            "Bump lifecycleRuntimeKtx from 2.9.1 to 2.10.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/14",
+            "Bump androidx.activity:activity-compose from 1.10.1 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/16",
+            "Bump kotlin from 2.3.21 to 2.4.10 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/22",
+            "fix: request Bluetooth runtime permissions by @zhongl in https://github.com/hanabix/hubu/pull/25",
+            "@dependabot[bot] made their first contribution in https://github.com/hanabix/hubu/pull/13"
+          ]
+        },
         {
           "version": "0.1.8",
           "date": "2026-04-26T11:05:20Z",
@@ -1945,6 +1968,8 @@
           "changes": []
         }
       ],
+      "publishedAt": "2026-10-13T11:28:29Z",
+      "newUntil": "2026-10-15T11:28:29.000Z",
       "iconAsset": "hubu.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/hubu.png",
       "screenshotAssets": []
@@ -3483,7 +3508,7 @@
       "name": "Rokid Nexus",
       "category": "Launcher",
       "type": "combo",
-      "version": "1.7.0",
+      "version": "1.7.1",
       "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
       "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
       "author": "Anezium",
@@ -3492,26 +3517,33 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-phone-1.7.0.apk",
-          "sha256": "2c198eaf4b3e64d91e91de86be9df74b4d27c9c55f60b1dd706f960815592593",
-          "sizeBytes": 19409086,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.1/nexus-phone-1.7.1.apk",
+          "sha256": "0342a5d8abe02faf85d50147b24bfd50a4d748627ff533a7aef6f2b058fb1104",
+          "sizeBytes": 19413782,
           "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10700,
-          "versionName": "1.7.0",
+          "versionCode": 10701,
+          "versionName": "1.7.1",
           "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
         },
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.0/nexus-glasses-1.7.0.apk",
-          "sha256": "899a736f7d00a4c915c69cd68dfc59b1e8f5c93a0d8128fc05894e890cf5226e",
-          "sizeBytes": 19722531,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.1/nexus-glasses-1.7.1.apk",
+          "sha256": "c9a5c61487846cd70eff6c1450d192e62d45494cb2812c70e5ae47fafa5475f0",
+          "sizeBytes": 19804451,
           "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10700,
-          "versionName": "1.7.0",
+          "versionCode": 10701,
+          "versionName": "1.7.1",
           "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
         }
       ],
       "releases": [
+        {
+          "version": "1.7.1",
+          "date": "2026-10-14T23:36:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.1",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "1.7.0",
           "date": "2026-10-10T12:24:32Z",
@@ -3560,20 +3592,6 @@
           "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
           "notes": null,
           "changes": []
-        },
-        {
-          "version": "1.4.5",
-          "date": "2026-08-20T00:14:57Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.5",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.4",
-          "date": "2026-08-14T19:32:00Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.4",
-          "notes": null,
-          "changes": []
         }
       ],
       "screenshotAssets": [
@@ -3586,8 +3604,8 @@
       "listing": {
         "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
       },
-      "publishedAt": "2026-10-10T12:24:32Z",
-      "newUntil": "2026-10-12T12:24:32.000Z",
+      "publishedAt": "2026-10-14T23:36:31Z",
+      "newUntil": "2026-10-16T23:36:31.000Z",
       "iconAsset": "rokid-nexus.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
       "screenshotUrls": [
@@ -4232,7 +4250,7 @@
       "name": "RokidLab",
       "category": "Utility",
       "type": "phone",
-      "version": "4.1",
+      "version": "4.6-release.apk",
       "summary": "Manage Rokid glasses with AI, mirroring, files, ADB tools, and RokidBrew.",
       "description": "RokidLab turns an Android phone into a control center for Rokid glasses. It includes a RokidBrew app store, OpenAI-compatible voice and vision assistance, two-way screen mirroring, wireless file management, ADB tools, and Bluetooth HID controls. The phone APK bundles the RokidLink glasses helper and installs it from within the app. Android 10 or later is required on the phone.",
       "author": "mdloverm",
@@ -4241,15 +4259,22 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/mdloverm/RokidLab/releases/download/v4.1/RokidLab-v4.1-release.apk",
-          "sha256": "466fddb6c0ab96c39c41b9f824fd1e2d358455c7a2d02530c4fdd2e1e8d07742",
-          "sizeBytes": 63887683,
+          "url": "https://github.com/mdloverm/RokidLab/releases/download/v4.6/RokidLab-v4.6-release.apk",
+          "sha256": "41d3df806e85054dfdc6f0832bc7d82a244f9f14534d2004677dd1370ac08549",
+          "sizeBytes": 65738345,
           "packageName": "com.rokidlab.phone",
-          "versionCode": 26,
-          "versionName": "4.1"
+          "versionCode": 31,
+          "versionName": "4.6"
         }
       ],
       "releases": [
+        {
+          "version": "4.6-release.apk",
+          "date": "2026-10-14T04:35:59Z",
+          "sourceReleaseUrl": "https://github.com/mdloverm/RokidLab/releases/tag/v4.6",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "4.1",
           "date": "2026-09-26T01:17:14Z",
@@ -4270,9 +4295,9 @@
       "listing": {
         "descriptionMarkdown": "## About\nRokidLab turns an Android phone into a control center for Rokid glasses. It includes a RokidBrew app store, OpenAI-compatible voice and vision assistance, two-way screen mirroring, wireless file management, ADB tools, and Bluetooth HID controls. The phone APK bundles the RokidLink glasses helper and installs it from within the app. Android 10 or later is required on the phone."
       },
-      "publishedAt": "2026-09-26T01:17:14Z",
+      "publishedAt": "2026-10-14T04:35:59Z",
       "iconAsset": "rokidlab.png",
-      "newUntil": "2026-09-28T01:17:14.000Z",
+      "newUntil": "2026-10-16T04:35:59.000Z",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokidlab.png",
       "screenshotAssets": []
     },

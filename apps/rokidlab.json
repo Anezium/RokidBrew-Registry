@@ -3,7 +3,7 @@
   "name": "RokidLab",
   "category": "Utility",
   "type": "phone",
-  "version": "4.1",
+  "version": "4.6-release.apk",
   "summary": "Manage Rokid glasses with AI, mirroring, files, ADB tools, and RokidBrew.",
   "description": "RokidLab turns an Android phone into a control center for Rokid glasses. It includes a RokidBrew app store, OpenAI-compatible voice and vision assistance, two-way screen mirroring, wireless file management, ADB tools, and Bluetooth HID controls. The phone APK bundles the RokidLink glasses helper and installs it from within the app. Android 10 or later is required on the phone.",
   "author": "mdloverm",
@@ -12,15 +12,22 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/mdloverm/RokidLab/releases/download/v4.1/RokidLab-v4.1-release.apk",
-      "sha256": "466fddb6c0ab96c39c41b9f824fd1e2d358455c7a2d02530c4fdd2e1e8d07742",
-      "sizeBytes": 63887683,
+      "url": "https://github.com/mdloverm/RokidLab/releases/download/v4.6/RokidLab-v4.6-release.apk",
+      "sha256": "41d3df806e85054dfdc6f0832bc7d82a244f9f14534d2004677dd1370ac08549",
+      "sizeBytes": 65738345,
       "packageName": "com.rokidlab.phone",
-      "versionCode": 26,
-      "versionName": "4.1"
+      "versionCode": 31,
+      "versionName": "4.6"
     }
   ],
   "releases": [
+    {
+      "version": "4.6-release.apk",
+      "date": "2026-10-14T04:35:59Z",
+      "sourceReleaseUrl": "https://github.com/mdloverm/RokidLab/releases/tag/v4.6",
+      "notes": null,
+      "changes": []
+    },
     {
       "version": "4.1",
       "date": "2026-09-26T01:17:14Z",
@@ -57,6 +64,6 @@
   "listing": {
     "descriptionMarkdown": "## About\nRokidLab turns an Android phone into a control center for Rokid glasses. It includes a RokidBrew app store, OpenAI-compatible voice and vision assistance, two-way screen mirroring, wireless file management, ADB tools, and Bluetooth HID controls. The phone APK bundles the RokidLink glasses helper and installs it from within the app. Android 10 or later is required on the phone."
   },
-  "publishedAt": "2026-09-26T01:17:14Z",
+  "publishedAt": "2026-10-14T04:35:59Z",
   "iconAsset": "rokidlab.png"
 }
