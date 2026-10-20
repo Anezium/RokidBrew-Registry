@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T10:08:05.991Z",
+  "generatedAt": "2026-10-20T11:58:14.004Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,70 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "ai-glasses-manager",
+      "name": "AI Glasses Manager (formerly Rokid Manager)",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "2.6.3",
+      "summary": "Paid ($1.99 one-time, 3-day trial) · New camera filters, APK installation, and Wi-Fi transfers",
+      "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
+      "author": "Bruce",
+      "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
+      "phoneRequired": false,
+      "pricing": {
+        "model": "paid",
+        "price": "$1.99",
+        "currency": "USD",
+        "perDevice": true,
+        "trialDays": 3,
+        "activation": "online license check (developer server)"
+      },
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/download/v2.6.3/AI-Glasses-Manager-2.6.3.apk",
+          "sha256": "72786cc06951109ab3777e08176e4cd0a369b222b91b68bff77ef082b2f4a0e7",
+          "sizeBytes": 208570191,
+          "packageName": "com.bruce.rokidmanager",
+          "versionCode": 17,
+          "versionName": "2.6.3"
+        }
+      ],
+      "iconAsset": "ai-glasses-manager.png",
+      "publishedAt": "2026-10-20T10:30:44Z",
+      "screenshotAssets": [
+        "ai-glasses-manager-home.png",
+        "ai-glasses-manager-app-store.png",
+        "ai-glasses-manager-camera.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## New in 2.6.3: Camera filters are here!\n\nGive your captures a new look with three camera filter styles, including Matrix. The Camera interface also has clearer, easier-to-read controls.\n\nWi-Fi Drop now supports uploading APKs to your glasses. Open the uploaded APKs in File Explorer to install them, or install apps from the Manager App Store. Wi-Fi Drop also has a redesigned browser interface and transfer reliability fixes.\n\nAI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Three camera filter styles, including Matrix, plus camera tools and photo and video viewing\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- File browsing, APK installation in File Explorer, and wireless file transfers with APK uploads through Wi-Fi Drop\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
+      },
+      "releases": [
+        {
+          "version": "2.6.3",
+          "date": "2026-10-20T10:30:44Z",
+          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.3",
+          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nCamera Filters are here! Choose between three unique styles (including the Matrix filter) to customize your captures.\n\nAPK Uploads and Installation: Wi-Fi Drop now supports uploading APK files to your glasses. Open the uploaded APKs in File Explorer to install them. You can also install apps from the Manager App Store.\n\nWi-Fi Drop Overhaul: Revamped the browser UI and patched the transfer pipeline for improved reliability.\n\nCamera UI Polish: Upgraded interface readability for a cleaner experience.\n\n**Chinese**\n\n相机滤镜正式上线！提供三种独特风格（包括矩阵滤镜）任你选择，自由定制拍摄效果。\n\nAPK 上传与安装： Wi-Fi Drop 现已支持将 APK 文件上传到眼镜。上传后，可在文件管理器中打开 APK 进行安装。也可以通过管理器内置应用商店安装应用。\n\nWi-Fi Drop 全面升级： 重新设计了网页端 UI，并修复了底层传输管道以大幅提升稳定性。\n\n相机界面优化： 提升了界面的视觉可读性，带来更清爽的操作体验。",
+          "changes": []
+        },
+        {
+          "version": "2.6.2",
+          "date": "2026-09-28T11:37:23Z",
+          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.2",
+          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nImproved App Store reliability, offline recovery, and added some network guidance\nAdded new Camera settings with shutter sounds and clearer capture feedback\nFile browsing is smoother \nGallery QoL improvements. Displayed menus are less intrusive\nManager updates are easier to notice\nHome icons are now more visually balanced\n\n**Chinese**\n\n提升应用商店的稳定性、离线恢复和网络提示\n新增相机设置、快门音效及更清晰的拍摄反馈\n文件浏览更加流畅，图库提升一些和信息显示更简洁\n管理器更新更醒目，主页图标也更加协调统一",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-10-22T10:30:44.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ai-glasses-manager.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-app-store.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-camera.png"
+      ]
+    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -630,63 +694,6 @@
       ],
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/aerofly-rokid-hud.png"
-      ]
-    },
-    {
-      "id": "ai-glasses-manager",
-      "name": "AI Glasses Manager (formerly Rokid Manager)",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "2.6.2",
-      "summary": "Paid ($1.99 one-time, 3-day trial) · Manage apps, photos, files, and settings on Rokid glasses",
-      "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
-      "author": "Bruce",
-      "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
-      "phoneRequired": false,
-      "pricing": {
-        "model": "paid",
-        "price": "$1.99",
-        "currency": "USD",
-        "perDevice": true,
-        "trialDays": 3,
-        "activation": "online license check (developer server)"
-      },
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/download/v2.6.2/AI-Glasses-Manager-2.6.2.apk",
-          "sha256": "c4a9e82ed171f319521c42c8f5f41a634561df1ce03ad6d95d27e2bb45812b8a",
-          "sizeBytes": 176969654,
-          "packageName": "com.bruce.rokidmanager",
-          "versionCode": 16,
-          "versionName": "2.6.2"
-        }
-      ],
-      "iconAsset": "ai-glasses-manager.png",
-      "publishedAt": "2026-09-28T11:37:23Z",
-      "screenshotAssets": [
-        "ai-glasses-manager-home.png",
-        "ai-glasses-manager-app-store.png",
-        "ai-glasses-manager-camera.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- Camera tools and photo and video viewing\n- File browsing and wireless file transfers\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
-      },
-      "releases": [
-        {
-          "version": "2.6.2",
-          "date": "2026-09-28T11:37:23Z",
-          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.2",
-          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nImproved App Store reliability, offline recovery, and added some network guidance\nAdded new Camera settings with shutter sounds and clearer capture feedback\nFile browsing is smoother \nGallery QoL improvements. Displayed menus are less intrusive\nManager updates are easier to notice\nHome icons are now more visually balanced\n\n**Chinese**\n\n提升应用商店的稳定性、离线恢复和网络提示\n新增相机设置、快门音效及更清晰的拍摄反馈\n文件浏览更加流畅，图库提升一些和信息显示更简洁\n管理器更新更醒目，主页图标也更加协调统一",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-09-30T11:37:23.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ai-glasses-manager.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-app-store.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-camera.png"
       ]
     },
     {
