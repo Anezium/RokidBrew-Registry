@@ -3,7 +3,7 @@
   "name": "GSCP",
   "category": "Utility",
   "type": "phone",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "summary": "View your glasses camera, HUD, and audio together on an Android phone",
   "description": "GSCP combines the Rokid glasses camera view, HUD overlay, and audio into one live viewer with adjustable transparency, brightness, scale, rotation, and black-key blending. This APK installs on an arm64 Android phone. First configure the glasses connection using the Windows, macOS, or Linux desktop version and a USB data cable; then connect the phone and glasses to the same Wi-Fi network. Desktop builds also support wired viewing. The Android client is distributed under GPL-3.0.",
   "author": "tonytsangzen",
@@ -12,15 +12,22 @@
   "artifacts": [
     {
       "target": "phone",
-      "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.5/gscp_1.2.5_aarch64.apk",
-      "sha256": "4fadd90c94e07082afea194f50befcb83987f1a30702b10e6f49cd572ec3c566",
-      "sizeBytes": 31220428,
+      "url": "https://github.com/tonytsangzen/gscp/releases/download/v1.2.6/gscp_1.2.6_aarch64.apk",
+      "sha256": "3f0da30c8af654a829817a19048ef236078c2242f97a9c4cfd9299ac2bc69a0d",
+      "sizeBytes": 125832078,
       "packageName": "com.gscp.desktop",
-      "versionCode": 1,
-      "versionName": "1.0"
+      "versionCode": 10206,
+      "versionName": "1.2.6"
     }
   ],
   "releases": [
+    {
+      "version": "1.2.6",
+      "date": "2026-10-14T12:01:06Z",
+      "sourceReleaseUrl": "https://github.com/tonytsangzen/gscp/releases/tag/v1.2.6",
+      "notes": null,
+      "changes": []
+    },
     {
       "version": "1.2.5",
       "date": "2026-10-03T16:57:46Z",
@@ -59,5 +66,5 @@
       }
     ]
   },
-  "publishedAt": "2026-10-03T16:57:46Z"
+  "publishedAt": "2026-10-14T12:01:06Z"
 }
