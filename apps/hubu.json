@@ -3,19 +3,19 @@
   "name": "hubu",
   "category": "Fitness",
   "type": "glasses",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "summary": "Fitness HUD displaying BLE workout metrics like pace, heart rate, and cadence on Rokid glasses",
   "description": "hubu connects to BLE devices such as Garmin watches to show real-time workout data on Rokid glasses. It displays pace, heart rate, and cadence in a clear HUD format. The app automatically scans and connects to compatible devices supporting heart rate and running speed services.",
   "phoneRequired": false,
   "artifacts": [
     {
       "target": "glasses",
-      "url": "https://github.com/hanabix/hubu/releases/download/0.1.8/hubu-release.apk",
-      "sha256": "2b307d9aac357040b2d1302666cd9012ce856aec5404f7e6b1271d04bb12f70f",
-      "sizeBytes": 3028606,
+      "url": "https://github.com/hanabix/hubu/releases/download/0.1.9/hubu-release.apk",
+      "sha256": "8c4f963e2d3f44bdf58e1e51c451960fc1b123ca17f35346335eb3b774d37cc1",
+      "sizeBytes": 3152699,
       "packageName": "hanabix.hubu",
-      "versionCode": 9,
-      "versionName": "0.1.8"
+      "versionCode": 10,
+      "versionName": "0.1.9"
     }
   ],
   "author": "hanabix",
@@ -24,6 +24,22 @@
     "descriptionMarkdown": "About hubu\n\nhubu is a fitness HUD app for Rokid Glasses that connects to low-energy Bluetooth devices like Garmin watches to display real-time workout metrics.\n\nKey features\n\n- Displays pace (mm'ss\"), heart rate (bpm), and cadence on the glasses\n- Shows current time, connected device name, and glasses battery percentage\n- Supports Heart Rate Service and Running Speed and Cadence Service over BLE\n- Automatically scans and connects to compatible devices\n- Provides a \"Tap to Reconnect\" option if no device is found\n\nKnown limitations\n\n- Only supports running speed and cadence necessary measurements (speed and cadence)\n- Does not support cycling speed, cadence, or power services\n- Does not allow manual device selection\n\nFor more details, visit the [GitHub repository](https://github.com/hanabix/hubu)."
   },
   "releases": [
+    {
+      "version": "0.1.9",
+      "date": "2026-10-13T11:28:29Z",
+      "sourceReleaseUrl": "https://github.com/hanabix/hubu/releases/tag/0.1.9",
+      "notes": "## What's Changed\n* Bump com.google.android.material:material from 1.12.0 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/13\n* Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/21\n* Bump kotlin from 2.3.20 to 2.3.21 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/18\n* Bump lifecycleRuntimeKtx from 2.9.1 to 2.10.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/14\n* Bump androidx.activity:activity-compose from 1.10.1 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/16\n* Bump kotlin from 2.3.21 to 2.4.10 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/22\n* fix: request Bluetooth runtime permissions by @zhongl in https://github.com/hanabix/hubu/pull/25\n\n## New Contributors\n* @dependabot[bot] made their first contribution in https://github.com/hanabix/hubu/pull/13\n\n**Full Changelog**: https://github.com/hanabix/hubu/compare/0.1.8...0.1.9",
+      "changes": [
+        "Bump com.google.android.material:material from 1.12.0 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/13",
+        "Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/21",
+        "Bump kotlin from 2.3.20 to 2.3.21 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/18",
+        "Bump lifecycleRuntimeKtx from 2.9.1 to 2.10.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/14",
+        "Bump androidx.activity:activity-compose from 1.10.1 to 1.13.0 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/16",
+        "Bump kotlin from 2.3.21 to 2.4.10 by @dependabot[bot] in https://github.com/hanabix/hubu/pull/22",
+        "fix: request Bluetooth runtime permissions by @zhongl in https://github.com/hanabix/hubu/pull/25",
+        "@dependabot[bot] made their first contribution in https://github.com/hanabix/hubu/pull/13"
+      ]
+    },
     {
       "version": "0.1.8",
       "date": "2026-04-26T11:05:20Z",
@@ -64,5 +80,6 @@
     "type": "githubReadme",
     "repo": "hanabix/hubu",
     "path": "README.md"
-  }
+  },
+  "publishedAt": "2026-10-13T11:28:29Z"
 }
