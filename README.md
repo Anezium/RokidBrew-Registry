@@ -155,6 +155,24 @@ sources, refreshes APK metadata, extracts missing icons, rebuilds the registry,
 and opens or updates a review PR. The maintenance PR includes both generated
 feeds, so it also repairs a Nexus feed that was left out of an earlier change.
 
+Successful daily maintenance and manual `check-updates.yml` runs automatically
+merge their bot PRs through `auto-merge-maintenance.yml`. The workflow validates
+the exact generated commit, runs the registry tests, and checks that both feeds
+rebuild deterministically against current `main` before squash-merging. It then
+explicitly dispatches the main build, since token-authenticated merges do not
+trigger a push build.
+
+Auto-merge accepts only updates to existing app release/artifact metadata,
+`brew.json`, PNG icons, and generated feeds. App identity, update rules, APK
+package names and download origins must stay unchanged; version codes cannot
+decrease. New apps, Nexus plugin descriptors, code/workflow changes, failed
+maintenance runs, conflicting or superseded commits, and changes outside this
+scope remain for manual review. Missing APK package metadata may be filled in.
+Failed PR checks, requested changes, or a `do-not-merge`, `hold`, or
+`manual-review` label also block automatic merging.
+If `main` changes during validation, rerun maintenance to validate again.
+No PAT, external scheduler, or AI agent is needed.
+
 The workflow is resilient by design: individual APK metadata or icon failures are
 reported in logs, but do not block unrelated app updates from being proposed.
 

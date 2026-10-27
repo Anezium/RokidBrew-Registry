@@ -1,0 +1,123 @@
+name: Auto-merge verified registry updates
+
+on:
+  workflow_call:
+    inputs:
+      pull_request_number:
+        required: true
+        type: string
+      head_sha:
+        required: true
+        type: string
+
+# Only successful producer jobs call this workflow with their exact output SHA.
+# Separate PR workflows may require approval for GITHUB_TOKEN-created PRs;
+# run their applicable checks here instead of relying on those events.
+concurrency:
+  group: auto-merge-registry-maintenance
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      base_sha: ${{ steps.base.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify bot pull request identity
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+          HEAD_SHA: ${{ inputs.head_sha }}
+        with:
+          script: |
+            const { pathToFileURL } = require('node:url');
+            const { validatePullRequest } = await import(pathToFileURL(`${process.env.GITHUB_WORKSPACE}/scripts/validate-maintenance-update.mjs`));
+            const { data: pr } = await github.rest.pulls.get({ ...context.repo, pull_number: Number(process.env.PR_NUMBER) });
+            validatePullRequest(pr, { repository: process.env.GITHUB_REPOSITORY, number: process.env.PR_NUMBER, headSha: process.env.HEAD_SHA });
+      - name: Validate changes before loading pull request data
+        id: base
+        env:
+          HEAD_SHA: ${{ inputs.head_sha }}
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+        run: |
+          base_sha="$(git rev-parse HEAD)"
+          echo "sha=$base_sha" >> "$GITHUB_OUTPUT"
+          git fetch origin "refs/pull/$PR_NUMBER/head"
+          test "$(git rev-parse FETCH_HEAD)" = "$HEAD_SHA"
+          node scripts/validate-maintenance-update.mjs "$base_sha" "$HEAD_SHA"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git merge --no-commit --no-ff "$HEAD_SHA"
+      - name: Run registry tests
+        run: node --test tests/*.test.mjs
+      - name: Verify committed feeds match the updated registry
+        run: |
+          generated_at="$(node -e 'const fs = require("node:fs"); process.stdout.write(JSON.parse(fs.readFileSync("dist/apps.v1.json", "utf8")).generatedAt || "")')"
+          test -n "$generated_at"
+          ROKIDBREW_GENERATED_AT="$generated_at" node scripts/build-registry.mjs
+          git diff --exit-code -- dist/apps.v1.json dist/nexus-plugins.v1.json
+          git diff --cached --check
+
+  merge:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+      checks: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Merge the validated revision and check main
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ inputs.pull_request_number }}
+          HEAD_SHA: ${{ inputs.head_sha }}
+          BASE_SHA: ${{ needs.validate.outputs.base_sha }}
+        with:
+          script: |
+            const { pathToFileURL } = require('node:url');
+            const { validatePullRequest } = await import(pathToFileURL(`${process.env.GITHUB_WORKSPACE}/scripts/validate-maintenance-update.mjs`));
+            const pull_number = Number(process.env.PR_NUMBER);
+            const { data: pr } = await github.rest.pulls.get({ ...context.repo, pull_number });
+            validatePullRequest(pr, { repository: process.env.GITHUB_REPOSITORY, number: pull_number, headSha: process.env.HEAD_SHA });
+            const reviews = await github.paginate(github.rest.pulls.listReviews, { ...context.repo, pull_number });
+            const latestReviews = new Map();
+            for (const review of reviews) {
+              if (['APPROVED', 'CHANGES_REQUESTED', 'DISMISSED'].includes(review.state)) latestReviews.set(review.user.login, review.state);
+            }
+            if ([...latestReviews.values()].includes('CHANGES_REQUESTED')) throw new Error('A reviewer requested changes; manual review required.');
+            const checks = await github.paginate(github.rest.checks.listForRef, { ...context.repo, ref: process.env.HEAD_SHA });
+            if (checks.some(check => check.conclusion && !['success', 'neutral', 'skipped'].includes(check.conclusion))) {
+              throw new Error('A pull request check failed; manual review required.');
+            }
+            const { data: statuses } = await github.rest.repos.getCombinedStatusForRef({ ...context.repo, ref: process.env.HEAD_SHA });
+            if (['failure', 'error'].includes(statuses.state)) throw new Error('A commit status failed; manual review required.');
+            const { data: base } = await github.rest.repos.getBranch({ ...context.repo, branch: 'main' });
+            if (base.commit.sha !== process.env.BASE_SHA) {
+              throw new Error('main changed during validation; rerun the maintenance workflow to validate again.');
+            }
+            const { data: result } = await github.rest.pulls.merge({
+              ...context.repo, pull_number, sha: process.env.HEAD_SHA, merge_method: 'squash',
+              commit_title: `Apply verified registry updates (#${pull_number})`
+            });
+            if (!result.merged) throw new Error(result.message);
+            await core.summary.addHeading('Registry update merged').addLink(`Pull request #${pull_number}`, pr.html_url).addRaw(`\n\nMerged revision: ${result.sha}\n`).write();
+            // A merge using GITHUB_TOKEN does not trigger a push workflow.
+            await github.rest.actions.createWorkflowDispatch({ ...context.repo, workflow_id: 'build-registry.yml', ref: 'main' });

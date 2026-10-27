@@ -17,6 +17,9 @@ on:
 jobs:
   maintain:
     runs-on: ubuntu-latest
+    outputs:
+      pr_number: ${{ steps.pr.outputs.number }}
+      head_sha: ${{ steps.pr.outputs.head_sha }}
     permissions:
       contents: write
       pull-requests: write
@@ -66,6 +69,7 @@ jobs:
         run: node scripts/build-registry.mjs
 
       - name: Create maintenance pull request
+        id: pr
         if: ${{ inputs.dry_run != 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
@@ -115,6 +119,10 @@ jobs:
               --title "Run RokidBrew registry maintenance" \
               --body-file "$body"
           fi
+          number="$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number')"
+          test -n "$number"
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Fail on update-check errors or warnings
         if: ${{ always() }}
@@ -127,3 +135,16 @@ jobs:
             echo "::error::check-updates reported ${errors:-0} error(s) and ${warnings:-0} warning(s); see the update report in the log above."
             exit 1
           fi
+
+  auto-merge:
+    needs: maintain
+    if: ${{ needs.maintain.outputs.pr_number != '' }}
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+      checks: read
+    uses: ./.github/workflows/auto-merge-maintenance.yml
+    with:
+      pull_request_number: ${{ needs.maintain.outputs.pr_number }}
+      head_sha: ${{ needs.maintain.outputs.head_sha }}
