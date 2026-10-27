@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T10:10:28.043Z",
+  "generatedAt": "2026-10-27T10:36:28.837Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,172 +13,6 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
-    {
-      "id": "r08-access-bridge",
-      "name": "R08 Access Bridge",
-      "category": "Navigation",
-      "type": "glasses",
-      "version": "2.0.3",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
-      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v2.0.3/R08-Access-Bridge-v2.0.3.apk",
-          "sha256": "e7c71e3f5e1cedfb6c775f1e5f8560a16af6a1734820713d75836914e4e95455",
-          "sizeBytes": 18594262,
-          "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 38,
-          "versionName": "2.0.3"
-        }
-      ],
-      "releases": [
-        {
-          "version": "2.0.3",
-          "date": "2026-10-21T10:04:14Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "2.0.2",
-          "date": "2026-09-27T14:04:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.2",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "2.0.1",
-          "date": "2026-08-11T11:58:10Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.1",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "2.0.0",
-          "date": "2026-08-04T15:11:10Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.7.0",
-          "date": "2026-07-23T22:25:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.7.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.6.4",
-          "date": "2026-07-15T11:12:42Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.4",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.6.1",
-          "date": "2026-07-08T17:32:37Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.1",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.5.0",
-          "date": "2026-07-03T11:44:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
-          "notes": null,
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "r08-access-bridge.png",
-        "r08-access-bridge-2.png",
-        "r08-access-bridge-3.png",
-        "r08-access-bridge-4.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
-      },
-      "publishedAt": "2026-10-21T10:04:14Z",
-      "newUntil": "2026-10-23T10:04:14.000Z",
-      "iconAsset": "r08-access-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
-      ]
-    },
-    {
-      "id": "ai-glasses-manager",
-      "name": "AI Glasses Manager (formerly Rokid Manager)",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "2.6.3",
-      "summary": "Paid ($1.99 one-time, 3-day trial) · New camera filters, APK installation, and Wi-Fi transfers",
-      "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
-      "author": "Bruce",
-      "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
-      "phoneRequired": false,
-      "pricing": {
-        "model": "paid",
-        "price": "$1.99",
-        "currency": "USD",
-        "perDevice": true,
-        "trialDays": 3,
-        "activation": "online license check (developer server)"
-      },
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/download/v2.6.3/AI-Glasses-Manager-2.6.3.apk",
-          "sha256": "72786cc06951109ab3777e08176e4cd0a369b222b91b68bff77ef082b2f4a0e7",
-          "sizeBytes": 208570191,
-          "packageName": "com.bruce.rokidmanager",
-          "versionCode": 17,
-          "versionName": "2.6.3"
-        }
-      ],
-      "iconAsset": "ai-glasses-manager.png",
-      "publishedAt": "2026-10-20T10:30:44Z",
-      "screenshotAssets": [
-        "ai-glasses-manager-home.png",
-        "ai-glasses-manager-app-store.png",
-        "ai-glasses-manager-camera.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "## New in 2.6.3: Camera filters are here!\n\nGive your captures a new look with three camera filter styles, including Matrix. The Camera interface also has clearer, easier-to-read controls.\n\nWi-Fi Drop now supports uploading APKs to your glasses. Open the uploaded APKs in File Explorer to install them, or install apps from the Manager App Store. Wi-Fi Drop also has a redesigned browser interface and transfer reliability fixes.\n\nAI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Three camera filter styles, including Matrix, plus camera tools and photo and video viewing\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- File browsing, APK installation in File Explorer, and wireless file transfers with APK uploads through Wi-Fi Drop\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
-      },
-      "releases": [
-        {
-          "version": "2.6.3",
-          "date": "2026-10-20T10:30:44Z",
-          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.3",
-          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nCamera Filters are here! Choose between three unique styles (including the Matrix filter) to customize your captures.\n\nAPK Uploads and Installation: Wi-Fi Drop now supports uploading APK files to your glasses. Open the uploaded APKs in File Explorer to install them. You can also install apps from the Manager App Store.\n\nWi-Fi Drop Overhaul: Revamped the browser UI and patched the transfer pipeline for improved reliability.\n\nCamera UI Polish: Upgraded interface readability for a cleaner experience.\n\n**Chinese**\n\n相机滤镜正式上线！提供三种独特风格（包括矩阵滤镜）任你选择，自由定制拍摄效果。\n\nAPK 上传与安装： Wi-Fi Drop 现已支持将 APK 文件上传到眼镜。上传后，可在文件管理器中打开 APK 进行安装。也可以通过管理器内置应用商店安装应用。\n\nWi-Fi Drop 全面升级： 重新设计了网页端 UI，并修复了底层传输管道以大幅提升稳定性。\n\n相机界面优化： 提升了界面的视觉可读性，带来更清爽的操作体验。",
-          "changes": []
-        },
-        {
-          "version": "2.6.2",
-          "date": "2026-09-28T11:37:23Z",
-          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.2",
-          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nImproved App Store reliability, offline recovery, and added some network guidance\nAdded new Camera settings with shutter sounds and clearer capture feedback\nFile browsing is smoother \nGallery QoL improvements. Displayed menus are less intrusive\nManager updates are easier to notice\nHome icons are now more visually balanced\n\n**Chinese**\n\n提升应用商店的稳定性、离线恢复和网络提示\n新增相机设置、快门音效及更清晰的拍摄反馈\n文件浏览更加流畅，图库提升一些和信息显示更简洁\n管理器更新更醒目，主页图标也更加协调统一",
-          "changes": []
-        }
-      ],
-      "newUntil": "2026-10-22T10:30:44.000Z",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ai-glasses-manager.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-home.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-app-store.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-camera.png"
-      ]
-    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -316,6 +150,108 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-home.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-notifications.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-relay-phone-speech.png"
+      ]
+    },
+    {
+      "id": "r08-access-bridge",
+      "name": "R08 Access Bridge",
+      "category": "Navigation",
+      "type": "glasses",
+      "version": "2.0.4",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
+      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v2.0.4/R08-Access-Bridge-v2.0.4.apk",
+          "sha256": "aada8d23a1ddb114961fe90dcc25109cbfec05c32cca15cf518bea2752b27bf8",
+          "sizeBytes": 18627102,
+          "packageName": "com.anezium.r08accessbridge",
+          "versionCode": 39,
+          "versionName": "2.0.4"
+        }
+      ],
+      "releases": [
+        {
+          "version": "2.0.4",
+          "date": "2026-10-21T10:46:49Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.4",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "2.0.3",
+          "date": "2026-10-21T10:04:14Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.3",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "2.0.2",
+          "date": "2026-09-27T14:04:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.2",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "2.0.1",
+          "date": "2026-08-11T11:58:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.1",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "2.0.0",
+          "date": "2026-08-04T15:11:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-07-23T22:25:23Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.7.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.6.4",
+          "date": "2026-07-15T11:12:42Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.4",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.6.1",
+          "date": "2026-07-08T17:32:37Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.1",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "r08-access-bridge.png",
+        "r08-access-bridge-2.png",
+        "r08-access-bridge-3.png",
+        "r08-access-bridge-4.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
+      },
+      "publishedAt": "2026-10-21T10:46:49Z",
+      "newUntil": "2026-10-23T10:46:49.000Z",
+      "iconAsset": "r08-access-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
       ]
     },
     {
@@ -694,6 +630,70 @@
       ],
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/aerofly-rokid-hud.png"
+      ]
+    },
+    {
+      "id": "ai-glasses-manager",
+      "name": "AI Glasses Manager (formerly Rokid Manager)",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "2.6.3",
+      "summary": "Paid ($1.99 one-time, 3-day trial) · New camera filters, APK installation, and Wi-Fi transfers",
+      "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
+      "author": "Bruce",
+      "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
+      "phoneRequired": false,
+      "pricing": {
+        "model": "paid",
+        "price": "$1.99",
+        "currency": "USD",
+        "perDevice": true,
+        "trialDays": 3,
+        "activation": "online license check (developer server)"
+      },
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/download/v2.6.3/AI-Glasses-Manager-2.6.3.apk",
+          "sha256": "72786cc06951109ab3777e08176e4cd0a369b222b91b68bff77ef082b2f4a0e7",
+          "sizeBytes": 208570191,
+          "packageName": "com.bruce.rokidmanager",
+          "versionCode": 17,
+          "versionName": "2.6.3"
+        }
+      ],
+      "iconAsset": "ai-glasses-manager.png",
+      "publishedAt": "2026-10-20T10:30:44Z",
+      "screenshotAssets": [
+        "ai-glasses-manager-home.png",
+        "ai-glasses-manager-app-store.png",
+        "ai-glasses-manager-camera.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## New in 2.6.3: Camera filters are here!\n\nGive your captures a new look with three camera filter styles, including Matrix. The Camera interface also has clearer, easier-to-read controls.\n\nWi-Fi Drop now supports uploading APKs to your glasses. Open the uploaded APKs in File Explorer to install them, or install apps from the Manager App Store. Wi-Fi Drop also has a redesigned browser interface and transfer reliability fixes.\n\nAI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Three camera filter styles, including Matrix, plus camera tools and photo and video viewing\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- File browsing, APK installation in File Explorer, and wireless file transfers with APK uploads through Wi-Fi Drop\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
+      },
+      "releases": [
+        {
+          "version": "2.6.3",
+          "date": "2026-10-20T10:30:44Z",
+          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.3",
+          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nCamera Filters are here! Choose between three unique styles (including the Matrix filter) to customize your captures.\n\nAPK Uploads and Installation: Wi-Fi Drop now supports uploading APK files to your glasses. Open the uploaded APKs in File Explorer to install them. You can also install apps from the Manager App Store.\n\nWi-Fi Drop Overhaul: Revamped the browser UI and patched the transfer pipeline for improved reliability.\n\nCamera UI Polish: Upgraded interface readability for a cleaner experience.\n\n**Chinese**\n\n相机滤镜正式上线！提供三种独特风格（包括矩阵滤镜）任你选择，自由定制拍摄效果。\n\nAPK 上传与安装： Wi-Fi Drop 现已支持将 APK 文件上传到眼镜。上传后，可在文件管理器中打开 APK 进行安装。也可以通过管理器内置应用商店安装应用。\n\nWi-Fi Drop 全面升级： 重新设计了网页端 UI，并修复了底层传输管道以大幅提升稳定性。\n\n相机界面优化： 提升了界面的视觉可读性，带来更清爽的操作体验。",
+          "changes": []
+        },
+        {
+          "version": "2.6.2",
+          "date": "2026-09-28T11:37:23Z",
+          "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.2",
+          "notes": "Changes:\n\nImproved overall experience, reliability, and feature additions.\n\n**English**\n\nImproved App Store reliability, offline recovery, and added some network guidance\nAdded new Camera settings with shutter sounds and clearer capture feedback\nFile browsing is smoother \nGallery QoL improvements. Displayed menus are less intrusive\nManager updates are easier to notice\nHome icons are now more visually balanced\n\n**Chinese**\n\n提升应用商店的稳定性、离线恢复和网络提示\n新增相机设置、快门音效及更清晰的拍摄反馈\n文件浏览更加流畅，图库提升一些和信息显示更简洁\n管理器更新更醒目，主页图标也更加协调统一",
+          "changes": []
+        }
+      ],
+      "newUntil": "2026-10-22T10:30:44.000Z",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ai-glasses-manager.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-home.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-app-store.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ai-glasses-manager-camera.png"
       ]
     },
     {
@@ -3508,7 +3508,7 @@
       "name": "Rokid Nexus",
       "category": "Launcher",
       "type": "combo",
-      "version": "1.7.1",
+      "version": "1.8.1",
       "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
       "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
       "author": "Anezium",
@@ -3517,26 +3517,33 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.1/nexus-phone-1.7.1.apk",
-          "sha256": "0342a5d8abe02faf85d50147b24bfd50a4d748627ff533a7aef6f2b058fb1104",
-          "sizeBytes": 19413782,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.8.1/nexus-phone-1.8.1.apk",
+          "sha256": "0954c56126d4ea0cb182340444f3785cd8336b2484afa19821157321dafea1a7",
+          "sizeBytes": 19685138,
           "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10701,
-          "versionName": "1.7.1",
+          "versionCode": 10801,
+          "versionName": "1.8.1",
           "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
         },
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.7.1/nexus-glasses-1.7.1.apk",
-          "sha256": "c9a5c61487846cd70eff6c1450d192e62d45494cb2812c70e5ae47fafa5475f0",
-          "sizeBytes": 19804451,
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.8.1/nexus-glasses-1.8.1.apk",
+          "sha256": "273aba8f004ce77d872651e80a4c68daf3a719ce2c2ce253b0161ed27a78de8b",
+          "sizeBytes": 19971839,
           "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10701,
-          "versionName": "1.7.1",
+          "versionCode": 10801,
+          "versionName": "1.8.1",
           "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
         }
       ],
       "releases": [
+        {
+          "version": "1.8.1",
+          "date": "2026-10-22T18:59:09Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.8.1",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "1.7.1",
           "date": "2026-10-14T23:36:31Z",
@@ -3585,13 +3592,6 @@
           "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
           "notes": null,
           "changes": []
-        },
-        {
-          "version": "1.4.6",
-          "date": "2026-09-06T18:44:47Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.6",
-          "notes": null,
-          "changes": []
         }
       ],
       "screenshotAssets": [
@@ -3604,8 +3604,8 @@
       "listing": {
         "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
       },
-      "publishedAt": "2026-10-14T23:36:31Z",
-      "newUntil": "2026-10-16T23:36:31.000Z",
+      "publishedAt": "2026-10-22T18:59:09Z",
+      "newUntil": "2026-10-24T18:59:09.000Z",
       "iconAsset": "rokid-nexus.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
       "screenshotUrls": [
