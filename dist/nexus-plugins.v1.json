@@ -1450,6 +1450,54 @@
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/wirelessadb-icon.png"
+    },
+    {
+      "id": "zap",
+      "kind": "nexus-plugin",
+      "name": "Zap",
+      "category": "Communication",
+      "summary": "Your WhatsApp chats on the glasses: read, hear again, answer and start chats by voice.",
+      "description": "WhatsApp on Rokid Glasses: your chats newest first, whole messages, hear them again, reply or start a chat by voice, send a photo taken with the glasses, react with an emoji. Optional AI summary with your own key. Messages stay encrypted on the phone.",
+      "author": "Marcus de Magalhães (alema.io)",
+      "sourceUrl": "https://github.com/marcusalemao/VisualContext/tree/zap-v0.15.0/plugins/zap",
+      "publishedAt": "2026-10-28T18:52:56Z",
+      "iconAsset": "zap.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nWhatsApp on your Rokid Glasses, made for everyday use: your chats as a list, the newest on top, each message whole. Hear a message again, reply or start a new chat by voice, send a photo you just took with the glasses, and react with an emoji. Portuguese and English.\n\n## Answering\n\nReply is always there, even after the phone's notification is gone: Zap uses WhatsApp's own reply while it lasts, otherwise it opens the chat with your text typed in. Nothing is sent before you see the text and tap Send. An optional accessibility helper presses WhatsApp's Send button for you, only when the box holds exactly what you confirmed, so the phone can stay in your pocket. A Quick Settings tile pauses it (for banking apps).\n\n## Optional AI summary\n\nWhen you open a chat with many new messages or several voice notes in a row, Zap can show a short summary with one-tap next steps: a ready reply, add to calendar, remind me to reply. Off by default. It uses your own key (Gemini, OpenAI or OpenRouter); the open chat goes straight to the provider you chose. Nothing goes through servers of ours. The Nexus Assistant can also ask Zap through Skills (\"what did I miss on WhatsApp?\").\n\n## Privacy\n\nMessages are rebuilt from WhatsApp's notifications and kept only on the phone, encrypted with an Android Keystore key, for 1, 7 or 30 days. Zap uses the internet only when you turn the AI summary on.\n\n## Needs\n\nRokid Nexus 1.7 or newer, Android 11+, WhatsApp or WhatsApp Business. Notification access on the phone. Optional: the accessibility helper, Contacts, Photos, Calendar.\n\nPublic beta, made by one person. Feedback: zap@alema.io · https://z.alema.io"
+      },
+      "releases": [
+        {
+          "version": "0.15.0",
+          "date": "2026-10-28T18:52:56Z",
+          "notes": "- First public beta in RokidBrew.\n- Chat list like WhatsApp: unread count and short time; the message you're on opens up to three lines.\n- Optional AI summary with one-tap replies, calendar and reminders (your own key).\n- Quick emoji reactions with skin tone; photos and videos from the glasses or the phone."
+        }
+      ],
+      "nexus": {
+        "pluginId": "zap",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces",
+          "stt",
+          "tts",
+          "mediasync",
+          "camera"
+        ],
+        "launchable": true,
+        "settingsActivity": ".ZapSettingsActivity",
+        "minHostVersionCode": 10700
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/marcusalemao/VisualContext/releases/download/zap-v0.15.0/zap-phone-release.apk",
+        "packageName": "io.alema.zap",
+        "sha256": "cae85db2bde8a5fdd165f2cdfc2266ac483c2ba115856f65848a8fe247f5c6e2",
+        "sizeBytes": 6174693,
+        "versionCode": 40,
+        "versionName": "0.15.0",
+        "signerSha256": "f64344da8b0ff0a8d8c9ae3aaa0511f72eb14c4d49e59179a0310fb58cff9058"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/zap.png"
     }
   ]
 }
