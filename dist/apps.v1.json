@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T18:52:56.195Z",
+  "generatedAt": "2026-10-29T11:33:55.467Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -13,6 +13,58 @@
     "Release APK assets were checked with zipalign -P 16 and arm64 ELF alignment validation."
   ],
   "apps": [
+    {
+      "id": "ek-timer",
+      "name": "EK Timer",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.1.0",
+      "publishedAt": "2026-10-29T00:17:59Z",
+      "summary": "Simple timer for Rokid Glasses",
+      "description": "EK Timer is a simple and intuitive timer app.",
+      "listing": {
+        "descriptionMarkdown": "EK Timer is a simple and intuitive timer app.\n\n### Key Features and Operation\n\n**1. Time Setting**\n\n- **Add Minutes:** Press the Minute button to increase the time by 1 minute (up to 99 minutes).\n- **Add Seconds:** Press the Second button to increase the time by 10 seconds. (Automatically converted to minutes if it exceeds 60 seconds)\n- **Note:** You cannot change the time while the timer is running.\n\n**2. Timer Control**\n\n- **Start/Stop:** Press the Start button when time is set to begin the countdown. Press it while running to pause the timer.\n- **Reset:** Resets the timer to 00:00 and stops it.\n\n**3. End Alert**\n\n- When the set time reaches 0, the countdown ends automatically, accompanied by a **beep sound** and vibration.\n\n**4. Control Methods**\n\n- **Touch:** Tap each button on the screen directly to control the timer.\n- **Swipe:** Swipe to move the focus between buttons."
+      },
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-10-29T00:17:59Z",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.0.0",
+          "date": "2026-05-26",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-timer.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.1.0.apk",
+          "sha256": "9f6a8b1a55e2336a7d94efad6c6771f8ad7ea40eaeb967932360ad97d346d11e",
+          "sizeBytes": 4692156,
+          "packageName": "kr.pe.eung.ektimer",
+          "versionCode": 2,
+          "versionName": "1.1.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-10-31T00:17:59.000Z",
+      "iconAsset": "ek-timer.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-timer.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
+      ]
+    },
     {
       "id": "rokid-relay",
       "name": "Rokid Relay",
@@ -1155,51 +1207,6 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-pilot.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-pilot.jpg"
-      ]
-    },
-    {
-      "id": "ek-timer",
-      "name": "EK Timer",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.0.0",
-      "publishedAt": "2026-05-26",
-      "summary": "Simple timer for Rokid Glasses",
-      "description": "EK Timer is a simple and intuitive timer app.",
-      "listing": {
-        "descriptionMarkdown": "EK Timer is a simple and intuitive timer app.\n\n### Key Features and Operation\n\n**1. Time Setting**\n\n- **Add Minutes:** Press the Minute button to increase the time by 1 minute (up to 99 minutes).\n- **Add Seconds:** Press the Second button to increase the time by 10 seconds. (Automatically converted to minutes if it exceeds 60 seconds)\n- **Note:** You cannot change the time while the timer is running.\n\n**2. Timer Control**\n\n- **Start/Stop:** Press the Start button when time is set to begin the countdown. Press it while running to pause the timer.\n- **Reset:** Resets the timer to 00:00 and stops it.\n\n**3. End Alert**\n\n- When the set time reaches 0, the countdown ends automatically, accompanied by a **beep sound** and vibration.\n\n**4. Control Methods**\n\n- **Touch:** Tap each button on the screen directly to control the timer.\n- **Swipe:** Swipe to move the focus between buttons."
-      },
-      "releases": [
-        {
-          "version": "1.0.0",
-          "date": "2026-05-26",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Imported from EUNG SOFT app metadata.",
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "ek-timer.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.0.0.apk",
-          "sha256": "2599f399b49d8784f6328159bfd42dda499a253e20753441b07b7ac1f3d625c2",
-          "sizeBytes": 4692148,
-          "packageName": "kr.pe.eung.ektimer",
-          "versionCode": 1,
-          "versionName": "1.0.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "newUntil": "2026-05-28T00:00:00.000Z",
-      "iconAsset": "ek-timer.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-timer.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
       ]
     },
     {
