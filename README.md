@@ -253,6 +253,13 @@ Example release-bucket rule:
 
 `update` rules are registry-maintenance metadata only. They are stripped from `dist/apps.v1.json`.
 
+For projects that intentionally release device targets independently, set
+`allowMissingAsset: true` on the corresponding `update.assets[]` rule. A release
+without an APK matching that rule keeps the installed registry artifact unchanged
+without a warning. Future matching APKs are still checked normally, including
+package validation. This is enabled for the Nexus phone companion because some
+Nexus releases update only the glasses hub. Missing assets warn by default.
+
 ---
 
 ## Adding screenshots

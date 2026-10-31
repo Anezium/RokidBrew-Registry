@@ -105,6 +105,7 @@
       },
       {
         "target": "phone",
+        "allowMissingAsset": true,
         "match": "^nexus-phone-v?(?<version>\\d+(?:[._-]\\d+){0,4}(?:[-+][0-9A-Za-z.-]+)?)\\.apk$"
       }
     ]

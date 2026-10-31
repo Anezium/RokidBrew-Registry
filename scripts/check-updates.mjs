@@ -540,7 +540,10 @@ async function checkGithubArtifact(aapt, app, artifact, updateConfig, rule, log,
 
   if (inspected.length === 0) {
     const currentTag = parseGithubReleaseUrl(artifact.url)?.tag;
-    if (rule?.match && currentTag && currentTag !== release.tag_name) {
+    // Some projects intentionally publish releases for only one device target.
+    // Opt out only when no filename matches; package mismatches still warn.
+    const expectedAbsence = rule?.allowMissingAsset === true && candidates.length === 0;
+    if (!expectedAbsence && rule?.match && currentTag && currentTag !== release.tag_name) {
       const apkNames = (release.assets || [])
         .filter((asset) => asset.name?.toLowerCase().endsWith(".apk"))
         .map((asset) => asset.name);
