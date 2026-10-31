@@ -4,18 +4,23 @@
   "name": "Media Deck",
   "category": "Music",
   "summary": "Now playing and transport controls, with approved Assistant Skills.",
-  "description": "Show compatible phone media sessions on the glasses and use transport controls. With both Nexus hubs 1.7.0, notification access and explicit operation approvals, Assistant can read now-playing information and control the observed session. Stale session references are rejected. Device Skills tests used an Android test player; real music-player compatibility remains unverified.",
+  "description": "An integrated Nexus 2.0 player with cover artwork, progress and quick transport controls. Keep its card in Activities and choose when its floating band appears. Requires notification access; older hubs retain the full-surface fallback.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-10-10T13:14:21Z",
+  "publishedAt": "2026-10-31T15:31:42Z",
   "iconAsset": "media-icon.png",
   "screenshotAssets": [
     "media-1-nowplaying.png"
   ],
   "listing": {
-    "descriptionMarkdown": "## Assistant Skills in 1.0.3\n\nRequires **both Nexus hubs 1.7.0**, **Assistant 1.5.0**, notification access and explicit operation approvals. Read now-playing information or control the observed phone session, without opening the Media Deck HUD for a headless call. Tests used an Android test player; real music-player compatibility remains unverified.\n\n## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
+    "descriptionMarkdown": "## 1.0.4 — Nexus 2.0\n\nAn integrated Nexus 2.0 player with cover artwork, progress and quick transport controls. Keep its card in Activities and choose when its floating band appears. Requires notification access; older hubs retain the full-surface fallback.\n\nUpdate both Nexus hubs for the new launcher features.\n\n## Assistant Skills in 1.0.3\n\nRequires **both Nexus hubs 1.7.0**, **Assistant 1.5.0**, notification access and explicit operation approvals. Read now-playing information or control the observed phone session, without opening the Media Deck HUD for a headless call. Tests used an Android test player; real music-player compatibility remains unverified.\n\n## About\n\nWhatever plays on your phone shows on the glasses: title, artist, artwork, and progress. Tap to play or pause, swipe to skip. Audio never passes through Nexus."
   },
   "releases": [
+    {
+      "version": "1.0.4",
+      "date": "2026-10-31T15:31:42Z",
+      "notes": "\n- Integrated Nexus player with cover artwork, progress, full-text scrolling and\n  quick activity-card controls. One Back leaves its focused controls.\n- Keep in activities retains an idle Resume music entry. Nexus owns when its\n  floating band appears; the settings link opens the shared display chooser.\n\nThe activity and its page need Nexus hubs 2.0.0; with older hubs Media Deck behaves like 1.0.3.\n\n- A \"Which player?\" choice made through Assistant reaches only that player for that call\n  and leaves the surface, the activity and the page as they were.\n- **Show in activities.** A new setting, available once notification access is on, keeps\n  what plays among the glasses' activities even with Media Deck closed: title, artist,\n  Previous, Play or Pause, and Next. A tap on the card focuses Play/Pause; nothing plays on\n  that first tap. The activity follows only real changes (the player, the track, playing or\n  paused), never the position, and nothing polls. While idle it keeps a Resume music entry. Turning the setting off or\n  revoking notification access ends it; the setting itself is kept.\n- A new track or another player updates the activity quietly: it no longer lifts what plays\n  above a running route or another activity in the glasses' stack.\n- The activity carries the whole title, up to 40 characters, for the glasses' card and island,\n  and is marked with Media Deck's own disc instead of a play or pause mark, which sat next to the\n  glasses' own media indicator and could contradict it. \"Paused\" or \"Stopped\" opens the artist's\n  line instead, so a narrow line cuts the artist rather than the state.\n- **Controls only reach the player you saw.** Every command, from the activity, its page or\n  the full surface, is checked against that exact media session and its state: if another\n  player took over or the state moved, it is refused as stale instead of reaching another app.\n  Play and pause are sent as what you asked for, never as a toggle, and nothing is retried.\n- A Media Deck page for the launcher: what plays with Previous, Play/Pause and Next, which\n  you can allow to run on one tap in Nexus; older launchers get a summary with the same\n  controls and a row to open the full app.\n- The full surface shows \"Nothing is playing\" or the access message again whenever the\n  session goes away, instead of keeping the last track; buffering now shows as playing with\n  the clock held, as a tap would pause it.\n\n\n### Artifact\n\n- File: `media-phone-release.apk`\n- SHA-256: `1af1f7632e8d032ce46236bfd1200b22a9acc47dd7f10716853a85cb4b6a9fe4`\n"
+    },
     {
       "version": "1.0.3",
       "date": "2026-10-10T13:14:21Z",
@@ -49,12 +54,12 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.3/media-phone-release.apk",
-    "sha256": "c702f3e924552b1ac63fc30a2ea72d0defccda40e3fc74677585c9feed28b378",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/media-v1.0.4/media-phone-release.apk",
+    "sha256": "1af1f7632e8d032ce46236bfd1200b22a9acc47dd7f10716853a85cb4b6a9fe4",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 5706561,
+    "sizeBytes": 6239469,
     "packageName": "com.anezium.rokidbus.plugin.media",
-    "versionCode": 4,
-    "versionName": "1.0.3"
+    "versionCode": 5,
+    "versionName": "1.0.4"
   }
 }

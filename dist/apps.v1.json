@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-30T18:31:49.977Z",
+  "generatedAt": "2026-10-31T15:40:40.679Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -14,55 +14,121 @@
   ],
   "apps": [
     {
-      "id": "ek-timer",
-      "name": "EK Timer",
-      "category": "Utility",
-      "type": "glasses",
-      "version": "1.1.0",
-      "publishedAt": "2026-10-29T00:17:59Z",
-      "summary": "Simple timer for Rokid Glasses",
-      "description": "EK Timer is a simple and intuitive timer app.",
-      "listing": {
-        "descriptionMarkdown": "EK Timer is a simple and intuitive timer app.\n\n### Key Features and Operation\n\n**1. Time Setting**\n\n- **Add Minutes:** Press the Minute button to increase the time by 1 minute (up to 99 minutes).\n- **Add Seconds:** Press the Second button to increase the time by 10 seconds. (Automatically converted to minutes if it exceeds 60 seconds)\n- **Note:** You cannot change the time while the timer is running.\n\n**2. Timer Control**\n\n- **Start/Stop:** Press the Start button when time is set to begin the countdown. Press it while running to pause the timer.\n- **Reset:** Resets the timer to 00:00 and stops it.\n\n**3. End Alert**\n\n- When the set time reaches 0, the countdown ends automatically, accompanied by a **beep sound** and vibration.\n\n**4. Control Methods**\n\n- **Touch:** Tap each button on the screen directly to control the timer.\n- **Swipe:** Swipe to move the focus between buttons."
-      },
+      "id": "rokid-nexus",
+      "name": "Rokid Nexus",
+      "category": "Launcher",
+      "type": "combo",
+      "version": "2.0.0",
+      "summary": "Nexus 2.0: native activity cards, media player, route maps and Relay replies.",
+      "description": "A plugin platform for Rokid AR glasses. Nexus 2.0 adds a native launcher with interactive activity cards, an integrated media player, route maps, notification history and explicit conversation replies. Plugins run on the phone and render through one glasses hub. Update both hubs together.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v2.0.0/nexus-phone-2.0.0.apk",
+          "sha256": "edf1ca7a21bfe3086a7ee5902b035052b84be75b384b7e6691e08e675638bc5f",
+          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+          "sizeBytes": 20307798,
+          "packageName": "com.anezium.rokidbus.phone",
+          "versionCode": 20000,
+          "versionName": "2.0.0"
+        },
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v2.0.0/nexus-glasses-2.0.0.apk",
+          "sha256": "096b86dbf62ff308238ca52fcc46552750d10acb4a4724238fff70beed4bdaca",
+          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+          "sizeBytes": 21103235,
+          "packageName": "com.anezium.rokidbus.glasses",
+          "versionCode": 20000,
+          "versionName": "2.0.0"
+        }
+      ],
       "releases": [
         {
-          "version": "1.1.0",
-          "date": "2026-10-29T00:17:59Z",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "version": "2.0.0",
+          "date": "2026-10-31T15:37:43Z",
+          "notes": "\nUpdate both Nexus hubs together. Relay 1.4.0, Navigation 0.3.0, Media Deck 1.0.4 and Sample 1.0.6 ship alongside and keep working as before with older hubs. Plugin developers get SDK 0.24.0.\n\n### Glasses hub\n\n- **A new Nexus launcher.** Triple tap opens a stack: your live activities first (a route, what plays, a to-do list), then the latest notification, **Notifications** and **Applications**. Swipe moves, tap opens, double tap goes back. The stack keeps its order while it is open, so nothing jumps under your finger.\n- **An integrated media player.** Media Deck's launcher player shows its cover,\n  title, artist and progress, with Previous, Play/Pause and Next. Its activity\n  card has quick controls and Open player; one Back leaves the focused player.\n  Paused and idle states remain honest, and a paused player can be resumed.\n- **Bands on your terms.** Keep an activity in Nexus while its floating band\n  expires or stays hidden. Track changes scroll the full title and artist,\n  including while paused. Covers use bounded image caching and degrade safely\n  to text/controls when only the narrow transport is available.\n- A notification removed from the phone leaves the launcher's promoted cards\n  immediately, including below an open page, while its entry remains in\n  Notifications history. Selection follows the surviving card and never hands\n  an old press to its replacement.\n- Restarting the glasses no longer reuses command identifiers remembered by the\n  phone, fixing Play/Pause commands silently rejected after an update or restart.\n- **Pages instead of apps.** An activity or a notification opens its page inside Nexus: a conversation, a player with Previous, Play/Pause and Next, a route with its map, a checklist. **Open app** is still there when you want the plugin's full surface.\n- **Tap to act.** A focused activity command, plugin page row or **Open app** runs immediately, without a confirmation screen. A press begun before the target was drawn cannot act; stale, offline and pending actions keep their guards. Conversation **Send** still needs its own fresh tap after the draft is visible.\n- **Maps move smoothly.** Between two route updates a few seconds apart, the map and your position glide instead of jumping, and the map turns smoothly with your heading, on the islands, the route page, Whole route and full screen (with Navigation 0.3.0).\n- **Long names scroll.** A destination, street or instruction too wide for its line on the island, the launcher card or the route page scrolls to its end instead of stopping at \"…\", when the plugin sends it whole (Navigation 0.3.0 does).\n- With an older phone too, a plugin page action acts only for a press begun after its row was drawn, so an update never runs a different row.\n- **Notification history.** The last 30 notifications of the past 24 hours, in memory only. A message opens its exact conversation. A notification removed from the phone is marked removed and can no longer be answered, and nothing older than 24 hours is shown, even on a launcher left open.\n- **Reply from the glasses.** A conversation page offers Dictate (the glasses' microphone) and Type (the phone keyboard). Send needs a fresh tap after you saw it, and the result says the reply was handed to the app, never that it was delivered or read. What you dictated or typed is kept if the link drops or the notification goes away; it is never sent on its own.\n- **Navigation on the glasses.** A route shows as text, a minimap, a panel or a full map you can open from its card, with the real streets around a walking route. GPS loss is said plainly and the map turns north-up instead of guessing. A map needs a route Nexus plans itself, such as a walk started from Navigation: guidance read from Google Maps or Citymapper shows as text, and the route's Display choice marks Minimap and Panel unavailable instead of saving a size that changes nothing.\n- A one-to-one message no longer repeats its sender before each line, on its card and on the notification band; a group keeps every sender.\n- **Newest first.** A newly started activity goes above the ones already running, so a route you start while music plays leads the stack and expands. A track change or a plugin reconnecting does not move anything.\n- **Activities over an app.** For each app on the glasses you choose what stays visible while it is in front: your activities, alerts only, or nothing.\n- **Whole titles.** What plays reads in full on its card and its island: a title too long for its line scrolls slowly to its end and back while it is on screen. Folded, an activity's island is now its mark beside two lines, the title over the artist, with nothing left empty under them; expanded, its commands are drawn as icons whenever their names would not fit whole, never as \"Pre…\".\n- With an older phone hub, or with the **Classic launcher** chosen, the glasses keep the 1.8 launcher, and activities keep their classic panel and chip instead of the new map islands.\n\n### Phone hub\n\n- **Floating Activities.** Choose Automatic, Always visible, Home screen only,\n  On changes, or Activities only per plugin. On changes shows a brief band for\n  a real event for 3, 5 or 10 seconds; its retained Activities card is independent.\n  Plugins link to these user-owned settings through the SDK.\n- Readable Navigation permission guidance, a clear Allow/Manage action and\n  retained privacy explanation while Android reconnects its notification listener.\n\n### SDK 0.24.0\n\n- Launcher pages and delivered commands now share the service's existing quiet **Active on your glasses** notification, helping them keep answering while the phone is idle. Pages release it when covered, closed or their lease expires; commands and actions release it after the result (or the existing deadline for an asynchronous command). Existing surface, microphone and ongoing-work holds still compose. Plugins already declaring the session's `specialUse` foreground service need no manifest change; a rejected promotion remains non-fatal.\n- The launcher bundle, active only when both hubs negotiate it (`supportsLauncherInteractive()`): page providers and the conversation, media and route page templates; typed page and activity actions with hub-approved quick actions; activity destinations and commands; notice destinations, event keys, conversation events and `withdrawNotice(eventKey)`; `forgetNotices(onAccepted)` asks the glasses to forget every notification the plugin showed, kept by the phone until they do, with `onAccepted` once the phone holds it; route geometry and heading for activities.\n- Activity actions are no longer deprecated. On a negotiated launcher they are selectable from the activity's card and page; islands themselves stay passive, and older hubs ignore them as before. Plugins still need a full-surface or notice fallback for hubs without the bundle.\n- Launcher taps use `QUICK` when the existing policy and phone stamp allow it, `CONFIRMED` otherwise. The SDK and wire are unchanged; `CONFIRMED` no longer implies a glasses confirmation panel.\n- `supportsRenderedMaps`, `renderedMapViews`, `clearRenderedMapDemand()` and `onRenderedMapsChanged()` expose bounded, expiring hub-issued map demand.\n- `NexusActivity.headline` (optional, at most 40 printable characters, launcher bundle only) is the longer form of `primary`, such as a whole track title, that the glasses draw on the activity's card and island, scrolled when it does not fit. `primary` keeps its 12 characters and is what older hubs draw; the SDK and the phone drop the headline for them.\n- `NexusActivity.wholeSecondary` and `wholeDetail` (optional, at most 120 printable characters a line, launcher bundle only) carry `secondary` and `detail` uncut. The glasses scroll them where the bounded lines would end in an ellipsis; older hubs draw the bounded lines. `NexusGuidanceStep` passes them through.\n- `RouteGeometry.anchor` (optional `RouteAnchor(frame, x, y)`, decimetres) places a geometry's frame on the ground so the glasses glide between successive geometries of one `frame` instead of jumping. Older hubs ignore it.\n- `RouteGeometry.attribution` (optional, at most 40 printable characters) credits the source of a geometry's `street` and `major` paths. Older hubs ignore it.\n- Several model classes gained defaulted parameters. Source calls keep compiling; code built against 0.23.0 must be rebuilt against 0.24.0.\n\n"
+        },
+        {
+          "version": "1.8.1",
+          "date": "2026-10-22T18:59:09Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.8.1",
           "notes": null,
           "changes": []
         },
         {
-          "version": "1.0.0",
-          "date": "2026-05-26",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Imported from EUNG SOFT app metadata.",
+          "version": "1.7.1",
+          "date": "2026-10-14T23:36:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.1",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-10-10T12:24:32Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.0",
+          "notes": "\nUpdate both Nexus hubs together and install Patcher 1.1.0 for the integrated YouTube and Reddit guides. Reddit remains Preview: physical R08 and real Reddit writes have not been validated. This app release does not publish an Assistant update.\n\nPlugins that publish no skill catalog keep working unchanged, and a plugin built with the new SDK keeps working on older hubs: every skills call reports the hub as not supporting skills instead of sending.\n\n### Phone hub\n\n- Move the complete YouTube/MicroG tutorial and the Reddit tutorial into Patcher's app entries. Glasses apps keeps the installed-app inventory and opening actions, without duplicate setup cards. Keep the handoff caller authenticated and both tutorials private.\n- Add official Reddit 2026.14.0 complete-APKM verification, native installation inventory and the existing explicit auto-keyboard preference for Reddit search and replies. Credentials stay in Reddit.\n- **Skills.** A plugin can publish typed operations in a catalog the hub reads\n  without starting it; an approved caller, Assistant first, invokes them\n  through the hub. The hub stamps both identities, validates arguments and\n  results against a bounded schema, hands out opaque expiring references\n  instead of the provider's identifiers, reuses the outcome of an exact\n  duplicate, refuses excess work as busy, and ends every call within 15\n  seconds. A provider is bound for the call only, never opened, and cannot\n  draw, notify, or listen on the strength of it. Revocation, package changes,\n  and a caller or provider going away end calls, and late answers are\n  dropped. The bus inspector shows each outcome without its content.\n- **Per-operation consent.** A provider's Plugin access screen lists its\n  operations with one switch per operation and assistant, all off, under a\n  note that results may reach the assistant's AI provider. A changed\n  operation needs approving again; an invalid catalog shows why instead of\n  failing the plugin.\n- New grants `skills_provider` and `skills_client`, requested through their\n  own metadata keys so older hubs keep loading those plugins. Requesting one\n  returns an installed plugin to Pending for approval.\n\n### Plugin SDK\n\n- Skills for providers (`onNexusSkillInvoked`, `NexusSkillInvocation`) and\n  callers (`requestSkillCatalog`, `invokeSkill`, `cancelSkill`,\n  `closeSkillSession`), gated on `supportsSkills`.\n- `NexusGuidancePlanner`, `NexusGuidanceStep`, and `NexusGuidanceGlyphs`: the\n  guidance-to-activity planner Navigation used, now shared.\n- `holdNexusOngoingWork` / `releaseNexusOngoingWork` for an ongoing process\n  the wearer started, such as journey guidance.\n\n### Glasses hub\n\n- Preserve the launcher session stack and shared input arbiter, so Back returns through logical stops without trapping users in an app or reopening a dismissed overlay.\n- Keep native Reddit opening and inventory alongside YouTube, with the existing trusted hub-to-hub remote input path.\n\n",
+          "changes": []
+        },
+        {
+          "version": "1.6.0",
+          "date": "2026-10-07T15:49:01Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.6.0",
+          "notes": "\nInstall both Nexus hubs 1.6.0 and Patcher 1.0.0 for guided YouTube setup.\n\n- Open native Android apps from the glasses launcher, with cached app icons.\n- Guide MicroG installation, stock YouTube download, on-phone patching, and Google\n  sign-in through Keyboard & remote. Nexus never reads Google accounts or tokens.\n- Opening YouTube or MicroG restores the glasses' Wi-Fi radio when needed.\n  Automatic phone-keyboard opening for YouTube remains an explicit preference.\n\n- Use the target-aware Patcher plugin for YouTube setup, keeping signer-bound approval,\n  result-byte validation, same-signer CXR updates and confirmed-install records.\n- Patcher replaces the unpublished YouTube Patcher package and generates a new key;\n  existing output needs an imported backup or an explicit manual reinstall on glasses.\n- YouTube setup says what to expect from Patcher: about 6–7 minutes, kept going in a\n  small window while you use other apps, then checked and installed by Nexus. When a\n  patched APK is waiting, step 3 leads with Install on glasses and says whether the\n  glasses still need connecting.\n- Returning to setup while a patch is pending offers **Open Patcher** to check\n  progress or use the saved result, without claiming the patch has stopped.\n- Ready notifications carry the completed job to the existing Patcher window,\n  including after activity recreation, so its authenticated result reaches Nexus.\n\n",
+          "changes": []
+        },
+        {
+          "version": "1.4.11",
+          "date": "2026-09-22T12:55:59Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.11",
+          "notes": "### Upgrade together\n\nInstall **both Nexus hubs 1.4.11** before using notices, then update Relay to\n**1.2.3**. Notice protocol v5 requires matching phone and glasses hubs; mixed\nhub versions are not supported for notices. Plugins need to be rebuilt with\nSDK **0.19.0** to gain the new callback protection. Plugin API version 3 and\nexisting grants are unchanged.\n\n### Phone and glasses hubs\n\n- **An SPP interruption no longer disables a live notice's SDK callbacks.**\n  Losing or restoring one glasses transport leaves the current question intact;\n  an explicit hide, replacement, or fresh registration still protects against\n  stale replies. A newer owner hide also clears an older visible band when a\n  replacement show was lost or failed image decoding.\n- **HUD routing has dedicated owners.** The phone hub delegates notices, pins,\n  activities, ordinary surfaces, and Ink to separate routers, with regression\n  tests for owner delivery, reconnect state, and closure. Surface detach still\n  preserves an active microphone lease through the existing audio lifecycle.\n- **Notice replies stay with the question the wearer saw.** Both hubs now bind\n  actions, gestures, and dismissals to the notice instance and question, so a\n  delayed event cannot act on a replacement from the same plugin. The SDK also\n  filters stale callbacks already queued for a plugin. Notice protocol v5\n  requires matching phone and glasses hubs; rebuild plugins with the updated\n  SDK to gain the callback protection.\n- **A failed notice reply is visible.** The glasses show *Delivery not confirmed*\n  when the transport rejects a send, retaining the one-answer guard instead of\n  risking a duplicate effect after a partial write.\n- **An interactive notice keeps key priority over focused Nexus windows.**\n  Direction, confirm, and Back now reach the notice before the launcher or\n  surface beneath it, including local activity and overlay windows. Confirming\n  a notice can no longer activate an underlying control through those paths.\n  The same dispatcher handles accessibility input and paired directional keys.\n- **Relay countdowns keep the same question.** The SDK's optional `rearm = false`\n  update refreshes action labels without invalidating a tap in flight.\n- **Directional input can select Ink actions.** Tappable controls now have an\n  outlined selection tracked by their node id. Confirm activates the selected\n  control, and updates retain that selection when the node still exists. Paired\n  directional key reports count as one move. A notice can take input above the\n  page and return to the same selected Ink control when dismissed.\n\n### Plugin SDK 0.19.0\n\n- Add optional `NexusNoticeUpdate.rearm`. With `rearm = false`, a label-only\n  action update preserves the current question, selection, and one-answer\n  guard. This requires `noticeInteractionVersion: 1`; an older phone hub returns\n  `CAPABILITY_NOT_AVAILABLE` rather than silently changing the question.\n- Filter queued notice callbacks by the current local question. An SPP-only\n  interruption does not retire that context, and reconnecting does not undo an\n  explicit hide.\n- **Callback contract change:** `onNoticeClosed` belongs to the current local\n  notice context, not to every `showNotice` call. An immediate hide followed by\n  show may suppress the previous `closed(owner)` callback. Plugins must not\n  depend on exactly one close callback per show to clean up replaced state.\n\nValidation and remaining transport-recovery follow-ups are recorded in the\n[review and device retest](https://github.com/Anezium/Rokid-Nexus/blob/v1.4.11/docs/reviews/hud-interaction-review-follow-up.md).\n",
+          "changes": []
+        },
+        {
+          "version": "1.4.10",
+          "date": "2026-09-19T21:19:43Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.8",
+          "date": "2026-09-14T19:38:40Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-09-07T19:29:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
+          "notes": null,
           "changes": []
         }
       ],
       "screenshotAssets": [
-        "ek-timer.jpg"
+        "rokid-nexus-1.png",
+        "rokid-nexus-2.png",
+        "rokid-nexus-3.png",
+        "rokid-nexus-4.png",
+        "rokid-nexus-5.png"
       ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.1.0.apk",
-          "sha256": "9f6a8b1a55e2336a7d94efad6c6771f8ad7ea40eaeb967932360ad97d346d11e",
-          "sizeBytes": 4692156,
-          "packageName": "kr.pe.eung.ektimer",
-          "versionCode": 2,
-          "versionName": "1.1.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft",
-      "newUntil": "2026-10-31T00:17:59.000Z",
-      "iconAsset": "ek-timer.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-timer.png",
+      "listing": {
+        "descriptionMarkdown": "## Nexus 2.0\n\nA plugin platform for Rokid AR glasses. Nexus 2.0 adds a native launcher with interactive activity cards, an integrated media player, route maps, notification history and explicit conversation replies. Plugins run on the phone and render through one glasses hub. Update both hubs together.\n\nChoose when each plugin activity floats over the glasses, or keep only its card in Activities. Update Media Deck, Navigation and Relay for their native launcher pages. Favorite app shortcuts and internally planned public-transport journeys are not included in this release.\n\n## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
+      },
+      "publishedAt": "2026-10-31T15:37:43Z",
+      "newUntil": "2026-11-02T15:37:43.000Z",
+      "iconAsset": "rokid-nexus.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
       ]
     },
     {
@@ -1207,6 +1273,58 @@
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-pilot.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-pilot.jpg"
+      ]
+    },
+    {
+      "id": "ek-timer",
+      "name": "EK Timer",
+      "category": "Utility",
+      "type": "glasses",
+      "version": "1.1.0",
+      "publishedAt": "2026-10-29T00:17:59Z",
+      "summary": "Simple timer for Rokid Glasses",
+      "description": "EK Timer is a simple and intuitive timer app.",
+      "listing": {
+        "descriptionMarkdown": "EK Timer is a simple and intuitive timer app.\n\n### Key Features and Operation\n\n**1. Time Setting**\n\n- **Add Minutes:** Press the Minute button to increase the time by 1 minute (up to 99 minutes).\n- **Add Seconds:** Press the Second button to increase the time by 10 seconds. (Automatically converted to minutes if it exceeds 60 seconds)\n- **Note:** You cannot change the time while the timer is running.\n\n**2. Timer Control**\n\n- **Start/Stop:** Press the Start button when time is set to begin the countdown. Press it while running to pause the timer.\n- **Reset:** Resets the timer to 00:00 and stops it.\n\n**3. End Alert**\n\n- When the set time reaches 0, the countdown ends automatically, accompanied by a **beep sound** and vibration.\n\n**4. Control Methods**\n\n- **Touch:** Tap each button on the screen directly to control the timer.\n- **Swipe:** Swipe to move the focus between buttons."
+      },
+      "releases": [
+        {
+          "version": "1.1.0",
+          "date": "2026-10-29T00:17:59Z",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.0.0",
+          "date": "2026-05-26",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Imported from EUNG SOFT app metadata.",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-timer.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKTimer_v1.1.0.apk",
+          "sha256": "9f6a8b1a55e2336a7d94efad6c6771f8ad7ea40eaeb967932360ad97d346d11e",
+          "sizeBytes": 4692156,
+          "packageName": "kr.pe.eung.ektimer",
+          "versionCode": 2,
+          "versionName": "1.1.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft",
+      "newUntil": "2026-10-31T00:17:59.000Z",
+      "iconAsset": "ek-timer.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-timer.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-timer.jpg"
       ]
     },
     {
@@ -3509,119 +3627,6 @@
       },
       "releases": [],
       "screenshotAssets": []
-    },
-    {
-      "id": "rokid-nexus",
-      "name": "Rokid Nexus",
-      "category": "Launcher",
-      "type": "combo",
-      "version": "1.8.1",
-      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
-      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.8.1/nexus-phone-1.8.1.apk",
-          "sha256": "0954c56126d4ea0cb182340444f3785cd8336b2484afa19821157321dafea1a7",
-          "sizeBytes": 19685138,
-          "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10801,
-          "versionName": "1.8.1",
-          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
-        },
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.8.1/nexus-glasses-1.8.1.apk",
-          "sha256": "273aba8f004ce77d872651e80a4c68daf3a719ce2c2ce253b0161ed27a78de8b",
-          "sizeBytes": 19971839,
-          "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10801,
-          "versionName": "1.8.1",
-          "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c"
-        }
-      ],
-      "releases": [
-        {
-          "version": "1.8.1",
-          "date": "2026-10-22T18:59:09Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.8.1",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.7.1",
-          "date": "2026-10-14T23:36:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.1",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.7.0",
-          "date": "2026-10-10T12:24:32Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.7.0",
-          "notes": "\nUpdate both Nexus hubs together and install Patcher 1.1.0 for the integrated YouTube and Reddit guides. Reddit remains Preview: physical R08 and real Reddit writes have not been validated. This app release does not publish an Assistant update.\n\nPlugins that publish no skill catalog keep working unchanged, and a plugin built with the new SDK keeps working on older hubs: every skills call reports the hub as not supporting skills instead of sending.\n\n### Phone hub\n\n- Move the complete YouTube/MicroG tutorial and the Reddit tutorial into Patcher's app entries. Glasses apps keeps the installed-app inventory and opening actions, without duplicate setup cards. Keep the handoff caller authenticated and both tutorials private.\n- Add official Reddit 2026.14.0 complete-APKM verification, native installation inventory and the existing explicit auto-keyboard preference for Reddit search and replies. Credentials stay in Reddit.\n- **Skills.** A plugin can publish typed operations in a catalog the hub reads\n  without starting it; an approved caller, Assistant first, invokes them\n  through the hub. The hub stamps both identities, validates arguments and\n  results against a bounded schema, hands out opaque expiring references\n  instead of the provider's identifiers, reuses the outcome of an exact\n  duplicate, refuses excess work as busy, and ends every call within 15\n  seconds. A provider is bound for the call only, never opened, and cannot\n  draw, notify, or listen on the strength of it. Revocation, package changes,\n  and a caller or provider going away end calls, and late answers are\n  dropped. The bus inspector shows each outcome without its content.\n- **Per-operation consent.** A provider's Plugin access screen lists its\n  operations with one switch per operation and assistant, all off, under a\n  note that results may reach the assistant's AI provider. A changed\n  operation needs approving again; an invalid catalog shows why instead of\n  failing the plugin.\n- New grants `skills_provider` and `skills_client`, requested through their\n  own metadata keys so older hubs keep loading those plugins. Requesting one\n  returns an installed plugin to Pending for approval.\n\n### Plugin SDK\n\n- Skills for providers (`onNexusSkillInvoked`, `NexusSkillInvocation`) and\n  callers (`requestSkillCatalog`, `invokeSkill`, `cancelSkill`,\n  `closeSkillSession`), gated on `supportsSkills`.\n- `NexusGuidancePlanner`, `NexusGuidanceStep`, and `NexusGuidanceGlyphs`: the\n  guidance-to-activity planner Navigation used, now shared.\n- `holdNexusOngoingWork` / `releaseNexusOngoingWork` for an ongoing process\n  the wearer started, such as journey guidance.\n\n### Glasses hub\n\n- Preserve the launcher session stack and shared input arbiter, so Back returns through logical stops without trapping users in an app or reopening a dismissed overlay.\n- Keep native Reddit opening and inventory alongside YouTube, with the existing trusted hub-to-hub remote input path.\n\n",
-          "changes": []
-        },
-        {
-          "version": "1.6.0",
-          "date": "2026-10-07T15:49:01Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.6.0",
-          "notes": "\nInstall both Nexus hubs 1.6.0 and Patcher 1.0.0 for guided YouTube setup.\n\n- Open native Android apps from the glasses launcher, with cached app icons.\n- Guide MicroG installation, stock YouTube download, on-phone patching, and Google\n  sign-in through Keyboard & remote. Nexus never reads Google accounts or tokens.\n- Opening YouTube or MicroG restores the glasses' Wi-Fi radio when needed.\n  Automatic phone-keyboard opening for YouTube remains an explicit preference.\n\n- Use the target-aware Patcher plugin for YouTube setup, keeping signer-bound approval,\n  result-byte validation, same-signer CXR updates and confirmed-install records.\n- Patcher replaces the unpublished YouTube Patcher package and generates a new key;\n  existing output needs an imported backup or an explicit manual reinstall on glasses.\n- YouTube setup says what to expect from Patcher: about 6–7 minutes, kept going in a\n  small window while you use other apps, then checked and installed by Nexus. When a\n  patched APK is waiting, step 3 leads with Install on glasses and says whether the\n  glasses still need connecting.\n- Returning to setup while a patch is pending offers **Open Patcher** to check\n  progress or use the saved result, without claiming the patch has stopped.\n- Ready notifications carry the completed job to the existing Patcher window,\n  including after activity recreation, so its authenticated result reaches Nexus.\n\n",
-          "changes": []
-        },
-        {
-          "version": "1.4.11",
-          "date": "2026-09-22T12:55:59Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.11",
-          "notes": "### Upgrade together\n\nInstall **both Nexus hubs 1.4.11** before using notices, then update Relay to\n**1.2.3**. Notice protocol v5 requires matching phone and glasses hubs; mixed\nhub versions are not supported for notices. Plugins need to be rebuilt with\nSDK **0.19.0** to gain the new callback protection. Plugin API version 3 and\nexisting grants are unchanged.\n\n### Phone and glasses hubs\n\n- **An SPP interruption no longer disables a live notice's SDK callbacks.**\n  Losing or restoring one glasses transport leaves the current question intact;\n  an explicit hide, replacement, or fresh registration still protects against\n  stale replies. A newer owner hide also clears an older visible band when a\n  replacement show was lost or failed image decoding.\n- **HUD routing has dedicated owners.** The phone hub delegates notices, pins,\n  activities, ordinary surfaces, and Ink to separate routers, with regression\n  tests for owner delivery, reconnect state, and closure. Surface detach still\n  preserves an active microphone lease through the existing audio lifecycle.\n- **Notice replies stay with the question the wearer saw.** Both hubs now bind\n  actions, gestures, and dismissals to the notice instance and question, so a\n  delayed event cannot act on a replacement from the same plugin. The SDK also\n  filters stale callbacks already queued for a plugin. Notice protocol v5\n  requires matching phone and glasses hubs; rebuild plugins with the updated\n  SDK to gain the callback protection.\n- **A failed notice reply is visible.** The glasses show *Delivery not confirmed*\n  when the transport rejects a send, retaining the one-answer guard instead of\n  risking a duplicate effect after a partial write.\n- **An interactive notice keeps key priority over focused Nexus windows.**\n  Direction, confirm, and Back now reach the notice before the launcher or\n  surface beneath it, including local activity and overlay windows. Confirming\n  a notice can no longer activate an underlying control through those paths.\n  The same dispatcher handles accessibility input and paired directional keys.\n- **Relay countdowns keep the same question.** The SDK's optional `rearm = false`\n  update refreshes action labels without invalidating a tap in flight.\n- **Directional input can select Ink actions.** Tappable controls now have an\n  outlined selection tracked by their node id. Confirm activates the selected\n  control, and updates retain that selection when the node still exists. Paired\n  directional key reports count as one move. A notice can take input above the\n  page and return to the same selected Ink control when dismissed.\n\n### Plugin SDK 0.19.0\n\n- Add optional `NexusNoticeUpdate.rearm`. With `rearm = false`, a label-only\n  action update preserves the current question, selection, and one-answer\n  guard. This requires `noticeInteractionVersion: 1`; an older phone hub returns\n  `CAPABILITY_NOT_AVAILABLE` rather than silently changing the question.\n- Filter queued notice callbacks by the current local question. An SPP-only\n  interruption does not retire that context, and reconnecting does not undo an\n  explicit hide.\n- **Callback contract change:** `onNoticeClosed` belongs to the current local\n  notice context, not to every `showNotice` call. An immediate hide followed by\n  show may suppress the previous `closed(owner)` callback. Plugins must not\n  depend on exactly one close callback per show to clean up replaced state.\n\nValidation and remaining transport-recovery follow-ups are recorded in the\n[review and device retest](https://github.com/Anezium/Rokid-Nexus/blob/v1.4.11/docs/reviews/hud-interaction-review-follow-up.md).\n",
-          "changes": []
-        },
-        {
-          "version": "1.4.10",
-          "date": "2026-09-19T21:19:43Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.8",
-          "date": "2026-09-14T19:38:40Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-09-07T19:29:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-nexus-1.png",
-        "rokid-nexus-2.png",
-        "rokid-nexus-3.png",
-        "rokid-nexus-4.png",
-        "rokid-nexus-5.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
-      },
-      "publishedAt": "2026-10-22T18:59:09Z",
-      "newUntil": "2026-10-24T18:59:09.000Z",
-      "iconAsset": "rokid-nexus.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
-      ]
     },
     {
       "id": "rokid-phone-mirroring",
