@@ -842,8 +842,8 @@
       "kind": "nexus-plugin",
       "name": "Photos Sync",
       "category": "Utility",
-      "summary": "Glasses captures land in your phone gallery.",
-      "description": "Photos and videos you take on the glasses copy themselves into your phone gallery, in the same Hi Rokid album. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.",
+      "summary": "Deprecated — the Hi Rokid app now syncs glasses captures itself. Glasses captures land in your phone gallery.",
+      "description": "Deprecated — the Hi Rokid app now syncs photos and videos from the glasses to the phone itself, so this plugin is no longer maintained.\n\nPhotos and videos you take on the glasses copy themselves into your phone gallery, in the same Hi Rokid album. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
       "publishedAt": "2026-08-11T12:14:48Z",
@@ -860,7 +860,7 @@
       },
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nPhotos and videos you take on the glasses copy themselves into your phone gallery, in the same `Download/Hi Rokid/` album Hi Rokid imports into. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.\n\n## Syncing\n\nChoose when it runs: **always**, so a capture syncs as soon as you take it; **while charging**, the default, so transfers happen while the glasses rest on the charger; or **manual only**.\n\nEvery file is checksum-verified before it reaches your gallery, and an interrupted transfer resumes where it stopped instead of starting over — so a long video finishes across several sessions.\n\nThe transfer stays out of the way of everything else on the connection: it pauses for a camera session and yields whenever anything else needs the link.\n\n## Freeing space\n\nDeleting captures from the glasses once they are safely on the phone is available as an opt-in, off by default. Some glasses refuse it, and the screen says so rather than pretending."
+        "descriptionMarkdown": "## Deprecated\n\nThe Hi Rokid app now syncs photos and videos from the glasses to the phone itself, so Photos Sync is no longer maintained. It keeps working for now, but a future Nexus or glasses firmware update may break it.\n\n## About\n\nPhotos and videos you take on the glasses copy themselves into your phone gallery, in the same `Download/Hi Rokid/` album Hi Rokid imports into. They travel over the Bluetooth connection the glasses already have, so neither device needs Wi-Fi.\n\n## Syncing\n\nChoose when it runs: **always**, so a capture syncs as soon as you take it; **while charging**, the default, so transfers happen while the glasses rest on the charger; or **manual only**.\n\nEvery file is checksum-verified before it reaches your gallery, and an interrupted transfer resumes where it stopped instead of starting over — so a long video finishes across several sessions.\n\nThe transfer stays out of the way of everything else on the connection: it pauses for a camera session and yields whenever anything else needs the link.\n\n## Freeing space\n\nDeleting captures from the glasses once they are safely on the phone is available as an opt-in, off by default. Some glasses refuse it, and the screen says so rather than pretending."
       },
       "artifact": {
         "target": "phone",
