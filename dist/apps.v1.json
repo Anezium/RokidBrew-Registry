@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T11:52:15.270Z",
+  "generatedAt": "2026-11-02T13:31:44.977Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -18,7 +18,7 @@
       "name": "Rokid Nexus",
       "category": "Launcher",
       "type": "combo",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "summary": "Nexus 2.0: native activity cards, media player, route maps and Relay replies.",
       "description": "A plugin platform for Rokid AR glasses. Nexus 2.0 adds a native launcher with interactive activity cards, an integrated media player, route maps, notification history and explicit conversation replies. Plugins run on the phone and render through one glasses hub. Update both hubs together.",
       "author": "Anezium",
@@ -27,26 +27,33 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v2.0.0/nexus-phone-2.0.0.apk",
-          "sha256": "edf1ca7a21bfe3086a7ee5902b035052b84be75b384b7e6691e08e675638bc5f",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v2.0.1/nexus-phone-2.0.1.apk",
+          "sha256": "40355782c56aeb169e82183b7f49826a77476386f63375d56ba447599a0cc147",
           "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
           "sizeBytes": 20307798,
           "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 20000,
-          "versionName": "2.0.0"
+          "versionCode": 20001,
+          "versionName": "2.0.1"
         },
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v2.0.0/nexus-glasses-2.0.0.apk",
-          "sha256": "096b86dbf62ff308238ca52fcc46552750d10acb4a4724238fff70beed4bdaca",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v2.0.1/nexus-glasses-2.0.1.apk",
+          "sha256": "87e6c221a51ee75f3b06562976e75e0d2d522fc54cfcabc793f488878afc5e0e",
           "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
           "sizeBytes": 21103235,
           "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 20000,
-          "versionName": "2.0.0"
+          "versionCode": 20001,
+          "versionName": "2.0.1"
         }
       ],
       "releases": [
+        {
+          "version": "2.0.1",
+          "date": "2026-11-01T13:09:42Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v2.0.1",
+          "notes": null,
+          "changes": []
+        },
         {
           "version": "2.0.0",
           "date": "2026-10-31T15:37:43Z",
@@ -93,20 +100,6 @@
           "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.10",
           "notes": null,
           "changes": []
-        },
-        {
-          "version": "1.4.8",
-          "date": "2026-09-14T19:38:40Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-09-07T19:29:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
         }
       ],
       "screenshotAssets": [
@@ -119,8 +112,8 @@
       "listing": {
         "descriptionMarkdown": "## Nexus 2.0\n\nA plugin platform for Rokid AR glasses. Nexus 2.0 adds a native launcher with interactive activity cards, an integrated media player, route maps, notification history and explicit conversation replies. Plugins run on the phone and render through one glasses hub. Update both hubs together.\n\nChoose when each plugin activity floats over the glasses, or keep only its card in Activities. Update Media Deck, Navigation and Relay for their native launcher pages. Favorite app shortcuts and internally planned public-transport journeys are not included in this release.\n\n## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
       },
-      "publishedAt": "2026-10-31T15:37:43Z",
-      "newUntil": "2026-11-02T15:37:43.000Z",
+      "publishedAt": "2026-11-01T13:09:42Z",
+      "newUntil": "2026-11-03T13:09:42.000Z",
       "iconAsset": "rokid-nexus.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
       "screenshotUrls": [
