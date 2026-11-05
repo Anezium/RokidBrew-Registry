@@ -1516,7 +1516,7 @@
         "target": "phone",
         "url": "https://github.com/marcusalemao/Zap/releases/download/zap-v0.15.3/zap-phone-release.apk",
         "packageName": "io.alema.zap",
-        "sha256": "2d078792d779238de6eb9459d527346bca20eca9e93587d813859497bfc4a040",
+        "sha256": "39fec65b92b7edb081b4f502fd5de2807bb2a7d1bb7250a0e0d16ef7669b65c2",
         "sizeBytes": 7671909,
         "versionCode": 43,
         "versionName": "0.15.3",
