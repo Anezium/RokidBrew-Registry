@@ -7,8 +7,8 @@
   "description": "WhatsApp, Instagram and Messenger on Rokid Glasses: pick a service and a conversation, read its latest messages, reply by voice or typing, and send a photo taken with the glasses. Sign-in happens on the phone. Unofficial clients, not made or endorsed by Meta; Meta may restrict accounts that use third-party apps.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-11-08T01:42:27Z",
-  "iconAsset": "meta-messages-icon.png",
+  "publishedAt": "2026-11-08T23:41:06Z",
+  "iconAsset": "meta-messages-icon-2.png",
   "nexus": {
     "pluginId": "meta-messages",
     "apiVersion": 3,
@@ -27,15 +27,20 @@
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.0/meta-messages-phone-release.apk",
-    "sha256": "345aefb53f9dac34bfc646211b60cc72ac94710dd59ac845d2e530d114e54a81",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.1/meta-messages-phone-release.apk",
+    "sha256": "82c23321427abae4e915e0e34ad2906502efc09c7fdbaa059fd984f04f90ffb5",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-    "sizeBytes": 34028823,
+    "sizeBytes": 34033227,
     "packageName": "com.anezium.rokidbus.plugin.metamessages",
-    "versionCode": 1,
-    "versionName": "0.1.0"
+    "versionCode": 2,
+    "versionName": "0.1.1"
   },
   "releases": [
+    {
+      "version": "0.1.1",
+      "date": "2026-11-08T23:41:06Z",
+      "notes": "\n\n\n- **Meta's own mark.** The plugin now shows the Meta infinity instead of the\n  generic chat glyph: as one green stroke on the glasses launcher and in\n  notification cards, and as the filled mark for the Android app icon and the\n  Nexus plugin list. The APK had no icon of its own before.\n\n### Artifact\n\n- File: `meta-messages-phone-release.apk`\n- SHA-256: `82c23321427abae4e915e0e34ad2906502efc09c7fdbaa059fd984f04f90ffb5`\n"
+    },
     {
       "version": "0.1.0",
       "date": "2026-11-08T01:42:27Z",
