@@ -395,6 +395,52 @@
       ]
     },
     {
+      "id": "line-messages",
+      "kind": "nexus-plugin",
+      "name": "LINE Messages",
+      "category": "Communication",
+      "summary": "Read and answer LINE conversations on the glasses, photos included, sealed end to end.",
+      "description": "LINE on Rokid Glasses: your conversations and groups as pages on the lens, replies by voice or from the phone keyboard, and photos taken with the glasses camera sent into the chat. Everything you send is end-to-end encrypted with Letter Sealing. Sign-in happens on the phone. An unofficial client, not made or endorsed by LY Corporation; LINE may restrict accounts that use third-party clients.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "publishedAt": "2026-11-08T23:41:06Z",
+      "iconAsset": "line-messages-icon.png",
+      "screenshotAssets": [],
+      "listing": {
+        "descriptionMarkdown": "## About\n\nLINE on the glasses. Open LINE Messages from Applications, pick a conversation or a group, and read its latest messages in one scrolling column. Photo and sticker thumbnails show in their bubbles; sealed photos are decrypted and authenticated on the phone.\n\n## Replying\n\nDictate with the glasses microphone or type from the phone keyboard. Nothing is sent before you tap Send on the lens, and the result says the message was handed to LINE, never that it was read. A send LINE refuses keeps your draft.\n\n## Photos\n\nTap **Photo** in a conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. The photo and its preview leave the phone sealed with Letter Sealing; the key travels only inside the sealed message.\n\n## Signing in\n\nOn the phone, open the plugin from Nexus > Plugins: email and password, then the PIN LINE shows. **Copy PIN** puts it on the clipboard, marked sensitive, and the screen clears it again once the sign-in is over. The email and password are used only to authenticate with LINE; the password is masked and never saved.\n\n## Encryption\n\nConversations without a Letter Sealing key cannot be written to from the glasses: the plugin refuses rather than send plaintext. An ambiguous send is kept, never retried on its own. Nothing runs in the background: LINE connects only while its page is open on the glasses.\n\n## Unofficial\n\nLINE Messages is not made or endorsed by LY Corporation. LINE may sign the device out or restrict an account that uses third-party clients; the plugin says so before you sign in. Needs both Nexus hubs at 2.4.0 or newer.\n"
+      },
+      "releases": [
+        {
+          "version": "0.1.0",
+          "date": "2026-11-08T23:41:06Z",
+          "notes": "\n\n\nFirst release. Needs **both hubs at Nexus 2.4.0**: older hubs still read and\nsend, but a refused send shows as unconfirmed instead of staying editable.\n\n- **LINE on the glasses.** Your conversations, groups included, as launcher\n  pages: open one and read its latest messages in one scrolling column. Photo\n  and sticker thumbnails show in their bubbles; sealed photos are decrypted and\n  authenticated on the phone.\n- **Reply from the glasses.** Dictate or type in the conversation's composer.\n  Nothing is sent before you tap Send, and the result says the message was\n  handed to LINE, never that it was read. A send LINE refuses keeps your draft.\n- **Photos.** Take a picture from a conversation with the **Photo** button,\n  check it on a full-page preview, then Send, Retake or Cancel. The photo and\n  its preview leave the phone sealed with Letter Sealing; the key travels only\n  inside the sealed message, never beside it.\n- **Sign in on the phone.** Email and password, then the PIN LINE shows: a\n  **Copy PIN** button puts it on the clipboard, marked sensitive, and the\n  screen clears it again, the next time it is in front, once the sign-in is\n  over. The email and password are used only to authenticate with LINE; the\n  password is masked and never saved.\n- **Letter Sealing required.** Conversations without an encryption key cannot be\n  written to from the glasses; the plugin says so instead of sending plaintext.\n  An ambiguous send is kept, never retried on its own.\n- **LINE's own mark.** The LINE bubble, not a generic chat glyph: stroked on the\n  glasses launcher and notification cards, filled for the Android app icon and\n  the Nexus plugin list.\n- **Nothing in the background.** LINE connects only while its glasses page is\n  open, and again when you come back.\n- **Unofficial client.** LINE Messages is not made or endorsed by LY\n  Corporation. LINE may sign the device out or restrict an account that uses\n  third-party clients; the plugin says so before you sign in.\n\nNot covered by this version: direct chats were verified for reading only, the\nsealed send was exercised in a group; Keep Memo is not listed; unsend and\ntoken expiry were not tested.\n\nLINE Messages is licensed under the Apache License 2.0, like the rest of Rokid\nNexus; the embedded engine's MIT-licensed dependencies are listed in the\nplugin's Open-source licenses screen.\n\n### Artifact\n\n- File: `line-messages-phone-release.apk`\n- SHA-256: `bdc633dbd750b983dba0073264012e85df9187fc68107a0ea25c3e8770fe31ac`\n"
+        }
+      ],
+      "nexus": {
+        "pluginId": "line-messages",
+        "apiVersion": 3,
+        "capabilities": [
+          "surfaces",
+          "stt",
+          "camera"
+        ],
+        "launchable": false,
+        "settingsActivity": "com.anezium.rokidbus.plugin.line.LineSettingsActivity",
+        "minHostVersionCode": 20400
+      },
+      "artifact": {
+        "target": "phone",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/line-messages-v0.1.0/line-messages-phone-release.apk",
+        "sha256": "bdc633dbd750b983dba0073264012e85df9187fc68107a0ea25c3e8770fe31ac",
+        "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+        "sizeBytes": 23453179,
+        "packageName": "com.anezium.rokidbus.plugin.line",
+        "versionCode": 1,
+        "versionName": "0.1.0"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/line-messages-icon.png"
+    },
+    {
       "id": "lume",
       "kind": "nexus-plugin",
       "name": "Lume",
@@ -619,8 +665,8 @@
       "description": "WhatsApp, Instagram and Messenger on Rokid Glasses: pick a service and a conversation, read its latest messages, reply by voice or typing, and send a photo taken with the glasses. Sign-in happens on the phone. Unofficial clients, not made or endorsed by Meta; Meta may restrict accounts that use third-party apps.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-11-08T01:42:27Z",
-      "iconAsset": "meta-messages-icon.png",
+      "publishedAt": "2026-11-08T23:41:06Z",
+      "iconAsset": "meta-messages-icon-2.png",
       "nexus": {
         "pluginId": "meta-messages",
         "apiVersion": 3,
@@ -639,22 +685,27 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.0/meta-messages-phone-release.apk",
-        "sha256": "345aefb53f9dac34bfc646211b60cc72ac94710dd59ac845d2e530d114e54a81",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.1/meta-messages-phone-release.apk",
+        "sha256": "82c23321427abae4e915e0e34ad2906502efc09c7fdbaa059fd984f04f90ffb5",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 34028823,
+        "sizeBytes": 34033227,
         "packageName": "com.anezium.rokidbus.plugin.metamessages",
-        "versionCode": 1,
-        "versionName": "0.1.0"
+        "versionCode": 2,
+        "versionName": "0.1.1"
       },
       "releases": [
+        {
+          "version": "0.1.1",
+          "date": "2026-11-08T23:41:06Z",
+          "notes": "\n\n\n- **Meta's own mark.** The plugin now shows the Meta infinity instead of the\n  generic chat glyph: as one green stroke on the glasses launcher and in\n  notification cards, and as the filled mark for the Android app icon and the\n  Nexus plugin list. The APK had no icon of its own before.\n\n### Artifact\n\n- File: `meta-messages-phone-release.apk`\n- SHA-256: `82c23321427abae4e915e0e34ad2906502efc09c7fdbaa059fd984f04f90ffb5`\n"
+        },
         {
           "version": "0.1.0",
           "date": "2026-11-08T01:42:27Z",
           "notes": "\nFirst release. Needs **both hubs at Nexus 2.2.0** for photos, thumbnails and\nservice icons; older hubs show conversations as text.\n\n- **WhatsApp, Instagram and Messenger on the glasses.** Pick a service, then a\n  conversation, and read its latest messages in one scrolling column. Older\n  messages load when a conversation shows fewer than you asked for (10, 30 or 50\n  in the phone settings).\n- **Reply from the glasses.** Dictate or type an answer in the conversation's\n  composer. Nothing is sent before you tap Send; the result says the message was\n  handed to the service, never that it was read.\n- **Photos.** Take a picture from any conversation with the **Photo** button,\n  check it on a full-page preview, then Send, Retake or Cancel. Photos, reels and\n  posts you receive show as thumbnails in their bubbles, and photos you send from\n  WhatsApp carry their own preview.\n- **Sign in on the phone.** WhatsApp links as a companion device with a pairing\n  code. Instagram and Messenger sign in with your account on the phone; passwords\n  are masked and never leave it.\n- **Nothing in the background.** A service connects only while its glasses page\n  is open, and again when you come back. A sign-in or pairing left waiting gets\n  up to three minutes to finish after you leave its screen.\n- **Unofficial clients.** Meta Messages is not made or endorsed by Meta. Meta may\n  sign the device out, or restrict or ban an account that uses third-party apps.\n  The plugin says so before you sign in.\n\nMessenger's end-to-end encrypted chats are listed but cannot be answered yet.\nWhatsApp shows thumbnails for photos received from this version on; older\nmessages keep their caption.\n\nMeta Messages is licensed under the AGPL-3.0, as the engines it embeds require;\nthe other Nexus components keep their own licenses.\n\n### Artifact\n\n- File: `meta-messages-phone-release.apk`\n- SHA-256: `345aefb53f9dac34bfc646211b60cc72ac94710dd59ac845d2e530d114e54a81`\n"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/meta-messages-icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/meta-messages-icon-2.png"
     },
     {
       "id": "nav",
