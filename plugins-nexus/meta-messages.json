@@ -1,0 +1,45 @@
+{
+  "id": "meta-messages",
+  "kind": "nexus-plugin",
+  "name": "Meta Messages",
+  "category": "Communication",
+  "summary": "Read and answer WhatsApp, Instagram and Messenger conversations on the glasses.",
+  "description": "WhatsApp, Instagram and Messenger on Rokid Glasses: pick a service and a conversation, read its latest messages, reply by voice or typing, and send a photo taken with the glasses. Sign-in happens on the phone. Unofficial clients, not made or endorsed by Meta; Meta may restrict accounts that use third-party apps.",
+  "author": "Anezium",
+  "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+  "publishedAt": "2026-11-08T01:42:27Z",
+  "iconAsset": "meta-messages-icon.png",
+  "nexus": {
+    "pluginId": "meta-messages",
+    "apiVersion": 3,
+    "capabilities": [
+      "surfaces",
+      "stt",
+      "camera"
+    ],
+    "launchable": false,
+    "settingsActivity": "com.anezium.rokidbus.plugin.meta.MetaMessagesActivity",
+    "minHostVersionCode": 20000
+  },
+  "screenshotAssets": [],
+  "listing": {
+    "descriptionMarkdown": "## About\n\nWhatsApp, Instagram and Messenger in one plugin. On the glasses, pick a service, then a conversation, and read its latest messages in one scrolling column. Older messages load when a conversation shows fewer than you asked for: 10, 30 or 50, set in the phone settings.\n\n## Replying\n\nDictate or type an answer in the conversation's composer. Nothing is sent before you tap Send, and the result says the message was handed to the service, never that it was read.\n\n## Photos\n\nTap **Photo** in any conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. Photos, reels and posts you receive show as thumbnails in their bubbles.\n\n## Signing in\n\nEverything happens on the phone. WhatsApp links as a companion device with a pairing code. Instagram and Messenger sign in with your account; passwords are masked and never leave the phone.\n\n## In the background\n\nNothing. A service connects only while its glasses page is open, and again when you come back. A sign-in or pairing left waiting gets up to three minutes to finish after you leave its screen.\n\n## Unofficial clients\n\nMeta Messages is not made or endorsed by Meta. It embeds the open-source whatsmeow and mautrix-meta engines. Meta may sign the device out, or restrict or ban an account that uses third-party apps, and the plugin says so before you sign in.\n\nMessenger's end-to-end encrypted chats are listed but cannot be answered yet.\n\n## Needs\n\nRokid Nexus 2.0.0 or newer on both phone and glasses. Photos, thumbnails and service icons need **Nexus 2.2.0 on both hubs**; older hubs show conversations as text.\n\n*Show on your glasses*, *Speech to text* and *Camera* in Nexus → Settings → Plugin access.\n\n## License\n\nAGPL-3.0, as the embedded engines require. The source is in the Rokid Nexus repository under `plugins/meta`."
+  },
+  "artifact": {
+    "target": "phone",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.0/meta-messages-phone-release.apk",
+    "sha256": "345aefb53f9dac34bfc646211b60cc72ac94710dd59ac845d2e530d114e54a81",
+    "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
+    "sizeBytes": 34028823,
+    "packageName": "com.anezium.rokidbus.plugin.metamessages",
+    "versionCode": 1,
+    "versionName": "0.1.0"
+  },
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-11-08T01:42:27Z",
+      "notes": "\nFirst release. Needs **both hubs at Nexus 2.2.0** for photos, thumbnails and\nservice icons; older hubs show conversations as text.\n\n- **WhatsApp, Instagram and Messenger on the glasses.** Pick a service, then a\n  conversation, and read its latest messages in one scrolling column. Older\n  messages load when a conversation shows fewer than you asked for (10, 30 or 50\n  in the phone settings).\n- **Reply from the glasses.** Dictate or type an answer in the conversation's\n  composer. Nothing is sent before you tap Send; the result says the message was\n  handed to the service, never that it was read.\n- **Photos.** Take a picture from any conversation with the **Photo** button,\n  check it on a full-page preview, then Send, Retake or Cancel. Photos, reels and\n  posts you receive show as thumbnails in their bubbles, and photos you send from\n  WhatsApp carry their own preview.\n- **Sign in on the phone.** WhatsApp links as a companion device with a pairing\n  code. Instagram and Messenger sign in with your account on the phone; passwords\n  are masked and never leave it.\n- **Nothing in the background.** A service connects only while its glasses page\n  is open, and again when you come back. A sign-in or pairing left waiting gets\n  up to three minutes to finish after you leave its screen.\n- **Unofficial clients.** Meta Messages is not made or endorsed by Meta. Meta may\n  sign the device out, or restrict or ban an account that uses third-party apps.\n  The plugin says so before you sign in.\n\nMessenger's end-to-end encrypted chats are listed but cannot be answered yet.\nWhatsApp shows thumbnails for photos received from this version on; older\nmessages keep their caption.\n\nMeta Messages is licensed under the AGPL-3.0, as the engines it embeds require;\nthe other Nexus components keep their own licenses.\n\n### Artifact\n\n- File: `meta-messages-phone-release.apk`\n- SHA-256: `345aefb53f9dac34bfc646211b60cc72ac94710dd59ac845d2e530d114e54a81`\n"
+    }
+  ]
+}
