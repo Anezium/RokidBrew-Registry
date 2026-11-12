@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T13:30:20.703Z",
+  "generatedAt": "2026-11-10T14:42:21.647Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -19,7 +19,7 @@
       "category": "Utility",
       "type": "glasses",
       "version": "2.6.4",
-      "summary": "Paid ($1.99 one-time, 3-day trial) · New camera filters, APK installation, and Wi-Fi transfers",
+      "summary": "Camera filters, app installs, and wireless file transfers.",
       "description": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.",
       "author": "Bruce",
       "sourceUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases",
@@ -51,24 +51,15 @@
         "ai-glasses-manager-camera.png"
       ],
       "listing": {
-        "descriptionMarkdown": "## New in 2.6.3: Camera filters are here!\n\nGive your captures a new look with three camera filter styles, including Matrix. The Camera interface also has clearer, easier-to-read controls.\n\nWi-Fi Drop now supports uploading APKs to your glasses. Open the uploaded APKs in File Explorer to install them, or install apps from the Manager App Store. Wi-Fi Drop also has a redesigned browser interface and transfer reliability fixes.\n\nAI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Three camera filter styles, including Matrix, plus camera tools and photo and video viewing\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- File browsing, APK installation in File Explorer, and wireless file transfers with APK uploads through Wi-Fi Drop\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
+        "descriptionMarkdown": "AI Glasses Manager (formerly Rokid Manager) is an independent, on-device utility suite that unlocks advanced hardware controls and stability fixes for your AR glasses. Manage your apps, wirelessly transfer files, and access hidden camera tools directly on your device without needing a phone companion. Developed by Bruce. Includes a 3-day free trial, followed by a $1.99 one-time purchase per device.\n\n## Features\n\n- Camera filters for photos and videos, plus on-device media viewing\n- Built-in Manager updates after the initial installation\n- On-device App Store with app update detection and download controls\n- File browsing, APK installation in File Explorer, and wireless file transfers with APK uploads through Wi-Fi Drop\n- Separate volume controls and shortcuts to frequently used tools\n\n## Requirements\n\nDesigned for Rokid AI Glasses. No phone companion app is required.\n\nThe current app uses a different Android package from Rokid Manager 1.5 and installs separately. Download official builds and read the release notes on the linked GitHub repository."
       },
       "releases": [
         {
           "version": "2.6.4",
           "date": "2026-11-09T14:39:32Z",
           "sourceReleaseUrl": "https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.4",
-          "notes": "# AI Glasses Manager 2.6.4\n\nFor Rokid Glasses. Independently developed by Bruce. Formerly Rokid Manager.\n\n## English\n\n### Camera\n\n- Added VHS Camcorder, Temporal Lights, and Predator Vision for photos and videos.\n- Improved photo processing, capture reliability, and zoom. Added low-battery protection.\n- Use the glasses’ dedicated camera button to take a photo or start and stop recording.\n- Camera Settings includes Tap and Swipe zoom, gridlines, and aspect ratio.\n\n### Manager Settings\n\n- Choose Manager’s language independently of the glasses’ system language. Arabic joins ten existing languages.\n\n<img src=\"https://phantom-not.github.io/ai-glasses-manager-releases/images/manager-language-picker.png\" alt=\"Manager 2.6.4 language picker / 管理器语言选择\" width=\"240\">\n\n### App Store\n\n- Updated the catalog and improved keyboard and mouse navigation.\n\n### Wi-Fi Drop\n\n- Transfers can continue while the display sleeps. You have 10 minutes to start a transfer, with extra time for transfers already underway.\n\n[Full feature guide](https://phantom-not.github.io/ai-glasses-manager-releases/features/) · [Android App Store](https://phantom-not.github.io/ai-glasses-manager-releases/app-store/) · [Camera filters](https://phantom-not.github.io/ai-glasses-manager-releases/camera-filters/)\n\n## 中文\n\n### 相机\n\n- 新增 VHS 复古摄像机、流光轨迹和铁血战士视觉滤镜，拍照和录像均可使用。\n- 改进照片处理、拍摄稳定性和变焦流畅度，新增低电量保护。\n- 按下眼镜上的独立相机键即可拍照，或开始和停止录像。\n- 可在相机设置中开启「点击后滑动变焦」，也可设置网格线和画面比例。\n\n### 管理器设置\n\n- 可单独选择管理器的显示语言，无需更改眼镜的系统语言。新增阿拉伯语，现共支持 11 种语言。\n\n### 应用商店\n\n- 更新应用目录，并改进键盘和鼠标导航。\n\n### Wi-Fi 传输\n\n- 眼镜熄屏后仍可继续传输文件。可在 10 分钟内开始传输，已开始的传输可在倒计时结束后继续一小段时间。\n\n[全部功能](https://phantom-not.github.io/ai-glasses-manager-releases/zh/features/) · [Android 应用商店](https://phantom-not.github.io/ai-glasses-manager-releases/zh/app-store/) · [相机滤镜](https://phantom-not.github.io/ai-glasses-manager-releases/zh/camera-filters/)",
-          "changes": [
-            "Added VHS Camcorder, Temporal Lights, and Predator Vision for photos and videos.",
-            "Improved photo processing, capture reliability, and zoom. Added low-battery protection.",
-            "Use the glasses’ dedicated camera button to take a photo or start and stop recording.",
-            "Camera Settings includes Tap and Swipe zoom, gridlines, and aspect ratio.",
-            "Choose Manager’s language independently of the glasses’ system language. Arabic joins ten existing languages.",
-            "Updated the catalog and improved keyboard and mouse navigation.",
-            "Transfers can continue while the display sleeps. You have 10 minutes to start a transfer, with extra time for transfers already underway.",
-            "新增 VHS 复古摄像机、流光轨迹和铁血战士视觉滤镜，拍照和录像均可使用。"
-          ]
+          "notes": "- Added VHS Camcorder, Temporal Lights, and Predator Vision for photos and videos.\n- Improved photo processing and capture reliability. Added low-battery protection, smoother zoom, and support for the dedicated camera button.\n- Choose Manager’s language in Settings. Arabic is now supported.\n- Updated the App Store catalog and improved keyboard and mouse navigation.\n- Wi-Fi Drop transfers can continue while the display sleeps. The session gives you 10 minutes to start a transfer.\n\n[Full release notes (English and Chinese)](https://github.com/Phantom-Not/ai-glasses-manager-releases/releases/tag/v2.6.4)",
+          "changes": []
         },
         {
           "version": "2.6.3",
