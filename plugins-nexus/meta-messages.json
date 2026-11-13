@@ -7,7 +7,7 @@
   "description": "WhatsApp, Instagram and Messenger on Rokid Glasses: pick a service and a conversation, read its latest messages, reply by voice or typing, and send a photo taken with the glasses. Sign-in happens on the phone. Unofficial clients, not made or endorsed by Meta; Meta may restrict accounts that use third-party apps.",
   "author": "Anezium",
   "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-  "publishedAt": "2026-11-13T13:15:06Z",
+  "publishedAt": "2026-11-13T13:33:59Z",
   "iconAsset": "meta-messages-icon-2.png",
   "nexus": {
     "pluginId": "meta-messages",
@@ -23,19 +23,24 @@
   },
   "screenshotAssets": [],
   "listing": {
-    "descriptionMarkdown": "## About\n\nWhatsApp, Instagram and Messenger in one plugin. On the glasses, pick a service, then a conversation, and read its latest messages in one scrolling column. Older messages load when a conversation shows fewer than you asked for: 10, 30 or 50, set in the phone settings.\n\n## Replying\n\nDictate or type an answer in the conversation's composer. Nothing is sent before you tap Send, and the result says the message was handed to the service, never that it was read.\n\n## Photos\n\nTap **Photo** in any conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. Photos, reels and posts you receive show as thumbnails in their bubbles.\n\n## Signing in\n\nEverything happens on the phone. WhatsApp links as a companion device with a pairing code. Instagram and Messenger sign in with your account; passwords are masked and never leave the phone.\n\n## In the background\n\nNothing. A service connects only while its glasses page is open, and again when you come back. A sign-in or pairing left waiting gets up to three minutes to finish after you leave its screen.\n\n## Unofficial clients\n\nMeta Messages is not made or endorsed by Meta. It embeds the open-source whatsmeow and mautrix-meta engines. Meta may sign the device out, or restrict or ban an account that uses third-party apps, and the plugin says so before you sign in.\n\nWhatsApp groups open and take text replies; photos go to one-to-one chats only. Messenger's end-to-end encrypted chats are listed but cannot be answered yet.\n\n## Needs\n\n**Rokid Nexus 2.2.0 or newer on both phone and glasses.** The Store checks the phone hub. If the glasses hub is older, conversations still open, without photos, thumbnails or service icons.\n\n*Show on your glasses*, *Speech to text* and *Camera* in Nexus → Settings → Plugin access.\n\n## License\n\nAGPL-3.0, as the embedded engines require. The source is in the Rokid Nexus repository under `plugins/meta`."
+    "descriptionMarkdown": "## About\n\nWhatsApp, Instagram and Messenger in one plugin. On the glasses, pick a service, then a conversation, and read its latest messages in one scrolling column. Older messages load when a conversation shows fewer than you asked for: 10, 30 or 50, set in the phone settings.\n\n## Replying\n\nDictate or type an answer in the conversation's composer. Nothing is sent before you tap Send, and the result says the message was handed to the service, never that it was read.\n\n## Photos\n\nTap **Photo** in any conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. Photos, reels and posts you receive show as thumbnails in their bubbles.\n\n## Signing in\n\nEverything happens on the phone. WhatsApp links as a companion device with a pairing code. Instagram and Messenger sign in with your account; passwords are masked and never leave the phone.\n\n## In the background\n\nNothing. A service connects only while its glasses page is open, and again when you come back. A sign-in or pairing left waiting gets up to three minutes to finish after you leave its screen.\n\n## Unofficial clients\n\nMeta Messages is not made or endorsed by Meta. It embeds the open-source whatsmeow and mautrix-meta engines. Meta may sign the device out, or restrict or ban an account that uses third-party apps, and the plugin says so before you sign in.\n\nWhatsApp groups open and take text and photo replies. Messenger's end-to-end encrypted chats are listed but cannot be answered yet.\n\n## Needs\n\n**Rokid Nexus 2.2.0 or newer on both phone and glasses.** The Store checks the phone hub. If the glasses hub is older, conversations still open, without photos, thumbnails or service icons.\n\n*Show on your glasses*, *Speech to text* and *Camera* in Nexus → Settings → Plugin access.\n\n## License\n\nAGPL-3.0, as the embedded engines require. The source is in the Rokid Nexus repository under `plugins/meta`."
   },
   "artifact": {
     "target": "phone",
-    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.2/meta-messages-phone-release.apk",
-    "sha256": "59692dc04dd3841081b351c0d15655573662fcc34caa047fc7920c397cc54881",
+    "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.3/meta-messages-phone-release.apk",
+    "sha256": "c98d971f80703c2ebc9fab24f5ba2dc5f4058a259348ea12dc60767d9f48e1b4",
     "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
     "sizeBytes": 34041359,
     "packageName": "com.anezium.rokidbus.plugin.metamessages",
-    "versionCode": 3,
-    "versionName": "0.1.2"
+    "versionCode": 4,
+    "versionName": "0.1.3"
   },
   "releases": [
+    {
+      "version": "0.1.3",
+      "date": "2026-11-13T13:33:59Z",
+      "notes": "\n- **Photos to WhatsApp groups.** The Photo tool now shows in WhatsApp group\n  conversations too, as it already did in one-to-one chats and Messenger groups.\n\n\n### Artifact\n\n- File: `meta-messages-phone-release.apk`\n- SHA-256: `c98d971f80703c2ebc9fab24f5ba2dc5f4058a259348ea12dc60767d9f48e1b4`\n"
+    },
     {
       "version": "0.1.2",
       "date": "2026-11-13T13:15:06Z",
