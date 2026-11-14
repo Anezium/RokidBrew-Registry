@@ -408,13 +408,18 @@
       "description": "LINE on Rokid Glasses: your conversations and groups as pages on the lens, replies by voice or from the phone keyboard, and photos taken with the glasses camera sent into the chat. Everything you send is end-to-end encrypted with Letter Sealing. Sign-in happens on the phone. An unofficial client, not made or endorsed by LY Corporation; LINE may restrict accounts that use third-party clients.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-11-08T23:41:06Z",
+      "publishedAt": "2026-11-14T19:56:07Z",
       "iconAsset": "line-messages-icon.png",
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nLINE on the glasses. Open LINE Messages from Applications, pick a conversation or a group, and read its latest messages in one scrolling column. Photo and sticker thumbnails show in their bubbles; sealed photos are decrypted and authenticated on the phone.\n\n## Replying\n\nDictate with the glasses microphone or type from the phone keyboard. Nothing is sent before you tap Send on the lens, and the result says the message was handed to LINE, never that it was read. A send LINE refuses keeps your draft.\n\n## Photos\n\nTap **Photo** in a conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. The photo and its preview leave the phone sealed with Letter Sealing; the key travels only inside the sealed message.\n\n## Signing in\n\nOn the phone, open the plugin from Nexus > Plugins: email and password, then the PIN LINE shows. **Copy PIN** puts it on the clipboard, marked sensitive, and the screen clears it again once the sign-in is over. The email and password are used only to authenticate with LINE; the password is masked and never saved.\n\n## Encryption\n\nConversations without a Letter Sealing key cannot be written to from the glasses: the plugin refuses rather than send plaintext. An ambiguous send is kept, never retried on its own. Nothing runs in the background: LINE connects only while its page is open on the glasses.\n\n## Unofficial\n\nLINE Messages is not made or endorsed by LY Corporation. LINE may sign the device out or restrict an account that uses third-party clients; the plugin says so before you sign in. Needs both Nexus hubs at 2.4.0 or newer.\n"
+        "descriptionMarkdown": "## About\n\nLINE on the glasses. Open LINE Messages from Applications, pick a conversation or a group, and read its latest messages in one scrolling column. Photo and sticker thumbnails show in their bubbles; sealed photos are decrypted and authenticated on the phone.\n\n## Replying\n\nDictate with the glasses microphone or type from the phone keyboard. Nothing is sent before you tap Send on the lens, and the result says the message was handed to LINE, never that it was read. A send LINE refuses keeps your draft.\n\n## Photos\n\nTap **Photo** in a conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. The photo and its preview leave the phone sealed with Letter Sealing; the key travels only inside the sealed message.\n\n## Pinned contacts\n\nIn the plugin settings, **Pinned contacts** lets you choose the conversations you want first, groups included, in your order. On the glasses they sit at the top of the list under **Pinned**, followed by your most recent conversations under **Recent**. The captions need Rokid Nexus 2.6.0 on both phone and glasses; older hubs keep the same order without them.\n\n## Signing in\n\nOn the phone, open the plugin from Nexus > Plugins: email and password, then the PIN LINE shows. **Copy PIN** puts it on the clipboard, marked sensitive, and the screen clears it again once the sign-in is over. The email and password are used only to authenticate with LINE; the password is masked and never saved.\n\n## Encryption\n\nConversations without a Letter Sealing key cannot be written to from the glasses: the plugin refuses rather than send plaintext. An ambiguous send is kept, never retried on its own. Nothing runs in the background: LINE connects only while its page is open on the glasses.\n\n## Unofficial\n\nLINE Messages is not made or endorsed by LY Corporation. LINE may sign the device out or restrict an account that uses third-party clients; the plugin says so before you sign in. Needs both Nexus hubs at 2.4.0 or newer.\n"
       },
       "releases": [
+        {
+          "version": "0.2.0",
+          "date": "2026-11-14T19:56:07Z",
+          "notes": "\nPins work with any hub; the **Pinned** and **Recent** captions need both hubs at\nNexus 2.6.0.\n\n- **Pin contacts.** **Settings › Pinned contacts** lets you pick the\n  conversations you want first, groups included, from a searchable list. There\n  is no limit; drag to reorder, × to unpin. On the glasses they stay at the top\n  of the list, in your order, followed by your most recent conversations. A\n  change on the phone shows on an open page right away.\n- Pins stay on this phone and **Forget** clears them. A pinned conversation\n  older than the 48 most recent ones is skipped on the glasses until it is\n  recent again, and the phone screen says so.\n\n\n### Artifact\n\n- File: `line-messages-phone-release.apk`\n- SHA-256: `ddc39348e7473f0b143ab8b633106d59ec373f57fce07775e18ef244c74b8931`\n"
+        },
         {
           "version": "0.1.0",
           "date": "2026-11-08T23:41:06Z",
@@ -435,13 +440,13 @@
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/line-messages-v0.1.0/line-messages-phone-release.apk",
-        "sha256": "bdc633dbd750b983dba0073264012e85df9187fc68107a0ea25c3e8770fe31ac",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/line-messages-v0.2.0/line-messages-phone-release.apk",
+        "sha256": "ddc39348e7473f0b143ab8b633106d59ec373f57fce07775e18ef244c74b8931",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 23453179,
+        "sizeBytes": 23486007,
         "packageName": "com.anezium.rokidbus.plugin.line",
-        "versionCode": 1,
-        "versionName": "0.1.0"
+        "versionCode": 2,
+        "versionName": "0.2.0"
       },
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/line-messages-icon.png"
     },
@@ -670,7 +675,7 @@
       "description": "WhatsApp, Instagram and Messenger on Rokid Glasses: pick a service and a conversation, read its latest messages, reply by voice or typing, and send a photo taken with the glasses. Sign-in happens on the phone. Unofficial clients, not made or endorsed by Meta; Meta may restrict accounts that use third-party apps.",
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
-      "publishedAt": "2026-11-13T13:33:59Z",
+      "publishedAt": "2026-11-14T19:55:10Z",
       "iconAsset": "meta-messages-icon-2.png",
       "nexus": {
         "pluginId": "meta-messages",
@@ -686,19 +691,24 @@
       },
       "screenshotAssets": [],
       "listing": {
-        "descriptionMarkdown": "## About\n\nWhatsApp, Instagram and Messenger in one plugin. On the glasses, pick a service, then a conversation, and read its latest messages in one scrolling column. Older messages load when a conversation shows fewer than you asked for: 10, 30 or 50, set in the phone settings.\n\n## Replying\n\nDictate or type an answer in the conversation's composer. Nothing is sent before you tap Send, and the result says the message was handed to the service, never that it was read.\n\n## Photos\n\nTap **Photo** in any conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. Photos, reels and posts you receive show as thumbnails in their bubbles.\n\n## Signing in\n\nEverything happens on the phone. WhatsApp links as a companion device with a pairing code. Instagram and Messenger sign in with your account; passwords are masked and never leave the phone.\n\n## In the background\n\nNothing. A service connects only while its glasses page is open, and again when you come back. A sign-in or pairing left waiting gets up to three minutes to finish after you leave its screen.\n\n## Unofficial clients\n\nMeta Messages is not made or endorsed by Meta. It embeds the open-source whatsmeow and mautrix-meta engines. Meta may sign the device out, or restrict or ban an account that uses third-party apps, and the plugin says so before you sign in.\n\nWhatsApp groups open and take text and photo replies. Messenger's end-to-end encrypted chats are listed but cannot be answered yet.\n\n## Needs\n\n**Rokid Nexus 2.2.0 or newer on both phone and glasses.** The Store checks the phone hub. If the glasses hub is older, conversations still open, without photos, thumbnails or service icons.\n\n*Show on your glasses*, *Speech to text* and *Camera* in Nexus → Settings → Plugin access.\n\n## License\n\nAGPL-3.0, as the embedded engines require. The source is in the Rokid Nexus repository under `plugins/meta`."
+        "descriptionMarkdown": "## About\n\nWhatsApp, Instagram and Messenger in one plugin. On the glasses, pick a service, then a conversation, and read its latest messages in one scrolling column. Older messages load when a conversation shows fewer than you asked for: 10, 30 or 50, set in the phone settings.\n\n## Replying\n\nDictate or type an answer in the conversation's composer. Nothing is sent before you tap Send, and the result says the message was handed to the service, never that it was read.\n\n## Photos\n\nTap **Photo** in any conversation to take a picture with the glasses, check it on a full-page preview, then Send, Retake or Cancel. Photos, reels and posts you receive show as thumbnails in their bubbles.\n\n## Pinned contacts\n\nIn the plugin settings, **Pinned contacts** has one tab per service: choose the WhatsApp, Instagram or Messenger conversations you want first, in your order. On the glasses each service's page lists them at the top under **Pinned**, followed by your most recent conversations under **Recent**. The captions need Rokid Nexus 2.6.0 on both phone and glasses; older hubs keep the same order without them.\n\n## Signing in\n\nEverything happens on the phone. WhatsApp links as a companion device with a pairing code. Instagram and Messenger sign in with your account; passwords are masked and never leave the phone.\n\n## In the background\n\nNothing. A service connects only while its glasses page is open, and again when you come back. A sign-in or pairing left waiting gets up to three minutes to finish after you leave its screen.\n\n## Unofficial clients\n\nMeta Messages is not made or endorsed by Meta. It embeds the open-source whatsmeow and mautrix-meta engines. Meta may sign the device out, or restrict or ban an account that uses third-party apps, and the plugin says so before you sign in.\n\nWhatsApp groups open and take text and photo replies. Messenger's end-to-end encrypted chats are listed but cannot be answered yet.\n\n## Needs\n\n**Rokid Nexus 2.2.0 or newer on both phone and glasses.** The Store checks the phone hub. If the glasses hub is older, conversations still open, without photos, thumbnails or service icons.\n\n*Show on your glasses*, *Speech to text* and *Camera* in Nexus → Settings → Plugin access.\n\n## License\n\nAGPL-3.0, as the embedded engines require. The source is in the Rokid Nexus repository under `plugins/meta`."
       },
       "artifact": {
         "target": "phone",
-        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.1.3/meta-messages-phone-release.apk",
-        "sha256": "c98d971f80703c2ebc9fab24f5ba2dc5f4058a259348ea12dc60767d9f48e1b4",
+        "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/meta-messages-v0.2.0/meta-messages-phone-release.apk",
+        "sha256": "07f34768d931405c85603241fa4413128eda468c5669241a20b80dae0386d5a8",
         "signerSha256": "f5e938e2e79b0526b31e40d36c8c19098450c1636b7e14a306681b4effddf81c",
-        "sizeBytes": 34041359,
+        "sizeBytes": 34074155,
         "packageName": "com.anezium.rokidbus.plugin.metamessages",
-        "versionCode": 4,
-        "versionName": "0.1.3"
+        "versionCode": 5,
+        "versionName": "0.2.0"
       },
       "releases": [
+        {
+          "version": "0.2.0",
+          "date": "2026-11-14T19:55:10Z",
+          "notes": "\nPins work with any hub; the **Pinned** and **Recent** captions need both hubs at\nNexus 2.6.0.\n\n- **Pin contacts.** **Pinned contacts**, in the plugin settings, has one tab per\n  service: pick the WhatsApp, Instagram or Messenger conversations you want\n  first from a searchable list. There is no limit; drag to reorder, × to unpin.\n  On the glasses each service's page lists them at the top, in your order,\n  followed by your most recent conversations. A change on the phone shows on an\n  open page right away.\n- Pins stay on this phone. Unlinking WhatsApp or forgetting an Instagram or\n  Messenger account clears that service's pins. A pinned conversation older\n  than the service's recent list is skipped on the glasses until it is recent\n  again. End-to-end encrypted chats cannot be pinned, since the\n  glasses cannot open them.\n\n\n### Artifact\n\n- File: `meta-messages-phone-release.apk`\n- SHA-256: `07f34768d931405c85603241fa4413128eda468c5669241a20b80dae0386d5a8`\n"
+        },
         {
           "version": "0.1.3",
           "date": "2026-11-13T13:33:59Z",
